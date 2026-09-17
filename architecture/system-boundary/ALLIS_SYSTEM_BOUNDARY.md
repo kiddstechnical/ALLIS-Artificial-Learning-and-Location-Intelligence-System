@@ -5,8 +5,6 @@
 **System:** ALLIS — Artificial Learning and Location Intelligence System  
 **Organization:** Kidd's Technical Services  
 **Document type:** Present-state technical and research boundary  
-**Audience:** University reviewers, technical collaborators, community partners, and research partners  
-**Writing standard:** Plain technical English, present tense, consistent terminology, and evidence-bounded claims  
 **Evidence reviewed through:** September 17, 2026  
 
 ### Qualified engineering source anchor
