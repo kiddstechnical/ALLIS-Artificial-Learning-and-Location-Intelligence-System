@@ -37,7 +37,7 @@ This document defines the present ALLIS boundary. It explains what belongs to AL
 
 This document presents the current system boundary in present tense.
 
-The engineering history is used as evidence. It is not used as the narrative structure of this document.
+The engineering history is used as evidence. 
 
 The current documentation rule is:
 
