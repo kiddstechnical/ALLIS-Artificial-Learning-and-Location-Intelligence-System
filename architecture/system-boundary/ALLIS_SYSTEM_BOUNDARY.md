@@ -49,8 +49,6 @@ supports present claims
 present-state documentation
 ```
 
-The document does not promote a claim because it appears later in a transcript or because a script contains an expected result.
-
 A current claim must be supported by the strongest applicable evidence, including:
 
 1. qualified source identity;
