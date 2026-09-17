@@ -1,12 +1,12 @@
-# ALLIS System Boundary
+# ALLIS system boundary
 
-## Current Architecture, Authority Model, Evidence Scope, and Validation Limits
+## Current architecture, authority model, evidence scope, and validation limits
 
 **System:** ALLIS — Artificial Learning and Location Intelligence System  
 **Organization:** Kidd's Technical Services  
-**Document role:** Present-state system-boundary description for research, technical review, and university collaboration  
-**Audience:** University researchers, technical reviewers, community partners, and collaborators  
-**Evidence posture:** Qualified engineering/documentation baseline with explicit residuals  
+**Document type:** Present-state technical and research boundary  
+**Audience:** University reviewers, technical collaborators, community partners, and research partners  
+**Writing standard:** Plain technical English, present tense, consistent terminology, and evidence-bounded claims  
 **Evidence reviewed through:** September 17, 2026  
 
 ### Qualified engineering source anchor
@@ -15,75 +15,125 @@
 - **HEAD:** `35f1aa5586e1a23e1ab88f4d757c451b44506893`
 - **Tree:** `36dd9f2425db4b23bacfce1cb258603cace25f1b`
 
-> This document describes the present system boundary. It is not a development diary, a production-safety certification, or a claim that every ALLIS subsystem has reached the same level of validation.
+> This document describes the current ALLIS system boundary. It is not a development history, a deployment certificate, or a claim that every subsystem has reached the same level of validation.
 
 ---
 
 ## Abstract
 
-ALLIS is a governed computational and knowledge architecture developed by Kidd's Technical Services. It combines semantic, geographic, temporal, person-linked, memory, provenance, and governance state while keeping information, evidence, claims, authority, and system action distinct.
+ALLIS is a governed computational and knowledge architecture developed by Kidd's Technical Services. It combines semantic, geographic, temporal, person-linked, memory, provenance, and governance state while keeping information, evidence, claims, authority, and system action separate.
 
-The central design principle is simple: **state does not become authority merely because it exists.** Information may be present without being verified. A claim may be well supported without authorizing an action. A user or service may be authenticated without being authorized for a particular transition. A mathematical result may be valid within its formal scope without yet being shown to correspond to the current runtime.
+The core design principle is simple:
 
-For that reason, ALLIS uses multiple evidence and validation levels rather than a single pass/fail label. The engineering record distinguishes what is implemented, what has been observed or demonstrated, what has been formally specified or proven, and what has been shown to correspond to qualified source or runtime behavior.
+> **State does not become authority merely because it exists.**
 
-This document defines the present ALLIS boundary: what belongs to ALLIS, what remains outside it, how major trust and governance boundaries operate, what current evidence supports, and what remains explicitly unresolved. It also distinguishes ALLIS from Ms. Allis, MountainShares/The Commons, Community Champion roles, and individual deployment projects.
+Information can exist without being verified. A claim can be well supported without authorizing an action. A caller can be authenticated without being authorized for a specific transition. A mathematical result can be valid within its formal scope without yet corresponding to the current runtime.
 
----
+ALLIS therefore uses several evidence and validation levels instead of one pass/fail label. The engineering record distinguishes what is implemented, what has been observed or demonstrated, what has been formally specified or proven, and what has been shown to correspond to qualified source or runtime behavior.
 
-## 1. Purpose and Scope
-
-The purpose of this document is to provide a clear, academically rigorous description of ALLIS without requiring the reader to first understand the full engineering history.
-
-It answers five questions:
-
-1. **What is ALLIS?**
-2. **What is inside and outside the ALLIS system boundary?**
-3. **How does ALLIS separate information, evidence, authority, and action?**
-4. **What has been implemented, observed, demonstrated, or formally evaluated?**
-5. **What does the current evidence not establish?**
-
-The detailed engineering history, audit scripts, intermediate failures, superseded configurations, and local evidence artifacts are used to determine which present-tense claims are justified. They are not reproduced here as the narrative of the system.
+This document defines the present ALLIS boundary. It explains what belongs to ALLIS, what remains outside it, how major trust and governance boundaries work, what current evidence supports, and what remains unresolved.
 
 ---
 
-## 2. How to Read ALLIS Evidence Labels
+## 1. Document status and evidence basis
 
-ALLIS does not treat all forms of verification as equivalent.
+This document presents the current system boundary in present tense.
+
+The engineering history is used as evidence. It is not used as the narrative structure of this document.
+
+The current documentation rule is:
+
+```text
+development evidence
+        ↓
+supports present claims
+        ↓
+present-state documentation
+```
+
+The document does not promote a claim because it appears later in a transcript or because a script contains an expected result.
+
+A current claim must be supported by the strongest applicable evidence, including:
+
+1. qualified source identity;
+2. execution status;
+3. evidence integrity or seal status;
+4. predecessor and successor relationships;
+5. runtime observation when required;
+6. formal acceptance state;
+7. later correspondence evidence.
+
+A prepared procedure is not an executed result.  
+An executed result is not automatically an accepted authority state.  
+A historical deployment is not automatically the current runtime.
+
+---
+
+## 2. How to read this document
+
+ALLIS uses several evidence labels. Each label answers a different question.
 
 | Evidence level | Meaning |
 |---|---|
-| **Implemented** | A mechanism exists in the qualified source or system design. |
-| **Observed** | A bounded inspection directly found a current configuration or runtime fact. |
-| **Demonstrated** | A behavior was exercised under a defined test or operational scope. |
-| **Formally Specified** | A property has been expressed precisely enough for formal analysis. |
+| **Implemented** | The mechanism exists in qualified source or in the defined architecture. |
+| **Observed** | A bounded inspection found a current configuration or runtime fact. |
+| **Demonstrated** | A behavior was exercised under a defined scope. |
+| **Formally specified** | A property has been expressed precisely enough for formal analysis. |
 | **Proven** | A theorem or formal property has been established within stated assumptions and scope. |
-| **Machine-Checked** | A formal result has been checked by an appropriate verification tool or formal procedure. |
-| **Source-Correspondent** | The formal model or claim has been shown to map to the qualified source. |
-| **Runtime-Correspondent** | The claim has been shown to map to the observed runtime within the audited scope. |
-| **Not Proven** | The available evidence does not establish the proposition. This does **not** mean the proposition is false. |
-| **Disproven** | Evidence establishes that the proposition, as stated, is false within the stated scope. |
-| **Outside Audited Scope** | The inquiry did not examine the proposition closely enough to support a conclusion. |
+| **Machine-checked** | A formal result has been checked by an appropriate formal method or verification procedure. |
+| **Source-correspondent** | The formal model or claim has been shown to map to qualified source. |
+| **Runtime-correspondent** | The claim has been shown to map to observed runtime within the audited scope. |
+| **Not proven** | The available evidence does not establish the proposition. This does not mean the proposition is false. |
+| **Disproven** | Evidence establishes that the proposition is false within the stated scope. |
+| **Outside audited scope** | The inquiry did not examine the proposition closely enough to support a conclusion. |
 
 Authority uses a separate vocabulary:
 
 - **Authorized**
-- **Not Authorized**
+- **Not authorized**
 - **Executed**
-- **Not Executed**
+- **Not executed**
 - **Open**
 - **Closed**
 - **Unresolved**
 
-These labels answer different questions and should not be collapsed into a generic pass/fail status.
+These labels should not be reduced to a generic pass/fail status.
 
 ---
 
-## 3. What ALLIS Is
+## 3. Key terms
 
-ALLIS is the **Kidd's Technical Services engineering and research platform** for governed computation, knowledge, evidence, location intelligence, and state transition.
+### Qualified source
 
-At a high level, ALLIS is designed to:
+The **qualified source** is the source state that the current evidence record treats as the engineering anchor for a claim.
+
+### Provenance
+
+**Provenance** records where information, evidence, authority, or a state transition came from.
+
+### Authority
+
+**Authority** defines what a person, service, or governed process may do within a specific scope.
+
+### Correspondence
+
+**Correspondence** shows that a formal or architectural claim maps to the implementation or runtime that the claim describes.
+
+### Bounded result
+
+A **bounded result** applies only to the source, runtime surface, theorem scope, or inquiry that was examined.
+
+### Fail closed
+
+A process **fails closed** when missing or unresolved authority prevents a protected transition instead of allowing the transition by default.
+
+---
+
+## 4. What ALLIS is
+
+ALLIS is the Kidd's Technical Services engineering and research platform for governed computation, knowledge, evidence, location intelligence, and state transition.
+
+ALLIS is designed to:
 
 - represent information together with provenance, scope, and governance context;
 - combine semantic and geographic reasoning without treating either as self-authorizing;
@@ -92,31 +142,41 @@ At a high level, ALLIS is designed to:
 - separate identity from authorization;
 - separate observation from proof;
 - separate proof from implementation correspondence;
-- govern high-consequence transitions rather than allowing system state to mutate solely because a computation produced a result.
+- govern high-consequence transitions before they affect committed state.
 
 ALLIS is therefore more than a retrieval system, chatbot, GIS application, or workflow engine. Its defining feature is the relationship among **state, evidence, provenance, authority, and transition**.
 
 ---
 
-## 4. What ALLIS Is Not
+## 5. What ALLIS is not
 
-Several related systems and programs interact with ALLIS but are not identical to it.
+Several related systems and programs interact with ALLIS but remain outside the core ALLIS definition.
 
 ### Ms. Allis
 
-**Ms. Allis** is a governed analytical and advisory intelligence that may operate through ALLIS. Ms. Allis is not the entire ALLIS platform.
+**Ms. Allis** is a governed analytical and advisory intelligence that can operate through ALLIS.
+
+Ms. Allis is not the entire ALLIS platform.
 
 ALLIS provides the computational, evidence, state, and governance environment. Ms. Allis is one intelligence-facing expression of that environment.
 
 ### MountainShares and The Commons
 
-**MountainShares** and **The Commons** are separate governance, community, and economic structures that may use ALLIS services or evidence.
+**MountainShares** and **The Commons** are separate governance, community, and economic structures that can use ALLIS services or evidence.
 
-Their community or economic authority does not automatically become ALLIS system authority, and ALLIS technical authority does not automatically become community governance authority.
+Their community or economic authority does not automatically become ALLIS system authority. ALLIS technical authority does not automatically become community governance authority.
 
 ### Community Champions
 
-**Community Champions** are human participants in a governed stewardship and local-knowledge process. Participation may support observation, training, competency, field practice, and governed contribution.
+**Community Champions** are human participants in a governed stewardship and local-knowledge process.
+
+The model can support:
+
+- observation;
+- training;
+- demonstrated competency;
+- field practice;
+- governed contribution.
 
 Community Champion status does not automatically create:
 
@@ -126,21 +186,17 @@ Community Champion status does not automatically create:
 - authority to validate every local claim;
 - authority to modify ALLIS.
 
-### Deployment Projects
+### Deployment projects
 
-The **New River Gorge Safety & Heritage Mesh Pilot** and related Mount Hope or future Thurmond work are deployment and research-use contexts for ALLIS.
+The **New River Gorge Safety & Heritage Mesh Pilot** and related Mount Hope or future Thurmond work are deployment and research contexts for ALLIS.
 
-A deployment may exercise part of ALLIS, but no single deployment defines the complete system.
+A deployment can exercise part of ALLIS, but no single deployment defines the complete system.
 
 ---
 
-## 5. Core Boundary Principle
+## 6. Core boundary principles
 
-ALLIS is organized around a fundamental non-equivalence:
-
-> **State does not become authority merely because it exists.**
-
-In practical terms:
+ALLIS separates several concepts that many systems combine.
 
 ```text
 information
@@ -159,17 +215,21 @@ execution
     ≠ demonstrated correspondence
 ```
 
-A second principle follows:
+Three principles govern this boundary.
 
-> **A state transition requires evidence of authority for that transition; evidence that a predecessor state exists or completed does not itself authorize the successor.**
+### State does not become authority merely because it exists
 
-A third principle is equally important:
+A record, model output, memory item, service, or configuration does not gain authority only because it is present.
 
-> **Authority itself has provenance.**
+### A state transition requires authority for that transition
 
-ALLIS therefore treats the origin, scope, and validity of authority as information that must itself be traceable.
+Evidence that a prior state exists or completed does not automatically authorize the next state.
 
-A compact formal expression of the boundary is:
+### Authority itself has provenance
+
+ALLIS treats the origin, scope, and validity of authority as traceable state.
+
+A compact form of the boundary is:
 
 ```text
 Exists(state)  ⇏  Authorized(transition)
@@ -179,19 +239,17 @@ Observed(property)  ⇏  Proven(property)
 Proven(formal_property)  ⇏  RuntimeCorrespondent(property)
 ```
 
-These statements are not claims that observation or proof is unimportant. They define which additional evidence is required before one class of statement can be promoted into another.
-
 ---
 
-## 6. System Boundary at a Glance
+## 7. System boundary at a glance
 
-The ALLIS boundary can be understood as a governed flow rather than a single application stack.
+ALLIS is better understood as a governed flow than as one application stack.
 
 ```text
-External information, research, GIS, community observations, services
+External information, research, GIS, community observations, and services
                               │
                               ▼
-                 Governed intake / provenance
+                 Governed intake and provenance
                               │
                               ▼
           Semantic, geographic, temporal, memory,
@@ -204,71 +262,73 @@ External information, research, GIS, community observations, services
                   Evidence-bearing results
                               │
                               ▼
-                 Claim / authority evaluation
+                 Claim and authority evaluation
                               │
                 ┌─────────────┴─────────────┐
                 │                           │
                 ▼                           ▼
-        Authorized transition       Withhold / fail closed
+        Authorized transition       Withhold or fail closed
                 │
                 ▼
         Governed committed state
         or governed external output
 ```
 
-The exact implementation of a boundary may involve several services or components. The architectural rule is more important than any one deployment topology: **computation alone does not create authority to commit, disclose, or mutate state.**
+The exact implementation can use several services or components. The architectural rule remains the same:
+
+> **Computation alone does not create authority to commit, disclose, or mutate state.**
 
 ---
 
-## 7. Governed State Model
+## 8. Governed state model
 
 ALLIS works with several related kinds of state.
 
-### 7.1 Semantic and Information State
+### 8.1 Semantic and information state
 
 Semantic state represents meaning, retrieved knowledge, analytical context, and computational interpretation.
 
-Semantic relevance does not by itself establish truth, authority, or permission to act.
+Semantic relevance does not establish truth, authority, or permission to act.
 
-### 7.2 Geographic State
+### 8.2 Geographic state
 
-Geographic state represents place, spatial relationship, geographic context, and location-linked knowledge.
+Geographic state represents place, spatial relationships, geographic context, and location-linked knowledge.
 
 ALLIS treats place as part of the computational context rather than as a display layer added after reasoning.
 
-Geographic association does not itself prove a fact or grant authority over a place, organization, or community.
+A geographic association does not by itself prove a fact or grant authority over a place, organization, or community.
 
-### 7.3 Temporal State
+### 8.3 Temporal state
 
 Temporal state represents timing, lifecycle, recency, expiration, scheduling, and time-dependent validity.
 
-A declared schedule or decay rule is distinct from evidence that the scheduled process actually executed.
+A declared schedule or decay rule is distinct from evidence that the scheduled process executed.
 
-### 7.4 Person-Linked State
+### 8.4 Person-linked state
 
 ALLIS defines person-linked state as a separately governed class of information.
 
-Person-linked or private state is not treated as ordinary common context. Its use depends on applicable identity, disclosure, provenance, scope, recipient, and lifecycle controls.
+Person-linked or private state is not ordinary common context. Its use depends on applicable identity, disclosure, provenance, scope, recipient, and lifecycle controls.
 
-The architecture is intentionally designed so that lack of required authority results in withholding rather than silent promotion of private state.
+If the required authority is absent, the architecture is designed to withhold protected state instead of silently promoting it.
 
-### 7.5 Memory and Provenance State
+### 8.5 Memory and provenance state
 
-Memory is not treated as an unqualified pool of reusable information.
+ALLIS does not treat memory as an unrestricted pool of reusable information.
 
-The system architecture associates memory and evidence with relevant provenance, scope, identity, temporal, and governance boundaries.
+The architecture associates memory and evidence with the relevant provenance, scope, identity, temporal, and governance boundaries.
 
-### 7.6 Governance and Authority State
+### 8.6 Governance and authority state
 
 Governance state records whether a transition is eligible, permitted, completed, withheld, unresolved, or outside the authority of the current process.
 
-This state is distinct from the substantive information being governed.
+This state is separate from the substantive information that the system governs.
 
 ---
 
-## 8. Identity, Privacy, and Person-Linked Information
+## 9. Identity, privacy, and person-linked information
 
-ALLIS separates several concepts that are often combined in ordinary applications:
+ALLIS separates concepts that many applications combine.
 
 ```text
 identity
@@ -281,25 +341,25 @@ identity
 
 An authenticated caller is not automatically authorized for every action.
 
-Likewise, knowing which person a record concerns does not automatically authorize the system to disclose, reuse, or propagate that record.
+Likewise, identifying the person connected to a record does not automatically authorize the system to disclose, reuse, or propagate that record.
 
-The person-linked information boundary is designed around several principles:
+The person-linked information boundary follows these principles:
 
-- private state should remain distinct from common reasoning state;
-- identity-bearing information should not be treated as ordinary public context;
-- caller-supplied identity claims are not sufficient merely because they were supplied;
-- disclosure and recipient scope matter separately from authentication;
-- the absence of required authority should result in withholding or fail-closed behavior rather than inferred permission.
+- private state remains separate from common reasoning state;
+- identity-bearing information is not ordinary public context;
+- caller-supplied identity claims are not sufficient authority by themselves;
+- disclosure scope and recipient scope remain separate from authentication;
+- missing authority results in withholding or fail-closed behavior instead of inferred permission.
 
-This document describes those as architectural boundaries. It does not claim universal runtime correspondence for every person-linked-state path unless such correspondence has been separately established.
+This section describes the architectural boundary. It does not claim universal runtime correspondence for every person-linked state path unless later evidence establishes that correspondence.
 
 ---
 
-## 9. Trust and Operational Authority
+## 10. Trust and operational authority
 
-ALLIS uses multiple trust and governance controls rather than one universal authorization check.
+ALLIS uses several trust and governance controls rather than one universal authorization check.
 
-The architecture includes separate concerns for:
+The architecture separates:
 
 - caller identity;
 - constitutional or policy admission;
@@ -309,56 +369,66 @@ The architecture includes separate concerns for:
 - evidence and receipt generation;
 - transition-specific authorization.
 
-These controls should not be understood as interchangeable.
+These controls are related, but they are not interchangeable.
 
-For example, a caller may be authenticated but still lack permission to perform a governed operation. A policy condition may pass without granting unrelated mutation authority. A completed audit may establish evidence without authorizing the next audit.
+For example:
 
-The engineering record also does not justify reducing every governed operation to one universal fixed runtime sequence. Where topology is bounded or unresolved, the documentation preserves that uncertainty rather than forcing the system into an assumed diagram.
+- a caller can be authenticated and still lack authority for a governed operation;
+- a policy condition can pass without granting unrelated mutation authority;
+- a completed audit can establish evidence without authorizing the next audit.
 
----
-
-## 10. Governed Computation and Modification
-
-ALLIS includes a governed modification architecture intended to keep proposed changes separate from committed live state until defined governance conditions are satisfied.
-
-The current evidence records a **69-DGM chain corresponding to 23 connectors across three stages** within the audited modification architecture. The design uses staged or sandboxed processing, governance controls, and rollback boundaries before a candidate modification can affect committed state.
-
-This is an important distinction:
-
-> **A proposed modification is not the same as an authorized production modification.**
-
-The engineering evidence contains bounded proof and runtime evidence for portions of the current DGM architecture. It does **not** establish a universal theorem that every possible production mutation is safe.
-
-Accordingly, this document does not use phrases such as **“mathematically proven safe production mutation”** as a whole-system claim.
+The engineering record also does not support one universal fixed runtime sequence for every governed operation. Where topology remains bounded or unresolved, the documentation preserves that uncertainty.
 
 ---
 
-## 11. Evidence, Claims, and Provenance
+## 11. Governed computation and modification
 
-ALLIS treats evidence as part of the architecture rather than as documentation added after the fact.
+ALLIS includes a governed modification architecture that keeps proposed changes separate from committed live state until defined governance conditions are satisfied.
 
-A strong ALLIS claim should be traceable to questions such as:
+Within the qualified governed-modification tract, the engineering record establishes a **69-evaluation architecture produced by 23 connector evaluations across three successive stages**.
 
-- What evidence supports this claim?
+The design uses:
+
+- staged evaluation;
+- sandboxed processing;
+- governance controls;
+- rollback boundaries;
+- protected transition rules.
+
+A proposed modification is not the same as an authorized production modification.
+
+The engineering evidence contains bounded source and runtime results for portions of the current DGM architecture. The existing evidence does not establish a universal theorem that every possible production mutation is safe.
+
+This document therefore does not describe ALLIS as having a whole-system, mathematically proven production-mutation path.
+
+---
+
+## 12. Evidence, claims, and provenance
+
+ALLIS treats evidence as part of the architecture rather than as documentation added after a system action.
+
+A strong ALLIS claim should answer these questions:
+
+- What evidence supports the claim?
 - What inquiry produced the evidence?
-- What source or runtime was examined?
-- Was the inquiry completed?
-- Was its evidence sealed or otherwise integrity-checked?
+- What source or runtime did the inquiry examine?
+- Did the inquiry complete?
+- Did the evidence pass its integrity checks?
 - What scope did the inquiry cover?
-- What conclusions does that scope allow?
+- What conclusions does that scope support?
 - What remains unresolved?
 - What authority permitted the inquiry?
 - What successor action, if any, is authorized?
 
 This leads to a central research characteristic of ALLIS:
 
-> **Evidence is not only stored; the authority and scope of the evidence-producing process are themselves part of the record.**
+> **The system records not only evidence, but also the scope and authority of the process that produced that evidence.**
 
 ---
 
-## 12. Source, Configuration, Runtime, and Correspondence
+## 13. Source, configuration, runtime, and correspondence
 
-ALLIS documentation maintains a strict distinction among several engineering states:
+ALLIS documentation keeps several engineering states separate.
 
 ```text
 implemented source
@@ -369,21 +439,21 @@ implemented source
 ≠ operational authority
 ```
 
-A source file may contain a capability that is not instantiated in the running system.
+A source file can contain a capability that is not active in the runtime.
 
-A configuration may declare a service or authority path that is not currently active.
+A configuration can declare a service or authority path that is not currently instantiated.
 
-A runtime observation may establish that a component exists without establishing that every client uses it.
+A runtime observation can establish that a component exists without establishing that every client uses it.
 
-A valid formal theorem may describe a model without establishing that the current runtime corresponds to that model.
+A formal theorem can describe a model without establishing that the current runtime corresponds to that model.
 
 This distinction is essential to the accuracy of the ALLIS research record.
 
 ---
 
-## 13. Formal Validation and Proof Boundary
+## 14. Formal validation and proof boundary
 
-ALLIS uses formal analysis where the problem and available evidence support it.
+ALLIS uses formal analysis when the problem and available evidence support it.
 
 The formal program includes work on:
 
@@ -396,7 +466,7 @@ The formal program includes work on:
 - source correspondence;
 - runtime correspondence.
 
-The proof process is intentionally staged.
+The proof process is staged.
 
 ```text
 qualified source domain
@@ -405,7 +475,7 @@ directed graph
         ↓
 effect-sink adjudication
         ↓
-governance / cut analysis
+governance or cut analysis
         ↓
 formal theorem
         ↓
@@ -416,9 +486,9 @@ source correspondence
 runtime correspondence
 ```
 
-No stage should be silently promoted into the next.
+Each stage supports a different class of claim.
 
-### Example: bounded graph work
+### 14.1 Example: bounded graph analysis
 
 Within the audited mathematical tract, the A5 work is reported as closing four qualified root/component pairs into frozen intraprocedural control-flow graphs with:
 
@@ -432,9 +502,9 @@ The subsequent A5A work reduced **76 broad effect candidates** into:
 - **47 source-bound or structural candidates**
 - **29 unresolved source symbols**
 
-These are meaningful formal-engineering results. They are not, by themselves, a whole-system theorem.
+These are meaningful formal-engineering results. They are not a whole-system theorem.
 
-### Example: BBB bounded result
+### 14.2 Example: bounded BBB result
 
 A later bounded static result established:
 
@@ -442,7 +512,7 @@ A later bounded static result established:
 BBB_NON_DOMINANCE_BOUNDED_STATIC_PROOF_ESTABLISHED=YES
 ```
 
-while preserving:
+The same result preserved:
 
 ```text
 BBB_DOMINATES_COPY2_MUTATION_SINK=NO
@@ -450,54 +520,69 @@ PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
 SYSTEM_PROVEN=NO
 ```
 
-This is the intended ALLIS use of formal language: the result is stated at the scope actually established.
+This is the intended ALLIS use of formal language: the claim stays within the scope that the evidence establishes.
 
 ---
 
-## 14. Current Bounded Runtime Findings
+## 15. Current correspondence findings
 
-The current architecture record includes several important runtime observations.
+The current architecture record includes several important bounded runtime findings.
 
-### 14.1 BBB
+### 15.1 BBB
 
-The **BBB static policy architecture is supported**.
+**Architectural role:**  
+The BBB acts as a policy boundary in the governed architecture.
 
-Within the audited Docker and systemd metadata surfaces, a dedicated current BBB runtime binding was not established.
+**Current evidence:**  
+Static policy architecture is supported.
 
-That bounded result does **not** establish universal runtime absence. BBB logic may be composed differently, embedded elsewhere, or remain unresolved under the audited topology.
+A bounded audit did not establish a dedicated current BBB runtime binding on the Docker and systemd metadata surfaces that it examined.
 
-Therefore:
+**Boundary of claim:**  
+The audit did not prove that BBB logic is globally absent from the runtime.
+
+Current documentation therefore records:
 
 - static architecture: **supported**;
 - dedicated runtime binding on audited surfaces: **not established**;
 - global absence: **not established**.
 
-### 14.2 Chroma
+### 15.2 Chroma
 
+**Architectural role:**  
+Chroma participates in the system's memory and retrieval architecture.
+
+**Current evidence:**  
 A running shared `jarvis-chroma` topology was established within the authorized runtime-metadata scope.
 
-Observed characteristics include a persistent data binding and declared dependent services.
+The observed topology includes persistent data binding and declared dependent services.
 
-The audit did **not** establish:
+**Boundary of claim:**  
+The audit did not establish:
 
 - global canonical Chroma authority;
-- that every active client resolves to that instance.
+- universal resolution of every active client to that instance.
 
-Therefore the observed shared topology is documented without promoting it to universal canonical authority.
+The documentation therefore treats the observed shared topology as bounded runtime evidence, not as universal canonical authority.
 
-### 14.3 Temporal / GBIM Decay
+### 15.3 Temporal and GBIM decay
 
+**Architectural role:**  
+Temporal state governs lifecycle and time-dependent behavior.
+
+**Current evidence:**  
 A current-user scheduled decay cron declaration was established.
 
+**Boundary of claim:**  
 The bounded audit did not establish:
 
 - actual decay-tick execution history;
-- that decay execution was absent;
+- absence of actual decay execution;
 - the effective GBIM value path.
 
-A declared schedule therefore remains distinct from demonstrated execution.
+A declared schedule remains distinct from demonstrated execution.
 
-### 14.4 Runtime Observation Stage
+### 15.4 Runtime observation stage
 
 The authorized PASS09K runtime-observation stage executed eight authorized observation steps with:
 
@@ -508,60 +593,60 @@ The authorized PASS09K runtime-observation stage executed eight authorized obser
 - **no scope expansion**
 - **no prohibited activity**
 
-That establishes clean execution of the authorized observation stage.
+This establishes clean execution of the authorized observation stage.
 
-It does **not** by itself establish that every architectural proposition tested by those observations was confirmed.
+It does not establish that every architectural proposition tested by those observations was confirmed.
 
 ---
 
-## 15. PASS09K and the Audit Authority Boundary
+## 16. PASS09K and audit authority
 
-PASS09K was an **audit scope**, not a development, deployment, or production-mutation authorization.
+PASS09K was an audit scope. It was not a development, deployment, or production-mutation authorization.
 
-Its runtime-metadata work was bounded to defined architectural questions. After the authorized groups were exhausted, remaining residuals were returned to the parent governance ledger.
+Its runtime-metadata work was limited to defined architectural questions. After the authorized groups were exhausted, remaining residuals returned to the parent governance ledger.
 
-The current record therefore supports these statements:
+The current evidence supports these statements:
 
 - PASS09K is **closed**;
 - its authorized runtime-metadata scope is **exhausted**;
 - additional PASS09K observation is not automatically authorized;
-- residual questions may remain after a bounded audit closes;
+- residual questions can remain after a bounded audit closes;
 - closure of PASS09K does not establish whole-system proof;
 - closure of PASS09K does not establish a universal production-mutation safety theorem.
 
 A bounded post-PASS09K resolver examined the controlling parent-authority chain and found **no explicit authorized successor within that chain**.
 
-That conclusion is limited to the controlling authority chain. It does not establish universal absence across every historical evidence artifact.
+That conclusion applies only to the controlling authority chain. It does not establish universal absence across every historical evidence artifact.
 
-A proposed successor record appears in the engineering history, but this system-boundary document does not promote that proposed successor into current authority without separate executed and sealed evidence.
+A proposed successor record appears in the engineering history. This document does not promote that proposed record into current authority without separate executed and sealed evidence.
 
 ---
 
-## 16. Ms. Allis Boundary
+## 17. Ms. Allis boundary
 
-Ms. Allis should be understood as an intelligence-facing layer operating through governed ALLIS capabilities.
+Ms. Allis is an intelligence-facing layer that operates through governed ALLIS capabilities.
 
-She may:
+Ms. Allis can:
 
 - reason over information made available within the relevant scope;
 - explain evidence and claims;
 - support research and analysis;
 - communicate system status when grounded in governed evidence;
-- help users navigate information and services where authority permits.
+- help people navigate information and services when authority permits.
 
-Ms. Allis does not independently create system authority simply because she can reason about an action.
+Ms. Allis does not create system authority by reasoning about an action.
 
-A conversational request is therefore not equivalent to authorization for a protected state transition.
+A conversational request is not equivalent to authorization for a protected state transition.
 
 ---
 
-## 17. Human and Institutional Authority
+## 18. Human and institutional authority
 
-ALLIS is designed to support human and institutional decision-making, not replace it.
+ALLIS supports human and institutional decision-making. It does not replace it.
 
-Human observations may contribute evidence. Community knowledge may provide important context. Community Champions may support local stewardship and governed feedback.
+Human observations can contribute evidence. Community knowledge can provide important context. Community Champions can support local stewardship and governed feedback.
 
-However:
+The architecture preserves these distinctions:
 
 ```text
 observation
@@ -580,13 +665,13 @@ system evidence
 ≠ government or institutional decision authority
 ```
 
-Where a government agency, university, nonprofit, community organization, or other institution holds independent authority, that authority remains its own.
+When a government agency, university, nonprofit, community organization, or other institution holds independent authority, that authority remains its own.
 
-ALLIS may support the evidence process without absorbing that institution's legal or organizational authority.
+ALLIS can support the evidence process without absorbing that institution's legal or organizational authority.
 
 ---
 
-## 18. Deployment and Pilot Boundary
+## 19. Deployment and pilot boundary
 
 The New River Gorge Safety & Heritage Mesh Pilot is a practical research and deployment context for ALLIS.
 
@@ -602,13 +687,13 @@ The pilot can exercise elements of:
 
 The pilot does not redefine the underlying ALLIS architecture.
 
-Likewise, planning, funding, authorization, installation, testing, and demonstrated outcomes are distinct states.
+Planning, funding, authorization, installation, testing, and demonstrated outcomes remain separate states.
 
-A project being designed or funded does not establish that it has been installed. Installation does not by itself establish tested performance. Tested performance does not automatically establish long-term community or institutional outcomes.
+A project being designed or funded does not establish that it has been installed. Installation does not establish tested performance. Tested performance does not automatically establish long-term community or institutional outcomes.
 
 ---
 
-## 19. Public and Research Interface Boundary
+## 20. Public and research interface boundary
 
 A public, university-facing, or community-facing interface should present governed ALLIS evidence without becoming an independent source of authority.
 
@@ -621,12 +706,12 @@ governed read-only export
         ↓
 versioned publication state
         ↓
-public / research interface
+public or research interface
 ```
 
-This keeps presentation separate from live-system mutation.
+This pattern keeps presentation separate from live-system mutation.
 
-A human-facing interface should fail closed epistemically:
+A human-facing interface should preserve uncertainty.
 
 | Condition | Display |
 |---|---|
@@ -635,17 +720,17 @@ A human-facing interface should fail closed epistemically:
 | The inquiry did not cover the question | **Outside audited scope** |
 | No current successor authority is established | **No authorized successor** |
 
-Missing data should never be automatically converted into **healthy**, **successful**, **proven**, **authorized**, or **canonical**.
+Missing data should not be converted into **healthy**, **successful**, **proven**, **authorized**, or **canonical**.
 
-This section defines the publication boundary. It does not claim that every proposed public interface or routing component has already been deployed.
+This section defines the publication boundary. It does not claim that every proposed public interface, reverse tunnel, Caddy route, Cloudflare route, or publication exporter is already deployed.
 
 ---
 
-## 20. Explicit Residuals and Nonclaims
+## 21. Current validation boundaries
 
-The present evidence supports substantial architectural and formal work, but several broader claims remain intentionally unasserted.
+The current evidence supports substantial architectural, runtime, and formal work. It does not support several broader claims.
 
-This document does **not** claim that:
+This document does not claim that:
 
 - ALLIS is wholly mathematically proven;
 - a universal production-mutation safety theorem has been established;
@@ -655,68 +740,90 @@ This document does **not** claim that:
 - `jarvis-chroma` is the universal canonical Chroma authority;
 - every active client uses the observed `jarvis-chroma` instance;
 - a declared temporal-decay schedule proves actual decay execution;
-- every person-linked/private-state path has current runtime correspondence;
+- every person-linked or private-state path has current runtime correspondence;
 - completion of PASS09K creates automatic successor authority;
-- a proposed successor authority becomes valid merely because it appears in a script or design record;
-- a public GUI, reverse tunnel, Caddy route, Cloudflare route, or publication exporter is deployed unless separately verified;
-- a bounded proof may be generalized beyond its stated source, runtime, or theorem scope.
+- a proposed successor authority becomes valid because it appears in a script or design record;
+- a public GUI or publication path is deployed unless separate evidence verifies it;
+- a bounded proof can be generalized beyond its stated source, runtime, or theorem scope.
 
-These statements are not disclaimers added after the architecture. They are part of the system boundary itself.
-
----
-
-## 21. Document Authority and Update Rule
-
-This document is controlled by the strongest qualified evidence available for each claim.
-
-Evidence is not ordered merely by where it appears in a transcript or repository.
-
-Where historical and current records differ, priority should be determined by:
-
-1. evidence timestamp;
-2. qualified source identity;
-3. bound predecessor/successor relationship;
-4. execution status;
-5. evidence integrity or seal status;
-6. formal acceptance state;
-7. later correspondence evidence.
-
-A prepared script is not an executed result.
-
-Expected output is not observed output.
-
-An observed result is not automatically an accepted authority state.
-
-A historical deployment is not automatically the current runtime.
-
-This update rule allows the public documentation to remain present-tense while preserving the engineering discipline that supports it.
+These boundaries are part of the architecture record. They are not post hoc disclaimers.
 
 ---
 
-## 22. Research Significance
+## 22. Relationship to the thesis and university portfolio
 
-ALLIS is being developed not only as software but as a research object concerned with how computational systems represent and govern knowledge, place, identity, time, evidence, and authority.
+The ALLIS thesis and the KTS ALLIS technical documentation serve different roles.
 
-The research problem is therefore broader than whether an AI system can produce a useful answer.
+### Thesis
+
+The thesis explains the research lineage, theoretical development, and broader intellectual framework.
+
+### KTS ALLIS technical documentation
+
+The KTS ALLIS repository describes the current engineering and research system.
+
+### This system-boundary document
+
+This document defines the present boundary between:
+
+- architecture;
+- implementation;
+- runtime;
+- evidence;
+- authority;
+- formal proof;
+- correspondence;
+- external systems and deployments.
+
+The university portfolio can therefore use this document as a current technical reference while using the thesis as the broader research narrative.
+
+The thesis does not determine the present system state when later qualified engineering evidence supersedes an older implementation description.
+
+---
+
+## 23. Research significance
+
+ALLIS is both software and a research object.
+
+Its research questions extend beyond whether an AI system can generate a useful answer.
 
 ALLIS asks questions such as:
 
-- What makes information admissible for a particular use?
+- What makes information admissible for a specific use?
 - How should provenance travel with computational state?
-- How should person-linked state remain separated from common knowledge?
-- How can geographic and temporal context affect meaning without automatically creating authority?
-- How should systems distinguish observed behavior from formal proof?
-- How can formal claims be tied back to qualified source and observed runtime?
+- How should person-linked state remain separate from common knowledge?
+- How should geographic and temporal context affect meaning without automatically creating authority?
+- How should a system distinguish observed behavior from formal proof?
+- How can a formal claim be tied back to qualified source and observed runtime?
 - How can community knowledge contribute without being mistaken for institutional authority?
-- How can a computational system preserve uncertainty rather than silently converting it into confidence or permission?
+- How can a computational system preserve uncertainty instead of converting uncertainty into confidence or permission?
 
-These questions make the system boundary part of the research methodology rather than only an engineering diagram.
+These questions make the system boundary part of the research method rather than only an engineering diagram.
 
 ---
 
-## 23. System Boundary Summary
+## 24. Evidence families referenced by this document
 
-ALLIS is a governed computational and knowledge architecture that binds information, state transitions, evidence, claims, and operational authority to provenance and scope.
+This document summarizes results from several evidence families.
+
+| Evidence family | Role in the current boundary |
+|---|---|
+| **Qualified source baseline** | Defines the engineering source anchor used for present-state claims. |
+| **MATHAUDIT A4F1 / A5 / A5A** | Supports the bounded source-domain, graph, and effect-candidate analysis. |
+| **D1R5F** | Supports the bounded BBB non-dominance result while preserving the larger production-mutation theorem as unproven. |
+| **PASS09J** | Supports architecture, governance, DGM, trust, and documentation-baseline work. |
+| **PASS09K** | Supports bounded runtime-metadata observation and adjudication. |
+| **PASS09K R8** | Supports the completed authorized runtime-observation stage. |
+| **PASS09K R10** | Supports formal closeout and return of residuals to the parent governance ledger. |
+| **Post-PASS09K resolver** | Supports the bounded conclusion that the controlling parent-authority chain contained no explicit successor at the time of that inquiry. |
+
+Detailed evidence artifacts remain part of the engineering evidence record. This document uses them to support current claims without reproducing the full audit history.
+
+---
+
+## 25. Conclusion
+
+ALLIS is a governed computational and knowledge architecture that binds information, evidence, claims, state transitions, and operational authority to provenance and scope.
 
 Its present engineering record includes:
 
@@ -727,20 +834,12 @@ Its present engineering record includes:
 - current runtime observations within bounded audit scopes;
 - structured evidence and provenance records;
 - bounded formal and mathematical results;
-- explicit residual and nonclaim handling.
+- explicit handling of unresolved claims.
 
-The current evidence does **not** establish a whole-system mathematical proof or a universal production-mutation safety theorem.
+The current evidence does not establish a whole-system mathematical proof or a universal production-mutation safety theorem.
 
-Accordingly, ALLIS documentation follows a conservative rule:
+The documentation therefore follows one final rule:
 
-> **Claims remain limited to the source, runtime, authority, evidence, and correspondence scopes actually demonstrated.**
+> **Claims remain limited to the source, runtime, authority, evidence, and correspondence scopes that the record actually supports.**
 
-This is not a limitation of the documentation method. It is a defining feature of the ALLIS architecture.
-
----
-
-## 24. Short Form
-
-For readers who need the boundary in one paragraph:
-
-> **ALLIS is a governed computational and knowledge architecture developed by Kidd's Technical Services. It separates information from evidence, evidence from claims, claims from authority, and authority from execution. Semantic, geographic, temporal, person-linked, memory, and governance state may participate in computation, but no state becomes authoritative merely because it exists. ALLIS uses separate validation levels for implementation, observation, demonstration, formal specification, proof, machine checking, and source/runtime correspondence. Its current engineering record supports meaningful bounded architectural, runtime, and formal results while retaining explicit unresolved areas. ALLIS therefore does not claim whole-system mathematical proof or universal production-mutation safety; each claim remains limited to the evidence and authority scope actually established.**
+That rule is not separate from ALLIS. It is part of the architecture itself.
