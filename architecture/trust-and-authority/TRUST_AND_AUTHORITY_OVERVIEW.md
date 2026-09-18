@@ -1,161 +1,54 @@
-# ALLIS deployment model
+# ALLIS trust and authority overview
 
-## Overview
+## Purpose
 
-**ALLIS — the Artificial Learning and Location Intelligence System** is a governed computational platform developed by Kidd's Technical Services.
+This document defines the high-level trust and authority model of **ALLIS — the Artificial Learning and Location Intelligence System** developed by Kidd's Technical Services.
 
-This document defines how ALLIS is instantiated in a specific deployment while preserving the distinction between:
+It describes how ALLIS distinguishes identity, authentication, authorization, disclosure authority, governance authority, and operation authority, and how those distinctions constrain protected state transitions.
 
-- the qualified ALLIS architecture;
-- deployment-specific configuration;
-- external infrastructure;
-- local data and geographic context;
-- human and institutional authority;
-- observed runtime behavior;
-- deployment evidence.
+This document is evidentiary in the sense that its architectural claims are limited to the qualified ALLIS baseline and the supporting validation record. It does not treat architectural definition as proof that every trust or authority path has reached the same level of implementation, runtime correspondence, or formal verification.
 
-A deployment applies ALLIS to a bounded environment. It does not redefine the underlying platform.
-
-> **Core rule:** A deployment instantiates ALLIS; it does not redefine ALLIS.
+Detailed implementation, measurement, formal-verification, correspondence, and evidence records are maintained elsewhere in the repository.
 
 ---
 
 ## 1. Document status
 
-**Document role:** Architecture specification  
-**Scope:** Deployment structure and deployment boundaries  
-**Evidence basis:** Current qualified ALLIS architecture and documented deployment contexts  
-**Implementation status:** Deployment-specific  
-**Runtime status:** Must be established separately for each deployment  
-**Formal status:** Not inferred from this architecture document  
+**Document role:** Architectural baseline  
+**Scope:** Trust, authority, and protected-transition model  
+**Evidence basis:** Current qualified ALLIS architecture and supporting validation record  
+**Mathematical status:** Architectural definitions only unless separately formalized  
+**Runtime status:** Not inferred from architecture alone  
 
-This document describes the canonical deployment model. It does not claim that every described component is active in every deployment or that a proposed deployment has been installed, tested, or evaluated.
+This document uses the following rule:
+
+> **Authority must be established for the transition being performed. It is not inferred merely from identity, system state, prior completion, or technical capability.**
 
 ---
 
-## 2. Deployment definition
+## 2. Trust and authority in ALLIS
 
-An ALLIS deployment is a bounded runtime instance in which the qualified ALLIS architecture is combined with local configuration, infrastructure, data, authority, and interfaces.
+ALLIS does not treat trust as a single permission granted to a user, service, or piece of information.
 
-At a high level:
+Instead, the architecture separates several questions:
 
 ```text
-qualified ALLIS baseline
-        +
-deployment configuration
-        +
-local data and geographic context
-        +
-runtime infrastructure
-        +
-external authority and governance
-        +
-measurement and evidence
+Who or what is making the request?
         ↓
-bounded ALLIS deployment
+What identity has been established?
+        ↓
+What action is being requested?
+        ↓
+What state, subject, or resource is affected?
+        ↓
+What policy and authority apply?
+        ↓
+Is the requested transition permitted?
 ```
 
-The qualified ALLIS baseline defines the system architecture.
+This separation allows ALLIS to distinguish between knowing **who** is involved and determining **what that actor may do**.
 
-The deployment defines how that architecture is instantiated for a particular place, organization, research environment, or use case.
-
----
-
-## 3. Canonical deployment architecture
-
-```text
-                     EXTERNAL AUTHORITY DOMAIN
-        people · institutions · site governance · policy
-                              │
-                              │ authority, identity,
-                              │ permissions, constraints
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  ALLIS DEPLOYMENT BOUNDARY                  │
-│                                                             │
-│  1. Interface layer                                         │
-│     user, operator, application, research, or API access    │
-│                              │                              │
-│                              ▼                              │
-│  2. Governed ingress                                        │
-│     source · provenance · scope · identity context          │
-│                              │                              │
-│                              ▼                              │
-│  3. State layer                                             │
-│     semantic · geographic · temporal · person-linked        │
-│     memory/provenance · governance/authority                │
-│                              │                              │
-│                              ▼                              │
-│  4. Governed computation                                    │
-│     retrieval · reasoning · analysis · state evaluation     │
-│                              │                              │
-│                              ▼                              │
-│  5. Trust and authority evaluation                          │
-│     authentication · authorization · disclosure · operation │
-│                              │                              │
-│                              ▼                              │
-│  6. Protected transition control                            │
-│     retain · promote · disclose · modify · external action  │
-│                              │                              │
-│                              ▼                              │
-│  7. Evidence and provenance                                 │
-│     transition record · result lineage · validation context │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                    EXTERNAL SYSTEMS / WORLD
-```
-
-This diagram is conceptual. A deployment can distribute these functions across multiple services, processes, machines, or network locations.
-
-The boundary is defined by function and authority, not by a single container or host.
-
----
-
-## 4. Required deployment functions
-
-A deployment must preserve the following architectural functions.
-
-### 4.1 Governed ingress
-
-Incoming information must retain enough context to support its permitted use.
-
-This can include:
-
-- source;
-- provenance;
-- scope;
-- time;
-- geographic context;
-- identity context;
-- applicable authority.
-
-Availability to the system does not automatically make incoming information verified or authoritative.
-
-### 4.2 State representation
-
-The deployment can use the state classes defined in `architecture/state-models/STATE_MODEL_OVERVIEW.md`:
-
-- semantic and informational state;
-- geographic and spatial state;
-- temporal state;
-- person-linked state;
-- memory and provenance state;
-- governance and authority state.
-
-Not every deployment must use every state class.
-
-### 4.3 Governed computation
-
-The deployment can perform retrieval, analysis, reasoning, comparison, and other computational operations over available state.
-
-Computation does not itself authorize retention, disclosure, modification, or action.
-
-### 4.4 Trust and authority evaluation
-
-Protected transitions remain subject to the trust model defined in `architecture/trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md`.
-
-The deployment must preserve distinctions among:
+A central architectural relationship is:
 
 ```text
 identity
@@ -166,17 +59,284 @@ identity
 ≠ operation authority
 ```
 
-### 4.5 Protected transition control
+These concepts can interact, but they are not interchangeable.
 
-The deployment must control transitions that can change the status, availability, or effect of governed state.
+---
 
-Examples include:
+## 3. Identity
+
+### Architectural definition
+
+Identity represents the relationship between an actor, subject, service, or other recognized entity and the state or request being evaluated.
+
+Identity can be relevant to questions such as:
+
+- Who is making the request?
+- Whom does the information concern?
+- Which subject is associated with a memory or record?
+- Which service or process is attempting an operation?
+
+### Evidence basis
+
+Identity-aware processing is part of the qualified ALLIS architecture through person-linked state, authentication interfaces, subject relationships, disclosure controls, and protected-operation handling.
+
+### Boundary of claim
+
+Identity alone does not establish permission.
+
+Knowing who an actor is does not determine whether that actor may:
+
+- access protected state;
+- disclose person-linked information;
+- retain information;
+- modify protected state;
+- perform an external action.
+
+---
+
+## 4. Authentication
+
+### Architectural definition
+
+Authentication establishes whether a claimed caller or service identity has been sufficiently verified for the relevant interaction.
+
+Authentication answers:
+
+> **Who or what is making this request?**
+
+It does not answer:
+
+> **Is this request permitted?**
+
+### Evidence basis
+
+Authentication is part of the qualified ALLIS trust architecture through caller-identity and protected-access controls.
+
+### Boundary of claim
+
+Successful authentication does not automatically grant:
+
+- disclosure authority;
+- modification authority;
+- governance authority;
+- authority over another subject;
+- authority for unrelated operations.
+
+Authentication is therefore a prerequisite for some transitions, not a universal authorization state.
+
+---
+
+## 5. Authorization
+
+### Architectural definition
+
+Authorization determines whether an authenticated or otherwise recognized actor may perform a specific action within a defined scope.
+
+Authorization can depend on:
+
+- actor identity;
+- subject or resource;
+- requested operation;
+- purpose;
+- recipient;
+- provenance;
+- policy;
+- temporal validity;
+- other governance conditions.
+
+Authorization is transition-specific.
+
+The same actor can be authorized for one operation and not authorized for another.
+
+### Evidence basis
+
+Operation-specific authorization is part of the qualified ALLIS architecture through protected-transition, disclosure, promotion, and modification controls.
+
+### Boundary of claim
+
+Authorization should not be generalized beyond the scope in which it was established.
+
+For example:
+
+```text
+authorized to read
+    ≠ authorized to disclose
+
+authorized to analyze
+    ≠ authorized to retain
+
+authorized to retain
+    ≠ authorized to modify
+
+authorized for one subject
+    ≠ authorized for another subject
+```
+
+---
+
+## 6. Disclosure authority
+
+### Architectural definition
+
+Disclosure authority determines whether protected information may be released to a particular recipient for a particular purpose and scope.
+
+This is especially important for person-linked or otherwise restricted state.
+
+Disclosure authority can depend on:
+
+- subject identity;
+- recipient;
+- purpose;
+- information scope;
+- provenance;
+- temporal validity;
+- applicable consent or governance conditions.
+
+### Evidence basis
+
+Disclosure control is part of the qualified ALLIS architecture through person-linked state, privacy controls, recipient scope, and protected-use boundaries.
+
+### Boundary of claim
+
+Possession of information does not create authority to disclose it.
+
+Likewise:
+
+```text
+available to computation
+    ≠ available to recipient
+
+authorized to analyze
+    ≠ authorized to disclose
+```
+
+If disclosure authority is absent or unresolved, protected information should remain unavailable to the proposed recipient.
+
+---
+
+## 7. Governance authority
+
+### Architectural definition
+
+Governance authority determines whether a transition satisfies the applicable governance conditions of the ALLIS architecture.
+
+Governance can apply to actions such as:
+
+- promoting candidate state;
+- retaining protected information;
+- disclosing restricted information;
+- modifying protected state;
+- authorizing an external action.
+
+Governance authority is not merely a record that a prior step occurred. It represents the authority applicable to the current transition.
+
+### Evidence basis
+
+Governance authority is part of the qualified ALLIS architecture through policy checks, protected-transition controls, promotion boundaries, and authority-aware state handling.
+
+### Boundary of claim
+
+Completion of one governed process does not automatically authorize another.
+
+A prior state can establish eligibility or evidence without establishing successor authority.
+
+The controlling principle is:
+
+> **A transition requires authority for that transition.**
+
+---
+
+## 8. Operation authority
+
+### Architectural definition
+
+Operation authority determines whether a protected action may be executed.
+
+This is the final distinction between the system being technically capable of performing an action and being permitted to perform it.
+
+Examples of protected actions can include:
+
+- committing state;
+- modifying protected data;
+- promoting candidate state;
+- disclosing restricted information;
+- triggering an external action.
+
+### Evidence basis
+
+Operation-specific authority is part of the qualified ALLIS architecture through governed computation and protected-transition controls.
+
+### Boundary of claim
+
+Technical capability is not equivalent to authority.
+
+```text
+can execute
+    ≠ may execute
+```
+
+Likewise, evidence that an operation is possible does not itself authorize the operation.
+
+---
+
+## 9. Authority provenance
+
+ALLIS treats authority as provenance-bearing state.
+
+Authority should be traceable to questions such as:
+
+- Who or what established the authority?
+- What action does the authority cover?
+- Which actor does it apply to?
+- Which subject or resource does it concern?
+- What purpose is permitted?
+- Which recipient is permitted?
+- When does the authority begin?
+- When does it expire?
+- Can it be revoked?
+- What evidence supports its current validity?
+
+This leads to a central architectural principle:
+
+> **Authority itself has provenance.**
+
+Authority should therefore not be inferred solely because a system component, record, request, or prior process exists.
+
+---
+
+## 10. Protected transitions
+
+ALLIS applies trust and authority controls to transitions that can change the status, availability, or effect of governed state.
+
+A simplified model is:
+
+```text
+candidate state or requested action
+                │
+                ▼
+          identity context
+                │
+                ▼
+        authentication where required
+                │
+                ▼
+        policy / governance evaluation
+                │
+                ▼
+        transition-specific authority
+                │
+        ┌───────┴────────┐
+        ▼                ▼
+   permit transition   withhold / fail closed
+```
+
+Protected transitions can include:
 
 ```text
 temporary context
     → retained memory
 
-candidate result
+candidate claim
     → promoted state
 
 private state
@@ -185,382 +345,189 @@ private state
 candidate modification
     → committed state
 
-computed result
+computed recommendation
     → external action
 ```
 
-### 4.6 Evidence and provenance
+The exact controls can differ by transition.
 
-Protected transitions should preserve enough evidence to establish what occurred, under what scope, and under what authority.
-
----
-
-## 5. Deployment-specific components
-
-A deployment can add components that are not part of the universal ALLIS core.
-
-Examples include:
-
-- site-specific data;
-- maps and geographic boundaries;
-- local knowledge sources;
-- external databases;
-- devices and sensors;
-- network infrastructure;
-- public interfaces;
-- administrative interfaces;
-- local operating procedures;
-- site-specific privacy requirements;
-- institution-specific policy;
-- deployment-specific retention rules.
-
-These components belong to the deployment context.
-
-They do not become universal ALLIS architecture merely because one deployment uses them.
+The architectural requirement is that protected transitions do not occur merely because the preceding computation produced a result.
 
 ---
 
-## 6. External authority boundary
+## 11. Fail-closed behavior
 
-ALLIS can operate within environments governed by people and institutions that retain their own authority.
+### Architectural definition
 
-Examples can include:
+ALLIS uses a fail-closed principle for protected transitions.
 
-- property owners;
-- municipalities;
-- universities;
-- nonprofits;
-- government agencies;
-- research institutions;
-- community governance bodies.
+When required identity, authority, policy, provenance, or scope cannot be established, the protected transition should remain unavailable rather than being allowed by assumption.
 
-A deployment can receive authorization, constraints, decisions, or data from these actors.
+### Evidence basis
 
-ALLIS does not absorb their authority.
+Fail-closed handling is part of the qualified ALLIS architecture through protected-state and authority-boundary design.
 
-Likewise, ALLIS technical authority does not automatically grant legal, institutional, regulatory, or community authority.
+### Boundary of claim
 
-> **A deployment can connect ALLIS to an authority domain without transferring that authority into ALLIS.**
+Fail closed does not mean that every uncertainty requires the same system response.
+
+It means that missing authority must not be silently converted into permission for a protected transition.
+
+In simplified form:
+
+```text
+authority established
+    → transition may proceed within scope
+
+authority absent or unresolved
+    → protected transition withheld
+```
 
 ---
 
-## 7. Interfaces
+## 12. Evidence and authority
 
-A deployment can expose ALLIS through one or more interfaces, including:
+ALLIS keeps evidence state separate from authority state.
 
-- operator tools;
-- research interfaces;
-- APIs;
-- browser or application interfaces;
-- public information interfaces;
-- intelligence-facing services.
+Evidence can support a claim or decision without granting permission to act.
 
-An interface provides access to system capabilities. It does not create authority.
+Likewise, authority can permit an action without making every factual proposition related to that action true.
+
+This distinction can be expressed as:
+
+```text
+evidence
+    ≠ authority
+
+authority
+    ≠ truth
+
+execution
+    ≠ proof
+```
 
 For example:
 
-```text
-interface access
-    ≠ protected-state access
+- evidence can support a recommendation without authorizing implementation;
+- an authorized disclosure can still require accurate recipient and scope handling;
+- successful execution does not prove that every broader architectural claim is true.
 
-user request
+This separation prevents evidentiary confidence from being silently converted into operational permission.
+
+---
+
+## 13. External authority
+
+ALLIS can interact with people and institutions that hold authority outside the computational system.
+
+External authority can include:
+
+- legal authority;
+- regulatory authority;
+- institutional authority;
+- academic authority;
+- organizational authority;
+- community governance authority.
+
+ALLIS can receive decisions, permissions, constraints, or evidence from external authorities without absorbing those authorities into the system itself.
+
+Likewise, ALLIS technical authority does not automatically transfer into an external institution's governance domain.
+
+The system can support a decision process without becoming the decision-maker of record.
+
+---
+
+## 14. Intelligence-facing services
+
+An intelligence-facing service can reason about a requested action without possessing independent authority to perform it.
+
+For ALLIS, this means that **Ms. Allis** can support analysis, explanation, and governed decision support while remaining subject to the same trust and authority boundaries as other system interactions.
+
+A conversational instruction does not automatically become authorization for a protected transition.
+
+The architectural distinction is:
+
+```text
+request
     ≠ authorization
 
-generated recommendation
-    ≠ approved external action
+reasoning
+    ≠ governance approval
+
+recommendation
+    ≠ external action
 ```
 
-Where **Ms. Allis** is used as an intelligence-facing service, she operates through these same boundaries and does not create independent governance or operation authority.
-
 ---
 
-## 8. Deployment configuration
+## 15. Trust, authority, and validation
 
-Deployment configuration is the set of local choices that determine how the qualified ALLIS architecture is instantiated.
+This document defines the architectural trust and authority model.
 
-Configuration can include:
+It does not claim that every trust path has the same implementation or validation status.
 
-- enabled services;
-- approved data sources;
-- local geographic scope;
-- interface settings;
-- retention policy;
-- identity requirements;
-- recipient restrictions;
-- external integrations;
-- measurement settings;
-- deployment-specific authority rules.
-
-Configuration is not equivalent to architecture.
-
-A local configuration change should not silently alter the qualified ALLIS baseline.
-
-If a deployment reveals a need for a platform-level change, that change should move through engineering review, qualification, and validation before it becomes part of the accepted baseline.
-
----
-
-## 9. Runtime correspondence
-
-A deployment is not validated solely because its architecture and configuration are documented.
-
-The expected correspondence chain is:
+The repository separates:
 
 ```text
-documented architecture
-        ↕
-qualified source
-        ↕
-deployment configuration
-        ↕
-observed runtime
-        ↕
-measured results
+architectural requirement
+    ≠ implemented control
+    ≠ observed runtime behavior
+    ≠ formal property
+    ≠ verified correspondence
 ```
 
-Each link answers a different question:
+Detailed status belongs in:
 
-**Architecture** — What should the system do?  
-**Qualified source** — Which implementation is being evaluated?  
-**Configuration** — How was that implementation instantiated here?  
-**Observed runtime** — What actually ran?  
-**Measured results** — What behavior was observed under defined conditions?  
+- `acceptance/` — qualified system baselines;
+- `claims/` — explicit trust and authority claims;
+- `measurements/` — empirical protocols and results;
+- `mathematics/` — formal definitions and invariants;
+- `formal-verification/` — proofs, model checks, and counterexamples;
+- `correspondence/` — model-to-source and source-to-runtime validation;
+- `evidence/` — supporting provenance and validation artifacts.
 
-A result at one layer should not be promoted into a broader claim about another layer without supporting evidence.
-
----
-
-## 10. Deployment status
-
-Deployment status should reflect the strongest state supported by evidence.
-
-The following terms are intentionally distinct:
-
-```text
-concept
-    ↓
-proposed
-    ↓
-approved
-    ↓
-authorized
-    ↓
-installed
-    ↓
-configured
-    ↓
-tested
-    ↓
-observed
-    ↓
-operational
-    ↓
-evaluated
-    ↓
-replication-supported
-```
-
-These terms are not interchangeable.
-
-In particular:
-
-```text
-proposed
-    ≠ approved
-
-approved
-    ≠ authorized
-
-authorized
-    ≠ installed
-
-installed
-    ≠ tested
-
-tested
-    ≠ operational
-
-operational
-    ≠ evaluated
-
-evaluated
-    ≠ universally replicable
-```
-
-This vocabulary is part of the evidentiary architecture.
-
-It prevents project status from being overstated.
+This separation allows the architectural trust model to remain stable while evidence about particular implementations continues to mature.
 
 ---
 
-## 11. Failure and degraded operation
+## 16. Relationship to the state model
 
-A deployment must preserve clear behavior when required dependencies are unavailable.
+The trust and authority model operates across the state domains defined in `architecture/state-models/STATE_MODEL_OVERVIEW.md`.
 
-Examples include:
+For example:
 
-- missing network access;
-- unavailable external services;
-- stale information;
-- incomplete provenance;
-- unavailable identity verification;
-- missing authority;
-- invalid configuration;
-- failed evidence capture.
+- semantic state can be relevant without being authoritative;
+- geographic state can establish context without establishing jurisdiction;
+- temporal state can affect whether an authority remains valid;
+- person-linked state can require disclosure and recipient controls;
+- memory and provenance state can preserve the origin and scope of authority;
+- governance and authority state can determine whether a protected transition may proceed.
 
-For protected transitions, unresolved required authority should remain fail closed.
-
-For non-protected functions, bounded degraded behavior can be permitted where it is explicitly supported and does not create a false claim of normal operation.
-
-A degraded deployment should be identified as degraded.
+Trust and authority therefore function as cross-cutting constraints on state use rather than as a separate content domain.
 
 ---
 
-## 12. Deployment evidence
+## 17. Summary
 
-Deployment evidence should distinguish physical presence, configuration, runtime observation, and outcome.
+The ALLIS trust and authority model separates:
 
-Useful categories include:
+- identity;
+- authentication;
+- authorization;
+- disclosure authority;
+- governance authority;
+- operation authority.
 
-**Installed**  
-A component is physically or logically present.
+These concepts interact, but they do not collapse into one another.
 
-**Configured**  
-The component has been set up for the intended environment.
+The model can be summarized as:
 
-**Tested**  
-A defined test has been executed.
+> **ALLIS does not ask only whether a system can perform an action. It asks whether the relevant identity, evidence, policy, scope, and authority permit that specific transition.**
 
-**Observed**  
-A behavior has been directly observed in runtime.
+Three rules govern the model:
 
-**Operational**  
-The system is being used within an authorized scope.
+> **State does not become authority merely because it exists.**
 
-**Evaluated**  
-Evidence has been analyzed against defined metrics or questions.
+> **A transition requires authority for that transition.**
 
-**Replication-supported**  
-Evidence supports a bounded decision about transfer to another deployment.
-
-No later status should be inferred from an earlier one.
-
----
-
-## 13. Example deployment context: New River Gorge
-
-The **New River Gorge Safety & Heritage Mesh Pilot** is one documented deployment and research context for ALLIS.
-
-It is not the definition of ALLIS.
-
-The current public project record treats:
-
-- **Mount Hope** as the proposed first implementation phase;
-- **Thurmond** as a separate future federal phase.
-
-The project can provide deployment-specific elements such as:
-
-- geographic context;
-- public information;
-- heritage information;
-- local infrastructure;
-- community participation;
-- site governance;
-- field observation;
-- evaluation.
-
-The **Community Champion** program is a related human-stewardship and field-participation model. Its existence does not automatically confer technical, institutional, or system-administration authority on participants.
-
-Project budgets, grant status, letters of support, site approvals, and field evidence remain in the project repository or other evidence records that own those artifacts.
-
-The architectural relationship is:
-
-```text
-ALLIS
-    ↓
-qualified technical platform
-
-New River Gorge use case
-    ↓
-deployment and research context
-
-Mount Hope
-    ↓
-proposed first implementation phase
-
-Thurmond
-    ↓
-separate future federal phase
-```
-
-A later site must establish its own authority, privacy, infrastructure, configuration, and evidence.
-
----
-
-## 14. Replication
-
-ALLIS distinguishes technical reproducibility from responsible deployment transfer.
-
-A later deployment can require different:
-
-- authority;
-- infrastructure;
-- governance;
-- privacy rules;
-- local data;
-- operating capacity;
-- maintenance;
-- accessibility;
-- community participation;
-- institutional review.
-
-Therefore:
-
-> **Technology can be reproducible without a deployment being automatically transferable.**
-
-Replication decisions should be based on evidence from the deployment being evaluated and the requirements of the environment receiving it.
-
----
-
-## 15. Relationship to other architecture documents
-
-This document completes the high-level architecture sequence:
-
-```text
-architecture/system-boundary/
-    Where does ALLIS begin and end?
-
-architecture/state-models/
-    What kinds of state exist inside that boundary?
-
-architecture/trust-and-authority/
-    What governs protected use and state transition?
-
-architecture/deployment-model/
-    How is the architecture instantiated in a real environment?
-```
-
-Related validation material belongs elsewhere:
-
-- `acceptance/` — qualified baselines;
-- `claims/` — explicit claims;
-- `measurements/` — protocols, metrics, and results;
-- `mathematics/` — formal structures;
-- `formal-verification/` — proofs and model checks;
-- `correspondence/` — architecture/source/runtime correspondence;
-- `evidence/` — provenance and reproducibility records.
-
----
-
-## 16. Summary
-
-An ALLIS deployment is a bounded instantiation of a qualified ALLIS baseline.
-
-It combines the core platform with local configuration, infrastructure, data, authority, interfaces, and evidence while preserving the distinction between the system and the environment in which it operates.
-
-The deployment model is governed by three rules:
-
-> **A deployment instantiates ALLIS; it does not redefine ALLIS.**
-
-> **Installation is not evidence of tested operation, and tested operation is not evidence of demonstrated outcome.**
-
-> **A deployment may connect ALLIS to external authority, but it does not absorb that authority into the system.**
+> **Authority itself has provenance.**
