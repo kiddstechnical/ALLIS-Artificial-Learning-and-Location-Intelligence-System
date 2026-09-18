@@ -74,32 +74,32 @@ The deployment defines how that architecture is instantiated for a particular pl
 │                  ALLIS DEPLOYMENT BOUNDARY                  │
 │                                                             │
 │  1. Interface layer                                         │
-│     user, operator, application, research, or API access     │
+│     user, operator, application, research, or API access    │
 │                              │                              │
 │                              ▼                              │
 │  2. Governed ingress                                        │
-│     source · provenance · scope · identity context           │
+│     source · provenance · scope · identity context          │
 │                              │                              │
 │                              ▼                              │
 │  3. State layer                                             │
-│     semantic · geographic · temporal · person-linked         │
-│     memory/provenance · governance/authority                 │
+│     semantic · geographic · temporal · person-linked        │
+│     memory/provenance · governance/authority                │
 │                              │                              │
 │                              ▼                              │
 │  4. Governed computation                                    │
-│     retrieval · reasoning · analysis · state evaluation      │
+│     retrieval · reasoning · analysis · state evaluation     │
 │                              │                              │
 │                              ▼                              │
 │  5. Trust and authority evaluation                          │
-│     authentication · authorization · disclosure · operation  │
+│     authentication · authorization · disclosure · operation │
 │                              │                              │
 │                              ▼                              │
 │  6. Protected transition control                            │
-│     retain · promote · disclose · modify · external action   │
+│     retain · promote · disclose · modify · external action  │
 │                              │                              │
 │                              ▼                              │
 │  7. Evidence and provenance                                 │
-│     transition record · result lineage · validation context  │
+│     transition record · result lineage · validation context │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
