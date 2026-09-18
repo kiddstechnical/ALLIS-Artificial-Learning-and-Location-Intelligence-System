@@ -44,7 +44,7 @@ Uncommitted worktree state, later development, historical implementations, runti
 
 Start with:
 
-- [`QUALIFIED_BASELINE_MANIFEST.md`](./QUALIFIED_BASELINE_MANIFEST.md) — identifies the qualified source object, states the qualification boundary, summarizes current measurement and formal results, and records the principal unresolved residuals.
+- [`Qualified Baseline Manifest.md`](./Qualified%20Baseline%20Manifest.md) — identifies the qualified source object, states the qualification boundary, summarizes current measurement and formal results, and records the principal unresolved residuals.
 
 The manifest is the authoritative entry point for this directory.
 
