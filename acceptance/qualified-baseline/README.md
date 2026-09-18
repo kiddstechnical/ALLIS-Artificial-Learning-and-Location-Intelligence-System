@@ -161,37 +161,30 @@ This separation prevents the baseline definition from becoming confused with the
 
 The qualified baseline serves as the common referent for the following sequence:
 
-\[
+```math
 \text{qualified implementation}
-\rightarrow
+\;\longrightarrow\;
 \text{measurement}
-\rightarrow
+\;\longrightarrow\;
 \text{formalization}
-\rightarrow
+\;\longrightarrow\;
 \text{proof}
-\rightarrow
+\;\longrightarrow\;
 \text{source correspondence}
-\rightarrow
+\;\longrightarrow\;
 \text{runtime correspondence}
-\]
+```
 
 Each stage answers a different question.
 
-```text
-qualified
-≠ measured
-
-measured
-≠ formally specified
-
-formally specified
-≠ proven
-
-proven
-≠ source-correspondence verified
-
-source-correspondence verified
-≠ runtime-correspondence verified
+```math
+\begin{aligned}
+\text{qualified} &\neq \text{measured} \\
+\text{measured} &\neq \text{formally specified} \\
+\text{formally specified} &\neq \text{proven} \\
+\text{proven} &\neq \text{source-correspondence verified} \\
+\text{source-correspondence verified} &\neq \text{runtime-correspondence verified}
+\end{aligned}
 ```
 
 A result may advance through these stages only when the required evidence exists.
