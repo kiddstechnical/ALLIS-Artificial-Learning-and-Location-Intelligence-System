@@ -1,4 +1,4 @@
-# Formal model: production authorized-adoption pathway
+# Formal model: governed production adoption
 
 ## Purpose
 
@@ -10,13 +10,53 @@ The formal object is:
 DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
 ```
 
-The model describes how an externally supplied candidate package can move through validation, authorized publication, worker claim, governed application, and terminalization.
+The model describes how a proposed software change can move from candidate state to production state without allowing technical capability, successful evaluation, or runtime access to become authority by themselves.
 
-The model does **not** describe the whole ALLIS system. It does not establish whole-system safety, general production-mutation safety, or unrestricted autonomous self-modification.
+The governing architecture is:
 
-The governing distinction is:
+> **Capability does not create authority.**
 
-> **A candidate can exist, evaluate successfully, and remain technically executable without possessing authority to become production state.**
+A candidate can exist without being authorized.  
+A candidate can evaluate successfully without being authorized.  
+A candidate can compile and pass a benchmark without being authorized.  
+A runtime can be technically capable of applying a change without being authorized to apply it.
+
+ALLIS therefore models **proposal, evaluation, authorization, adoption, and evidence as separate states and responsibilities**.
+
+```text
+PROPOSE
+  │
+  │  A candidate exists.
+  ▼
+EVALUATE
+  │
+  │  Evidence can support the candidate.
+  │  Evidence does not authorize the candidate.
+  ▼
+AUTHORIZE
+  │
+  │  Independent authority must bind to the exact candidate,
+  │  target, expected prestate, evaluation, time window,
+  │  and one-use authorization identity.
+  ▼
+ADOPT
+  │
+  │  The runtime independently rechecks the authorization,
+  │  target, current source state, and replay state.
+  ▼
+RECORD
+     A successful transition produces durable evidence.
+```
+
+The central distinction is:
+
+```text
+can do
+≠
+may do
+```
+
+That distinction is the architectural theme of this formal model.
 
 ---
 
@@ -24,7 +64,7 @@ The governing distinction is:
 
 | Field | Value |
 |---|---|
-| Document role | Formal specification record |
+| Document role | Current formal specification record |
 | Formal object | `DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1` |
 | Production source commit | `20c8cbe175781c8a1c05d65c03977859ceca884a` |
 | Source domain | Sealed 11-file production authorized-adoption source set |
@@ -32,28 +72,69 @@ The governing distinction is:
 | Final Step-12 seal SHA-256 | `b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b` |
 | Controlling scope | `BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDENCE_ONLY` |
 
-This record is a present-tense specification of the bounded production model. Earlier mutation models are outside this document's authority unless a separate current correspondence record explicitly carries them forward.
+This document describes the current bounded production model.
 
-> **GitHub math rendering:** This document uses GitHub-supported LaTeX syntax. Inline expressions use `$`...`$`; display equations use `$$...$$`. Literal implementation identifiers and status values remain in code formatting.
+It does not use an earlier mutation model as current authority unless a separate current correspondence record explicitly carries that result forward.
 
 ---
 
-## 1. Model boundary
+## 1. What this model establishes
+
+This model formalizes a production path in which intelligence and operational authority remain separate.
+
+It establishes a bounded architecture with these properties:
+
+- a candidate is represented independently from its authorization;
+- an evaluation is bound to the candidate it evaluates;
+- an authorization is bound to an exact proposal, target, candidate content, evaluation, expected prestate, authority class, and time window;
+- the runtime verifies authority rather than creating its own authority;
+- the runtime checks that the target remains permitted;
+- the runtime checks that the source still matches the state that was authorized;
+- an authorization is one-use;
+- successful application produces durable evidence; and
+- failed or disproven properties remain visible rather than being silently promoted.
+
+The model does **not** establish:
+
+- whole-system safety;
+- general production-mutation safety;
+- unrestricted autonomous self-modification;
+- universal correctness of candidate evaluation;
+- perpetual source-to-runtime correspondence; or
+- authority issuance by the NBB or worker runtime.
+
+The model is intentionally narrower than those claims.
+
+---
+
+## 2. Model boundary
 
 The modeled production pathway is:
 
 ```text
 External package
-      ↓
+      │
+      ▼
 NBB validation
-      ↓
+      │
+      │  Validation succeeds only if the package carries
+      │  acceptable authorization and an allowed target.
+      ▼
 Authorized spool
-      ↓
+      │
+      ▼
 Worker claim
-      ↓
-Authorized apply
-      ↓
-Terminal state
+      │
+      ▼
+Authorized-apply gate
+      │
+      │  Runtime rechecks authority, target, prestate,
+      │  one-use status, and application conditions.
+      ▼
+Governed application
+      │
+      ▼
+Terminal state + evidence
 ```
 
 Let the bounded model be:
@@ -74,20 +155,31 @@ where:
 
 The model includes only the sealed production authorized-adoption path.
 
-It excludes:
+---
 
-- arbitrary ALLIS behavior outside the modeled path;
-- unrelated runtime services;
-- generalized claims about all side effects or external dependencies;
-- any assumption that a successful candidate evaluation creates authority;
-- any assumption that authorization issuance occurs inside the NBB or worker runtime; and
-- any whole-system safety claim.
+## 3. Architectural separations
+
+The model depends on several explicit separations.
+
+| Concept | Not equivalent to |
+|---|---|
+| Candidate existence | Authorization |
+| Candidate evaluation | Authorization |
+| Benchmark success | Authorization |
+| Runtime capability | Permission to execute |
+| Source presence | Authority |
+| Claimed work | Completed work |
+| Machine-checked theorem | Positive live observation |
+| Runtime correspondence | Perpetual invariance |
+| Bounded proof | Whole-system proof |
+
+These separations prevent one state from being promoted into a stronger state without the evidence and authority required for that promotion.
+
+> **Architecture rule:** State does not become authority merely because it exists.
 
 ---
 
-## 2. Notation
-
-The following notation is used throughout this document.
+## 4. Notation
 
 | Symbol | Meaning |
 |---|---|
@@ -98,24 +190,31 @@ The following notation is used throughout this document.
 | $`K_{pub}`$ | Pinned public verification key |
 | $`\tau`$ | Current epoch time |
 | $`\downarrow`$ | Bounded function returns successfully |
-| $`\uparrow`$ | Bounded function rejects, raises, or otherwise fails to complete successfully |
+| $`\uparrow`$ | Bounded function rejects, raises, or otherwise fails to return successfully |
 | $`H(x)`$ | SHA-256 identity function over the defined representation of $`x`$ |
 
-### Notation normalization
-
-The source appendix uses `q ∈ Q` for spool state even though $`Q`$ is also the formal state set. This document uses $`q_s`$ for spool state to avoid overloading the symbol.
-
-The source appendix also displays the authorized-application type as `A × A × S → S' × R` while the function is explicitly invoked as $`A(c,a,s)`$, where $`c \in C`$ and $`a \in A`$. This document therefore writes the public type signature as:
+The authorized-application function is:
 
 ```math
-\mathcal{A}: C \times A \times S \rightharpoonup S' \times R
+\mathcal{A}:
+C \times A \times S
+\rightharpoonup
+S' \times R
 ```
 
-This is a notation correction to match the stated arguments. It does not change the implementation or theorem meaning.
+where:
+
+- $`C`$ is the candidate-envelope domain;
+- $`A`$ is the authorization-envelope domain;
+- $`S`$ is the governed-state domain;
+- $`S'`$ is the resulting governed-state domain; and
+- $`R`$ is the application-receipt domain.
+
+The symbol $`q_s`$ denotes authorized-spool state and is distinct from the formal state set $`Q`$.
 
 ---
 
-## 3. State space
+## 5. State space
 
 Define:
 
@@ -182,9 +281,26 @@ A rejected record can terminate at $`Q_{6R}`$, subject to successful terminaliza
 
 The model also admits a nonterminal claimed state when terminalization itself fails.
 
+### Authority across the state path
+
+The state sequence does not represent a gradual accumulation of self-created authority.
+
+```text
+Q0  External package          Candidate and authorization arrive as data.
+Q1  NBB validated             Runtime has verified required conditions.
+Q2  Incoming spool            Work is eligible to be claimed.
+Q3  Worker claimed            Work is claimed, not yet authorized-applied.
+Q4  Authorized-apply gate     Runtime independently rechecks adoption conditions.
+Q5A Authorized applied        The governed transition has succeeded.
+Q6C Completed                 Terminal evidence records completion.
+Q6R Rejected                  Terminal evidence records rejection.
+```
+
+No earlier state is treated as sufficient authority for a later state merely because it was reached.
+
 ---
 
-## 4. Candidate envelope
+## 6. Candidate envelope
 
 Define a candidate envelope as:
 
@@ -229,11 +345,15 @@ Where the sealed source uses full candidate-envelope binding, define:
 H_{env}(c)=SHA256(CanonicalJSON(c))
 ```
 
-A candidate is therefore not merely proposed content. It also carries a target, expected prestate, evaluation, scores, and expected tests.
+A candidate therefore represents a proposed transition and its supporting evaluation context.
+
+It does **not** represent permission to perform the transition.
+
+> **Architecture rule:** A candidate is a proposal object, not an authority object.
 
 ---
 
-## 5. Authorization envelope
+## 7. Authorization envelope
 
 Define an authorization envelope as:
 
@@ -278,11 +398,33 @@ Define the unsigned authorization payload as:
 Payload(a)=a\setminus\{sig\}
 ```
 
-The runtime verifier is modeled as a verifier only. The private signing key is not part of this runtime function.
+The authorization does not merely say "a change is allowed."
+
+It binds permission to a specific change context.
+
+```text
+authorization
+    ├── proposal identity
+    ├── candidate identity
+    ├── evaluation identity
+    ├── target
+    ├── expected prestate
+    ├── authority class
+    ├── approving identity
+    ├── issue time
+    ├── expiration time
+    └── detached signature
+```
+
+The runtime verifier verifies this authority.
+
+The runtime verifier is not modeled as the source that mints its own authorization.
+
+> **Architecture rule:** The component capable of applying the change does not acquire authority merely from that capability.
 
 ---
 
-## 6. Cryptographic identity
+## 8. Cryptographic identity
 
 For byte-oriented objects, define:
 
@@ -298,7 +440,7 @@ H_J(x)=SHA256(CanonicalJSON(x))
 
 These hashes bind exact object identities.
 
-They are **not** semantic-equivalence functions.
+They are not semantic-equivalence functions.
 
 Therefore:
 
@@ -306,11 +448,13 @@ Therefore:
 H(x)=H(y)
 ```
 
-is used as evidence that the compared sealed representations have the same byte identity under the defined hashing procedure. It does not mean that arbitrary semantic systems are mathematically equivalent.
+is evidence that the compared sealed representations have the same byte identity under the defined hashing procedure.
+
+It is not a claim that arbitrary semantic systems are mathematically equivalent.
 
 ---
 
-## 7. Signature verification
+## 9. Signature verification
 
 Define:
 
@@ -324,7 +468,7 @@ such that:
 V_{sig}(a,K_{pub})=1
 ```
 
-if and only if the detached signature verifies against the canonical authorization message under the pinned public key.
+if and only if the detached authorization signature verifies against the canonical authorization message under the pinned public key.
 
 Conceptually:
 
@@ -338,25 +482,27 @@ sig(a)
 
 must succeed.
 
-The verifier does not mint authorization and does not select a private signing key.
+The modeled production verifier verifies authority.
+
+It does not mint the private signing authority that it verifies.
 
 ---
 
-## 8. Authorization predicates
+## 10. Authorization predicates
 
-### 8.1 Authorization identifier
+Authorization is composite.
 
-Define:
+No single successful check is sufficient.
+
+### 10.1 Authorization identifier
 
 ```math
 V_{id}(a)\in\{0,1\}
 ```
 
-where $`V_{id}(a)=1`$ only if the authorization identifier satisfies the permitted production syntax.
+$`V_{id}(a)=1`$ only if the authorization identifier satisfies the permitted production syntax.
 
-### 8.2 Approval decision
-
-Define:
+### 10.2 Approval decision
 
 ```math
 V_{decision}(a)=
@@ -366,7 +512,7 @@ V_{decision}(a)=
 \end{cases}
 ```
 
-### 8.3 Authority class
+### 10.3 Authority class
 
 Let:
 
@@ -389,7 +535,7 @@ V_{class}(a)=
 \end{cases}
 ```
 
-### 8.4 Authorization time
+### 10.4 Authorization time
 
 Define:
 
@@ -415,7 +561,7 @@ Otherwise:
 V_{time}(a,\tau)=0
 ```
 
-### 8.5 Proposal binding
+### 10.5 Proposal binding
 
 ```math
 V_{proposal}(c,a)=
@@ -425,7 +571,7 @@ V_{proposal}(c,a)=
 \end{cases}
 ```
 
-### 8.6 Target binding
+### 10.6 Target binding
 
 ```math
 V_{targetbind}(c,a)=
@@ -435,7 +581,7 @@ V_{targetbind}(c,a)=
 \end{cases}
 ```
 
-### 8.7 Authorization-prestate binding
+### 10.7 Prestate binding
 
 ```math
 V_{prebind}(c,a)=
@@ -445,7 +591,7 @@ V_{prebind}(c,a)=
 \end{cases}
 ```
 
-### 8.8 Candidate-content binding
+### 10.8 Candidate binding
 
 ```math
 V_{candidate}(c,a)=
@@ -455,7 +601,7 @@ V_{candidate}(c,a)=
 \end{cases}
 ```
 
-Where full candidate-envelope binding is part of the sealed source:
+Where the sealed source uses full candidate-envelope binding:
 
 ```math
 V_{envelope}(c,a)=
@@ -465,7 +611,7 @@ V_{envelope}(c,a)=
 \end{cases}
 ```
 
-### 8.9 Evaluation binding
+### 10.9 Evaluation binding
 
 ```math
 V_{evaluation}(c,a)=
@@ -509,9 +655,13 @@ V_{compile}
 V_{benchmark}
 ```
 
+A passing evaluation contributes evidence about the candidate.
+
+It still does not create adoption authority.
+
 ---
 
-## 9. Composite authorization predicate
+## 11. Composite authorization
 
 Define:
 
@@ -519,7 +669,7 @@ Define:
 V_{auth}(c,a,\tau)
 ```
 
-as the conjunction:
+as:
 
 ```math
 \begin{aligned}
@@ -550,7 +700,7 @@ V_{sig}
 \end{aligned}
 ```
 
-Where full-envelope binding is required by the sealed source, $`V_{envelope}`$ is included in this conjunction.
+Where full-envelope binding is required by the sealed source, $`V_{envelope}`$ is also required.
 
 Therefore:
 
@@ -558,13 +708,24 @@ Therefore:
 V_{auth}(c,a,\tau)=1
 ```
 
-if and only if every required authorization predicate succeeds.
+if and only if every required predicate succeeds.
 
-No individual successful predicate creates partial authorization.
+This design prevents partial validity from being treated as full authority.
+
+```text
+valid signature only                     → not enough
+valid candidate hash only                → not enough
+passing benchmark only                   → not enough
+valid target only                        → not enough
+valid time window only                   → not enough
+all required predicates together         → valid authorization
+```
+
+> **Architecture rule:** Authority is not inferred from evidence. Authority is independently represented and verified.
 
 ---
 
-## 10. Target safety
+## 12. Target safety
 
 Let $`Root(s)`$ be the governed filesystem root.
 
@@ -610,9 +771,11 @@ V_{contain}(s,t)
 V_{allow}(t)
 ```
 
+Technical access to a path does not imply authority to mutate that path.
+
 ---
 
-## 11. Current-state and prestate correspondence
+## 13. Current-state and prestate correspondence
 
 Define:
 
@@ -642,21 +805,29 @@ V_{pre}(c,s)=
 
 A candidate authorized against stale source therefore fails the current-prestate condition.
 
-This prevents an authorization for one source state from silently applying to a later, different source state.
+This separates:
+
+```text
+authority for this exact source state
+```
+
+from:
+
+```text
+authority for whatever source happens to exist later
+```
+
+The model accepts the first interpretation and rejects the second.
+
+> **Architecture rule:** Authorization has provenance and context. It does not float free of the state it authorized.
 
 ---
 
-## 12. One-use authorization and spent state
+## 14. One-use authority
 
-Let:
+Let $`L_s`$ be the set of authorization identifiers represented by successful exclusive spent reservations.
 
-```math
-L_s
-```
-
-be the set of authorization identifiers represented by successful exclusive spent reservations.
-
-Define the one-use predicate:
+Define:
 
 ```math
 V_{once}(a,L_s)=
@@ -704,9 +875,11 @@ Reserve_s(a,L_s)\uparrow
 
 and the authorization is rejected as a replay.
 
+A valid prior authorization therefore does not become standing authority for repeated future changes.
+
 ---
 
-## 13. Governed application
+## 15. Governed application
 
 Define:
 
@@ -725,11 +898,11 @@ The candidate source-content hash $`H_c(c)`$ is the expected identity of the pro
 
 The sealed implementation performs a poststate check before the authorized application can return successfully.
 
-This document does not restate a stronger poststate equation than the source record supports. The formal theorem below relies on the bounded implementation's actual poststate-check ordering.
+The model therefore treats successful mutation as a governed transition, not as the simple consequence of possessing code-writing capability.
 
 ---
 
-## 14. Receipt function
+## 16. Receipt function
 
 Define:
 
@@ -757,13 +930,17 @@ Define:
 R_{receipt}(c,a,s')=1
 ```
 
-if and only if the expected application receipt is successfully and durably created for the successful application.
+if and only if the expected application receipt is durably created for the successful application.
+
+This receipt does not create retrospective authority.
+
+It records evidence that an authorized transition completed under the modeled conditions.
 
 ---
 
-## 15. Authorized-application function
+## 17. Authorized-application function
 
-Define the partial function:
+Define:
 
 ```math
 \mathcal{A}:
@@ -796,7 +973,7 @@ PoststateCheck
 Receipt
 ```
 
-Define the successful-return predicate:
+Define:
 
 ```math
 M_{auth}(c,a,s)=1
@@ -804,11 +981,31 @@ M_{auth}(c,a,s)=1
 \mathcal{A}(c,a,s)\downarrow
 ```
 
-The order matters. A later step cannot substitute for a failed earlier predicate.
+The sequence is intentionally ordered.
+
+```text
+authorization
+      ↓
+target permission
+      ↓
+current-state correspondence
+      ↓
+one-use reservation
+      ↓
+mutation
+      ↓
+poststate verification
+      ↓
+receipt
+```
+
+A later successful operation cannot repair a failed earlier requirement.
+
+> **Architecture rule:** The system does not ask, "Can this change be executed?" It asks, "Has every condition required to authorize this exact transition been satisfied?"
 
 ---
 
-## 16. NBB validation
+## 18. NBB validation
 
 Let $`x`$ be an external package.
 
@@ -840,9 +1037,13 @@ V_{NBB}(x)=1
 
 if and only if the bounded authorized-package validation returns successfully.
 
+The NBB therefore acts as an admission boundary.
+
+It does not treat package arrival as permission to publish work.
+
 ---
 
-## 17. Authorized spool publication
+## 19. Authorized spool publication
 
 Define:
 
@@ -862,11 +1063,19 @@ Publish(x,q_s)
 
 where $`\prec`$ means required execution precedence.
 
-Publication is therefore downstream of validation.
+Therefore:
+
+```text
+external package exists
+≠
+authorized work exists
+```
+
+Validation must occur before publication into the authorized work path.
 
 ---
 
-## 18. Worker claim
+## 20. Worker claim
 
 Define:
 
@@ -884,7 +1093,7 @@ When a record is successfully claimed:
 Q_2\rightarrow Q_3
 ```
 
-When no incoming record exists:
+When no record exists:
 
 ```math
 Claim(q_s)=\varnothing
@@ -892,9 +1101,11 @@ Claim(q_s)=\varnothing
 
 and the worker iteration ends without invoking the authorized-apply path.
 
+Claiming work does not itself authorize application.
+
 ---
 
-## 19. Terminalization
+## 21. Terminalization
 
 Define:
 
@@ -926,11 +1137,11 @@ depending on $`z`$.
 
 It can fail.
 
-That failure is part of the current formal model and is necessary to preserve the machine-checked counterexample described below.
+That failure remains part of the current model because the formal work discovered a valid counterexample to unconditional terminal totality.
 
 ---
 
-## 20. Transition relation
+## 22. Transition relation
 
 Define:
 
@@ -982,9 +1193,9 @@ is an allowed bounded state.
 
 ---
 
-## 21. Formal premises
+## 23. Formal premises
 
-The current theorem family is conditional on six premises.
+The theorem family is conditional on six premises.
 
 ### P1 — Source identity
 
@@ -1028,19 +1239,21 @@ f(x)\downarrow
 
 means the function completes successfully according to the bounded implementation.
 
-It does not mean that execution merely began.
+It does not mean execution merely began.
 
 ### P6 — Meaning of `MACHINE_CHECKED`
 
 Within this Step-12 model, `MACHINE_CHECKED` means machine-executed source-structure checks plus bounded execution evidence.
 
-It does **not** mean that the theorem was proved in Coq, Lean, Isabelle, TLA+, or another general proof-assistant or model-checking environment.
+It does **not** mean the theorem was proved in Coq, Lean, Isabelle, TLA+, or another general proof-assistant or model-checking environment.
 
 ---
 
-## 22. Principal formal results
+## 24. Principal formal results
 
-Detailed theorem accounting belongs in `THEOREM_REGISTRY.md`. The three principal results are included here because they define the behavior of the model itself.
+Detailed theorem accounting belongs in `THEOREM_REGISTRY.md`.
+
+The principal results are included here because they define the behavior of the model.
 
 ### T12D-A — Authorized-application gating theorem
 
@@ -1064,12 +1277,30 @@ R_{receipt}
 
 Interpretation:
 
-If the bounded authorized-adoption operation returns successfully, then the model requires valid authorization, an allowed and contained target, prestate correspondence, fresh one-use authority, successful spent-state reservation, and successful receipt creation.
+If the bounded authorized-adoption operation returns successfully, then the model requires:
+
+- valid authorization;
+- an allowed and contained target;
+- prestate correspondence;
+- fresh one-use authority;
+- successful spent-state reservation; and
+- successful receipt creation.
 
 **Source-model status:** `PROVEN_WITHIN_SEALED_SOURCE_MODEL`  
 **Validation level:** `MACHINE_CHECKED`
 
-This result is not correspondence-verified for the positive production path because Step 12 did not execute a real positive production authorization and production DGM patch application.
+This theorem expresses the central architectural claim of the model:
+
+```text
+successful production change
+does not stand by itself
+
+successful production change
+implies the required authorization and state predicates held
+within the sealed bounded model
+```
+
+The theorem is not correspondence-verified for the positive production path because Step 12 did not execute a real positive production authorization and production DGM patch application.
 
 ### T12D-B — Invalid-authorization fail-closed theorem
 
@@ -1091,6 +1322,13 @@ NoAuthorizedSpoolPublication
 
 **Source status:** `PROVEN`  
 **Validation level:** `CORRESPONDENCE_VERIFIED`
+
+This is the clearest fail-closed expression of the capability-authority separation:
+
+```text
+invalid authority
+does not become authorized work
+```
 
 ### T12D-C — Empty-spool non-application theorem
 
@@ -1117,9 +1355,11 @@ Q_4\text{ not reached}
 **Source status:** `PROVEN`  
 **Validation level:** `CORRESPONDENCE_VERIFIED`
 
+The runtime does not invent authorized work when no authorized record exists.
+
 ---
 
-## 23. Preserved counterexample
+## 25. Preserved counterexample
 
 The proposed terminal-totality property was:
 
@@ -1172,7 +1412,7 @@ The final status is:
 P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
 
-A narrower proposition,
+A narrower proposition:
 
 ```math
 Q_3
@@ -1184,15 +1424,21 @@ Q_{6C}
 Q_{6R}
 ```
 
-is consistent with the transition structure, but Step 12 did not silently replace the disproven proposition with this narrower statement or promote it as a new sealed theorem.
+is consistent with the transition structure.
+
+Step 12 did not silently replace the disproven proposition with the narrower statement or promote it as a new sealed theorem.
+
+That preservation is intentional.
+
+> **Architecture rule:** Evidence can constrain a claim. A desired claim does not acquire authority merely because the architecture would be easier to describe if it were true.
 
 ---
 
-## 24. Formal-model validation boundary
+## 26. Formal-model validation boundary
 
-The formal model itself is correspondence-verified only for the deployed identity and observed boundaries established by the Step-12 evidence package.
+The formal model is correspondence-verified only for the deployed identity and observed boundaries established by the Step-12 evidence package.
 
-This does not mean that every possible behavior represented by the model has been observed in production.
+This does not mean every possible modeled behavior has been observed in production.
 
 In particular:
 
@@ -1202,23 +1448,23 @@ LiveObs^{+}(T12D\text{-}A)=0
 
 because no real positive production authorization/application was executed as part of Step 12.
 
-The model therefore distinguishes:
+The model therefore keeps these categories distinct:
 
 ```text
 formal theorem
-≠
+      ≠
 source correspondence
-≠
+      ≠
 runtime correspondence
-≠
+      ≠
 positive runtime observation
 ```
 
-These distinctions are handled in the companion correspondence records.
+The companion correspondence records document those relationships.
 
 ---
 
-## 25. Explicit non-implications
+## 27. Explicit non-implications
 
 The bounded theorem family does not imply a general production-mutation safety theorem:
 
@@ -1248,9 +1494,65 @@ SYSTEM_PROVEN=NO
 
 It is not an unadjudicated question inside the completed Step-12 scope.
 
+This distinction is part of the architecture's claim discipline:
+
+```text
+bounded evidence
+≠
+unbounded conclusion
+```
+
 ---
 
-## 26. Final model statement
+## 28. What the formal model means
+
+The current model does not ask a future user or reviewer to trust the intelligence because it is intelligent.
+
+It does not assume that a good evaluation makes a candidate safe to deploy.
+
+It does not assume that technical access makes an operation legitimate.
+
+It does not assume that a component capable of executing a change should also control the authority required to execute it.
+
+Instead, the architecture separates:
+
+```text
+reasoning
+from
+authority
+
+evaluation
+from
+authorization
+
+capability
+from
+permission
+
+state
+from
+provenance
+
+mutation
+from
+adoption
+
+successful execution
+from
+evidence that the execution was authorized
+```
+
+The formal model is therefore a model of **governed autonomy**.
+
+It allows an intelligent system to participate in proposing, evaluating, and executing bounded changes while keeping production authority as an independently represented, independently verified constraint.
+
+That is the architectural meaning of:
+
+> **State does not become authority merely because it exists.**
+
+---
+
+## 29. Final model statement
 
 The strongest compact formal statement supported by the current model is:
 
@@ -1284,7 +1586,9 @@ Additionally:
 }
 ```
 
-is correspondence-verified against the observed live fail-closed production boundary, and:
+is correspondence-verified against the observed live fail-closed production boundary.
+
+And:
 
 ```math
 \boxed{
@@ -1342,7 +1646,7 @@ The controlling logical boundary is:
 
 ---
 
-## 27. Seal identity
+## 30. Seal identity
 
 The controlling Step-12 formal seal is:
 
@@ -1366,9 +1670,9 @@ No stronger theorem is implied by this seal.
 
 ---
 
-## 28. Companion records
+## 31. Companion records
 
-This formal model is intended to be read with the following support records as they are added to the public ALLIS repository:
+This formal model is intended to be read with the following support records:
 
 ```text
 formal-verification/
@@ -1391,6 +1695,18 @@ evidence/
         RESIDUALS.md
 ```
 
-`FORMAL_MODEL.md` defines the bounded mathematical object.
+`FORMAL_MODEL.md` defines the bounded mathematical object and the architecture that object represents.
 
 It does not replace the theorem registry, counterexample registry, source manifest, runtime correspondence record, trust evidence, governance evidence, or residual register.
+
+Together, those records support a documentation model in which:
+
+```text
+a claim
+must remain distinguishable from
+the evidence supporting it,
+
+and evidence
+must remain distinguishable from
+the authority required to act on it.
+```
