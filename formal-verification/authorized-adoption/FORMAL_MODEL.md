@@ -34,6 +34,8 @@ The governing distinction is:
 
 This record is a present-tense specification of the bounded production model. Earlier mutation models are outside this document's authority unless a separate current correspondence record explicitly carries them forward.
 
+> **GitHub math rendering:** This document uses GitHub-supported LaTeX syntax. Inline expressions use `$...$`; display equations use `$$...$$`. Literal implementation identifiers and status values remain in code formatting.
+
 ---
 
 ## 1. Model boundary
@@ -56,19 +58,19 @@ Terminal state
 
 Let the bounded model be:
 
-\[
+$$
 \mathcal{M}_{DGM}
 =
 (Q,\Sigma,\delta,\mathcal{P},\mathcal{F})
-\]
+$$
 
 where:
 
-- \(Q\) is the set of modeled states;
-- \(\Sigma\) is the set of relevant inputs and artifacts;
-- \(\delta\) is the transition relation;
-- \(\mathcal{P}\) is the set of modeled predicates; and
-- \(\mathcal{F}\) is the set of modeled functions.
+- $Q$ is the set of modeled states;
+- $\Sigma$ is the set of relevant inputs and artifacts;
+- $\delta$ is the transition relation;
+- $\mathcal{P}$ is the set of modeled predicates; and
+- $\mathcal{F}$ is the set of modeled functions.
 
 The model includes only the sealed production authorized-adoption path.
 
@@ -89,25 +91,25 @@ The following notation is used throughout this document.
 
 | Symbol | Meaning |
 |---|---|
-| \(c \in C\) | Candidate envelope |
-| \(a \in A\) | Authorization envelope |
-| \(s \in S\) | Governed runtime state |
-| \(q_s\) | Authorized-spool state |
-| \(K_{pub}\) | Pinned public verification key |
-| \(\tau\) | Current epoch time |
-| \(\downarrow\) | Bounded function returns successfully |
-| \(\uparrow\) | Bounded function rejects, raises, or otherwise fails to complete successfully |
-| \(H(x)\) | SHA-256 identity function over the defined representation of \(x\) |
+| $c \in C$ | Candidate envelope |
+| $a \in A$ | Authorization envelope |
+| $s \in S$ | Governed runtime state |
+| $q_s$ | Authorized-spool state |
+| $K_{pub}$ | Pinned public verification key |
+| $\tau$ | Current epoch time |
+| $\downarrow$ | Bounded function returns successfully |
+| $\uparrow$ | Bounded function rejects, raises, or otherwise fails to complete successfully |
+| $H(x)$ | SHA-256 identity function over the defined representation of $x$ |
 
 ### Notation normalization
 
-The source appendix uses `q ∈ Q` for spool state even though \(Q\) is also the formal state set. This document uses \(q_s\) for spool state to avoid overloading the symbol.
+The source appendix uses `q ∈ Q` for spool state even though $Q$ is also the formal state set. This document uses $q_s$ for spool state to avoid overloading the symbol.
 
-The source appendix also displays the authorized-application type as `A × A × S → S' × R` while the function is explicitly invoked as \(A(c,a,s)\), where \(c \in C\) and \(a \in A\). This document therefore writes the public type signature as:
+The source appendix also displays the authorized-application type as `A × A × S → S' × R` while the function is explicitly invoked as $A(c,a,s)$, where $c \in C$ and $a \in A$. This document therefore writes the public type signature as:
 
-\[
+$$
 \mathcal{A}: C \times A \times S \rightharpoonup S' \times R
-\]
+$$
 
 This is a notation correction to match the stated arguments. It does not change the implementation or theorem meaning.
 
@@ -117,50 +119,50 @@ This is a notation correction to match the stated arguments. It does not change 
 
 Define:
 
-\[
+$$
 Q=
 \{
 Q_0,Q_1,Q_2,Q_3,Q_4,Q_{5A},Q_{6C},Q_{6R}
 \}
-\]
+$$
 
 with:
 
-\[
+$$
 Q_0=\text{EXTERNAL\_PACKAGE}
-\]
+$$
 
-\[
+$$
 Q_1=\text{NBB\_VALIDATED}
-\]
+$$
 
-\[
+$$
 Q_2=\text{INCOMING\_SPOOL}
-\]
+$$
 
-\[
+$$
 Q_3=\text{WORKER\_CLAIMED}
-\]
+$$
 
-\[
+$$
 Q_4=\text{AUTHORIZED\_APPLY\_GATE}
-\]
+$$
 
-\[
+$$
 Q_{5A}=\text{AUTHORIZED\_APPLIED}
-\]
+$$
 
-\[
+$$
 Q_{6C}=\text{TERMINAL\_COMPLETED}
-\]
+$$
 
-\[
+$$
 Q_{6R}=\text{TERMINAL\_REJECTED}
-\]
+$$
 
 The normal successful path is:
 
-\[
+$$
 Q_0
 \rightarrow
 Q_1
@@ -174,9 +176,9 @@ Q_4
 Q_{5A}
 \rightarrow
 Q_{6C}
-\]
+$$
 
-A rejected record can terminate at \(Q_{6R}\), subject to successful terminalization.
+A rejected record can terminate at $Q_{6R}$, subject to successful terminalization.
 
 The model also admits a nonterminal claimed state when terminalization itself fails.
 
@@ -186,7 +188,7 @@ The model also admits a nonterminal claimed state when terminalization itself fa
 
 Define a candidate envelope as:
 
-\[
+$$
 c=
 (
 p,
@@ -197,35 +199,35 @@ e,
 \sigma,
 \theta
 )
-\]
+$$
 
 where:
 
-- \(p\) = proposal identifier;
-- \(t\) = target path;
-- \(h_b\) = expected target-before hash;
-- \(x_a\) = proposed after-content;
-- \(e\) = evaluation object;
-- \(\sigma\) = candidate scores; and
-- \(\theta\) = expected tests.
+- $p$ = proposal identifier;
+- $t$ = target path;
+- $h_b$ = expected target-before hash;
+- $x_a$ = proposed after-content;
+- $e$ = evaluation object;
+- $\sigma$ = candidate scores; and
+- $\theta$ = expected tests.
 
 The source-content identity is:
 
-\[
+$$
 H_c(c)=SHA256(x_a)
-\]
+$$
 
 The evaluation identity is:
 
-\[
+$$
 H_e(c)=SHA256(CanonicalJSON(e))
-\]
+$$
 
 Where the sealed source uses full candidate-envelope binding, define:
 
-\[
+$$
 H_{env}(c)=SHA256(CanonicalJSON(c))
-\]
+$$
 
 A candidate is therefore not merely proposed content. It also carries a target, expected prestate, evaluation, scores, and expected tests.
 
@@ -235,7 +237,7 @@ A candidate is therefore not merely proposed content. It also carries a target, 
 
 Define an authorization envelope as:
 
-\[
+$$
 a=
 (
 i,
@@ -252,29 +254,29 @@ k,
 \tau_e,
 sig
 )
-\]
+$$
 
 where:
 
-- \(i\) = authorization identifier;
-- \(p\) = proposal identifier;
-- \(d\) = decision;
-- \(h_c\) = candidate-content hash;
-- \(h_{env}\) = candidate-envelope hash where present;
-- \(h_e\) = evaluation hash;
-- \(t\) = authorized target;
-- \(h_b\) = authorized prestate hash;
-- \(u\) = approving identity;
-- \(k\) = authority class;
-- \(\tau_i\) = issuance time;
-- \(\tau_e\) = expiration time; and
-- \(sig\) = detached signature.
+- $i$ = authorization identifier;
+- $p$ = proposal identifier;
+- $d$ = decision;
+- $h_c$ = candidate-content hash;
+- $h_{env}$ = candidate-envelope hash where present;
+- $h_e$ = evaluation hash;
+- $t$ = authorized target;
+- $h_b$ = authorized prestate hash;
+- $u$ = approving identity;
+- $k$ = authority class;
+- $\tau_i$ = issuance time;
+- $\tau_e$ = expiration time; and
+- $sig$ = detached signature.
 
 Define the unsigned authorization payload as:
 
-\[
+$$
 Payload(a)=a\setminus\{sig\}
-\]
+$$
 
 The runtime verifier is modeled as a verifier only. The private signing key is not part of this runtime function.
 
@@ -284,15 +286,15 @@ The runtime verifier is modeled as a verifier only. The private signing key is n
 
 For byte-oriented objects, define:
 
-\[
+$$
 H(x)=SHA256(x)
-\]
+$$
 
 For canonical JSON structures, define:
 
-\[
+$$
 H_J(x)=SHA256(CanonicalJSON(x))
-\]
+$$
 
 These hashes bind exact object identities.
 
@@ -300,9 +302,9 @@ They are **not** semantic-equivalence functions.
 
 Therefore:
 
-\[
+$$
 H(x)=H(y)
-\]
+$$
 
 is used as evidence that the compared sealed representations have the same byte identity under the defined hashing procedure. It does not mean that arbitrary semantic systems are mathematically equivalent.
 
@@ -312,27 +314,27 @@ is used as evidence that the compared sealed representations have the same byte 
 
 Define:
 
-\[
+$$
 V_{sig}:A\times K\rightarrow\{0,1\}
-\]
+$$
 
 such that:
 
-\[
+$$
 V_{sig}(a,K_{pub})=1
-\]
+$$
 
 if and only if the detached signature verifies against the canonical authorization message under the pinned public key.
 
 Conceptually:
 
-\[
+$$
 Verify(
 K_{pub},
 HashMessage(Payload(a)),
 sig(a)
 )
-\]
+$$
 
 must succeed.
 
@@ -346,158 +348,158 @@ The verifier does not mint authorization and does not select a private signing k
 
 Define:
 
-\[
+$$
 V_{id}(a)\in\{0,1\}
-\]
+$$
 
-where \(V_{id}(a)=1\) only if the authorization identifier satisfies the permitted production syntax.
+where $V_{id}(a)=1$ only if the authorization identifier satisfies the permitted production syntax.
 
 ### 8.2 Approval decision
 
 Define:
 
-\[
+$$
 V_{decision}(a)=
 \begin{cases}
 1,&d(a)=APPROVE\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 ### 8.3 Authority class
 
 Let:
 
-\[
+$$
 \mathcal{K}
 =
 \{
 BBB\_GUARDIAN,
 CONSTITUTIONAL\_GUARDIAN
 \}
-\]
+$$
 
 Then:
 
-\[
+$$
 V_{class}(a)=
 \begin{cases}
 1,&k(a)\in\mathcal{K}\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 ### 8.4 Authorization time
 
 Define:
 
-\[
+$$
 V_{time}(a,\tau)=1
-\]
+$$
 
 only when:
 
-\[
+$$
 \tau_e(a)>\tau_i(a)
-\]
+$$
 
 and:
 
-\[
+$$
 \tau_i(a)\le\tau\le\tau_e(a)
-\]
+$$
 
 Otherwise:
 
-\[
+$$
 V_{time}(a,\tau)=0
-\]
+$$
 
 ### 8.5 Proposal binding
 
-\[
+$$
 V_{proposal}(c,a)=
 \begin{cases}
 1,&p(c)=p(a)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 ### 8.6 Target binding
 
-\[
+$$
 V_{targetbind}(c,a)=
 \begin{cases}
 1,&t(c)=t(a)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 ### 8.7 Authorization-prestate binding
 
-\[
+$$
 V_{prebind}(c,a)=
 \begin{cases}
 1,&h_b(c)=h_b(a)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 ### 8.8 Candidate-content binding
 
-\[
+$$
 V_{candidate}(c,a)=
 \begin{cases}
 1,&h_c(a)=H_c(c)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 Where full candidate-envelope binding is part of the sealed source:
 
-\[
+$$
 V_{envelope}(c,a)=
 \begin{cases}
 1,&h_{env}(a)=H_{env}(c)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 ### 8.9 Evaluation binding
 
-\[
+$$
 V_{evaluation}(c,a)=
 \begin{cases}
 1,&h_e(a)=H_e(c)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 The evaluation body must also satisfy the bounded production requirements.
 
 At minimum:
 
-\[
+$$
 V_{source}=1
 \iff
 e.source\_sha256=H_c(c)
-\]
+$$
 
-\[
+$$
 V_{compile}=1
 \iff
 e.compile\_ok=True
-\]
+$$
 
-\[
+$$
 V_{benchmark}=1
 \iff
 e.benchmark.passed=True
-\]
+$$
 
 Define:
 
-\[
+$$
 V_{evalbody}
 =
 V_{source}
@@ -505,7 +507,7 @@ V_{source}
 V_{compile}
 \land
 V_{benchmark}
-\]
+$$
 
 ---
 
@@ -513,13 +515,13 @@ V_{benchmark}
 
 Define:
 
-\[
+$$
 V_{auth}(c,a,\tau)
-\]
+$$
 
 as the conjunction:
 
-\[
+$$
 \begin{aligned}
 V_{auth}
 ={}&
@@ -546,15 +548,15 @@ V_{evalbody}
 \land
 V_{sig}
 \end{aligned}
-\]
+$$
 
-Where full-envelope binding is required by the sealed source, \(V_{envelope}\) is included in this conjunction.
+Where full-envelope binding is required by the sealed source, $V_{envelope}$ is included in this conjunction.
 
 Therefore:
 
-\[
+$$
 V_{auth}(c,a,\tau)=1
-\]
+$$
 
 if and only if every required authorization predicate succeeds.
 
@@ -564,49 +566,49 @@ No individual successful predicate creates partial authorization.
 
 ## 10. Target safety
 
-Let \(Root(s)\) be the governed filesystem root.
+Let $Root(s)$ be the governed filesystem root.
 
 Define:
 
-\[
+$$
 Resolve(R,t)
-\]
+$$
 
-as target resolution within root \(R\).
+as target resolution within root $R$.
 
 The containment predicate is:
 
-\[
+$$
 V_{contain}(s,t)=
 \begin{cases}
 1,&Resolve(Root(s),t)\subseteq Root(s)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 Define:
 
-\[
+$$
 V_{allow}(t)\in\{0,1\}
-\]
+$$
 
 where:
 
-\[
+$$
 V_{allow}(t)=1
-\]
+$$
 
-only if the governed target policy permits mutation of target \(t\).
+only if the governed target policy permits mutation of target $t$.
 
 The composite target predicate is:
 
-\[
+$$
 V_{target}(s,t)
 =
 V_{contain}(s,t)
 \land
 V_{allow}(t)
-\]
+$$
 
 ---
 
@@ -614,29 +616,29 @@ V_{allow}(t)
 
 Define:
 
-\[
+$$
 CurrentText(s,t)
-\]
+$$
 
-as the currently stored text of target \(t\) in governed state \(s\).
+as the currently stored text of target $t$ in governed state $s$.
 
 Define:
 
-\[
+$$
 H_{current}(s,t)
 =
 SHA256(CurrentText(s,t))
-\]
+$$
 
 The prestate predicate is:
 
-\[
+$$
 V_{pre}(c,s)=
 \begin{cases}
 1,&H_{current}(s,t(c))=h_b(c)\\
 0,&otherwise
 \end{cases}
-\]
+$$
 
 A candidate authorized against stale source therefore fails the current-prestate condition.
 
@@ -648,57 +650,57 @@ This prevents an authorization for one source state from silently applying to a 
 
 Let:
 
-\[
+$$
 L_s
-\]
+$$
 
 be the set of authorization identifiers represented by successful exclusive spent reservations.
 
 Define the one-use predicate:
 
-\[
+$$
 V_{once}(a,L_s)=
 \begin{cases}
 1,&i(a)\notin L_s\\
 0,&i(a)\in L_s
 \end{cases}
-\]
+$$
 
 Define the partial reservation function:
 
-\[
+$$
 Reserve_s(a,L_s)
-\]
+$$
 
 such that:
 
-\[
+$$
 Reserve_s(a,L_s)\downarrow
-\]
+$$
 
 if and only if:
 
-\[
+$$
 i(a)\notin L_s
-\]
+$$
 
 A successful reservation produces:
 
-\[
+$$
 L_s'=L_s\cup\{i(a)\}
-\]
+$$
 
 If:
 
-\[
+$$
 i(a)\in L_s
-\]
+$$
 
 then:
 
-\[
+$$
 Reserve_s(a,L_s)\uparrow
-\]
+$$
 
 and the authorization is rejected as a replay.
 
@@ -708,18 +710,18 @@ and the authorization is rejected as a replay.
 
 Define:
 
-\[
+$$
 GApply(c,s)
-\]
+$$
 
-as the governed mutation function acting on candidate \(c\) and governed state \(s\).
+as the governed mutation function acting on candidate $c$ and governed state $s$.
 
 A successful application produces:
 
-- a verdict \(v\) with `v.applied=True`; and
-- a resulting governed state \(s'\).
+- a verdict $v$ with `v.applied=True`; and
+- a resulting governed state $s'$.
 
-The candidate source-content hash \(H_c(c)\) is the expected identity of the proposed after-content.
+The candidate source-content hash $H_c(c)$ is the expected identity of the proposed after-content.
 
 The sealed implementation performs a poststate check before the authorized application can return successfully.
 
@@ -731,29 +733,29 @@ This document does not restate a stronger poststate equation than the source rec
 
 Define:
 
-\[
+$$
 Receipt(c,a,s')
-\]
+$$
 
 as the production application receipt.
 
 A successful receipt binds, among other fields:
 
-- \(i(a)\), the authorization identifier;
-- \(p(c)\), the proposal identifier;
-- \(H_c(c)\), the candidate-content hash;
-- \(H_e(c)\), the evaluation hash;
-- \(t(c)\), the target;
-- \(h_b(c)\), the authorized prestate hash;
-- \(H_{current}(s',t(c))\), the resulting target-state hash;
+- $i(a)$, the authorization identifier;
+- $p(c)$, the proposal identifier;
+- $H_c(c)$, the candidate-content hash;
+- $H_e(c)$, the evaluation hash;
+- $t(c)$, the target;
+- $h_b(c)$, the authorized prestate hash;
+- $H_{current}(s',t(c))$, the resulting target-state hash;
 - successful signature verification; and
 - successful one-use authorization handling.
 
 Define:
 
-\[
+$$
 R_{receipt}(c,a,s')=1
-\]
+$$
 
 if and only if the expected application receipt is successfully and durably created for the successful application.
 
@@ -763,22 +765,22 @@ if and only if the expected application receipt is successfully and durably crea
 
 Define the partial function:
 
-\[
+$$
 \mathcal{A}:
 C\times A\times S
 \rightharpoonup
 S'\times R
-\]
+$$
 
 with:
 
-\[
+$$
 \mathcal{A}(c,a,s)\downarrow
-\]
+$$
 
 only through the ordered sequence:
 
-\[
+$$
 V_{auth}
 \rightarrow
 V_{target}
@@ -792,15 +794,15 @@ GApply
 PoststateCheck
 \rightarrow
 Receipt
-\]
+$$
 
 Define the successful-return predicate:
 
-\[
+$$
 M_{auth}(c,a,s)=1
 \iff
 \mathcal{A}(c,a,s)\downarrow
-\]
+$$
 
 The order matters. A later step cannot substitute for a failed earlier predicate.
 
@@ -808,33 +810,33 @@ The order matters. A later step cannot substitute for a failed earlier predicate
 
 ## 16. NBB validation
 
-Let \(x\) be an external package.
+Let $x$ be an external package.
 
 Define:
 
-\[
+$$
 NValidate(x)
-\]
+$$
 
 as the NBB validation function.
 
-Successful validation requires construction of \(c\) and \(a\), followed by:
+Successful validation requires construction of $c$ and $a$, followed by:
 
-\[
+$$
 V_{auth}(c,a,\tau)=1
-\]
+$$
 
 and:
 
-\[
+$$
 V_{allow}(t(c))=1
-\]
+$$
 
 Define:
 
-\[
+$$
 V_{NBB}(x)=1
-\]
+$$
 
 if and only if the bounded authorized-package validation returns successfully.
 
@@ -844,21 +846,21 @@ if and only if the bounded authorized-package validation returns successfully.
 
 Define:
 
-\[
+$$
 Publish(x,q_s)
-\]
+$$
 
 as the partial function that publishes a validated authorization record into authorized incoming-spool state.
 
 The successful-path ordering is:
 
-\[
+$$
 NValidate(x)
 \prec
 Publish(x,q_s)
-\]
+$$
 
-where \(\prec\) means required execution precedence.
+where $\prec$ means required execution precedence.
 
 Publication is therefore downstream of validation.
 
@@ -868,25 +870,25 @@ Publication is therefore downstream of validation.
 
 Define:
 
-\[
+$$
 Claim(q_s)=
 \begin{cases}
 r,&\exists r\in Incoming(q_s)\\
 \varnothing,&Incoming(q_s)=\varnothing
 \end{cases}
-\]
+$$
 
 When a record is successfully claimed:
 
-\[
+$$
 Q_2\rightarrow Q_3
-\]
+$$
 
 When no incoming record exists:
 
-\[
+$$
 Claim(q_s)=\varnothing
-\]
+$$
 
 and the worker iteration ends without invoking the authorized-apply path.
 
@@ -896,29 +898,29 @@ and the worker iteration ends without invoking the authorized-apply path.
 
 Define:
 
-\[
+$$
 FinishClaim(r,z,q_s)
-\]
+$$
 
 where:
 
-\[
+$$
 z\in\{completed,rejected\}
-\]
+$$
 
 Successful terminalization produces:
 
-\[
+$$
 Q_3\rightarrow Q_{6C}
-\]
+$$
 
 or:
 
-\[
+$$
 Q_3\rightarrow Q_{6R}
-\]
+$$
 
-depending on \(z\).
+depending on $z$.
 
 `FinishClaim` is a partial function.
 
@@ -932,49 +934,49 @@ That failure is part of the current formal model and is necessary to preserve th
 
 Define:
 
-\[
+$$
 \delta\subseteq Q\times\Sigma\times Q
-\]
+$$
 
 The principal transitions are:
 
-\[
+$$
 \delta(Q_0,V_{NBB}=1)=Q_1
-\]
+$$
 
-\[
+$$
 \delta(Q_1,Publish\downarrow)=Q_2
-\]
+$$
 
-\[
+$$
 \delta(Q_2,Claim\downarrow)=Q_3
-\]
+$$
 
-\[
+$$
 \delta(Q_3,WorkerDispatch)=Q_4
-\]
+$$
 
-\[
+$$
 \delta(Q_4,M_{auth}=1)=Q_{5A}
-\]
+$$
 
-\[
+$$
 \delta(Q_{5A},FinishClaim(completed)\downarrow)=Q_{6C}
-\]
+$$
 
 For rejected processing:
 
-\[
+$$
 \delta(Q_3,RejectedProcessing)=Q_{6R}
-\]
+$$
 
 subject to successful terminalization.
 
 If terminalization fails:
 
-\[
+$$
 \delta(Q_3,FinishClaim\uparrow)=Q_3
-\]
+$$
 
 is an allowed bounded state.
 
@@ -1018,11 +1020,11 @@ The authorization verifier is modeled according to the sealed verification imple
 
 ### P5 — Successful-return semantics
 
-For a bounded function \(f\):
+For a bounded function $f$:
 
-\[
+$$
 f(x)\downarrow
-\]
+$$
 
 means the function completes successfully according to the bounded implementation.
 
@@ -1042,7 +1044,7 @@ Detailed theorem accounting belongs in `THEOREM_REGISTRY.md`. The three principa
 
 ### T12D-A — Authorized-application gating theorem
 
-\[
+$$
 \boxed{
 M_{auth}
 \Rightarrow
@@ -1058,7 +1060,7 @@ S_{spent}
 \land
 R_{receipt}
 }
-\]
+$$
 
 Interpretation:
 
@@ -1071,13 +1073,13 @@ This result is not correspondence-verified for the positive production path beca
 
 ### T12D-B — Invalid-authorization fail-closed theorem
 
-\[
+$$
 \boxed{
 \neg V_{auth}
 \Rightarrow
 \neg Publish
 }
-\]
+$$
 
 Equivalent operational statement:
 
@@ -1092,7 +1094,7 @@ NoAuthorizedSpoolPublication
 
 ### T12D-C — Empty-spool non-application theorem
 
-\[
+$$
 \boxed{
 Incoming(q_s)=\varnothing
 \Rightarrow
@@ -1100,17 +1102,17 @@ Claim(q_s)=\varnothing
 \Rightarrow
 NoAuthorizedApply
 }
-\]
+$$
 
 State form:
 
-\[
+$$
 Q_2=\varnothing
 \Rightarrow
 Q_3\text{ not reached}
 \Rightarrow
 Q_4\text{ not reached}
-\]
+$$
 
 **Source status:** `PROVEN`  
 **Validation level:** `CORRESPONDENCE_VERIFIED`
@@ -1121,7 +1123,7 @@ Q_4\text{ not reached}
 
 The proposed terminal-totality property was:
 
-\[
+$$
 \boxed{
 Q_3
 \Rightarrow
@@ -1129,38 +1131,38 @@ Q_{6C}
 \lor
 Q_{6R}
 }
-\]
+$$
 
 This proposition is false for the current model.
 
-A bounded counterexample exists when a record is in \(Q_3\) and terminalization fails:
+A bounded counterexample exists when a record is in $Q_3$ and terminalization fails:
 
-\[
+$$
 State(r)=Q_3
-\]
+$$
 
-\[
+$$
 FinishClaim(r,z,q_s)\uparrow
-\]
+$$
 
 which permits:
 
-\[
+$$
 State'(r)=Q_3
-\]
+$$
 
 rather than forcing either terminal state.
 
 Therefore:
 
-\[
+$$
 \exists r:
 Q_3(r)
 \land
 \neg Q_{6C}(r)
 \land
 \neg Q_{6R}(r)
-\]
+$$
 
 after terminalization failure.
 
@@ -1172,7 +1174,7 @@ P12C-09 = MACHINE_CHECKED_DISPROVEN
 
 A narrower proposition,
 
-\[
+$$
 Q_3
 \land
 FinishClaim\downarrow
@@ -1180,7 +1182,7 @@ FinishClaim\downarrow
 Q_{6C}
 \lor
 Q_{6R}
-\]
+$$
 
 is consistent with the transition structure, but Step 12 did not silently replace the disproven proposition with this narrower statement or promote it as a new sealed theorem.
 
@@ -1194,9 +1196,9 @@ This does not mean that every possible behavior represented by the model has bee
 
 In particular:
 
-\[
+$$
 LiveObs^{+}(T12D\text{-}A)=0
-\]
+$$
 
 because no real positive production authorization/application was executed as part of Step 12.
 
@@ -1220,19 +1222,19 @@ These distinctions are handled in the companion correspondence records.
 
 The bounded theorem family does not imply a general production-mutation safety theorem:
 
-\[
+$$
 T_{bounded}
 \not\Rightarrow
 T_{prod-safe}
-\]
+$$
 
 It also does not imply a whole-system safety theorem:
 
-\[
+$$
 T_{bounded}
 \not\Rightarrow
 T_{system}
-\]
+$$
 
 Therefore:
 
@@ -1252,7 +1254,7 @@ It is not an unadjudicated question inside the completed Step-12 scope.
 
 The strongest compact formal statement supported by the current model is:
 
-\[
+$$
 \boxed{
 M_{auth}
 \Rightarrow
@@ -1268,23 +1270,23 @@ S_{spent}
 \land
 R_{receipt}
 }
-\]
+$$
 
 over the sealed current-production authorized-adoption source model.
 
 Additionally:
 
-\[
+$$
 \boxed{
 \neg V_{auth}
 \Rightarrow
 \neg Publish
 }
-\]
+$$
 
 is correspondence-verified against the observed live fail-closed production boundary, and:
 
-\[
+$$
 \boxed{
 Incoming=\varnothing
 \Rightarrow
@@ -1292,51 +1294,51 @@ Claim=\varnothing
 \Rightarrow
 NoAuthorizedApply
 }
-\]
+$$
 
 is correspondence-verified against the observed live empty-spool boundary.
 
 The formal model satisfies the three principal bounded results under their stated premises:
 
-\[
+$$
 \mathcal{M}_{DGM}
 \models
 T_A\land T_B\land T_C
-\]
+$$
 
 while:
 
-\[
+$$
 \mathcal{M}_{DGM}
 \not\models
 P12C\text{-}09
-\]
+$$
 
 The result does not entail:
 
-\[
+$$
 ProductionMutationSafety
-\]
+$$
 
-\[
+$$
 WholeSystemSafety
-\]
+$$
 
 or:
 
-\[
+$$
 SYSTEM\_PROVEN
-\]
+$$
 
 The controlling logical boundary is:
 
-\[
+$$
 \boxed{
 \text{Bounded authorized-adoption properties proven}
 \not\Rightarrow
 \text{whole-system proof}
 }
-\]
+$$
 
 ---
 
