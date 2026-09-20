@@ -7,9 +7,10 @@
 <br>
 
 ![Folder](https://img.shields.io/badge/ACCEPTANCE-CLOSEOUT-7c3aed?style=for-the-badge)
-![Status](https://img.shields.io/badge/CLOSEOUT_RECORDS-2_OF_3_PRESENT-0ea5e9?style=for-the-badge)
+![Status](https://img.shields.io/badge/CLOSEOUT_RECORDS-3_OF_3_PRESENT-16a34a?style=for-the-badge)
 ![Workstream F](https://img.shields.io/badge/WORKSTREAM_F-CLOSED-16a34a?style=for-the-badge)
 ![Step 12](https://img.shields.io/badge/DGM_STEP_12-CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
+![Step 17](https://img.shields.io/badge/PUBLICATION_STEP_17-GREEN_COMPLETE-14b8a6?style=for-the-badge)
 
 <br>
 
@@ -20,7 +21,7 @@
 ---
 
 > [!IMPORTANT]
-> This folder contains **final closeout records** for bounded ALLIS workstreams.
+> This folder contains the **final closeout records** for the three bounded ALLIS workstreams represented in the current acceptance layer.
 >
 > A closeout record documents the accepted final state of a workstream after its scope, evidence, validation state, residuals, correspondence, and final authority have been established.
 
@@ -84,14 +85,14 @@ acceptance/
     ├── readme.md
     ├── workstream-f-close.md
     ├── dgm-step12-close.md
-    └── publication-step17-close.md   ← remaining
+    └── publication-step17-close.md
 ```
 
 | Record | Status | Purpose |
 |---|---|---|
 | [`workstream-f-close.md`](workstream-f-close.md) | ✅ **Present** | Formal Workstream-F close |
 | [`dgm-step12-close.md`](dgm-step12-close.md) | ✅ **Present** | Bounded Step-12 formal/correspondence close |
-| `publication-step17-close.md` | 🟦 **Remaining** | Governed-publication fixed-goal close |
+| [`publication-step17-close.md`](publication-step17-close.md) | ✅ **Present** | Governed-publication fixed-goal close |
 
 ---
 
@@ -205,30 +206,64 @@ unfinished
 
 ---
 
-# 🟦 Remaining: Publication Step-17 closeout
+# 🟦 Publication Step-17 closeout
 
-**Planned file**
+**File**
+
+[`publication-step17-close.md`](publication-step17-close.md)
+
+Final state:
 
 ```text
-publication-step17-close.md
+STEP17_STATUS=GREEN_ALLIS_LIVE_PUBLICATION_ENDPOINT_COMPLETE
+
+ALL_STEPS_0_THROUGH_17=GREEN
+FINAL_CRITERIA=25_OF_25_PASS
+FINAL_NETWORK_CONTINUITY=GREEN
+
+OVERALL_GOAL=GREEN_COMPLETE
 ```
 
-The final closeout record should capture:
+Final publication identity:
+
+```text
+allis-publication-step6-retention-v2
+```
+
+Publication SHA-256:
+
+```text
+d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
+```
+
+Frontend build:
+
+```text
+5By6R3CWTM7NDXc-4lmSi
+```
+
+The closeout establishes, within the fixed publication goal:
 
 - Steps 0–17 green;
 - 25/25 completion criteria;
 - final network continuity green;
 - governed publication endpoint complete;
 - Evidence & Governance Portal live at the final observation;
-- publication ID;
-- publication SHA-256;
-- frontend build;
+- immutable publication identity;
 - direct/public publication-body correspondence;
-- no production mutation during final closeout;
-- fixed-goal closure;
-- no automatic Step 18.
+- strict read-only public boundary;
+- no public mutation endpoint;
+- publication-service isolation;
+- loopback-only publication service;
+- authorized public routing;
+- GUI publication consumption without unrestricted direct ALLIS access;
+- restart persistence;
+- rollback demonstration;
+- source → publication → HTTP → GUI correspondence;
+- final completion-manifest verification; and
+- no production mutation during final closeout.
 
-The closeout should preserve:
+The fixed-goal successor rule is:
 
 ```text
 new capability
@@ -236,26 +271,45 @@ new capability
 new governed workstream
 ```
 
+There is no automatic Step 18 for the completed fixed goal.
+
 ---
 
 # 🌈 Closeout status
 
 ```mermaid
 flowchart LR
-    F["🟢 Workstream F<br/>CLOSED<br/>record present"]:::done
-    D["🟠 DGM Step 12<br/>GREEN CLOSED<br/>record present"]:::done2
-    P["🟦 Publication Step 17<br/>GREEN COMPLETE<br/>closeout record remaining"]:::next
+    F["🟢 Workstream F<br/>CLOSED<br/>record present"]:::f
+    D["🟠 DGM Step 12<br/>GREEN CLOSED<br/>record present"]:::d
+    P["🟦 Publication Step 17<br/>GREEN COMPLETE<br/>record present"]:::p
+    C["✅ Acceptance closeout layer<br/>3 / 3 records present"]:::complete
 
-    F --> D --> P
+    F --> C
+    D --> C
+    P --> C
 
-    classDef done fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
-    classDef done2 fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
-    classDef next fill:#bfdbfe,stroke:#2563eb,color:#172554,stroke-width:3px;
+    classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef d fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
+    classDef p fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
+    classDef complete fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
 ```
 
-The folder currently contains the first two bounded closeout records.
+All three planned bounded closeout records are now present.
 
-The remaining closeout record is Publication Step 17.
+---
+
+# ↔️ Closeout comparison
+
+| Property | 🟢 Workstream F | 🟠 DGM Step 12 | 🟦 Publication Step 17 |
+|---|---|---|---|
+| Final state | `CLOSED` | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` | `GREEN_COMPLETE` |
+| Primary object | Qualified F baseline | Production DGM formal/source object | Governed publication reference set |
+| Core acceptance result | F1–F5 · 5/5 proofs | 12 propositions · 15 formal obligations | 25/25 fixed-goal criteria |
+| Formal negative result | — | `P12C-09` disproven | — |
+| Correspondence emphasis | Qualified close lineage | Model → source → runtime | Source → publication → HTTP → GUI |
+| Runtime observation | Not the close authority | Point-in-time NBB/worker correspondence | Point-in-time publication/network/GUI correspondence |
+| Successor rule | Separate next-scope authority | New workstream before stronger promotion | New workstream for new capability |
+| Whole-system proof | ❌ | ❌ | ❌ |
 
 ---
 
@@ -363,6 +417,12 @@ flowchart LR
 
 ---
 
+# 📚 Closeout records
+
+- [`workstream-f-close.md`](workstream-f-close.md) — formal Workstream-F close
+- [`dgm-step12-close.md`](dgm-step12-close.md) — bounded production DGM formal/correspondence close
+- [`publication-step17-close.md`](publication-step17-close.md) — governed-publication fixed-goal close
+
 # 📚 Related acceptance records
 
 - [`../current-system-manifest.md`](../current-system-manifest.md) — composite current-system object and correspondence manifest
@@ -373,13 +433,33 @@ The detailed evidence, formal models, and correspondence records remain in their
 
 ---
 
+# ⚪ System-level boundary
+
+The closeout layer now contains three completed bounded records.
+
+Their combined existence does not create a whole-system theorem.
+
+```text
+WORKSTREAM_F_STATUS=CLOSED
+
+STEP_12=GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
+
+PUBLICATION_STEP_17=GREEN_COMPLETE
+
+SYSTEM_PROVEN=NO
+```
+
+Each result remains authoritative within its own documented scope.
+
+---
+
 # 🧾 Folder status
 
 <div align="center">
 
 ### `acceptance/closeout/`
 
-## **2 OF 3 CLOSEOUT RECORDS PRESENT**
+# **3 OF 3 CLOSEOUT RECORDS PRESENT**
 
 <br>
 
@@ -387,7 +467,11 @@ The detailed evidence, formal models, and correspondence records remain in their
 
 ✅ `dgm-step12-close.md`
 
-🟦 `publication-step17-close.md` — **remaining**
+✅ `publication-step17-close.md`
+
+<br>
+
+## **CLOSEOUT LAYER COMPLETE**
 
 </div>
 
