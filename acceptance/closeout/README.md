@@ -7,7 +7,9 @@
 <br>
 
 ![Folder](https://img.shields.io/badge/ACCEPTANCE-CLOSEOUT-7c3aed?style=for-the-badge)
-![Status](https://img.shields.io/badge/FOLDER-READY_FOR_CLOSEOUT_RECORDS-0ea5e9?style=for-the-badge)
+![Status](https://img.shields.io/badge/CLOSEOUT_RECORDS-2_OF_3_PRESENT-0ea5e9?style=for-the-badge)
+![Workstream F](https://img.shields.io/badge/WORKSTREAM_F-CLOSED-16a34a?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/DGM_STEP_12-CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
 
 <br>
 
@@ -18,9 +20,9 @@
 ---
 
 > [!IMPORTANT]
-> This folder is reserved for **final closeout records**.
+> This folder contains **final closeout records** for bounded ALLIS workstreams.
 >
-> A closeout record documents the accepted final state of a bounded workstream after its scope, evidence, validation state, residuals, and final authority have been established.
+> A closeout record documents the accepted final state of a workstream after its scope, evidence, validation state, residuals, correspondence, and final authority have been established.
 
 ---
 
@@ -37,7 +39,7 @@ It separates final acceptance from:
 - runtime correspondence records; and
 - current-state summaries.
 
-A closeout document should answer:
+A closeout document answers:
 
 > **What workstream closed, what did it establish, what remained bounded, and what final evidence supports that result?**
 
@@ -68,13 +70,13 @@ flowchart LR
 
 The closeout layer records the **accepted result**.
 
-It does not replace the underlying evidence or formal records.
+It does not replace the underlying evidence, formal models, or correspondence records.
 
 ---
 
-# 📁 Planned closeout records
+# 📁 Closeout records
 
-The repository reconciliation plan identifies three bounded workstreams that need dedicated closeout documents.
+Current directory structure:
 
 ```text
 acceptance/
@@ -82,32 +84,40 @@ acceptance/
     ├── readme.md
     ├── workstream-f-close.md
     ├── dgm-step12-close.md
-    └── publication-step17-close.md
+    └── publication-step17-close.md   ← remaining
 ```
 
-At this stage, this `readme.md` establishes the folder structure and document standard.
-
-The individual closeout files should be added only when each final record is drafted and reviewed.
+| Record | Status | Purpose |
+|---|---|---|
+| [`workstream-f-close.md`](workstream-f-close.md) | ✅ **Present** | Formal Workstream-F close |
+| [`dgm-step12-close.md`](dgm-step12-close.md) | ✅ **Present** | Bounded Step-12 formal/correspondence close |
+| `publication-step17-close.md` | 🟦 **Remaining** | Governed-publication fixed-goal close |
 
 ---
 
-# 🟢 Planned: Workstream F closeout
+# 🟢 Workstream F closeout
 
-**Planned file**
+**File**
+
+[`workstream-f-close.md`](workstream-f-close.md)
+
+Final state:
 
 ```text
-workstream-f-close.md
+F1=CLOSED
+F2=CLOSED
+F3=CLOSED
+F4=CLOSED
+F5=CLOSED
+
+WORKSTREAM_F_PROOFS_CLOSED=5
+WORKSTREAM_F_PROOF_TARGET=5
+
+WORKSTREAM_F_FORMAL_STATE_TRANSITION=PASS
+WORKSTREAM_F_FORMAL_CLOSE=PASS
+
+WORKSTREAM_F_STATUS=CLOSED
 ```
-
-The final closeout record should capture:
-
-- F1–F5 closed;
-- 5/5 proofs;
-- formal close;
-- qualified source baseline;
-- close eligibility;
-- formal close authority;
-- final scope boundary.
 
 Qualified Workstream-F baseline:
 
@@ -115,7 +125,7 @@ Qualified Workstream-F baseline:
 65b9f7dbd594ec9d225152aabd705eefc9216dbb
 ```
 
-The closeout should preserve the distinction between:
+The closeout preserves the distinction between:
 
 ```text
 eligible to close
@@ -123,33 +133,69 @@ eligible to close
 formally closed
 ```
 
+and records that the sealed formal-close authority was consumed exactly once before the `OPEN → CLOSED` transition.
+
+Further Workstream-F proof execution is not authorized under the consumed close authority.
+
 ---
 
-# 🟠 Planned: DGM Step-12 closeout
+# 🟠 DGM Step-12 closeout
 
-**Planned file**
+**File**
+
+[`dgm-step12-close.md`](dgm-step12-close.md)
+
+Final state:
 
 ```text
-dgm-step12-close.md
+STEP_12=GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
 ```
 
-The final closeout record should capture:
+Formal object:
 
-- the bounded production authorized-adoption formal model;
-- 12 propositions;
-- 11 proven;
-- 1 disproven;
-- 0 unadjudicated;
-- `T12D-A` — Machine-Checked;
-- `T12D-B` — Correspondence-Verified;
-- `T12D-C` — Correspondence-Verified;
-- `P12C-09` — Machine-Checked Disproven;
-- eight residuals;
+```text
+DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
+```
+
+Production source:
+
+```text
+20c8cbe175781c8a1c05d65c03977859ceca884a
+```
+
+Proposition result:
+
+```text
+12 total
+11 proven
+1 disproven
+0 open
+```
+
+Principal validation states:
+
+```text
+T12D-A   = MACHINE_CHECKED
+T12D-B   = CORRESPONDENCE_VERIFIED
+T12D-C   = CORRESPONDENCE_VERIFIED
+P12C-09  = MACHINE_CHECKED_DISPROVEN
+```
+
+The closeout also preserves:
+
+- 15 formal obligations;
+- 0 unadjudicated obligations;
+- 11/11 NBB source correspondence;
+- 11/11 worker source correspondence;
+- public trust correspondence;
+- governance-view correspondence;
+- eight explicit residuals;
 - seven explicit non-promotions;
-- final Step-12 seal;
+- the preserved `claimed-but-not-terminalized` counterexample;
+- the final Step-12 seal; and
 - `SYSTEM_PROVEN=NO`.
 
-The closeout should preserve both successful and negative formal results.
+A disproven proposition remains part of the accepted formal result.
 
 ```text
 disproven
@@ -159,7 +205,7 @@ unfinished
 
 ---
 
-# 🟦 Planned: Publication Step-17 closeout
+# 🟦 Remaining: Publication Step-17 closeout
 
 **Planned file**
 
@@ -177,6 +223,7 @@ The final closeout record should capture:
 - publication ID;
 - publication SHA-256;
 - frontend build;
+- direct/public publication-body correspondence;
 - no production mutation during final closeout;
 - fixed-goal closure;
 - no automatic Step 18.
@@ -191,9 +238,30 @@ new governed workstream
 
 ---
 
+# 🌈 Closeout status
+
+```mermaid
+flowchart LR
+    F["🟢 Workstream F<br/>CLOSED<br/>record present"]:::done
+    D["🟠 DGM Step 12<br/>GREEN CLOSED<br/>record present"]:::done2
+    P["🟦 Publication Step 17<br/>GREEN COMPLETE<br/>closeout record remaining"]:::next
+
+    F --> D --> P
+
+    classDef done fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef done2 fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
+    classDef next fill:#bfdbfe,stroke:#2563eb,color:#172554,stroke-width:3px;
+```
+
+The folder currently contains the first two bounded closeout records.
+
+The remaining closeout record is Publication Step 17.
+
+---
+
 # 🧱 Closeout document standard
 
-Each closeout file should use a consistent structure.
+Each closeout file follows the same general structure while preserving workstream-specific evidence.
 
 ```text
 1. Workstream
@@ -212,7 +280,7 @@ Each closeout file should use a consistent structure.
 14. Supported public claim
 ```
 
-This makes closeout records easy to compare without forcing different workstreams into the same technical model.
+This makes closeout records comparable without forcing different workstreams into the same technical model.
 
 ---
 
@@ -242,7 +310,7 @@ Residuals remain part of the accepted result.
 
 A disproven proposition is part of the formal record.
 
-Closeout should preserve it rather than omit it.
+Closeout preserves it rather than removing or silently weakening it.
 
 ---
 
@@ -274,8 +342,8 @@ A new capability should receive:
 ```mermaid
 flowchart LR
     A["📋 baseline-object-registry.md<br/>Which qualified object applies?"]:::baseline
-    B["🧾 current-system-manifest.md<br/>How do the qualified objects fit together?"]:::manifest
-    C["🔒 closeout/<br/>Which bounded workstreams are formally closed?"]:::closeout
+    B["🧾 current-system-manifest.md<br/>How do qualified objects fit together?"]:::manifest
+    C["🔒 closeout/<br/>Which bounded workstreams are closed?"]:::closeout
     D["📚 CURRENT.md<br/>What may be stated as current?"]:::current
 
     A --> B --> C --> D
@@ -290,7 +358,7 @@ flowchart LR
 |---|---|
 | `baseline-object-registry.md` | Which qualified reference object applies to this scope? |
 | `current-system-manifest.md` | How do qualified objects and correspondence relationships fit together? |
-| `closeout/readme.md` | What belongs in the final acceptance-closeout layer? |
+| `closeout/readme.md` | Which bounded workstreams have final closeout records? |
 | `CURRENT.md` | What does the accepted technical record support now? |
 
 ---
@@ -301,7 +369,7 @@ flowchart LR
 - [`../baseline-object-registry.md`](../baseline-object-registry.md) — role-scoped baseline and reference-object registry
 - [`../../CURRENT.md`](../../CURRENT.md) — current qualified technical state
 
-Existing bounded evidence and formal records remain in their own directories until the corresponding closeout summaries are added.
+The detailed evidence, formal models, and correspondence records remain in their dedicated repository directories.
 
 ---
 
@@ -311,17 +379,15 @@ Existing bounded evidence and formal records remain in their own directories unt
 
 ### `acceptance/closeout/`
 
-**READY FOR FINAL CLOSEOUT RECORDS**
+## **2 OF 3 CLOSEOUT RECORDS PRESENT**
 
 <br>
 
-Planned:
+✅ `workstream-f-close.md`
 
-`workstream-f-close.md`
+✅ `dgm-step12-close.md`
 
-`dgm-step12-close.md`
-
-`publication-step17-close.md`
+🟦 `publication-step17-close.md` — **remaining**
 
 </div>
 
