@@ -1,208 +1,275 @@
-# Correspondence
+<div align="center">
 
-## Connecting formal claims to implemented and observed system state
+# ALLIS — Correspondence
 
-This directory contains ALLIS correspondence records.
+### Evidence-backed relationships among formal models, qualified objects, runtime state, publication, and public presentation
 
-The correspondence layer exists to answer a simple but important question:
+<br>
 
-> **Does the system described by the formal model correspond to the source and runtime that actually exist?**
+![Correspondence](https://img.shields.io/badge/CORRESPONDENCE-MULTI_PACKAGE-7c3aed?style=for-the-badge)
+![Authorized Adoption](https://img.shields.io/badge/AUTHORIZED_ADOPTION-STEP_12-ef4444?style=for-the-badge)
+![Publication](https://img.shields.io/badge/PUBLICATION-STEP_17-14b8a6?style=for-the-badge)
+![Time](https://img.shields.io/badge/CORRESPONDENCE-POINT_IN_TIME-f59e0b?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
-ALLIS keeps three things separate:
+<br>
 
-```text
-formal model
-    ↓
-what the system is mathematically claimed to do
+**Kidd’s Technical Services · ALLIS**
 
-source implementation
-    ↓
-what the sealed production code actually implements
-
-runtime state
-    ↓
-what source and behavior are actually present in the deployed system
-```
-
-Correspondence connects those layers with evidence.
-
-It does not assume they are equivalent.
+</div>
 
 ---
 
-## Why correspondence matters
+> [!IMPORTANT]
+> The correspondence layer answers:
+>
+> **When a claim moves from one technical representation to another, what evidence establishes that the two objects are related in the way the claim requires?**
+>
+> Correspondence does not make different objects identical.
+>
+> It does not create authority.
+>
+> It does not convert a bounded result into a whole-system proof.
 
-A formal model can be correct as mathematics while still failing to describe the deployed implementation.
+---
 
-Likewise, source code can implement a modeled property while the live runtime is running different bytes, a different configuration, or a different trust state.
+# 👀 Correspondence in one view
 
-ALLIS therefore does not treat:
+ALLIS currently preserves two distinct correspondence directions.
 
-```text
-model written
+```mermaid
+flowchart LR
+
+    subgraph WRITE["🔐 INWARD / GOVERNED WRITE SIDE"]
+        F["📐 FORMAL MODEL"]:::formal
+        S["💻 SEALED SOURCE"]:::source
+        R["🖥️ OBSERVED RUNTIME"]:::runtime
+        O["👁️ THEOREM-SPECIFIC<br/>LIVE OBSERVATION"]:::observation
+
+        F -->|"model → source"| S
+        S -->|"source → runtime"| R
+        R -->|"runtime behavior"| O
+    end
+
+    subgraph READ["🌐 OUTWARD / GOVERNED READ SIDE"]
+        Q["✅ QUALIFIED STATE"]:::qualified
+        P["📦 GOVERNED PUBLICATION"]:::publication
+        D["🔒 DIRECT SERVICE"]:::service
+        H["🌐 PUBLIC HTTPS"]:::http
+        G["🔎 GUI"]:::gui
+
+        Q -->|"governed projection"| P
+        P -->|"served body"| D
+        D -->|"authorized route"| H
+        H -->|"live consumption"| G
+    end
+
+    classDef formal fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
+    classDef source fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
+    classDef runtime fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
+    classDef observation fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
+
+    classDef qualified fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef publication fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
+    classDef service fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef http fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
+    classDef gui fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
 ```
 
-as equivalent to:
+These are different correspondence packages.
+
+Neither replaces the other.
+
+---
+
+# 🎯 Purpose
+
+The correspondence layer exists because a valid claim in one representation does not silently become a valid claim in another.
+
+For example:
 
 ```text
-source implements model
+formal model exists
+    ≠
+source implements the model
 ```
 
-and does not treat:
-
 ```text
-source implements model
-```
-
-as equivalent to:
-
-```text
+source implements the model
+    ≠
 runtime is running that source
 ```
 
-The correspondence layer makes those transitions explicit.
-
----
-
-## Correspondence chain
-
-The current ALLIS correspondence model is:
+```text
+runtime contains the source
+    ≠
+required behavior was observed
+```
 
 ```text
-FORMAL MODEL
-     ↓
-model-to-source correspondence
-     ↓
-SEALED PRODUCTION SOURCE
-     ↓
-source-to-runtime correspondence
-     ↓
-LIVE RUNTIME
-     ↓
-theorem-specific live observation
+qualified state exists
+    ≠
+state is eligible for publication
 ```
 
-In compact form:
-
-```math
-F
-\overset{C_{FS}}{\longrightarrow}
-S
-\overset{C_{SR}}{\longrightarrow}
-R
+```text
+publication exists
+    ≠
+public route serves that publication
 ```
 
-where:
+```text
+public endpoint serves publication
+    ≠
+GUI consumes it correctly
+```
 
-- `F` is a bounded formal model;
-- `S` is the sealed source object to which that model is bound; and
-- `R` is the inspected runtime state.
-
-For theorem-level correspondence, runtime behavior may also need to be observed.
+Correspondence establishes the required bridge between those states.
 
 ---
 
-## Current correspondence packages
-
-The current directory structure is:
+# 📁 Current correspondence packages
 
 ```text
 correspondence/
 ├── README.md
-└── authorized-adoption/
-    ├── model-to-source.md
-    └── source-to-runtime.md
+│
+├── authorized-adoption/
+│   ├── model-to-source.md
+│   └── source-to-runtime.md
+│
+└── publication/
+    └── source-to-publication-to-http-to-gui.md
 ```
 
-The current production correspondence package is:
+The packages serve different technical purposes.
 
-```text
-authorized-adoption/
+| Package                | Workstream | Direction                    | Primary question                                                                                                 |
+| ---------------------- | ---------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `authorized-adoption/` | Step 12    | Inward / governed write side | Does the bounded formal model correspond to the sealed production source and inspected runtime?                  |
+| `publication/`         | Step 17    | Outward / governed read side | Does qualified state correspond through governed publication, direct service, public HTTPS, and GUI consumption? |
+
+---
+
+# 🧭 Which correspondence package should I read?
+
+```mermaid
+flowchart TD
+    Q["What relationship are you trying to verify?"]:::question
+
+    A["Formal model → source → runtime<br/>authorized adoption"]:::a
+    P["Qualified state → publication → HTTP → GUI<br/>governed publication"]:::p
+
+    AA["authorized-adoption/"]:::folderA
+    PP["publication/"]:::folderP
+
+    Q --> A --> AA
+    Q --> P --> PP
+
+    classDef question fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:3px;
+    classDef a fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:2px;
+    classDef p fill:#ccfbf1,stroke:#0f766e,color:#134e4a,stroke-width:2px;
+    classDef folderA fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:3px;
+    classDef folderP fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
 ```
 
-It documents correspondence for the bounded production authorized-adoption model:
+---
+
+# 🔐 Package 1 — Authorized adoption
+
+The authorized-adoption package records the bounded Step-12 correspondence for:
 
 ```text
 DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
 ```
 
-at production source commit:
+The controlling production source identity is:
 
 ```text
 20c8cbe175781c8a1c05d65c03977859ceca884a
 ```
 
+This source has a specific role in the current ALLIS object registry:
+
+```text
+REG-D1201
+=
+Step-12 production DGM source
+```
+
+It is not a universal ALLIS source identity.
+
 ---
 
-## Model-to-source correspondence
+## Model → source
 
-The first correspondence boundary asks:
+Record:
 
-> **Does the formal model map to behavior actually implemented in the sealed production source?**
+[`authorized-adoption/model-to-source.md`](authorized-adoption/model-to-source.md)
 
-The current authorized-adoption package establishes:
+This correspondence boundary asks:
+
+> **Does the bounded formal model map to behavior implemented by the sealed Step-12 production source?**
+
+Conceptually:
 
 ```math
 C_{FS}(F,S)=1
 ```
 
-for the bounded production authorized-adoption domain.
-
-The corresponding record is:
+where:
 
 ```text
-authorized-adoption/model-to-source.md
+F = bounded formal object
+S = sealed production source object
 ```
 
-That document maps formal objects such as:
+The mapping includes formal concepts such as:
+
+* candidate;
+* authorization;
+* signature verification;
+* NBB validation;
+* authorized publication;
+* worker claim;
+* target validation;
+* prestate validation;
+* one-use authority;
+* governed application;
+* receipt;
+* terminalization.
+
+The correspondence establishes the required relationship between formal semantics and implementation.
+
+It does not mean:
 
 ```text
-candidate
-authorization
-signature verification
-NBB validation
-authorized publication
-worker claim
-target validation
-prestate validation
-one-use authorization
-governed application
-receipt
-terminalization
+formal object
+    =
+source code
 ```
-
-to the sealed production implementation that gives them operational meaning.
 
 ---
 
-## Source-to-runtime correspondence
+## Source → runtime
 
-The second boundary asks:
+Record:
 
-> **Was the sealed source actually present in the inspected live runtime?**
+[`authorized-adoption/source-to-runtime.md`](authorized-adoption/source-to-runtime.md)
 
-The current authorized-adoption package establishes, at the final Step-12 seal:
+This boundary asks:
+
+> **Was the sealed Step-12 production source actually represented in the inspected runtime?**
+
+At the final Step-12 observation:
 
 ```text
 NBB source correspondence     11/11 PASS
+
 Worker source correspondence  11/11 PASS
 ```
 
-The corresponding record is:
-
-```text
-authorized-adoption/source-to-runtime.md
-```
-
-The runtime comparison is based on the sealed source identities, not merely matching filenames or module names.
-
----
-
-## Correspondence is not just source identity
-
-Source identity is necessary, but it is not the entire correspondence problem.
-
-The current Step-12 runtime state also separately records:
+Related bounded runtime evidence also recorded:
 
 ```text
 Public trust     PASS
@@ -213,33 +280,33 @@ Host health      PASS
 Authorized spool PASS_EMPTY
 ```
 
-These are different evidence objects.
+These are separate evidence relationships.
 
 For example:
 
 ```text
-source matches
-≠
-trust anchor matches
+source correspondence
+    ≠
+trust correspondence
 ```
 
 and:
 
 ```text
-trust anchor matches
-≠
-governance state matches
+trust correspondence
+    ≠
+governance correspondence
 ```
 
-ALLIS preserves those distinctions rather than collapsing them into one generic statement that the system "matched."
+ALLIS preserves those distinctions.
 
 ---
 
-## Correspondence and theorem validation
+# 📐 Step-12 theorem correspondence
 
-A theorem does not become correspondence-verified merely because the runtime contains matching source.
+Matching source bytes are not enough to establish theorem-level correspondence.
 
-The Step-12 theorem-correspondence criterion is:
+The Step-12 criterion is conceptually:
 
 ```math
 MC(T,S)
@@ -251,285 +318,700 @@ LiveObs(T,R)
 
 where:
 
-- `MC(T,S)` means the theorem was machine-checked against the sealed source;
-- `C_SR(S,R)` means that source corresponded to the runtime; and
-- `LiveObs(T,R)` means the relevant behavior was actually observed live.
+* `MC(T,S)` means the theorem was machine-checked against the bounded source;
+* `C_SR(S,R)` means the inspected runtime corresponded to that source;
+* `LiveObs(T,R)` means the relevant theorem behavior was observed in the runtime.
 
-This distinction explains why the current validation levels differ:
+That distinction produces different validation states:
 
 ```text
 T12D-A = MACHINE_CHECKED
+
 T12D-B = CORRESPONDENCE_VERIFIED
+
 T12D-C = CORRESPONDENCE_VERIFIED
+
+P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
 
-For `T12D-A`, the positive live production path was not exercised.
+A theorem can therefore be machine-checked without being correspondence-verified.
+
+---
+
+# 🌐 Package 2 — Governed publication
+
+The publication package records the bounded Step-17 outward correspondence chain.
+
+Record:
+
+[`publication/source-to-publication-to-http-to-gui.md`](publication/source-to-publication-to-http-to-gui.md)
+
+Final bounded result:
+
+```text
+SOURCE_TO_PUBLICATION_TO_HTTP_TO_GUI=GREEN
+```
+
+Final workstream state:
+
+```text
+ALL_STEPS_0_THROUGH_17=GREEN
+
+FINAL_CRITERIA=25_OF_25_PASS
+
+FINAL_NETWORK_CONTINUITY=GREEN
+
+OVERALL_GOAL=GREEN_COMPLETE
+```
+
+Publication state:
+
+```text
+ALLIS_LIVE_PUBLICATION_ENDPOINT=COMPLETE
+
+ALLIS_EVIDENCE_GOVERNANCE_PORTAL=LIVE
+```
+
+---
+
+# 📦 Step-17 publication reference set
+
+The current baseline-object registry represents Step 17 as:
+
+```text
+REG-P1701
+=
+Step-17 publication reference set
+```
+
+Its principal identities are:
+
+```text
+Publication ID:
+allis-publication-step6-retention-v2
+```
+
+```text
+Publication SHA-256:
+d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
+```
+
+```text
+Frontend build:
+5By6R3CWTM7NDXc-4lmSi
+```
+
+These are different identities.
+
+```text
+publication identity
+    ≠
+source-code identity
+```
+
+```text
+publication body
+    ≠
+frontend build
+```
+
+Step 17 therefore uses a reference set rather than pretending one Git commit identifies the entire public state.
+
+---
+
+# 🔗 Publication correspondence edges
+
+The Step-17 chain contains distinct correspondence edges.
+
+| Edge  | Relationship                              | Final bounded state |
+| ----- | ----------------------------------------- | ------------------- |
+| `E1`  | Qualified state → governed publication    | 🟢 `GREEN`          |
+| `E2`  | Governed publication → direct service     | 🟢 `PASS`           |
+| `E2a` | Service → loopback listener boundary      | 🟢 `PASS`           |
+| `E3`  | Direct service → public HTTPS publication | 🟢 `PASS`           |
+| `E3a` | Authorized public routing                 | 🟢 `GREEN`          |
+| `E4`  | Public publication → GUI consumption      | 🟢 `GREEN`          |
+| `E4a` | GUI epistemic presentation                | 🟢 `GREEN`          |
+
+The edges do not all prove the same kind of relationship.
+
+---
+
+## Qualified state → publication
+
+This is primarily a:
+
+```text
+provenance
++
+authority
++
+eligibility
++
+governed projection
+```
+
+relationship.
+
+It is not byte equality.
+
+```text
+qualified internal state
+    ≠
+publication JSON bytes
+```
+
+A governed publication is a controlled outward projection.
+
+---
+
+## Publication → direct service
+
+The direct loopback service returned the identified governed publication.
+
+Final direct endpoint:
+
+```text
+http://127.0.0.1:8096/api/publication/latest
+```
+
+Final listener evidence established:
+
+```text
+loopback listener count = 1
+
+wildcard listener count = 0
+```
+
+This preserved the publication service as a bounded read plane.
+
+---
+
+## Direct service → public HTTPS
+
+The public endpoint was:
+
+```text
+https://allis.pro/api/publication/latest
+```
+
+At final observation:
+
+```text
+direct publication SHA
+=
+public publication SHA
+=
+d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
+```
+
+Final result:
+
+```text
+FINAL_DIRECT_PUBLIC_BODY_CORRESPONDENCE=PASS
+```
+
+This is a byte/body correspondence result.
+
+---
+
+## Public HTTPS → GUI
+
+The Evidence & Governance Portal was observed at:
+
+```text
+https://allis.pro/evidence
+```
+
+with final frontend build:
+
+```text
+5By6R3CWTM7NDXc-4lmSi
+```
+
+The relevant relationship is:
+
+```text
+public governed publication
+    ↓ consumed by
+GUI presentation
+```
+
+not:
+
+```text
+publication JSON
+    =
+GUI HTML
+```
+
+The GUI is a consumer of the governed publication.
+
+It is not the publication object itself.
+
+---
+
+# 🔐 Inward and outward correspondence are complementary
+
+The current correspondence architecture now covers both sides of a governed system boundary.
+
+```mermaid
+flowchart TB
+
+    EXT["🌍 EXTERNAL / PRIVATE / PROPOSED STATE"]:::external
+
+    IN["🔐 INWARD AUTHORITY BOUNDARY"]:::boundary
+
+    COMP["🧠 GOVERNED COMPUTATION"]:::compute
+
+    WRITE["✍️ GOVERNED WRITE / ADOPTION"]:::write
+
+    QUAL["✅ QUALIFIED CONTROLLED STATE"]:::qualified
+
+    PUB["📦 GOVERNED PUBLICATION"]:::publication
+
+    READ["🌐 GOVERNED READ BOUNDARY"]:::read
+
+    GUI["🔎 PUBLIC EVIDENCE / GUI"]:::gui
+
+    EXT --> IN --> COMP --> WRITE --> QUAL --> PUB --> READ --> GUI
+
+    classDef external fill:#e5e7eb,stroke:#6b7280,color:#111827,stroke-width:2px;
+    classDef boundary fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
+    classDef compute fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
+    classDef write fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
+    classDef qualified fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:3px;
+    classDef publication fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
+    classDef read fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
+    classDef gui fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
+```
+
+The Step-12 package addresses a bounded portion of the governed write side.
+
+The Step-17 package addresses the governed publication/read side.
+
+Neither package represents ALLIS by itself.
+
+---
+
+# 🧩 Correspondence and the composite current system
+
+The current ALLIS technical record is composite.
+
+The baseline-object registry currently distinguishes roles including:
+
+```text
+REG-F01
+Workstream-F qualified baseline
+65b9f7db…
+```
+
+```text
+REG-A501
+A5 proof/source anchor
+35f1aa55…
+```
+
+```text
+REG-D1201
+Step-12 production DGM source
+20c8cbe1…
+```
+
+```text
+REG-P1701
+Step-17 publication reference set
+allis-publication-step6-retention-v2
+d6ab6352…
+5By6R3…
+```
+
+These objects have different scopes.
 
 Therefore:
 
 ```text
-runtime source matched theorem source
-≠
-positive theorem behavior observed
+newer object
+    ≠
+automatic replacement for older object
 ```
+
+and:
+
+```text
+one qualified object
+    ≠
+whole current ALLIS state
+```
+
+The current-system manifest assembles the qualified object graph.
+
+The correspondence layer establishes specific relationships within that graph.
 
 ---
 
-## Correspondence is point-in-time
+# 🧭 Division of responsibility
 
-Runtime correspondence is temporal.
+| Repository layer                         | Primary question                                                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------- |
+| `acceptance/baseline-object-registry.md` | **Which qualified object applies to this scope?**                                     |
+| `acceptance/current-system-manifest.md`  | **How do the current qualified objects fit together?**                                |
+| `formal-verification/`                   | **What mathematical claims were established or disproven?**                           |
+| `evidence/`                              | **What identities, observations, seals, residuals, and failures support the claims?** |
+| `correspondence/`                        | **Which relationships among those objects have been established?**                    |
+| `architecture/`                          | **Why are these system and authority boundaries designed this way?**                  |
+| `CURRENT.md`                             | **What may be stated about ALLIS now?**                                               |
 
-A successful correspondence result means:
+---
 
-> **The inspected runtime matched the sealed source and related evidence objects at the time of the correspondence check.**
+# 🕒 Correspondence is point-in-time
 
-It does not mean:
+Correspondence is temporal.
 
-> The runtime can never change.
-
-Conceptually:
+For source/runtime correspondence:
 
 ```math
-C_{SR}^{\tau_{seal}}(S,R)=1
-```
-
-does not imply:
-
-```math
-\forall \tau>\tau_{seal},
 C_{SR}^{\tau}(S,R)=1
 ```
 
-without future revalidation.
+means:
 
-The current Step-12 residual preserves this as:
+> The inspected runtime corresponded to the relevant sealed source at observation time `τ`.
 
-```text
-R12F-07 = POINT_IN_TIME_BINDING
+It does not imply:
+
+```math
+\forall t>\tau,\ C_{SR}^{t}(S,R)=1
 ```
 
-A changed runtime must earn a new correspondence result.
+Likewise, the Step-17 result:
+
+```text
+SOURCE_TO_PUBLICATION_TO_HTTP_TO_GUI=GREEN
+```
+
+is bound to the final Step-17 observation.
+
+It does not guarantee all future:
+
+* source states;
+* publication objects;
+* publication services;
+* proxy routes;
+* network conditions;
+* frontend builds;
+* GUI behavior.
+
+A claim-bearing change may require renewed correspondence.
 
 ---
 
-## Correspondence does not create authority
+# 🔄 When correspondence must be renewed
 
-Correspondence establishes identity and relationship.
+Examples include:
 
-It does not authorize an operation.
+* qualified source changes;
+* source files within a bounded formal domain change;
+* runtime image or deployed source changes;
+* trust anchors change;
+* governance objects change;
+* authority semantics change;
+* publication body changes;
+* publication schema changes;
+* publication authority changes;
+* service listener/bind changes;
+* proxy or routing changes;
+* public endpoint changes;
+* frontend build changes;
+* GUI data-flow changes;
+* privacy or eligibility rules change.
+
+Revalidation should target the affected edge.
+
+```text
+changed object
+    ↓
+identify dependent correspondence edge
+    ↓
+re-establish required evidence
+    ↓
+update current claim
+```
+
+A change in one workstream does not automatically invalidate an unrelated historical correspondence result.
+
+---
+
+# 🛡️ Correspondence does not create authority
+
+Correspondence establishes identity or relationship.
+
+Authority determines whether a transition may occur.
+
+These are different questions.
 
 ```text
 formal model corresponds to source
-≠
+    ≠
 production mutation authorized
 ```
 
 ```text
-runtime source corresponds to sealed source
-≠
-production mutation authorized
+source corresponds to runtime
+    ≠
+runtime may execute a privileged action
 ```
 
 ```text
-public trust matches
-≠
-runtime possesses private signing authority
+publication corresponds to qualified state
+    ≠
+state is automatically eligible for publication
 ```
 
 ```text
-governance view matches
-≠
-runtime may invent an approval decision
+public route corresponds to direct publication
+    ≠
+public route has write authority
 ```
 
-The correspondence layer answers:
+```text
+GUI consumes governed publication
+    ≠
+GUI may mutate ALLIS
+```
 
-> **Is this the system we think it is?**
+Correspondence asks:
 
-The authority layer answers:
+> **Are these the related objects we claim they are?**
 
-> **May this exact action occur now?**
+Authority asks:
 
-Those are separate questions.
+> **May this transition occur?**
+
+ALLIS keeps those questions separate.
 
 ---
 
-## Correspondence does not imply whole-system proof
+# 🚫 Correspondence does not imply whole-system proof
 
-The current correspondence package is bounded.
+The current correspondence packages are bounded.
 
-It does not establish:
+They do not establish:
 
 ```text
 all ALLIS source is formally modeled
 ```
 
-It does not establish:
+They do not establish:
 
 ```text
-every runtime behavior has been observed
+every ALLIS runtime behavior has been observed
 ```
 
-It does not establish:
+They do not establish:
 
 ```text
 all production mutation is safe
 ```
 
-It does not establish:
+They do not establish:
+
+```text
+all future publication paths will correspond
+```
+
+They do not establish:
 
 ```text
 whole-system safety
 ```
 
-The controlling Step-12 boundaries remain:
+The current system-level boundary remains:
 
 ```text
 PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+
 WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+
 SYSTEM_PROVEN=NO
 ```
 
 ---
 
-## Relationship to formal verification
+# 📚 Relationship to formal verification
 
-The correspondence layer should be read with:
+Formal verification asks:
 
-```text
-formal-verification/
-```
+> **What mathematical object is being studied, and which propositions were proven or disproven?**
 
-Formal verification answers:
+Correspondence asks:
 
-> **What mathematical object is being studied, and what propositions were established or disproven?**
+> **Does that mathematical object map to the implementation and runtime being discussed?**
 
-Correspondence answers:
-
-> **Does that formal object map to the implementation and runtime being discussed?**
-
-In the current authorized-adoption package:
+For Step 12:
 
 ```text
 formal-verification/authorized-adoption/
         ↓
-defines and adjudicates the formal object
+defines and adjudicates the bounded formal object
 
 correspondence/authorized-adoption/
         ↓
-binds that formal object to source and runtime
+binds the formal object to source and runtime
 ```
+
+A proof without correspondence remains a proof about its bounded formal object.
+
+It does not silently become a runtime fact.
 
 ---
 
-## Relationship to evidence
+# 🧾 Relationship to evidence
 
-The correspondence layer should also be read with:
+Evidence answers:
+
+> **What identifiable objects and observations support this claim?**
+
+Correspondence answers:
+
+> **What relationship among those objects was established?**
+
+For Step 12, the evidence package includes source, trust, governance, residual, and final-seal records.
+
+For Step 17, the publication evidence package includes:
 
 ```text
-evidence/
+publication identity
+runtime boundary
+network continuity
+final evidence close
 ```
-
-Evidence preserves:
-
-- source identity;
-- trust identity;
-- governance identity;
-- residuals;
-- non-promotions; and
-- final seal state.
 
 The relationship is:
 
 ```text
 evidence
     ↓
-defines and preserves authoritative identities
+preserves the objects and observations
 
 correspondence
     ↓
-compares those identities across model, source, and runtime
+establishes the required relationship among them
 ```
 
-Correspondence depends on evidence but is not the same thing as evidence.
+Correspondence depends on evidence.
+
+It is not the same thing as evidence.
 
 ---
 
-## Current authorized-adoption result
+# ✅ Relationship to acceptance
 
-The current bounded correspondence package supports:
+Acceptance determines what bounded technical result enters the accepted current record.
 
-```text
-Formal-to-source correspondence   PASS
-NBB source correspondence         11/11 PASS
-Worker source correspondence      11/11 PASS
-Public trust                      PASS
-Governance view                   PASS
-```
+Correspondence may support that acceptance.
 
-under the Step-12 final state:
+Examples:
 
 ```text
-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
+acceptance/closeout/dgm-step12-close.md
+    =
+What bounded Step-12 result was accepted?
 ```
-
-The controlling final seal is:
 
 ```text
-STEP12_FINAL_THEOREM_AND_FORMAL_CORRESPONDENCE_SEALED_GREEN_WITH_EXPLICIT_RESIDUALS
+correspondence/authorized-adoption/
+    =
+What formal/source/runtime relationships support it?
 ```
 
-The final evidence SHA-256 is:
+and:
 
 ```text
-b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b
+acceptance/closeout/publication-step17-close.md
+    =
+What bounded Step-17 result was accepted?
 ```
-
-The controlling scope is:
 
 ```text
-BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDENCE_ONLY
+correspondence/publication/
+    =
+What source/publication/HTTP/GUI relationships support it?
 ```
+
+Acceptance and correspondence should agree.
+
+They should not duplicate one another.
 
 ---
 
-## What belongs in `correspondence/`
+# 🧠 What belongs in `correspondence/`
 
-A record belongs in this directory when its primary purpose is to establish or explain a mapping between evidence domains.
+A record belongs here when its principal purpose is to establish an evidence-backed relationship between defined technical objects.
 
 Examples include:
 
 ```text
 formal model
 →
-source implementation
+sealed source
 ```
 
 ```text
 sealed source
 →
-runtime source
+runtime
 ```
 
 ```text
-sealed trust object
+trust object
 →
-runtime trust object
+runtime trust state
 ```
 
 ```text
-sealed governance object
+governance object
 →
 runtime governance view
 ```
 
-or another explicitly defined correspondence boundary.
+```text
+qualified state
+→
+governed publication
+```
+
+```text
+governed publication
+→
+direct service
+```
+
+```text
+direct service
+→
+public HTTPS
+```
+
+```text
+public publication
+→
+GUI consumption
+```
+
+A new correspondence package should identify:
+
+* the objects being related;
+* their roles;
+* the evidence supporting the edge;
+* the observation/seal time;
+* the required relationship type;
+* the final correspondence state;
+* the stronger claim not supported.
 
 ---
 
-## What does not belong in `correspondence/`
-
-This directory should not become a duplicate of other repository layers.
+# 🚫 What does not belong in `correspondence/`
 
 Use:
 
@@ -537,7 +1019,7 @@ Use:
 formal-verification/
 ```
 
-for models, theorems, proposition status, and counterexamples.
+for formal models, theorem definitions, proofs, counterexamples, and proposition status.
 
 Use:
 
@@ -545,15 +1027,7 @@ Use:
 evidence/
 ```
 
-for canonical identities, hashes, seals, residuals, and non-promotions.
-
-Use:
-
-```text
-architecture/
-```
-
-for explanatory system design.
+for hashes, canonical identities, observations, seals, residuals, failures, recovery evidence, and non-promotions.
 
 Use:
 
@@ -561,38 +1035,271 @@ Use:
 acceptance/
 ```
 
-for qualified-baseline admission and acceptance records.
+for qualified-object admission, object registries, current-system manifests, and bounded workstream closeouts.
 
-Correspondence should remain focused on the evidence-backed relationship between defined objects.
+Use:
+
+```text
+architecture/
+```
+
+for system design, authority planes, state models, trust boundaries, and fail-closed semantics.
+
+Use:
+
+```text
+claims/
+```
+
+for current claim maturity, evidence binding, nonclaims, and residuals.
+
+Correspondence remains focused on **relationships**.
 
 ---
 
-## Core commitment
+# 📋 Current package summary
 
-The correspondence layer exists to enforce one rule:
+| Package                                               | Scope                                              | Result     | Time boundary                   |
+| ----------------------------------------------------- | -------------------------------------------------- | ---------- | ------------------------------- |
+| `authorized-adoption/model-to-source.md`              | Step-12 formal model → production source           | 🟢 `PASS`  | Bounded Step-12 source identity |
+| `authorized-adoption/source-to-runtime.md`            | Step-12 source → inspected runtime                 | 🟢 `PASS`  | Final Step-12 seal              |
+| `publication/source-to-publication-to-http-to-gui.md` | Step-17 qualified state → publication → HTTP → GUI | 🟢 `GREEN` | Final Step-17 observation       |
 
-> **A claim about one system state cannot be silently promoted into a claim about another system state.**
-
-For ALLIS:
+Current Step-12 close:
 
 ```text
-model describes it
-≠
-source implements it
-
-source implements it
-≠
-runtime is running it
-
-runtime is running it
-≠
-theorem behavior was observed
-
-theorem behavior was observed once
-≠
-future runtime correspondence is guaranteed
+GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
 ```
 
-Correspondence is the evidence bridge between those states.
+Current Step-17 close:
 
-It is not a shortcut to authority, and it is not a whole-system proof.
+```text
+GREEN_COMPLETE
+```
+
+System-level state:
+
+```text
+SYSTEM_PROVEN=NO
+```
+
+---
+
+# 📦 Normalized correspondence index
+
+```yaml
+allis_correspondence:
+
+  model:
+    correspondence_is_object_specific: true
+    correspondence_is_edge_specific: true
+    correspondence_is_point_in_time: true
+    correspondence_creates_authority: false
+    correspondence_implies_whole_system_proof: false
+
+  packages:
+
+    authorized_adoption:
+      workstream: step12
+      direction: inward_governed_write_side
+
+      formal_object:
+        name: DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
+
+      production_source:
+        registry_id: REG-D1201
+        commit: 20c8cbe175781c8a1c05d65c03977859ceca884a
+
+      edges:
+        - model_to_source
+        - source_to_runtime
+        - theorem_specific_live_observation
+
+      result:
+        state: GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
+        system_proven: false
+
+    publication:
+      workstream: step17
+      direction: outward_governed_read_side
+
+      reference_set:
+        registry_id: REG-P1701
+        publication_id: allis-publication-step6-retention-v2
+        publication_sha256: d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
+        frontend_build: 5By6R3CWTM7NDXc-4lmSi
+
+      edges:
+        - qualified_state_to_publication
+        - publication_to_direct_service
+        - direct_service_to_public_https
+        - public_https_to_gui
+
+      result:
+        source_to_publication_to_http_to_gui: GREEN
+        final_criteria: 25_OF_25_PASS
+        final_network_continuity: GREEN
+        overall_goal: GREEN_COMPLETE
+        system_proven: false
+
+  current_system:
+    composite_object_model: true
+    one_universal_source_object: false
+    one_package_represents_all_allis: false
+    system_proven: false
+```
+
+> [!NOTE]
+> This YAML block is a human-readable normalization of the correspondence index.
+>
+> Package-specific records and their underlying evidence remain the authority for each bounded correspondence result.
+
+---
+
+# 📚 Related repository records
+
+## Current state
+
+* [`../CURRENT.md`](../CURRENT.md)
+* [`../README.md`](../README.md)
+
+## Acceptance
+
+* [`../acceptance/current-system-manifest.md`](../acceptance/current-system-manifest.md)
+* [`../acceptance/baseline-object-registry.md`](../acceptance/baseline-object-registry.md)
+* [`../acceptance/closeout/dgm-step12-close.md`](../acceptance/closeout/dgm-step12-close.md)
+* [`../acceptance/closeout/publication-step17-close.md`](../acceptance/closeout/publication-step17-close.md)
+
+## Formal verification
+
+* [`../formal-verification/authorized-adoption/formal-model.md`](../formal-verification/authorized-adoption/formal-model.md)
+* [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
+* [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
+
+## Authorized-adoption correspondence
+
+* [`authorized-adoption/model-to-source.md`](authorized-adoption/model-to-source.md)
+* [`authorized-adoption/source-to-runtime.md`](authorized-adoption/source-to-runtime.md)
+
+## Publication correspondence
+
+* [`publication/source-to-publication-to-http-to-gui.md`](publication/source-to-publication-to-http-to-gui.md)
+
+## Evidence
+
+* [`../evidence/README.md`](../evidence/README.md)
+* [`../evidence/governed-evolution/source-identity.md`](../evidence/governed-evolution/source-identity.md)
+* [`../evidence/governed-evolution/trust-anchor.md`](../evidence/governed-evolution/trust-anchor.md)
+* [`../evidence/governed-evolution/governance-view.md`](../evidence/governed-evolution/governance-view.md)
+* [`../evidence/governed-evolution/residuals.md`](../evidence/governed-evolution/residuals.md)
+* [`../evidence/governed-evolution/step12-final-seal.md`](../evidence/governed-evolution/step12-final-seal.md)
+* [`../evidence/publication/README.md`](../evidence/publication/README.md)
+* [`../evidence/publication/publication-identity.md`](../evidence/publication/publication-identity.md)
+* [`../evidence/publication/runtime-boundary.md`](../evidence/publication/runtime-boundary.md)
+* [`../evidence/publication/network-continuity.md`](../evidence/publication/network-continuity.md)
+* [`../evidence/publication/step17-final-close.md`](../evidence/publication/step17-final-close.md)
+
+## Architecture
+
+* [`../architecture/authority-planes.md`](../architecture/authority-planes.md)
+* [`../architecture/fail-closed-semantics.md`](../architecture/fail-closed-semantics.md)
+
+---
+
+# 🧾 Correspondence summary
+
+<div align="center">
+
+## 🔐 INWARD / GOVERNED WRITE SIDE
+
+### FORMAL MODEL
+
+↓
+
+### SEALED SOURCE
+
+↓
+
+### OBSERVED RUNTIME
+
+↓
+
+### THEOREM-SPECIFIC OBSERVATION
+
+**Step 12 · bounded authorized adoption**
+
+<br>
+
+# ↕️
+
+<br>
+
+## 🌐 OUTWARD / GOVERNED READ SIDE
+
+### QUALIFIED STATE
+
+↓
+
+### GOVERNED PUBLICATION
+
+↓
+
+### DIRECT SERVICE
+
+↓
+
+### PUBLIC HTTPS
+
+↓
+
+### GUI
+
+**Step 17 · governed publication**
+
+<br>
+
+### Both chains are evidence-backed.
+
+### Both chains are point-in-time.
+
+### Neither chain creates authority.
+
+### Neither chain represents ALLIS by itself.
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing correspondence principles
+
+> **A claim about one representation does not silently become a claim about another representation.**
+
+> **Correspondence relates distinct objects; it does not erase their identities.**
+
+> **A formal proof is not automatically a runtime fact.**
+
+> **Matching source is not automatically observed theorem behavior.**
+
+> **Qualified state is not automatically public state.**
+
+> **Publication is a governed projection, not a raw synonym for internal state.**
+
+> **GUI consumption is not byte identity with publication JSON.**
+
+> **Public read correspondence does not create public write authority.**
+
+> **Correspondence is bound to the observation and evidence that established it.**
+
+> **A claim-bearing change must re-establish the correspondence edges it affects.**
+
+> **A newer qualified object does not silently replace a differently scoped object.**
+
+> **Closed correspondence packages remain bounded by their workstream scope.**
+
+> **`SYSTEM_PROVEN=NO`.**
+
+---
