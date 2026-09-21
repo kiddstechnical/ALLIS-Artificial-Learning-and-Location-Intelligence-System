@@ -1,16 +1,15 @@
 <div align="center">
 
-# ALLIS — Publication Evidence
+# ALLIS — Evidence Index
 
-### Evidence supporting the bounded Step-17 governed live-publication result
+### Public evidence packages supporting bounded ALLIS technical claims
 
 <br>
 
-![Evidence](https://img.shields.io/badge/EVIDENCE-PUBLICATION-14b8a6?style=for-the-badge)
-![Step](https://img.shields.io/badge/STEP_17-GREEN-22c55e?style=for-the-badge)
-![Criteria](https://img.shields.io/badge/FINAL_CRITERIA-25_OF_25_PASS-2563eb?style=for-the-badge)
-![Continuity](https://img.shields.io/badge/NETWORK_CONTINUITY-GREEN-0ea5e9?style=for-the-badge)
-![Portal](https://img.shields.io/badge/EVIDENCE_%26_GOVERNANCE_PORTAL-LIVE-7c3aed?style=for-the-badge)
+![Evidence](https://img.shields.io/badge/EVIDENCE-MULTI_WORKSTREAM_INDEX-2563eb?style=for-the-badge)
+![Governed Evolution](https://img.shields.io/badge/GOVERNED_EVOLUTION-STEP_12_CLOSED-f59e0b?style=for-the-badge)
+![Publication](https://img.shields.io/badge/PUBLICATION-STEP_17_GREEN_COMPLETE-14b8a6?style=for-the-badge)
+![Correspondence](https://img.shields.io/badge/CORRESPONDENCE-BOUNDED_%26_TIME_INDEXED-7c3aed?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -22,969 +21,623 @@
 ---
 
 > [!IMPORTANT]
-> This directory preserves the public, non-sensitive evidence record for the **bounded Step-17 governed publication workstream**.
+> This directory is the **top-level evidence index for ALLIS**.
 >
-> It supports claims about the publication object, its serving boundary, the observed public path, and the final Step-17 evidence close.
+> It organizes public, non-sensitive evidence by bounded workstream and technical purpose.
 >
-> It does **not** establish whole-system proof, permanent future correspondence, or public mutation authority.
+> Evidence in this directory supports specific claims within specific scopes. It does **not** mean that every ALLIS subsystem has been verified, that every runtime path currently corresponds to its sealed source, or that the whole ALLIS system has been proven.
 
----
-
-# 👀 Publication evidence in one view
-
-```mermaid
-flowchart LR
-    Q["✅ QUALIFIED ALLIS STATE"]:::qualified
-
-    P["📦 GOVERNED PUBLICATION<br/>sealed publication identity"]:::publication
-
-    S["🔒 READ-ONLY SERVICE<br/>loopback boundary"]:::service
-
-    H["🌐 PUBLIC HTTPS<br/>governed read path"]:::http
-
-    G["🔎 EVIDENCE & GOVERNANCE PORTAL<br/>publication consumer"]:::gui
-
-    E["🧾 FINAL STEP-17 EVIDENCE<br/>25 / 25 · continuity · audit · seal"]:::evidence
-
-    Q --> P
-    P --> S
-    S --> H
-    H --> G
-
-    P --> E
-    S --> E
-    H --> E
-    G --> E
-
-    classDef qualified fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:3px;
-    classDef publication fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
-    classDef service fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
-    classDef http fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
-    classDef gui fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
-    classDef evidence fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:3px;
-```
-
-The package preserves four separate evidence questions:
+The controlling whole-system boundary remains:
 
 ```text
-publication identity
-    ↓
-What exact governed publication object was sealed?
-
-runtime boundary
-    ↓
-How was that publication safely served?
-
-network continuity
-    ↓
-Did the intended public path work at final observation?
-
-final evidence close
-    ↓
-What evidence bundle closed Step 17?
+SYSTEM_PROVEN=NO
 ```
-
-These questions are related.
-
-They are not interchangeable.
 
 ---
 
-# 🎯 Purpose
+# 👀 Evidence at a glance
 
-The publication evidence package exists to preserve the evidence supporting the final Step-17 bounded result:
+The current public evidence record contains two primary evidence packages:
+
+| Evidence package                                | Scope                                                                                                                                      | Current bounded result                 |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------- |
+| 🔐 [`governed-evolution/`](governed-evolution/) | Production DGM authorized-adoption formalization, trust/governance correspondence, fail-closed behavior, residuals, and final Step-12 seal | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` |
+| 🌐 [`publication/`](publication/)               | Governed immutable publication, read-only runtime boundary, public-network continuity, and final Step-17 evidence close                    | `GREEN_COMPLETE`                       |
+
+These packages answer different technical questions.
+
+Neither silently inherits the authority, proof level, or scope of the other.
+
+---
+
+# 🧭 How the evidence layer fits into ALLIS
+
+ALLIS separates evidence from acceptance, claims, correspondence, and current-state documentation.
+
+```mermaid
+flowchart TB
+    S["💻 Qualified / sealed technical objects"]:::source
+
+    E["🧾 Evidence<br/>What was observed, sealed,<br/>measured, or preserved?"]:::evidence
+
+    C["🔗 Correspondence<br/>Which representations were<br/>shown to match?"]:::corr
+
+    A["✅ Acceptance<br/>What bounded result was<br/>formally closed?"]:::acceptance
+
+    Q["📚 Claims<br/>What may now be stated,<br/>and at what validation level?"]:::claims
+
+    N["🧭 Current state<br/>Composite qualified-object record"]:::current
+
+    S --> E
+    E --> C
+    E --> A
+    C --> Q
+    A --> Q
+    Q --> N
+
+    classDef source fill:#bfdbfe,stroke:#2563eb,color:#172554,stroke-width:2px;
+    classDef evidence fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:3px;
+    classDef corr fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef acceptance fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
+    classDef claims fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
+    classDef current fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
+```
+
+The key distinction is:
+
+```text
+evidence exists
+    ≠
+claim is proven
+    ≠
+correspondence is established
+    ≠
+workstream is closed
+    ≠
+whole system is proven
+```
+
+---
+
+# 🔐 Governed-evolution evidence
+
+Directory:
+
+[`evidence/governed-evolution/`](governed-evolution/)
+
+This package preserves public evidence for the bounded production authorized-adoption workstream.
+
+Its central architectural principle is:
+
+> **Capability does not create authority.**
+
+The governed-evolution evidence records how ALLIS separates:
+
+```text
+candidate generation
+        ↓
+candidate evaluation
+        ↓
+evidence
+        ↓
+independent authorization
+        ↓
+target / prestate / replay checks
+        ↓
+governed application
+        ↓
+poststate verification
+        ↓
+receipt and evidence
+```
+
+Current bounded formal object:
+
+```text
+DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
+```
+
+Production source identity for the Step-12 formal/correspondence package:
+
+```text
+20c8cbe175781c8a1c05d65c03977859ceca884a
+```
+
+Final bounded Step-12 state:
+
+```text
+GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
+```
+
+## Package contents
+
+### [`governed-evolution/README.md`](governed-evolution/README.md)
+
+Explains the governed-evolution evidence package, its architectural meaning, and its bounded validation state.
+
+### [`governed-evolution/source-identity.md`](governed-evolution/source-identity.md)
+
+Preserves the relevant source identity for the bounded governed-evolution evidence record.
+
+### [`governed-evolution/trust-anchor.md`](governed-evolution/trust-anchor.md)
+
+Preserves the public trust object used in the Step-12 correspondence record.
+
+### [`governed-evolution/governance-view.md`](governed-evolution/governance-view.md)
+
+Preserves the sealed governance-state evidence used by the bounded Step-12 package.
+
+### [`governed-evolution/residuals.md`](governed-evolution/residuals.md)
+
+Preserves explicit residuals and non-promotions so a closed workstream is not silently promoted into a stronger claim.
+
+### [`governed-evolution/step12-final-seal.md`](governed-evolution/step12-final-seal.md)
+
+Preserves the final bounded Step-12 evidence-seal state.
+
+## Related closeout
+
+See:
+
+[`acceptance/closeout/dgm-step12-close.md`](../acceptance/closeout/dgm-step12-close.md)
+
+for the acceptance-side Step-12 conclusion.
+
+## Related correspondence
+
+See:
+
+* [`correspondence/authorized-adoption/model-to-source.md`](../correspondence/authorized-adoption/model-to-source.md)
+* [`correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
+
+for the bounded correspondence records.
+
+---
+
+# 🌐 Publication evidence
+
+Directory:
+
+[`evidence/publication/`](publication/)
+
+This package preserves public evidence for the completed Step-17 governed publication workstream.
+
+The fixed goal was to establish a:
+
+```text
+governed
+read-only
+versioned
+live ALLIS publication endpoint
+```
+
+consumed by the Evidence & Governance Portal without granting the GUI unrestricted direct access to ALLIS.
+
+Final bounded result:
 
 ```text
 ALL_STEPS_0_THROUGH_17=GREEN
-
 FINAL_CRITERIA=25_OF_25_PASS
-
 FINAL_NETWORK_CONTINUITY=GREEN
 
 OVERALL_GOAL=GREEN_COMPLETE
 ```
 
-The final publication state records:
+Final publication identity:
 
 ```text
-ALLIS_LIVE_PUBLICATION_ENDPOINT=COMPLETE
+Publication ID:
+allis-publication-step6-retention-v2
 
-ALLIS_EVIDENCE_GOVERNANCE_PORTAL=LIVE
+Publication SHA-256:
+d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
+
+Publication payload SHA-256:
+04ebb5bc1f97cbf56b8722fea9bcc7e7303cac2f5b467510d7a821d84d4a3c3c
 ```
 
-The evidence package makes those statements reviewable without turning the public documentation itself into a substitute for the sealed engineering artifacts.
+Final frontend build observed in the Step-17 publication path:
+
+```text
+5By6R3CWTM7NDXc-4lmSi
+```
+
+## Package contents
+
+### [`publication/publication-identity.md`](publication/publication-identity.md)
+
+Answers:
+
+> **What exact governed immutable publication object was sealed?**
+
+It records publication identity, integrity, retention, authority/provenance requirements, and bounded meaning.
+
+### [`publication/runtime-boundary.md`](publication/runtime-boundary.md)
+
+Answers:
+
+> **What runtime boundary served the publication, and what evidence shows that the outward path remained read-only and isolated?**
+
+It preserves evidence for:
+
+```text
+publication service isolation
+loopback-only binding
+read-only store access
+no public mutation endpoint
+authorized routing
+no unrestricted GUI access to ALLIS
+sealed Landlock runtime provenance
+```
+
+### [`publication/network-continuity.md`](publication/network-continuity.md)
+
+Answers:
+
+> **Was the intended public network path reachable at the final Step-17 observation, and how was the transient DNS failure classified and recovered?**
+
+It preserves the bounded continuity and recovery record rather than deleting the earlier failed observation.
+
+### [`publication/step17-final-close.md`](publication/step17-final-close.md)
+
+Answers:
+
+> **What final evidence bundle sealed the Step-17 result?**
+
+It preserves:
+
+```text
+25 / 25 completion matrix
+final network continuity
+publication identity
+frontend identity
+final SHA-256 seal
+predecessor-seal continuity
+nonmutation state
+successor-authority boundary
+```
+
+## Related closeout
+
+See:
+
+[`acceptance/closeout/publication-step17-close.md`](../acceptance/closeout/publication-step17-close.md)
+
+for the acceptance-side bounded Step-17 conclusion.
+
+## Related correspondence
+
+See:
+
+[`correspondence/publication/source-to-publication-to-http-to-gui.md`](../correspondence/publication/source-to-publication-to-http-to-gui.md)
+
+for the source/state → publication → HTTP → GUI correspondence record.
 
 ---
 
-# 📁 Package structure
+# ✅ Evidence and acceptance are not the same thing
+
+The repository deliberately separates:
 
 ```text
 evidence/
+```
+
+from:
+
+```text
+acceptance/
+```
+
+Evidence asks:
+
+> **What observations, identities, records, tests, seals, or measurements support the claim?**
+
+Acceptance asks:
+
+> **What bounded conclusion was formally accepted from that evidence?**
+
+For example:
+
+```text
+evidence/publication/step17-final-close.md
+```
+
+records the **final evidence package**.
+
+Whereas:
+
+```text
+acceptance/closeout/publication-step17-close.md
+```
+
+records the **bounded accepted conclusion**.
+
+One should not replace the other.
+
+---
+
+# 🔗 Evidence and correspondence are not the same thing
+
+Evidence can exist without establishing correspondence.
+
+Correspondence asks whether separately identified representations were shown to match within a defined observation boundary.
+
+Examples include:
+
+```text
+formal model
+    ↓
+sealed source
+
+sealed source
+    ↓
+observed runtime
+```
+
+and:
+
+```text
+qualified source/state
+    ↓
+governed publication
+    ↓
+direct HTTP body
+    ↓
+public HTTP body
+    ↓
+GUI consumption
+```
+
+Correspondence is therefore separately documented under:
+
+[`correspondence/`](../correspondence/)
+
+The governing rule is:
+
+> **Correspondence is point-in-time.**
+
+```text
+corresponded at seal time
+    ≠
+guaranteed to correspond forever
+```
+
+If a claim-bearing runtime object changes, the relevant correspondence must be re-established.
+
+---
+
+# 📚 Evidence and claims are not the same thing
+
+Evidence does not automatically determine how strongly a statement may be made.
+
+Claims are separately indexed under:
+
+[`claims/`](../claims/)
+
+Current claim records include:
+
+* [`claims/claim-registry.md`](../claims/claim-registry.md)
+* [`claims/nonclaims-and-residuals.md`](../claims/nonclaims-and-residuals.md)
+
+A claim may advance only as far as its evidence supports.
+
+The ALLIS validation vocabulary includes bounded states such as:
+
+```text
+Implemented
+Observed
+Demonstrated
+Formally Specified
+Proven
+Machine-Checked
+Correspondence-Verified
+```
+
+These levels should not be silently collapsed.
+
+---
+
+# 🚧 Closed workstreams retain their limits
+
+A workstream can close successfully while preserving:
+
+* residuals;
+* counterexamples;
+* negative results;
+* unresolved broader questions;
+* scope limitations;
+* non-promotions;
+* time-indexed correspondence.
+
+Therefore:
+
+```text
+workstream closed
+    ≠
+all stronger claims proven
+```
+
+The repository intentionally preserves examples of this rule.
+
+Step 12 closed with explicit residuals and a machine-checked disproven proposition.
+
+Step 17 closed its fixed publication goal without promoting that result into whole-system proof.
+
+The controlling boundary remains:
+
+```text
+SYSTEM_PROVEN=NO
+```
+
+---
+
+# ⛔ Evidence does not create authority
+
+A recurring ALLIS rule is:
+
+> **State does not become authority merely because it exists.**
+
+The same applies to evidence.
+
+```text
+evidence exists
+    ≠
+authority exists
+
+evidence supports a claim
+    ≠
+publication is authorized
+
+internal state exists
+    ≠
+public disclosure is authorized
+
+AI generated an output
+    ≠
+verified evidence exists
+```
+
+Authority, disclosure, protected transitions, publication, and documentation each have their own governed boundary.
+
+See:
+
+* [`architecture/authority-planes.md`](../architecture/authority-planes.md)
+* [`architecture/fail-closed-semantics.md`](../architecture/fail-closed-semantics.md)
+* [`architecture/private-state/h-people-boundary.md`](../architecture/private-state/h-people-boundary.md)
+
+---
+
+# 🧩 Workstream F and the evidence index
+
+Workstream F is part of the current qualified ALLIS record, but the repository does not currently contain a separate:
+
+```text
+evidence/workstream-f/
+```
+
+package.
+
+Its formal close is documented under:
+
+[`acceptance/closeout/workstream-f-close.md`](../acceptance/closeout/workstream-f-close.md)
+
+The absence of a dedicated Workstream-F evidence directory should not be interpreted as evidence that Workstream F did not occur or did not close.
+
+The repository should not invent a new evidence package merely for directory symmetry.
+
+---
+
+# 🗺️ Current evidence structure
+
+```text
+evidence/
+│
+├── README.md
+│
+├── governed-evolution/
+│   ├── README.md
+│   ├── governance-view.md
+│   ├── residuals.md
+│   ├── source-identity.md
+│   ├── step12-final-seal.md
+│   └── trust-anchor.md
+│
 └── publication/
-    ├── README.md
     ├── publication-identity.md
     ├── runtime-boundary.md
     ├── network-continuity.md
     └── step17-final-close.md
 ```
 
-Each file owns a different evidence domain.
+Each package has a bounded role.
 
-| Record                                               | Evidence domain                | Primary question                          |
-| ---------------------------------------------------- | ------------------------------ | ----------------------------------------- |
-| [`publication-identity.md`](publication-identity.md) | Governed publication identity  | What exact publication object was sealed? |
-| [`runtime-boundary.md`](runtime-boundary.md)         | Serving and isolation boundary | How was the publication safely served?    |
-| [`network-continuity.md`](network-continuity.md)     | Final public-path observation  | Did the intended public path work?        |
-| [`step17-final-close.md`](step17-final-close.md)     | Final evidence bundle and seal | What evidence closed Step 17?             |
-
-This README is the package index.
-
-It does not replace any of those records.
+The evidence directory should grow by **evidence domain or bounded workstream**, not as a chronological dump of every development artifact.
 
 ---
 
-# 📦 1. Publication identity
+# 🧭 Where to start
 
-The final governed publication object is identified as:
+For the present qualified ALLIS state, begin with:
 
-```text
-Publication ID:
-allis-publication-step6-retention-v2
-```
+[`CURRENT.md`](../CURRENT.md)
 
-Publication SHA-256:
+Then review:
 
-```text
-d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
-```
-
-Publication payload SHA-256:
-
-```text
-04ebb5bc1f97cbf56b8722fea9bcc7e7303cac2f5b467510d7a821d84d4a3c3c
-```
-
-Final frontend build:
-
-```text
-5By6R3CWTM7NDXc-4lmSi
-```
-
-These identities belong to different objects.
-
-```text
-publication ID
-    ≠
-source commit
-```
-
-```text
-publication SHA
-    ≠
-whole-system hash
-```
-
-```text
-payload SHA
-    ≠
-frontend build identity
-```
-
-```text
-frontend build
-    ≠
-publication object
-```
-
-Use [`publication-identity.md`](publication-identity.md) for the full publication-identity record.
-
----
-
-# 🔒 2. Runtime boundary
-
-The final Step-17 publication service remained a governed **read plane**.
-
-The bounded serving state records:
-
-```text
-PUBLICATION_SERVICE_ISOLATION=GREEN
-
-PUBLICATION_SERVICE_LOOPBACK_ONLY=GREEN
-
-STRICT_READ_ONLY_PUBLICATION_BOUNDARY=GREEN
-
-NO_PUBLIC_MUTATION_ENDPOINT=GREEN
-
-CADDY_AUTHORIZED_ROUTING=GREEN
-
-GUI_NO_DIRECT_ALLIS_ACCESS=GREEN
-```
-
-Final listener evidence:
-
-```text
-loopback listener count = 1
-
-wildcard listener count = 0
-
-listener = 127.0.0.1:8096
-```
-
-The serving relationship is:
-
-```mermaid
-flowchart LR
-    P["📦 GOVERNED PUBLICATION"]:::publication
-
-    S["🔒 READ-ONLY SERVICE<br/>127.0.0.1:8096"]:::service
-
-    C["🚦 AUTHORIZED ROUTE"]:::route
-
-    H["🌐 PUBLIC GET ENDPOINT"]:::http
-
-    G["🔎 EVIDENCE & GOVERNANCE PORTAL"]:::gui
-
-    A["🧠 QUALIFIED ALLIS"]:::allis
-
-    P --> S --> C --> H --> G
-
-    S -. "no mutation authority" .-> A
-    G -. "no unrestricted direct access" .-> A
-
-    classDef publication fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
-    classDef service fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
-    classDef route fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
-    classDef http fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
-    classDef gui fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
-    classDef allis fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
-```
-
-Therefore:
-
-```text
-public read access
-    ≠
-public write authority
-```
+[`acceptance/current-system-manifest.md`](../acceptance/current-system-manifest.md)
 
 and:
 
-```text
-GUI access to governed publication
-    ≠
-unrestricted GUI access to ALLIS
-```
+[`acceptance/baseline-object-registry.md`](../acceptance/baseline-object-registry.md)
 
-Use [`runtime-boundary.md`](runtime-boundary.md) for the complete serving-boundary evidence record.
+Those documents explain how the different qualified source, proof, trust, governance, publication, and frontend objects fit together.
+
+Then use this directory to inspect the evidence supporting the bounded claims.
 
 ---
 
-# 🌐 3. Network continuity
+# 🔎 Evidence navigation
 
-The final bounded public-path observation records:
+## Governed evolution / Step 12
 
-```text
-DNS_RC=0
+* [Governed-evolution overview](governed-evolution/README.md)
+* [Source identity](governed-evolution/source-identity.md)
+* [Trust anchor](governed-evolution/trust-anchor.md)
+* [Governance view](governed-evolution/governance-view.md)
+* [Residuals and non-promotions](governed-evolution/residuals.md)
+* [Step-12 final seal](governed-evolution/step12-final-seal.md)
 
-PUBLICATION_CURL_RC=0
-PUBLICATION_STATUS=200
+## Publication / Step 17
 
-GUI_CURL_RC=0
-GUI_STATUS=200
+* [Publication identity](publication/publication-identity.md)
+* [Publication runtime boundary](publication/runtime-boundary.md)
+* [Publication network continuity](publication/network-continuity.md)
+* [Step-17 final evidence close](publication/step17-final-close.md)
 
-PUBLIC_CONTINUITY_ATTEMPT_RESULT=PASS
+## Related acceptance
 
-PUBLIC_CONTINUITY_RECOVERED=YES
+* [Workstream-F close](../acceptance/closeout/workstream-f-close.md)
+* [DGM Step-12 close](../acceptance/closeout/dgm-step12-close.md)
+* [Publication Step-17 close](../acceptance/closeout/publication-step17-close.md)
 
-PUBLIC_NETWORK_CONTINUITY=PASS
-```
+## Related correspondence
 
-Final state:
+* [Correspondence index](../correspondence/README.md)
+* [Authorized adoption: model → source](../correspondence/authorized-adoption/model-to-source.md)
+* [Authorized adoption: source → runtime](../correspondence/authorized-adoption/source-to-runtime.md)
+* [Publication: source → publication → HTTP → GUI](../correspondence/publication/source-to-publication-to-http-to-gui.md)
 
-```text
-FINAL_NETWORK_CONTINUITY=GREEN
-```
+## Related claims
 
-The direct and public publication bodies also corresponded:
-
-```text
-FINAL_DIRECT_PUBLIC_BODY_CORRESPONDENCE=PASS
-```
-
-against publication SHA-256:
-
-```text
-d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
-```
-
-Use [`network-continuity.md`](network-continuity.md) for the complete public-path and recovery record.
+* [Claim registry](../claims/claim-registry.md)
+* [Nonclaims and residuals](../claims/nonclaims-and-residuals.md)
 
 ---
 
-# 🌦️ The prior DNS timeout remains part of the evidence
+# ✅ What this evidence index supports
 
-An earlier public `/evidence` request encountered a DNS-resolution timeout.
+A defensible description of this directory is:
 
-That observation remains part of the engineering history.
+> **The ALLIS evidence layer preserves bounded, public, non-sensitive technical records supporting specific claims about governed production evolution, formal/correspondence results, immutable publication, runtime isolation, network continuity, and completed workstream evidence seals.**
 
-It was not removed simply because the final continuity attempt succeeded.
+It does not itself establish:
 
-Final adjudication:
-
-```text
-NETWORK_FAILURE_CLASSIFICATION=
-TRANSIENT_EXTERNAL_NAME_RESOLUTION_FAILURE_RECOVERED
-
-NETWORK_CONTINUITY_RECOVERY=PASS
-
-PRODUCTION_REPAIR_REQUIRED=NO
-
-TRANSIENT_DNS_ADJUDICATION=PASS
-```
-
-The evidence therefore preserves the sequence:
-
-```text
-failure observed
-    ↓
-failure classified
-    ↓
-bounded path re-observed
-    ↓
-recovery demonstrated
-```
-
-rather than rewriting the record as:
-
-```text
-final success
-    =
-earlier failure never occurred
-```
-
-This distinction preserves causality.
+* whole-system formal verification;
+* permanent runtime correspondence;
+* universal production-mutation safety;
+* authority beyond a bounded workstream;
+* unrestricted access to internal ALLIS state;
+* public mutation authority;
+* or `SYSTEM_PROVEN=YES`.
 
 ---
 
-# ✅ 4. Final Step-17 evidence close
+# 🧠 Evidence rule
 
-The final completion matrix records:
+The evidence layer follows the same rule as the larger ALLIS repository:
 
-```text
-FINAL_CRITERION_COUNT=25
+> **Current truth is assembled from qualified objects and explicit correspondence—not from whichever file was written most recently.**
 
-FINAL_CRITERION_PASS_COUNT=25
+And:
 
-FINAL_CRITERION_FAILURE_COUNT=0
-
-FINAL_FIXED_GOAL_COMPLETION_MATRIX=PASS
-```
-
-The final evidence manifest was created and verified:
-
-```text
-STEP17_FINAL_MANIFEST_CREATED=PASS
-
-STEP17_FINAL_MANIFEST_VERIFICATION=PASS
-```
-
-Predecessor seal continuity also passed:
-
-```text
-STEP16_FINAL_SEAL_AFTER_COMPLETION=PASS
-
-STEP17_R1A_SEAL_AFTER_COMPLETION=PASS
-```
-
-Final audit:
-
-```text
-STEP17_FINAL_AUDIT=PASS
-```
-
-Use [`step17-final-close.md`](step17-final-close.md) for the complete final evidence-close record.
-
----
-
-# 🧾 Final Step-17 evidence objects
-
-The final completion package identifies evidence including:
-
-```text
-docs/publication/STEP17_R1A_SHA256SUMS.txt
-
-docs/publication/STEP16_FINAL_SHA256SUMS.txt
-
-build/step17/r2/final-fixed-goal-criteria.json
-
-build/step17/r2/final-browser-dom.html
-
-build/step17/r2/final-browser-visible-text.txt
-
-build/step17/r2/final-browser.log
-
-build/step17/r2r1/loopback-evidence-source-repair.json
-
-build/step17/r2r1/final-fixed-goal-criteria-r1.json
-
-build/step17/r2r2/network-continuity-attempts.txt
-
-build/step17/r2r2/network-continuity-adjudication.json
-
-build/step17/r2r2/final-direct-publication.json
-
-build/step17/r2r2/final-public-publication.json
-
-build/step17/r2r2/final-publication.headers
-
-build/step17/r2r2/step17-final-audit.json
-
-docs/publication/STEP17_FINAL_COMPLETION.md
-```
-
-The Markdown files in this public repository explain the evidence state.
-
-They do not replace the sealed engineering artifacts.
-
----
-
-# 🛡️ Final nonmutation state
-
-The final Step-17 verification and sealing operation records:
-
-```text
-SUDO_INVOKED=NO
-
-QUALIFIED_SOURCE_MODIFIED=NO
-
-PUBLICATION_CODE_MODIFIED=NO
-
-PUBLICATION_STORE_MODIFIED=NO
-
-PUBLICATION_SERVICE_RESTARTED=NO
-
-FRONTEND_SOURCE_MODIFIED=NO
-
-FRONTEND_RUNTIME_MODIFIED=NO
-
-FRONTEND_RESTARTED=NO
-
-CADDYFILE_MODIFIED=NO
-
-CADDY_RELOADED=NO
-
-CLOUDFLARED_MODIFIED=NO
-
-SYSTEMD_DEFINITION_MODIFIED=NO
-```
-
-This statement applies to the **final verification and sealing operation**.
-
-It does not mean these objects can never change.
-
-A future governed workstream may change a qualified object under new authority and new evidence.
-
----
-
-# 🔗 Evidence and correspondence
-
-Evidence and correspondence answer different questions.
-
-```text
-EVIDENCE
-    =
-What objects, identities, observations,
-seals, failures, recoveries, and audits exist?
-```
-
-```text
-CORRESPONDENCE
-    =
-What relationship among those objects
-was established at a particular observation?
-```
-
-For Step 17:
-
-```text
-qualified state
-    ↓
-governed publication
-    ↓
-direct publication service
-    ↓
-public HTTPS publication
-    ↓
-Evidence & Governance Portal
-```
-
-The corresponding repository record is:
-
-[`../../correspondence/publication/source-to-publication-to-http-to-gui.md`](../../correspondence/publication/source-to-publication-to-http-to-gui.md)
-
-The evidence package supports those relationships.
-
-It does not collapse the objects into one identity.
-
----
-
-# ✅ Evidence and acceptance
-
-Acceptance records the bounded conclusion admitted into the current technical record.
-
-Evidence records what supports that conclusion.
-
-For Step 17:
-
-```text
-acceptance/closeout/publication-step17-close.md
-    =
-What bounded publication result was accepted?
-```
-
-while:
-
-```text
-evidence/publication/step17-final-close.md
-    =
-What evidence bundle supports that accepted close?
-```
-
-Use:
-
-[`../../acceptance/closeout/publication-step17-close.md`](../../acceptance/closeout/publication-step17-close.md)
-
-for the accepted Step-17 workstream close.
-
-Use this directory for the supporting evidence records.
-
----
-
-# 🧠 Evidence and architecture
-
-Architecture describes the system model and its intended authority boundaries.
-
-Evidence records what was actually identified, observed, demonstrated, or sealed within a bounded workstream.
-
-For example:
-
-```text
-architecture/authority-planes.md
-    =
-Where do authority transitions occur?
-```
-
-```text
-architecture/fail-closed-semantics.md
-    =
-How are safe non-success states classified?
-```
-
-```text
-evidence/publication/runtime-boundary.md
-    =
-What serving boundary was actually demonstrated
-during the Step-17 workstream?
-```
-
-Relevant architecture:
-
-* [`../../architecture/authority-planes.md`](../../architecture/authority-planes.md)
-* [`../../architecture/fail-closed-semantics.md`](../../architecture/fail-closed-semantics.md)
-
----
-
-# 🧭 Recommended reading order
-
-For a reviewer examining the live-publication result:
-
-```text
-1. README.md
-       ↓
-2. publication-identity.md
-       ↓
-3. runtime-boundary.md
-       ↓
-4. network-continuity.md
-       ↓
-5. step17-final-close.md
-       ↓
-6. publication correspondence
-       ↓
-7. acceptance closeout
-```
-
-Or by question:
-
-| Question                                                   | Read                                                                                                                                                   |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| What publication object was sealed?                        | [`publication-identity.md`](publication-identity.md)                                                                                                   |
-| How was it served without creating a public control plane? | [`runtime-boundary.md`](runtime-boundary.md)                                                                                                           |
-| Did the final public path work?                            | [`network-continuity.md`](network-continuity.md)                                                                                                       |
-| What evidence closed Step 17?                              | [`step17-final-close.md`](step17-final-close.md)                                                                                                       |
-| How do source, publication, HTTP, and GUI relate?          | [`../../correspondence/publication/source-to-publication-to-http-to-gui.md`](../../correspondence/publication/source-to-publication-to-http-to-gui.md) |
-| What bounded conclusion was accepted?                      | [`../../acceptance/closeout/publication-step17-close.md`](../../acceptance/closeout/publication-step17-close.md)                                       |
-
----
-
-# 🕒 Evidence is time-bounded
-
-The Step-17 publication evidence records a bounded observed state.
-
-```text
-observed at final Step-17 close
-    ≠
-guaranteed forever
-```
-
-The publication correspondence is therefore point-in-time.
-
-A claim-bearing change may require renewed evidence.
-
-Examples include:
-
-* publication-body changes;
-* publication-ID changes;
-* source/state changes affecting publication content;
-* publication-authority changes;
-* privacy or eligibility-rule changes;
-* publication-service code changes;
-* listener or bind changes;
-* proxy or route changes;
-* public host/path changes;
-* frontend-build changes;
-* GUI data-flow changes;
-* publication-store changes;
-* epistemic-state rendering changes.
-
-A changed object does not erase the historical Step-17 evidence.
-
-It may invalidate a claim that the historical observation remains current.
-
----
-
-# 🚫 Stronger claims not supported
-
-This package does **not** establish:
-
-```text
-SYSTEM_PROVEN=YES
-```
-
-It does not establish:
-
-```text
-WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=YES
-```
-
-It does not establish:
-
-```text
-PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
-```
-
-It does not establish:
-
-```text
-all ALLIS internal state is publicly exposed
-```
-
-It does not establish:
-
-```text
-the public endpoint has write authority
-```
-
-It does not establish:
-
-```text
-the GUI has unrestricted direct ALLIS access
-```
-
-It does not establish:
-
-```text
-publication JSON
-    =
-raw internal system state
-```
-
-It does not establish:
-
-```text
-GUI HTML
-    =
-publication JSON
-```
-
-It does not establish:
-
-```text
-final network continuity
-    =
-permanent future network continuity
-```
-
-It does not establish:
-
-```text
-Step 17 closure
-    =
-authority for a successor workstream
-```
-
----
-
-# ✅ Supported bounded claim
-
-A concise supported statement is:
-
-> **At the final Step-17 observation, the governed ALLIS publication `allis-publication-step6-retention-v2` was served through the bounded read-only publication path; the direct loopback and public HTTPS publication bodies corresponded; the public publication endpoint and Evidence & Governance Portal were reachable; the fixed-goal matrix passed 25 of 25 criteria; and the final Step-17 evidence manifest and audit passed.**
-
-That statement remains bounded by:
-
-* the Step-17 fixed goal;
-* the identified publication object;
-* the final publication SHA;
-* the final frontend build;
-* the final runtime observation;
-* the final network-continuity observation;
-* the final evidence seal.
-
----
-
-# 📊 Package status
-
-| Evidence area                     | Final bounded status        |
-| --------------------------------- | --------------------------- |
-| Publication identity              | 🟢 Sealed                   |
-| Publication integrity             | 🟢 Green                    |
-| Publication service isolation     | 🟢 Green                    |
-| Loopback-only serving             | 🟢 Green                    |
-| Public mutation endpoint          | 🟢 Absent                   |
-| Authorized public routing         | 🟢 Green                    |
-| Direct/public body correspondence | 🟢 Pass                     |
-| Public publication endpoint       | 🟢 HTTP 200                 |
-| Evidence & Governance Portal      | 🟢 HTTP 200                 |
-| Network continuity                | 🟢 Green                    |
-| Prior DNS failure                 | 🟢 Classified and recovered |
-| Final criteria                    | 🟢 25 / 25 Pass             |
-| Final manifest verification       | 🟢 Pass                     |
-| Predecessor-seal continuity       | 🟢 Pass                     |
-| Final audit                       | 🟢 Pass                     |
-| Whole-system proof                | ⚪ `SYSTEM_PROVEN=NO`        |
-
----
-
-# 📚 Related repository records
-
-## Parent evidence index
-
-* [`../README.md`](../README.md)
-
-## Publication evidence
-
-* [`publication-identity.md`](publication-identity.md)
-* [`runtime-boundary.md`](runtime-boundary.md)
-* [`network-continuity.md`](network-continuity.md)
-* [`step17-final-close.md`](step17-final-close.md)
-
-## Publication correspondence
-
-* [`../../correspondence/publication/source-to-publication-to-http-to-gui.md`](../../correspondence/publication/source-to-publication-to-http-to-gui.md)
-
-## Acceptance
-
-* [`../../acceptance/current-system-manifest.md`](../../acceptance/current-system-manifest.md)
-* [`../../acceptance/baseline-object-registry.md`](../../acceptance/baseline-object-registry.md)
-* [`../../acceptance/closeout/publication-step17-close.md`](../../acceptance/closeout/publication-step17-close.md)
-
-## Claims
-
-* [`../../claims/claim-registry.md`](../../claims/claim-registry.md)
-* [`../../claims/nonclaims-and-residuals.md`](../../claims/nonclaims-and-residuals.md)
-
-## Architecture
-
-* [`../../architecture/authority-planes.md`](../../architecture/authority-planes.md)
-* [`../../architecture/fail-closed-semantics.md`](../../architecture/fail-closed-semantics.md)
-
-## Current state
-
-* [`../../CURRENT.md`](../../CURRENT.md)
-
----
-
-# 📦 Normalized publication-evidence record
-
-```yaml
-publication_evidence:
-
-  scope:
-    workstream: publication_step17
-    fixed_goal: governed_read_only_live_publication
-    evidence_is_point_in_time: true
-    whole_system_proof: false
-
-  publication:
-    id: allis-publication-step6-retention-v2
-    sha256: d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
-    payload_sha256: 04ebb5bc1f97cbf56b8722fea9bcc7e7303cac2f5b467510d7a821d84d4a3c3c
-
-  frontend:
-    build: 5By6R3CWTM7NDXc-4lmSi
-
-  runtime_boundary:
-    publication_service_isolation: GREEN
-    loopback_only: GREEN
-    strict_read_only_boundary: GREEN
-    public_mutation_endpoint: false
-    caddy_authorized_routing: GREEN
-    gui_unrestricted_direct_allis_access: false
-    listener: 127.0.0.1:8096
-    loopback_listener_count: 1
-    wildcard_listener_count: 0
-
-  final_network_observation:
-    dns_rc: 0
-    publication_http_status: 200
-    gui_http_status: 200
-    public_network_continuity: PASS
-    final_network_continuity: GREEN
-    direct_public_body_correspondence: PASS
-    prior_failure_classification: TRANSIENT_EXTERNAL_NAME_RESOLUTION_FAILURE_RECOVERED
-    production_repair_required: false
-
-  final_close:
-    criteria_total: 25
-    criteria_pass: 25
-    criteria_fail: 0
-    completion_matrix: PASS
-    final_manifest_created: PASS
-    final_manifest_verification: PASS
-    predecessor_seal_continuity: PASS
-    final_audit: PASS
-    overall_goal: GREEN_COMPLETE
-
-  publication_state:
-    live_publication_endpoint: COMPLETE
-    evidence_governance_portal: LIVE_AT_FINAL_OBSERVATION
-
-  nonclaims:
-    permanent_network_continuity: false
-    public_mutation_authority: false
-    gui_direct_allis_control: false
-    raw_internal_state_publication: false
-    whole_system_safety_proven: false
-    production_mutation_safety_proven: false
-    system_proven: false
-```
-
-> [!NOTE]
-> This YAML block is a human-readable normalization of the package.
->
-> The sealed Step-17 engineering artifacts and final completion manifest remain the evidence authority for the bounded final observation.
-
----
-
-# 🧾 Publication evidence summary
-
-<div align="center">
-
-### 📦 GOVERNED PUBLICATION
-
-**`allis-publication-step6-retention-v2`**
-
-**SHA `d6ab6352…`**
-
-↓
-
-### 🔒 READ-ONLY PUBLICATION SERVICE
-
-**loopback only**
-
-**1 listener · 0 wildcard listeners**
-
-↓
-
-### 🚦 AUTHORIZED PUBLIC ROUTE
-
-**GREEN**
-
-↓
-
-### 🌐 PUBLIC PUBLICATION
-
-**HTTP 200**
-
-↓
-
-### 🔎 EVIDENCE & GOVERNANCE PORTAL
-
-**HTTP 200**
-
-↓
-
-### 🔗 DIRECT / PUBLIC CORRESPONDENCE
-
-**PASS**
-
-↓
-
-### 🌐 FINAL NETWORK CONTINUITY
-
-**GREEN**
-
-↓
-
-### 🧾 FINAL COMPLETION MATRIX
-
-**25 / 25 PASS**
-
-↓
-
-### 🔐 FINAL MANIFEST + AUDIT
-
-**PASS**
-
-<br>
-
-# `OVERALL_GOAL=GREEN_COMPLETE`
-
-### Bounded Step-17 result
-
-<br>
-
-# `SYSTEM_PROVEN=NO`
-
-</div>
-
----
-
-# Governing evidence principles
-
-> **Evidence supports a claim; it does not silently enlarge the claim.**
-
-> **Publication identity is not source identity.**
-
-> **A live public read path is not a public control plane.**
-
-> **The GUI consumes governed publication; it does not gain unrestricted direct access to ALLIS.**
-
-> **A recovered failure remains part of the evidence record.**
-
-> **Final success does not erase prior observations.**
-
-> **Network continuity is an observed state, not an eternal guarantee.**
-
-> **Evidence and correspondence are related but distinct.**
-
-> **Evidence and acceptance are related but distinct.**
-
-> **A closed workstream retains its scope, seals, evidence, and nonclaims.**
-
-> **A green Step-17 publication result remains a bounded result.**
-
-> **`SYSTEM_PROVEN=NO`.**
-
----
+> **A claim may advance only as far as its evidence supports.**
