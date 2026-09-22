@@ -1473,7 +1473,7 @@ allis_publication_identity:
 
 ## Publication evidence
 
-- `readme.md` — publication evidence package index
+- [`README.md`](README.md) — publication evidence package index
 - `publication-identity.md` — **this record**
 - `runtime-boundary.md` — publication-service and public-boundary evidence
 - `network-continuity.md` — final public-path continuity evidence
