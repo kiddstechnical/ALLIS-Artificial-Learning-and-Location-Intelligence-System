@@ -1,6 +1,76 @@
-# Theorem registry: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Theorem Registry
+
+### Formal proposition dispositions and validation levels for the bounded Step-12 production authorized-adoption model
+
+<br>
+
+![Formal Verification](https://img.shields.io/badge/FORMAL_VERIFICATION-THEOREM_REGISTRY-7c3aed?style=for-the-badge)
+![Claims](https://img.shields.io/badge/FORMAL_CLAIMS-12-0ea5e9?style=for-the-badge)
+![Adjudication](https://img.shields.io/badge/ADJUDICATION-11_PROVEN_%7C_1_DISPROVEN-16a34a?style=for-the-badge)
+![T12D-A](https://img.shields.io/badge/T12D--A-MACHINE_CHECKED-f59e0b?style=for-the-badge)
+![T12D-B/C](https://img.shields.io/badge/T12D--B%2FC-CORRESPONDENCE_VERIFIED-14b8a6?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This registry records **what formal propositions the evidence establishes and at what validation level**.
+>
+> It does **not** grant permission to execute production changes. A theorem may be proven, machine-checked, or correspondence-verified without becoming an authorization object.
+>
+> In particular, `CORRESPONDENCE_VERIFIED` establishes a bounded theorem/evidence relationship. It does **not** create standing permission to execute, waive target or prestate checks, mint authorization, or authorize a future production mutation.
+
+---
+
+# 👀 Theorem status and authority in one view
+
+```mermaid
+flowchart LR
+    C["📐 FORMAL CLAIM"]:::claim
+    P["✅ PROOF / DISPROOF"]:::proof
+    M["🧪 MACHINE EVIDENCE"]:::machine
+    S["🔗 SOURCE CORRESPONDENCE"]:::source
+    R["🖥️ RUNTIME OBSERVATION"]:::runtime
+    A["🛡️ OPERATIONAL AUTHORIZATION<br/>separate governed object"]:::authority
+
+    C --> P --> M --> S --> R
+    R -. "does not create" .-> A
+    P -. "does not create" .-> A
+    M -. "does not create" .-> A
+
+    classDef claim fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
+    classDef proof fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
+    classDef machine fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
+    classDef source fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
+    classDef runtime fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef authority fill:#e5e7eb,stroke:#64748b,color:#111827,stroke-width:3px;
+```
+
+The registry therefore keeps two questions separate:
+
+```text
+What has the evidence established?
+```
+
+versus:
+
+```text
+What exact transition is authorized now?
+```
+
+They are not interchangeable.
+
+---
+
+# 🎯 Purpose
 
 This registry records the formal propositions currently established for the bounded ALLIS production authorized-adoption model.
 
@@ -45,7 +115,7 @@ Production authority remains a separate governed object defined by the authorize
 
 ---
 
-## Registry status
+# 📋 Registry status
 
 | Field | Value |
 |---|---|
@@ -80,23 +150,23 @@ The registry contains the eight sealed-source lemmas, the three principal theore
 
 ---
 
-## 1. How to read this registry
+# 🧭 1. How to read this registry
 
 The registry distinguishes a proposition's **logical result** from its **highest validated evidence level**.
 
-### Proven
+## Proven
 
 `PROVEN` means the proposition is established within the stated sealed source-model domain.
 
 It does not by itself establish live runtime correspondence.
 
-### Machine-checked
+## Machine-checked
 
 `MACHINE_CHECKED` means the formal result is supported by machine-executed source-structure checks and bounded execution evidence in the Step-12 method.
 
 It does not mean proof-assistant verification in Coq, Lean, Isabelle, TLA+, or another general formal system.
 
-### Correspondence-verified
+## Correspondence-verified
 
 `CORRESPONDENCE_VERIFIED` requires more than proof.
 
@@ -116,7 +186,7 @@ where:
 - $`C_{SR}(S,R)`$ means the modeled source corresponds to runtime $`R`$; and
 - $`LiveObs(T,R)`$ means the behavior relevant to the theorem was actually observed in that runtime.
 
-### Disproven
+## Disproven
 
 `MACHINE_CHECKED_DISPROVEN` means a machine-executed bounded counterexample invalidated the proposed property.
 
@@ -126,7 +196,7 @@ It is not deleted, softened, or silently replaced.
 
 ---
 
-## 2. Architectural meaning of the theorem set
+# 🧩 2. Architectural meaning of the theorem set
 
 The theorem family does not attempt to prove that an intelligent system is safe because it is capable, well evaluated, or internally confident.
 
@@ -162,11 +232,11 @@ The theorem set therefore tests whether the production adoption path preserves t
 
 ---
 
-# Source-model lemmas
+# 📐 Source-model lemmas
 
-## 3. A.33 — Lemma 1: publication validation precedence
+# 3. A.33 — Lemma 1: publication validation precedence
 
-### Statement
+## Statement
 
 For successful authorized-spool publication:
 
@@ -184,7 +254,7 @@ Publish\downarrow
 NValidate\downarrow
 ```
 
-### Meaning
+## Meaning
 
 A package cannot successfully enter the authorized incoming-spool path unless NBB validation has already succeeded.
 
@@ -194,11 +264,11 @@ package exists
 authorized work exists
 ```
 
-### Basis
+## Basis
 
 The successful publication path calls NBB validation before authorized-spool publication.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -211,9 +281,9 @@ The successful publication path calls NBB validation before authorized-spool pub
 
 ---
 
-## 4. A.34 — Lemma 2: NBB validation implies authorization and target acceptance
+# 4. A.34 — Lemma 2: NBB validation implies authorization and target acceptance
 
-### Statement
+## Statement
 
 ```math
 V_{NBB}(x)=1
@@ -233,13 +303,13 @@ AuthorizationValid
 TargetAllowed
 ```
 
-### Meaning
+## Meaning
 
 Successful NBB validation requires both an acceptable authorization and an allowed governed target.
 
 A valid candidate alone is not sufficient.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -250,9 +320,9 @@ A valid candidate alone is not sufficient.
 
 ---
 
-## 5. A.35 — Lemma 3: authorized apply success implies authorization validation
+# 5. A.35 — Lemma 3: authorized apply success implies authorization validation
 
-### Statement
+## Statement
 
 ```math
 M_{auth}=1
@@ -260,7 +330,7 @@ M_{auth}=1
 V_{auth}=1
 ```
 
-### Meaning
+## Meaning
 
 The authorized-application function cannot successfully return unless authorization validation succeeds.
 
@@ -274,11 +344,11 @@ The reverse is not asserted.
 
 A valid authorization does not guarantee that application will succeed.
 
-### Basis
+## Basis
 
 Authorization validation precedes governed application on the successful path.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -289,9 +359,9 @@ Authorization validation precedes governed application on the successful path.
 
 ---
 
-## 6. A.36 — Lemma 4: authorized apply success implies target safety
+# 6. A.36 — Lemma 4: authorized apply success implies target safety
 
-### Statement
+## Statement
 
 ```math
 M_{auth}=1
@@ -309,7 +379,7 @@ V_{contain}=1
 V_{allow}=1
 ```
 
-### Meaning
+## Meaning
 
 Successful authorized application requires both:
 
@@ -318,7 +388,7 @@ Successful authorized application requires both:
 
 Technical reachability of a path does not establish permission to modify it.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -329,9 +399,9 @@ Technical reachability of a path does not establish permission to modify it.
 
 ---
 
-## 7. A.37 — Lemma 5: authorized apply success implies prestate correspondence
+# 7. A.37 — Lemma 5: authorized apply success implies prestate correspondence
 
-### Statement
+## Statement
 
 ```math
 M_{auth}=1
@@ -357,7 +427,7 @@ h_b(c)
 
 the application path rejects the stale transition.
 
-### Meaning
+## Meaning
 
 Authorization applies to the source state that was actually authorized.
 
@@ -369,7 +439,7 @@ authority for state A
 authority for later state B
 ```
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -380,9 +450,9 @@ authority for later state B
 
 ---
 
-## 8. A.38 — Lemma 6: successful apply requires fresh one-use authorization
+# 8. A.38 — Lemma 6: successful apply requires fresh one-use authorization
 
-### Statement
+## Statement
 
 ```math
 M_{auth}=1
@@ -398,17 +468,17 @@ M_{auth}=1
 i(a)\notin L_s
 ```
 
-### Meaning
+## Meaning
 
 An authorization that has already been spent cannot support another successful application.
 
 A prior valid authorization does not become continuing authority.
 
-### Basis
+## Basis
 
 Exclusive spent reservation occurs before governed mutation. If the authorization identifier is already present in the spent ledger, reservation fails.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -419,7 +489,7 @@ Exclusive spent reservation occurs before governed mutation. If the authorizatio
 
 ---
 
-## 9. A.39 — Lemma 7: successful apply implies spent reservation
+# 9. A.39 — Lemma 7: successful apply implies spent reservation
 
 Define:
 
@@ -429,7 +499,7 @@ S_{spent}=1
 
 if and only if the exclusive spent reservation has been created.
 
-### Statement
+## Statement
 
 ```math
 M_{auth}=1
@@ -437,11 +507,11 @@ M_{auth}=1
 S_{spent}=1
 ```
 
-### Meaning
+## Meaning
 
 The one-use authority state is durably advanced before successful application can return.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -452,7 +522,7 @@ The one-use authority state is durably advanced before successful application ca
 
 ---
 
-## 10. A.40 — Lemma 8: successful apply implies receipt correspondence
+# 10. A.40 — Lemma 8: successful apply implies receipt correspondence
 
 Define:
 
@@ -462,7 +532,7 @@ R_{receipt}=1
 
 if and only if the expected application receipt has been created before successful function return.
 
-### Statement
+## Statement
 
 ```math
 M_{auth}=1
@@ -470,7 +540,7 @@ M_{auth}=1
 R_{receipt}=1
 ```
 
-### Meaning
+## Meaning
 
 A successful governed source transition must leave durable evidence of the completed application.
 
@@ -478,7 +548,7 @@ The receipt records the transition.
 
 It does not create retrospective permission for the transition.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -489,11 +559,13 @@ It does not create retrospective permission for the transition.
 
 ---
 
-# Principal theorems
+# ✅ Principal theorems
 
-## 11. T12D-A — Authorized-application gating theorem
+# 🧪 Principal theorem validation levels
 
-### Statement
+# 11. T12D-A — Authorized-application gating theorem
+
+## Statement
 
 ```math
 \boxed{
@@ -513,7 +585,7 @@ R_{receipt}
 }
 ```
 
-### Expanded authorization dependency
+## Expanded authorization dependency
 
 Successful authorized application entails the required authorization predicates, including:
 
@@ -561,7 +633,7 @@ S_{spent}
 R_{receipt}
 ```
 
-### Architectural meaning
+## Architectural meaning
 
 This theorem expresses the strongest compact source-model result for authorized production adoption.
 
@@ -576,7 +648,7 @@ and receipt conditions held
 within the sealed bounded source model
 ```
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -598,7 +670,7 @@ Therefore Step 12 does not promote:
 Corr(T12D\text{-}A)=1
 ```
 
-### Claim boundary
+## Claim boundary
 
 `T12D-A` does **not** establish:
 
@@ -612,9 +684,9 @@ Corr(T12D\text{-}A)=1
 
 ---
 
-## 12. T12D-B — Invalid-authorization fail-closed theorem
+# 12. T12D-B — Invalid-authorization fail-closed theorem
 
-### Statement
+## Statement
 
 ```math
 \boxed{
@@ -632,7 +704,7 @@ InvalidExternalAuthorization
 NoAuthorizedSpoolPublication
 ```
 
-### Architectural meaning
+## Architectural meaning
 
 Invalid authority does not enter the authorized work path.
 
@@ -650,7 +722,7 @@ no authorized spool publication
 
 This is a direct formal expression of the separation between capability and authority.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -673,9 +745,9 @@ L(T_B)=CORRESPONDENCE\_VERIFIED
 
 ---
 
-## 13. T12D-C — Empty-spool non-application theorem
+# 13. T12D-C — Empty-spool non-application theorem
 
-### Statement
+## Statement
 
 ```math
 \boxed{
@@ -697,7 +769,7 @@ Q_3\text{ not reached}
 Q_4\text{ not reached}
 ```
 
-### Architectural meaning
+## Architectural meaning
 
 The worker does not manufacture authority from its own ability to act.
 
@@ -711,7 +783,7 @@ no claim
 no authorized apply
 ```
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -734,11 +806,13 @@ L(T_C)=CORRESPONDENCE\_VERIFIED
 
 ---
 
-# Disproven proposition
+# 🔬 Disproven proposition
 
-## 14. P12C-09 — Terminal totality
+# ❌ Preserved negative result
 
-### Proposed statement
+# 14. P12C-09 — Terminal totality
+
+## Proposed statement
 
 ```math
 \boxed{
@@ -752,7 +826,7 @@ Q_{6R}
 
 The proposed property asserted that every claimed record necessarily reaches either the completed or rejected terminal state.
 
-### Counterexample
+## Counterexample
 
 There exists a claimed record $`r`$ such that:
 
@@ -787,7 +861,7 @@ Q_3(r)
 
 after terminalization failure.
 
-### Registry result
+## Registry result
 
 | Field | Status |
 |---|---|
@@ -796,7 +870,7 @@ after terminalization failure.
 | Counterexample | Preserved |
 | Silent replacement permitted | `NO` |
 
-### Refined but unpromoted proposition
+## Refined but unpromoted proposition
 
 The narrower statement:
 
@@ -814,7 +888,7 @@ is consistent with the discovered transition structure.
 
 Step 12 did not promote it as a replacement theorem.
 
-### Architectural meaning
+## Architectural meaning
 
 A desired system property does not become true because it would make the architecture cleaner.
 
@@ -824,9 +898,11 @@ That rule is the theorem-layer expression of the broader ALLIS principle that st
 
 ---
 
-# Registry summary
+# 📊 Registry summary
 
-## 15. Twelve adjudicated formal claims
+# 📊 Aggregate adjudication
+
+# 15. Twelve adjudicated formal claims
 
 | Registry item | Result | Highest recorded level |
 |---|---|---|
@@ -871,7 +947,7 @@ Therefore:
 
 ---
 
-## 16. Validation-level summary
+# 16. Validation-level summary
 
 The three principal theorem levels are:
 
@@ -907,7 +983,9 @@ same evidence level
 
 ---
 
-## 17. Explicit non-promotions
+# 🚫 Non-promotion boundaries
+
+# 17. Explicit non-promotions
 
 The theorem registry preserves the following current boundaries:
 
@@ -951,7 +1029,7 @@ They are not missing work silently represented as success.
 
 ---
 
-## 18. The theorem registry does not authorize production action
+# 🛡️ 18. The theorem registry does not authorize production action
 
 This registry records knowledge about the architecture.
 
@@ -975,7 +1053,7 @@ formal evidence exists
 operational authority exists
 ```
 
-Operational authorization remains governed by the independent authorization object and runtime predicates defined in [`FORMAL_MODEL.md`](./FORMAL_MODEL.md).
+Operational authorization remains governed by the independent authorization object and runtime predicates defined in [`formal-model.md`](./formal-model.md).
 
 This separation is intentional.
 
@@ -991,7 +1069,7 @@ ALLIS does not treat those questions as interchangeable.
 
 ---
 
-## 19. Seal boundary
+# 🔐 19. Seal boundary
 
 The controlling Step-12 formal seal is:
 
@@ -1059,39 +1137,90 @@ No stronger theorem is implied by the seal.
 
 ---
 
-## 20. Companion records
+# 📚 20. Companion records
 
 This registry belongs with:
 
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 Use:
 
-- `FORMAL_MODEL.md` for definitions, predicates, state space, and transition semantics;
-- `THEOREM_REGISTRY.md` for claim adjudication and validation level;
-- `COUNTEREXAMPLE_REGISTRY.md` for preserved falsifying cases;
-- correspondence records for model-to-source and source-to-runtime evidence; and
-- evidence records for the sealed identities and residual boundaries.
+- [`formal-model.md`](./formal-model.md) — definitions, predicates, state space, and transition semantics
+- [`theorem-registry.md`](./theorem-registry.md) — this proposition adjudication and validation-level registry
+- [`counterexample-registry.md`](./counterexample-registry.md) — preserved falsifying cases
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
+- [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) — controlling bounded Step-12 final seal
+- [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed source identity
+- [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — public verification trust identity
+- [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — governance-view identity and correspondence evidence
+- [`residuals.md`](../../evidence/governed-evolution/residuals.md) — residual and non-promotion ledger
 
-Together, these records enforce the documentation rule that underlies the architecture:
+---
+
+# 🧾 Theorem-registry summary
+
+<div align="center">
+
+### 📐 FORMAL CLAIMS
+# **12**
+
+**11 proven · 1 disproven · 0 unadjudicated**
+
+<br>
+
+### ✅ `T12D-A`
+**`MACHINE_CHECKED`**
+
+### ✅ `T12D-B`
+**`CORRESPONDENCE_VERIFIED`**
+
+### ✅ `T12D-C`
+**`CORRESPONDENCE_VERIFIED`**
+
+### 🔬 `P12C-09`
+**`MACHINE_CHECKED_DISPROVEN`**
+
+<br>
+
+### 🛡️ AUTHORITY BOUNDARY
+**theorem proven ≠ candidate authorized**
+
+**theorem correspondence-verified ≠ standing permission to execute**
+
+**formal evidence exists ≠ operational authority exists**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing theorem-registry principle
 
 > **A stronger claim requires stronger evidence, and stronger evidence still does not create operational authority.**
+
+> **Proof describes what the evidence establishes. Authorization governs what transition may occur now.**
+
+> **Capability does not create authority.**
