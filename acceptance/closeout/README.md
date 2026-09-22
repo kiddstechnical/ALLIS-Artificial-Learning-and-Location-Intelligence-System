@@ -82,7 +82,7 @@ Current directory structure:
 ```text
 acceptance/
 └── closeout/
-    ├── readme.md
+    ├── README.md
     ├── workstream-f-close.md
     ├── dgm-step12-close.md
     └── publication-step17-close.md
@@ -412,7 +412,7 @@ flowchart LR
 |---|---|
 | `baseline-object-registry.md` | Which qualified reference object applies to this scope? |
 | `current-system-manifest.md` | How do qualified objects and correspondence relationships fit together? |
-| `closeout/readme.md` | Which bounded workstreams have final closeout records? |
+| `closeout/README.md` | Which bounded workstreams have final closeout records? |
 | `CURRENT.md` | What does the accepted technical record support now? |
 
 ---
