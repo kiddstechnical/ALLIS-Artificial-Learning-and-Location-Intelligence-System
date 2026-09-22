@@ -1728,15 +1728,15 @@ The dedicated private-state document should preserve the exact public-safe bound
 ## Architecture
 
 - [`authority-planes.md`](authority-planes.md) — governed authority crossings
-- [`system-boundary/ALLIS_SYSTEM_BOUNDARY.md`](system-boundary/ALLIS_SYSTEM_BOUNDARY.md)
-- [`trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md`](trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md)
-- [`state-models/STATE_MODEL_OVERVIEW.md`](state-models/STATE_MODEL_OVERVIEW.md)
+- [`system-boundary/allis-system-boundary.md`](system-boundary/allis-system-boundary.md)
+- [`trust-and-authority/trust-and-authority-overview.md`](trust-and-authority/trust-and-authority-overview.md)
+- [`state-models/state-model-overview.md`](state-models/state-model-overview.md)
 - `private-state/h-people-boundary.md` — planned public-safe private-state boundary
 
 ## Claims
 
-- [`../claims/CLAIM_REGISTRY.md`](../claims/CLAIM_REGISTRY.md)
-- [`../claims/NONCLAIMS_AND_RESIDUALS.md`](../claims/NONCLAIMS_AND_RESIDUALS.md)
+- [`../claims/claim-registry.md`](../claims/claim-registry.md)
+- [`../claims/nonclaims-and-residuals.md`](../claims/nonclaims-and-residuals.md)
 
 ## Acceptance
 
