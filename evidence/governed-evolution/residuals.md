@@ -1,6 +1,91 @@
-# Residuals and non-promotions: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Step-12 Residuals & Non-Promotions
+
+### Accepted limitations, negative results, temporal boundaries, and claims deliberately not promoted
+
+<br>
+
+![Evidence](https://img.shields.io/badge/EVIDENCE-RESIDUAL_LEDGER-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Residuals](https://img.shields.io/badge/RESIDUALS-8-0ea5e9?style=for-the-badge)
+![Nonpromotions](https://img.shields.io/badge/NON--PROMOTIONS-7-d946ef?style=for-the-badge)
+![Obligations](https://img.shields.io/badge/OBLIGATIONS-15_OF_15_ADJUDICATED-16a34a?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> The eight residuals and seven explicit non-promotions in this record are **part of the accepted bounded Step-12 result**.
+>
+> They are not documentation defects to be removed for a cleaner presentation. Several are fully adjudicated limitations, one preserves a machine-checked counterexample, and others preserve scope, temporal, authority, and observation boundaries.
+>
+> `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` therefore means the workstream closed **with these boundaries intact**, not that the boundaries disappeared.
+
+---
+
+# 👀 Residual ledger in one view
+
+```mermaid
+flowchart TB
+    S["🟠 STEP 12<br/>GREEN CLOSED WITH EXPLICIT RESIDUALS"]:::step
+
+    R["🧱 8 RESIDUALS"]:::residual
+    N["🚫 7 NON-PROMOTIONS"]:::nonpromo
+    O["✅ 15 / 15 OBLIGATIONS<br/>0 UNADJUDICATED"]:::closed
+
+    P["🔴 P12C-09<br/>MACHINE_CHECKED_DISPROVEN"]:::negative
+    T["🕒 R12F-07<br/>POINT_IN_TIME_BINDING"]:::time
+    A["🛡️ R12F-08<br/>EXTERNAL_TO_RUNTIME_MODEL"]:::authority
+    W["⚪ SYSTEM_PROVEN=NO"]:::system
+
+    S --> R
+    S --> N
+    S --> O
+
+    R --> P
+    R --> T
+    R --> A
+
+    R -. "does not imply" .-> W
+    N -. "preserves" .-> W
+    O -. "does not erase" .-> R
+
+    classDef step fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:3px;
+    classDef residual fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
+    classDef nonpromo fill:#d946ef,stroke:#86198f,color:#ffffff,stroke-width:3px;
+    classDef closed fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef negative fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
+    classDef time fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
+    classDef authority fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:2px;
+    classDef system fill:#e5e7eb,stroke:#64748b,color:#111827,stroke-width:3px;
+```
+
+The closed result is intentionally two-sided:
+
+```text
+15 / 15 obligations adjudicated
+0 unadjudicated
+```
+
+and simultaneously:
+
+```text
+8 residuals
+7 explicit non-promotions
+```
+
+Those facts are compatible because a residual may be a **fully adjudicated limitation**.
+
+---
+
+# 🎯 Purpose
 
 This document preserves the eight explicit Step-12 residuals and seven explicit non-promotions for the bounded ALLIS production authorized-adoption workstream.
 
@@ -55,7 +140,7 @@ whole-system proof
 
 ---
 
-## Residual ledger status
+# 📋 Residual ledger status
 
 | Field | Value |
 |---|---|
@@ -88,21 +173,21 @@ A residual can be a **fully adjudicated limitation** that remains true after clo
 
 ---
 
-# Part I — Eight explicit residuals
+# 🧱 Part I — Eight explicit residuals
 
-## 1. R12F-01 — Positive production path
+# 1. R12F-01 — Positive production path
 
-### Controlling statement
+## Controlling statement
 
 > A real positive production authorization was not published, consumed, or applied.
 
-### Classification
+## Classification
 
 ```text
 NOT_OBSERVED
 ```
 
-### Meaning
+## Meaning
 
 Step 12 did not execute a real positive production authorization and patch application.
 
@@ -116,7 +201,7 @@ REAL_PRODUCTION_AUTHORIZATION_CONSUMPTION=NOT_PERFORMED
 REAL_PRODUCTION_DGM_PATCH_APPLICATION=NOT_PERFORMED
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 positive path modeled
@@ -128,21 +213,21 @@ This residual is the reason `T12D-A` remains `MACHINE_CHECKED` rather than `CORR
 
 ---
 
-## 2. R12F-02 — Terminalization
+# 2. R12F-02 — Terminalization
 
-### Controlling statements
+## Controlling statements
 
 > P12C-09 was disproven.
 
 > A claimed record may remain claimed when terminalization fails.
 
-### Classification
+## Classification
 
 ```text
 DISPROVEN
 ```
 
-### Meaning
+## Meaning
 
 The proposed terminal-totality property:
 
@@ -172,7 +257,7 @@ and:
 State'(r)=Q_3
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 claimed
@@ -184,19 +269,19 @@ This is a fully adjudicated negative result, not an unresolved issue.
 
 ---
 
-## 3. R12F-03 — General production mutation safety
+# 3. R12F-03 — General production mutation safety
 
-### Controlling statement
+## Controlling statement
 
 > The bounded authorized-adoption theorem does not establish a universal production-mutation safety theorem.
 
-### Classification
+## Classification
 
 ```text
 NOT_PROVEN
 ```
 
-### Meaning
+## Meaning
 
 The Step-12 theorem family proves bounded properties of the sealed authorized-adoption path.
 
@@ -220,7 +305,7 @@ The controlling public statement is:
 PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 bounded gate theorem
@@ -230,19 +315,19 @@ universal mutation-safety theorem
 
 ---
 
-## 4. R12F-04 — Whole-system safety
+# 4. R12F-04 — Whole-system safety
 
-### Controlling statement
+## Controlling statement
 
 > The formal object models the authorized-adoption path rather than the entire ALLIS architecture.
 
-### Classification
+## Classification
 
 ```text
 NOT_PROVEN
 ```
 
-### Meaning
+## Meaning
 
 The Step-12 proof domain does not cover every ALLIS component, runtime path, side effect, external dependency, or possible state transition.
 
@@ -260,7 +345,7 @@ The controlling public statement is:
 WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 bounded subsystem proof
@@ -270,19 +355,19 @@ whole-system safety proof
 
 ---
 
-## 5. R12F-05 — Historical D1R5 domain
+# 5. R12F-05 — Historical D1R5 domain
 
-### Controlling statement
+## Controlling statement
 
 > The predecessor theorem remains legitimate historical evidence but is not directly promotable into the current production domain.
 
-### Classification
+## Classification
 
 ```text
 HISTORICAL_ONLY
 ```
 
-### Meaning
+## Meaning
 
 The historical D1R5 theorem remains valid within the domain in which it was originally established.
 
@@ -296,7 +381,7 @@ D1R5
 CurrentProductionProof
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 historical theorem valid in historical domain
@@ -308,19 +393,19 @@ A change in theorem domain requires new correspondence evidence.
 
 ---
 
-## 6. R12F-06 — Bounded formal domain
+# 6. R12F-06 — Bounded formal domain
 
-### Controlling statement
+## Controlling statement
 
 > The formal model covers the sealed 11-file authorized-adoption path rather than all platform behavior.
 
-### Classification
+## Classification
 
 ```text
 BOUNDED_DOMAIN
 ```
 
-### Meaning
+## Meaning
 
 The formal object intentionally covers a specific production pathway.
 
@@ -334,7 +419,7 @@ formal model correspondence
 complete behavioral model of ALLIS
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 modeled domain
@@ -346,21 +431,21 @@ This residual preserves the scope of every theorem derived from the model.
 
 ---
 
-## 7. R12F-07 — Point-in-time correspondence
+# 7. R12F-07 — Point-in-time correspondence
 
-### Controlling statements
+## Controlling statements
 
 > Runtime correspondence is established for the sealed and revalidated deployment state.
 
 > It is not a perpetual assertion that future deployment states can never drift.
 
-### Classification
+## Classification
 
 ```text
 POINT_IN_TIME_BINDING
 ```
 
-### Meaning
+## Meaning
 
 At final seal:
 
@@ -379,7 +464,7 @@ C_{SR}^{\tau}(S,R)=1
 
 without future revalidation.
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 correspondence true at seal
@@ -391,19 +476,19 @@ Future runtime state requires future evidence.
 
 ---
 
-## 8. R12F-08 — External authority
+# 8. R12F-08 — External authority
 
-### Controlling statement
+## Controlling statement
 
 > The NBB and worker verify and consume external authorization but do not independently mint or sign private authorization authority.
 
-### Classification
+## Classification
 
 ```text
 EXTERNAL_TO_RUNTIME_MODEL
 ```
 
-### Meaning
+## Meaning
 
 The bounded runtime model includes authorization verification and consumption.
 
@@ -421,7 +506,7 @@ can consume authorization
 can mint signing authority
 ```
 
-### Architectural boundary
+## Architectural boundary
 
 ```text
 runtime capability
@@ -433,9 +518,9 @@ This residual preserves the separation between intelligence/runtime capability a
 
 ---
 
-# Part II — Seven explicit non-promotions
+# 🚫 Part II — Seven explicit non-promotions
 
-## 9. Why non-promotions are evidence
+# 9. Why non-promotions are evidence
 
 Step 12 deliberately records stronger claims that were **not** promoted.
 
@@ -461,9 +546,9 @@ The following seven statements are controlling.
 
 ---
 
-## 10. N1 — T12D-A is not Correspondence-Verified
+# 10. N1 — T12D-A is not Correspondence-Verified
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -473,7 +558,7 @@ CORRESPONDENCE\_VERIFIED
 }
 ```
 
-### Reason
+## Reason
 
 The theorem is machine-checked over the sealed source model, and source/runtime correspondence was established, but the positive live authorized-application path was not exercised.
 
@@ -485,7 +570,7 @@ T12D-A=MACHINE_CHECKED
 
 remains the highest earned validation level.
 
-### Boundary
+## Boundary
 
 ```text
 machine-checked positive path
@@ -495,9 +580,9 @@ live positive path observed
 
 ---
 
-## 11. N2 — P12C-09 is not Proven
+# 11. N2 — P12C-09 is not Proven
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -507,7 +592,7 @@ PROVEN
 }
 ```
 
-### Reason
+## Reason
 
 A machine-executed bounded counterexample disproved terminal totality.
 
@@ -517,7 +602,7 @@ The controlling result is:
 P12C-09=MACHINE_CHECKED_DISPROVEN
 ```
 
-### Boundary
+## Boundary
 
 ```text
 desired invariant
@@ -529,9 +614,9 @@ The failed proposition remains part of the scientific record.
 
 ---
 
-## 12. N3 — Historical D1R5 is not current production proof
+# 12. N3 — Historical D1R5 is not current production proof
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -541,13 +626,13 @@ CurrentProductionProof
 }
 ```
 
-### Reason
+## Reason
 
 The historical theorem was established in a different bounded theorem domain.
 
 It cannot be directly promoted into the current production authorized-adoption domain without current correspondence evidence.
 
-### Boundary
+## Boundary
 
 ```text
 historical proof
@@ -557,9 +642,9 @@ current production proof
 
 ---
 
-## 13. N4 — Current bounded proof does not imply production mutation safety
+# 13. N4 — Current bounded proof does not imply production mutation safety
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -569,13 +654,13 @@ ProductionMutationSafety
 }
 ```
 
-### Controlling public statement
+## Controlling public statement
 
 ```text
 PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
 ```
 
-### Boundary
+## Boundary
 
 ```text
 bounded adoption properties
@@ -585,9 +670,9 @@ universal production mutation safety
 
 ---
 
-## 14. N5 — Current bounded proof does not imply whole-system safety
+# 14. N5 — Current bounded proof does not imply whole-system safety
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -597,13 +682,13 @@ WholeSystemSafety
 }
 ```
 
-### Controlling public statement
+## Controlling public statement
 
 ```text
 WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
 ```
 
-### Boundary
+## Boundary
 
 ```text
 bounded adoption model
@@ -613,9 +698,9 @@ whole ALLIS safety theorem
 
 ---
 
-## 15. N6 — Current bounded proof does not imply `SYSTEM_PROVEN`
+# 15. N6 — Current bounded proof does not imply `SYSTEM_PROVEN`
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -625,7 +710,7 @@ SYSTEM\_PROVEN
 }
 ```
 
-### System-proven predicate
+## System-proven predicate
 
 Define:
 
@@ -657,7 +742,7 @@ The controlling public statement is:
 SYSTEM_PROVEN=NO
 ```
 
-### Critical interpretation
+## Critical interpretation
 
 `SYSTEM_PROVEN=NO` is:
 
@@ -671,7 +756,7 @@ It is **not**:
 an unresolved result
 ```
 
-### Boundary
+## Boundary
 
 ```text
 bounded proof complete
@@ -681,9 +766,9 @@ system proven
 
 ---
 
-## 16. N7 — Machine-checked positive path does not imply live observation
+# 16. N7 — Machine-checked positive path does not imply live observation
 
-### Formal statement
+## Formal statement
 
 ```math
 \boxed{
@@ -693,11 +778,11 @@ LivePositivePathObserved
 }
 ```
 
-### Reason
+## Reason
 
 The real positive production authorization/application path was deliberately not performed as part of Step 12.
 
-### Boundary
+## Boundary
 
 ```text
 machine evidence
@@ -709,9 +794,9 @@ This distinction preserves the validation hierarchy rather than collapsing machi
 
 ---
 
-# Part III — Exact public non-promotion summary
+# 📣 Part III — Exact public non-promotion summary
 
-## 17. Seven stronger claims deliberately not promoted
+# 17. Seven stronger claims deliberately not promoted
 
 The Step-12 narrative record states:
 
@@ -731,9 +816,9 @@ They must not be rewritten into stronger positive claims unless new evidence exp
 
 ---
 
-# Part IV — Stronger-theorem boundary
+# 📐 Part IV — Stronger-theorem boundary
 
-## 18. Bounded theorem family
+# 18. Bounded theorem family
 
 Let:
 
@@ -801,7 +886,7 @@ T_{system}=NOT\_PROVEN
 
 ---
 
-## 19. Controlling system-level boundary
+# 19. Controlling system-level boundary
 
 The following three statements must remain together:
 
@@ -823,9 +908,9 @@ None is changed by the final seal.
 
 ---
 
-# Part V — Residuals are not open obligations
+# ✅ Part V — Residuals are not open obligations
 
-## 20. Formal obligation closure
+# 20. Formal obligation closure
 
 Step 12 carried:
 
@@ -857,7 +942,7 @@ Residuals=8
 
 This is intentional.
 
-### Possible formal dispositions
+## Possible formal dispositions
 
 A scoped obligation can close as:
 
@@ -907,7 +992,7 @@ unadjudicated
 
 ---
 
-## 21. Why this matters scientifically
+# 21. Why this matters scientifically
 
 A verification program that only records successful positive claims creates pressure to erase evidence that limits the architecture.
 
@@ -945,9 +1030,9 @@ They are the correct evidence states.
 
 ---
 
-# Part VI — No claim inflation
+# 🛡️ Part VI — No claim inflation
 
-## 22. No-claim-inflation condition
+# 22. No-claim-inflation condition
 
 The Step-12 final seal requires:
 
@@ -973,7 +1058,7 @@ It would contradict the conditions under which the workstream was sealed.
 
 ---
 
-## 23. Claims the seal does not create
+# 23. Claims the seal does not create
 
 The final seal does not create:
 
@@ -1013,9 +1098,9 @@ REAL_PRODUCTION_DGM_PATCH_APPLICATION=PERFORMED
 
 ---
 
-# Part VII — Operational non-promotion
+# 🔐 Part VII — Operational non-promotion
 
-## 24. Step 12 did not authorize a production action
+# 24. Step 12 did not authorize a production action
 
 At closure:
 
@@ -1047,9 +1132,9 @@ successor authority
 
 ---
 
-# Part VIII — Summary ledger
+# 📊 Part VIII — Summary ledger
 
-## 25. Residual summary
+# 25. Residual summary
 
 | ID | Residual | Classification |
 |---|---|---|
@@ -1072,7 +1157,7 @@ The count is:
 
 ---
 
-## 26. Non-promotion summary
+# 26. Non-promotion summary
 
 | ID | Non-promotion |
 |---|---|
@@ -1094,9 +1179,9 @@ The count is:
 
 ---
 
-# Part IX — Final logical boundary
+# 🧾 Part IX — Final logical boundary
 
-## 27. Final bounded result
+# 27. Final bounded result
 
 The Step-12 result can be written:
 
@@ -1162,7 +1247,7 @@ Therefore:
 
 ---
 
-## 28. Final non-promotion statement
+# 28. Final non-promotion statement
 
 The controlling system-level state is:
 
@@ -1184,7 +1269,7 @@ A stronger future claim requires stronger future evidence.
 
 ---
 
-## 29. Seal identity
+# 29. Seal identity
 
 The controlling Step-12 state is:
 
@@ -1212,14 +1297,14 @@ No stronger system-level theorem is implied by this seal.
 
 ---
 
-## 30. Repository location
+# 📚 30. Repository location
 
 This record belongs at:
 
 ```text
 evidence/
     governed-evolution/
-        RESIDUALS.md
+        residuals.md
 ```
 
 It should be read with:
@@ -1227,11 +1312,11 @@ It should be read with:
 ```text
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 and:
@@ -1239,30 +1324,76 @@ and:
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 ```
+
+Use:
+
+- [`residuals.md`](residuals.md) — this accepted Step-12 residual and non-promotion ledger
+- [`step12-final-seal.md`](step12-final-seal.md) — controlling final Step-12 seal
+- [`source-identity.md`](source-identity.md) — sealed eleven-file production source identity
+- [`trust-anchor.md`](trust-anchor.md) — sealed public verification trust identity
+- [`governance-view.md`](governance-view.md) — sealed governance-view identity and NBB correspondence
+- [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) — bounded Step-12 mathematical model
+- [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) — proposition dispositions and validation levels
+- [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) — preserved falsifying cases
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
 
 ---
 
-## 31. Governing residual statement
+# 🧾 Residual and non-promotion summary
 
-The correct interpretation of Step 12 is:
+<div align="center">
+
+### 🧱 EXPLICIT RESIDUALS
+# **8**
+
+**all preserved as part of the closed Step-12 result**
+
+<br>
+
+### 🚫 EXPLICIT NON-PROMOTIONS
+# **7**
+
+**stronger claims deliberately not earned**
+
+<br>
+
+### ✅ FORMAL OBLIGATIONS
+**15 / 15 adjudicated · 0 unadjudicated**
+
+<br>
+
+### 🔬 KEY NEGATIVE RESULT
+**`P12C-09 = MACHINE_CHECKED_DISPROVEN`**
+
+<br>
+
+### 🕒 RUNTIME CORRESPONDENCE
+**`R12F-07 = POINT_IN_TIME_BINDING`**
+
+<br>
+
+### ⚪ WHOLE-SYSTEM BOUNDARY
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing residual statement
 
 > **The workstream is closed because its claims, failures, limitations, and non-promotions were all explicitly adjudicated—not because every desired property became true.**
 
-And the controlling system boundary remains:
+> **Residuals are part of the accepted bounded result. Removing them would weaken the evidence record rather than strengthen it.**
 
-```text
-SYSTEM_PROVEN=NO
-```
-
-That is not a weakness hidden at the edge of the documentation.
-
-It is part of the evidence discipline that makes the bounded results credible.
+> **State does not become authority merely because it exists.**
