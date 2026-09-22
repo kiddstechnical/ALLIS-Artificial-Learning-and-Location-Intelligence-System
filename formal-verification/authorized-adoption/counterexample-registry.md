@@ -1,6 +1,64 @@
-# Counterexample registry: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Counterexample Registry
+
+### Preserved falsifying cases from the bounded Step-12 production authorized-adoption formal model
+
+<br>
+
+![Formal Verification](https://img.shields.io/badge/FORMAL_VERIFICATION-COUNTEREXAMPLE_REGISTRY-7c3aed?style=for-the-badge)
+![Counterexamples](https://img.shields.io/badge/COUNTEREXAMPLES-1-0ea5e9?style=for-the-badge)
+![Proposition](https://img.shields.io/badge/P12C--09-DISPROVEN-dc2626?style=for-the-badge)
+![Validation](https://img.shields.io/badge/VALIDATION-MACHINE_CHECKED_DISPROVEN-f97316?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This registry preserves a **valid negative formal result**.
+>
+> `P12C-09` was not merely unproven or inconclusive. Within the bounded Step-12 formal domain, a machine-executed counterexample falsified unconditional terminal totality, so the controlling disposition remains `MACHINE_CHECKED_DISPROVEN`.
+>
+> The counterexample must not be deleted, softened, or silently replaced by a narrower theorem. Any refined proposition requires its own theorem identity, evidence, adjudication, and promotion path.
+
+---
+
+# 👀 Counterexample in one view
+
+```mermaid
+flowchart LR
+    Q3["🟠 Q3<br/>WORKER_CLAIMED"]:::claimed
+    F["⚠️ FinishClaim(r,z,q_s)<br/>fails"]:::failure
+    Q3B["🟠 Q3<br/>record remains claimed"]:::claimed
+    P["❌ P12C-09<br/>Terminal Totality"]:::prop
+    D["🔬 MACHINE_CHECKED_DISPROVEN"]:::disproven
+
+    Q3 --> F --> Q3B
+    Q3B -->|"valid bounded counterexample"| P
+    P --> D
+
+    classDef claimed fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:3px;
+    classDef failure fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:3px;
+    classDef prop fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
+    classDef disproven fill:#dc2626,stroke:#7f1d1d,color:#ffffff,stroke-width:3px;
+```
+
+The counterexample establishes one bounded fact:
+
+> **A claimed record is not guaranteed to reach `TERMINAL_COMPLETED` or `TERMINAL_REJECTED` if terminalization fails.**
+
+That negative result is part of the successful Step-12 scientific close.
+
+---
+
+# 🎯 Purpose
 
 This registry preserves falsifying cases discovered during formal analysis of the bounded ALLIS production authorized-adoption model.
 
@@ -30,7 +88,7 @@ A bounded counterexample has authority over the claim because it falsifies the u
 
 ---
 
-## Registry status
+# 📋 Registry status
 
 | Field | Value |
 |---|---|
@@ -51,7 +109,7 @@ The registry must grow if future formal work discovers additional falsifying cas
 
 ---
 
-## 1. Why counterexamples are preserved
+# 1. Why counterexamples are preserved
 
 A universal proposition has the form:
 
@@ -97,23 +155,23 @@ A negative result narrows the architecture to what the evidence actually support
 
 ---
 
-# Registered counterexample
+# 🔬 Registered counterexample
 
-## 2. CE-001 — P12C-09 terminal-totality counterexample
+# 🧪 2. CE-001 — P12C-09 terminal-totality counterexample
 
-### Proposition identifier
+## Proposition identifier
 
 ```text
 P12C-09
 ```
 
-### Proposition name
+## Proposition name
 
 ```text
 Terminal Totality
 ```
 
-### Proposed statement
+## Proposed statement
 
 The proposed property was:
 
@@ -133,7 +191,7 @@ where:
 - $`Q_{6C}`$ = `TERMINAL_COMPLETED`; and
 - $`Q_{6R}`$ = `TERMINAL_REJECTED`.
 
-### Intended meaning
+## Intended meaning
 
 The proposition asserted:
 
@@ -157,7 +215,9 @@ It disproved it.
 
 ---
 
-## 3. Counterexample condition
+# 🧩 Counterexample mechanics
+
+# 3. Counterexample condition
 
 The bounded counterexample begins with a record $`r`$ in the claimed state:
 
@@ -216,7 +276,7 @@ This single valid bounded execution falsifies the universal proposition.
 
 ---
 
-## 4. Machine adjudication
+# ✅ 4. Machine adjudication
 
 The formal result is:
 
@@ -260,7 +320,7 @@ DISPROVEN
 
 within the bounded formal domain.
 
-### Registry classification
+## Registry classification
 
 | Field | Result |
 |---|---|
@@ -277,7 +337,9 @@ within the bounded formal domain.
 
 ---
 
-## 5. Transition-level interpretation
+# 🔄 Transition interpretation
+
+# 5. Transition-level interpretation
 
 The normal terminal path can be represented as:
 
@@ -324,7 +386,7 @@ Q_{6C}\lor Q_{6R}
 
 ---
 
-## 6. What the counterexample means
+# 6. What the counterexample means
 
 The counterexample does **not** mean that every claimed record remains stuck.
 
@@ -352,7 +414,7 @@ A universal theorem must survive every valid state allowed by its domain.
 
 ---
 
-## 7. Why this result matters architecturally
+# 7. Why this result matters architecturally
 
 The counterexample exposes an important governance boundary.
 
@@ -404,7 +466,7 @@ The system therefore cannot infer a stronger successor state merely from the exi
 
 ---
 
-## 8. Scientific significance
+# 🧠 8. Scientific significance
 
 Preserving this counterexample strengthens the formal record.
 
@@ -447,7 +509,7 @@ no residuals
 
 ---
 
-## 9. Refined proposition
+# 📐 9. Refined proposition
 
 The discovered counterexample supports a narrower statement:
 
@@ -487,7 +549,7 @@ If the refined proposition is to become a formal theorem, it requires its own ex
 
 ---
 
-## 10. No silent theorem substitution
+# 🚫 10. No silent theorem substitution
 
 The following transformation is prohibited by the current evidence record:
 
@@ -517,7 +579,9 @@ It also preserves the provenance of the scientific result.
 
 ---
 
-## 11. Residual mapping
+# 🧱 Residual and non-promotion mapping
+
+# 11. Residual mapping
 
 The counterexample remains represented in the Step-12 residual set.
 
@@ -559,7 +623,7 @@ its discovered limitation remains a residual
 
 ---
 
-## 12. Non-promotion mapping
+# 12. Non-promotion mapping
 
 Step 12 explicitly preserves:
 
@@ -585,7 +649,9 @@ It is part of the formal evidence boundary.
 
 ---
 
-## 13. Relationship to system safety
+# ⚪ Broader claim boundaries
+
+# 13. Relationship to system safety
 
 The terminalization counterexample must not be inflated into a broader conclusion in either direction.
 
@@ -617,7 +683,7 @@ The counterexample is one bounded result inside that larger explicit proof bound
 
 ---
 
-## 14. Relationship to governed autonomy
+# 14. Relationship to governed autonomy
 
 This result is especially important to the larger ALLIS architecture because governed autonomy requires more than blocking unauthorized actions.
 
@@ -671,9 +737,9 @@ proven invariant
 
 ---
 
-## 15. Counterexample record
+# 15. Counterexample record
 
-### CE-001
+## CE-001
 
 | Field | Value |
 |---|---|
@@ -694,7 +760,7 @@ proven invariant
 
 ---
 
-## 16. Evidence boundary
+# 🛡️ 16. Evidence boundary
 
 This registry records the formal counterexample and its sealed Step-12 disposition.
 
@@ -718,7 +784,9 @@ The scientific result remains valid inside its stated bounded domain.
 
 ---
 
-## 17. Final counterexample statement
+# 🧾 Final bounded result
+
+# 17. Final counterexample statement
 
 The controlling result is:
 
@@ -757,7 +825,7 @@ No stronger or weaker disposition replaces this result.
 
 ---
 
-## 18. Seal identity
+# 18. Seal identity
 
 The controlling Step-12 formal seal is:
 
@@ -790,38 +858,86 @@ The preserved counterexample is the one disproven formal proposition in that adj
 
 ---
 
-## 19. Companion records
+# 📚 19. Companion records
 
 This registry belongs with:
 
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 Use:
 
-- [`FORMAL_MODEL.md`](./FORMAL_MODEL.md) for the state space and transition semantics;
-- [`THEOREM_REGISTRY.md`](./THEOREM_REGISTRY.md) for the full proposition adjudication;
-- `COUNTEREXAMPLE_REGISTRY.md` for falsifying cases and their scientific consequences; and
-- the evidence and correspondence records for sealed source/runtime support.
+- [`formal-model.md`](./formal-model.md) — state space and transition semantics
+- [`theorem-registry.md`](./theorem-registry.md) — full proposition adjudication and validation levels
+- [`counterexample-registry.md`](./counterexample-registry.md) — this preserved falsifying-case registry
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
+- [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) — controlling bounded Step-12 final seal
+- [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed source identity
+- [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — sealed public verification trust identity
+- [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — sealed governance-view evidence
+- [`residuals.md`](../../evidence/governed-evolution/residuals.md) — residual and non-promotion ledger preserving `R12F-02`
 
-The governing documentation rule is:
+---
+
+# 🧾 Counterexample summary
+
+<div align="center">
+
+### 🔬 REGISTERED COUNTEREXAMPLE
+# **CE-001**
+
+### 📐 PROPOSITION
+**`P12C-09` — Terminal Totality**
+
+### 🧱 COUNTEREXAMPLE STATE
+**`Q3 = WORKER_CLAIMED`**
+
+### ⚠️ FAILING OPERATION
+**`FinishClaim(r,z,q_s)` fails**
+
+### 🔄 PERMITTED RESULT
+**record may remain at `Q3`**
+
+<br>
+
+### ❌ FORMAL DISPOSITION
+# `MACHINE_CHECKED_DISPROVEN`
+
+### 🧱 RESIDUAL
+**`R12F-02`**
+
+### 🚫 REPLACEMENT THEOREM
+**NONE**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing counterexample principle
 
 > **A counterexample is not something the documentation must explain away. It is evidence that defines the true boundary of the architecture.**
+
+> **Evidence constrains the claim. The claim does not control the evidence.**
