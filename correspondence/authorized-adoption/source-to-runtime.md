@@ -1,6 +1,64 @@
-# Source-to-runtime correspondence: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Source → Runtime Correspondence
+
+### Point-in-time evidence that the sealed Step-12 production source matched the inspected live NBB and worker runtimes
+
+<br>
+
+![Correspondence](https://img.shields.io/badge/CORRESPONDENCE-SOURCE_TO_RUNTIME-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Source](https://img.shields.io/badge/SEALED_SOURCE-20c8cbe1-0ea5e9?style=for-the-badge)
+![Runtime](https://img.shields.io/badge/NBB_%2B_WORKER-11_OF_11_PASS-16a34a?style=for-the-badge)
+![Time](https://img.shields.io/badge/CORRESPONDENCE-POINT_IN_TIME-f97316?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This record establishes the **source → runtime correspondence edge** for the bounded Step-12 production authorized-adoption domain **at the final seal boundary**.
+>
+> It does **not** establish permanent runtime correspondence, standing runtime authority, a real positive production authorized-application observation, or whole-system proof.
+>
+> A changed future runtime requires new correspondence evidence.
+
+---
+
+# 👀 Correspondence in one view
+
+```mermaid
+flowchart LR
+    S["💻 SEALED PRODUCTION SOURCE<br/>20c8cbe1… · 11 governed files"]:::source
+    N["🖥️ LIVE NBB RUNTIME<br/>11 / 11 PASS"]:::runtime
+    W["🖥️ LIVE WORKER RUNTIME<br/>11 / 11 PASS"]:::runtime
+    T["🕒 STEP-12 FINAL SEAL<br/>POINT_IN_TIME_BINDING"]:::time
+    F["🔄 CHANGED FUTURE RUNTIME<br/>requires revalidation"]:::future
+
+    S -->|"C_SR(S,R_N)=1"| N
+    S -->|"C_SR(S,R_W)=1"| W
+    N --> T
+    W --> T
+    T -. "does not bind automatically" .-> F
+
+    classDef source fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:3px;
+    classDef runtime fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef time fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:3px;
+    classDef future fill:#e5e7eb,stroke:#64748b,color:#374151,stroke-width:2px;
+```
+
+The sealed source matched both inspected runtime roles at the final Step-12 correspondence boundary.
+
+That result is **time-indexed**. It does not become a perpetual runtime invariant.
+
+---
+
+# 🎯 Purpose
 
 This document establishes whether the sealed production source used by the ALLIS authorized-adoption formal model corresponds to the source actually present in the live NBB and worker runtimes at the Step-12 final seal.
 
@@ -49,7 +107,7 @@ every modeled behavior has been observed
 
 ---
 
-## Correspondence status
+# 📋 Correspondence status
 
 | Field | Value |
 |---|---|
@@ -73,9 +131,9 @@ every modeled behavior has been observed
 
 ---
 
-## 1. What this document answers
+# 🧭 1. What this document answers
 
-`MODEL_TO_SOURCE.md` answers:
+`model-to-source.md` answers:
 
 > Does the mathematical object map to the sealed production source?
 
@@ -99,7 +157,9 @@ Likewise, a running application is not enough to establish theorem correspondenc
 
 ---
 
-## 2. Correspondence objects
+# 🧩 Runtime correspondence objects
+
+# 2. Correspondence objects
 
 Let:
 
@@ -143,7 +203,7 @@ does the runtime copy have the same byte identity?
 
 ---
 
-## 3. Byte-correspondence criterion
+# 3. Byte-correspondence criterion
 
 For an eleven-file runtime set $`R`$, define source/runtime byte correspondence as:
 
@@ -170,7 +230,7 @@ It asks a narrower question:
 
 ---
 
-## 4. NBB runtime correspondence
+# 4. NBB runtime correspondence
 
 At final Step-12 sealing, the live NBB runtime source set satisfied:
 
@@ -194,13 +254,13 @@ NBB_MATCHED_FILES=11
 NBB_EXPECTED_FILES=11
 ```
 
-### Meaning
+## Meaning
 
 The bounded NBB source used by the formal and source-model work was not merely similar to the runtime NBB source.
 
 For all eleven governed production files in the correspondence domain, the runtime copies matched the sealed source identities used by Step 12.
 
-### What this supports
+## What this supports
 
 This establishes the source identity needed to ask whether source-model properties can correspond to live NBB behavior.
 
@@ -208,7 +268,7 @@ It does not, by itself, establish that every theorem has been observed live.
 
 ---
 
-## 5. Worker runtime correspondence
+# 5. Worker runtime correspondence
 
 At final Step-12 sealing, the live worker runtime source set satisfied:
 
@@ -232,11 +292,11 @@ WORKER_MATCHED_FILES=11
 WORKER_EXPECTED_FILES=11
 ```
 
-### Meaning
+## Meaning
 
 The worker runtime contained the same governed source identities used by the sealed production model for all eleven files in the correspondence domain.
 
-### Architectural significance
+## Architectural significance
 
 The NBB and worker are different runtime responsibilities.
 
@@ -255,7 +315,7 @@ Worker  11/11 PASS
 
 ---
 
-## 6. Combined source/runtime result
+# 6. Combined source/runtime result
 
 The final bounded runtime identity statement is:
 
@@ -277,7 +337,7 @@ This is the source/runtime identity bridge required by the correspondence model.
 
 ---
 
-## 7. Why both sides matter
+# 7. Why both sides matter
 
 The architecture separates admission from execution.
 
@@ -317,7 +377,7 @@ This follows the broader ALLIS discipline:
 
 ---
 
-## 8. Public trust correspondence
+# 8. Public trust correspondence
 
 Source correspondence alone does not establish that the runtime verifies authorizations against the intended trust anchor.
 
@@ -359,7 +419,7 @@ C_K=1
 
 at final seal time.
 
-### Meaning
+## Meaning
 
 The runtime source correspondence and the trust-anchor correspondence point to the same bounded authorization-verification environment.
 
@@ -369,7 +429,7 @@ The NBB and worker verify and consume external authorization; authorization issu
 
 ---
 
-## 9. Governance-view correspondence
+# 9. Governance-view correspondence
 
 Let:
 
@@ -407,7 +467,7 @@ C_G=1
 
 at final seal time.
 
-### Meaning
+## Meaning
 
 The NBB runtime was not only source-correspondent.
 
@@ -415,7 +475,7 @@ Its relevant governance view also corresponded to the sealed governance object a
 
 ---
 
-## 10. Runtime health and spool state at seal
+# 10. Runtime health and spool state at seal
 
 At Step-12 final sealing, the bounded runtime state was recorded as:
 
@@ -436,7 +496,7 @@ The empty spool is especially important because Step 12 deliberately did not iss
 
 ---
 
-## 11. No production authorization or patch was exercised
+# 11. No production authorization or patch was exercised
 
 At final seal:
 
@@ -465,9 +525,9 @@ This is why `T12D-A` remains `MACHINE_CHECKED` rather than `CORRESPONDENCE_VERIF
 
 ---
 
-# Point-in-time boundary
+# 🕒 Point-in-time boundary
 
-## 12. Runtime correspondence is time-indexed
+# 12. Runtime correspondence is time-indexed
 
 Define:
 
@@ -500,7 +560,7 @@ This is a central boundary of the evidence.
 
 ---
 
-## 13. Why the time boundary matters
+# 13. Why the time boundary matters
 
 A running system can change after a seal.
 
@@ -540,7 +600,7 @@ Step 12 does not establish the stronger claim.
 
 ---
 
-## 14. Residual R12F-07
+# 14. Residual R12F-07
 
 The point-in-time limitation is preserved as an explicit Step-12 residual:
 
@@ -571,7 +631,7 @@ It is the correct temporal boundary of the result.
 
 ---
 
-## 15. Revalidation rule
+# 15. Revalidation rule
 
 For a later runtime state $`R'`$ observed at time $`\tau'`$:
 
@@ -617,9 +677,9 @@ automatic authority over changed current state
 
 ---
 
-# Theorem correspondence
+# 📐 Theorem correspondence
 
-## 16. Source/runtime identity is necessary but not sufficient
+# 16. Source/runtime identity is necessary but not sufficient
 
 The Step-12 theorem correspondence criterion is:
 
@@ -653,7 +713,7 @@ Runtime source identity and relevant runtime behavior are different evidence req
 
 ---
 
-## 17. T12D-A runtime boundary
+# 17. T12D-A runtime boundary
 
 For `T12D-A`:
 
@@ -689,7 +749,7 @@ Final validation remains:
 T12D-A = MACHINE_CHECKED
 ```
 
-### Architectural meaning
+## Architectural meaning
 
 ```text
 runtime source matched theorem source
@@ -701,7 +761,7 @@ The source identity cannot manufacture an observation that never occurred.
 
 ---
 
-## 18. T12D-B runtime correspondence
+# 18. T12D-B runtime correspondence
 
 For `T12D-B`:
 
@@ -737,7 +797,7 @@ T12D-B = CORRESPONDENCE_VERIFIED
 
 ---
 
-## 19. T12D-C runtime correspondence
+# 19. T12D-C runtime correspondence
 
 For `T12D-C`:
 
@@ -773,7 +833,7 @@ T12D-C = CORRESPONDENCE_VERIFIED
 
 ---
 
-## 20. Model-level runtime statement
+# 20. Model-level runtime statement
 
 The final Step-12 validation registry describes:
 
@@ -806,9 +866,9 @@ has been observed live
 
 ---
 
-# Correspondence claim boundaries
+# 🛡️ Correspondence claim boundaries
 
-## 21. What 11/11 proves
+# 21. What 11/11 proves
 
 The 11/11 results establish that, at the final seal:
 
@@ -828,7 +888,7 @@ Thus the runtime source identity needed by the bounded correspondence argument w
 
 ---
 
-## 22. What 11/11 does not prove
+# 22. What 11/11 does not prove
 
 The 11/11 result does not establish:
 
@@ -870,7 +930,7 @@ SYSTEM_PROVEN=NO
 
 ---
 
-## 23. Correspondence is not authorization
+# 23. Correspondence is not authorization
 
 This record establishes facts about runtime identity.
 
@@ -910,7 +970,7 @@ ALLIS keeps those questions separate.
 
 ---
 
-## 24. Source/runtime correspondence and authority provenance
+# 24. Source/runtime correspondence and authority provenance
 
 The runtime receives authority from outside the bounded verification runtime.
 
@@ -928,7 +988,7 @@ Therefore runtime source correspondence cannot be interpreted as self-authorizat
 
 ---
 
-## 25. Failure to revalidate
+# 25. Failure to revalidate
 
 If a future runtime changes and no new correspondence evidence is collected, the correct status is not:
 
@@ -948,12 +1008,12 @@ This is an evidence rule, not a prediction that drift has occurred.
 
 ---
 
-## 26. Relationship to source identity
+# 26. Relationship to source identity
 
 The canonical list of the eleven governed production files and their sealed source identities belongs in:
 
 ```text
-evidence/governed-evolution/SOURCE_IDENTITY.md
+evidence/governed-evolution/source-identity.md
 ```
 
 This document owns the comparison result:
@@ -970,16 +1030,16 @@ That separation keeps one canonical source identity while allowing correspondenc
 
 ---
 
-## 27. Relationship to `MODEL_TO_SOURCE.md`
+# 27. Relationship to `model-to-source.md`
 
 Together:
 
 ```text
-MODEL_TO_SOURCE.md
+model-to-source.md
     establishes
     C_FS(F,S)=1
 
-SOURCE_TO_RUNTIME.md
+source-to-runtime.md
     establishes at seal
     C_SR(S,R_N)=1
     C_SR(S,R_W)=1
@@ -1017,7 +1077,7 @@ That is why the live-observation condition remains separate.
 
 ---
 
-## 28. Runtime seal snapshot
+# 28. Runtime seal snapshot
 
 At final Step-12 sealing, the relevant bounded state was:
 
@@ -1044,7 +1104,7 @@ This is the runtime boundary that the correspondence record seals.
 
 ---
 
-## 29. Architectural meaning
+# 29. Architectural meaning
 
 This layer answers a deceptively simple question:
 
@@ -1078,7 +1138,7 @@ This is the correspondence form of the overarching architecture:
 
 ---
 
-## 30. Final correspondence statement
+# 30. Final correspondence statement
 
 Let:
 
@@ -1165,7 +1225,7 @@ That is the controlling runtime correspondence boundary.
 
 ---
 
-## 31. Seal identity
+# 31. Seal identity
 
 The controlling Step-12 formal seal is:
 
@@ -1195,15 +1255,15 @@ No perpetual runtime-correspondence claim is implied by the seal.
 
 ---
 
-## 32. Companion records
+# 📚 32. Companion records
 
 This record belongs at:
 
 ```text
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 ```
 
 and should be read with:
@@ -1211,28 +1271,60 @@ and should be read with:
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 Use:
 
-- `MODEL_TO_SOURCE.md` to establish how the formal object maps to sealed source;
-- `SOURCE_TO_RUNTIME.md` to establish the 11/11 live NBB and worker byte correspondence and its temporal boundary;
-- `SOURCE_IDENTITY.md` as the canonical eleven-file source manifest;
-- `TRUST_ANCHOR.md` for the sealed public-key identity;
-- `GOVERNANCE_VIEW.md` for the sealed governance-view identity; and
-- `RESIDUALS.md` for the continuing point-in-time correspondence limitation.
+- [`model-to-source.md`](model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](source-to-runtime.md) — 11/11 live NBB and worker byte correspondence and its temporal boundary
+- [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical eleven-file sealed source manifest
+- [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — sealed public-key identity
+- [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — sealed governance-view identity
+- [`residuals.md`](../../evidence/governed-evolution/residuals.md) — continuing point-in-time correspondence limitation
 
-The governing documentation rule is:
+---
+
+# 🧾 Source-to-runtime correspondence summary
+
+<div align="center">
+
+### 💻 SEALED PRODUCTION SOURCE
+**commit `20c8cbe1…` · 11-file bounded source set**
+
+↓
+
+### 🖥️ NBB RUNTIME
+**11 / 11 source correspondence · PASS**
+
+### 🖥️ WORKER RUNTIME
+**11 / 11 source correspondence · PASS**
+
+<br>
+
+### 🕒 TEMPORAL BOUNDARY
+**`R12F-07 = POINT_IN_TIME_BINDING`**
+
+**Correspondence established at the Step-12 final seal; changed future runtime requires revalidation.**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing correspondence principle
 
 > **Runtime correspondence must be observed and sealed. It cannot be inherited forever from a prior successful observation.**
