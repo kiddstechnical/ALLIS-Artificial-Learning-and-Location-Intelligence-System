@@ -1,6 +1,74 @@
-# Governance view: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Governance View Evidence
+
+### Sealed Step-12 governance-state identity and point-in-time NBB correspondence
+
+<br>
+
+![Evidence](https://img.shields.io/badge/EVIDENCE-GOVERNANCE_VIEW-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Governance](https://img.shields.io/badge/GOVERNANCE_VIEW-PASS-16a34a?style=for-the-badge)
+![Identity](https://img.shields.io/badge/SHA256-26523c0b-0ea5e9?style=for-the-badge)
+![Time](https://img.shields.io/badge/CORRESPONDENCE-POINT_IN_TIME-f97316?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This record identifies the **sealed Step-12 governance object** and establishes that the inspected **live NBB governance view matched that sealed object at the final seal boundary**.
+>
+> It does **not** turn the governance view into an authorization envelope, establish worker governance-view correspondence, authorize production mutation, prove all governance semantics, or create permanent future correspondence.
+>
+> The evidence identity and governance-view claim scope remain bounded to the object and observation described here.
+
+---
+
+# 👀 Governance view in one view
+
+```mermaid
+flowchart LR
+    GS["🧾 SEALED GOVERNANCE OBJECT<br/>G_S · SHA-256 26523c0b…"]:::sealed
+    GN["🖥️ LIVE NBB GOVERNANCE VIEW<br/>G_N"]:::runtime
+    CG["🔗 CORRESPONDENCE<br/>C_G = 1 · PASS"]:::pass
+    T["🕒 FINAL SEAL<br/>point-in-time binding"]:::time
+
+    A["🛡️ AUTHORIZATION ENVELOPE<br/>separate authority object"]:::authority
+    W["🖥️ WORKER GOVERNANCE VIEW<br/>not established by this record"]:::bounded
+
+    GS -->|"H(G_S)=H(G_N)"| GN --> CG --> T
+    CG -. "does not create" .-> A
+    CG -. "does not establish" .-> W
+
+    classDef sealed fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
+    classDef runtime fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
+    classDef pass fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:3px;
+    classDef time fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
+    classDef authority fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:2px;
+    classDef bounded fill:#e5e7eb,stroke:#64748b,color:#374151,stroke-width:2px;
+```
+
+The governing result is an **identity-and-correspondence claim**:
+
+```math
+H(G_S)=H(G_N)
+\Rightarrow
+C_G=1
+```
+
+at the Step-12 final seal.
+
+It is not an authorization or whole-system governance theorem.
+
+---
+
+# 🎯 Purpose
 
 This document records the sealed governance view used by the bounded ALLIS production authorized-adoption pathway and the Step-12 evidence that the live NBB governance view corresponded to that sealed object at final sealing.
 
@@ -56,7 +124,7 @@ future governance state can never change
 
 ---
 
-## Governance-view status
+# 📋 Governance-view status
 
 | Field | Value |
 |---|---|
@@ -74,7 +142,7 @@ future governance state can never change
 
 ---
 
-## 1. What the governance view is in this record
+# 🧭 1. What the governance view is in this record
 
 For Step 12, let:
 
@@ -104,7 +172,9 @@ It records the identity and correspondence of the governance object used in this
 
 ---
 
-## 2. Sealed governance-view identity
+# 🧩 Governance-view evidence model
+
+# 2. Sealed governance-view identity
 
 The sealed governance view is bound to:
 
@@ -141,7 +211,7 @@ at final seal time.
 
 ---
 
-## 3. What hash correspondence establishes
+# 3. What hash correspondence establishes
 
 The governance-view hash comparison establishes identity of the sealed and inspected NBB governance-view objects under the defined hashing procedure.
 
@@ -167,7 +237,7 @@ It is not a semantic proof of every possible governance interpretation.
 
 ---
 
-## 4. What hash correspondence does not establish
+# 4. What hash correspondence does not establish
 
 The equality:
 
@@ -203,7 +273,7 @@ It establishes that the NBB governance view inspected at final seal matched the 
 
 ---
 
-## 5. Governance view is not an authorization envelope
+# 5. Governance view is not an authorization envelope
 
 The governance view and the authorization envelope have different roles.
 
@@ -249,7 +319,7 @@ authorization validation
 
 ---
 
-## 6. Governance state is not self-authorizing
+# 6. Governance state is not self-authorizing
 
 The existence of a governance state does not permit the NBB to infer a stronger operational state without the required authorization evidence.
 
@@ -281,7 +351,7 @@ Those conditions remain separately governed.
 
 ---
 
-## 7. Governance view and cryptographic trust are separate
+# 7. Governance view and cryptographic trust are separate
 
 The Step-12 runtime evidence independently records:
 
@@ -312,7 +382,7 @@ Both can correspond while serving different architectural purposes.
 
 ---
 
-## 8. Governance view and source correspondence are separate
+# 8. Governance view and source correspondence are separate
 
 Step 12 also independently records:
 
@@ -342,7 +412,7 @@ The final seal records both.
 
 ---
 
-## 9. Scope of the governance correspondence result
+# 9. Scope of the governance correspondence result
 
 The Step-12 formal record defines:
 
@@ -394,7 +464,7 @@ unless a separate evidence record establishes that fact.
 
 ---
 
-## 10. Why the NBB boundary matters
+# 10. Why the NBB boundary matters
 
 The NBB is the admission boundary for authorized work.
 
@@ -420,7 +490,7 @@ It still requires the authorization conditions defined by the formal model.
 
 ---
 
-## 11. Governance correspondence is point-in-time
+# 🕒 11. Governance correspondence is point-in-time
 
 The final correspondence is tied to the Step-12 seal boundary.
 
@@ -455,7 +525,9 @@ A future change to the governance view requires a new identity and correspondenc
 
 ---
 
-## 12. Governance-view replacement semantics
+# 🔄 Successor-state and revalidation boundary
+
+# 12. Governance-view replacement semantics
 
 If a future sealed governance object is:
 
@@ -495,7 +567,7 @@ automatic authority over changed state
 
 ---
 
-## 13. Governance correspondence does not create approval
+# 13. Governance correspondence does not create approval
 
 The governance-view result:
 
@@ -537,7 +609,7 @@ It does not say:
 
 ---
 
-## 14. Governance correspondence does not create target authority
+# 14. Governance correspondence does not create target authority
 
 Even a valid authorization must separately satisfy:
 
@@ -561,7 +633,7 @@ Target authority remains governed by the bounded target-safety predicates.
 
 ---
 
-## 15. Governance correspondence does not waive prestate binding
+# 15. Governance correspondence does not waive prestate binding
 
 The authorized path also requires:
 
@@ -583,7 +655,7 @@ Governance correspondence cannot repair source-state drift.
 
 ---
 
-## 16. Governance correspondence does not waive replay protection
+# 16. Governance correspondence does not waive replay protection
 
 The authorized path also requires:
 
@@ -605,7 +677,7 @@ The governance layer does not supersede the one-use authorization boundary.
 
 ---
 
-## 17. Governance correspondence does not prove application
+# 17. Governance correspondence does not prove application
 
 The governance-view result also does not establish:
 
@@ -633,7 +705,7 @@ This is why the positive authorized-application theorem remained `MACHINE_CHECKE
 
 ---
 
-## 18. Governance correspondence and theorem correspondence
+# 📐 18. Governance correspondence and theorem correspondence
 
 The Step-12 theorem-correspondence criterion requires more than governance correspondence.
 
@@ -659,7 +731,9 @@ It does not replace:
 
 ---
 
-## 19. Final runtime state at seal
+# 🖥️ Runtime evidence context
+
+# 19. Final runtime state at seal
 
 At final Step-12 sealing, the bounded runtime evidence recorded:
 
@@ -680,7 +754,7 @@ It should not be read in isolation as a global governance theorem.
 
 ---
 
-## 20. Governance view and external authority
+# 20. Governance view and external authority
 
 The bounded runtime model preserves:
 
@@ -713,7 +787,7 @@ acts only if all required conditions succeed
 
 ---
 
-## 21. Scope boundary
+# 🛡️ 21. Scope boundary
 
 This record documents only the Step-12 governance-view correspondence used by the bounded production authorized-adoption verification workstream.
 
@@ -743,7 +817,7 @@ at the Step-12 final seal.
 
 ---
 
-## 22. Content boundary
+# 22. Content boundary
 
 The Step-12 formal record establishes the sealed governance-view identity and its NBB correspondence.
 
@@ -765,7 +839,7 @@ The authoritative public claim is the correspondence claim.
 
 ---
 
-## 23. What `C_G=1` establishes
+# 23. What `C_G=1` establishes
 
 The result:
 
@@ -781,7 +855,7 @@ That is the full bounded correspondence statement.
 
 ---
 
-## 24. What `C_G=1` does not establish
+# 24. What `C_G=1` does not establish
 
 It does not establish:
 
@@ -823,7 +897,7 @@ SYSTEM_PROVEN=NO
 
 ---
 
-## 25. No automatic successor authority
+# 25. No automatic successor authority
 
 A matching governance view does not authorize a future governance transition merely because the predecessor view was valid.
 
@@ -841,9 +915,9 @@ A successor requires its own evidence and authority.
 
 ---
 
-## 26. Evidence role
+# 26. Evidence role
 
-`GOVERNANCE_VIEW.md` is an identity-and-correspondence evidence record.
+`governance-view.md` is an identity-and-correspondence evidence record.
 
 Its job is to answer:
 
@@ -859,20 +933,20 @@ Keeping those responsibilities separate prevents one documentation artifact from
 
 ---
 
-## 27. Relationship to `TRUST_ANCHOR.md`
+# 🔗 27. Relationship to `trust-anchor.md`
 
-`TRUST_ANCHOR.md` identifies the public verification trust object.
+`trust-anchor.md` identifies the public verification trust object.
 
-`GOVERNANCE_VIEW.md` identifies the sealed governance-state object.
+`governance-view.md` identifies the sealed governance-state object.
 
 Together:
 
 ```text
-TRUST_ANCHOR.md
+trust-anchor.md
     ↓
 which public verification identity is trusted
 
-GOVERNANCE_VIEW.md
+governance-view.md
     ↓
 which governance view was sealed and observed
 ```
@@ -883,9 +957,9 @@ Neither independently authorizes production mutation.
 
 ---
 
-## 28. Relationship to `SOURCE_TO_RUNTIME.md`
+# 28. Relationship to `source-to-runtime.md`
 
-`SOURCE_TO_RUNTIME.md` records:
+`source-to-runtime.md` records:
 
 ```math
 C_{SR}(S,R_N)=1
@@ -927,7 +1001,7 @@ instead of treating them as one undifferentiated "production matched" claim.
 
 ---
 
-## 29. Relationship to `STEP12_FINAL_SEAL.md`
+# 29. Relationship to `step12-final-seal.md`
 
 The Step-12 final seal records:
 
@@ -956,7 +1030,7 @@ at final seal time.
 
 ---
 
-## 30. Final governance-view statement
+# 30. Final governance-view statement
 
 Let:
 
@@ -1012,7 +1086,7 @@ It does not independently authorize a candidate, target, publication, consumptio
 
 ---
 
-## 31. Seal identity
+# 31. Seal identity
 
 The controlling Step-12 seal is:
 
@@ -1036,14 +1110,14 @@ The governance-view correspondence does not enlarge that scope.
 
 ---
 
-## 32. Repository location
+# 📚 32. Repository location
 
 This record belongs at:
 
 ```text
 evidence/
     governed-evolution/
-        GOVERNANCE_VIEW.md
+        governance-view.md
 ```
 
 It should be read with:
@@ -1051,11 +1125,11 @@ It should be read with:
 ```text
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 and:
@@ -1063,19 +1137,63 @@ and:
 ```text
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 ```
+
+Use:
+
+- [`governance-view.md`](governance-view.md) — this sealed governance-view identity and NBB correspondence record
+- [`trust-anchor.md`](trust-anchor.md) — sealed public verification trust identity
+- [`source-identity.md`](source-identity.md) — canonical sealed eleven-file production source identity
+- [`step12-final-seal.md`](step12-final-seal.md) — controlling Step-12 close and final correspondence seal
+- [`residuals.md`](residuals.md) — continuing bounded residuals and non-promotions
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
 
 ---
 
-## 33. Governing governance statement
+# 🧾 Governance-view evidence summary
 
-The correct architectural reading is:
+<div align="center">
+
+### 🧾 SEALED GOVERNANCE OBJECT
+**`G_S`**
+
+**SHA-256 `26523c0b…`**
+
+↓
+
+### 🖥️ LIVE NBB GOVERNANCE VIEW
+**`G_N`**
+
+↓
+
+### 🔗 GOVERNANCE-VIEW CORRESPONDENCE
+**`C_G=1` · PASS at final seal**
+
+<br>
+
+### 🕒 TEMPORAL BOUNDARY
+**point-in-time sealed correspondence**
+
+**Future governance state requires new identity and correspondence evidence.**
+
+<br>
+
+### 🚫 AUTHORITY BOUNDARY
+**governance view ≠ authorization envelope ≠ mutation authority**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing governance statement
 
 > **The governance view tells the system what governed state it is looking at. It does not, merely by existing or matching, grant authority to act.**
 
-That is the governance-layer expression of the overarching ALLIS architecture:
-
 > **State does not become authority merely because it exists.**
-
