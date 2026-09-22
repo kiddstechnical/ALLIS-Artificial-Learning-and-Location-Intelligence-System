@@ -1503,7 +1503,7 @@ allis_qualified_baseline_directory:
 - [`qualified-baseline-manifest.md`](qualified-baseline-manifest.md) — composite role-scoped qualification manifest
 - [`../baseline-object-registry.md`](../baseline-object-registry.md) — scope-to-object registry
 - [`../current-system-manifest.md`](../current-system-manifest.md) — composite accepted-object and correspondence map
-- [`../closeout/readme.md`](../closeout/readme.md) — bounded closeout index
+- [`../closeout/README.md`](../closeout/README.md) — bounded closeout index
 - [`../closeout/workstream-f-close.md`](../closeout/workstream-f-close.md) — Workstream-F close
 - [`../closeout/dgm-step12-close.md`](../closeout/dgm-step12-close.md) — Step-12 close
 - [`../closeout/publication-step17-close.md`](../closeout/publication-step17-close.md) — Step-17 publication close
