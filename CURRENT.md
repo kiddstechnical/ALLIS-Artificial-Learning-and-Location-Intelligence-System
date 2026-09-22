@@ -724,10 +724,10 @@ Private material remains outside the public repository where appropriate, includ
 
 ## Architecture
 
-- [System boundary](architecture/system-boundary/ALLIS_SYSTEM_BOUNDARY.md)
-- [State model](architecture/state-models/STATE_MODEL_OVERVIEW.md)
-- [Trust and authority](architecture/trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md)
-- [Deployment model](architecture/deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md)
+- [System boundary](architecture/system-boundary/allis-system-boundary.md)
+- [State model](architecture/state-models/state-model-overview.md)
+- [Trust and authority](architecture/trust-and-authority/trust-and-authority-overview.md)
+- [Deployment model](architecture/deployment-model/deployment-model-overview.md)
 
 ## Step-12 formal verification
 
