@@ -1,6 +1,72 @@
-# Step 12 final seal: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Step-12 Final Seal
+
+### Final accepted evidence state for the bounded production authorized-adoption formal-verification and runtime-correspondence workstream
+
+<br>
+
+![Evidence](https://img.shields.io/badge/EVIDENCE-STEP12_FINAL_SEAL-7c3aed?style=for-the-badge)
+![Status](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Propositions](https://img.shields.io/badge/PROPOSITIONS-11_PROVEN_%7C_1_DISPROVEN-0ea5e9?style=for-the-badge)
+![Obligations](https://img.shields.io/badge/OBLIGATIONS-15_OF_15_ADJUDICATED-16a34a?style=for-the-badge)
+![Residuals](https://img.shields.io/badge/RESIDUALS-8-d946ef?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This is the final public evidence anchor for **Step 12 only**: the bounded production authorized-adoption formal model and the correspondence actually established for that scope.
+>
+> The seal does **not** establish a whole-system safety theorem, does **not** promote `T12D-A` to correspondence-verified, does **not** erase the preserved `P12C-09` counterexample, and does **not** authorize a future production mutation.
+>
+> The controlling scope remains `BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDENCE_ONLY`.
+
+---
+
+# 👀 Step 12 in one view
+
+```mermaid
+flowchart TB
+    F["📐 FORMAL OBJECT<br/>DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1"]:::formal
+    P["🧮 PROPOSITIONS<br/>11 proven · 1 disproven · 0 open"]:::proof
+    O["✅ OBLIGATIONS<br/>15 / 15 adjudicated"]:::closed
+    C["🔗 ESTABLISHED CORRESPONDENCE<br/>NBB 11/11 · Worker 11/11"]:::corr
+    R["🧱 RESIDUALS<br/>8 preserved"]:::residual
+    N["🛑 NON-PROMOTIONS<br/>7 preserved"]:::nonpromo
+    S["🔐 FINAL SEAL<br/>GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS"]:::seal
+    W["⚪ WHOLE SYSTEM<br/>SYSTEM_PROVEN=NO"]:::system
+
+    F --> P
+    P --> O
+    O --> C
+    C --> S
+    R --> S
+    N --> S
+
+    S -. "does not imply" .-> W
+
+    classDef formal fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
+    classDef proof fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
+    classDef closed fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef corr fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
+    classDef residual fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
+    classDef nonpromo fill:#d946ef,stroke:#86198f,color:#ffffff,stroke-width:2px;
+    classDef seal fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:3px;
+    classDef system fill:#e5e7eb,stroke:#64748b,color:#111827,stroke-width:3px;
+```
+
+The final seal accepts the bounded result **with its positive results, disproof, residuals, non-promotions, and no-action boundary all intact**.
+
+---
+
+# 🎯 Purpose
 
 This document records the final sealed evidence state for Step 12 of the ALLIS production authorized-adoption formal-verification and runtime-correspondence workstream.
 
@@ -46,7 +112,7 @@ zero residuals
 
 ---
 
-## Seal identity
+# 📋 Seal identity
 
 | Field | Value |
 |---|---|
@@ -85,7 +151,7 @@ The public repository should rely on the sealed identities and hashes in this do
 
 ---
 
-## 1. What Step 12 sealed
+# 🧭 1. What Step 12 sealed
 
 Step 12 did not attempt to prove the entire ALLIS system.
 
@@ -131,7 +197,7 @@ The seal is authoritative only within that scope.
 
 ---
 
-## 2. Final-seal predicate
+# 2. Final-seal predicate
 
 Let:
 
@@ -187,7 +253,7 @@ GREEN\_CLOSED\_WITH\_EXPLICIT\_RESIDUALS
 }
 ```
 
-### Why these conditions matter
+## Why these conditions matter
 
 The seal requires more than successful theorem results.
 
@@ -217,7 +283,7 @@ The evidence boundary is therefore part of the success condition.
 
 ---
 
-## 3. Proposition adjudication
+# 3. Proposition adjudication
 
 Step 12 adjudicated twelve formal propositions.
 
@@ -261,7 +327,7 @@ The result is:
 12=11+1+0
 ```
 
-### Scientific meaning
+## Scientific meaning
 
 The disproven proposition is part of the successful closure.
 
@@ -281,7 +347,7 @@ This distinction is fundamental.
 
 ---
 
-## 4. Principal theorem results
+# 4. Principal theorem results
 
 The three principal bounded theorems closed at different validation levels.
 
@@ -301,7 +367,7 @@ These levels are not interchangeable.
 
 ---
 
-## 5. Strongest compact theorem
+# 5. Strongest compact theorem
 
 The strongest compact source-model theorem earned by Step 12 is:
 
@@ -339,7 +405,7 @@ It was not promoted to `CORRESPONDENCE_VERIFIED` because the positive production
 
 ---
 
-## 6. Correspondence-verified fail-closed results
+# 6. Correspondence-verified fail-closed results
 
 The first correspondence-verified result is:
 
@@ -397,7 +463,7 @@ CORRESPONDENCE_VERIFIED
 
 ---
 
-## 7. Preserved disproof
+# 7. Preserved disproof
 
 The proposed terminal-totality property was:
 
@@ -435,7 +501,7 @@ It does not replace the failed proposition with a narrower theorem under the sam
 
 ---
 
-## 8. Formal obligation closure
+# 8. Formal obligation closure
 
 Step 12 carried fifteen formal obligations.
 
@@ -480,7 +546,7 @@ FORMAL_OBLIGATIONS_ADJUDICATED=15/15
 UNADJUDICATED_OBLIGATIONS=0
 ```
 
-### Closure does not mean zero residuals
+## Closure does not mean zero residuals
 
 The seal explicitly distinguishes:
 
@@ -500,9 +566,9 @@ A formal obligation can be closed **with a residual**.
 
 ---
 
-# Final runtime evidence
+# 🖥️ Final runtime evidence
 
-## 9. NBB source correspondence
+# 9. NBB source correspondence
 
 At final Step-12 sealing:
 
@@ -521,7 +587,7 @@ for the sealed eleven-file source domain at the final correspondence boundary.
 
 ---
 
-## 10. Worker source correspondence
+# 10. Worker source correspondence
 
 At final Step-12 sealing:
 
@@ -540,7 +606,7 @@ for the sealed eleven-file source domain at the final correspondence boundary.
 
 ---
 
-## 11. Trust correspondence
+# 11. Trust correspondence
 
 The sealed public authorization trust anchor SHA-256 is:
 
@@ -560,7 +626,7 @@ The private signing authority is not modeled as being created by the NBB or work
 
 ---
 
-## 12. Governance-view correspondence
+# 12. Governance-view correspondence
 
 The sealed governance-view SHA-256 is:
 
@@ -578,7 +644,7 @@ This is a point-in-time correspondence result at the final Step-12 seal.
 
 ---
 
-## 13. Runtime health state
+# 13. Runtime health state
 
 At final seal:
 
@@ -594,7 +660,7 @@ They do not replace source identity, trust correspondence, or theorem-specific l
 
 ---
 
-## 14. Authorized spool state
+# 14. Authorized spool state
 
 At final seal:
 
@@ -608,9 +674,9 @@ It is also why Step 12 could observe the empty-spool non-application theorem wit
 
 ---
 
-# Explicit no-action boundary
+# 🚫 Explicit no-action boundary
 
-## 15. No production authorization was exercised
+# 15. No production authorization was exercised
 
 Step 12 did not issue or consume a real production authorization as part of the formal close.
 
@@ -629,7 +695,7 @@ No production authorization was issued or consumed as part of Step 12.
 No production DGM patch was applied as part of Step 12.
 ```
 
-### Why this matters
+## Why this matters
 
 The seal proves that formal-verification work completed.
 
@@ -655,9 +721,9 @@ This is one of the clearest expressions of the overarching architecture:
 
 ---
 
-# Residual set
+# 🧱 Residual set
 
-## 16. Eight preserved residuals
+# 16. Eight preserved residuals
 
 The final residual set contains eight explicit items.
 
@@ -747,7 +813,7 @@ EXTERNAL_TO_RUNTIME_MODEL
 
 ---
 
-## 17. Why residuals are part of the seal
+# 17. Why residuals are part of the seal
 
 Residuals are not footnotes added after success.
 
@@ -777,9 +843,9 @@ NO RESIDUALS EXIST
 
 ---
 
-# Non-promotion set
+# 🛑 Non-promotion set
 
-## 18. Seven explicit non-promotions
+# 18. Seven explicit non-promotions
 
 The final evidence preserves seven stronger claims that Step 12 did not allow.
 
@@ -859,7 +925,7 @@ LivePositivePathObserved
 
 ---
 
-## 19. Non-promotions are evidence
+# 19. Non-promotions are evidence
 
 The non-promotion set is not a list of missing accomplishments.
 
@@ -885,9 +951,9 @@ The seal succeeds only while the stronger unsupported claims remain unpromoted.
 
 ---
 
-# Stronger theorem boundary
+# 📐 Stronger theorem boundary
 
-## 20. Production mutation safety is not proven
+# 20. Production mutation safety is not proven
 
 Let:
 
@@ -929,7 +995,7 @@ PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
 
 ---
 
-## 21. Whole-system safety is not proven
+# 21. Whole-system safety is not proven
 
 Let:
 
@@ -963,7 +1029,7 @@ WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
 
 ---
 
-## 22. `SYSTEM_PROVEN=NO`
+# 22. `SYSTEM_PROVEN=NO`
 
 Step 12 does not define a proof domain covering:
 
@@ -987,9 +1053,9 @@ It is not an unanswered question inside Step 12.
 
 ---
 
-# Point-in-time boundary
+# 🕒 Point-in-time boundary
 
-## 23. Correspondence is sealed at a time boundary
+# 23. Correspondence is sealed at a time boundary
 
 Runtime correspondence is time-indexed.
 
@@ -1020,7 +1086,7 @@ This limitation is preserved as `R12F-07`.
 
 ---
 
-## 24. Why seal identity does not create future authority
+# 24. Why seal identity does not create future authority
 
 The final result hash identifies the sealed Step-12 result.
 
@@ -1050,9 +1116,9 @@ A later changed runtime requires new evidence.
 
 ---
 
-# Validation hierarchy
+# 🪜 Validation hierarchy
 
-## 25. Step-12 validation discipline
+# 25. Step-12 validation discipline
 
 The workstream distinguishes:
 
@@ -1102,7 +1168,7 @@ A single seal does not flatten those different results into one generic word suc
 
 ---
 
-## 26. Final validation registry
+# 26. Final validation registry
 
 | Object | Final validation |
 |---|---|
@@ -1128,9 +1194,9 @@ It does not mean every possible modeled behavior was observed.
 
 ---
 
-# Evidence semantics
+# 🧾 Evidence semantics
 
-## 27. What the seal establishes
+# 27. What the seal establishes
 
 The final seal establishes:
 
@@ -1148,7 +1214,7 @@ The final seal establishes:
 
 ---
 
-## 28. What the seal does not establish
+# 28. What the seal does not establish
 
 The final seal does not establish:
 
@@ -1188,7 +1254,7 @@ a future production mutation
 
 ---
 
-## 29. No automatic successor promotion
+# 29. No automatic successor promotion
 
 The final report explicitly states:
 
@@ -1222,7 +1288,7 @@ A successor workstream requires its own authority and evidence boundary.
 
 ---
 
-## 30. Scientific interpretation
+# 30. Scientific interpretation
 
 The final Step-12 result can be summarized as:
 
@@ -1284,9 +1350,9 @@ Therefore the controlling logical boundary is:
 
 ---
 
-## 31. Why this is an evidence record
+# 31. Why this is an evidence record
 
-`STEP12_FINAL_SEAL.md` does not replace the underlying formal documents.
+`step12-final-seal.md` does not replace the underlying formal documents.
 
 Its job is different.
 
@@ -1316,7 +1382,7 @@ This seal record answers:
 
 ---
 
-## 32. Integrity identity
+# 32. Integrity identity
 
 The final Step-12 result SHA-256 is:
 
@@ -1340,14 +1406,14 @@ No stronger theorem, correspondence claim, safety claim, or operational authoriz
 
 ---
 
-## 33. Public repository role
+# 📚 33. Public repository role
 
 This document belongs at:
 
 ```text
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
+        step12-final-seal.md
 ```
 
 It is a reviewer-facing representation of the controlling seal state.
@@ -1368,55 +1434,97 @@ The public record should expose enough provenance to audit the claim without pub
 
 ---
 
-## 34. Companion records
+# 🔗 34. Companion records
 
 This evidence record should be read with:
 
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 Use:
 
-- `FORMAL_MODEL.md` for the bounded mathematical object;
-- `THEOREM_REGISTRY.md` for proposition dispositions;
-- `COUNTEREXAMPLE_REGISTRY.md` for the preserved falsifying case;
-- `MODEL_TO_SOURCE.md` for formal-to-source correspondence;
-- `SOURCE_TO_RUNTIME.md` for 11/11 NBB and worker runtime correspondence;
-- `SOURCE_IDENTITY.md` for the canonical sealed source manifest;
-- `TRUST_ANCHOR.md` for public-key identity;
-- `GOVERNANCE_VIEW.md` for governance-view identity; and
-- `RESIDUALS.md` for the detailed continuing boundary after closure.
+- [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) — bounded mathematical object
+- [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) — proposition dispositions and final validation levels
+- [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) — preserved falsifying case
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected NBB and worker runtime correspondence
+- [`source-identity.md`](source-identity.md) — canonical sealed source identity
+- [`trust-anchor.md`](trust-anchor.md) — public verification trust identity
+- [`governance-view.md`](governance-view.md) — sealed governance-view identity and NBB correspondence
+- [`residuals.md`](residuals.md) — detailed residuals and non-promotions preserved after closure
+- [`step12-final-seal.md`](step12-final-seal.md) — this controlling bounded final-seal record
 
 ---
 
-## 35. Governing evidence statement
+# 🧾 Step-12 final-seal summary
 
-The final seal should be read as:
+<div align="center">
+
+### 🔐 FINAL STATUS
+**`GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS`**
+
+### 📐 FORMAL OBJECT
+**`DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1`**
+
+### 🧮 PROPOSITION DISPOSITION
+**11 proven · 1 disproven · 0 unadjudicated**
+
+### ✅ FORMAL OBLIGATIONS
+**15 / 15 adjudicated**
+
+### 🧱 RESIDUALS
+**8 preserved**
+
+### 🛑 NON-PROMOTIONS
+**7 preserved**
+
+<br>
+
+### 🔗 SOURCE / RUNTIME CORRESPONDENCE
+**NBB 11 / 11 PASS · Worker 11 / 11 PASS**
+
+### 🚫 PRODUCTION ACTION
+**authorization publication NOT PERFORMED**
+
+**authorization consumption NOT PERFORMED**
+
+**DGM patch application NOT PERFORMED**
+
+<br>
+
+### 🛡️ CONTROLLING SCOPE
+**`BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDENCE_ONLY`**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing evidence statement
 
 > **The bounded workstream is complete because the evidence has been fully adjudicated, including its failures, residuals, and non-promotions.**
 
-It should not be read as:
-
-> Everything is proven.
-
-The governing architecture remains:
+> **The Step-12 final seal is an evidence boundary for the authorized-adoption formal model and established correspondence. It is not a whole-system proof and it does not create future operational authority.**
 
 > **Evidence can justify a claim. Evidence does not create authority beyond the claim it actually supports.**
