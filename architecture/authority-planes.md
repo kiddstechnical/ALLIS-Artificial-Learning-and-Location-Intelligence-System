@@ -1757,8 +1757,8 @@ The current evidence supports some bounded planes more strongly than others.
 Detailed claim status belongs in:
 
 ```text
-claims/CLAIM_REGISTRY.md
-claims/NONCLAIMS_AND_RESIDUALS.md
+claims/claim-registry.md
+claims/nonclaims-and-residuals.md
 ```
 
 Detailed evidence belongs in the relevant workstream evidence and closeout records.
@@ -1863,10 +1863,10 @@ Other architecture records answer different questions.
 | `architecture/authority-planes.md` | Where does authority gate state transition and disclosure? |
 | `architecture/fail-closed-semantics.md` | What do safe non-success states mean? |
 | `architecture/private-state/h-people-boundary.md` | How is person-linked/private state governed? |
-| `architecture/system-boundary/ALLIS_SYSTEM_BOUNDARY.md` | What is inside and outside ALLIS? |
-| `architecture/trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md` | How do identity, authentication, authorization, disclosure, governance, and operation authority differ? |
-| `architecture/state-models/STATE_MODEL_OVERVIEW.md` | What kinds of state exist and how do they transition? |
-| `architecture/deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md` | How can ALLIS be instantiated without a deployment defining the platform? |
+| `architecture/system-boundary/allis-system-boundary.md` | What is inside and outside ALLIS? |
+| `architecture/trust-and-authority/trust-and-authority-overview.md` | How do identity, authentication, authorization, disclosure, governance, and operation authority differ? |
+| `architecture/state-models/state-model-overview.md` | What kinds of state exist and how do they transition? |
+| `architecture/deployment-model/deployment-model-overview.md` | How can ALLIS be instantiated without a deployment defining the platform? |
 
 ---
 
@@ -1910,19 +1910,19 @@ No layer substitutes for another.
 
 - [`../acceptance/current-system-manifest.md`](../acceptance/current-system-manifest.md)
 - [`../acceptance/baseline-object-registry.md`](../acceptance/baseline-object-registry.md)
-- [`../acceptance/closeout/readme.md`](../acceptance/closeout/readme.md)
+- [`../acceptance/closeout/README.md`](../acceptance/closeout/README.md)
 
 ## Claims
 
-- [`../claims/CLAIM_REGISTRY.md`](../claims/CLAIM_REGISTRY.md)
-- [`../claims/NONCLAIMS_AND_RESIDUALS.md`](../claims/NONCLAIMS_AND_RESIDUALS.md)
+- [`../claims/claim-registry.md`](../claims/claim-registry.md)
+- [`../claims/nonclaims-and-residuals.md`](../claims/nonclaims-and-residuals.md)
 
 ## Existing architecture
 
-- [`system-boundary/ALLIS_SYSTEM_BOUNDARY.md`](system-boundary/ALLIS_SYSTEM_BOUNDARY.md)
-- [`trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md`](trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md)
-- [`state-models/STATE_MODEL_OVERVIEW.md`](state-models/STATE_MODEL_OVERVIEW.md)
-- [`deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md`](deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md)
+- [`system-boundary/allis-system-boundary.md`](system-boundary/allis-system-boundary.md)
+- [`trust-and-authority/trust-and-authority-overview.md`](trust-and-authority/trust-and-authority-overview.md)
+- [`state-models/state-model-overview.md`](state-models/state-model-overview.md)
+- [`deployment-model/deployment-model-overview.md`](deployment-model/deployment-model-overview.md)
 
 ## Step-12 bounded write-plane records
 
