@@ -619,7 +619,7 @@ flowchart LR
 
 ## Related records
 
-- [`readme.md`](readme.md) — acceptance-closeout folder guide
+- [`README.md`](README.md) — acceptance-closeout folder guide
 - [`../baseline-object-registry.md`](../baseline-object-registry.md) — role-scoped baseline registry
 - [`../current-system-manifest.md`](../current-system-manifest.md) — composite qualified-object manifest
 - [`../../CURRENT.md`](../../CURRENT.md) — current technical state
