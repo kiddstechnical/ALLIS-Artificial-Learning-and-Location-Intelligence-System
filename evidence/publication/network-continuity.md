@@ -1342,7 +1342,7 @@ allis_publication_network_continuity:
 
 ## Publication evidence
 
-- `readme.md` — publication evidence package index
+- [`README.md`](README.md) — publication evidence package index
 - [`publication-identity.md`](publication-identity.md) — immutable publication identity
 - [`runtime-boundary.md`](runtime-boundary.md) — serving-runtime and isolation boundary
 - `network-continuity.md` — **this record**
