@@ -247,7 +247,13 @@ flowchart LR
 > These are **related qualified objects**.  
 > They are **not competing versions of the same thing**, and none should silently replace the others.
 
-The repository reconciliation plan therefore moves toward a **composite current-system manifest** rather than a single “current baseline commit.”
+The repository now uses a **composite current-system manifest/object model** rather than treating a single Git commit as the identity of the whole present ALLIS system.
+
+Current-state entry points:
+
+- [Current public technical state](CURRENT.md)
+- [Current system manifest](acceptance/current-system-manifest.md)
+- [Baseline object registry](acceptance/baseline-object-registry.md)
 
 ---
 
@@ -706,105 +712,169 @@ Each deployment must establish its own:
 - evidence; and
 - acceptance criteria.
 
-See the [deployment model](architecture/deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md).
+See the [deployment model](architecture/deployment-model/deployment-model-overview.md).
 
 ---
 
 # 📚 Repository map
 
-The current repository contains the bounded technical records shown below.
+The current repository is a **composite technical record**. Its layers serve different roles and should not be collapsed into one source identity, one proof object, one runtime observation, or one research document.
 
 ```text
 ALLIS/
 │
-├── README.md
+├── CURRENT.md
 ├── LICENSE
-│
-├── architecture/
-│   ├── deployment-model/
-│   ├── state-models/
-│   ├── system-boundary/
-│   └── trust-and-authority/
+├── README.md
 │
 ├── acceptance/
+│   ├── baseline-object-registry.md
+│   ├── current-system-manifest.md
+│   │
+│   ├── closeout/
+│   │   ├── README.md
+│   │   ├── dgm-step12-close.md
+│   │   ├── publication-step17-close.md
+│   │   └── workstream-f-close.md
+│   │
 │   └── qualified-baseline/
+│       ├── README.md
+│       └── qualified-baseline-manifest.md
 │
-├── formal-verification/
-│   └── authorized-adoption/
-│       ├── formal-model.md
-│       ├── theorem-registry.md
-│       └── counterexample-registry.md
+├── architecture/
+│   ├── authority-planes.md
+│   ├── fail-closed-semantics.md
+│   │
+│   ├── deployment-model/
+│   │   ├── deployment-model-overview.md
+│   │   └── examples/
+│   │       └── new-river-gorge-deployment-example.md
+│   │
+│   ├── private-state/
+│   │   └── h-people-boundary.md
+│   │
+│   ├── state-models/
+│   │   └── state-model-overview.md
+│   │
+│   ├── system-boundary/
+│   │   └── allis-system-boundary.md
+│   │
+│   └── trust-and-authority/
+│       └── trust-and-authority-overview.md
+│
+├── claims/
+│   ├── claim-registry.md
+│   └── nonclaims-and-residuals.md
 │
 ├── correspondence/
 │   ├── README.md
-│   └── authorized-adoption/
-│       ├── model-to-source.md
-│       └── source-to-runtime.md
+│   │
+│   ├── authorized-adoption/
+│   │   ├── model-to-source.md
+│   │   └── source-to-runtime.md
+│   │
+│   └── publication/
+│       └── source-to-publication-to-http-to-gui.md
 │
-└── evidence/
-    ├── README.md
-    └── governed-evolution/
-        ├── README.md
-        ├── source-identity.md
-        ├── trust-anchor.md
-        ├── governance-view.md
-        ├── residuals.md
-        └── step12-final-seal.md
+├── evidence/
+│   ├── README.md
+│   │
+│   ├── governed-evolution/
+│   │   ├── README.md
+│   │   ├── governance-view.md
+│   │   ├── residuals.md
+│   │   ├── source-identity.md
+│   │   ├── step12-final-seal.md
+│   │   └── trust-anchor.md
+│   │
+│   └── publication/
+│       ├── README.md
+│       ├── network-continuity.md
+│       ├── publication-identity.md
+│       ├── runtime-boundary.md
+│       └── step17-final-close.md
+│
+├── formal-verification/
+│   └── authorized-adoption/
+│       ├── counterexample-registry.md
+│       ├── formal-model.md
+│       └── theorem-registry.md
+│
+└── research/
+    └── thesis-reconciliation.md
 ```
 
-## Repository reconciliation underway
+## How the current repository layers relate
 
-The completed Uniformed Gateway + DGM + Backend evidence review shows that the public repository now needs several new current-state indexing layers.
-
-The planned additions are:
+The reconciliation layers described in earlier versions of this README are now present. They serve different technical functions:
 
 ```text
 CURRENT.md
+    = current public technical state
 
 acceptance/
-├── CURRENT_SYSTEM_MANIFEST.md
-├── BASELINE_OBJECT_REGISTRY.md
-└── closeout/
-
-claims/
-├── CLAIM_REGISTRY.md
-└── NONCLAIMS_AND_RESIDUALS.md
+    = qualified objects and bounded workstream closeout
 
 architecture/
-├── AUTHORITY_PLANES.md
-├── FAIL_CLOSED_SEMANTICS.md
-└── private-state/
+    = system, state, trust, privacy, deployment, and authority boundaries
+
+claims/
+    = supported claims plus explicit nonclaims/residuals
+
+formal-verification/
+    = bounded formal objects and proposition status
 
 correspondence/
-└── publication/
+    = model/source/runtime/publication/GUI relationship evidence
 
 evidence/
-└── publication/
+    = public-safe evidence packages
 
 research/
-└── THESIS_RECONCILIATION.md
+    = thesis/research reconciliation downstream of the qualified technical record
 ```
 
-These are **planned reconciliation records**, not links to files that already exist.
+The governing rule is unchanged:
+
+> **Current truth is assembled from qualified objects and explicit correspondence—not from whichever document was written most recently.**
 
 ---
 
 # 🔎 Where to go deeper
 
-## Architecture
+## Current state
 
-- [System boundary](architecture/system-boundary/ALLIS_SYSTEM_BOUNDARY.md)
-- [State model](architecture/state-models/STATE_MODEL_OVERVIEW.md)
-- [Trust and authority](architecture/trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md)
-- [Deployment model](architecture/deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md)
+- [Current public technical state](CURRENT.md)
+- [Current system manifest](acceptance/current-system-manifest.md)
+- [Baseline object registry](acceptance/baseline-object-registry.md)
 
-## Qualified baseline
+## Acceptance
 
 - [Qualified baseline overview](acceptance/qualified-baseline/README.md)
-- [Qualified Baseline Manifest](acceptance/qualified-baseline/Qualified%20Baseline%20Manifest.md)
+- [Qualified baseline manifest](acceptance/qualified-baseline/qualified-baseline-manifest.md)
+- [Closeout overview](acceptance/closeout/README.md)
+- [Workstream-F close](acceptance/closeout/workstream-f-close.md)
+- [DGM Step-12 close](acceptance/closeout/dgm-step12-close.md)
+- [Publication Step-17 close](acceptance/closeout/publication-step17-close.md)
 
-> [!WARNING]
-> The acceptance layer is being reconciled so that the A5 source anchor is not treated as the single identity of the entire present ALLIS system. The current engineering record requires explicit object-role separation.
+> [!NOTE]
+> The acceptance layer **already uses explicit object-role separation**. The Workstream-F qualified baseline, A5 proof/source anchor, Step-12 production source, trust/governance objects, publication object, and frontend object answer different technical questions. The A5 source anchor is therefore **not** the single identity of the whole present ALLIS system.
+
+## Architecture
+
+- [Authority planes](architecture/authority-planes.md)
+- [Fail-closed semantics](architecture/fail-closed-semantics.md)
+- [System boundary](architecture/system-boundary/allis-system-boundary.md)
+- [State model](architecture/state-models/state-model-overview.md)
+- [Trust and authority](architecture/trust-and-authority/trust-and-authority-overview.md)
+- [Private / person-linked state boundary](architecture/private-state/h-people-boundary.md)
+- [Deployment model](architecture/deployment-model/deployment-model-overview.md)
+- [New River Gorge deployment example](architecture/deployment-model/examples/new-river-gorge-deployment-example.md)
+
+## Claims and nonclaims
+
+- [Claim registry](claims/claim-registry.md)
+- [Nonclaims and residuals](claims/nonclaims-and-residuals.md)
 
 ## Formal verification
 
@@ -815,18 +885,30 @@ These are **planned reconciliation records**, not links to files that already ex
 ## Correspondence
 
 - [Correspondence overview](correspondence/README.md)
-- [Model → source](correspondence/authorized-adoption/model-to-source.md)
-- [Source → runtime](correspondence/authorized-adoption/source-to-runtime.md)
+- [Authorized adoption: model → source](correspondence/authorized-adoption/model-to-source.md)
+- [Authorized adoption: source → runtime](correspondence/authorized-adoption/source-to-runtime.md)
+- [Publication: source → publication → HTTP → GUI](correspondence/publication/source-to-publication-to-http-to-gui.md)
 
-## Evidence
+## Governed-evolution evidence
 
-- [Evidence overview](evidence/README.md)
-- [Governed-evolution evidence](evidence/governed-evolution/README.md)
+- [Governed-evolution evidence overview](evidence/governed-evolution/README.md)
 - [Source identity](evidence/governed-evolution/source-identity.md)
 - [Trust anchor](evidence/governed-evolution/trust-anchor.md)
 - [Governance view](evidence/governed-evolution/governance-view.md)
 - [Residuals and non-promotions](evidence/governed-evolution/residuals.md)
 - [Step-12 final seal](evidence/governed-evolution/step12-final-seal.md)
+
+## Publication evidence
+
+- [Publication evidence overview](evidence/publication/README.md)
+- [Publication identity](evidence/publication/publication-identity.md)
+- [Runtime boundary](evidence/publication/runtime-boundary.md)
+- [Network continuity](evidence/publication/network-continuity.md)
+- [Step-17 final close](evidence/publication/step17-final-close.md)
+
+## Research and thesis reconciliation
+
+- [Thesis reconciliation](research/thesis-reconciliation.md)
 
 ---
 
