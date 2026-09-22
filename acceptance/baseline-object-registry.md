@@ -597,7 +597,7 @@ flowchart LR
 | Document | Primary question |
 |---|---|
 | `baseline-object-registry.md` | **Which qualified reference object applies to this scope?** |
-| `CURRENT_SYSTEM_MANIFEST.md` | **How do the qualified objects and explicit correspondence edges fit together?** |
+| `current-system-manifest.md` | **How do the qualified objects and explicit correspondence edges fit together?** |
 | `correspondence/` | **Which model/source/runtime/publication relationships have been verified?** |
 | `CURRENT.md` | **What does the current public technical record support?** |
 | `README.md` | **What is ALLIS and how should a reader understand it?** |
@@ -917,9 +917,9 @@ allis_baseline_object_registry:
 
 ## Acceptance
 
-- [`CURRENT_SYSTEM_MANIFEST.md`](CURRENT_SYSTEM_MANIFEST.md) — composite qualified-object and correspondence map
+- [`current-system-manifest.md`](current-system-manifest.md) — composite qualified-object and correspondence map
 - [`qualified-baseline/README.md`](qualified-baseline/README.md) — qualified-baseline acceptance layer
-- [`qualified-baseline/Qualified Baseline Manifest.md`](qualified-baseline/Qualified%20Baseline%20Manifest.md) — existing qualified-baseline record
+- [`qualified-baseline/qualified-baseline-manifest.md`](qualified-baseline/qualified-baseline-manifest.md) — existing qualified-baseline record
 
 ## Formal verification
 
