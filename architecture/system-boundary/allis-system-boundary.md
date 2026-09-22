@@ -2534,9 +2534,9 @@ allis_system_boundary:
 - [`../authority-planes.md`](../authority-planes.md) — detailed inward, write, outward, and read authority planes
 - [`../fail-closed-semantics.md`](../fail-closed-semantics.md) — canonical safe non-success meanings
 - [`../private-state/h-people-boundary.md`](../private-state/h-people-boundary.md) — person-linked private-state boundary
-- [`../trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md`](../trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md) — trust and authority architecture
-- [`../state-models/STATE_MODEL_OVERVIEW.md`](../state-models/STATE_MODEL_OVERVIEW.md) — state model
-- [`../deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md`](../deployment-model/DEPLOYMENT_MODEL_OVERVIEW.md) — deployment model
+- [`../trust-and-authority/trust-and-authority-overview.md`](../trust-and-authority/trust-and-authority-overview.md) — trust and authority architecture
+- [`../state-models/state-model-overview.md`](../state-models/state-model-overview.md) — state model
+- [`../deployment-model/deployment-model-overview.md`](../deployment-model/deployment-model-overview.md) — deployment model
 
 ---
 
