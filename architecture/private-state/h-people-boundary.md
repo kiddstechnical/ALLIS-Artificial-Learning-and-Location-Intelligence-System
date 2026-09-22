@@ -1964,14 +1964,14 @@ h_people_private_state_boundary:
 
 - [`../authority-planes.md`](../authority-planes.md) — general authority geometry
 - [`../fail-closed-semantics.md`](../fail-closed-semantics.md) — standardized safe non-success states
-- [`../system-boundary/ALLIS_SYSTEM_BOUNDARY.md`](../system-boundary/ALLIS_SYSTEM_BOUNDARY.md)
-- [`../trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md`](../trust-and-authority/TRUST_AND_AUTHORITY_OVERVIEW.md)
-- [`../state-models/STATE_MODEL_OVERVIEW.md`](../state-models/STATE_MODEL_OVERVIEW.md)
+- [`../system-boundary/allis-system-boundary.md`](../system-boundary/allis-system-boundary.md)
+- [`../trust-and-authority/trust-and-authority-overview.md`](../trust-and-authority/trust-and-authority-overview.md)
+- [`../state-models/state-model-overview.md`](../state-models/state-model-overview.md)
 
 ## Claims
 
-- [`../../claims/CLAIM_REGISTRY.md`](../../claims/CLAIM_REGISTRY.md)
-- [`../../claims/NONCLAIMS_AND_RESIDUALS.md`](../../claims/NONCLAIMS_AND_RESIDUALS.md)
+- [`../../claims/claim-registry.md`](../../claims/claim-registry.md)
+- [`../../claims/nonclaims-and-residuals.md`](../../claims/nonclaims-and-residuals.md)
 
 ## Current and acceptance
 
