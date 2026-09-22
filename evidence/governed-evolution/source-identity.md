@@ -1,6 +1,75 @@
-# Source identity: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Source Identity Evidence
+
+### Canonical Step-12 source object for the bounded production authorized-adoption formal and correspondence package
+
+<br>
+
+![Evidence](https://img.shields.io/badge/EVIDENCE-SOURCE_IDENTITY-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Source](https://img.shields.io/badge/SOURCE_COMMIT-20c8cbe1-0ea5e9?style=for-the-badge)
+![Files](https://img.shields.io/badge/SEALED_SOURCE_SET-11_FILES-16a34a?style=for-the-badge)
+![Scope](https://img.shields.io/badge/SOURCE_DOMAIN-BOUNDED-f97316?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This record defines the **canonical sealed source object** for the bounded Step-12 production authorized-adoption domain.
+>
+> It does **not** itself establish runtime correspondence. Runtime correspondence is a separate, time-indexed observation recorded in `source-to-runtime.md`.
+>
+> The public record establishes the sealed commit, the 11-file source-set identity and cardinality, and formal-to-source binding. It does **not** fabricate the original per-file 11-name/SHA-256 manifest where that manifest is not reproduced in the available public evidence.
+
+---
+
+# 👀 Source identity in one view
+
+```mermaid
+flowchart LR
+    F["📐 FORMAL OBJECT<br/>DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1"]:::formal
+    S["💻 SEALED SOURCE OBJECT<br/>20c8cbe1… · |S| = 11"]:::source
+    R["🖥️ INSPECTED RUNTIME<br/>separate correspondence question"]:::runtime
+    P["📦 PUBLIC PER-FILE MANIFEST<br/>not reproduced in current public evidence"]:::bounded
+
+    F -->|"C_FS(F,S)=1"| S
+    S -->|"source-to-runtime.md"| R
+    S -. "identity established without fabrication" .-> P
+
+    classDef formal fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
+    classDef source fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:3px;
+    classDef runtime fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef bounded fill:#e5e7eb,stroke:#64748b,color:#374151,stroke-width:2px;
+```
+
+The repository keeps two different questions separate:
+
+```text
+source identity
+=
+which exact source object is authoritative?
+```
+
+versus:
+
+```text
+runtime correspondence
+=
+did the inspected runtime contain that exact source object at a defined time?
+```
+
+A stable source identity does not create permanent runtime correspondence.
+
+---
+
+# 🎯 Purpose
 
 This document records the canonical source identity for the bounded ALLIS production authorized-adoption formal-verification and correspondence package.
 
@@ -44,7 +113,7 @@ future correspondence
 
 ---
 
-## Source-identity status
+# 📋 Source-identity status
 
 | Field | Value |
 |---|---|
@@ -62,7 +131,7 @@ future correspondence
 
 ---
 
-## 1. Canonical source authority
+# 🧭 1. Canonical source authority
 
 The source authority for the Step-12 authorized-adoption model is the exact committed source state at:
 
@@ -107,7 +176,7 @@ sealed byte identity
 
 ---
 
-## 2. Source identity is not branch identity
+# 2. Source identity is not branch identity
 
 The controlling source identity is the commit:
 
@@ -129,7 +198,7 @@ The Step-12 theorem and correspondence package is bound to the committed source 
 
 ---
 
-## 3. Exact source-domain cardinality
+# 3. Exact source-domain cardinality
 
 The sealed Step-12 source domain contains:
 
@@ -159,7 +228,7 @@ A source set with 10 or 12 files is not silently the same Step-12 formal domain.
 
 ---
 
-## 4. Canonical per-file manifest
+# 📦 4. Canonical per-file manifest
 
 The canonical per-file section of this record must contain, for each member of `S`:
 
@@ -186,7 +255,7 @@ The authoritative table shape is:
 | 10 | `<sealed path 10>` | `<sealed SHA-256>` | `20c8cbe175781c8a1c05d65c03977859ceca884a` |
 | 11 | `<sealed path 11>` | `<sealed SHA-256>` | `20c8cbe175781c8a1c05d65c03977859ceca884a` |
 
-### Current evidence-resolution boundary
+## Current evidence-resolution boundary
 
 The Step-12 report available for this public documentation confirms:
 
@@ -215,7 +284,7 @@ This is a documentation-completeness limitation, not a reversal of the Step-12 s
 
 ---
 
-## 5. Source modules explicitly evidenced by the formal correspondence record
+# 5. Source modules explicitly evidenced by the formal correspondence record
 
 The supporting source analysis explicitly references production modules including:
 
@@ -245,7 +314,9 @@ complete sealed source-manifest entry
 
 ---
 
-## 6. Formal-to-source identity
+# 📐 Formal and correspondence relationships
+
+# 6. Formal-to-source identity
 
 Let:
 
@@ -289,7 +360,7 @@ the formal model covers every behavior in the source repository
 
 ---
 
-## 7. Source-to-runtime byte identity
+# 🔗 7. Source-to-runtime byte identity
 
 Let:
 
@@ -337,7 +408,7 @@ Thus every one of the eleven governed files in the sealed source domain correspo
 
 ---
 
-## 8. Byte identity is stronger than filename correspondence
+# 8. Byte identity is stronger than filename correspondence
 
 The Step-12 runtime result is not merely:
 
@@ -373,20 +444,20 @@ A changed byte identity breaks the sealed identity even if the path remains unch
 
 ---
 
-## 9. Source identity and runtime identity remain separate
+# 🧱 9. Source identity and runtime identity remain separate
 
 This document defines the source object.
 
-`SOURCE_TO_RUNTIME.md` records whether runtime copies corresponded to that object.
+`source-to-runtime.md` records whether runtime copies corresponded to that object.
 
 The distinction is:
 
 ```text
-SOURCE_IDENTITY.md
+source-identity.md
     ↓
 What exact source object is authoritative?
 
-SOURCE_TO_RUNTIME.md
+source-to-runtime.md
     ↓
 Did the inspected runtime contain that source object?
 ```
@@ -395,12 +466,12 @@ The first cannot substitute for the second.
 
 ---
 
-## 10. Source identity and formal model remain separate
+# 10. Source identity and formal model remain separate
 
 Likewise:
 
 ```text
-SOURCE_IDENTITY.md
+source-identity.md
 ```
 
 does not itself prove a theorem.
@@ -423,7 +494,9 @@ It does not prove every semantic property of that object.
 
 ---
 
-## 11. Source replacement invalidates automatic inheritance
+# 🔄 Successor-source boundary
+
+# 11. Source replacement invalidates automatic inheritance
 
 Let:
 
@@ -465,7 +538,7 @@ A successor source requires a new evidence boundary.
 
 ---
 
-## 12. Source identity does not authorize mutation
+# 12. Source identity does not authorize mutation
 
 The fact that a source object is the sealed theorem domain does not make that source mutable without authorization.
 
@@ -487,7 +560,9 @@ Operational authorization remains governed by the authorization, target, prestat
 
 ---
 
-## 13. Relationship to the trust anchor
+# 🧩 Distinct evidence objects
+
+# 13. Relationship to the trust anchor
 
 The source set and public trust anchor are separate identities.
 
@@ -503,7 +578,7 @@ It is not one of the eleven production source files merely because it participat
 
 ---
 
-## 14. Relationship to the governance view
+# 14. Relationship to the governance view
 
 The sealed governance view is separately bound to SHA-256:
 
@@ -529,7 +604,7 @@ as distinct evidence objects.
 
 ---
 
-## 15. Relationship to the final seal
+# 15. Relationship to the final seal
 
 The controlling Step-12 seal is:
 
@@ -555,7 +630,7 @@ It does not expand the eleven-file source domain into a whole-system source clai
 
 ---
 
-## 16. Source-domain residual boundary
+# 🛡️ 16. Source-domain residual boundary
 
 The Step-12 residual set explicitly preserves:
 
@@ -587,7 +662,7 @@ the exact Step-12 production authorized-adoption source identity
 
 ---
 
-## 17. Point-in-time runtime boundary
+# 🕒 17. Point-in-time runtime boundary
 
 Source identity at commit `20c8cbe...` is immutable as a Git object.
 
@@ -617,7 +692,7 @@ R12F-07 = POINT_IN_TIME_BINDING
 
 ---
 
-## 18. Final source-identity statement
+# 18. Final source-identity statement
 
 Let:
 
@@ -685,7 +760,7 @@ No mutation authority is created by this identity.
 
 ---
 
-## 19. Repository location
+# 📚 19. Repository location
 
 This record belongs at:
 
@@ -709,7 +784,7 @@ govgoverned-evolution
 
 ---
 
-## 20. Companion records
+# 🔗 20. Companion records
 
 This record should be read with:
 
@@ -734,20 +809,79 @@ evidence/
         step12-final-seal.md
 ```
 
-`source-identity.md` owns the canonical source identity.
+Use:
 
-`model-to-source.md` explains how the formal object maps to that source.
+- [`source-identity.md`](source-identity.md) — canonical sealed Step-12 source identity
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime byte correspondence at final seal
+- [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) — bounded mathematical object
+- [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) — proposition dispositions and validation levels
+- [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) — preserved falsifying cases
+- [`trust-anchor.md`](trust-anchor.md) — separate sealed public verification identity
+- [`governance-view.md`](governance-view.md) — separate sealed governance-view identity and NBB correspondence
+- [`residuals.md`](residuals.md) — bounded residual and non-promotion ledger
+- [`step12-final-seal.md`](step12-final-seal.md) — controlling Step-12 final seal
 
-`source-to-runtime.md` records the runtime byte-correspondence result.
+The ownership split remains:
 
-`step12-final-seal.md` closes the package under the bounded final seal.
+```text
+source-identity.md
+    answers
+    "What exact source object is authoritative?"
+
+source-to-runtime.md
+    answers
+    "Did the inspected runtime contain that source object at the observation boundary?"
+```
+
+The first does not substitute for the second.
 
 ---
 
-## 21. Governing source-identity statement
+# 🧾 Source-identity summary
+
+<div align="center">
+
+### 💻 SEALED PRODUCTION SOURCE
+**commit `20c8cbe1…`**
+
+### 📦 SOURCE DOMAIN
+**exact 11-file production authorized-adoption set**
+
+### 📐 FORMAL → SOURCE
+**`C_FS(F,S)=1`**
+
+<br>
+
+### 🧾 PUBLIC MANIFEST BOUNDARY
+**sealed set identity established · cardinality = 11**
+
+**per-file 11-name / SHA-256 manifest not reproduced in the current public record**
+
+<br>
+
+### 🕒 RUNTIME RELATION
+**source identity = stable historical object**
+
+**runtime correspondence = separate point-in-time observation**
+
+<br>
+
+### 🛡️ SCOPE
+**`R12F-06 = BOUNDED_DOMAIN`**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing source-identity statement
 
 > **The theorem domain is the exact source object that was sealed—not whatever source later happens to occupy the same path.**
 
-That is the source-layer expression of the overarching ALLIS architecture:
+> **Source identity does not become runtime correspondence merely because the runtime uses the same filenames or architecture.**
 
 > **State does not become authority merely because it exists.**
