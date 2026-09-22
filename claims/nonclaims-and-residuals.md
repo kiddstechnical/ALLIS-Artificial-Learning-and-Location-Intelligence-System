@@ -97,7 +97,7 @@ flowchart TB
 
 # 🎯 Purpose
 
-`claims/NONCLAIMS_AND_RESIDUALS.md` is the global claim-boundary index for the repository.
+`claims/nonclaims-and-residuals.md` is the global claim-boundary index for the repository.
 
 Its purpose is to answer:
 
@@ -106,7 +106,7 @@ Its purpose is to answer:
 It complements:
 
 ```text
-claims/CLAIM_REGISTRY.md
+claims/claim-registry.md
 ```
 
 which answers:
@@ -116,9 +116,9 @@ which answers:
 Together:
 
 ```text
-CLAIM_REGISTRY.md
+claim-registry.md
         +
-NONCLAIMS_AND_RESIDUALS.md
+nonclaims-and-residuals.md
         =
 current claim envelope
 ```
@@ -1471,16 +1471,16 @@ A newer date, newer file, or newer commit is not enough by itself.
 
 ---
 
-# 🗂️ Relationship to `CLAIM_REGISTRY.md`
+# 🗂️ Relationship to `claim-registry.md`
 
 The two claims documents form a pair.
 
 ```text
-CLAIM_REGISTRY.md
+claim-registry.md
     ↓
 What can we say?
 
-NONCLAIMS_AND_RESIDUALS.md
+nonclaims-and-residuals.md
     ↓
 What can we not say, and why?
 ```
@@ -1645,7 +1645,7 @@ allis_nonclaims_and_residuals:
 
 ## Claims
 
-- [`CLAIM_REGISTRY.md`](CLAIM_REGISTRY.md) — current supported claims
+- [`claim-registry.md`](claim-registry.md) — current supported claims
 
 ## Acceptance
 
