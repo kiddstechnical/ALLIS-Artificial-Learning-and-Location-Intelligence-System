@@ -1,6 +1,75 @@
-# Formal model: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Governed Production Adoption Formal Model
+
+### Bounded mathematical model for candidate evaluation, external authorization, governed application, and evidence-backed production adoption
+
+<br>
+
+![Formal](https://img.shields.io/badge/FORMAL_OBJECT-DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![T12D-A](https://img.shields.io/badge/T12D--A-MACHINE_CHECKED-0ea5e9?style=for-the-badge)
+![T12D-B/C](https://img.shields.io/badge/T12D--B%2FC-CORRESPONDENCE_VERIFIED-16a34a?style=for-the-badge)
+![P12C-09](https://img.shields.io/badge/P12C--09-MACHINE_CHECKED_DISPROVEN-dc2626?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This document defines the **bounded Step-12 production authorized-adoption formal model**.
+>
+> Within this record, `MACHINE_CHECKED` has an explicit and limited meaning: **machine-executed source-structure checks plus bounded execution evidence**.
+>
+> It does **not** mean that the model or theorem family was proved in Lean, Coq, Isabelle, TLA+, or another general-purpose proof-assistant/model-checking environment. No such stronger claim should be inferred without separate evidence.
+>
+> The model also remains narrower than a general production-mutation safety theorem or whole-system proof.
+
+---
+
+# 👀 Formal model in one view
+
+```mermaid
+flowchart LR
+    C["📦 CANDIDATE<br/>proposal + content + evaluation"]:::candidate
+    E["🧪 EVALUATION<br/>evidence about candidate"]:::evidence
+    A["🛡️ EXTERNAL AUTHORIZATION<br/>exact candidate + target + prestate + time"]:::authority
+    G["⚙️ AUTHORIZED-APPLY GATE<br/>recheck authority + target + prestate + replay"]:::gate
+    M["🔧 GOVERNED APPLICATION"]:::apply
+    R["🧾 RECEIPT / TERMINAL EVIDENCE"]:::receipt
+
+    C --> E
+    E -. "does not create authority" .-> A
+    A --> G
+    C --> G
+    G --> M --> R
+
+    classDef candidate fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:3px;
+    classDef evidence fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
+    classDef authority fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:3px;
+    classDef gate fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
+    classDef apply fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef receipt fill:#e5e7eb,stroke:#64748b,color:#111827,stroke-width:2px;
+```
+
+The model preserves the central distinction:
+
+```text
+can do
+≠
+may do
+```
+
+Evaluation can support a candidate. It does not authorize the candidate.
+
+---
+
+# 🎯 Purpose
 
 This document defines the current formal model for the bounded ALLIS production authorized-adoption pathway.
 
@@ -60,7 +129,7 @@ That distinction is the architectural theme of this formal model.
 
 ---
 
-## Document status
+# 📋 Document status
 
 | Field | Value |
 |---|---|
@@ -78,7 +147,7 @@ It does not use an earlier mutation model as current authority unless a separate
 
 ---
 
-## 1. What this model establishes
+# 🧭 1. What this model establishes
 
 This model formalizes a production path in which intelligence and operational authority remain separate.
 
@@ -107,7 +176,7 @@ The model is intentionally narrower than those claims.
 
 ---
 
-## 2. Model boundary
+# 🧱 2. Model boundary
 
 The modeled production pathway is:
 
@@ -157,7 +226,7 @@ The model includes only the sealed production authorized-adoption path.
 
 ---
 
-## 3. Architectural separations
+# 🧩 3. Architectural separations
 
 The model depends on several explicit separations.
 
@@ -179,7 +248,7 @@ These separations prevent one state from being promoted into a stronger state wi
 
 ---
 
-## 4. Notation
+# 4. Notation
 
 | Symbol | Meaning |
 |---|---|
@@ -214,7 +283,7 @@ The symbol $`q_s`$ denotes authorized-spool state and is distinct from the forma
 
 ---
 
-## 5. State space
+# 5. State space
 
 Define:
 
@@ -300,7 +369,9 @@ No earlier state is treated as sufficient authority for a later state merely bec
 
 ---
 
-## 6. Candidate envelope
+# 📦 Governed objects and predicates
+
+# 6. Candidate envelope
 
 Define a candidate envelope as:
 
@@ -353,7 +424,7 @@ It does **not** represent permission to perform the transition.
 
 ---
 
-## 7. Authorization envelope
+# 7. Authorization envelope
 
 Define an authorization envelope as:
 
@@ -424,7 +495,7 @@ The runtime verifier is not modeled as the source that mints its own authorizati
 
 ---
 
-## 8. Cryptographic identity
+# 8. Cryptographic identity
 
 For byte-oriented objects, define:
 
@@ -454,7 +525,7 @@ It is not a claim that arbitrary semantic systems are mathematically equivalent.
 
 ---
 
-## 9. Signature verification
+# 9. Signature verification
 
 Define:
 
@@ -488,13 +559,13 @@ It does not mint the private signing authority that it verifies.
 
 ---
 
-## 10. Authorization predicates
+# 10. Authorization predicates
 
 Authorization is composite.
 
 No single successful check is sufficient.
 
-### 10.1 Authorization identifier
+## 10.1 Authorization identifier
 
 ```math
 V_{id}(a)\in\{0,1\}
@@ -502,7 +573,7 @@ V_{id}(a)\in\{0,1\}
 
 $`V_{id}(a)=1`$ only if the authorization identifier satisfies the permitted production syntax.
 
-### 10.2 Approval decision
+## 10.2 Approval decision
 
 ```math
 V_{decision}(a)=
@@ -512,7 +583,7 @@ V_{decision}(a)=
 \end{cases}
 ```
 
-### 10.3 Authority class
+## 10.3 Authority class
 
 Let:
 
@@ -535,7 +606,7 @@ V_{class}(a)=
 \end{cases}
 ```
 
-### 10.4 Authorization time
+## 10.4 Authorization time
 
 Define:
 
@@ -561,7 +632,7 @@ Otherwise:
 V_{time}(a,\tau)=0
 ```
 
-### 10.5 Proposal binding
+## 10.5 Proposal binding
 
 ```math
 V_{proposal}(c,a)=
@@ -571,7 +642,7 @@ V_{proposal}(c,a)=
 \end{cases}
 ```
 
-### 10.6 Target binding
+## 10.6 Target binding
 
 ```math
 V_{targetbind}(c,a)=
@@ -581,7 +652,7 @@ V_{targetbind}(c,a)=
 \end{cases}
 ```
 
-### 10.7 Prestate binding
+## 10.7 Prestate binding
 
 ```math
 V_{prebind}(c,a)=
@@ -591,7 +662,7 @@ V_{prebind}(c,a)=
 \end{cases}
 ```
 
-### 10.8 Candidate binding
+## 10.8 Candidate binding
 
 ```math
 V_{candidate}(c,a)=
@@ -611,7 +682,7 @@ V_{envelope}(c,a)=
 \end{cases}
 ```
 
-### 10.9 Evaluation binding
+## 10.9 Evaluation binding
 
 ```math
 V_{evaluation}(c,a)=
@@ -661,7 +732,7 @@ It still does not create adoption authority.
 
 ---
 
-## 11. Composite authorization
+# 11. Composite authorization
 
 Define:
 
@@ -725,7 +796,9 @@ all required predicates together         → valid authorization
 
 ---
 
-## 12. Target safety
+# 🛡️ Application safety predicates
+
+# 12. Target safety
 
 Let $`Root(s)`$ be the governed filesystem root.
 
@@ -775,7 +848,7 @@ Technical access to a path does not imply authority to mutate that path.
 
 ---
 
-## 13. Current-state and prestate correspondence
+# 13. Current-state and prestate correspondence
 
 Define:
 
@@ -823,7 +896,7 @@ The model accepts the first interpretation and rejects the second.
 
 ---
 
-## 14. One-use authority
+# 14. One-use authority
 
 Let $`L_s`$ be the set of authorization identifiers represented by successful exclusive spent reservations.
 
@@ -879,7 +952,7 @@ A valid prior authorization therefore does not become standing authority for rep
 
 ---
 
-## 15. Governed application
+# 15. Governed application
 
 Define:
 
@@ -902,7 +975,7 @@ The model therefore treats successful mutation as a governed transition, not as 
 
 ---
 
-## 16. Receipt function
+# 16. Receipt function
 
 Define:
 
@@ -938,7 +1011,9 @@ It records evidence that an authorized transition completed under the modeled co
 
 ---
 
-## 17. Authorized-application function
+# ⚙️ Governed execution path
+
+# 17. Authorized-application function
 
 Define:
 
@@ -1005,7 +1080,7 @@ A later successful operation cannot repair a failed earlier requirement.
 
 ---
 
-## 18. NBB validation
+# 18. NBB validation
 
 Let $`x`$ be an external package.
 
@@ -1043,7 +1118,7 @@ It does not treat package arrival as permission to publish work.
 
 ---
 
-## 19. Authorized spool publication
+# 19. Authorized spool publication
 
 Define:
 
@@ -1075,7 +1150,7 @@ Validation must occur before publication into the authorized work path.
 
 ---
 
-## 20. Worker claim
+# 20. Worker claim
 
 Define:
 
@@ -1105,7 +1180,7 @@ Claiming work does not itself authorize application.
 
 ---
 
-## 21. Terminalization
+# 21. Terminalization
 
 Define:
 
@@ -1141,7 +1216,7 @@ That failure remains part of the current model because the formal work discovere
 
 ---
 
-## 22. Transition relation
+# 22. Transition relation
 
 Define:
 
@@ -1193,7 +1268,7 @@ is an allowed bounded state.
 
 ---
 
-## 23. Formal premises
+# 📐 23. Formal premises
 
 The theorem family is conditional on six premises.
 
@@ -1249,9 +1324,9 @@ It does **not** mean the theorem was proved in Coq, Lean, Isabelle, TLA+, or ano
 
 ---
 
-## 24. Principal formal results
+# ✅ 24. Principal formal results
 
-Detailed theorem accounting belongs in `THEOREM_REGISTRY.md`.
+Detailed theorem accounting belongs in [`theorem-registry.md`](./theorem-registry.md).
 
 The principal results are included here because they define the behavior of the model.
 
@@ -1359,7 +1434,7 @@ The runtime does not invent authorized work when no authorized record exists.
 
 ---
 
-## 25. Preserved counterexample
+# 🔬 25. Preserved counterexample
 
 The proposed terminal-totality property was:
 
@@ -1434,7 +1509,7 @@ That preservation is intentional.
 
 ---
 
-## 26. Formal-model validation boundary
+# 🛡️ 26. Formal-model validation boundary
 
 The formal model is correspondence-verified only for the deployed identity and observed boundaries established by the Step-12 evidence package.
 
@@ -1464,7 +1539,7 @@ The companion correspondence records document those relationships.
 
 ---
 
-## 27. Explicit non-implications
+# 🚫 27. Explicit non-implications
 
 The bounded theorem family does not imply a general production-mutation safety theorem:
 
@@ -1504,7 +1579,9 @@ unbounded conclusion
 
 ---
 
-## 28. What the formal model means
+# 🧠 Architectural interpretation
+
+# 28. What the formal model means
 
 The current model does not ask a future user or reviewer to trust the intelligence because it is intelligent.
 
@@ -1552,7 +1629,7 @@ That is the architectural meaning of:
 
 ---
 
-## 29. Final model statement
+# 29. Final model statement
 
 The strongest compact formal statement supported by the current model is:
 
@@ -1646,7 +1723,9 @@ The controlling logical boundary is:
 
 ---
 
-## 30. Seal identity
+# 🔐 Seal and support records
+
+# 30. Seal identity
 
 The controlling Step-12 formal seal is:
 
@@ -1670,32 +1749,45 @@ No stronger theorem is implied by this seal.
 
 ---
 
-## 31. Companion records
+# 📚 31. Companion records
 
 This formal model is intended to be read with the following support records:
 
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
-`FORMAL_MODEL.md` defines the bounded mathematical object and the architecture that object represents.
+Use:
+
+- [`formal-model.md`](./formal-model.md) — this bounded mathematical object and architecture
+- [`theorem-registry.md`](./theorem-registry.md) — formal proposition dispositions and validation levels
+- [`counterexample-registry.md`](./counterexample-registry.md) — preserved falsifying cases
+- [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
+- [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) — controlling bounded Step-12 final seal
+- [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed source identity
+- [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — public verification trust identity
+- [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — governance-state identity and correspondence evidence
+- [`residuals.md`](../../evidence/governed-evolution/residuals.md) — residual and non-promotion ledger
+
+`formal-model.md` defines the bounded mathematical object and the architecture that object represents.
 
 It does not replace the theorem registry, counterexample registry, source manifest, runtime correspondence record, trust evidence, governance evidence, or residual register.
 
@@ -1710,3 +1802,54 @@ and evidence
 must remain distinguishable from
 the authority required to act on it.
 ```
+
+---
+
+# 🧾 Formal-model summary
+
+<div align="center">
+
+### 📐 FORMAL OBJECT
+**`DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1`**
+
+### 💻 SEALED SOURCE DOMAIN
+**11-file production authorized-adoption source set**
+
+### ✅ PRINCIPAL RESULTS
+**`T12D-A = MACHINE_CHECKED`**
+
+**`T12D-B = CORRESPONDENCE_VERIFIED`**
+
+**`T12D-C = CORRESPONDENCE_VERIFIED`**
+
+### 🔬 PRESERVED NEGATIVE RESULT
+**`P12C-09 = MACHINE_CHECKED_DISPROVEN`**
+
+<br>
+
+### 🧪 `MACHINE_CHECKED` MEANS
+**machine-executed source-structure checks + bounded execution evidence**
+
+### 🚫 IT DOES NOT MEAN
+**proof in Lean, Coq, Isabelle, TLA+, or another general-purpose proof-assistant/model-checking environment**
+
+<br>
+
+### 🛡️ CONTROLLING SCOPE
+**`BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDENCE_ONLY`**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing formal-model principle
+
+> **Capability does not create authority.**
+
+> **State does not become authority merely because it exists.**
+
+> **A bounded machine-checked result must be described at the validation level actually earned; it must not be relabeled as proof in a general-purpose formal prover without separate evidence.**
