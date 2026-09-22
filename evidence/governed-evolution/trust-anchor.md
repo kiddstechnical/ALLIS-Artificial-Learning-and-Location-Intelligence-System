@@ -1,6 +1,72 @@
-# Trust anchor: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Trust Anchor Evidence
+
+### Sealed public verification-key identity for the bounded Step-12 production authorized-adoption pathway
+
+<br>
+
+![Evidence](https://img.shields.io/badge/EVIDENCE-TRUST_ANCHOR-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Trust](https://img.shields.io/badge/PUBLIC_TRUST-PASS-16a34a?style=for-the-badge)
+![Identity](https://img.shields.io/badge/SHA256-4809a1af-0ea5e9?style=for-the-badge)
+![Authority](https://img.shields.io/badge/SIGNING_AUTHORITY-EXTERNAL-f97316?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This record identifies the **public verification trust anchor** used by the bounded Step-12 authorized-adoption pathway.
+>
+> It does **not** contain private signing material, does **not** make the NBB or worker a signing authority, and does **not** itself authorize publication, consumption, target mutation, or production application.
+>
+> Successful signature verification is one predicate inside the governed authorization model. It is not equivalent to complete authorization or operational permission.
+
+---
+
+# 👀 Trust boundary in one view
+
+```mermaid
+flowchart LR
+    PRIV["🔐 PRIVATE SIGNING AUTHORITY<br/>external to runtime model"]:::private
+    AUTH["🧾 AUTHORIZATION ENVELOPE<br/>structured bounded authority"]:::auth
+    PUB["🔑 PINNED PUBLIC KEY<br/>SHA-256 4809a1af…"]:::public
+    VER["✅ SIGNATURE VERIFICATION<br/>V_sig(a,K_pub)"]:::verify
+    FULL["🛡️ FULL AUTHORIZATION<br/>V_auth = all required predicates"]:::full
+    ACT["⚙️ GOVERNED APPLICATION<br/>only if all conditions succeed"]:::apply
+
+    PRIV -->|"creates valid signature"| AUTH
+    PUB -->|"verifies"| VER
+    AUTH --> VER
+    VER -->|"one required predicate"| FULL
+    FULL --> ACT
+
+    PUB -. "cannot sign" .-> PRIV
+    VER -. "does not equal" .-> FULL
+
+    classDef private fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:3px;
+    classDef auth fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
+    classDef public fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:3px;
+    classDef verify fill:#16a34a,stroke:#166534,color:#ffffff,stroke-width:2px;
+    classDef full fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
+    classDef apply fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
+```
+
+The trust anchor answers only:
+
+> **Was this authorization signed by the private authority corresponding to the pinned production public key?**
+
+It does not answer whether the candidate should be adopted or whether the runtime may perform the mutation now.
+
+---
+
+# 🎯 Purpose
 
 This document records the public verification trust anchor used by the bounded ALLIS production authorized-adoption pathway.
 
@@ -52,7 +118,7 @@ private authority is present
 
 ---
 
-## Trust-anchor status
+# 📋 Trust-anchor status
 
 | Field | Value |
 |---|---|
@@ -70,7 +136,7 @@ private authority is present
 
 ---
 
-## 1. What a trust anchor is in this architecture
+# 🧭 1. What a trust anchor is in this architecture
 
 The trust anchor is the public verification key whose exact identity is pinned by SHA-256.
 
@@ -122,7 +188,7 @@ It is not an authorization object.
 
 ---
 
-## 2. Verification role
+# 2. Verification role
 
 The formal signature predicate is:
 
@@ -161,7 +227,7 @@ It does not perform the authorization decision itself.
 
 ---
 
-## 3. Source implementation boundary
+# 3. Source implementation boundary
 
 The production public-verification implementation is represented by:
 
@@ -187,7 +253,7 @@ It does not treat it as a signer.
 
 ---
 
-## 4. The public key is not the private authority
+# 🔐 4. The public key is not the private authority
 
 The formal record explicitly states:
 
@@ -214,7 +280,9 @@ Possessing the first does not imply possession of the second.
 
 ---
 
-## 5. Trust anchor and authorization envelope
+# 🧩 Authorization relationships
+
+# 5. Trust anchor and authorization envelope
 
 The trust anchor verifies the signature associated with an authorization envelope.
 
@@ -245,7 +313,7 @@ However, successful signature verification remains only one part of authorizatio
 
 ---
 
-## 6. Signature verification is one predicate
+# 6. Signature verification is one predicate
 
 The composite authorization predicate is:
 
@@ -297,7 +365,7 @@ The entire composite predicate must succeed.
 
 ---
 
-## 7. What a valid signature establishes
+# 7. What a valid signature establishes
 
 A successful `V_sig` result establishes the bounded cryptographic statement:
 
@@ -313,7 +381,7 @@ It does not establish that every other field is valid.
 
 ---
 
-## 8. What a valid signature does not establish
+# 8. What a valid signature does not establish
 
 A valid signature does not independently establish:
 
@@ -379,7 +447,7 @@ All of those remain separate predicates.
 
 ---
 
-## 9. Trust does not override target governance
+# 9. Trust does not override target governance
 
 Even when:
 
@@ -415,7 +483,7 @@ The target must remain inside the governed root and must be permitted by the gov
 
 ---
 
-## 10. Trust does not override prestate correspondence
+# 10. Trust does not override prestate correspondence
 
 The bounded application path also requires:
 
@@ -438,7 +506,7 @@ A signed authorization does not float free of the state it authorized.
 
 ---
 
-## 11. Trust does not override one-use authority
+# 11. Trust does not override one-use authority
 
 The bounded path also requires:
 
@@ -466,7 +534,7 @@ It does not nullify the one-use authorization model.
 
 ---
 
-## 12. Trust does not guarantee application success
+# 12. Trust does not guarantee application success
 
 Even complete authorization validation does not guarantee that the governed application succeeds.
 
@@ -500,7 +568,7 @@ mutation succeeds
 
 ---
 
-## 13. Trust does not create a receipt
+# 13. Trust does not create a receipt
 
 A successful production transition requires durable receipt correspondence.
 
@@ -526,7 +594,7 @@ evidence of successful application
 
 ---
 
-## 14. Runtime trust correspondence
+# 🔗 14. Runtime trust correspondence
 
 At the Step-12 final seal, the NBB and worker runtime copies corresponded to the sealed public trust anchor.
 
@@ -565,7 +633,7 @@ This result establishes that the expected public verification identity was prese
 
 ---
 
-## 15. Point-in-time boundary
+# 🕒 15. Point-in-time boundary
 
 The trust correspondence result is part of the Step-12 sealed runtime state.
 
@@ -590,7 +658,9 @@ A later trust-anchor replacement, deployment change, source change, or runtime c
 
 ---
 
-## 16. Trust anchor versus source correspondence
+# 🧱 Distinct evidence objects
+
+# 16. Trust anchor versus source correspondence
 
 These are separate questions:
 
@@ -614,7 +684,7 @@ The evidence layers remain distinct.
 
 ---
 
-## 17. Trust anchor versus governance view
+# 17. Trust anchor versus governance view
 
 The trust anchor and governance view also serve different purposes.
 
@@ -639,7 +709,7 @@ Both can be required without becoming interchangeable.
 
 ---
 
-## 18. Trust anchor versus authority class
+# 18. Trust anchor versus authority class
 
 The formal authorization model accepts only permitted authority classes.
 
@@ -672,7 +742,7 @@ The authorization model separately evaluates whether the claimed authority class
 
 ---
 
-## 19. Trust anchor versus approval decision
+# 19. Trust anchor versus approval decision
 
 A valid signature also does not turn any signed decision into approval.
 
@@ -700,7 +770,7 @@ A cryptographic verifier is not permitted to reinterpret the decision merely bec
 
 ---
 
-## 20. Trust anchor versus time
+# 20. Trust anchor versus time
 
 The authorization-time predicate remains independent:
 
@@ -728,7 +798,7 @@ Expiration is a governance condition, not a cryptographic failure.
 
 ---
 
-## 21. Trust anchor versus candidate identity
+# 21. Trust anchor versus candidate identity
 
 The authorization must bind to the candidate being considered.
 
@@ -756,7 +826,7 @@ The candidate identity must independently correspond.
 
 ---
 
-## 22. Trust anchor versus evaluation identity
+# 22. Trust anchor versus evaluation identity
 
 Likewise, a valid signature does not independently establish:
 
@@ -786,7 +856,7 @@ These are separate evidence domains that are joined only by the complete authori
 
 ---
 
-## 23. External authority boundary
+# 🛡️ 23. External authority boundary
 
 Step 12 preserves the following residual:
 
@@ -830,7 +900,7 @@ It is an authority boundary.
 
 ---
 
-## 24. Why external issuance matters
+# 24. Why external issuance matters
 
 If the same bounded runtime that wants to perform a mutation could independently manufacture the authority required to approve that mutation, the separation between capability and authority would collapse.
 
@@ -858,7 +928,9 @@ That separation is the architectural purpose of the public trust anchor.
 
 ---
 
-## 25. What the public key authorizes
+# 🚫 What public verification does not authorize
+
+# 25. What the public key authorizes
 
 Strictly speaking:
 
@@ -884,7 +956,7 @@ the trust anchor authorizes the mutation
 
 ---
 
-## 26. What possession of the public key does not authorize
+# 26. What possession of the public key does not authorize
 
 Possession of the public verification key does not authorize a holder or runtime to:
 
@@ -913,7 +985,7 @@ Signing remains the privileged operation.
 
 ---
 
-## 27. What trust correspondence does not authorize
+# 27. What trust correspondence does not authorize
 
 The final Step-12 status:
 
@@ -953,7 +1025,7 @@ It did not create successor authority.
 
 ---
 
-## 28. What the trust anchor does not prove
+# 28. What the trust anchor does not prove
 
 The trust-anchor evidence does not prove:
 
@@ -985,7 +1057,7 @@ The trust anchor is one bounded component of the authorization architecture.
 
 ---
 
-## 29. Failure semantics
+# 29. Failure semantics
 
 If the detached authorization signature cannot be verified under the pinned production public key, then:
 
@@ -1021,7 +1093,7 @@ The verifier does not substitute trust from an unpinned key.
 
 ---
 
-## 30. Replacement semantics
+# 30. Replacement semantics
 
 A future public-key replacement is a change in the trust anchor.
 
@@ -1053,7 +1125,7 @@ without evidence of the transition.
 
 ---
 
-## 31. Public repository handling
+# 📚 31. Public repository handling
 
 This record intentionally publishes the trust-anchor **hash identity**, not private signing material.
 
@@ -1070,9 +1142,9 @@ Private signing keys, secret material, or operational signing credentials do not
 
 ---
 
-## 32. Relationship to the formal model
+# 🔗 32. Relationship to the formal model
 
-`FORMAL_MODEL.md` defines:
+`formal-model.md` defines:
 
 ```math
 V_{sig}(a,K_{pub})
@@ -1089,24 +1161,36 @@ This document provides the evidence identity for the $`K_{pub}`$ trust object.
 Therefore:
 
 ```text
-FORMAL_MODEL.md
+formal-model.md
         ↓
 defines the verification predicate
 
-TRUST_ANCHOR.md
+trust-anchor.md
         ↓
 identifies the public trust object
 
-SOURCE_TO_RUNTIME.md
+source-to-runtime.md
         ↓
 records that runtime copies matched that object at final seal
 ```
 
 These roles should remain separate.
 
+Use:
+
+- [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) — defines `V_sig(a,K_pub)` and the composite authorization predicate
+- [`trust-anchor.md`](trust-anchor.md) — identifies the sealed public verification trust object
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — records that inspected runtime copies matched the sealed source and trust object at the final seal
+- [`source-identity.md`](source-identity.md) — canonical sealed production source identity
+- [`governance-view.md`](governance-view.md) — separate governance-state identity and NBB correspondence
+- [`residuals.md`](residuals.md) — preserves the external-authority and point-in-time boundaries
+- [`step12-final-seal.md`](step12-final-seal.md) — controlling bounded Step-12 final seal
+
 ---
 
-## 33. Relationship to source-to-runtime correspondence
+# 🔗 Evidence-chain relationships
+
+# 33. Relationship to source-to-runtime correspondence
 
 At final Step-12 sealing:
 
@@ -1134,7 +1218,7 @@ at the sealed runtime boundary.
 
 ---
 
-## 34. Relationship to the final seal
+# 34. Relationship to the final seal
 
 The final Step-12 seal includes trust correspondence as part of the evidence-backed runtime state.
 
@@ -1160,7 +1244,7 @@ The trust anchor does not enlarge that scope.
 
 ---
 
-## 35. Final trust statement
+# 35. Final trust statement
 
 Let:
 
@@ -1213,12 +1297,46 @@ It does not authorize a production mutation.
 
 ---
 
-## 36. Governing trust statement
+# 🧾 Trust-anchor evidence summary
 
-The correct architectural reading is:
+<div align="center">
+
+### 🔑 SEALED PUBLIC VERIFICATION IDENTITY
+**SHA-256 `4809a1af…`**
+
+### 🖥️ RUNTIME TRUST CORRESPONDENCE
+**NBB PASS · Worker PASS**
+
+### 📐 FORMAL TRUST RESULT
+**`C_K=1` at final seal**
+
+<br>
+
+### 🔐 PRIVATE SIGNING MATERIAL
+**NOT PRESENT IN THE MODELED VERIFIER**
+
+### 🛡️ AUTHORIZATION ISSUANCE
+**`EXTERNAL_TO_RUNTIME_MODEL`**
+
+<br>
+
+### 🚫 OPERATIONAL BOUNDARY
+**public key verifies signatures**
+
+**public key does not authorize a candidate or mutation**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing trust statement
 
 > **The public trust anchor tells the runtime whose signature it is willing to verify. It does not tell the runtime what it is allowed to do.**
 
-That distinction is the trust-layer expression of the overarching ALLIS architecture:
+> **Public verification identity is distinct from private signing material and from operational authorization.**
 
 > **Capability does not create authority.**
