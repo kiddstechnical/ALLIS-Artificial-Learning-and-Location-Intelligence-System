@@ -1,6 +1,55 @@
-# Model-to-source correspondence: governed production adoption
+<div align="center">
 
-## Purpose
+# ALLIS — Model → Source Correspondence
+
+### Evidence-backed mapping from the bounded Step-12 formal object to the sealed production source
+
+<br>
+
+![Correspondence](https://img.shields.io/badge/CORRESPONDENCE-MODEL_TO_SOURCE-7c3aed?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
+![Mapping](https://img.shields.io/badge/FORMAL_TO_SOURCE-PASS-16a34a?style=for-the-badge)
+![Source](https://img.shields.io/badge/SEALED_SOURCE-20c8cbe1-0ea5e9?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This record establishes the **model → source correspondence edge** for the bounded Step-12 production authorized-adoption domain.
+>
+> It does **not** replace `source-to-runtime.md`, establish standing runtime authority, expand the formal model to all ALLIS behavior, or promote the repository to `SYSTEM_PROVEN=YES`.
+
+---
+
+# 👀 Correspondence in one view
+
+```mermaid
+flowchart LR
+    F["📐 FORMAL MODEL<br/>DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1"]:::formal
+    S["💻 SEALED PRODUCTION SOURCE<br/>20c8cbe1… · 11 files"]:::source
+    R["🖥️ DEPLOYED RUNTIME<br/>separate correspondence edge"]:::runtime
+
+    F -->|"C_FS(F,S)=1 · PASS"| S
+    S -. "source-to-runtime.md" .-> R
+
+    classDef formal fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
+    classDef source fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:3px;
+    classDef runtime fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
+```
+
+This record establishes the **solid model → source edge**.
+
+The **source → runtime edge remains a separate correspondence record** and does not arise merely because model-to-source correspondence passed.
+
+---
+
+# 🎯 Purpose
 
 This document establishes how the bounded ALLIS production authorized-adoption formal model maps to the sealed production source that implements it.
 
@@ -42,7 +91,7 @@ that gives it operational meaning
 
 ---
 
-## Correspondence status
+# 📋 Correspondence status
 
 | Field | Value |
 |---|---|
@@ -73,7 +122,7 @@ It does not establish that the formal model represents every behavior in ALLIS.
 
 ---
 
-## 1. What correspondence means here
+# 1. What correspondence means here
 
 Formal-to-source correspondence answers:
 
@@ -105,18 +154,18 @@ These are separate evidentiary roles.
 
 ---
 
-## 2. Correspondence chain
+# 🧭 2. Correspondence chain
 
 The current documentation chain is:
 
 ```text
 FORMAL MODEL
      │
-     │  MODEL_TO_SOURCE.md
+     │  model-to-source.md
      ▼
 SEALED PRODUCTION SOURCE
      │
-     │  SOURCE_TO_RUNTIME.md
+     │  source-to-runtime.md
      ▼
 DEPLOYED RUNTIME
      │
@@ -137,7 +186,7 @@ It does not replace source-to-runtime correspondence.
 
 ---
 
-## 3. Source identity boundary
+# 3. Source identity boundary
 
 The formal model is bound to the exact 11-file production authorized-adoption source set at:
 
@@ -148,7 +197,7 @@ The formal model is bound to the exact 11-file production authorized-adoption so
 The full 11-file identity manifest and per-file hashes belong in:
 
 ```text
-evidence/governed-evolution/SOURCE_IDENTITY.md
+evidence/governed-evolution/source-identity.md
 ```
 
 This record intentionally does not create a second competing source manifest.
@@ -159,7 +208,7 @@ The mapping is valid only when those modules are members of the sealed source id
 
 ---
 
-## 4. Formal symbols are abstractions, not invented Python names
+# 4. Formal symbols are abstractions, not invented Python names
 
 Several names in the mathematical model are formal abstractions.
 
@@ -188,9 +237,9 @@ That distinction prevents the documentation from manufacturing implementation sy
 
 ---
 
-# Core source modules
+# 🧩 Core source modules
 
-## 5. `dgm_authorized_adoption.py`
+# 5. `dgm_authorized_adoption.py`
 
 Path:
 
@@ -213,7 +262,7 @@ validate_authorization
 apply_authorized_candidate
 ```
 
-### Formal correspondence
+## Formal correspondence
 
 | Formal object | Source correspondence |
 |---|---|
@@ -229,7 +278,7 @@ apply_authorized_candidate
 | $`V_{once}`$ / $`S_{spent}`$ | authorization-ID replay and spent-reservation behavior in the authorized application path |
 | $`R_{receipt}`$ | receipt creation required before successful authorized-application return |
 
-### Architectural meaning
+## Architectural meaning
 
 This mapping is central because the formal model does not treat a candidate as authority.
 
@@ -253,7 +302,7 @@ and does not collapse them into one object.
 
 ---
 
-## 6. `dgm_public_key_authorization_verifier.py`
+# 6. `dgm_public_key_authorization_verifier.py`
 
 Path:
 
@@ -272,7 +321,7 @@ signature
 ML_DSA_65
 ```
 
-### Formal correspondence
+## Formal correspondence
 
 | Formal object | Source correspondence |
 |---|---|
@@ -289,7 +338,7 @@ V_{sig}(a,K_{pub})=1
 
 therefore represents successful detached authorization verification under the pinned public key.
 
-### Authority boundary
+## Authority boundary
 
 The verifier is modeled as a **verifier**.
 
@@ -305,7 +354,7 @@ The private authorization-signing function is outside this runtime formal object
 
 ---
 
-## 7. `dgm_nbb_authorized_package.py`
+# 7. `dgm_nbb_authorized_package.py`
 
 Path:
 
@@ -329,7 +378,7 @@ validate_authorized_package
 
 returns successfully.
 
-### Formal correspondence
+## Formal correspondence
 
 | Formal object | Source correspondence |
 |---|---|
@@ -351,7 +400,7 @@ Publish(x,q_s)
 
 represents the source requirement that validation precedes successful authorized-spool publication.
 
-### Architectural meaning
+## Architectural meaning
 
 Package arrival does not create authorized work.
 
@@ -365,7 +414,7 @@ The NBB boundary must first establish the required validation conditions.
 
 ---
 
-## 8. `dgm_authorized_spool.py`
+# 8. `dgm_authorized_spool.py`
 
 Path:
 
@@ -393,7 +442,7 @@ reservation
 reserve
 ```
 
-### Formal correspondence
+## Formal correspondence
 
 The formal function:
 
@@ -423,7 +472,7 @@ Reserve_s
 
 means the bounded exclusive reservation behavior that prevents unauthorized reuse at the modeled reservation boundary.
 
-### Architectural meaning
+## Architectural meaning
 
 The spool is not merely a queue.
 
@@ -447,7 +496,7 @@ data was written somewhere
 
 ---
 
-## 9. `dgm_worker_authorized_consumer.py`
+# 9. `dgm_worker_authorized_consumer.py`
 
 Path:
 
@@ -464,7 +513,7 @@ Source inspection established that the worker:
 - passes the governed object into the authorized application path; and
 - participates in authorization replay/consumption handling.
 
-### Formal correspondence
+## Formal correspondence
 
 The following formal functions are worker-side abstractions:
 
@@ -502,7 +551,7 @@ These are formal names for source behavior.
 
 They are not assertions that the worker module contains literal functions named `Claim` and `FinishClaim`.
 
-### Counterexample correspondence
+## Counterexample correspondence
 
 The formal model preserves the fact that terminalization is partial.
 
@@ -522,7 +571,7 @@ This source-model behavior is the basis for the machine-executed disproof of `P1
 
 ---
 
-## 10. `dgm_governed_cycle.py`
+# 10. `dgm_governed_cycle.py`
 
 Path:
 
@@ -548,7 +597,7 @@ governed.ROOT
 
 and passes the governed object into `apply_authorized_candidate`.
 
-### Formal correspondence
+## Formal correspondence
 
 | Formal object | Source correspondence |
 |---|---|
@@ -561,7 +610,7 @@ and passes the governed object into `apply_authorized_candidate`.
 | resulting state $`s'`$ | governed source state after successful proposal application |
 | poststate checking | authorized-adoption post-application verification against expected source identity |
 
-### Architectural meaning
+## Architectural meaning
 
 Technical filesystem access does not become target authority.
 
@@ -589,7 +638,7 @@ path is governed and permitted for this mutation path
 
 ---
 
-## 11. `dgm_evolution_authorization_bridge.py`
+# 11. `dgm_evolution_authorization_bridge.py`
 
 Path:
 
@@ -610,7 +659,7 @@ authority
 authorization
 ```
 
-### Formal correspondence
+## Formal correspondence
 
 This module participates at the boundary where an evaluated evolution proposal is represented in the candidate/authorization protocol.
 
@@ -636,7 +685,7 @@ h_b(c)
 
 as they cross into the authorized-adoption architecture.
 
-### Architectural meaning
+## Architectural meaning
 
 The bridge can construct or transmit the information required for an authorization decision.
 
@@ -650,9 +699,9 @@ production authority
 
 ---
 
-# Formal-object mapping
+# 📐 Formal-object mapping
 
-## 12. Candidate envelope correspondence
+# 12. Candidate envelope correspondence
 
 The formal candidate is:
 
@@ -691,7 +740,7 @@ The formal object does not invent candidate fields outside the source contract.
 
 ---
 
-## 13. Authorization envelope correspondence
+# 13. Authorization envelope correspondence
 
 The formal authorization is:
 
@@ -739,7 +788,7 @@ The formal object therefore preserves the production design that authority is a 
 
 ---
 
-## 14. Hash correspondence
+# 14. Hash correspondence
 
 The formal candidate-content identity is:
 
@@ -773,7 +822,7 @@ They do not establish semantic equivalence by themselves.
 
 ---
 
-## 15. Evaluation correspondence
+# 15. Evaluation correspondence
 
 The formal evaluation body is:
 
@@ -807,7 +856,7 @@ It does not create authorization.
 
 ---
 
-## 16. Composite authorization correspondence
+# 16. Composite authorization correspondence
 
 The formal authorization predicate is:
 
@@ -853,7 +902,7 @@ No individual predicate is promoted into complete authorization.
 
 ---
 
-## 17. Target correspondence
+# 17. Target correspondence
 
 The formal target-safety condition is:
 
@@ -883,7 +932,7 @@ Thus the model represents a source behavior distributed across the bounded adopt
 
 ---
 
-## 18. Prestate correspondence
+# 18. Prestate correspondence
 
 The formal predicate is:
 
@@ -913,7 +962,7 @@ This prevents stale authority from silently migrating to a different source stat
 
 ---
 
-## 19. One-use authorization correspondence
+# 19. One-use authorization correspondence
 
 The formal one-use predicate is:
 
@@ -956,7 +1005,7 @@ reserve
 
 The source-model result establishes that a previously consumed authorization identity cannot successfully traverse the same bounded application path again.
 
-### Architectural meaning
+## Architectural meaning
 
 ```text
 authority was valid once
@@ -966,7 +1015,7 @@ authority remains valid forever
 
 ---
 
-## 20. Governed application correspondence
+# 20. Governed application correspondence
 
 The formal mutation function is:
 
@@ -1022,7 +1071,7 @@ This is why the model defines a partial function rather than equating source-wri
 
 ---
 
-## 21. Receipt correspondence
+# 21. Receipt correspondence
 
 The formal receipt function is:
 
@@ -1056,7 +1105,7 @@ It does not create retrospective authority for that transition.
 
 ---
 
-## 22. NBB validation correspondence
+# 22. NBB validation correspondence
 
 The formal validation function is:
 
@@ -1098,7 +1147,7 @@ authorized spool publication
 
 ---
 
-## 23. Publication correspondence
+# 23. Publication correspondence
 
 The formal publication function is:
 
@@ -1122,7 +1171,7 @@ It represents only the successful publication path downstream of validation.
 
 ---
 
-## 24. Worker claim correspondence
+# 24. Worker claim correspondence
 
 The formal worker claim is:
 
@@ -1154,7 +1203,7 @@ which becomes theorem `T12D-C`.
 
 ---
 
-## 25. Terminalization correspondence
+# 25. Terminalization correspondence
 
 The formal terminalization function is:
 
@@ -1196,9 +1245,9 @@ and why `P12C-09` is preserved as `MACHINE_CHECKED_DISPROVEN`.
 
 ---
 
-# State-model correspondence
+# 🔄 State-model correspondence
 
-## 26. Formal states map to execution boundaries
+# 26. Formal states map to execution boundaries
 
 The formal states are:
 
@@ -1228,7 +1277,7 @@ This makes the state model an abstraction of source execution boundaries, not a 
 
 ---
 
-## 27. Transition relation maps to source ordering
+# 27. Transition relation maps to source ordering
 
 The formal transition relation is:
 
@@ -1270,9 +1319,9 @@ It does not assert an independent state machine that is absent from the implemen
 
 ---
 
-# Theorem correspondence to source
+# ✅ Theorem correspondence to source
 
-## 28. T12D-A source basis
+# 28. T12D-A source basis
 
 The principal theorem is:
 
@@ -1308,7 +1357,7 @@ It is not promoted to positive runtime correspondence because no real positive p
 
 ---
 
-## 29. T12D-B source basis
+# 29. T12D-B source basis
 
 The theorem is:
 
@@ -1340,7 +1389,7 @@ CORRESPONDENCE_VERIFIED
 
 ---
 
-## 30. T12D-C source basis
+# 30. T12D-C source basis
 
 The theorem is:
 
@@ -1366,7 +1415,7 @@ after source-to-runtime correspondence and live empty-spool observation were sep
 
 ---
 
-## 31. P12C-09 source basis
+# 31. P12C-09 source basis
 
 The disproven proposition was:
 
@@ -1396,9 +1445,9 @@ MACHINE_CHECKED_DISPROVEN
 
 ---
 
-# Correspondence discipline
+# 🛡️ Correspondence discipline
 
-## 32. The mapping is directional
+# 32. The mapping is directional
 
 The mapping in this record is:
 
@@ -1436,7 +1485,7 @@ The model intentionally covers the authorized-adoption pathway only.
 
 ---
 
-## 33. Source identity is necessary but not sufficient
+# 33. Source identity is necessary but not sufficient
 
 The exact source commit and file hashes establish identity.
 
@@ -1462,7 +1511,7 @@ It is also narrower than a claim that all implementation semantics have been for
 
 ---
 
-## 34. Source changes invalidate unrefreshed correspondence
+# 34. Source changes invalidate unrefreshed correspondence
 
 This correspondence record is tied to:
 
@@ -1496,7 +1545,7 @@ This is the documentation equivalent of prestate binding in the adoption model.
 
 ---
 
-## 35. Authority issuance remains outside the runtime model
+# 35. Authority issuance remains outside the runtime model
 
 The formal model includes authorization verification.
 
@@ -1516,7 +1565,7 @@ This is an explicit residual boundary, not a missing implicit capability.
 
 ---
 
-## 36. What this correspondence establishes
+# 36. What this correspondence establishes
 
 This record establishes that, within the bounded authorized-adoption domain:
 
@@ -1546,7 +1595,7 @@ for the sealed bounded production authorized-adoption model.
 
 ---
 
-## 37. What this correspondence does not establish
+# 37. What this correspondence does not establish
 
 This record does not establish:
 
@@ -1584,7 +1633,7 @@ SYSTEM_PROVEN=NO
 
 ---
 
-## 38. Architectural meaning
+# 38. Architectural meaning
 
 This correspondence layer exists because an architecture description is not allowed to grant itself authority over reality.
 
@@ -1628,7 +1677,7 @@ established correspondence
 
 ---
 
-## 39. Final correspondence statement
+# 39. Final correspondence statement
 
 Let:
 
@@ -1669,7 +1718,7 @@ SYSTEM\_PROVEN=YES
 
 ---
 
-## 40. Seal identity
+# 40. Seal identity
 
 The controlling Step-12 formal seal is:
 
@@ -1693,15 +1742,15 @@ No stronger correspondence claim is implied by this record.
 
 ---
 
-## 41. Companion records
+# 📚 41. Companion records
 
 This record belongs at:
 
 ```text
 correspondence/
     authorized-adoption/
-        MODEL_TO_SOURCE.md
-        SOURCE_TO_RUNTIME.md
+        model-to-source.md
+        source-to-runtime.md
 ```
 
 and should be read with:
@@ -1709,28 +1758,60 @@ and should be read with:
 ```text
 formal-verification/
     authorized-adoption/
-        FORMAL_MODEL.md
-        THEOREM_REGISTRY.md
-        COUNTEREXAMPLE_REGISTRY.md
+        formal-model.md
+        theorem-registry.md
+        counterexample-registry.md
 
 evidence/
     governed-evolution/
-        STEP12_FINAL_SEAL.md
-        SOURCE_IDENTITY.md
-        TRUST_ANCHOR.md
-        GOVERNANCE_VIEW.md
-        RESIDUALS.md
+        step12-final-seal.md
+        source-identity.md
+        trust-anchor.md
+        governance-view.md
+        residuals.md
 ```
 
 Use:
 
-- `FORMAL_MODEL.md` for the mathematical object;
-- `THEOREM_REGISTRY.md` for proposition disposition and validation level;
-- `COUNTEREXAMPLE_REGISTRY.md` for falsifying cases;
-- `MODEL_TO_SOURCE.md` for formal-to-code correspondence;
-- `SOURCE_IDENTITY.md` for the canonical sealed 11-file source manifest and hashes; and
-- `SOURCE_TO_RUNTIME.md` for the separate question of whether the sealed source corresponds to the deployed runtime.
+- [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) — mathematical object
+- [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) — proposition disposition and validation level
+- [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) — falsifying cases
+- [`model-to-source.md`](model-to-source.md) — formal-to-source correspondence
+- [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed 11-file source manifest and hashes
+- [`source-to-runtime.md`](source-to-runtime.md) — separate source-to-runtime correspondence question
 
-The governing documentation rule is:
 
+---
+
+# 🧾 Model-to-source correspondence summary
+
+<div align="center">
+
+### 📐 FORMAL MODEL
+**`DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1`**
+
+↓
+
+### 🔗 MODEL → SOURCE CORRESPONDENCE
+**`C_FS(F,S)=1` · PASS**
+
+↓
+
+### 💻 SEALED PRODUCTION SOURCE
+**commit `20c8cbe1…` · 11-file bounded source set**
+
+<br>
+
+### Separate edge
+**source → runtime remains independently evidenced**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# Governing correspondence principle
 > **A formal description is not authoritative merely because it is mathematically coherent. It becomes an evidence-backed description of production only when correspondence to the sealed implementation is established.**
