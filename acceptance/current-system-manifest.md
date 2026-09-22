@@ -1043,7 +1043,7 @@ allis_current_system_manifest:
 ## Qualified baseline
 
 - [`qualified-baseline/README.md`](qualified-baseline/README.md)
-- [`qualified-baseline/Qualified Baseline Manifest.md`](qualified-baseline/Qualified%20Baseline%20Manifest.md)
+- [`qualified-baseline/qualified-baseline-manifest.md`](qualified-baseline/qualified-baseline-manifest.md)
 
 ## Step-12 formal verification
 
