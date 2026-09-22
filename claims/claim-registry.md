@@ -1202,7 +1202,7 @@ Step-17 completion = authority for arbitrary new capability
 These boundaries are preserved in detail in:
 
 ```text
-claims/NONCLAIMS_AND_RESIDUALS.md
+claims/nonclaims-and-residuals.md
 ```
 
 ---
@@ -1358,7 +1358,7 @@ allis_claim_registry:
 - [`../CURRENT.md`](../CURRENT.md) — current qualified technical state
 - [`../acceptance/current-system-manifest.md`](../acceptance/current-system-manifest.md) — composite current-system object graph
 - [`../acceptance/baseline-object-registry.md`](../acceptance/baseline-object-registry.md) — qualified object roles
-- [`../acceptance/closeout/readme.md`](../acceptance/closeout/readme.md) — bounded closeout index
+- [`../acceptance/closeout/README.md`](../acceptance/closeout/README.md) — bounded closeout index
 - [`../acceptance/closeout/workstream-f-close.md`](../acceptance/closeout/workstream-f-close.md)
 - [`../acceptance/closeout/dgm-step12-close.md`](../acceptance/closeout/dgm-step12-close.md)
 - [`../acceptance/closeout/publication-step17-close.md`](../acceptance/closeout/publication-step17-close.md)
@@ -1373,7 +1373,7 @@ allis_claim_registry:
 
 ## Claim boundaries
 
-- [`NONCLAIMS_AND_RESIDUALS.md`](NONCLAIMS_AND_RESIDUALS.md) — global nonclaim and residual index
+- [`nonclaims-and-residuals.md`](nonclaims-and-residuals.md) — global nonclaim and residual index
 
 ---
 
