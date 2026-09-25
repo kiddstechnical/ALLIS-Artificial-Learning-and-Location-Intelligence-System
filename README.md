@@ -199,6 +199,13 @@ For the Step-12 workstream, **Machine-Checked** means machine-executed source-st
 
 It does **not** mean the theorem was proved in Lean, Coq, Isabelle, TLA+, or another general-purpose proof assistant.
 
+> [!NOTE]
+> **Later successor qualification:** after the historical Step-12 close, a separate Lean 4.34.0 R1 workstream independently formalized and kernel-checked `T12D-A`, `T12D-B`, `T12D-C`, and the `P12C-09` disproof. The qualified principal results reported no theorem-level axiom dependencies.
+>
+> This later proof-assistant evidence does **not** retroactively redefine the historical Step-12 `MACHINE_CHECKED` label.
+>
+> See the [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
+
 ---
 
 # 🧩 ALLIS is not one source commit
@@ -525,6 +532,44 @@ Principal validation levels:
 | `T12D-C` | 🔗 **CORRESPONDENCE_VERIFIED** |
 | `P12C-09` | 🔴 **MACHINE_CHECKED_DISPROVEN** |
 
+## Later successor evidence
+
+The historical Step-12 statuses above remain unchanged.
+
+Later work added two additional evidence layers:
+
+1. **Lean R1 proof-assistant qualification** independently kernel-checked the principal result set.
+2. **Post-A8 current correspondence revalidation** re-established the theorem-relevant source/runtime relationship against the currently observed DGM NBB and worker runtimes.
+
+The post-A8 source/runtime result is:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Current theorem-specific live observations additionally support:
+
+```text
+T12D_B_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+T12D_C_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+`T12D-A` remains:
+
+```text
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
+
+because no positive authorized-apply production observation was executed.
+
+See:
+
+- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+
 <details>
 <summary><strong>What was disproven?</strong></summary>
 
@@ -564,7 +609,7 @@ A green workstream does not gain permission to make a stronger claim just becaus
 
 Step 12 preserves eight explicit residuals, including:
 
-- positive production application was not observed in that formal workstream;
+- positive production application was not observed in the historical Step-12 formal workstream and was still not executed during the later post-A8 current correspondence revalidation;
 - unconditional terminal totality was disproven;
 - general production-mutation safety is not proven;
 - whole-system safety is not proven;
@@ -630,11 +675,58 @@ guaranteed to correspond forever
 
 A changed runtime must earn a new correspondence result.
 
+## Current post-A8 DGM correspondence
+
+A later post-A8 qualification revalidated the bounded theorem-relevant DGM source/runtime relationship rather than relying only on the historical Step-12 observation.
+
+The current observed result is:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+with:
+
+```text
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The later work then separately re-observed the theorem-specific live behavior needed for `T12D-B` and `T12D-C`.
+
+Therefore:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+`T12D-A` was **not** promoted because no positive authorized-apply production observation was executed:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+The bounded criterion used by the successor work is:
+
+```text
+machine-checked theorem
+        +
+current source/runtime correspondence
+        +
+current theorem-specific live observation
+```
+
+Matching source/runtime bytes alone does not establish theorem-specific runtime behavior.
+
+See the [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
+
 Read more:
 
 - [Correspondence overview](correspondence/README.md)
 - [Authorized adoption: model → source](correspondence/authorized-adoption/model-to-source.md)
 - [Authorized adoption: source → runtime](correspondence/authorized-adoption/source-to-runtime.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ---
 
@@ -782,6 +874,7 @@ ALLIS/
 │   ├── governed-evolution/
 │   │   ├── README.md
 │   │   ├── governance-view.md
+│   │   ├── post-a8-theorem-correspondence-registry-r1.md
 │   │   ├── residuals.md
 │   │   ├── source-identity.md
 │   │   ├── step12-final-seal.md
@@ -798,7 +891,9 @@ ALLIS/
 │   └── authorized-adoption/
 │       ├── counterexample-registry.md
 │       ├── formal-model.md
-│       └── theorem-registry.md
+│       ├── theorem-registry.md
+│       └── lean/
+│           └── workstream-closeout-r1.md
 │
 └── research/
     └── thesis-reconciliation.md
@@ -881,6 +976,7 @@ The governing rule is unchanged:
 - [Formal model](formal-verification/authorized-adoption/formal-model.md)
 - [Theorem registry](formal-verification/authorized-adoption/theorem-registry.md)
 - [Counterexample registry](formal-verification/authorized-adoption/counterexample-registry.md)
+- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
 ## Correspondence
 
@@ -895,6 +991,7 @@ The governing rule is unchanged:
 - [Source identity](evidence/governed-evolution/source-identity.md)
 - [Trust anchor](evidence/governed-evolution/trust-anchor.md)
 - [Governance view](evidence/governed-evolution/governance-view.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 - [Residuals and non-promotions](evidence/governed-evolution/residuals.md)
 - [Step-12 final seal](evidence/governed-evolution/step12-final-seal.md)
 
@@ -993,9 +1090,11 @@ The public technical record supports bounded claims that include:
 
 - a formally closed Workstream-F acceptance lineage;
 - a bounded, machine-adjudicated production authorized-adoption model;
-- selected source/runtime correspondence for Step-12 production boundaries;
-- correspondence-verified fail-closed results;
-- a preserved formal counterexample;
+- a later Lean 4.34.0 proof-assistant qualification of the principal Step-12 result set;
+- current post-A8 `PASS_11_OF_11` source/runtime correspondence for the bounded theorem-relevant DGM source set;
+- current correspondence-verified fail-closed results for `T12D-B` and `T12D-C`;
+- continued non-promotion of `T12D-A` because the positive authorized-apply production observation was not executed;
+- a preserved formal counterexample and later Lean-kernel-checked disproof for `P12C-09`;
 - explicit residual and non-promotion records;
 - a separately completed governed-publication workstream;
 - a 25/25 Step-17 fixed-goal completion matrix;
