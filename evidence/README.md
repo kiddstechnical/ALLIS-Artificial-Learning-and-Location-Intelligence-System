@@ -37,16 +37,23 @@ SYSTEM_PROVEN=NO
 
 # 👀 Evidence at a glance
 
-The current public evidence record contains two primary evidence packages:
+The current public evidence record contains two primary evidence directories:
 
 | Evidence package                                | Scope                                                                                                                                      | Current bounded result                 |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------- |
 | 🔐 [`governed-evolution/`](governed-evolution/) | Production DGM authorized-adoption formalization, trust/governance correspondence, fail-closed behavior, residuals, and final Step-12 seal | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` |
 | 🌐 [`publication/`](publication/)               | Governed immutable publication, read-only runtime boundary, public-network continuity, and final Step-17 evidence close                    | `GREEN_COMPLETE`                       |
 
-These packages answer different technical questions.
+The current record also includes two later successor records that strengthen the bounded DGM evidence without rewriting the historical Step-12 close:
 
-Neither silently inherits the authority, proof level, or scope of the other.
+| Successor record | Role | Current bounded meaning |
+|---|---|---|
+| 🧮 [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) | Later Lean 4.34.0 proof-assistant qualification | Principal Step-12 theorem/disproof set independently kernel-checked; historical Step-12 `MACHINE_CHECKED` meaning unchanged |
+| 🔗 [`governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](governed-evolution/post-a8-theorem-correspondence-registry-r1.md) | Later post-A8 theorem-correspondence observation | Current theorem-relevant DGM source/runtime revalidated 11/11; `T12D-B` and `T12D-C` re-observed and current `CORRESPONDENCE_VERIFIED` |
+
+These records answer different technical questions.
+
+None silently inherits the authority, proof level, or scope of another.
 
 ---
 
@@ -175,6 +182,54 @@ Preserves explicit residuals and non-promotions so a closed workstream is not si
 
 Preserves the final bounded Step-12 evidence-seal state.
 
+### [`governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+
+Preserves the later public-safe post-A8 DGM theorem-correspondence observation.
+
+It records:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+and the later/current theorem-specific observations supporting:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+while preserving:
+
+```text
+T12D-A = MACHINE_CHECKED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+SYSTEM_PROVEN=NO
+```
+
+> [!IMPORTANT]
+> This post-A8 record is **successor observation evidence**.
+>
+> It does not rewrite the historical Step-12 final seal, Step-12 closeout, or historical Step-12 validation labels.
+
+## Later proof-assistant qualification
+
+The later Lean R1 closeout is maintained under formal verification rather than duplicated inside `evidence/`:
+
+[`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+
+That record documents the later Lean 4.34.0 kernel qualification of the principal Step-12 result set.
+
+The Lean closeout is a later proof-assistant qualification record.
+
+It does not replace the historical Step-12 machine-check evidence, and it did not by itself establish production source/runtime correspondence.
+
 ## Related closeout
 
 See:
@@ -191,6 +246,34 @@ See:
 * [`correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
 
 for the bounded correspondence records.
+
+---
+
+# 🧭 A8 production/private-context evidence boundary
+
+No separate A8 production/private-context evidence package is indexed here yet.
+
+That is deliberate.
+
+A new A8 evidence package should be added only after the exact public-safe closeout artifacts intended for repository publication have been selected and admitted.
+
+Until then:
+
+```text
+qualified A8 engineering work exists
+    ≠
+public evidence package admitted
+```
+
+and:
+
+```text
+A8 frontend/private-context qualification
+    ≠
+automatic DGM theorem-runtime evidence
+```
+
+This index therefore does not invent or infer an A8 production/build identity.
 
 ---
 
@@ -405,6 +488,20 @@ guaranteed to correspond forever
 
 If a claim-bearing runtime object changes, the relevant correspondence must be re-established.
 
+The post-A8 DGM record is an example of that rule being applied:
+
+```text
+historical Step-12 source/runtime correspondence
+    ↓
+later runtime observation epoch
+    ↓
+fresh 11/11 source/runtime revalidation
+    ↓
+separate B/C theorem-specific live observation
+```
+
+The later observation strengthens the current record without rewriting the predecessor seal.
+
 ---
 
 # 📚 Evidence and claims are not the same thing
@@ -538,6 +635,7 @@ evidence/
 ├── governed-evolution/
 │   ├── README.md
 │   ├── governance-view.md
+│   ├── post-a8-theorem-correspondence-registry-r1.md
 │   ├── residuals.md
 │   ├── source-identity.md
 │   ├── step12-final-seal.md
@@ -578,7 +676,7 @@ Then use this directory to inspect the evidence supporting the bounded claims.
 
 # 🔎 Evidence navigation
 
-## Governed evolution / Step 12
+## Governed evolution / Step 12 + later successor evidence
 
 * [Governed-evolution overview](governed-evolution/README.md)
 * [Source identity](governed-evolution/source-identity.md)
@@ -586,6 +684,12 @@ Then use this directory to inspect the evidence supporting the bounded claims.
 * [Governance view](governed-evolution/governance-view.md)
 * [Residuals and non-promotions](governed-evolution/residuals.md)
 * [Step-12 final seal](governed-evolution/step12-final-seal.md)
+* [Post-A8 DGM theorem correspondence registry R1](governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+* [Lean R1 proof-assistant qualification closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+
+The Step-12 final seal remains the historical predecessor record.
+
+The Lean R1 and post-A8 records are additive successor evidence.
 
 ## Publication / Step 17
 
@@ -618,7 +722,7 @@ Then use this directory to inspect the evidence supporting the bounded claims.
 
 A defensible description of this directory is:
 
-> **The ALLIS evidence layer preserves bounded, public, non-sensitive technical records supporting specific claims about governed production evolution, formal/correspondence results, immutable publication, runtime isolation, network continuity, and completed workstream evidence seals.**
+> **The ALLIS evidence layer preserves bounded, public, non-sensitive technical records supporting specific claims about governed production evolution, historical Step-12 evidence, later Lean proof-assistant qualification, later post-A8 DGM correspondence revalidation, immutable publication, runtime isolation, network continuity, and completed workstream evidence seals.**
 
 It does not itself establish:
 
@@ -641,3 +745,5 @@ The evidence layer follows the same rule as the larger ALLIS repository:
 And:
 
 > **A claim may advance only as far as its evidence supports.**
+
+> **Successor evidence may strengthen the current bounded record without rewriting the historical evidence that established an earlier observation or seal.**
