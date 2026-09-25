@@ -3203,7 +3203,40 @@ receipt
 
 The architecture generalizes the authority separation.
 
-The bounded Step-12 result supplies current formal/correspondence evidence.
+The bounded Step-12 result supplies the historical formal/correspondence basis.
+
+Later successor evidence strengthens that bounded record without changing the authority model:
+
+```text
+historical Step-12 machine checking
+    +
+later Lean R1 proof-assistant qualification
+    +
+current post-A8 source/runtime correspondence
+    +
+theorem-specific live observation where present
+```
+
+Those evidence layers remain different from operation authority.
+
+```text
+formal proof
+    ≠
+operation authority
+
+source/runtime correspondence
+    ≠
+operation authority
+
+live fail-closed observation
+    ≠
+permission to execute a protected mutation
+```
+
+See:
+
+- [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ---
 
@@ -3244,6 +3277,30 @@ Correspondence-Verified
 
 Do not promote a trust claim beyond the evidence that supports it.
 
+The hierarchy itself is unchanged by the later Lean work.
+
+Within the bounded Step-12 theorem domain, preserve the evidence-method distinction:
+
+```text
+historical Step-12 machine checking
+    ≠
+later Lean R1 proof-assistant qualification
+```
+
+and preserve the correspondence distinction:
+
+```text
+proof-assistant qualification
+    ≠
+source/runtime correspondence
+    ≠
+theorem-specific live observation
+```
+
+These distinctions explain the evidence supporting a validation level.
+
+They do not create a new authority class or a new validation rung.
+
 ---
 
 # 138. Current bounded Step-12 example
@@ -3262,6 +3319,34 @@ It includes:
 - empty-spool no-claim behavior;
 - explicit residuals.
 
+The later Lean R1 workstream independently kernel-checked the principal Step-12 proposition set.
+
+The current post-A8 source/runtime relationship is:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The current bounded theorem states are:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+For `T12D-B`, the current live revalidation observed invalid authorization fail closed: the deliberately invalid signature was rejected without authorized-spool publication, authorization consumption, or receipt creation.
+
+For `T12D-C`, the current live revalidation observed empty-spool non-application: no worker claim, authorization consumption, receipt, or authorized apply occurred.
+
+These are **evidence and correspondence results**.
+
+They do not grant operation authority.
+
 It remains bounded.
 
 ---
@@ -3270,7 +3355,17 @@ It remains bounded.
 
 The bounded Step-12 record does not establish a real positive production authorization/application observation for the protected write path.
 
-Therefore architecture should not rewrite:
+The later post-A8 work revalidated the current theorem-relevant source/runtime relationship, but the positive authorized-apply production path was deliberately not executed.
+
+Therefore:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+remains the current validation state and must not be promoted to `CORRESPONDENCE_VERIFIED`.
+
+Architecture should not rewrite:
 
 ```text
 machine-checked positive path
@@ -3282,7 +3377,55 @@ as:
 live positive production apply observed
 ```
 
+and must not rewrite:
+
+```text
+current source/runtime correspondence
+```
+
+as:
+
+```text
+current permission to execute
+```
+
 The authority model stays stronger than the current observation claim.
+
+---
+
+# 139A. Current post-A8 production-action boundary
+
+The current post-A8 B/C probes were deliberately bounded so that fail-closed behavior could be observed without exercising real protected mutation authority.
+
+The evidence record preserves:
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+```
+
+This distinction is central to the trust model.
+
+```text
+observing rejection of invalid authority
+    ≠
+issuing valid production authority
+```
+
+```text
+observing empty-spool non-application
+    ≠
+consuming production authority
+```
+
+```text
+correspondence-verified fail-closed behavior
+    ≠
+authorized production mutation
+```
+
+The current evidence strengthens the bounded trust/correspondence record without transferring or manufacturing operation authority.
 
 ---
 
@@ -3372,6 +3515,24 @@ The private-state architecture defines the required inward authority boundary.
 Historical implementation evidence exists.
 
 The public architecture should not convert historical runtime evidence into current runtime-authoritative H_people status unless current qualification and correspondence establish it.
+
+This reconciliation also does **not** infer a current A8 application-private-context authority object from architecture alone.
+
+No exact sealed A8 production identity is being admitted here.
+
+If a future sealed A8 private-context object is admitted, it must remain distinct from:
+
+```text
+H_people runtime authority
+```
+
+and:
+
+```text
+DGM theorem runtime authority
+```
+
+unless a separate qualified correspondence record establishes otherwise.
 
 Architecture and current runtime authority remain separate.
 
@@ -3773,6 +3934,26 @@ allis_trust_and_authority:
   validation:
     architecture_is_runtime_proof: false
     correspondence_is_permanent: false
+    proof_creates_operation_authority: false
+    source_runtime_correspondence_creates_operation_authority: false
+    live_observation_creates_operation_authority: false
+    historical_step12_machine_checked_meaning_preserved: true
+    lean_r1_successor_is_distinct_evidence_method: true
+    current_dgm_source_runtime_correspondence: PASS_11_OF_11
+    current_dgm_theorem_state:
+      T12D-A: MACHINE_CHECKED
+      T12D-B: CORRESPONDENCE_VERIFIED
+      T12D-C: CORRESPONDENCE_VERIFIED
+      P12C-09: MACHINE_CHECKED_DISPROVEN
+    post_a8_production_action_boundary:
+      real_production_authorization_issued: false
+      real_production_authorization_consumed: false
+      real_production_dgm_patch_application: false
+
+  private_state_current_boundary:
+    current_a8_private_context_authority_admitted_here: false
+    application_private_context_equals_h_people_runtime_authority: false
+    application_private_context_equals_dgm_theorem_runtime_authority: false
 
   repository_boundary:
     production_mutation_safety_theorem_proven: false
@@ -3947,6 +4128,38 @@ Trust and authority determine whether the transition is permitted.
 
 Correspondence determines whether the implementation representations match the claim.
 
+The bounded DGM record now contains two distinct observation epochs:
+
+```text
+historical Step-12 correspondence
+    ≠
+current post-A8 correspondence revalidation
+```
+
+The current post-A8 source/runtime result is:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+That current runtime match is paired with current theorem-specific live observations for `T12D-B` and `T12D-C`.
+
+It is **not** paired with a positive authorized-apply observation for `T12D-A`.
+
+Therefore:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+T12D-A = MACHINE_CHECKED
+```
+
+Correspondence remains evidence about representation/behavior.
+
+It does not become operation permission.
+
+See the [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
+
 ---
 
 # 164. Relationship to evidence
@@ -3956,6 +4169,7 @@ Evidence records can support:
 - authority-object identity;
 - trust-anchor identity;
 - governance-view identity;
+- formal proof qualification;
 - runtime observation;
 - publication identity;
 - network continuity;
@@ -3963,7 +4177,15 @@ Evidence records can support:
 - residuals;
 - closeout.
 
-Evidence does not become authority merely by being strong.
+The later Lean R1 workstream adds a distinct proof-assistant qualification layer over the principal Step-12 proposition set.
+
+That successor evidence does not retroactively redefine the historical Step-12 `MACHINE_CHECKED` method, and it does not create authority to execute the modeled transition.
+
+The later post-A8 correspondence record adds current source/runtime and theorem-specific observation evidence for B/C.
+
+That evidence likewise does not become operation authority merely by being strong.
+
+See the [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
 
 ---
 
@@ -4052,6 +4274,14 @@ Do not rewrite this architecture document merely because one runtime observation
 
 Runtime state belongs in evidence and correspondence.
 
+When a later proof/correspondence epoch materially changes the evidence supporting an architectural example, this document may add a bounded evidence note or reference without redefining the authority semantics.
+
+```text
+evidence update
+    ≠
+authority-model change
+```
+
 ---
 
 # 169. Current whole-system boundary
@@ -4070,7 +4300,23 @@ SYSTEM_PROVEN=NO
 
 This does not invalidate completed bounded workstreams.
 
-It prevents architectural completeness from being misreported as whole-system proof.
+It also does not invalidate:
+
+- the later Lean R1 proof-assistant qualification;
+- current post-A8 B/C correspondence revalidation; or
+- the current 11/11 DGM source/runtime correspondence observation.
+
+Those remain bounded evidence results.
+
+They do not establish:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=YES
+SYSTEM_PROVEN=YES
+```
+
+It prevents architectural completeness, proof-assistant qualification, or bounded correspondence from being misreported as whole-system proof or current operation authority.
 
 ---
 
@@ -4178,7 +4424,11 @@ It prevents architectural completeness from being misreported as whole-system pr
 
 > **Evidence can support authority without becoming authority.**
 
+> **A formal proof can strengthen a claim without creating permission to execute the modeled transition.**
+
 > **Correspondence can validate implementation without creating operation permission.**
+
+> **Current B/C fail-closed correspondence does not grant a positive production authorization path.**
 
 > **Human and institutional authority remain distinct from ALLIS technical authority.**
 
