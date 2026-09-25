@@ -10,6 +10,7 @@
 ![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS-f59e0b?style=for-the-badge)
 ![Source](https://img.shields.io/badge/SOURCE_COMMIT-20c8cbe1-0ea5e9?style=for-the-badge)
 ![Files](https://img.shields.io/badge/SEALED_SOURCE_SET-11_FILES-16a34a?style=for-the-badge)
+![Post A8](https://img.shields.io/badge/POST--A8_RUNTIME-11_OF_11_PASS-16a34a?style=for-the-badge)
 ![Scope](https://img.shields.io/badge/SOURCE_DOMAIN-BOUNDED-f97316?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
@@ -27,6 +28,8 @@
 > It does **not** itself establish runtime correspondence. Runtime correspondence is a separate, time-indexed observation recorded in `source-to-runtime.md`.
 >
 > The public record establishes the sealed commit, the 11-file source-set identity and cardinality, and formal-to-source binding. It does **not** fabricate the original per-file 11-name/SHA-256 manifest where that manifest is not reproduced in the available public evidence.
+>
+> A later post-A8 qualification revalidated this **same bounded source domain** against exact observed NBB and worker runtimes. That later observation is successor correspondence evidence; it does **not** define a replacement source object or expand the Step-12 source domain.
 
 ---
 
@@ -87,6 +90,8 @@ The broader ALLIS principle remains:
 
 > **State does not become authority merely because it exists.**
 
+> **A later runtime revalidation may strengthen current correspondence without redefining the immutable source domain it was measured against.**
+
 Applied here:
 
 ```text
@@ -123,8 +128,12 @@ future correspondence
 | Source domain | Exact sealed 11-file production authorized-adoption source set |
 | Source-set cardinality | `11` |
 | Formal-to-source correspondence | `PASS` |
-| NBB source/runtime correspondence | `11/11 PASS` at final seal |
-| Worker source/runtime correspondence | `11/11 PASS` at final seal |
+| Historical NBB source/runtime correspondence | `11/11 PASS` at Step-12 final seal |
+| Historical worker source/runtime correspondence | `11/11 PASS` at Step-12 final seal |
+| Current immutable source revalidation | `IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11` |
+| Current NBB source/runtime correspondence | `NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| Current worker source/runtime correspondence | `WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| Current combined source/runtime correspondence | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
 | Final Step-12 status | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` |
 | Final Step-12 seal SHA-256 | `b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b` |
 | Scope | `BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDENCE_ONLY` |
@@ -284,6 +293,141 @@ This is a documentation-completeness limitation, not a reversal of the Step-12 s
 
 ---
 
+# ➕ 4A. Post-A8 successor source-identity revalidation
+
+The later post-A8 qualification did **not** infer a new source domain.
+
+It consumed the sealed correspondence harness contract and revalidated the same theorem-relevant production source identity against the current observed DGM runtimes.
+
+The qualified source identity remained:
+
+```text
+SOURCE_COMMIT=
+20c8cbe175781c8a1c05d65c03977859ceca884a
+
+SOURCE_TREE=
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+CANONICAL_SOURCE_SET_CARDINALITY=11
+
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+```
+
+## Sealed harness relationship
+
+The current qualification used the previously sealed source/runtime harness profile:
+
+```text
+HARNESS_CONTRACT=DGM_CORRESPONDENCE_HARNESS_CONTRACT_R1
+
+HARNESS_PROFILE_CONSUMED=YES
+
+HARNESS_SCHEMA_DISCOVERY_REPEATED=NO
+```
+
+This matters because the qualification did not silently rediscover or redefine the theorem source domain during the same step that adjudicated correspondence.
+
+The method was:
+
+```text
+discover once
+    ↓
+freeze contract
+    ↓
+qualify against contract
+    ↓
+seal result
+```
+
+The harness resolved the theorem-relevant canonical set as exactly these eleven paths:
+
+```text
+services/dgm_adoption_worker.py
+services/hilbert/dgm_authorized_adoption.py
+services/hilbert/dgm_authorized_spool.py
+services/hilbert/dgm_evolution_agent.py
+services/hilbert/dgm_evolution_authorization_bridge.py
+services/hilbert/dgm_evolution_kernel.py
+services/hilbert/dgm_governed_cycle.py
+services/hilbert/dgm_nbb_authorized_package.py
+services/hilbert/dgm_public_key_authorization_verifier.py
+services/hilbert/dgm_worker_authorized_consumer.py
+services/nbb_darwin_godel_machines.py
+```
+
+This is the current qualified **canonical path set** for the already established 11-file theorem domain.
+
+It does not reconstruct or replace the historical Step-11 per-file SHA-256 manifest that is not reproduced in this public record.
+
+## Current observed NBB runtime identity
+
+The exact NBB runtime observed during the post-A8 qualification was:
+
+```text
+NBB_CONTAINER_ID=
+851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48
+
+NBB_CONTAINER_NAME=
+nbb_darwin_godel_machines
+```
+
+Observed result:
+
+```text
+NBB_SOURCE_RUNTIME_MATCH_COUNT=11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+## Current observed worker runtime identity
+
+The exact worker runtime observed during the post-A8 qualification was:
+
+```text
+WORKER_CONTAINER_ID=
+abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d
+
+WORKER_CONTAINER_NAME=
+msjarvis-rebuild-dgm_adoption_worker-1
+```
+
+Observed result:
+
+```text
+WORKER_SOURCE_RUNTIME_MATCH_COUNT=11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Combined current result:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+## Observation-specific identity boundary
+
+The container IDs above identify the exact runtime objects observed during this post-A8 qualification epoch.
+
+They are **not perpetual runtime identities**.
+
+```text
+observed container identity at qualification time
+    ≠
+identity guaranteed for every future deployment
+```
+
+If either theorem-relevant runtime is replaced, rebuilt, remounted, or otherwise changes, the runtime correspondence claim must be re-established.
+
+The stable source object remains the immutable Git source identity.
+
+The runtime relationship remains time-indexed observation evidence.
+
+See:
+
+- [`post-a8-theorem-correspondence-registry-r1.md`](post-a8-theorem-correspondence-registry-r1.md)
+- [`../../correspondence/authorized-adoption/source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md)
+
+---
+
 # 5. Source modules explicitly evidenced by the formal correspondence record
 
 The supporting source analysis explicitly references production modules including:
@@ -300,16 +444,22 @@ services/hilbert/dgm_evolution_agent.py
 services/hilbert/dgm_evolution_kernel.py
 ```
 
-These paths are included here as **explicitly evidenced implementation references**.
+These paths are included here as **explicitly evidenced implementation references** from the historical formal-correspondence record.
 
-They are **not presented as the complete canonical 11-file manifest** because the currently available evidence does not expose the two remaining manifest members or the complete per-file sealed hash table.
+The later post-A8 sealed harness qualification independently resolved the full canonical 11-path set shown in Section 4A.
 
-This distinction is deliberate:
+That later path resolution does **not** mean that the historical Step-11 per-file SHA-256 table has been reconstructed in this document.
+
+The distinction is deliberate:
 
 ```text
-explicitly referenced source module
+historically referenced source modules
 ≠
-complete sealed source-manifest entry
+complete historical per-file Step-11 SHA table
+
+current sealed-harness canonical path resolution
+≠
+fabricated historical per-file SHA manifest
 ```
 
 ---
@@ -405,6 +555,18 @@ with:
 ```
 
 Thus every one of the eleven governed files in the sealed source domain corresponded by byte identity in both inspected runtime roles at the final seal boundary.
+
+That is the historical Step-12 observation.
+
+The later post-A8 qualification separately re-established:
+
+```text
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+against the exact current runtime identities recorded in Section 4A.
 
 ---
 
@@ -535,6 +697,16 @@ C_{SR}^{\tau_{seal}}(S,R)=1
 does not automatically imply correspondence for a changed source/runtime state.
 
 A successor source requires a new evidence boundary.
+
+The post-A8 qualification described in this record was **not** such a source replacement.
+
+It revalidated the same immutable source commit/tree against a later observed runtime epoch.
+
+```text
+same source identity + later runtime observation
+    ≠
+successor source
+```
 
 ---
 
@@ -690,6 +862,22 @@ This distinction is preserved in:
 R12F-07 = POINT_IN_TIME_BINDING
 ```
 
+The current record now contains two runtime observation epochs:
+
+```text
+Step-12 final seal
+    =
+historical 11/11 source/runtime correspondence
+
+post-A8 revalidation
+    =
+current 11/11 source/runtime correspondence
+```
+
+Neither observation is perpetual.
+
+A future changed runtime must earn another correspondence result.
+
 ---
 
 # 18. Final source-identity statement
@@ -758,6 +946,21 @@ No later source state inherits this identity automatically.
 
 No mutation authority is created by this identity.
 
+The later post-A8 observation does not alter those Step-12 source facts.
+
+It separately establishes for the same immutable source object:
+
+```text
+SOURCE_TREE=
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+with observation-specific NBB and worker runtime identities.
+
 ---
 
 # 📚 19. Repository location
@@ -807,6 +1010,7 @@ evidence/
         governance-view.md
         residuals.md
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
 ```
 
 Use:
@@ -820,7 +1024,8 @@ Use:
 - [`trust-anchor.md`](trust-anchor.md) — separate sealed public verification identity
 - [`governance-view.md`](governance-view.md) — separate sealed governance-view identity and NBB correspondence
 - [`residuals.md`](residuals.md) — bounded residual and non-promotion ledger
-- [`step12-final-seal.md`](step12-final-seal.md) — controlling Step-12 final seal
+- [`step12-final-seal.md`](step12-final-seal.md) — controlling historical Step-12 final seal
+- [`post-a8-theorem-correspondence-registry-r1.md`](post-a8-theorem-correspondence-registry-r1.md) — later current source/runtime and theorem-correspondence successor observation
 
 The ownership split remains:
 
@@ -861,9 +1066,18 @@ The first does not substitute for the second.
 <br>
 
 ### 🕒 RUNTIME RELATION
-**source identity = stable historical object**
+**source identity = stable immutable object**
 
-**runtime correspondence = separate point-in-time observation**
+**Step-12 runtime = historical point-in-time observation**
+
+**post-A8 runtime = later point-in-time `PASS_11_OF_11` observation**
+
+<br>
+
+### 🖥️ CURRENT OBSERVATION
+**exact NBB + worker identities recorded for the post-A8 qualification epoch**
+
+**container identities are observation-specific, not perpetual**
 
 <br>
 
