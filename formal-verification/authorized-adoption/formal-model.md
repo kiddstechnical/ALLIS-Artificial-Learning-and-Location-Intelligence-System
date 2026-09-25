@@ -28,6 +28,10 @@
 >
 > It does **not** mean that the model or theorem family was proved in Lean, Coq, Isabelle, TLA+, or another general-purpose proof-assistant/model-checking environment. No such stronger claim should be inferred without separate evidence.
 >
+> **Successor evidence note — September 2026:** a later Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal Step-12 result set. That later proof-assistant qualification is additive successor evidence; it does **not** retroactively redefine what the historical Step-12 `MACHINE_CHECKED` label meant at seal time.
+>
+> See [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md).
+>
 > The model also remains narrower than a general production-mutation safety theorem or whole-system proof.
 
 ---
@@ -1322,6 +1326,18 @@ Within this Step-12 model, `MACHINE_CHECKED` means machine-executed source-struc
 
 It does **not** mean the theorem was proved in Coq, Lean, Isabelle, TLA+, or another general proof-assistant or model-checking environment.
 
+That statement defines the **historical Step-12 method**.
+
+Later Lean R1 successor evidence separately kernel-checked the principal Step-12 theorem/disproof set. The two evidence methods remain distinct:
+
+```text
+historical Step-12 MACHINE_CHECKED
+    ≠
+later Lean R1 proof-assistant qualification
+```
+
+The later Lean closeout is successor evidence, not a rewrite of premise P6.
+
 ---
 
 # ✅ 24. Principal formal results
@@ -1375,7 +1391,26 @@ implies the required authorization and state predicates held
 within the sealed bounded model
 ```
 
-The theorem is not correspondence-verified for the positive production path because Step 12 did not execute a real positive production authorization and production DGM patch application.
+The theorem was not correspondence-verified for the positive production path at the Step-12 final seal because Step 12 did not execute a real positive production authorization and production DGM patch application.
+
+Later post-A8 revalidation established current source/runtime correspondence for the same theorem-relevant 11-file source set:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+but the positive authorized-apply production path still was not executed:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
+
+Therefore the current validation level remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
 
 ### T12D-B — Invalid-authorization fail-closed theorem
 
@@ -1405,6 +1440,17 @@ invalid authority
 does not become authorized work
 ```
 
+Later post-A8 revalidation observed the same bounded theorem against the current source/runtime state. A deliberately invalid cryptographic signature was rejected through the live validation/publication path, with:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES
+```
+
+and no authorized-spool publication, no authorization consumption, and no receipt.
+
+This current observation strengthens the present correspondence record without rewriting the historical Step-12 observation.
+
 ### T12D-C — Empty-spool non-application theorem
 
 ```math
@@ -1431,6 +1477,17 @@ Q_4\text{ not reached}
 **Validation level:** `CORRESPONDENCE_VERIFIED`
 
 The runtime does not invent authorized work when no authorized record exists.
+
+Later post-A8 revalidation observed the current worker with an empty incoming/claimed spool and found:
+
+```text
+T12D_C_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES
+```
+
+with no worker claim, no authorization consumption, no receipt, and no authorized apply.
+
+This current observation strengthens the present correspondence record without rewriting the historical Step-12 observation.
 
 ---
 
@@ -1511,7 +1568,21 @@ That preservation is intentional.
 
 # 🛡️ 26. Formal-model validation boundary
 
-The formal model is correspondence-verified only for the deployed identity and observed boundaries established by the Step-12 evidence package.
+The historical Step-12 evidence package established the original deployed-identity and observed-boundary correspondence record.
+
+Later successor evidence adds:
+
+- Lean R1 proof-assistant qualification of the principal Step-12 result set; and
+- post-A8 current source/runtime plus theorem-specific live revalidation for `T12D-B` and `T12D-C`.
+
+The current theorem-state vector is:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
 
 This does not mean every possible modeled behavior has been observed in production.
 
@@ -1521,7 +1592,18 @@ In particular:
 LiveObs^{+}(T12D\text{-}A)=0
 ```
 
-because no real positive production authorization/application was executed as part of Step 12.
+because no real positive production authorization/application was executed during Step 12 **or** during the later post-A8 revalidation.
+
+The current post-A8 source/runtime relationship is:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Source/runtime byte correspondence alone does not promote a theorem. `T12D-B` and `T12D-C` have separate current live observations; `T12D-A` does not have the required positive live observation.
 
 The model therefore keeps these categories distinct:
 
@@ -1759,6 +1841,8 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 
 correspondence/
     authorized-adoption/
@@ -1768,6 +1852,7 @@ correspondence/
 evidence/
     governed-evolution/
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
         source-identity.md
         trust-anchor.md
         governance-view.md
@@ -1779,9 +1864,11 @@ Use:
 - [`formal-model.md`](./formal-model.md) — this bounded mathematical object and architecture
 - [`theorem-registry.md`](./theorem-registry.md) — formal proposition dispositions and validation levels
 - [`counterexample-registry.md`](./counterexample-registry.md) — preserved falsifying cases
+- [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md) — later Lean R1 proof-assistant qualification closeout
 - [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
 - [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
 - [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) — controlling bounded Step-12 final seal
+- [`post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) — later current DGM source/runtime and B/C live revalidation
 - [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed source identity
 - [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — public verification trust identity
 - [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — governance-state identity and correspondence evidence
@@ -1827,11 +1914,14 @@ the authority required to act on it.
 
 <br>
 
-### 🧪 `MACHINE_CHECKED` MEANS
+### 🧪 HISTORICAL STEP-12 `MACHINE_CHECKED` MEANS
 **machine-executed source-structure checks + bounded execution evidence**
 
-### 🚫 IT DOES NOT MEAN
+### 🚫 THAT HISTORICAL LABEL DOES NOT MEAN
 **proof in Lean, Coq, Isabelle, TLA+, or another general-purpose proof-assistant/model-checking environment**
+
+### ➕ LATER SUCCESSOR EVIDENCE
+**Lean 4.34.0 R1 independently kernel-checked the principal Step-12 result set; this does not rename the historical Step-12 label**
 
 <br>
 
@@ -1853,3 +1943,5 @@ the authority required to act on it.
 > **State does not become authority merely because it exists.**
 
 > **A bounded machine-checked result must be described at the validation level actually earned; it must not be relabeled as proof in a general-purpose formal prover without separate evidence.**
+
+> **Later proof-assistant and correspondence evidence is additive successor evidence; it does not rewrite the historical Step-12 seal or change the formal object’s bounded semantics.**
