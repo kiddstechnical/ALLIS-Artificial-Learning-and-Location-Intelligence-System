@@ -2264,6 +2264,58 @@ A key hash without role or environment can be ambiguous.
 
 ---
 
+# 86A. Current post-A8 verification-key observation
+
+The current post-A8 DGM observation used the same public verification-key identity recorded by the bounded correspondence harness.
+
+The observed public-key SHA-256 was:
+
+```text
+4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5
+```
+
+This matching hash is an **observation about the verification trust anchor used by the bounded runtime**.
+
+It does not establish a new trust theorem.
+
+It does not confer private signing authority.
+
+It does not create operation authority.
+
+```text
+matching public verification-key identity
+    =
+bounded trust-anchor observation
+```
+
+but:
+
+```text
+matching public verification-key identity
+    ≠
+new trust theorem
+
+matching public verification-key identity
+    ≠
+private signing authority
+
+matching public verification-key identity
+    ≠
+operation authority
+```
+
+The observation is time-specific and evidence-specific.
+
+A future change to the verification key, verifier configuration, runtime identity, or another claim-bearing trust boundary requires fresh evidence before the current observation is carried forward.
+
+See:
+
+- [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+- [Authorized-adoption source → runtime correspondence](../../correspondence/authorized-adoption/source-to-runtime.md)
+- [Governed-evolution trust-anchor evidence](../../evidence/governed-evolution/trust-anchor.md)
+
+---
+
 # 87. Governance-view provenance
 
 Governance state should likewise preserve identity.
@@ -3329,6 +3381,17 @@ NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
 WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
 CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
 ```
+
+The same observation epoch recorded the public verification trust anchor used by the bounded runtime as:
+
+```text
+SHA-256:
+4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5
+```
+
+That matching verification-key identity is **trust-anchor observation evidence**.
+
+It is not a new trust theorem, does not confer signing authority, and does not create operation authority.
 
 The current bounded theorem states are:
 
