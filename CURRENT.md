@@ -4,7 +4,7 @@
 
 ### Current qualified technical state
 
-**Status as of September 20, 2026**
+**Status as of September 25, 2026**
 
 <br>
 
@@ -35,9 +35,9 @@
 |---|---|---|
 | 🟢 **Workstream F** | **CLOSED** | F1–F5 closed · 5/5 proofs · formal close |
 | 🟢 **DGM Step 12** | **GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS** | The bounded authorized-adoption formal and correspondence workstream is closed |
-| 🤖 **T12D-A** | **MACHINE_CHECKED** | The bounded successful-application theorem satisfies the Step-12 machine-checking method |
-| 🔗 **T12D-B** | **CORRESPONDENCE_VERIFIED** | Invalid authorization fails closed in the verified source/runtime path |
-| 🔗 **T12D-C** | **CORRESPONDENCE_VERIFIED** | An empty incoming spool produces no worker claim or authorized application |
+| 🤖 **T12D-A** | **MACHINE_CHECKED** | Lean-kernel checked; current source/runtime correspondence is 11/11, but no positive authorized-apply production observation was executed |
+| 🔗 **T12D-B** | **CORRESPONDENCE_VERIFIED** | Lean-kernel checked; current 11/11 source/runtime correspondence plus post-A8 invalid-authorization live revalidation |
+| 🔗 **T12D-C** | **CORRESPONDENCE_VERIFIED** | Lean-kernel checked; current 11/11 source/runtime correspondence plus post-A8 empty-spool live revalidation |
 | 🔴 **P12C-09** | **MACHINE_CHECKED_DISPROVEN** | Unconditional terminal totality is false in the bounded model |
 | 🟢 **Publication Step 17** | **GREEN COMPLETE** | Steps 0–17 are green · 25/25 fixed-goal criteria pass |
 | 🌐 **Governed publication endpoint** | **COMPLETE at final seal** | The fixed-goal read-only publication path is complete |
@@ -87,6 +87,10 @@ flowchart TB
 
     D["🔐 STEP-12 DGM SOURCE<br/>20c8cbe1…<br/>authorized-adoption source"]:::dgm
 
+    L["📐 LEAN R1 QUALIFICATION<br/>Lean 4.34.0<br/>principal result set kernel-checked"]:::proof2
+
+    R["🔗 POST-A8 DGM CORRESPONDENCE<br/>current NBB + worker<br/>PASS 11/11"]:::corr
+
     T["🛡️ STEP-12 TRUST + GOVERNANCE<br/>public trust + governance view"]:::trust
 
     P["🌐 STEP-17 PUBLICATION<br/>allis-publication-step6-retention-v2<br/>SHA d6ab6352…"]:::pub
@@ -98,6 +102,8 @@ flowchart TB
     F --> C
     A --> C
     D --> C
+    L --> C
+    R --> C
     T --> C
     P --> C
     G --> C
@@ -105,6 +111,8 @@ flowchart TB
     classDef source fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef proof fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
     classDef dgm fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
+    classDef proof2 fill:#c4b5fd,stroke:#6d28d9,color:#3b0764,stroke-width:2px;
+    classDef corr fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
     classDef trust fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
     classDef pub fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
     classDef gui fill:#2563eb,stroke:#1e3a8a,color:#ffffff,stroke-width:2px;
@@ -118,6 +126,8 @@ flowchart TB
 | ✅ **Workstream-F qualified source baseline** | branch `remediation/active-source-baseline-20260902` · HEAD `65b9f7dbd594ec9d225152aabd705eefc9216dbb` · tag `stage10-auth-identity-65b9f7dbd594` | Source authority for Workstream-F close | Workstream-F acceptance lineage |
 | 📐 **A5 source anchor** | HEAD `35f1aa5586e1a23e1ab88f4d757c451b44506893` · tree `36dd9f2425db4b23bacfce1cb258603cace25f1b` | Source anchor for bounded formalization and wiring analysis | A5 formalization domain |
 | 🔐 **Step-12 production DGM source** | `20c8cbe175781c8a1c05d65c03977859ceca884a` | Production source for `DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1` | Bounded authorized-adoption model |
+| 📐 **Lean R1 qualification** | Lean `4.34.0` · local qualified proof workstream | Later proof-assistant qualification of `T12D-A`, `T12D-B`, `T12D-C`, and the `P12C-09` disproof | Successor proof evidence; does not redefine historical Step-12 `MACHINE_CHECKED` |
+| 🔗 **Post-A8 DGM theorem correspondence registry R1** | `POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1=PASS` | Current source/runtime and theorem-specific live revalidation | Successor correspondence evidence for the bounded DGM theorem domain |
 | 🔑 **Step-12 public trust object** | SHA-256 `4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5` | Public verification trust object | Step-12 trust correspondence |
 | 🧭 **Step-12 governance view** | SHA-256 `26523c0bad40ff06a75c62a802f20195295534764dce45cfa6acdcdaecc3fcc2` | Sealed governance object | Step-12 governance correspondence |
 | 🌐 **Step-17 publication** | ID `allis-publication-step6-retention-v2` | Governed public projection | Step-17 publication workstream |
@@ -125,6 +135,9 @@ flowchart TB
 | 🖥️ **Step-17 frontend build** | `5By6R3CWTM7NDXc-4lmSi` | Frontend build identity | Final Step-17 GUI observation |
 
 These objects are complementary. Together, they describe the qualified technical state across several bounded workstreams.
+
+> [!NOTE]
+> The Lean R1 qualification and post-A8 DGM correspondence registry are **successor evidence objects**. They do not replace the historical Step-12 source, trust, governance, or final-seal objects.
 
 ---
 
@@ -258,6 +271,64 @@ b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b
 | `T12D-C` | 🔗 **CORRESPONDENCE_VERIFIED** | An empty incoming spool produces no worker claim or authorized application |
 | `P12C-09` | 🔴 **MACHINE_CHECKED_DISPROVEN** | A claimed record is not guaranteed to reach Completed or Rejected |
 
+## Later Lean and post-A8 successor evidence
+
+The historical Step-12 validation labels above remain unchanged.
+
+A later Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal result set:
+
+```text
+T12D_A_LEAN_KERNEL_CHECKED=YES
+T12D_B_LEAN_KERNEL_CHECKED=YES
+T12D_C_LEAN_KERNEL_CHECKED=YES
+P12C_09_LEAN_KERNEL_CHECKED=YES
+
+T12D_A_AXIOMS=NONE
+T12D_B_AXIOMS=NONE
+T12D_C_AXIOMS=NONE
+P12C_09_AXIOMS=NONE
+```
+
+That later Lean work does **not** retroactively redefine the historical Step-12 `MACHINE_CHECKED` label.
+
+A subsequent post-A8 correspondence revalidation established:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The post-A8 theorem-specific live observations then supported:
+
+```text
+T12D_B_CURRENT_LIVE_OBSERVATION=PASS
+T12D_B_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+
+T12D_C_CURRENT_LIVE_OBSERVATION=PASS
+T12D_C_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+`T12D-A` remains:
+
+```text
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
+
+because no positive authorized-apply production observation was executed.
+
+The `P12C-09` negative result remains:
+
+```text
+P12C_09_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED_DISPROVEN
+```
+
+See:
+
+- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+
 ```mermaid
 flowchart LR
     A["📦 External package"] --> B["🛡️ NBB validation"]
@@ -283,7 +354,7 @@ flowchart LR
 
 | Residual | Status |
 |---|---|
-| Positive live authorized apply | `NOT_OBSERVED` in the Step-12 formal workstream |
+| Positive live authorized apply | `NOT_OBSERVED` in Step 12 and still `NOT_EXECUTED` in the later post-A8 current correspondence revalidation |
 | Unconditional terminal totality | `DISPROVEN` |
 | General production mutation safety | `NOT_PROVEN` |
 | Whole-system safety | `NOT_PROVEN` |
@@ -307,6 +378,8 @@ Read the detailed records:
 - [Formal model](formal-verification/authorized-adoption/formal-model.md)
 - [Theorem registry](formal-verification/authorized-adoption/theorem-registry.md)
 - [Counterexample registry](formal-verification/authorized-adoption/counterexample-registry.md)
+- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 - [Step-12 final seal](evidence/governed-evolution/step12-final-seal.md)
 - [Residuals and non-promotions](evidence/governed-evolution/residuals.md)
 
@@ -522,6 +595,36 @@ permanent correspondence
 
 Revalidate correspondence after a claim-bearing runtime object changes.
 
+## Current post-A8 DGM correspondence epoch
+
+The newest bounded DGM theorem-correspondence evidence does not rely only on the historical Step-12 final-seal observation.
+
+The later post-A8 revalidation established:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+for both current observed theorem-relevant runtime surfaces:
+
+```text
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+For `T12D-B`, a deliberately invalid authorization signature was rejected and produced no authorized-spool publication, authorization consumption, or receipt.
+
+For `T12D-C`, an empty authorized spool remained empty and produced no worker claim, authorization consumption, receipt, or authorized apply.
+
+These current live observations support the existing `CORRESPONDENCE_VERIFIED` status of `T12D-B` and `T12D-C`.
+
+`T12D-A` remains `MACHINE_CHECKED` because the positive authorized-apply production path was not executed.
+
+> [!IMPORTANT]
+> Source/runtime byte identity alone does not establish theorem-specific behavior. The later B/C promotion depends on both current 11/11 source/runtime correspondence and the separate theorem-specific live observations.
+
+See the [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
+
 This rule applies to:
 
 - source/runtime correspondence;
@@ -538,9 +641,9 @@ This rule applies to:
 |---|---|---|
 | Workstream F is formally closed | Acceptance | ✅ Closed |
 | Step 12 is closed with explicit residuals | DGM | 🤖 / 🔗 Machine-checked + selected correspondence |
-| Invalid authorization fails closed | DGM | 🔗 Correspondence-Verified |
-| Empty incoming spool produces no authorized application | DGM | 🔗 Correspondence-Verified |
-| Unconditional terminal totality is false | DGM | 🔴 Machine-Checked Disproven |
+| Invalid authorization fails closed | DGM | 🔗 Correspondence-Verified · post-A8 current live revalidation |
+| Empty incoming spool produces no authorized application | DGM | 🔗 Correspondence-Verified · post-A8 current live revalidation |
+| Unconditional terminal totality is false | DGM | 🔴 Machine-Checked Disproven · later Lean-kernel-checked disproof preserved |
 | Candidate scores are authority-bearing semantics | Authorization | 🧷 Source/governance relevance established |
 | Step-17 publication fixed goal is complete | Publication | 🔗 Correspondence-verified fixed goal |
 | The publication endpoint is governed and read-only within the fixed goal | Publication | 🔗 Correspondence-verified fixed goal |
@@ -557,7 +660,7 @@ The following boundaries remain part of the current record.
 |---|---|
 | Whole-system proof | `SYSTEM_PROVEN=NO` |
 | Universal production mutation safety | Outside the bounded Step-12 theorem |
-| T12D-A live positive-path correspondence | Not established in Step 12 |
+| T12D-A live positive-path correspondence | Positive authorized apply remains unobserved after post-A8 revalidation; current level remains `MACHINE_CHECKED` |
 | Runtime correspondence | Applies to the verified observation point, not all future runtime states |
 | Historical D1R5 theorem | Applies to its historical theorem domain |
 | Private-state runtime correspondence | Requires separate evidence for each applicable path |
@@ -734,12 +837,14 @@ Private material remains outside the public repository where appropriate, includ
 - [Formal model](formal-verification/authorized-adoption/formal-model.md)
 - [Theorem registry](formal-verification/authorized-adoption/theorem-registry.md)
 - [Counterexample registry](formal-verification/authorized-adoption/counterexample-registry.md)
+- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
 ## Correspondence
 
 - [Correspondence overview](correspondence/README.md)
 - [Authorized adoption: model → source](correspondence/authorized-adoption/model-to-source.md)
 - [Authorized adoption: source → runtime](correspondence/authorized-adoption/source-to-runtime.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ## Evidence
 
@@ -748,6 +853,7 @@ Private material remains outside the public repository where appropriate, includ
 - [Source identity](evidence/governed-evolution/source-identity.md)
 - [Trust anchor](evidence/governed-evolution/trust-anchor.md)
 - [Governance view](evidence/governed-evolution/governance-view.md)
+- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 - [Residuals and non-promotions](evidence/governed-evolution/residuals.md)
 - [Step-12 final seal](evidence/governed-evolution/step12-final-seal.md)
 
@@ -768,6 +874,10 @@ Private material remains outside the public repository where appropriate, includ
 
 ### 🔗 Selected bounded results
 **CORRESPONDENCE-VERIFIED**
+
+`T12D-B` and `T12D-C` have current post-A8 11/11 source/runtime correspondence plus theorem-specific live revalidation.
+
+`T12D-A` remains **MACHINE_CHECKED** because no positive authorized-apply production observation was executed.
 
 ### 🔴 P12C-09
 **DISPROVEN AND PRESERVED**
