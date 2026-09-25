@@ -177,11 +177,29 @@ flowchart TD
 
 # 🔐 Package 1 — Authorized adoption
 
-The authorized-adoption package records the bounded Step-12 correspondence for:
+The authorized-adoption package records the bounded correspondence history for:
 
 ```text
 DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
 ```
+
+That history now contains two distinct observation epochs:
+
+```text
+Step-12 final-seal correspondence
+    =
+historical predecessor evidence
+```
+
+and:
+
+```text
+post-A8 source/runtime + theorem-specific B/C live revalidation
+    =
+newest current theorem-correspondence evidence
+```
+
+The later epoch is additive successor evidence. It does not rewrite the historical Step-12 final seal.
 
 The controlling production source identity is:
 
@@ -269,6 +287,22 @@ NBB source correspondence     11/11 PASS
 Worker source correspondence  11/11 PASS
 ```
 
+That remains the historical predecessor observation.
+
+A later post-A8 revalidation established the current theorem-relevant source/runtime relationship:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+This later result is the newest current source/runtime evidence for the bounded DGM theorem domain.
+
 Related bounded runtime evidence also recorded:
 
 ```text
@@ -302,9 +336,11 @@ ALLIS preserves those distinctions.
 
 ---
 
-# 📐 Step-12 theorem correspondence
+# 📐 Authorized-adoption theorem correspondence
 
 Matching source bytes are not enough to establish theorem-level correspondence.
+
+## Historical Step-12 criterion
 
 The Step-12 criterion is conceptually:
 
@@ -335,6 +371,91 @@ P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
 
 A theorem can therefore be machine-checked without being correspondence-verified.
+
+## Later/current post-A8 criterion
+
+The later work uses the same bounded logic against the current source/runtime observation epoch:
+
+```math
+MC(T,S)
+\land
+C_{SR}^{current}(S,R)
+\land
+LiveObs^{current}(T,R)
+```
+
+where the theorem-specific live observation is required when correspondence promotion depends on observed runtime behavior.
+
+Current evidence state:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+T12D-A = MACHINE_CHECKED
+
+T12D-B = CORRESPONDENCE_VERIFIED
+
+T12D-C = CORRESPONDENCE_VERIFIED
+
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+For `T12D-B`, the later/current observation epoch includes the bounded invalid-signature fail-closed observation.
+
+For `T12D-C`, the later/current observation epoch includes the bounded empty-spool non-application observation.
+
+For `T12D-A`, current source/runtime correspondence is present, but the positive authorized-apply production path was not executed:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
+
+Therefore `T12D-A` remains `MACHINE_CHECKED`.
+
+## Why 11/11 source/runtime identity is not enough by itself
+
+The later work preserves this distinction:
+
+```text
+current source/runtime byte correspondence
+    ≠
+theorem-specific live behavior observed
+```
+
+The 11/11 result establishes the current implementation identity relationship for the bounded source set.
+
+It does not, by itself, establish a theorem-specific runtime observation.
+
+That is why B/C required separate live observations for current correspondence verification and why A remains machine-checked.
+
+---
+
+# 🧭 A8 frontend scope note
+
+A qualified A8 frontend/private-context workstream is **not automatically the DGM theorem runtime**.
+
+These are different technical objects with different evidence and authority domains.
+
+Therefore:
+
+```text
+qualified A8 frontend
+    ≠
+automatic DGM theorem-runtime correspondence
+```
+
+and:
+
+```text
+A8 application/private-context evidence
+    ≠
+H_people runtime authority
+```
+
+This correspondence overview does not use A8 qualification to promote the DGM theorem runtime, H_people runtime authority, or any theorem validation level.
+
+Exact A8 production/build identity should be introduced only through its own sealed public-safe evidence record.
 
 ---
 
@@ -667,6 +788,18 @@ The correspondence layer establishes specific relationships within that graph.
 # 🕒 Correspondence is point-in-time
 
 Correspondence is temporal.
+
+The authorized-adoption package currently preserves two bounded time anchors:
+
+```text
+historical predecessor:
+Step-12 final-seal correspondence
+```
+
+```text
+newest current theorem-correspondence evidence:
+post-A8 source/runtime + live B/C revalidation
+```
 
 For source/runtime correspondence:
 
@@ -1059,11 +1192,11 @@ Correspondence remains focused on **relationships**.
 
 # 📋 Current package summary
 
-| Package                                               | Scope                                              | Result     | Time boundary                   |
-| ----------------------------------------------------- | -------------------------------------------------- | ---------- | ------------------------------- |
-| `authorized-adoption/model-to-source.md`              | Step-12 formal model → production source           | 🟢 `PASS`  | Bounded Step-12 source identity |
-| `authorized-adoption/source-to-runtime.md`            | Step-12 source → inspected runtime                 | 🟢 `PASS`  | Final Step-12 seal              |
-| `publication/source-to-publication-to-http-to-gui.md` | Step-17 qualified state → publication → HTTP → GUI | 🟢 `GREEN` | Final Step-17 observation       |
+| Package                                               | Scope                                              | Result     | Time boundary |
+| ----------------------------------------------------- | -------------------------------------------------- | ---------- | ------------- |
+| `authorized-adoption/model-to-source.md`              | Step-12 formal model → production source           | 🟢 `PASS`  | Bounded Step-12 source identity; later Lean relationship is documented separately |
+| `authorized-adoption/source-to-runtime.md`            | Bounded DGM source → inspected runtime             | 🟢 `PASS`  | Step-12 historical predecessor + current post-A8 11/11 revalidation |
+| `publication/source-to-publication-to-http-to-gui.md` | Step-17 qualified state → publication → HTTP → GUI | 🟢 `GREEN` | Final Step-17 observation |
 
 Current Step-12 close:
 
@@ -1115,6 +1248,25 @@ allis_correspondence:
         - source_to_runtime
         - theorem_specific_live_observation
 
+      evidence_epochs:
+        historical_predecessor:
+          name: step12_final_seal_correspondence
+        current:
+          name: post_a8_dgm_revalidation
+          immutable_source_identity: 11_of_11_PASS
+          nbb_source_to_runtime: 11_of_11_PASS
+          worker_source_to_runtime: 11_of_11_PASS
+          current_combined_source_runtime: 11_of_11_PASS
+          T12D_A_validation: MACHINE_CHECKED
+          T12D_A_positive_authorized_apply_executed: false
+          T12D_B_validation: CORRESPONDENCE_VERIFIED
+          T12D_C_validation: CORRESPONDENCE_VERIFIED
+          P12C_09_validation: MACHINE_CHECKED_DISPROVEN
+
+      correspondence_rule:
+        source_runtime_bytes_alone_promote_theorem: false
+        theorem_specific_live_observation_required_where_applicable: true
+
       result:
         state: GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
         system_proven: false
@@ -1141,6 +1293,10 @@ allis_correspondence:
         final_network_continuity: GREEN
         overall_goal: GREEN_COMPLETE
         system_proven: false
+
+  scope_boundaries:
+    qualified_a8_frontend_is_automatically_dgm_theorem_runtime: false
+    a8_application_private_context_is_hpeople_runtime_authority: false
 
   current_system:
     composite_object_model: true
@@ -1175,6 +1331,7 @@ allis_correspondence:
 * [`../formal-verification/authorized-adoption/formal-model.md`](../formal-verification/authorized-adoption/formal-model.md)
 * [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
 * [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
+* [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
 ## Authorized-adoption correspondence
 
@@ -1193,6 +1350,7 @@ allis_correspondence:
 * [`../evidence/governed-evolution/governance-view.md`](../evidence/governed-evolution/governance-view.md)
 * [`../evidence/governed-evolution/residuals.md`](../evidence/governed-evolution/residuals.md)
 * [`../evidence/governed-evolution/step12-final-seal.md`](../evidence/governed-evolution/step12-final-seal.md)
+* [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 * [`../evidence/publication/README.md`](../evidence/publication/README.md)
 * [`../evidence/publication/publication-identity.md`](../evidence/publication/publication-identity.md)
 * [`../evidence/publication/runtime-boundary.md`](../evidence/publication/runtime-boundary.md)
@@ -1226,7 +1384,7 @@ allis_correspondence:
 
 ### THEOREM-SPECIFIC OBSERVATION
 
-**Step 12 · bounded authorized adoption**
+**Step 12 historical predecessor + post-A8 current B/C revalidation · bounded authorized adoption**
 
 <br>
 
@@ -1283,6 +1441,10 @@ allis_correspondence:
 > **A formal proof is not automatically a runtime fact.**
 
 > **Matching source is not automatically observed theorem behavior.**
+
+> **Current 11/11 source/runtime correspondence alone does not promote a theorem; theorem-specific live observation remains separately required where applicable.**
+
+> **The qualified A8 frontend/private-context workstream is not automatically the DGM theorem runtime.**
 
 > **Qualified state is not automatically public state.**
 
