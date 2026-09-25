@@ -7,11 +7,11 @@
 <br>
 
 ![Folder](https://img.shields.io/badge/ACCEPTANCE-CLOSEOUT-7c3aed?style=for-the-badge)
-![Status](https://img.shields.io/badge/CLOSEOUT_RECORDS-3_OF_3_PRESENT-16a34a?style=for-the-badge)
+![Status](https://img.shields.io/badge/CLOSEOUT_RECORDS-4_PRESENT-16a34a?style=for-the-badge)
 ![Workstream F](https://img.shields.io/badge/WORKSTREAM_F-CLOSED-16a34a?style=for-the-badge)
 ![Step 12](https://img.shields.io/badge/DGM_STEP_12-CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
 ![Lean R1](https://img.shields.io/badge/LEAN_R1-SUCCESSOR_CLOSEOUT-9333ea?style=for-the-badge)
-![Post A8](https://img.shields.io/badge/POST--A8-SUCCESSOR_EVIDENCE-c026d3?style=for-the-badge)
+![Post A8](https://img.shields.io/badge/POST--A8-SUCCESSOR_CLOSEOUT-c026d3?style=for-the-badge)
 ![Step 17](https://img.shields.io/badge/PUBLICATION_STEP_17-GREEN_COMPLETE-14b8a6?style=for-the-badge)
 
 <br>
@@ -23,11 +23,11 @@
 ---
 
 > [!IMPORTANT]
-> This folder contains the **final closeout records** for the three bounded ALLIS workstreams represented in the current acceptance layer.
+> This folder contains the **three historical bounded ALLIS closeout records** represented in the acceptance layer plus the later **post-A8 DGM correspondence successor closeout**.
 >
 > A closeout record documents the accepted final state of a workstream after its scope, evidence, validation state, residuals, correspondence, and final authority have been established.
 >
-> Later successor work may close or produce evidence in another repository layer. Those successor records are linked here for continuity, but they do **not** rewrite the historical Workstream-F, Step-12, or Step-17 closeouts.
+> Later successor work may close in this directory or produce evidence in another repository layer. Those successor records extend the evidence chain forward, but they do **not** rewrite the historical Workstream-F, Step-12, or Step-17 closeouts.
 
 ---
 
@@ -89,31 +89,38 @@ acceptance/
     ├── README.md
     ├── workstream-f-close.md
     ├── dgm-step12-close.md
+    ├── post-a8-dgm-correspondence-close.md
     └── publication-step17-close.md
 ```
 
 | Record | Status | Purpose |
 |---|---|---|
 | [`workstream-f-close.md`](workstream-f-close.md) | ✅ **Present** | Formal Workstream-F close |
-| [`dgm-step12-close.md`](dgm-step12-close.md) | ✅ **Present** | Bounded Step-12 formal/correspondence close |
+| [`dgm-step12-close.md`](dgm-step12-close.md) | ✅ **Present** | Historical bounded Step-12 formal/correspondence close |
+| [`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md) | ✅ **Present** | Successor acceptance-layer close for the later bounded post-A8 DGM correspondence criterion |
 | [`publication-step17-close.md`](publication-step17-close.md) | ✅ **Present** | Governed-publication fixed-goal close |
 
-## Successor records outside this directory
+## Successor records and evidence
 
-The later Step-12 successor work is recorded in other technical layers rather than by rewriting the historical acceptance closeout.
+The later Step-12 successor work is represented by distinct proof, evidence, and acceptance records rather than by rewriting the historical Step-12 closeout.
 
 | Successor record | Location | Relationship to this closeout layer |
 |---|---|---|
 | 🟪 **Lean R1 workstream closeout** | [`../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) | Later proof-assistant workstream close; preserves historical Step-12 classifications |
-| 🟨 **Post-A8 DGM theorem correspondence registry R1** | [`../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) | Later current correspondence evidence; does not replace the Step-12 closeout |
+| 🟨 **Post-A8 DGM theorem correspondence registry R1** | [`../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) | Public-safe successor evidence for the later current correspondence observation |
+| 🟨 **Post-A8 DGM correspondence closeout** | [`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md) | Acceptance-layer successor closeout for that bounded post-A8 correspondence criterion |
 
 > [!NOTE]
-> The post-A8 registry is currently a **successor evidence record**, not a fourth acceptance closeout file in this directory.
+> The post-A8 closeout is a **successor acceptance record**.
 >
-> Therefore the folder status remains:
+> It does not become a rewrite of the historical Step-12 closeout and does not change the historical three-workstream closeout set.
+>
+> The directory now contains:
 >
 > ```text
-> CLOSEOUT_RECORDS=3_OF_3_PRESENT
+> HISTORICAL_CLOSEOUT_RECORDS=3
+> SUCCESSOR_ACCEPTANCE_CLOSEOUT_RECORDS=1
+> TOTAL_CLOSEOUT_FILES_PRESENT=4
 > ```
 
 ---
@@ -313,6 +320,41 @@ SYSTEM_PROVEN=NO
 >
 > The historical [`dgm-step12-close.md`](dgm-step12-close.md) remains unchanged as the Step-12 closeout at its own seal boundary. The Lean R1 closeout and post-A8 correspondence registry answer later questions and must not be used to retroactively rewrite that historical close.
 
+## Post-A8 DGM correspondence successor closeout
+
+The later bounded correspondence criterion now also has an acceptance-layer successor closeout:
+
+[`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md)
+
+That closeout records:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+T12D_B_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+T12D_C_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+P12C_09_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED_DISPROVEN
+
+CURRENT_CORRESPONDENCE_VERIFIED_COUNT=2
+
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+SYSTEM_PROVEN=NO
+```
+
+Its role is:
+
+```text
+successor acceptance-layer closure
+    ≠
+rewrite of historical Step-12 closeout
+```
+
 ---
 
 # 🟦 Publication Step-17 closeout
@@ -388,28 +430,33 @@ There is no automatic Step 18 for the completed fixed goal.
 
 ```mermaid
 flowchart LR
-    F["🟢 Workstream F<br/>CLOSED<br/>record present"]:::f
-    D["🟠 DGM Step 12<br/>GREEN CLOSED<br/>record present"]:::d
-    P["🟦 Publication Step 17<br/>GREEN COMPLETE<br/>record present"]:::p
-    C["✅ Acceptance closeout layer<br/>3 / 3 records present"]:::complete
+    F["🟢 Workstream F<br/>CLOSED<br/>historical record present"]:::f
+    D["🟠 DGM Step 12<br/>GREEN CLOSED<br/>historical record present"]:::d
+    X["🟨 Post-A8 DGM correspondence<br/>SUCCESSOR CLOSEOUT<br/>record present"]:::x
+    P["🟦 Publication Step 17<br/>GREEN COMPLETE<br/>historical record present"]:::p
+    C["✅ Acceptance closeout layer<br/>3 historical + 1 successor"]:::complete
 
     F --> C
     D --> C
+    X --> C
     P --> C
 
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef d fill:#f59e0b,stroke:#92400e,color:#111827,stroke-width:2px;
+    classDef x fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
     classDef p fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
     classDef complete fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
 ```
 
-All three planned bounded acceptance closeout records are now present.
+All three historical bounded acceptance closeout records remain present.
 
-The closeout index also links the later Lean R1 closeout and post-A8 DGM correspondence evidence so current readers can follow the successor evidence chain without altering the three historical acceptance closeouts.
+The closeout layer now also contains the later post-A8 DGM correspondence successor closeout, while linking the Lean R1 proof closeout and the public-safe post-A8 correspondence registry so readers can follow the full successor evidence chain without altering the historical three-workstream closeout set.
 
 ---
 
-# ↔️ Closeout comparison
+# ↔️ Historical closeout comparison
+
+The comparison below remains scoped to the three historical bounded acceptance workstreams.
 
 | Property | 🟢 Workstream F | 🟠 DGM Step 12 | 🟦 Publication Step 17 |
 |---|---|---|---|
@@ -421,6 +468,10 @@ The closeout index also links the later Lean R1 closeout and post-A8 DGM corresp
 | Runtime observation | Not the close authority | Point-in-time NBB/worker correspondence | Point-in-time publication/network/GUI correspondence |
 | Successor rule | Separate next-scope authority | New workstream before stronger promotion | New workstream for new capability |
 | Whole-system proof | ❌ | ❌ | ❌ |
+
+The post-A8 DGM correspondence closeout is a later successor record and is therefore not inserted into this historical three-workstream comparison as though it were an original peer workstream.
+
+Its bounded current state is recorded separately in [`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md).
 
 ---
 
@@ -518,7 +569,7 @@ replacement of earlier seal-time evidence
 
 The Step-12 closeout remains true to the state established when it was sealed.
 
-The later Lean R1 closeout and post-A8 correspondence registry are additive successor records.
+The later Lean R1 closeout, post-A8 correspondence registry, and post-A8 acceptance-layer correspondence closeout are additive successor records.
 
 ---
 
@@ -551,13 +602,15 @@ flowchart LR
 # 📚 Closeout records
 
 - [`workstream-f-close.md`](workstream-f-close.md) — formal Workstream-F close
-- [`dgm-step12-close.md`](dgm-step12-close.md) — bounded production DGM formal/correspondence close
+- [`dgm-step12-close.md`](dgm-step12-close.md) — historical bounded production DGM formal/correspondence close
+- [`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md) — successor acceptance-layer close for the bounded post-A8 DGM correspondence criterion
 - [`publication-step17-close.md`](publication-step17-close.md) — governed-publication fixed-goal close
 
 # 📚 Successor closeout and evidence records
 
 - [`../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) — later Step-12 Lean R1 proof-assistant closeout
 - [`../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) — later post-A8 bounded DGM theorem-correspondence evidence
+- [`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md) — acceptance-layer successor closeout for that bounded evidence criterion
 
 # 📚 Related acceptance records
 
@@ -568,13 +621,13 @@ flowchart LR
 The detailed evidence, formal models, and correspondence records remain in their dedicated repository directories.
 
 > [!NOTE]
-> No separate post-A8 acceptance closeout file has been added to `acceptance/closeout/` in this reconciliation pass. The current post-A8 record is linked as successor evidence.
+> A separate post-A8 acceptance-layer successor closeout is now present at [`post-a8-dgm-correspondence-close.md`](post-a8-dgm-correspondence-close.md). It closes only the later bounded correspondence criterion and does not replace [`dgm-step12-close.md`](dgm-step12-close.md).
 
 ---
 
 # ⚪ System-level boundary
 
-The closeout layer now contains three completed bounded records.
+The closeout layer now contains three historical bounded closeout records plus one bounded successor correspondence closeout.
 
 Their combined existence does not create a whole-system theorem.
 
@@ -586,6 +639,8 @@ STEP_12=GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
 LEAN_R1_SUCCESSOR_CLOSEOUT=CLOSED
 
 POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1=PASS
+
+POST_A8_DGM_CORRESPONDENCE_SUCCESSOR_CLOSEOUT=PRESENT
 
 PUBLICATION_STEP_17=GREEN_COMPLETE
 
@@ -602,9 +657,11 @@ Each result remains authoritative within its own documented scope.
 
 ### `acceptance/closeout/`
 
-# **3 OF 3 CLOSEOUT RECORDS PRESENT**
+# **4 CLOSEOUT FILES PRESENT**
 
 <br>
+
+### Historical bounded acceptance closeouts
 
 ✅ `workstream-f-close.md`
 
@@ -612,9 +669,13 @@ Each result remains authoritative within its own documented scope.
 
 ✅ `publication-step17-close.md`
 
+### Successor acceptance closeout
+
+✅ `post-a8-dgm-correspondence-close.md`
+
 <br>
 
-### Successor records linked outside this directory
+### Related successor records outside this directory
 
 🟪 `formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`
 
@@ -622,7 +683,7 @@ Each result remains authoritative within its own documented scope.
 
 <br>
 
-## **CLOSEOUT LAYER COMPLETE**
+## **3 HISTORICAL + 1 SUCCESSOR CLOSEOUT RECORD PRESENT**
 
 </div>
 
