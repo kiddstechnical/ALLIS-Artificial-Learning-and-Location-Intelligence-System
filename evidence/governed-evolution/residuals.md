@@ -11,6 +11,7 @@
 ![Residuals](https://img.shields.io/badge/RESIDUALS-8-0ea5e9?style=for-the-badge)
 ![Nonpromotions](https://img.shields.io/badge/NON--PROMOTIONS-7-d946ef?style=for-the-badge)
 ![Obligations](https://img.shields.io/badge/OBLIGATIONS-15_OF_15_ADJUDICATED-16a34a?style=for-the-badge)
+![Post A8](https://img.shields.io/badge/POST--A8-B%2FC_CORRESPONDENCE_VERIFIED-16a34a?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -27,6 +28,8 @@
 > They are not documentation defects to be removed for a cleaner presentation. Several are fully adjudicated limitations, one preserves a machine-checked counterexample, and others preserve scope, temporal, authority, and observation boundaries.
 >
 > `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` therefore means the workstream closed **with these boundaries intact**, not that the boundaries disappeared.
+>
+> Later Lean and post-A8 correspondence evidence may strengthen the current bounded record, but it does **not** rewrite the historical Step-12 residual count, erase the `P12C-09` disproof, promote `T12D-A`, or create a whole-system safety theorem.
 
 ---
 
@@ -114,6 +117,8 @@ The broader ALLIS principle remains:
 
 > **State does not become authority merely because it exists.**
 
+> **Successor proof and correspondence evidence may strengthen the bounded current record without erasing historical residuals or promoting claims that the evidence still does not support.**
+
 Applied here:
 
 ```text
@@ -173,6 +178,99 @@ A residual can be a **fully adjudicated limitation** that remains true after clo
 
 ---
 
+# ➕ Current successor evidence boundaries
+
+The **eight residuals and seven non-promotions below remain the historical Step-12 ledger**.
+
+Later post-A8 work added current evidence without changing those historical counts.
+
+Current source/runtime revalidation established:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The theorem-specific current observations established:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES
+T12D_B_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+
+T12D_C_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES
+T12D_C_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+The positive path remained deliberately unexecuted:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
+
+Two current residual boundaries follow from that later evidence.
+
+## Current residual boundary A — B/C correspondence is not general mutation safety
+
+The current `T12D-B` and `T12D-C` correspondence results establish two bounded fail-closed properties.
+
+They do **not** establish:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
+```
+
+The controlling statement remains:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+```
+
+Boundary:
+
+```text
+current B/C correspondence verification
+    ≠
+general production-mutation safety theorem
+```
+
+## Current residual boundary B — byte correspondence is not behavioral proof
+
+The current 11/11 source/runtime result establishes byte correspondence for the bounded theorem-relevant source set.
+
+It does **not**, by itself, establish theorem-specific runtime behavior.
+
+That is why the later work separately required and recorded:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_C_LIVE_OBSERVATION=PASS
+```
+
+Boundary:
+
+```text
+source/runtime byte correspondence
+    ≠
+theorem-specific live behavior observed
+```
+
+These are **later current evidence boundaries**.
+
+They do not alter the historical Step-12 count:
+
+```text
+Residuals = 8
+Explicit non-promotions = 7
+```
+
+---
+
 # 🧱 Part I — Eight explicit residuals
 
 # 1. R12F-01 — Positive production path
@@ -209,7 +307,25 @@ positive path modeled
 positive path observed live
 ```
 
-This residual is the reason `T12D-A` remains `MACHINE_CHECKED` rather than `CORRESPONDENCE_VERIFIED`.
+This residual is the historical Step-12 reason `T12D-A` remained `MACHINE_CHECKED` rather than `CORRESPONDENCE_VERIFIED`.
+
+The later post-A8 current revalidation did not remove that boundary.
+
+Even after current 11/11 source/runtime correspondence was re-established:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+the positive authorized-apply path still was not executed:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
+
+So the current disposition remains unchanged.
 
 ---
 
@@ -311,6 +427,23 @@ PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
 bounded gate theorem
 ≠
 universal mutation-safety theorem
+```
+
+The later post-A8 `T12D-B` and `T12D-C` correspondence results do not change this residual.
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+
+≠
+
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
+```
+
+The controlling current statement remains:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
 ```
 
 ---
@@ -472,7 +605,38 @@ correspondence true at seal
 correspondence guaranteed forever
 ```
 
-Future runtime state requires future evidence.
+The later post-A8 work performed that required revalidation and established a newer point-in-time source/runtime result:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+That byte-correspondence result still did not establish theorem-specific behavior by itself.
+
+Separate live observations were required for B/C:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_C_LIVE_OBSERVATION=PASS
+```
+
+Therefore:
+
+```text
+byte correspondence
+≠
+behavioral observation
+```
+
+and:
+
+```text
+current correspondence
+≠
+correspondence guaranteed forever
+```
+
+Future changed runtime state requires future evidence.
 
 ---
 
@@ -560,7 +724,20 @@ CORRESPONDENCE\_VERIFIED
 
 ## Reason
 
-The theorem is machine-checked over the sealed source model, and source/runtime correspondence was established, but the positive live authorized-application path was not exercised.
+The theorem is machine-checked over the sealed source model.
+
+The later post-A8 work also re-established current source/runtime correspondence:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+But the positive live authorized-application path was still not executed:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
 
 Therefore:
 
@@ -612,6 +789,15 @@ valid invariant
 
 The failed proposition remains part of the scientific record.
 
+Later Lean R1 successor evidence independently preserved the same negative result:
+
+```text
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+```
+
+No positive promotion follows from later correspondence work.
+
 ---
 
 # 12. N3 — Historical D1R5 is not current production proof
@@ -639,6 +825,16 @@ historical proof
 ≠
 current production proof
 ```
+
+The later Lean and post-A8 evidence does not reclassify historical `D1R5`.
+
+It remains:
+
+```text
+HISTORICAL_ONLY
+```
+
+for the predecessor theorem domain.
 
 ---
 
@@ -782,6 +978,12 @@ LivePositivePathObserved
 
 The real positive production authorization/application path was deliberately not performed as part of Step 12.
 
+The later post-A8 current revalidation also deliberately did not execute it:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+```
+
 ## Boundary
 
 ```text
@@ -810,7 +1012,21 @@ SYSTEM_PROVEN remains NO.
 A real production authorized apply has not been observed.
 ```
 
-These seven statements are preserved here as controlling evidence boundaries.
+These seven statements are preserved here as the controlling **historical Step-12** non-promotion set.
+
+Later current evidence additionally establishes that:
+
+```text
+T12D-B/C current correspondence
+    ≠
+general production-mutation safety
+
+current 11/11 source/runtime byte correspondence
+    ≠
+theorem-specific runtime behavior without separate live observation
+```
+
+These later statements strengthen the current claim boundary without rewriting the historical count of seven Step-12 non-promotions.
 
 They must not be rewritten into stronger positive claims unless new evidence explicitly earns that promotion.
 
@@ -905,6 +1121,10 @@ None is strengthened by the fact that source/runtime correspondence passed.
 None is overridden by the 11 proven propositions.
 
 None is changed by the final seal.
+
+None is changed by the later Lean R1 qualification.
+
+None is changed by the later post-A8 11/11 source/runtime revalidation or B/C live correspondence results.
 
 ---
 
@@ -1094,6 +1314,16 @@ It does not create:
 
 ```text
 REAL_PRODUCTION_DGM_PATCH_APPLICATION=PERFORMED
+```
+
+The later post-A8 current revalidation also did not create those stronger claims.
+
+It recorded:
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
 ```
 
 ---
@@ -1313,6 +1543,7 @@ It should be read with:
 evidence/
     governed-evolution/
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
         source-identity.md
         trust-anchor.md
         governance-view.md
@@ -1327,6 +1558,8 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 
 correspondence/
     authorized-adoption/
@@ -1345,7 +1578,9 @@ Use:
 - [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) — proposition dispositions and validation levels
 - [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) — preserved falsifying cases
 - [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
-- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
+- [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — historical Step-12 and later current source → runtime correspondence
+- [`lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) — later Lean R1 proof-assistant qualification
+- [`post-a8-theorem-correspondence-registry-r1.md`](post-a8-theorem-correspondence-registry-r1.md) — later current B/C theorem correspondence and source/runtime revalidation
 
 ---
 
@@ -1379,6 +1614,15 @@ Use:
 
 ### 🕒 RUNTIME CORRESPONDENCE
 **`R12F-07 = POINT_IN_TIME_BINDING`**
+
+**post-A8 source/runtime = current `PASS_11_OF_11`, still point-in-time**
+
+<br>
+
+### 🔗 CURRENT CORRESPONDENCE BOUNDARY
+**B/C correspondence does not establish general production-mutation safety**
+
+**11/11 byte correspondence does not replace theorem-specific live observation**
 
 <br>
 
