@@ -1079,12 +1079,20 @@ network = TESTED
 
 publication = OPERATIONAL
 
-private-state path = UNAVAILABLE
+H_people current runtime authority = NOT_PROMOTED
+H_people current runtime correspondence = NOT_ESTABLISHED
 
 outcome evaluation = NOT_STARTED
 ```
 
 One overall label should not erase these dimensions.
+
+> [!NOTE]
+> The `H_people` lines above refer specifically to the current public runtime-authority/correspondence state for the H_people private-state lane.
+>
+> They do **not** classify every possible private-state capability as unavailable, and they do not admit a separate A8 application-private-context deployment surface in this document.
+>
+> A separate application-private-context capability, if later admitted from exact sealed evidence, must be documented as its own deployment surface rather than used to promote H_people to operational status.
 
 ---
 
