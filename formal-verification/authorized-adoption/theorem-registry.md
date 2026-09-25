@@ -84,6 +84,8 @@ The governing architecture is:
 
 > **Capability does not create authority.**
 
+> **Successor proof-assistant and correspondence evidence strengthens the bounded record without rewriting the historical Step-12 validation definitions or final seal.**
+
 The theorem layer follows the same rule.
 
 A proposition can be proven without becoming operational authority.  
@@ -193,6 +195,44 @@ where:
 A disproven proposition remains part of the evidence record.
 
 It is not deleted, softened, or silently replaced.
+
+## Later Lean qualification
+
+The definitions above remain the **historical Step-12 validation definitions**.
+
+A later Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal Step-12 result set. That later proof-assistant evidence is additive successor evidence and does **not** retroactively redefine the Step-12 `MACHINE_CHECKED` label.
+
+Qualified successor evidence:
+
+```text
+LEAN_VERSION=4.34.0
+QUALIFIED_PROOF_COMMIT=71ee78982c918145ca73850170a4c2a8a447170d
+
+T12D_A_LEAN_KERNEL_CHECKED=YES
+T12D_B_LEAN_KERNEL_CHECKED=YES
+T12D_C_LEAN_KERNEL_CHECKED=YES
+
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+
+LEAN_PROOF_HOLES=0
+```
+
+The qualified principal Lean results report:
+
+```text
+THEOREM_LEVEL_AXIOMS=NONE
+```
+
+for the principal Step-12 theorem/disproof set.
+
+This successor qualification establishes a stronger formal-evidence layer for the bounded propositions.
+
+It does **not** by itself establish production source/runtime correspondence or a theorem-specific live observation.
+
+See:
+
+- [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md)
 
 ---
 
@@ -653,10 +693,13 @@ within the sealed bounded source model
 | Field | Status |
 |---|---|
 | Source-model result | `PROVEN_WITHIN_SEALED_SOURCE_MODEL` |
-| Highest validation level | `MACHINE_CHECKED` |
-| Positive live observation | `NO` |
-| Correspondence-verified | `NO` |
-| Reason for non-promotion | No real positive production authorization/application was exercised during Step 12 |
+| Historical Step-12 validation level | `MACHINE_CHECKED` |
+| Later Lean qualification | `T12D_A_LEAN_KERNEL_CHECKED=YES`; theorem-level axioms `NONE` |
+| Current source/runtime correspondence | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| Current positive live observation | `T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO` |
+| Current correspondence-verified | `NO` |
+| Current validation level | `MACHINE_CHECKED` |
+| Reason for non-promotion | Current source/runtime correspondence exists, but no positive authorized-apply production observation was executed |
 
 Formally:
 
@@ -664,10 +707,16 @@ Formally:
 LiveObs^{+}(T12D\text{-}A)=0
 ```
 
-Therefore Step 12 does not promote:
+The Step-12 final seal did not promote:
 
 ```math
 Corr(T12D\text{-}A)=1
+```
+
+and the later post-A8 current revalidation still does not promote it.
+
+```text
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
 ```
 
 ## Claim boundary
@@ -727,9 +776,12 @@ This is a direct formal expression of the separation between capability and auth
 | Field | Status |
 |---|---|
 | Source-model result | `PROVEN` |
-| Machine evidence | Established |
-| Relevant live observation | Established |
-| Highest validation level | `CORRESPONDENCE_VERIFIED` |
+| Historical Step-12 machine evidence | Established |
+| Later Lean qualification | `T12D_B_LEAN_KERNEL_CHECKED=YES`; theorem-level axioms `NONE` |
+| Current source/runtime correspondence | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| Current live observation | `T12D_B_LIVE_OBSERVATION=PASS` |
+| Current post-A8 correspondence | `T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES` |
+| Highest/current validation level | `CORRESPONDENCE_VERIFIED` |
 
 The live fail-closed observation establishes:
 
@@ -737,11 +789,15 @@ The live fail-closed observation establishes:
 LiveObs(T12D\text{-}B)=1
 ```
 
-and the final registry level is:
+and the current registry level is:
 
 ```math
 L(T_B)=CORRESPONDENCE\_VERIFIED
 ```
+
+The newest live observation is the later post-A8 revalidation epoch: a deliberately invalid cryptographic signature was rejected with no authorized-spool publication, no authorization consumption, and no receipt.
+
+The historical Step-12 observation remains predecessor evidence; it is not rewritten.
 
 ---
 
@@ -788,9 +844,12 @@ no authorized apply
 | Field | Status |
 |---|---|
 | Source-model result | `PROVEN` |
-| Machine evidence | Established |
-| Relevant live observation | Established |
-| Highest validation level | `CORRESPONDENCE_VERIFIED` |
+| Historical Step-12 machine evidence | Established |
+| Later Lean qualification | `T12D_C_LEAN_KERNEL_CHECKED=YES`; theorem-level axioms `NONE` |
+| Current source/runtime correspondence | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| Current live observation | `T12D_C_LIVE_OBSERVATION=PASS` |
+| Current post-A8 correspondence | `T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES` |
+| Highest/current validation level | `CORRESPONDENCE_VERIFIED` |
 
 The live empty-spool observation establishes:
 
@@ -803,6 +862,10 @@ and:
 ```math
 L(T_C)=CORRESPONDENCE\_VERIFIED
 ```
+
+The newest live observation is the later post-A8 revalidation epoch: the empty incoming/claimed spool produced no worker claim, no authorization consumption, no receipt, and no authorized apply.
+
+The historical Step-12 observation remains predecessor evidence; it is not rewritten.
 
 ---
 
@@ -866,7 +929,10 @@ after terminalization failure.
 | Field | Status |
 |---|---|
 | Logical result | `DISPROVEN` |
-| Highest validation level | `MACHINE_CHECKED_DISPROVEN` |
+| Historical Step-12 validation level | `MACHINE_CHECKED_DISPROVEN` |
+| Later Lean qualification | `P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES`; theorem/counterexample axioms `NONE` |
+| Current logical disposition | `P12C_09_LOGICAL_RESULT=DISPROVEN` |
+| Highest current disposition | `MACHINE_CHECKED_DISPROVEN` |
 | Counterexample | Preserved |
 | Silent replacement permitted | `NO` |
 
@@ -888,6 +954,10 @@ is consistent with the discovered transition structure.
 
 Step 12 did not promote it as a replacement theorem.
 
+The later Lean R1 workstream independently checked the counterexample/disproof while preserving the original negative disposition.
+
+The narrower refined proposition remains unpromoted and is **not** renamed `P12C-09`.
+
 ## Architectural meaning
 
 A desired system property does not become true because it would make the architecture cleaner.
@@ -895,6 +965,58 @@ A desired system property does not become true because it would make the archite
 > **Evidence constrains the claim. The claim does not control the evidence.**
 
 That rule is the theorem-layer expression of the broader ALLIS principle that state does not become authority merely because it exists.
+
+---
+
+# 🕒 Current evidence chronology
+
+The theorem registry now distinguishes two evidence epochs:
+
+```text
+Step-12 final-seal correspondence
+    =
+historical predecessor evidence
+```
+
+and:
+
+```text
+post-A8 source/runtime + theorem-specific B/C live revalidation
+    =
+newest current theorem-correspondence evidence
+```
+
+The current theorem-relevant source/runtime result is:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+For the later/current observation epoch, the correspondence criterion remains conceptually:
+
+```math
+MC(T,S)
+\land
+C_{SR}(S,R)
+\land
+LiveObs(T,R)
+```
+
+where the theorem-specific live observation is required for promotion to `CORRESPONDENCE_VERIFIED`.
+
+Therefore:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+Source/runtime byte correspondence alone does not promote a theorem.
 
 ---
 
@@ -974,6 +1096,10 @@ P12C\text{-}09
 The different levels are intentional.
 
 They reflect the evidence actually earned by each claim.
+
+The later Lean qualification strengthens the formal-evidence basis of the principal result set without changing the historical Step-12 label definitions.
+
+The post-A8 observation epoch strengthens current B/C correspondence while leaving A at `MACHINE_CHECKED` because no positive authorized-apply observation was executed.
 
 ```text
 same formal model
@@ -1109,6 +1235,10 @@ R_{receipt}
 }
 ```
 
+The Step-12 seal remains the historical predecessor seal.
+
+Later Lean and post-A8 records are successor evidence and do not rewrite that seal.
+
 The two current correspondence-verified fail-closed results remain:
 
 ```math
@@ -1147,6 +1277,8 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 
 correspondence/
     authorized-adoption/
@@ -1156,6 +1288,7 @@ correspondence/
 evidence/
     governed-evolution/
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
         source-identity.md
         trust-anchor.md
         governance-view.md
@@ -1167,9 +1300,11 @@ Use:
 - [`formal-model.md`](./formal-model.md) — definitions, predicates, state space, and transition semantics
 - [`theorem-registry.md`](./theorem-registry.md) — this proposition adjudication and validation-level registry
 - [`counterexample-registry.md`](./counterexample-registry.md) — preserved falsifying cases
+- [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md) — later Lean R1 proof-assistant qualification closeout
 - [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
 - [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
 - [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) — controlling bounded Step-12 final seal
+- [`post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) — current post-A8 source/runtime and B/C live revalidation
 - [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed source identity
 - [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — public verification trust identity
 - [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — governance-view identity and correspondence evidence
@@ -1199,6 +1334,13 @@ Use:
 
 ### 🔬 `P12C-09`
 **`MACHINE_CHECKED_DISPROVEN`**
+
+<br>
+
+### ➕ SUCCESSOR EVIDENCE
+**Lean 4.34.0 R1 kernel qualification + current post-A8 B/C correspondence revalidation**
+
+**historical Step-12 `MACHINE_CHECKED` meaning remains unchanged**
 
 <br>
 
