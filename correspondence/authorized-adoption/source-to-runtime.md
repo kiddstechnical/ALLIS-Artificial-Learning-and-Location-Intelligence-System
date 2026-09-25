@@ -22,11 +22,15 @@
 ---
 
 > [!IMPORTANT]
-> This record establishes the **source → runtime correspondence edge** for the bounded Step-12 production authorized-adoption domain **at the final seal boundary**.
+> This record preserves the **historical Step-12 source → runtime correspondence edge** and adds the later **post-A8 current revalidation epoch** for the same bounded production authorized-adoption source domain.
+>
+> The Step-12 final-seal observation remains historical predecessor evidence. It is not rewritten by the later revalidation.
+>
+> The later post-A8 observation re-established current source/runtime correspondence for the theorem-relevant 11-file source set and then re-observed the bounded `T12D-B` and `T12D-C` behaviors.
 >
 > It does **not** establish permanent runtime correspondence, standing runtime authority, a real positive production authorized-application observation, or whole-system proof.
 >
-> A changed future runtime requires new correspondence evidence.
+> Any future theorem-relevant source/runtime change still requires new correspondence evidence.
 
 ---
 
@@ -60,7 +64,17 @@ That result is **time-indexed**. It does not become a perpetual runtime invarian
 
 # 🎯 Purpose
 
-This document establishes whether the sealed production source used by the ALLIS authorized-adoption formal model corresponds to the source actually present in the live NBB and worker runtimes at the Step-12 final seal.
+This document records two source/runtime observation epochs for the sealed production source used by the ALLIS authorized-adoption formal model:
+
+```text
+Epoch 1 — Step-12 final seal
+historical predecessor correspondence
+
+Epoch 2 — post-A8 revalidation
+newest current theorem-relevant source/runtime correspondence
+```
+
+The original Step-12 sections below remain the historical evidence for Epoch 1. A separate successor section records Epoch 2.
 
 The formal object is:
 
@@ -107,7 +121,9 @@ every modeled behavior has been observed
 
 ---
 
-# 📋 Correspondence status
+# 📋 Historical Step-12 correspondence status
+
+The following table is preserved as the Step-12 final-seal observation state.
 
 | Field | Value |
 |---|---|
@@ -525,6 +541,260 @@ This is why `T12D-A` remains `MACHINE_CHECKED` rather than `CORRESPONDENCE_VERIF
 
 ---
 
+# ➕ Post-A8 current revalidation — September 2026
+
+The Step-12 final-seal correspondence above is historical predecessor evidence.
+
+A later post-A8 qualification re-established the source/runtime edge against the current observed theorem-relevant DGM runtimes.
+
+## Current qualified source identity
+
+The source identity remained the same qualified production source used by Step 12:
+
+```text
+SOURCE_COMMIT=
+20c8cbe175781c8a1c05d65c03977859ceca884a
+
+SOURCE_TREE=
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+CANONICAL_SOURCE_SET_CARDINALITY=11
+
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+```
+
+The canonical theorem-relevant source set was:
+
+```text
+services/dgm_adoption_worker.py
+services/hilbert/dgm_authorized_adoption.py
+services/hilbert/dgm_authorized_spool.py
+services/hilbert/dgm_evolution_agent.py
+services/hilbert/dgm_evolution_authorization_bridge.py
+services/hilbert/dgm_evolution_kernel.py
+services/hilbert/dgm_governed_cycle.py
+services/hilbert/dgm_nbb_authorized_package.py
+services/hilbert/dgm_public_key_authorization_verifier.py
+services/hilbert/dgm_worker_authorized_consumer.py
+services/nbb_darwin_godel_machines.py
+```
+
+No replacement DGM source baseline was created.
+
+## Current observed NBB runtime identity
+
+The exact NBB runtime observed for the post-A8 qualification was:
+
+```text
+NBB_CONTAINER_ID=
+851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48
+
+NBB_CONTAINER_NAME=
+nbb_darwin_godel_machines
+```
+
+Current result:
+
+```text
+NBB_SOURCE_RUNTIME_MATCH_COUNT=11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+## Current observed worker runtime identity
+
+The exact worker runtime observed for the post-A8 qualification was:
+
+```text
+WORKER_CONTAINER_ID=
+abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d
+
+WORKER_CONTAINER_NAME=
+msjarvis-rebuild-dgm_adoption_worker-1
+```
+
+Current result:
+
+```text
+WORKER_SOURCE_RUNTIME_MATCH_COUNT=11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Combined current result:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The container IDs above identify the exact runtimes observed in this qualification epoch.
+
+They are point-in-time runtime identities, not permanent identities for every future deployment.
+
+## Correspondence before and after behavioral observation
+
+The 11/11 source/runtime relationship was established **before** the bounded theorem-specific behavioral observations.
+
+The exact runtime identities were preserved during those observations.
+
+After the behavioral observations, source/runtime correspondence was rechecked and remained 11/11.
+
+For the final empty-spool observation, the post-observation evidence explicitly recorded:
+
+```text
+POST_NBB_SOURCE_RUNTIME=PASS_11_OF_11
+POST_WORKER_SOURCE_RUNTIME=PASS_11_OF_11
+```
+
+Therefore the theorem-specific observations were not used to bridge an unqualified or silently changed runtime.
+
+## T12D-B — current invalid-authorization observation
+
+The post-A8 bounded observation exercised the live NBB validation/publication path with a structurally valid package carrying a deliberately invalid cryptographic signature.
+
+Observed fail-closed result:
+
+```text
+exception_type=AuthorizationError
+exception_text=authorization_signature_invalid
+publish_returned=false
+
+T12D_B_INVALID_SIGNATURE_REJECTED=YES
+T12D_B_NO_AUTHORIZED_SPOOL_PUBLICATION=PASS
+T12D_B_NO_AUTHORIZATION_CONSUMPTION=PASS
+T12D_B_NO_RECEIPT_CREATION=PASS
+T12D_B_LIVE_OBSERVATION=PASS
+```
+
+Current disposition:
+
+```text
+T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES
+T12D_B_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+The source/runtime correspondence was rechecked after the observation and remained 11/11.
+
+## T12D-C — current empty-spool observation
+
+The post-A8 bounded observation kept the authorized incoming and claimed spool states empty while the current worker remained active.
+
+The observation window was bounded to:
+
+```text
+T12D_C_OBSERVATION_WINDOW_SECONDS=3
+```
+
+Observed result:
+
+```text
+T12D_C_INCOMING_PRE=0
+T12D_C_CLAIMED_PRE=0
+T12D_C_INCOMING_POST=0
+T12D_C_CLAIMED_POST=0
+
+T12D_C_NO_WORKER_CLAIM=PASS
+T12D_C_NO_AUTHORIZATION_CONSUMPTION=PASS
+T12D_C_NO_RECEIPT_CREATION=PASS
+T12D_C_NO_AUTHORIZED_APPLY=PASS
+T12D_C_LIVE_OBSERVATION=PASS
+```
+
+Current disposition:
+
+```text
+T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES
+T12D_C_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+The complete source/runtime correspondence was rechecked after this observation and remained:
+
+```text
+POST_NBB_SOURCE_RUNTIME=PASS_11_OF_11
+POST_WORKER_SOURCE_RUNTIME=PASS_11_OF_11
+```
+
+## T12D-A — positive path remains unexecuted
+
+`T12D-A` participates in the same qualified 11/11 current source/runtime set.
+
+However, current correspondence promotion requires the positive authorized-application behavior to be observed.
+
+That was deliberately not executed:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
+
+The post-A8 work did not issue or consume real production authorization and did not apply a real production DGM patch:
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+```
+
+Therefore the current theorem state remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+## Two-epoch conclusion
+
+The controlling correspondence history is now:
+
+```text
+Epoch 1:
+Step-12 final-seal source/runtime correspondence
+=
+historical predecessor evidence
+
+Epoch 2:
+post-A8 immutable source + current NBB/worker 11/11
++ current live T12D-B/T12D-C observations
+=
+newest current theorem-correspondence evidence
+```
+
+The later result does not rewrite the Step-12 final seal.
+
+It answers the later question of whether the same bounded theorem-relevant source still corresponded to the observed current DGM runtimes and whether the safely observable B/C behaviors still corresponded.
+
+The current answer for the source/runtime edge is:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The current answer for B/C is:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+The current answer for A remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+because the positive authorized-apply path was not executed.
+
+Successor evidence record:
+
+- [`../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+
+Lean qualification companion:
+
+- [`../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+
+---
+
 # 🕒 Point-in-time boundary
 
 # 12. Runtime correspondence is time-indexed
@@ -547,7 +817,15 @@ C_{SR}^{\tau_{seal}}(S,R)=1
 
 for the runtime state at final seal.
 
-It does not establish:
+The later post-A8 work separately establishes a newer time-indexed correspondence observation:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+for the exact current runtime identities recorded in the successor section above.
+
+Neither observation establishes:
 
 ```math
 \forall \tau>\tau_{seal},
@@ -588,9 +866,13 @@ correspondence observed at seal
 correspondence guaranteed for all future time
 ```
 
-The correct claim is:
+The correct historical claim is:
 
 > The sealed source corresponded to the inspected live runtime at the final Step-12 correspondence boundary.
+
+The correct current successor claim is:
+
+> The same bounded theorem-relevant source identity was revalidated post-A8 against the exact observed current NBB and worker runtimes at 11/11 source-byte correspondence.
 
 The incorrect stronger claim would be:
 
@@ -617,12 +899,16 @@ POINT_IN_TIME_BINDING
 Meaning:
 
 ```text
-runtime correspondence is established
-for the sealed and revalidated deployment state
+runtime correspondence was established
+at the Step-12 final-seal epoch
+
+and
+
+was re-established at the later post-A8 epoch
 
 but
 
-future deployment states require future validation
+future changed deployment states still require future validation
 ```
 
 This is not an unresolved defect in the Step-12 result.
@@ -691,6 +977,16 @@ C_{SR}(S,R)
 LiveObs(T,R)
 ```
 
+The later post-A8 work applies the same bounded structure to the newer observation epoch:
+
+```math
+MC(T,S)
+\land
+C_{SR}^{current}(S,R)
+\land
+LiveObs^{current}(T,R)
+```
+
 where:
 
 - $`MC(T,S)`$ means theorem $`T`$ was machine-checked against source $`S`$;
@@ -733,7 +1029,7 @@ but:
 LiveObs^{+}(T_A,R)=0
 ```
 
-because no real positive production authorization/application was performed.
+because no real positive production authorization/application was performed during Step 12 and the later post-A8 revalidation also deliberately did not execute the positive authorized-apply production path.
 
 Therefore:
 
@@ -789,7 +1085,20 @@ Corr(T_B,S,R)=1
 }
 ```
 
-and the final level is:
+and the historical Step-12 level was:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+```
+
+The later post-A8 epoch independently re-observed the current invalid-authorization fail-closed behavior:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES
+```
+
+Therefore the current level remains:
 
 ```text
 T12D-B = CORRESPONDENCE_VERIFIED
@@ -825,7 +1134,20 @@ Corr(T_C,S,R)=1
 }
 ```
 
-and the final level is:
+and the historical Step-12 level was:
+
+```text
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+The later post-A8 epoch independently re-observed the current empty-spool non-application behavior:
+
+```text
+T12D_C_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES
+```
+
+Therefore the current level remains:
 
 ```text
 T12D-C = CORRESPONDENCE_VERIFIED
@@ -870,7 +1192,7 @@ has been observed live
 
 # 21. What 11/11 proves
 
-The 11/11 results establish that, at the final seal:
+The historical 11/11 results establish that, at the Step-12 final seal:
 
 ```text
 for each of the eleven governed production source files,
@@ -885,6 +1207,10 @@ the corresponding worker runtime file matched the sealed source
 ```
 
 Thus the runtime source identity needed by the bounded correspondence argument was established in both execution roles.
+
+The later post-A8 revalidation independently established the same 11/11 source/runtime relationship for the exact current NBB and worker identities recorded above.
+
+The later B/C observations were then followed by another correspondence check that remained 11/11.
 
 ---
 
@@ -988,9 +1314,11 @@ Therefore runtime source correspondence cannot be interpreted as self-authorizat
 
 ---
 
-# 25. Failure to revalidate
+# 25. Future failure to revalidate
 
-If a future runtime changes and no new correspondence evidence is collected, the correct status is not:
+The post-A8 runtime was revalidated and therefore has its own current correspondence evidence.
+
+If a later future runtime changes again and no new correspondence evidence is collected, the correct status is not:
 
 ```text
 CORRESPONDENCE_PRESUMED
@@ -1040,12 +1368,16 @@ model-to-source.md
     C_FS(F,S)=1
 
 source-to-runtime.md
-    establishes at seal
+    establishes historically at Step-12 seal
     C_SR(S,R_N)=1
     C_SR(S,R_W)=1
+
+and later re-establishes
+    current post-A8 NBB = PASS_11_OF_11
+    current post-A8 worker = PASS_11_OF_11
 ```
 
-The combined evidence chain is:
+The historical combined evidence chain is:
 
 ```math
 F
@@ -1100,7 +1432,51 @@ Production authorization consumption  NOT PERFORMED
 Production DGM patch application      NOT PERFORMED
 ```
 
-This is the runtime boundary that the correspondence record seals.
+This is the historical Step-12 runtime boundary that the original correspondence record sealed.
+
+## Current post-A8 runtime snapshot
+
+The later observation epoch records:
+
+```text
+Source commit
+20c8cbe175781c8a1c05d65c03977859ceca884a
+
+Source tree
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+Immutable source identity
+PASS_11_OF_11
+
+NBB container
+851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48
+nbb_darwin_godel_machines
+PASS_11_OF_11
+
+Worker container
+abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d
+msjarvis-rebuild-dgm_adoption_worker-1
+PASS_11_OF_11
+
+T12D-B live observation
+PASS
+
+T12D-C live observation
+PASS
+
+T12D-A positive authorized apply
+NOT_EXECUTED
+```
+
+And:
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+```
+
+This later snapshot is also point-in-time.
 
 ---
 
@@ -1116,18 +1492,22 @@ It establishes a byte-correspondence boundary.
 
 And it does not turn that boundary into a timeless claim.
 
-The architecture therefore preserves three separate truths:
+The architecture therefore preserves separate truths across time:
 
 ```text
 the model corresponds to sealed source
 ```
 
 ```text
-the sealed source corresponded to runtime at seal time
+the sealed source corresponded to runtime at the Step-12 seal
 ```
 
 ```text
-specific theorem behavior was or was not observed live
+the same bounded source was revalidated against the post-A8 current runtime
+```
+
+```text
+specific theorem behavior was or was not observed live in each applicable epoch
 ```
 
 None is allowed to silently substitute for another.
@@ -1221,7 +1601,31 @@ C_{SR}^{\tau}(S,R)=1
 
 without future revalidation.
 
-That is the controlling runtime correspondence boundary.
+That is the controlling **historical Step-12** runtime correspondence boundary.
+
+The later post-A8 successor observation separately establishes:
+
+```text
+SOURCE_COMMIT=
+20c8cbe175781c8a1c05d65c03977859ceca884a
+
+SOURCE_TREE=
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+with the exact observed runtime identities recorded in the post-A8 section above.
+
+Thus the current record has **two valid observation epochs**, not one timeless correspondence claim.
+
+Any future theorem-relevant source or runtime change requires fresh revalidation.
 
 ---
 
@@ -1253,6 +1657,10 @@ R12F-07 = POINT_IN_TIME_BINDING
 
 No perpetual runtime-correspondence claim is implied by the seal.
 
+The later post-A8 correspondence record is additive successor evidence.
+
+It does not rewrite this historical Step-12 seal.
+
 ---
 
 # 📚 32. Companion records
@@ -1274,10 +1682,13 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 
 evidence/
     governed-evolution/
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
         source-identity.md
         trust-anchor.md
         governance-view.md
@@ -1287,7 +1698,9 @@ evidence/
 Use:
 
 - [`model-to-source.md`](model-to-source.md) — formal object → sealed source correspondence
-- [`source-to-runtime.md`](source-to-runtime.md) — 11/11 live NBB and worker byte correspondence and its temporal boundary
+- [`source-to-runtime.md`](source-to-runtime.md) — historical Step-12 and later post-A8 11/11 NBB/worker byte correspondence, with point-in-time boundaries
+- [`lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) — later Lean R1 qualification closeout
+- [`post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) — later current DGM source/runtime and B/C live correspondence evidence
 - [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical eleven-file sealed source manifest
 - [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) — sealed public-key identity
 - [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) — sealed governance-view identity
@@ -1315,7 +1728,22 @@ Use:
 ### 🕒 TEMPORAL BOUNDARY
 **`R12F-07 = POINT_IN_TIME_BINDING`**
 
-**Correspondence established at the Step-12 final seal; changed future runtime requires revalidation.**
+**Epoch 1: Step-12 final-seal 11/11 correspondence — historical predecessor**
+
+**Epoch 2: post-A8 current NBB/worker 11/11 correspondence + B/C live revalidation**
+
+**Any later changed theorem-relevant source/runtime requires fresh revalidation.**
+
+<br>
+
+### CURRENT THEOREM STATE
+**`T12D-A = MACHINE_CHECKED`**
+
+**`T12D-B = CORRESPONDENCE_VERIFIED`**
+
+**`T12D-C = CORRESPONDENCE_VERIFIED`**
+
+**`P12C-09 = MACHINE_CHECKED_DISPROVEN`**
 
 <br>
 
@@ -1328,3 +1756,5 @@ Use:
 # Governing correspondence principle
 
 > **Runtime correspondence must be observed and sealed. It cannot be inherited forever from a prior successful observation.**
+
+> **The post-A8 revalidation establishes a newer bounded observation epoch; it does not turn correspondence into a permanent invariant.**
