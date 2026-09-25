@@ -624,6 +624,22 @@ It should be interpreted alongside, not instead of:
 
 The historical records remain authoritative for what they established at their own seal boundaries.
 
+The later acceptance layer closes this bounded successor correspondence criterion in:
+
+[Post-A8 DGM correspondence successor closeout](../../acceptance/closeout/post-a8-dgm-correspondence-close.md)
+
+That closeout consumes this registry as successor evidence.
+
+```text
+successor evidence registry
+    ≠
+acceptance-layer closeout
+
+acceptance-layer closeout
+    ≠
+rewrite of historical Step-12 close
+```
+
 This record answers a later question:
 
 > **Does the bounded theorem-relevant DGM source still correspond to the observed current runtime, and do the safely observable fail-closed theorem behaviors still correspond?**
@@ -654,6 +670,7 @@ Related records:
 - [Theorem registry](../../formal-verification/authorized-adoption/theorem-registry.md)
 - [Counterexample registry](../../formal-verification/authorized-adoption/counterexample-registry.md)
 - [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM correspondence successor closeout](../../acceptance/closeout/post-a8-dgm-correspondence-close.md)
 - [Model → source correspondence](../../correspondence/authorized-adoption/model-to-source.md)
 - [Source → runtime correspondence](../../correspondence/authorized-adoption/source-to-runtime.md)
 
