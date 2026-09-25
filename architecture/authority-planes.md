@@ -1066,6 +1066,28 @@ public publication
 permanent future publication correspondence
 ```
 
+The current DGM record now contains two distinct correspondence epochs:
+
+```text
+historical Step-12 correspondence
+    ≠
+current post-A8 correspondence observation
+```
+
+The later post-A8 observation revalidates the same stable theorem-relevant source identity against a newer observed runtime. It does not rewrite the historical Step-12 seal.
+
+For current B/C claims, the evidence chain is:
+
+```text
+qualified theorem / formal result
+    +
+current source/runtime correspondence
+    +
+current theorem-specific live observation
+```
+
+For A, the first two elements are present but the positive live authorized-apply observation is not.
+
 ---
 
 # 🕒 Authority and correspondence both have time
@@ -1307,7 +1329,7 @@ Current engineering evidence nevertheless provides concrete examples of several 
 | 🧷 Semantic commitment | Candidate-envelope commitment repair represented in formal model |
 | 🔑 Verification vs signing | NBB/worker verify external authorization; issuance remains external to modeled runtime |
 | 1️⃣ Replay / one-use | Step-12 one-time authorization semantics |
-| 🔗 Write-plane correspondence | Model→source; source→NBB/worker; theorem-specific observations where supported |
+| 🔗 Write-plane correspondence | Historical Step-12 model→source and runtime evidence plus current post-A8 NBB/worker `PASS_11_OF_11`; B/C theorem-specific live observations revalidated |
 | 🌐 Outward/publication authority | Step-17 publication eligibility and governed projection |
 | 📦 Read/publication plane | Immutable publication; isolated loopback service; authorized route |
 | 🔎 Public interface | Evidence & Governance Portal at final observation |
@@ -1350,6 +1372,53 @@ T12D-B = CORRESPONDENCE_VERIFIED
 T12D-C = CORRESPONDENCE_VERIFIED
 P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
+
+## Current evidence note
+
+The architectural meaning of the write plane has **not** changed.
+
+The evidence basis has become stronger and more current.
+
+The historical Step-12 `MACHINE_CHECKED` classification retains its original Step-12 meaning: machine-executed source-structure checks plus bounded execution evidence.
+
+A later Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal Step-12 result set. That later proof-assistant layer is successor evidence; it does **not** retroactively redefine the historical Step-12 label.
+
+The current post-A8 source/runtime relationship is:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+For `T12D-B`, the later live revalidation observed a deliberately invalid authorization signature being rejected without authorized-spool publication, authorization consumption, or receipt creation.
+
+For `T12D-C`, the later live revalidation observed an empty spool remaining non-applying: no worker claim, authorization consumption, receipt, or authorized apply occurred.
+
+Those current observations support:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+For `T12D-A`, current source/runtime correspondence is present, but the positive authorized-apply production observation was deliberately not executed.
+
+Therefore:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+remains the current validation level.
+
+No real production authorization was issued or consumed and no production DGM patch was applied during those bounded post-A8 probes.
+
+See:
+
+- [Lean R1 workstream closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM theorem correspondence registry R1](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 The architectural lesson is not:
 
@@ -1763,6 +1832,9 @@ claims/nonclaims-and-residuals.md
 
 Detailed evidence belongs in the relevant workstream evidence and closeout records.
 
+> [!NOTE]
+> This reconciliation does **not** admit a current A8 frontend/private-context identity into the authority-plane model. No exact sealed A8 production identity is being inferred here. A future A8 private-context record, if admitted from sealed evidence, belongs on the inward/private application boundary and must remain distinct from both H_people runtime authority and the DGM theorem runtime.
+
 ---
 
 # ⚪ Current system boundary
@@ -1928,8 +2000,10 @@ No layer substitutes for another.
 
 - [`../formal-verification/authorized-adoption/formal-model.md`](../formal-verification/authorized-adoption/formal-model.md)
 - [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
+- [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 - [`../correspondence/authorized-adoption/model-to-source.md`](../correspondence/authorized-adoption/model-to-source.md)
 - [`../correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 - [`../acceptance/closeout/dgm-step12-close.md`](../acceptance/closeout/dgm-step12-close.md)
 
 ## Step-17 bounded read-plane record
@@ -2037,6 +2111,15 @@ allis_authority_planes:
     dgm_step12:
       role: bounded_write_plane_example
       status: GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
+      historical_machine_checked_meaning_preserved: true
+      later_lean_r1_qualification_recorded_separately: true
+      current_post_a8_source_runtime_correspondence: PASS_11_OF_11
+      current_theorem_status:
+        T12D-A: MACHINE_CHECKED
+        T12D-B: CORRESPONDENCE_VERIFIED
+        T12D-C: CORRESPONDENCE_VERIFIED
+        P12C-09: MACHINE_CHECKED_DISPROVEN
+      positive_authorized_apply_executed_post_a8: false
     publication_step17:
       role: bounded_read_plane_example
       status: GREEN_COMPLETE
@@ -2131,6 +2214,8 @@ allis_authority_planes:
 > **Human and institutional authority remain independent where those authorities properly belong.**
 
 > **Correspondence is relationship-specific and time-specific.**
+
+> **Later proof and correspondence evidence can strengthen the evidence basis without changing the authority-plane architecture or rewriting historical closes.**
 
 > **A closed workstream does not authorize its own successor.**
 
