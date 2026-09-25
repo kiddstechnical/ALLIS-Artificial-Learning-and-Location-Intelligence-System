@@ -624,6 +624,10 @@ NoAuthorizedApply
 
 So an empty spool is a safe operational condition.
 
+The later post-A8 live observation revalidated this condition against the current bounded DGM runtime: incoming remained empty, no worker claim occurred, no authorization was consumed, no receipt was created, and no authorized apply occurred.
+
+That newer observation strengthens the current `T12D-C` correspondence record without changing the semantic meaning of `PASS_EMPTY`.
+
 ---
 
 # 🟣 `CLAIMED` is not automatically terminal
@@ -779,7 +783,8 @@ Examples:
 |---|---|---|---|---|
 | Private record exists but caller lacks scope | complete subsystem | `NOT_AUTHORIZED` | existence may remain undisclosed | N/A |
 | BBB service unavailable, reduced response allowed | `UNAVAILABLE` lane | bounded continuation authorized | no full-path claim | point-in-time |
-| Empty DGM spool | `PASS_EMPTY` | no apply authority consumed | no incoming record | `T12D-C` correspondence-verified |
+| Empty DGM spool | `PASS_EMPTY` | no apply authority consumed | no incoming record | `T12D-C` correspondence-verified · current post-A8 live revalidation |
+| Invalid DGM authorization signature | validation path active | invalid authority rejected | fail-closed behavior observed | `T12D-B` correspondence-verified · current post-A8 live revalidation |
 | Claimed record terminalization fails | worker active | recovery authority required | P12C-09 disproven | bounded source/model |
 | Public DNS timeout | public path `UNAVAILABLE/TIMED_OUT` at attempt | no production mutation authority implied | production fault not established | later recovery required |
 | Research lane irrelevant | `NOT_APPLICABLE` | no authority question needed | no research evidence generated | N/A |
@@ -849,6 +854,121 @@ no authorized application
 ```
 
 A failed or missing prerequisite does not become implicit permission.
+
+## Current post-A8 live examples
+
+The later post-A8 DGM correspondence work revalidated two concrete fail-closed paths against the current theorem-relevant runtime.
+
+### `T12D-B` — invalid authorization fails closed
+
+The live validation/publication path received a structurally valid candidate/authorization package with a deliberately invalid cryptographic signature.
+
+Observed result:
+
+```text
+invalid signature
+    ⇒
+authorization rejected
+    ⇒
+no authorized-spool publication
+    ⇒
+no authorization consumption
+    ⇒
+no receipt creation
+```
+
+The bounded current live result was:
+
+```text
+T12D_B_CURRENT_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+This is a current concrete example of:
+
+```text
+invalid authorization
+    ≠
+permission to publish authorized work
+```
+
+### `T12D-C` — empty spool remains non-applying
+
+The live worker was observed with an empty incoming/claimed state across the bounded observation window.
+
+Observed result:
+
+```text
+empty incoming spool
+    ⇒
+no worker claim
+    ⇒
+no authorization consumption
+    ⇒
+no receipt creation
+    ⇒
+no authorized apply
+```
+
+The bounded current live result was:
+
+```text
+T12D_C_CURRENT_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+This is a current concrete example of:
+
+```text
+PASS_EMPTY
+    ≠
+UNAVAILABLE
+    ≠
+DENIED
+```
+
+and:
+
+```text
+no work available
+    ⇒
+no protected apply
+```
+
+### `T12D-A` remains separate
+
+The current source/runtime correspondence is `PASS_11_OF_11`, and the later Lean R1 work independently kernel-checked the bounded authorized-application proposition.
+
+However, the positive authorized-apply production path was **not executed** during the post-A8 revalidation.
+
+Therefore the current status remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+and is not promoted to `CORRESPONDENCE_VERIFIED`.
+
+### Production-action boundary
+
+These post-A8 probes did **not** issue or consume real production authorization and did **not** apply a production DGM patch.
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+```
+
+The current source/runtime relationship used for the bounded live observations was:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+See:
+
+- [Lean R1 workstream closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Post-A8 DGM theorem correspondence registry R1](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ---
 
@@ -1402,6 +1522,21 @@ This is epistemic fail-closed behavior:
 
 > **When stronger evidence is absent, retain the lower supported claim rather than promote it.**
 
+The current DGM theorem record is a concrete example:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+`T12D-B` and `T12D-C` have current post-A8 theorem-specific live observations.
+
+`T12D-A` does not have a positive authorized-apply production observation, so it remains at the lower supported level rather than being promoted.
+
+The negative `P12C-09` result remains adjudicated and is not relabeled as unresolved.
+
 ---
 
 # 🔗 Fail-closed and correspondence
@@ -1443,6 +1578,24 @@ OUTSIDE_AUDITED_SCOPE
 depending on the evidence model.
 
 The absence of a correspondence check is not a correspondence pass.
+
+For the bounded DGM theorem domain, the repository now records two observation epochs:
+
+```text
+historical Step-12 correspondence
+    ≠
+current post-A8 correspondence revalidation
+```
+
+The current post-A8 source/runtime result is:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+For `T12D-B` and `T12D-C`, that current source/runtime match is paired with a current theorem-specific live observation.
+
+For `T12D-A`, the current source/runtime match exists, but the required positive live authorized-apply observation does not.
 
 ---
 
@@ -1507,9 +1660,9 @@ This is authority-level fail-closed behavior.
 
 | Condition | Correct semantic result |
 |---|---|
-| Authorization invalid | `BLOCKED / DENIED` |
+| Authorization invalid | `BLOCKED / DENIED` · current post-A8 `T12D-B` live example |
 | Authorization missing / not valid for target | `NOT_AUTHORIZED` |
-| Empty incoming spool | `PASS_EMPTY` |
+| Empty incoming spool | `PASS_EMPTY` · current post-A8 `T12D-C` live example |
 | Worker claims record and finish succeeds | `COMPLETED` |
 | Controlled rejection | `REJECTED / BLOCKED` as defined by local state machine |
 | Finish/terminalization fails after claim | remain `CLAIMED`; recovery required |
@@ -1747,6 +1900,11 @@ The dedicated private-state document should preserve the exact public-safe bound
 
 - [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
 - [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
+- [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+
+## Current DGM correspondence evidence
+
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ---
 
@@ -1816,6 +1974,31 @@ allis_fail_closed_semantics:
       completed_implied: false
       rejected_implied: false
       requires_recovery_or_reconciliation: true
+
+  current_bounded_dgm_examples:
+    source_runtime_correspondence: PASS_11_OF_11
+    T12D-B:
+      condition: invalid_authorization_signature
+      live_observation: PASS
+      validation_level: CORRESPONDENCE_VERIFIED
+      authorized_spool_publication: false
+      authorization_consumed: false
+      receipt_created: false
+    T12D-C:
+      condition: empty_incoming_spool
+      live_observation: PASS
+      validation_level: CORRESPONDENCE_VERIFIED
+      worker_claim: false
+      authorization_consumed: false
+      receipt_created: false
+      authorized_apply: false
+    T12D-A:
+      validation_level: MACHINE_CHECKED
+      positive_authorized_apply_executed: false
+    production_action_boundary:
+      real_production_authorization_issued: false
+      real_production_authorization_consumed: false
+      real_production_dgm_patch_application: false
 
   aggregate_gateway_pattern:
     outcomes:
@@ -1917,5 +2100,7 @@ allis_fail_closed_semantics:
 > **Missing authority must never be silently converted into permission.**
 
 > **Missing evidence must never be silently converted into proof.**
+
+> **A current source/runtime match does not become correspondence-verified behavior without the theorem-specific live observation required by the claim.**
 
 > **The strongest safe result is the most specific result the evidence and authority actually support.**
