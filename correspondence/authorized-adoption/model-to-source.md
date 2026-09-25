@@ -186,6 +186,103 @@ It does not replace source-to-runtime correspondence.
 
 ---
 
+# ➕ Successor evidence relationship
+
+The Step-12 model → source mapping in this record remains the controlling bounded mapping:
+
+```math
+C_{FS}(F,S)=1
+```
+
+for:
+
+```text
+DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
+```
+
+and the sealed production source identity:
+
+```text
+20c8cbe175781c8a1c05d65c03977859ceca884a
+```
+
+A later Lean 4.34.0 R1 workstream formalized the principal Step-12 proposition layer and documented the formal-statement crosswalk for:
+
+```text
+T12D-A
+T12D-B
+T12D-C
+P12C-09
+```
+
+That later proof-assistant qualification is a **successor formal-evidence layer**.
+
+It did **not**, by itself, establish production model → source or source → runtime correspondence.
+
+The Lean R1 closeout therefore correctly preserved:
+
+```text
+LEAN_TO_PRODUCTION_SOURCE_CORRESPONDENCE=NOT_YET_ESTABLISHED
+LEAN_TO_PRODUCTION_RUNTIME_CORRESPONDENCE=NOT_YET_ESTABLISHED
+```
+
+The model → source edge remained grounded in the Step-12 correspondence work documented in this file.
+
+Later post-A8 work then consumed the already-qualified production source identity and re-established the current source/runtime bridge:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Against that current runtime bridge, theorem-specific live observations were separately obtained for:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+with:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_C_LIVE_OBSERVATION=PASS
+```
+
+`T12D-A` did not receive a positive authorized-apply live observation and therefore remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+The evidence relationship is therefore:
+
+```text
+Step-12 model → source mapping
+    +
+Lean R1 proposition-layer qualification
+    +
+post-A8 current source → runtime revalidation
+    +
+theorem-specific B/C live observation
+```
+
+These are distinct evidence layers.
+
+Lean proof qualification does not manufacture source correspondence, and source/runtime correspondence does not manufacture theorem-specific live observation.
+
+Successor records:
+
+- [`../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [`../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+
+---
+
 # 3. Source identity boundary
 
 The formal model is bound to the exact 11-file production authorized-adoption source set at:
@@ -1355,6 +1452,19 @@ MACHINE_CHECKED
 
 It is not promoted to positive runtime correspondence because no real positive production authorization/application was exercised during Step 12.
 
+Later post-A8 work re-established current source/runtime correspondence for the same bounded source identity, but still did not execute the positive authorized-apply production path:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
+
+Therefore the current level remains:
+
+```text
+MACHINE_CHECKED
+```
+
 ---
 
 # 29. T12D-B source basis
@@ -1381,7 +1491,15 @@ dgm_authorized_spool.py
 
 The source theorem was later combined with source-to-runtime correspondence and live fail-closed observation.
 
-Final level:
+The newest current observation epoch is the post-A8 revalidation:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES
+```
+
+Final/current level:
 
 ```text
 CORRESPONDENCE_VERIFIED
@@ -1405,13 +1523,21 @@ NoAuthorizedApply
 
 Its source basis is the worker authorized-consumer behavior that exits without entering `apply_authorized_candidate` when no incoming authorized record can be claimed.
 
-Final level:
+Final/current level:
 
 ```text
 CORRESPONDENCE_VERIFIED
 ```
 
 after source-to-runtime correspondence and live empty-spool observation were separately established.
+
+The newest current observation epoch is the post-A8 revalidation:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+T12D_C_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES
+```
 
 ---
 
@@ -1508,6 +1634,26 @@ formal proposition adjudication
 The result is stronger than a diagram tied only to filenames.
 
 It is also narrower than a claim that all implementation semantics have been formally verified.
+
+The later Lean R1 workstream strengthens the formal proposition layer, but does not replace this mapping.
+
+Likewise, the later post-A8 source/runtime revalidation strengthens the runtime bridge, but does not rewrite the source-symbol and source-order reasoning recorded here.
+
+Conceptually:
+
+```text
+Lean proof qualification
+    ≠
+model → source correspondence
+
+model → source correspondence
+    ≠
+source → runtime correspondence
+
+source → runtime correspondence
+    ≠
+theorem-specific live observation
+```
 
 ---
 
@@ -1761,10 +1907,13 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 
 evidence/
     governed-evolution/
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
         source-identity.md
         trust-anchor.md
         governance-view.md
@@ -1776,8 +1925,10 @@ Use:
 - [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) — mathematical object
 - [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) — proposition disposition and validation level
 - [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) — falsifying cases
+- [`lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) — later Lean R1 proposition-layer qualification and formal-statement crosswalk
 - [`model-to-source.md`](model-to-source.md) — formal-to-source correspondence
 - [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) — canonical sealed 11-file source manifest and hashes
+- [`post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) — later current source/runtime and B/C live revalidation
 - [`source-to-runtime.md`](source-to-runtime.md) — separate source-to-runtime correspondence question
 
 
@@ -1805,6 +1956,11 @@ Use:
 ### Separate edge
 **source → runtime remains independently evidenced**
 
+### ➕ SUCCESSOR EVIDENCE
+**Lean R1 qualifies the proposition layer but did not itself establish production source correspondence**
+
+**post-A8 work later re-established current source/runtime 11/11 and separately live-observed B/C**
+
 <br>
 
 # `SYSTEM_PROVEN=NO`
@@ -1815,3 +1971,5 @@ Use:
 
 # Governing correspondence principle
 > **A formal description is not authoritative merely because it is mathematically coherent. It becomes an evidence-backed description of production only when correspondence to the sealed implementation is established.**
+
+> **Later proof-assistant qualification, source/runtime correspondence, and live observation are distinct successor evidence layers; none silently substitutes for another.**
