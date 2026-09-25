@@ -263,7 +263,24 @@ REAL_PRODUCTION_DGM_PATCH_APPLICATION=NOT_PERFORMED
 
 The successful authorized-application theorem was machine-checked over the sealed source model.
 
-The corresponding positive production path was not exercised live.
+The corresponding positive production path was not exercised live during Step 12.
+
+Later successor evidence did not remove this boundary.
+
+The post-A8 revalidation established current theorem-relevant source/runtime correspondence:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+but deliberately did **not** execute the positive authorized-apply production path:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
+
+Therefore the positive-path non-observation remains current, not merely historical to Step 12.
 
 Therefore:
 
@@ -541,9 +558,20 @@ Reason:
 
 ```text
 MachineChecked = YES
-SourceRuntimeCorrespondence = YES
+CurrentSourceRuntimeCorrespondence = PASS_11_OF_11
+PostA8PositiveAuthorizedApplyExecuted = NO
 RelevantPositiveLiveObservation = NO
 ```
+
+The later post-A8 revalidation renewed the source/runtime edge but did **not** execute the positive authorized-apply production path.
+
+Therefore:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+remains current and is not promoted to `CORRESPONDENCE_VERIFIED`.
 
 ---
 
@@ -622,6 +650,68 @@ LivePositivePathObserved
 ```
 
 A theorem over the production source model does not manufacture a production event that did not occur.
+
+---
+
+# 🧭 Current post-A8 DGM nonclaims
+
+The later post-A8 work strengthened the current evidence for the bounded DGM theorem domain.
+
+It did **not** expand the theorem domain into a general production-mutation theorem or a whole-system theorem.
+
+The current theorem state remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+## `DGM-NC-07` — Current B/C correspondence does not prove general production-mutation safety
+
+Current post-A8 evidence supports theorem-specific correspondence for `T12D-B` and `T12D-C`.
+
+It does not establish:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
+```
+
+The current controlling state remains:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+```
+
+The B/C observations are bounded fail-closed observations over the qualified authorized-adoption path.
+
+They do not prove every production mutation path safe.
+
+---
+
+## `DGM-NC-08` — Current B/C correspondence does not prove whole-system safety
+
+Current `T12D-B` / `T12D-C` correspondence verification does not establish:
+
+```text
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=YES
+```
+
+and does not establish:
+
+```text
+SYSTEM_PROVEN=YES
+```
+
+The controlling states remain:
+
+```text
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+SYSTEM_PROVEN=NO
+```
+
+A theorem-specific live observation does not silently widen its formal domain.
 
 ---
 
@@ -1273,6 +1363,35 @@ It does not automatically bind a future changed publication.
 
 ---
 
+## `CORR-NC-05` — Current 11/11 source/runtime bytes do not by themselves prove theorem behavior
+
+The post-A8 revalidation established:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Those byte/source-runtime relationships establish the current implementation identity relationship for the bounded 11-file set.
+
+They do **not**, by themselves, establish theorem-specific runtime behavior.
+
+Conceptually:
+
+```text
+current source/runtime byte correspondence
+    ≠
+theorem-specific live behavior observed
+```
+
+That is why `T12D-B` required a separate invalid-signature live observation and `T12D-C` required a separate empty-spool live observation before their current `CORRESPONDENCE_VERIFIED` status was supported.
+
+It is also why the current 11/11 source/runtime result does not promote `T12D-A`, whose positive authorized-apply observation remains unexecuted.
+
+---
+
 # 🔐 Authority nonclaims
 
 Across ALLIS, evidence and capability do not create their own permission.
@@ -1348,6 +1467,8 @@ successor work authorized
 | `DGM-NC-04` | Step-12 model covers whole platform | `BOUNDED_DOMAIN` | 11-file path |
 | `DGM-NC-05` | Runtime can mint private authorization | `EXTERNAL_TO_RUNTIME_MODEL` | authority architecture |
 | `DGM-NC-06` | Step-12 close authorizes successor work | `NOT_AUTHORIZED` | final successor state |
+| `DGM-NC-07` | Current B/C correspondence proves general production mutation safety | `NOT_PROVEN` | bounded B/C theorem-specific correspondence |
+| `DGM-NC-08` | Current B/C correspondence proves whole-system safety / `SYSTEM_PROVEN` | `NOT_PROVEN` | bounded theorem domain |
 | `PUB-NC-01` | Public GUI is unrestricted ALLIS control | boundary | read-only publication |
 | `PUB-NC-02` | Public retrieval creates mutation authority | authority boundary | no public mutation endpoint |
 | `PUB-NC-03` | Network continuity is permanent | `POINT_IN_TIME_BINDING` | final observation only |
@@ -1369,6 +1490,7 @@ successor work authorized
 | `CORR-NC-02` | Source match automatically maps to runtime | correspondence boundary | explicit source→runtime edge required |
 | `CORR-NC-03` | Runtime source match equals theorem-specific observation | observation boundary | theorem-specific live evidence required |
 | `CORR-NC-04` | Publication correspondence is permanent | `POINT_IN_TIME_BINDING` | Step-17 observation |
+| `CORR-NC-05` | Current 11/11 source/runtime byte match by itself proves theorem-specific runtime behavior | observation boundary | B/C required separate live observations |
 
 ---
 
@@ -1522,6 +1644,20 @@ The final seal identity is:
 b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b
 ```
 
+Later successor evidence is owned separately:
+
+```text
+formal-verification/authorized-adoption/lean/workstream-closeout-r1.md
+```
+
+and:
+
+```text
+evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md
+```
+
+Those records strengthen the current evidence basis without rewriting the historical Step-12 residual ledger or final seal.
+
 ## Workstream F
 
 Use:
@@ -1602,6 +1738,18 @@ allis_nonclaims_and_residuals:
       system_proven: false
       live_positive_authorized_apply_observed: false
 
+    current_post_a8_boundary:
+      source_runtime_correspondence: PASS_11_OF_11
+      T12D_A_positive_authorized_apply_executed: false
+      T12D_A_correspondence_verified: false
+      T12D_B_correspondence_verified: true
+      T12D_C_correspondence_verified: true
+      B_C_correspondence_proves_general_production_mutation_safety: false
+      B_C_correspondence_proves_whole_system_safety: false
+      production_mutation_safety_theorem_proven: false
+      whole_system_safety_theorem_proven: false
+      system_proven: false
+
   publication_step17:
     fixed_goal: GREEN_COMPLETE
     public_mutation_endpoint: false
@@ -1626,6 +1774,9 @@ allis_nonclaims_and_residuals:
     formal_proof_equals_source_correspondence: false
     source_correspondence_equals_runtime_correspondence: false
     runtime_source_match_equals_theorem_specific_live_observation: false
+    current_11_of_11_source_runtime_bytes_prove_behavior_by_themselves: false
+    T12D_B_required_separate_live_observation: true
+    T12D_C_required_separate_live_observation: true
     correspondence_is_permanent: false
 
   baseline:
@@ -1655,15 +1806,17 @@ allis_nonclaims_and_residuals:
 - [`../acceptance/closeout/dgm-step12-close.md`](../acceptance/closeout/dgm-step12-close.md)
 - [`../acceptance/closeout/publication-step17-close.md`](../acceptance/closeout/publication-step17-close.md)
 
-## Step-12 evidence
+## Step-12 and successor DGM evidence
 
 - [`../evidence/governed-evolution/residuals.md`](../evidence/governed-evolution/residuals.md)
 - [`../evidence/governed-evolution/step12-final-seal.md`](../evidence/governed-evolution/step12-final-seal.md)
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ## Formal verification
 
 - [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
 - [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
+- [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
 ## Current state
 
@@ -1696,7 +1849,9 @@ but
 ### 🟠 DGM Step 12
 **GREEN CLOSED WITH EXPLICIT RESIDUALS**
 
-**8 residuals · 7 non-promotions**
+**8 residuals · 7 historical Step-12 non-promotions**
+
+**Current successor evidence: B/C correspondence revalidated · A positive path still not observed**
 
 ---
 
@@ -1739,6 +1894,10 @@ but
 > **A bounded proof does not become a whole-system proof.**
 
 > **Machine-Checked does not become Correspondence-Verified without the required live evidence.**
+
+> **Current 11/11 source/runtime byte correspondence does not by itself prove theorem-specific runtime behavior.**
+
+> **Current B/C correspondence verification does not establish a general production-mutation safety theorem or a whole-system theorem.**
 
 > **Correspondence is time-specific.**
 
