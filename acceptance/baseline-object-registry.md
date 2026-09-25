@@ -12,6 +12,8 @@
 ![F Baseline](https://img.shields.io/badge/F_BASELINE-QUALIFIED-16a34a?style=for-the-badge)
 ![A5 Anchor](https://img.shields.io/badge/A5_SOURCE_ANCHOR-QUALIFIED-8b5cf6?style=for-the-badge)
 ![Step 12](https://img.shields.io/badge/STEP_12_SOURCE-CLOSED-f59e0b?style=for-the-badge)
+![Lean R1](https://img.shields.io/badge/LEAN_R1-CLOSED_PASS-9333ea?style=for-the-badge)
+![Post A8](https://img.shields.io/badge/POST--A8_DGM_CORRESPONDENCE-PASS-c026d3?style=for-the-badge)
 ![Step 17](https://img.shields.io/badge/STEP_17_PUBLICATION-GREEN_COMPLETE-14b8a6?style=for-the-badge)
 
 <br>
@@ -40,6 +42,8 @@
 | 🟢 **Workstream-F qualified baseline** | `65b9f7dbd594ec9d225152aabd705eefc9216dbb` | Acceptance/source baseline | Workstream F |
 | 🟣 **A5 proof/source anchor** | `35f1aa5586e1a23e1ab88f4d757c451b44506893` | Formal-analysis source anchor | A5 / A5A mathematical audit |
 | 🔴 **Step-12 production DGM source** | `20c8cbe175781c8a1c05d65c03977859ceca884a` | Production formal/correspondence source | DGM Step 12 |
+| 🟪 **Lean R1 proof-assistant qualification** | proof commit `71ee78982c918145ca73850170a4c2a8a447170d` | Later kernel-checked proof qualification | Step-12 principal result set |
+| 🟨 **Post-A8 DGM correspondence reference** | `POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1` | Current source/runtime + live-observation correspondence reference | Bounded DGM theorem domain |
 | 🟦 **Step-17 publication set** | `allis-publication-step6-retention-v2` · `d6ab6352…` · `5By6R3…` | Public publication/runtime reference set | Publication Step 17 |
 
 ### One sentence to remember
@@ -63,12 +67,16 @@ flowchart LR
     Q -->|"What source did Workstream F close against?"| F["🟢 65b9f7db…<br/>Qualified baseline"]:::f
     Q -->|"What committed source did A5 analyze?"| A["🟣 35f1aa55…<br/>Proof/source anchor"]:::a
     Q -->|"What production source did Step 12 bind?"| D["🔴 20c8cbe1…<br/>Production DGM source"]:::d
+    Q -->|"What later proof-assistant object checked the principal Step-12 results?"| L["🟪 71ee7898…<br/>Lean R1 qualification"]:::l
+    Q -->|"What is the newest bounded DGM correspondence observation?"| X["🟨 Post-A8 R1<br/>Current correspondence reference"]:::x
     Q -->|"What publication/frontend did Step 17 verify?"| P["🟦 Publication + body + frontend<br/>Step-17 reference set"]:::p
 
     classDef question fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:3px;
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef a fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
     classDef d fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
+    classDef l fill:#c4b5fd,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef x fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
     classDef p fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
 ```
 
@@ -78,13 +86,15 @@ The correct reference depends on the question.
 
 # 🏷️ Registry vocabulary
 
-This registry uses four primary roles.
+This registry uses six primary roles.
 
 | Role | Definition | What it is for |
 |---|---|---|
 | `QUALIFIED_BASELINE` | Source object formally admitted for a bounded acceptance state | Acceptance and closeout |
 | `PROOF_SOURCE_ANCHOR` | Committed source object used to anchor bounded formal analysis | Formalization and proof-domain identity |
 | `PRODUCTION_SOURCE` | Production implementation identity used by a bounded formal/correspondence package | Production theorem and correspondence |
+| `PROOF_ASSISTANT_QUALIFICATION` | Qualified proof-assistant object that checks a bounded formal proposition set | Independent kernel-checked proof/disproof evidence |
+| `CORRESPONDENCE_REFERENCE_SET` | Bounded evidence/reference object that binds qualified source to an observed runtime/observation epoch | Current source/runtime and theorem-specific correspondence |
 | `PUBLICATION_REFERENCE_SET` | Publication, publication-body, and frontend identities observed at a bounded public closeout | Public evidence and GUI correspondence |
 
 These roles are **not a ranking**.
@@ -95,6 +105,10 @@ QUALIFIED_BASELINE
 PROOF_SOURCE_ANCHOR
     ≠
 PRODUCTION_SOURCE
+    ≠
+PROOF_ASSISTANT_QUALIFICATION
+    ≠
+CORRESPONDENCE_REFERENCE_SET
     ≠
 PUBLICATION_REFERENCE_SET
 ```
@@ -112,17 +126,23 @@ flowchart TB
     F["🟢 REG-F01<br/>QUALIFIED_BASELINE<br/>65b9f7db…"]:::f
     A["🟣 REG-A501<br/>PROOF_SOURCE_ANCHOR<br/>35f1aa55…"]:::a
     D["🔴 REG-D1201<br/>PRODUCTION_SOURCE<br/>20c8cbe1…"]:::d
+    L["🟪 REG-LR101<br/>PROOF_ASSISTANT_QUALIFICATION<br/>71ee7898…"]:::l
+    X["🟨 REG-D12R01<br/>CORRESPONDENCE_REFERENCE_SET<br/>Post-A8 R1"]:::x
     P["🟦 REG-P1701<br/>PUBLICATION_REFERENCE_SET<br/>Step-17 identities"]:::p
 
     F -->|"Workstream-F acceptance"| R
     A -->|"A5 formal analysis"| R
     D -->|"Step-12 production model"| R
+    L -->|"Later Lean qualification"| R
+    X -->|"Post-A8 DGM correspondence"| R
     P -->|"Step-17 publication/GUI"| R
 
     classDef registry fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:3px;
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef a fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
     classDef d fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
+    classDef l fill:#c4b5fd,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef x fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
     classDef p fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
 ```
 
@@ -139,6 +159,8 @@ It records their distinct roles in one place.
 | `REG-F01` | `QUALIFIED_BASELINE` | `65b9f7dbd594ec9d225152aabd705eefc9216dbb` | tag `stage10-auth-identity-65b9f7dbd594` | **Workstream F CLOSED** |
 | `REG-A501` | `PROOF_SOURCE_ANCHOR` | `35f1aa5586e1a23e1ab88f4d757c451b44506893` | tree `36dd9f2425db4b23bacfce1cb258603cace25f1b` | **Qualified bounded anchor** |
 | `REG-D1201` | `PRODUCTION_SOURCE` | `20c8cbe175781c8a1c05d65c03977859ceca884a` | Step-12 final seal `b00a954a…` | **GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS** |
+| `REG-LR101` | `PROOF_ASSISTANT_QUALIFICATION` | `71ee78982c918145ca73850170a4c2a8a447170d` | metadata head `beceb3ee…` · Lean `4.34.0` | **CLOSED / PASS** |
+| `REG-D12R01` | `CORRESPONDENCE_REFERENCE_SET` | `POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1` | source `20c8cbe1…` · tree `8d0840f0…` · current 11/11 | **PASS** |
 | `REG-P1701` | `PUBLICATION_REFERENCE_SET` | `allis-publication-step6-retention-v2` | body `d6ab6352…` · frontend `5By6R3…` | **GREEN COMPLETE at final Step-17 seal** |
 
 ---
@@ -386,6 +408,245 @@ Those objects remain authoritative for their own bounded roles.
 
 ---
 
+# 🟪 `REG-LR101` — Lean R1 proof-assistant qualification
+
+<div align="center">
+
+![Role](https://img.shields.io/badge/ROLE-PROOF_ASSISTANT_QUALIFICATION-9333ea?style=flat-square)
+![State](https://img.shields.io/badge/LEAN_R1-CLOSED_PASS-7c3aed?style=flat-square)
+
+</div>
+
+## Identity
+
+Qualified proof commit:
+
+```text
+71ee78982c918145ca73850170a4c2a8a447170d
+```
+
+Final local metadata head:
+
+```text
+beceb3ee44fd5c33eaf689a5abe086e5e9c67911
+```
+
+Pinned toolchain:
+
+```text
+leanprover/lean4:v4.34.0
+```
+
+## Purpose
+
+`REG-LR101` answers:
+
+> **Which later proof-assistant object independently kernel-checked the principal Step-12 proposition set?**
+
+## Current role
+
+This object represents the later Lean R1 qualification layer over the historical Step-12 formal record.
+
+It records:
+
+```text
+T12D_A_LEAN_KERNEL_CHECKED=YES
+T12D_B_LEAN_KERNEL_CHECKED=YES
+T12D_C_LEAN_KERNEL_CHECKED=YES
+P12C_09_LEAN_KERNEL_CHECKED=YES
+```
+
+with the qualified theorem-level axiom report:
+
+```text
+T12D_A_AXIOMS=NONE
+T12D_B_AXIOMS=NONE
+T12D_C_AXIOMS=NONE
+P12C_09_AXIOMS=NONE
+```
+
+The Lean workstream closed:
+
+```text
+LOCAL_LEAN_WORKSTREAM_R1=CLOSED
+```
+
+## What this qualification supports
+
+- a later proof-assistant representation of the principal Step-12 propositions;
+- Lean-kernel-checked proofs for `T12D-A`, `T12D-B`, and `T12D-C`;
+- a Lean-kernel-checked disproof/counterexample result for `P12C-09`;
+- an independently qualified proof layer over the Step-12 formal statements.
+
+## What this qualification does not do
+
+`REG-LR101` is **not** a production source object.
+
+It does not replace:
+
+```text
+REG-D1201
+```
+
+Its historical closeout correctly records that direct Lean-to-production source/runtime correspondence had not yet been independently established **within that closed Lean R1 workstream**.
+
+That later implementation bridge is represented separately by:
+
+```text
+REG-D12R01
+```
+
+### Registry rule
+
+```text
+proof-assistant qualification
+    ≠
+production source identity
+    ≠
+runtime correspondence
+```
+
+See the [Lean R1 workstream closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
+
+---
+
+# 🟨 `REG-D12R01` — Post-A8 DGM correspondence reference set
+
+<div align="center">
+
+![Role](https://img.shields.io/badge/ROLE-CORRESPONDENCE_REFERENCE_SET-ca8a04?style=flat-square)
+![State](https://img.shields.io/badge/POST--A8_DGM-PASS-16a34a?style=flat-square)
+
+</div>
+
+## Identity
+
+Registry object:
+
+```text
+POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1
+```
+
+Result:
+
+```text
+PASS
+```
+
+Controlling production source remains:
+
+```text
+20c8cbe175781c8a1c05d65c03977859ceca884a
+```
+
+Source tree:
+
+```text
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+```
+
+## Purpose
+
+`REG-D12R01` answers:
+
+> **What is the newest bounded source/runtime and theorem-specific correspondence observation for the Step-12 DGM theorem domain?**
+
+## Current role
+
+The post-A8 revalidation did **not** define a replacement production source.
+
+It revalidated the relationship between `REG-D1201` and the current observed theorem-relevant DGM runtime.
+
+Current bounded result:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The theorem-specific live observations support:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+`T12D-A` remains:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+because no positive authorized-apply production observation was executed.
+
+`P12C-09` remains:
+
+```text
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+## What this reference set supports
+
+- current bounded 11/11 source/runtime correspondence for the theorem-relevant DGM source set;
+- a current post-A8 observation epoch distinct from the historical Step-12 final seal;
+- current theorem-specific fail-closed revalidation for `T12D-B`;
+- current theorem-specific empty-spool revalidation for `T12D-C`;
+- continued non-promotion of `T12D-A`.
+
+## What this reference set does not do
+
+`REG-D12R01` does not replace:
+
+```text
+REG-D1201
+```
+
+The source identity remains the Step-12 production source.
+
+It also does not establish:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=YES
+SYSTEM_PROVEN=YES
+```
+
+Those statements remain:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+SYSTEM_PROVEN=NO
+```
+
+### Registry rule
+
+```text
+stable production source identity
+    +
+later runtime observation
+    =
+successor correspondence evidence
+```
+
+not:
+
+```text
+later runtime observation
+    =
+replacement production source
+```
+
+See the [Post-A8 DGM theorem correspondence registry R1](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
+
+---
+
 # 🟦 `REG-P1701` — Step-17 publication reference set
 
 <div align="center">
@@ -480,6 +741,8 @@ source-code baseline
 | Which source did Workstream F formally close against? | 🟢 `REG-F01` |
 | Which committed source anchors the A5 formal analysis? | 🟣 `REG-A501` |
 | Which production source does the Step-12 DGM formal model describe? | 🔴 `REG-D1201` |
+| Which later proof-assistant object kernel-checked the principal Step-12 results? | 🟪 `REG-LR101` |
+| What is the current bounded DGM source/runtime + theorem-specific correspondence observation? | 🟨 `REG-D12R01` |
 | Which publication/frontend identities define the final Step-17 observation? | 🟦 `REG-P1701` |
 | What is the one commit for all current ALLIS? | **No single registry object answers that question. Use the current-system manifest.** |
 
@@ -487,16 +750,16 @@ source-code baseline
 
 # ↔️ Object-role comparison
 
-| Characteristic | 🟢 `REG-F01` | 🟣 `REG-A501` | 🔴 `REG-D1201` | 🟦 `REG-P1701` |
-|---|---|---|---|---|
-| Git source identity | ✅ | ✅ | ✅ | — |
-| Tree identity | — | ✅ | bounded source manifest | — |
-| Formal acceptance close | ✅ | — | ✅ bounded workstream | ✅ fixed-goal close |
-| Formal-analysis anchor | — | ✅ | ✅ production formal model | — |
-| Runtime correspondence | not represented by this object | not represented by this object | ✅ Step-12 bounded correspondence | ✅ publication/GUI observation |
-| Publication identity | — | — | — | ✅ |
-| Frontend identity | — | — | — | ✅ |
-| Whole-system identity | ❌ | ❌ | ❌ | ❌ |
+| Characteristic | 🟢 `REG-F01` | 🟣 `REG-A501` | 🔴 `REG-D1201` | 🟪 `REG-LR101` | 🟨 `REG-D12R01` | 🟦 `REG-P1701` |
+|---|---|---|---|---|---|---|
+| Git/source identity | ✅ | ✅ | ✅ | qualified local proof commit | references `REG-D1201` source | — |
+| Tree identity | — | ✅ | bounded source manifest | — | source tree `8d0840f0…` | — |
+| Formal acceptance close | ✅ | — | ✅ bounded workstream | ✅ proof workstream close | — | ✅ fixed-goal close |
+| Formal-analysis / proof role | — | ✅ | ✅ production formal model | ✅ Lean kernel qualification | consumes qualified theorem/source record | — |
+| Runtime correspondence | not represented by this object | not represented by this object | ✅ historical Step-12 bounded correspondence | not established inside Lean R1 close | ✅ post-A8 current 11/11 + B/C observations | ✅ publication/GUI observation |
+| Publication identity | — | — | — | — | — | ✅ |
+| Frontend identity | — | — | — | — | — | ✅ |
+| Whole-system identity | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 ---
 
@@ -548,12 +811,14 @@ Without those elements, the registry keeps both objects in their bounded roles.
 
 The table below prevents accidental authority transfer.
 
-| Existing object | Does A5 automatically replace it? | Does Step 12 automatically replace it? | Does Step 17 automatically replace it? |
-|---|---:|---:|---:|
-| 🟢 Workstream-F qualified baseline | **No** | **No** | **No** |
-| 🟣 A5 proof/source anchor | — | **No** | **No** |
-| 🔴 Step-12 production DGM source | — | — | **No** |
-| 🟦 Step-17 publication reference set | — | — | — |
+| Existing object | A5 anchor replaces it? | Step-12 source replaces it? | Lean R1 replaces it? | Post-A8 correspondence replaces it? | Step-17 publication replaces it? |
+|---|---:|---:|---:|---:|---:|
+| 🟢 Workstream-F qualified baseline | **No** | **No** | **No** | **No** | **No** |
+| 🟣 A5 proof/source anchor | — | **No** | **No** | **No** | **No** |
+| 🔴 Step-12 production DGM source | — | — | **No** | **No** | **No** |
+| 🟪 Lean R1 proof-assistant qualification | — | — | — | **No** | **No** |
+| 🟨 Post-A8 DGM correspondence reference | — | — | — | — | **No** |
+| 🟦 Step-17 publication reference set | — | — | — | — | — |
 
 Why?
 
@@ -564,7 +829,11 @@ acceptance baseline
     ≠
 formal-analysis anchor
     ≠
-production formal/correspondence source
+production source
+    ≠
+proof-assistant qualification
+    ≠
+runtime/correspondence reference set
     ≠
 publication/runtime reference set
 ```
@@ -599,6 +868,8 @@ flowchart LR
 | `baseline-object-registry.md` | **Which qualified reference object applies to this scope?** |
 | `current-system-manifest.md` | **How do the qualified objects and explicit correspondence edges fit together?** |
 | `correspondence/` | **Which model/source/runtime/publication relationships have been verified?** |
+| `REG-LR101` | **Which later proof-assistant object checked the principal Step-12 propositions?** |
+| `REG-D12R01` | **What is the newest bounded DGM theorem-correspondence observation?** |
 | `CURRENT.md` | **What does the current public technical record support?** |
 | `README.md` | **What is ALLIS and how should a reader understand it?** |
 
@@ -725,6 +996,14 @@ remains the Step-12 production source identity.
 
 But a later production runtime must be rechecked before inheriting the earlier runtime-correspondence claim.
 
+That later bounded DGM recheck is now represented by:
+
+```text
+REG-D12R01
+```
+
+It preserves `20c8cbe1…` as the production source identity while recording a newer post-A8 observation epoch with current NBB/worker `PASS_11_OF_11` correspondence and theorem-specific B/C live revalidation.
+
 Likewise:
 
 ```text
@@ -766,6 +1045,8 @@ There is no requirement that every object use the same kind of identifier.
 | 🟢 `REG-F01` | Workstream F closed against its qualified source baseline |
 | 🟣 `REG-A501` | The A5 bounded formalization has an identified committed source anchor |
 | 🔴 `REG-D1201` | The Step-12 bounded production formal/correspondence package is tied to the identified production source |
+| 🟪 `REG-LR101` | The principal Step-12 result set later received independent Lean 4.34.0 kernel-checked qualification |
+| 🟨 `REG-D12R01` | The bounded theorem-relevant DGM source was revalidated post-A8 against current observed NBB/worker runtime at 11/11, with B/C current live correspondence and A intentionally unpromoted |
 | 🟦 `REG-P1701` | The Step-17 governed-publication closeout is tied to identified publication and frontend objects |
 
 No registry object, by itself, supports:
@@ -809,6 +1090,9 @@ A future private-state runtime baseline should be added only after the relevant:
 - public-safe evidence state
 
 are established.
+
+> [!NOTE]
+> This reconciliation does **not** add an A8 frontend/private-context registry object because no exact sealed A8 production identity has been admitted into this registry update. A future A8 object should be added separately from `REG-P1701` and must not be treated as H_people runtime authority or as the DGM theorem runtime merely by association.
 
 ---
 
@@ -888,6 +1172,32 @@ allis_baseline_object_registry:
       supporting_seal: b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b
       replaces: null
 
+    - registry_id: REG-LR101
+      role: PROOF_ASSISTANT_QUALIFICATION
+      identity:
+        qualified_proof_commit: 71ee78982c918145ca73850170a4c2a8a447170d
+        metadata_head: beceb3ee44fd5c33eaf689a5abe086e5e9c67911
+        lean_toolchain: leanprover/lean4:v4.34.0
+      scope: step12_principal_result_set_lean_r1
+      state: CLOSED_PASS
+      replaces: null
+
+    - registry_id: REG-D12R01
+      role: CORRESPONDENCE_REFERENCE_SET
+      identity:
+        registry: POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1
+        source_commit: 20c8cbe175781c8a1c05d65c03977859ceca884a
+        source_tree: 8d0840f076e84b4033ff398f602fb81a6d6e29f2
+      scope: post_a8_bounded_dgm_theorem_correspondence
+      state: PASS
+      source_runtime_correspondence: PASS_11_OF_11
+      correspondence_verified:
+        - T12D-B
+        - T12D-C
+      not_promoted:
+        - T12D-A
+      replaces: null
+
     - registry_id: REG-P1701
       role: PUBLICATION_REFERENCE_SET
       identity:
@@ -926,12 +1236,14 @@ allis_baseline_object_registry:
 - [`../formal-verification/authorized-adoption/formal-model.md`](../formal-verification/authorized-adoption/formal-model.md)
 - [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
 - [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
+- [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
 ## Correspondence
 
 - [`../correspondence/README.md`](../correspondence/README.md)
 - [`../correspondence/authorized-adoption/model-to-source.md`](../correspondence/authorized-adoption/model-to-source.md)
 - [`../correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ## Evidence
 
@@ -939,6 +1251,7 @@ allis_baseline_object_registry:
 - [`../evidence/governed-evolution/source-identity.md`](../evidence/governed-evolution/source-identity.md)
 - [`../evidence/governed-evolution/trust-anchor.md`](../evidence/governed-evolution/trust-anchor.md)
 - [`../evidence/governed-evolution/governance-view.md`](../evidence/governed-evolution/governance-view.md)
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 - [`../evidence/governed-evolution/residuals.md`](../evidence/governed-evolution/residuals.md)
 - [`../evidence/governed-evolution/step12-final-seal.md`](../evidence/governed-evolution/step12-final-seal.md)
 
@@ -962,6 +1275,16 @@ allis_baseline_object_registry:
 **Step-12 production DGM source**
 
 `20c8cbe1…`
+
+### 🟪 `REG-LR101`
+**Lean R1 proof-assistant qualification**
+
+`71ee7898…`
+
+### 🟨 `REG-D12R01`
+**Post-A8 DGM correspondence reference set**
+
+`POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1`
 
 ### 🟦 `REG-P1701`
 **Step-17 publication reference set**
@@ -989,6 +1312,10 @@ allis_baseline_object_registry:
 > **A newer object does not automatically replace an object with a different role.**
 
 > **Supersession must be explicit.**
+
+> **Proof-assistant qualification does not silently become production-source or runtime authority.**
+
+> **A later correspondence observation does not replace the stable source identity it revalidates.**
 
 > **Correspondence must be verified where a claim depends on runtime state.**
 
