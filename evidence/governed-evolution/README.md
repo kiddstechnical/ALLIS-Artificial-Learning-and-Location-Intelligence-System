@@ -1,6 +1,78 @@
-# Governed Evolution
+<div align="center">
 
-## Governed improvement without self-authorizing change
+# ALLIS — Governed Evolution
+
+### Governed improvement without self-authorizing production change
+
+<br>
+
+![Governed Evolution](https://img.shields.io/badge/GOVERNED_EVOLUTION-BOUNDED_PRODUCTION_PATH-2563eb?style=for-the-badge)
+![Step 12](https://img.shields.io/badge/STEP_12-GREEN_CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
+![Lean R1](https://img.shields.io/badge/LEAN_R1-KERNEL_CHECKED-7c3aed?style=for-the-badge)
+![Post A8](https://img.shields.io/badge/POST--A8-B%2FC_CORRESPONDENCE_VERIFIED-16a34a?style=for-the-badge)
+![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
+
+<br>
+
+**Kidd’s Technical Services · ALLIS**
+
+</div>
+
+---
+
+> [!IMPORTANT]
+> This document explains the **bounded governed-evolution and production authorized-adoption architecture**.
+>
+> The historical Step-12 evidence remains intact. Later Lean R1 proof-assistant qualification and later post-A8 source/runtime + B/C live revalidation are **additive successor evidence**.
+>
+> They do **not** rewrite the Step-12 final seal or promote the repository to whole-system proof.
+>
+> ```text
+> SYSTEM_PROVEN=NO
+> ```
+
+---
+
+# 👀 Result in one view
+
+| Evidence layer | Bounded result |
+|---|---|
+| Historical Step-12 formal adjudication | `12 total · 11 proven · 1 disproven · 0 unadjudicated` |
+| Historical Step-12 source/runtime | NBB `11/11 PASS` · Worker `11/11 PASS` |
+| Later Lean R1 | Principal A/B/C results kernel checked; P12C-09 counterexample/disproof kernel checked; theorem-level axioms `NONE` |
+| Current post-A8 source/runtime | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| `T12D-A` | `MACHINE_CHECKED` |
+| `T12D-B` | `CORRESPONDENCE_VERIFIED` |
+| `T12D-C` | `CORRESPONDENCE_VERIFIED` |
+| `P12C-09` | `MACHINE_CHECKED_DISPROVEN` |
+| Whole system | `SYSTEM_PROVEN=NO` |
+
+```mermaid
+flowchart LR
+    P["💡 Candidate proposed"]:::proposal
+    E["🧪 Candidate evaluated"]:::evidence
+    A["🔐 Independent authorization"]:::authority
+    V["🛡️ Runtime verification"]:::verify
+    G["🔧 Governed application"]:::apply
+    R["🧾 Receipt + evidence"]:::receipt
+
+    P --> E
+    E -->|"does not create authority"| A
+    A --> V
+    V -->|"only if all checks pass"| G
+    G --> R
+
+    classDef proposal fill:#dbeafe,stroke:#2563eb,color:#172554,stroke-width:2px;
+    classDef evidence fill:#fef3c7,stroke:#ca8a04,color:#713f12,stroke-width:2px;
+    classDef authority fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:3px;
+    classDef verify fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef apply fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
+    classDef receipt fill:#ccfbf1,stroke:#0f766e,color:#134e4a,stroke-width:2px;
+```
+
+---
+
+# 🧭 Governed improvement without self-authorizing change
 
 ALLIS separates the ability to **propose, evaluate, and reason about a software improvement** from the authority required to adopt that improvement into a production-controlled system.
 
@@ -70,7 +142,7 @@ authority exists
 
 ---
 
-## Current validation status
+# 📋 Current validation status
 
 The governed-evolution architecture is no longer documented only as a future or conceptual design.
 
@@ -114,7 +186,9 @@ It does not mean that all ALLIS behavior has been formally verified.
 
 ---
 
-## What Step 12 established
+# 🕰️ What Step 12 established — historical final-seal record
+
+This section records what **Step 12 established at its own final-seal epoch**.
 
 Step 12 adjudicated twelve formal propositions over the sealed production authorized-adoption model.
 
@@ -136,14 +210,14 @@ T12D-C = CORRESPONDENCE_VERIFIED
 P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
 
-The live runtime source correspondence at the final seal was:
+The **historical Step-12** live runtime source correspondence at the final seal was:
 
 ```text
 NBB source correspondence     11/11 PASS
 Worker source correspondence  11/11 PASS
 ```
 
-The final runtime evidence also recorded:
+The **historical Step-12** final runtime evidence also recorded:
 
 ```text
 Public trust     PASS
@@ -169,7 +243,98 @@ It required every scoped question to receive an explicit disposition.
 
 ---
 
-## The strongest current production theorem
+# 🧮 Later Lean R1 qualification
+
+After the Step-12 close, a separate Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal bounded result set.
+
+Qualified successor evidence:
+
+```text
+T12D_A_LEAN_KERNEL_CHECKED=YES
+T12D_B_LEAN_KERNEL_CHECKED=YES
+T12D_C_LEAN_KERNEL_CHECKED=YES
+
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+
+THEOREM_LEVEL_AXIOMS=NONE
+LEAN_PROOF_HOLES=0
+STEP12_LEAN_QUALIFICATION_AXIOM_FREE_R2=SEALED_PASS
+```
+
+The later Lean work is **successor proof-assistant evidence**.
+
+It does not retroactively redefine the historical Step-12 `MACHINE_CHECKED` label.
+
+The Lean R1 closeout itself correctly preserved that direct production correspondence had not yet been established by the Lean workstream:
+
+```text
+LEAN_TO_PRODUCTION_SOURCE_CORRESPONDENCE=NOT_YET_ESTABLISHED
+LEAN_TO_PRODUCTION_RUNTIME_CORRESPONDENCE=NOT_YET_ESTABLISHED
+```
+
+That production implementation bridge was established later through separate post-A8 correspondence work.
+
+See:
+
+- [`../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+
+---
+
+# 🔗 Post-A8 current revalidation
+
+A later post-A8 observation epoch revalidated the same theorem-relevant production source identity against the current observed DGM runtimes.
+
+Current source/runtime result:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The current theorem-specific fail-closed observations then established:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES
+T12D_B_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+
+T12D_C_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES
+T12D_C_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+The positive authorized-application path for `T12D-A` remained deliberately unexecuted:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
+
+Therefore the current bounded theorem state is:
+
+| Proposition | Current validation |
+|---|---|
+| `T12D-A` | `MACHINE_CHECKED` |
+| `T12D-B` | `CORRESPONDENCE_VERIFIED` |
+| `T12D-C` | `CORRESPONDENCE_VERIFIED` |
+| `P12C-09` | `MACHINE_CHECKED_DISPROVEN` |
+
+The later post-A8 record is a **successor observation**, not a rewrite of the Step-12 seal.
+
+See:
+
+- [`post-a8-theorem-correspondence-registry-r1.md`](post-a8-theorem-correspondence-registry-r1.md)
+
+---
+
+# 📐 The strongest current production theorem
 
 The central authorized-application theorem is:
 
@@ -209,6 +374,19 @@ CORRESPONDENCE_VERIFIED
 
 because Step 12 deliberately did not perform a real positive production authorization and DGM patch application.
 
+The later post-A8 current revalidation also deliberately did **not** execute that positive authorized-apply production path:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
+
+So `T12D-A` correctly remains:
+
+```text
+MACHINE_CHECKED
+```
+
 That distinction is important:
 
 ```text
@@ -219,9 +397,9 @@ live positive path observed
 
 ---
 
-## Two fail-closed properties are correspondence-verified
+# 🛡️ Two fail-closed properties are correspondence-verified
 
-### Invalid authorization does not become authorized work
+## Invalid authorization does not become authorized work
 
 The NBB publication boundary satisfies:
 
@@ -241,13 +419,20 @@ invalid external authorization
 no authorized spool publication
 ```
 
-This result is:
+This result was correspondence-verified in the bounded Step-12 record and was later re-observed in the post-A8 current runtime:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_B_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+Current result:
 
 ```text
 CORRESPONDENCE_VERIFIED
 ```
 
-### Empty spool does not become authorized application
+## Empty spool does not become authorized application
 
 The worker boundary satisfies:
 
@@ -271,7 +456,14 @@ no worker claim
 no authorized apply
 ```
 
-This result is also:
+This result was likewise correspondence-verified in the bounded Step-12 record and later re-observed in the post-A8 current runtime:
+
+```text
+T12D_C_LIVE_OBSERVATION=PASS
+T12D_C_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+```
+
+Current result:
 
 ```text
 CORRESPONDENCE_VERIFIED
@@ -279,7 +471,7 @@ CORRESPONDENCE_VERIFIED
 
 ---
 
-## A counterexample is part of the result
+# 🔴 A counterexample is part of the result
 
 The formal process did not promote every proposed property.
 
@@ -318,7 +510,7 @@ The evidence is not rewritten to make the intended architecture look cleaner.
 
 ---
 
-## What “governed evolution” means
+# 🧭 What “governed evolution” means
 
 In ALLIS, **governed evolution** does not mean unrestricted, autonomous, or self-authorizing software change.
 
@@ -326,7 +518,7 @@ It means that a system can support bounded improvement work while preserving ind
 
 The architecture separates two related but different domains.
 
-### Research and evaluation
+## Research and evaluation
 
 Research-stage work can include:
 
@@ -348,7 +540,7 @@ A successful candidate can become better evidence.
 
 It does not become production authority.
 
-### Production authorized adoption
+## Production authorized adoption
 
 The bounded production path is:
 
@@ -376,7 +568,7 @@ A production transition requires an independent authorization object and runtime
 
 ---
 
-## Research evidence and production authority remain separate
+# ⚖️ Research evidence and production authority remain separate
 
 The architecture deliberately separates:
 
@@ -403,7 +595,7 @@ ALLIS rejects that shortcut.
 
 ---
 
-## The candidate and authorization are different objects
+# 📦 Candidate and authorization are different objects
 
 The production model separates the proposed change from the authority to adopt it.
 
@@ -449,7 +641,7 @@ candidate is authorized
 
 ---
 
-## Verification is not authorization
+# 🔐 Verification is not authorization
 
 The production pathway uses a pinned public verification trust anchor.
 
@@ -485,7 +677,7 @@ It does not create private signing authority.
 
 ---
 
-## Authority remains external to the bounded runtime model
+# 🚧 Authority remains external to the bounded runtime model
 
 The current Step-12 model preserves an explicit authority boundary:
 
@@ -511,7 +703,7 @@ If the same runtime that wanted to mutate production could manufacture the autho
 
 ---
 
-## Target access is not target authority
+# 🎯 Target access is not target authority
 
 A process may be technically able to reach a source path without being authorized to modify it.
 
@@ -543,7 +735,7 @@ governed target authority
 
 ---
 
-## Authorization is bound to the current prestate
+# 🔗 Authorization is bound to the current prestate
 
 A production authorization is not treated as permission to mutate any later version of a target.
 
@@ -569,7 +761,7 @@ This prevents stale authority from silently migrating onto a different source st
 
 ---
 
-## Authorization is one-use
+# 1️⃣ Authorization is one-use
 
 The bounded production model includes one-use authorization behavior.
 
@@ -593,7 +785,7 @@ authority remains reusable forever
 
 ---
 
-## Application success requires evidence of the transition
+# 🧾 Application success requires evidence of the transition
 
 The production path does not treat an attempted mutation as a completed mutation.
 
@@ -637,7 +829,7 @@ The preserved terminalization counterexample demonstrates why these states must 
 
 ---
 
-## Source identity is part of the proof boundary
+# 💻 Source identity is part of the proof boundary
 
 The formal model is bound to the exact sealed eleven-file production source set at:
 
@@ -645,11 +837,17 @@ The formal model is bound to the exact sealed eleven-file production source set 
 20c8cbe175781c8a1c05d65c03977859ceca884a
 ```
 
-The Step-12 runtime evidence established byte correspondence for all eleven governed source files in both inspected runtime roles:
+The **historical Step-12** runtime evidence established byte correspondence for all eleven governed source files in both inspected runtime roles:
 
 ```text
 NBB     11/11 PASS
 Worker  11/11 PASS
+```
+
+The later post-A8 current revalidation independently re-established the same bounded source/runtime relationship:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
 ```
 
 This correspondence is not based on filenames alone.
@@ -670,7 +868,7 @@ prior correspondence automatically preserved
 
 ---
 
-## Runtime correspondence is point-in-time
+# 🕒 Runtime correspondence is point-in-time
 
 The final Step-12 correspondence result is time-indexed.
 
@@ -699,9 +897,13 @@ POINT_IN_TIME_BINDING
 
 A runtime that changes must earn a new correspondence result.
 
+The later post-A8 runtime did exactly that: it earned a separate current `PASS_11_OF_11` correspondence result.
+
+That newer result is also point-in-time and does not become a permanent invariant.
+
 ---
 
-## Governance view and cryptographic trust are separate evidence objects
+# 🔑 Governance view and cryptographic trust are separate evidence objects
 
 The final Step-12 runtime state separately records:
 
@@ -726,7 +928,7 @@ They remain separate parts of the broader evidence chain.
 
 ---
 
-## Validation hierarchy
+# 📊 Validation hierarchy
 
 ALLIS uses a strict validation hierarchy.
 
@@ -776,7 +978,7 @@ A single successful seal does not flatten those results into one generic word su
 
 ---
 
-## Step-12 residuals remain part of the architecture
+# 🧱 Step-12 residuals remain part of the architecture
 
 Step 12 closed with eight explicit residuals.
 
@@ -802,9 +1004,19 @@ Residuals     = 8
 
 Both statements are true.
 
+The historical `R12F-01` classification records the Step-12 close.
+
+The later post-A8 current revalidation did not remove that evidence boundary:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+```
+
+So there is still no positive-path correspondence promotion for `T12D-A`.
+
 ---
 
-## Seven stronger claims were deliberately not promoted
+# ⛔ Seven stronger claims were deliberately not promoted
 
 The Step-12 non-promotion set preserves:
 
@@ -856,7 +1068,7 @@ They are not missing documentation.
 
 ---
 
-## What Step 12 did not do
+# 🚫 What Step 12 did not do
 
 Step 12 did not perform:
 
@@ -876,9 +1088,19 @@ REAL_PRODUCTION_DGM_PATCH_APPLICATION=NOT_PERFORMED
 
 The formal close itself did not create production authority.
 
+The later post-A8 current revalidation also avoided positive production authority:
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+```
+
+The later observation strengthened correspondence evidence without crossing the positive production-authorization boundary.
+
 ---
 
-## What this architecture is not
+# 🚫 What this architecture is not
 
 The current evidence does **not** establish that ALLIS is:
 
@@ -905,7 +1127,7 @@ They are not unresolved placeholders.
 
 ---
 
-## What the current evidence does support
+# ✅ What the current evidence does support
 
 A defensible description of the current architecture is:
 
@@ -917,7 +1139,7 @@ That result is narrower than whole-system proof, but materially stronger than an
 
 ---
 
-## Why this matters
+# 💡 Why this matters
 
 Many AI-governance discussions focus on whether a model or agent is capable of performing an action.
 
@@ -957,7 +1179,7 @@ It is an example of a broader ALLIS design principle:
 
 ---
 
-## Computational separation of powers
+# ⚖️ Computational separation of powers
 
 The architecture can be understood as a computational separation of powers.
 
@@ -1007,7 +1229,7 @@ merely because the system is technically capable.
 
 ---
 
-## Relevance to universities, governments, and community partners
+# 🏛️ Relevance to universities, governments, and community partners
 
 For a university, public institution, local government, nonprofit, or community partner, the important question is not whether an AI system can generate an impressive result.
 
@@ -1031,7 +1253,7 @@ The governed-evolution architecture is intended to make those questions explicit
 
 ---
 
-## Public documentation and private operations
+# 🔒 Public documentation and private operations
 
 This public repository documents the architecture, formal model, theorem status, correspondence structure, non-sensitive evidence identities, counterexamples, residuals, and claim boundaries.
 
@@ -1049,13 +1271,13 @@ The public documentation should expose enough provenance to audit the claim with
 
 ---
 
-## How to read the governed-evolution package
+# 📚 How to read the governed-evolution package
 
 Start here for the architecture.
 
 Then follow the evidence chain.
 
-### Formal verification
+## Formal verification
 
 ```text
 formal-verification/
@@ -1063,15 +1285,18 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 ```
 
 Use:
 
 - [`formal-model.md`](../../formal-verification/authorized-adoption/formal-model.md) for the bounded mathematical object;
-- [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) for proposition status and validation level; and
-- [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) for the preserved terminalization counterexample.
+- [`theorem-registry.md`](../../formal-verification/authorized-adoption/theorem-registry.md) for proposition status and validation level;
+- [`counterexample-registry.md`](../../formal-verification/authorized-adoption/counterexample-registry.md) for the preserved terminalization counterexample; and
+- [`lean/workstream-closeout-r1.md`](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) for the later Lean R1 proof-assistant qualification.
 
-### Correspondence
+## Correspondence
 
 ```text
 correspondence/
@@ -1085,7 +1310,7 @@ Use:
 - [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) for the mapping from mathematical objects to sealed production source behavior; and
 - [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) for the 11/11 NBB and worker byte-correspondence result and its point-in-time boundary.
 
-### Evidence
+## Evidence
 
 ```text
 evidence/
@@ -1095,6 +1320,7 @@ evidence/
         governance-view.md
         residuals.md
         step12-final-seal.md
+        post-a8-theorem-correspondence-registry-r1.md
 ```
 
 Use:
@@ -1102,12 +1328,13 @@ Use:
 - [`source-identity.md`](../../evidence/governed-evolution/source-identity.md) for the canonical bounded source identity;
 - [`trust-anchor.md`](../../evidence/governed-evolution/trust-anchor.md) for the public verification trust anchor and its role;
 - [`governance-view.md`](../../evidence/governed-evolution/governance-view.md) for the sealed governance-view identity and NBB correspondence;
-- [`residuals.md`](../../evidence/governed-evolution/residuals.md) for the eight residuals and seven non-promotions; and
-- [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) for the final package-level Step-12 evidence state.
+- [`residuals.md`](../../evidence/governed-evolution/residuals.md) for the eight residuals and seven non-promotions;
+- [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) for the historical package-level Step-12 evidence state; and
+- [`post-a8-theorem-correspondence-registry-r1.md`](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) for the later current source/runtime and B/C live correspondence observation.
 
 ---
 
-## Final Step-12 seal
+# 🧷 Final Step-12 seal — historical predecessor
 
 The controlling Step-12 state is:
 
@@ -1129,6 +1356,8 @@ BOUNDED_PRODUCTION_AUTHORIZED_ADOPTION_FORMAL_MODEL_AND_ESTABLISHED_CORRESPONDEN
 
 The seal does not enlarge its own scope.
 
+The later Lean R1 and post-A8 records are successor evidence and do not rewrite this historical Step-12 seal.
+
 It does not authorize a successor production action.
 
 It does not establish:
@@ -1139,7 +1368,39 @@ SYSTEM_PROVEN=YES
 
 ---
 
-## Core commitment
+# ✅ Current bounded state
+
+<div align="center">
+
+### 📐 FORMAL OBJECT
+**`DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1`**
+
+### 🧮 LATER FORMAL QUALIFICATION
+**Lean 4.34.0 R1 · principal result set kernel checked · theorem-level axioms `NONE`**
+
+### 🔗 CURRENT DGM SOURCE/RUNTIME
+**`PASS_11_OF_11`**
+
+### 🛡️ CURRENT FAIL-CLOSED RESULTS
+**`T12D-B = CORRESPONDENCE_VERIFIED`**
+
+**`T12D-C = CORRESPONDENCE_VERIFIED`**
+
+### 🚧 POSITIVE AUTHORIZED APPLY
+**`T12D-A = MACHINE_CHECKED` · positive path not executed**
+
+### 🔴 PRESERVED NEGATIVE RESULT
+**`P12C-09 = MACHINE_CHECKED_DISPROVEN`**
+
+<br>
+
+# `SYSTEM_PROVEN=NO`
+
+</div>
+
+---
+
+# 🧠 Core commitment
 
 The governed-evolution architecture can be reduced to one rule:
 
@@ -1150,3 +1411,5 @@ That rule is enforced through separate candidate, evidence, authorization, verif
 The larger ALLIS commitment is:
 
 > **Evidence may justify a claim. Capability may enable an action. Neither becomes authority unless the governed system explicitly establishes that authority.**
+
+> **Intelligence, evidence, authorization, execution, correspondence, and publication remain distinct states. Evidence earned in one state does not silently promote another.**
