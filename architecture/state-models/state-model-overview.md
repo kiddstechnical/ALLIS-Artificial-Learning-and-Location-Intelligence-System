@@ -695,6 +695,45 @@ This hierarchy describes **claims**.
 
 It is not an authority hierarchy.
 
+## Current evidence-method state inside the hierarchy
+
+The hierarchy itself remains unchanged.
+
+Within the `MACHINE_CHECKED` evidence state, the repository now preserves two different qualification methods / evidence epochs for the bounded Step-12 theorem domain:
+
+```text
+historical Step-12 machine checking
+    ≠
+later Lean R1 proof-assistant qualification
+```
+
+The historical Step-12 `MACHINE_CHECKED` label retains its original meaning: machine-executed source-structure checks plus bounded execution evidence.
+
+A later Lean 4.34.0 R1 workstream separately formalized and kernel-checked the principal Step-12 result set. That later proof-assistant qualification is represented as successor evidence and does **not** retroactively redefine the historical Step-12 label.
+
+The later Lean qualification also does not, by itself, create runtime correspondence.
+
+```text
+Lean proof-assistant qualification
+    ≠
+source/runtime correspondence
+    ≠
+theorem-specific live observation
+```
+
+For the current bounded DGM record, those layers combine differently by proposition:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+The distinction is therefore not a new validation rung.
+
+It is a more precise representation of **how** the evidence supporting the existing rung was qualified and **which observation epoch** supports the current claim.
+
 ---
 
 # 23. Evidence state and content state are different
@@ -2363,6 +2402,20 @@ Machine checking can establish a stronger validation level for a formal claim.
 
 It still requires source/runtime correspondence before being carried to implementation/runtime claims where that relationship matters.
 
+For the Step-12 theorem domain, `MACHINE_CHECKED` now has explicit evidence-method history:
+
+```text
+Step-12 historical machine-checking method
+    ↓
+later Lean R1 proof-assistant qualification
+```
+
+The later Lean work strengthens and independently checks the formal proposition layer.
+
+It does not erase or rename the historical Step-12 method, and it does not by itself establish production runtime behavior.
+
+See the [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
+
 ---
 
 # 116. Correspondence-verified state
@@ -2371,11 +2424,30 @@ Correspondence-verified is the strongest level in the current repository validat
 
 It means the required representation relationship was established for the bounded claim.
 
+For the current bounded DGM theorem domain, the newest source/runtime observation is:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+That current source/runtime state is paired with theorem-specific live observations for:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+`T12D-A` does not receive that promotion because its positive authorized-apply production observation was not executed.
+
+Correspondence state remains temporal and claim-specific.
+
 It does not mean:
 
 ```text
 all future states correspond automatically
 ```
+
+See the [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
 
 ---
 
@@ -2920,6 +2992,28 @@ Exact status vocabulary belongs to the correspondence layer.
 
 The architectural principle is that correspondence is explicit.
 
+The bounded DGM record now contains two separately representable correspondence epochs:
+
+```text
+historical Step-12 runtime correspondence
+    ≠
+current post-A8 runtime correspondence
+```
+
+The historical Step-12 edge remains valid for its seal-time observation.
+
+The later post-A8 record revalidates the same stable theorem-relevant source identity against a newer runtime observation:
+
+```text
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+For B/C, that newer runtime state is paired with current theorem-specific live observations.
+
+For A, the current source/runtime state exists, but the positive live authorized-apply state is intentionally absent.
+
 ---
 
 # 146. State model and supersession
@@ -3052,6 +3146,17 @@ authority freshness / one-use state
 
 The architecture generalizes these state distinctions.
 
+The current theorem/evidence state over this bounded example is:
+
+| Proposition | Current evidence state |
+|---|---|
+| `T12D-A` | `MACHINE_CHECKED` |
+| `T12D-B` | `CORRESPONDENCE_VERIFIED` |
+| `T12D-C` | `CORRESPONDENCE_VERIFIED` |
+| `P12C-09` | `MACHINE_CHECKED_DISPROVEN` |
+
+The current B/C correspondence state is based on the post-A8 runtime observation epoch, not only the historical Step-12 observation.
+
 ---
 
 # 155. Step-12 terminalization boundary
@@ -3087,6 +3192,24 @@ live positive production application observed
 ```
 
 unless that observation exists.
+
+The current post-A8 evidence establishes source/runtime correspondence for the theorem-relevant 11-file set, but the positive authorized-apply production path was not executed.
+
+Therefore:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+remains the current evidence state.
+
+```text
+current source/runtime match
+    ≠
+positive authorized-apply observation
+```
+
+This is a direct example of evidence-state non-promotion.
 
 Evidence state remains separate from formal state.
 
@@ -3158,6 +3281,18 @@ The architecture includes person-linked state and private admission/disclosure s
 Current public documentation should not infer current runtime-authoritative H_people status from historical implementation evidence alone.
 
 State-model completeness is not runtime correspondence.
+
+This reconciliation does **not** add a current A8 application-private-context state object because no exact sealed A8 production identity is being admitted here.
+
+If a future sealed A8 private-context object is admitted, the state model must represent it separately from H_people/person-space state:
+
+```text
+application-private-context state
+    ≠
+H_people runtime-authoritative state
+```
+
+and separately from the DGM theorem runtime.
 
 ---
 
@@ -4104,6 +4239,16 @@ The state model answers:
 What state is being represented?
 ```
 
+The current repository also preserves evidence-method state:
+
+```text
+historical Step-12 machine checking
+    ≠
+later Lean R1 proof-assistant qualification
+```
+
+That method distinction refines provenance for the claim without adding a new rung to the validation hierarchy.
+
 ---
 
 # 219. Relationship to correspondence
@@ -4120,11 +4265,56 @@ The state model answers:
 What state does each representation claim to be in?
 ```
 
+The current bounded DGM correspondence epoch is:
+
+```text
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+and current theorem-specific correspondence state is:
+
+```text
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+```
+
+while:
+
+```text
+T12D-A = MACHINE_CHECKED
+```
+
+because the required positive live authorized-apply observation was not executed.
+
+See the [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
+
 ---
 
 # 220. Relationship to formal verification
 
 Formal verification can model selected state spaces and transitions.
+
+The later Lean R1 workstream provides a distinct proof-assistant qualification state for the principal Step-12 propositions.
+
+That successor proof state is additive:
+
+```text
+historical Step-12 formal/machine-checking record
+    +
+later Lean R1 kernel qualification
+```
+
+not:
+
+```text
+later Lean R1
+    =
+retroactive replacement of Step-12 evidence meaning
+```
+
+The historical Lean R1 closeout also remains true to its own close boundary: Lean-to-production correspondence was not yet established inside that workstream. Later post-A8 correspondence is a successor evidence state.
+
+See the [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
 
 This architecture does not claim every state class is already fully formalized.
 
@@ -4326,6 +4516,28 @@ allis_state_model:
       - PROVEN
       - MACHINE_CHECKED
       - CORRESPONDENCE_VERIFIED
+    machine_checked_qualification_methods:
+      historical_step12:
+        method: source_structure_checks_plus_bounded_execution_evidence
+        historical_label_preserved: true
+      lean_r1_successor:
+        method: proof_assistant_kernel_qualification
+        changes_validation_hierarchy: false
+        replaces_historical_step12_meaning: false
+    current_dgm_evidence_state:
+      source_runtime_correspondence: PASS_11_OF_11
+      T12D-A:
+        validation_level: MACHINE_CHECKED
+        positive_authorized_apply_observed: false
+      T12D-B:
+        validation_level: CORRESPONDENCE_VERIFIED
+        current_live_observation: PASS
+      T12D-C:
+        validation_level: CORRESPONDENCE_VERIFIED
+        current_live_observation: PASS
+      P12C-09:
+        validation_level: MACHINE_CHECKED_DISPROVEN
+        negative_result_preserved: true
 
   temporal:
     point_in_time_state_is_permanent: false
@@ -4334,6 +4546,9 @@ allis_state_model:
     person_linked_equals_common_state: false
     retrieval_equals_disclosure: false
     private_equals_publication_eligible: false
+    current_a8_private_context_object_admitted_here: false
+    future_application_private_context_equals_h_people_runtime: false
+    future_application_private_context_equals_dgm_theorem_runtime: false
 
   invariants:
     - STATE_DOES_NOT_CREATE_AUTHORITY
@@ -4373,11 +4588,21 @@ This does not invalidate:
 
 - Workstream-F closure;
 - Step-12 bounded formal results;
+- later Lean R1 proof-assistant qualification;
+- current post-A8 B/C correspondence revalidation;
 - Step-17 publication completion;
 - private-state architecture;
 - current correspondence results.
 
 It preserves their scope.
+
+The newer evidence does not change:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+SYSTEM_PROVEN=NO
+```
 
 ---
 
@@ -4536,6 +4761,10 @@ authority
 > **State does not become authority merely because it exists.**
 
 > **Evidence state governs what may be claimed; authority state governs what may be done.**
+
+> **Historical machine-checking method, later Lean proof-assistant qualification, and runtime correspondence are distinct evidence states/epochs even when they support the same bounded proposition family.**
+
+> **A current source/runtime match does not promote a theorem to correspondence-verified without the theorem-specific live observation required by that claim.**
 
 > **Candidate state does not qualify itself.**
 
