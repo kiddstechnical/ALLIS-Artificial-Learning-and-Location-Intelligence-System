@@ -160,7 +160,7 @@ flowchart LR
 | `DGM-004` | `T12D-B` | `CORRESPONDENCE_VERIFIED` | ✅ |
 | `DGM-005` | `T12D-C` | `CORRESPONDENCE_VERIFIED` | ✅ |
 | `DGM-006` | `P12C-09` unconditional terminal totality | `MACHINE_CHECKED_DISPROVEN` | ✅ |
-| `DGM-007` | NBB and worker source correspondence are both 11/11 PASS | `CORRESPONDENCE_VERIFIED` | ✅ |
+| `DGM-007` | Current post-A8 NBB and worker source/runtime correspondence are both 11/11 PASS on the stable Step-12 source identity | `CORRESPONDENCE_VERIFIED` | ✅ |
 | `DGM-008` | Public verification trust corresponds to sealed trust object | `CORRESPONDENCE_VERIFIED` | ✅ |
 | `DGM-009` | NBB governance view corresponds to sealed governance object | `CORRESPONDENCE_VERIFIED` | ✅ |
 | `DGM-010` | 15 formal obligations, 0 unadjudicated | `CLOSED` formal obligation state | ✅ |
@@ -542,6 +542,78 @@ USING_CANONICAL_A5_GRAPH_HASH_AND_SEALED_A5A_REDUCTION
 
 ---
 
+## Current Step-12 successor evidence
+
+The historical Step-12 close remains the predecessor record for the DGM claim family.
+
+Later successor evidence adds two distinct layers without rewriting that close:
+
+```text
+Lean R1 proof-assistant qualification
+    +
+post-A8 source/runtime and theorem-specific live revalidation
+```
+
+Lean R1 qualification:
+
+```text
+qualified proof commit =
+71ee78982c918145ca73850170a4c2a8a447170d
+
+Lean =
+4.34.0
+
+T12D_A_LEAN_KERNEL_CHECKED=YES
+T12D_B_LEAN_KERNEL_CHECKED=YES
+T12D_C_LEAN_KERNEL_CHECKED=YES
+
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+
+LEAN_PROOF_HOLES=0
+```
+
+The qualified Lean result set was tightened to no theorem-level axioms for the principal Step-12 propositions and the `P12C-09` counterexample/disproof.
+
+The current post-A8 source/runtime observation uses the same stable theorem-relevant production source identity:
+
+```text
+source commit =
+20c8cbe175781c8a1c05d65c03977859ceca884a
+
+source tree =
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Current theorem-state vector:
+
+```text
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+Current whole-system nonclaim boundary:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+SYSTEM_PROVEN=NO
+```
+
+Successor records:
+
+- [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+
+---
+
 ## `DGM-003` — T12D-A
 
 **Claim**
@@ -557,12 +629,16 @@ T12D-A = MACHINE_CHECKED
 | Field | Record |
 |---|---|
 | **Scope** | Successful authorized apply in sealed source model |
-| **Qualified object** | Step-12 formal model / production source |
+| **Qualified object** | Step-12 formal model / production source + Lean R1 successor proof object |
 | **Validation level** | `MACHINE_CHECKED` |
-| **Evidence** | static source analysis + bounded execution |
-| **Correspondence status** | positive live path `NOT_OBSERVED`; not correspondence-verified |
-| **Observation / seal** | Step-12 final seal |
-| **Stronger claim not supported** | A real positive production authorized apply was observed |
+| **Predecessor evidence** | Step-12 static source analysis + bounded execution |
+| **Lean R1 successor evidence** | `T12D_A_LEAN_KERNEL_CHECKED=YES`; theorem-level axioms `NONE`; qualified proof commit `71ee78982c918145ca73850170a4c2a8a447170d` |
+| **Current source/runtime state** | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| **Current live positive observation** | `T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO` |
+| **Correspondence status** | positive live path not observed; **not** correspondence-verified |
+| **Observation / seal** | Step-12 predecessor seal + later Lean R1 qualification + post-A8 source/runtime revalidation |
+| **System theorem boundary** | `PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO`; `WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO`; `SYSTEM_PROVEN=NO` |
+| **Stronger claim not supported** | A real positive production authorized apply was observed or `T12D-A=CORRESPONDENCE_VERIFIED` |
 
 ---
 
@@ -578,12 +654,17 @@ no AuthorizedSpoolPublication
 
 | Field | Record |
 |---|---|
-| **Scope** | NBB publication path |
-| **Qualified object** | Step-12 formal model + live NBB boundary |
+| **Scope** | NBB authorization-validation / publication path |
+| **Qualified object** | Step-12 formal model + stable 11-file production source + current live NBB runtime |
 | **Validation level** | `CORRESPONDENCE_VERIFIED` |
-| **Evidence** | source proof + live fail-closed observation |
-| **Correspondence status** | `PASS` |
-| **Observation / seal** | Step-12 final seal |
+| **Predecessor evidence** | Step-12 source proof + Step-12 live fail-closed observation |
+| **Lean R1 successor evidence** | `T12D_B_LEAN_KERNEL_CHECKED=YES`; theorem-level axioms `NONE` |
+| **Current source/runtime state** | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| **Current live observation** | deliberately invalid signature rejected; `T12D_B_INVALID_SIGNATURE_REJECTED=YES`; `T12D_B_LIVE_OBSERVATION=PASS` |
+| **Current correspondence state** | `T12D_B_POST_A8_CORRESPONDENCE_VERIFIED=YES`; `T12D_B_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED` |
+| **Fail-closed effects observed** | no authorized-spool publication; no authorization consumption; no receipt creation |
+| **Observation / seal** | Step-12 predecessor seal + current post-A8 observation epoch |
+| **System theorem boundary** | `PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO`; `WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO`; `SYSTEM_PROVEN=NO` |
 | **Stronger claim not supported** | Every invalid input in every ALLIS subsystem is universally blocked by this theorem |
 
 ---
@@ -603,11 +684,16 @@ NoAuthorizedApply
 | Field | Record |
 |---|---|
 | **Scope** | Worker empty-spool path |
-| **Qualified object** | Step-12 formal model + worker runtime |
+| **Qualified object** | Step-12 formal model + stable 11-file production source + current live worker runtime |
 | **Validation level** | `CORRESPONDENCE_VERIFIED` |
-| **Evidence** | source proof + observed empty-spool behavior |
-| **Correspondence status** | `PASS` |
-| **Observation / seal** | Step-12 final seal |
+| **Predecessor evidence** | Step-12 source proof + Step-12 observed empty-spool behavior |
+| **Lean R1 successor evidence** | `T12D_C_LEAN_KERNEL_CHECKED=YES`; theorem-level axioms `NONE` |
+| **Current source/runtime state** | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
+| **Current live observation** | empty incoming/claimed spool remained non-applying; `T12D_C_LIVE_OBSERVATION=PASS` |
+| **Current correspondence state** | `T12D_C_POST_A8_CORRESPONDENCE_VERIFIED=YES`; `T12D_C_POST_A8_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED` |
+| **Fail-closed effects observed** | no worker claim; no authorization consumption; no receipt; no authorized apply |
+| **Observation / seal** | Step-12 predecessor seal + current post-A8 observation epoch |
+| **System theorem boundary** | `PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO`; `WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO`; `SYSTEM_PROVEN=NO` |
 | **Stronger claim not supported** | All worker non-application conditions are covered by this theorem |
 
 ---
@@ -638,12 +724,14 @@ claimed
 | Field | Record |
 |---|---|
 | **Scope** | Claimed-record terminalization |
-| **Qualified object** | Step-12 formal model |
+| **Qualified object** | Step-12 formal model + Lean R1 successor proof object |
 | **Validation level** | `MACHINE_CHECKED_DISPROVEN` |
-| **Evidence** | counterexample registry / final formal report |
-| **Correspondence status** | Not promoted to a runtime theorem |
-| **Observation / seal** | Step-12 final seal |
-| **Stronger claim not supported** | Every claimed record is guaranteed to terminalize |
+| **Predecessor evidence** | Step-12 counterexample registry / final formal report |
+| **Lean R1 successor evidence** | `P12C_09_LOGICAL_RESULT=DISPROVEN`; `P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES`; theorem/counterexample axioms `NONE` |
+| **Correspondence status** | Not promoted to a positive runtime theorem |
+| **Observation / seal** | Step-12 predecessor seal + later Lean R1 kernel-checked disproof |
+| **System theorem boundary** | `PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO`; `WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO`; `SYSTEM_PROVEN=NO` |
+| **Stronger claim not supported** | Every claimed record is guaranteed to terminalize or `P12C-09=PROVEN` |
 
 ---
 
@@ -651,20 +739,44 @@ claimed
 
 **Claim**
 
+The stable theorem-relevant Step-12 source identity was revalidated against the current post-A8 NBB and worker runtimes.
+
 ```text
-NBB source correspondence    = 11 / 11 PASS
-Worker source correspondence = 11 / 11 PASS
+SOURCE_COMMIT=
+20c8cbe175781c8a1c05d65c03977859ceca884a
+
+SOURCE_TREE=
+8d0840f076e84b4033ff398f602fb81a6d6e29f2
+
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+Current observed runtime identities:
+
+```text
+NBB_CONTAINER_ID=
+851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48
+
+WORKER_CONTAINER_ID=
+abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d
 ```
 
 | Field | Record |
 |---|---|
 | **Scope** | Eleven governed production source files |
-| **Qualified object** | Step-12 sealed production source set |
+| **Qualified object** | stable Step-12 production source commit/tree |
 | **Validation level** | `CORRESPONDENCE_VERIFIED` |
-| **Evidence** | source-to-runtime byte comparison |
-| **Correspondence status** | NBB `PASS`; worker `PASS` |
-| **Observation / seal** | Step-12 final runtime seal |
-| **Stronger claim not supported** | Every future runtime remains byte-identical without revalidation |
+| **Predecessor evidence** | Step-12 final source/runtime seal |
+| **Current evidence** | post-A8 immutable-source check + NBB and worker source/runtime byte correspondence |
+| **Correspondence status** | NBB `PASS_11_OF_11`; worker `PASS_11_OF_11`; combined current `PASS_11_OF_11` |
+| **Observation / seal** | current post-A8 observation epoch; container IDs are point-in-time runtime identities |
+| **System theorem boundary** | `PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO`; `WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO`; `SYSTEM_PROVEN=NO` |
+| **Stronger claim not supported** | Every future runtime remains byte-identical without revalidation, or source-byte identity alone proves runtime behavior |
 
 ---
 
@@ -737,7 +849,9 @@ N_unadjudicated = 0
 
 **Claim**
 
-> Step 12 did not publish, consume, or apply a real positive production authorization and did not apply a production DGM patch.
+> Step 12 did not publish, consume, or apply a real positive production authorization and did not apply a production DGM patch. The later post-A8 B/C revalidation preserved the same non-execution boundary for real production authorization and mutation.
+
+Historical Step-12 boundary:
 
 ```text
 REAL_PRODUCTION_AUTHORIZATION_PUBLICATION=NOT_PERFORMED
@@ -745,14 +859,23 @@ REAL_PRODUCTION_AUTHORIZATION_CONSUMPTION=NOT_PERFORMED
 REAL_PRODUCTION_DGM_PATCH_APPLICATION=NOT_PERFORMED
 ```
 
+Current post-A8 boundary:
+
+```text
+REAL_PRODUCTION_AUTHORIZATION_ISSUED=NO
+REAL_PRODUCTION_AUTHORIZATION_CONSUMED=NO
+REAL_PRODUCTION_DGM_PATCH_APPLICATION=NO
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+```
+
 | Field | Record |
 |---|---|
 | **Scope** | Step-12 live positive path |
 | **Qualified object** | Step-12 final runtime state |
 | **Validation level** | `NOT_OBSERVED` / explicit non-execution record |
-| **Evidence** | final runtime seal |
+| **Evidence** | Step-12 final runtime seal + current post-A8 bounded B/C probe record |
 | **Correspondence status** | Positive-path correspondence not established |
-| **Observation / seal** | Step-12 final seal |
+| **Observation / seal** | Step-12 predecessor seal + current post-A8 non-execution boundary |
 | **Stronger claim not supported** | `T12D-A` is correspondence-verified |
 
 ---
@@ -1180,6 +1303,10 @@ T12D-A=CORRESPONDENCE_VERIFIED
 ```
 
 ```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=YES
+```
+
+```text
 P12C-09=PROVEN
 ```
 
@@ -1278,21 +1405,61 @@ allis_claim_registry:
         proven: 11
         disproven: 1
         open: 0
+    successor_evidence:
+      lean_r1:
+        qualified_proof_commit: 71ee78982c918145ca73850170a4c2a8a447170d
+        lean_version: 4.34.0
+        proof_holes: 0
+        principal_theorem_axioms: NONE
+      post_a8:
+        source_commit: 20c8cbe175781c8a1c05d65c03977859ceca884a
+        source_tree: 8d0840f076e84b4033ff398f602fb81a6d6e29f2
+        immutable_source_identity: 11_of_11_PASS
+        current_source_runtime_correspondence: 11_of_11_PASS
+        real_production_authorization_issued: false
+        real_production_authorization_consumed: false
+        real_production_dgm_patch_application: false
     DGM-003:
       theorem: T12D-A
       validation: MACHINE_CHECKED
+      lean_kernel_checked: true
+      lean_axioms: NONE
+      current_source_runtime_correspondence: 11_of_11_PASS
+      positive_authorized_apply_executed: false
+      current_correspondence_verified: false
     DGM-004:
       theorem: T12D-B
       validation: CORRESPONDENCE_VERIFIED
+      lean_kernel_checked: true
+      lean_axioms: NONE
+      current_source_runtime_correspondence: 11_of_11_PASS
+      invalid_signature_rejected: true
+      current_live_observation: PASS
+      current_correspondence_verified: true
     DGM-005:
       theorem: T12D-C
       validation: CORRESPONDENCE_VERIFIED
+      lean_kernel_checked: true
+      lean_axioms: NONE
+      current_source_runtime_correspondence: 11_of_11_PASS
+      empty_spool_live_observation: PASS
+      current_correspondence_verified: true
     DGM-006:
       proposition: P12C-09
       validation: MACHINE_CHECKED_DISPROVEN
+      logical_result: DISPROVEN
+      counterexample_lean_kernel_checked: true
+      lean_axioms: NONE
     DGM-007:
+      source_commit: 20c8cbe175781c8a1c05d65c03977859ceca884a
+      source_tree: 8d0840f076e84b4033ff398f602fb81a6d6e29f2
+      immutable_source_identity: 11_of_11_PASS
+      nbb_runtime_id: 851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48
+      worker_runtime_id: abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d
       nbb_source_correspondence: 11_of_11_PASS
       worker_source_correspondence: 11_of_11_PASS
+      current_combined_source_runtime_correspondence: 11_of_11_PASS
+      source_bytes_alone_prove_behavior: false
     DGM-008:
       public_trust_sha256: 4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5
       correspondence: PASS
@@ -1304,6 +1471,10 @@ allis_claim_registry:
       unadjudicated: 0
     DGM-011:
       positive_production_authorized_apply: NOT_OBSERVED
+      current_positive_authorized_apply_executed: false
+      real_production_authorization_issued_post_a8: false
+      real_production_authorization_consumed_post_a8: false
+      real_production_dgm_patch_application_post_a8: false
     DGM-012:
       semantic_commitment_completeness: CURRENT_RULE
 
@@ -1344,6 +1515,7 @@ allis_claim_registry:
     production_mutation_safety_theorem_proven: false
     whole_system_safety_theorem_proven: false
     system_proven: false
+    T12D-A_correspondence_verified: false
 ```
 
 > [!NOTE]
@@ -1368,8 +1540,10 @@ allis_claim_registry:
 - [`../formal-verification/authorized-adoption/formal-model.md`](../formal-verification/authorized-adoption/formal-model.md)
 - [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
 - [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
+- [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 - [`../correspondence/authorized-adoption/model-to-source.md`](../correspondence/authorized-adoption/model-to-source.md)
 - [`../correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
+- [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
 
 ## Claim boundaries
 
@@ -1460,6 +1634,10 @@ Typical triggers include:
 > **A counterexample is evidence, not a documentation failure.**
 
 > **Correspondence is time-specific.**
+
+> **Successor proof and correspondence evidence is additive; it does not rewrite predecessor closeout evidence.**
+
+> **A current source/runtime match does not promote `T12D-A` without the required positive live authorized-apply observation.**
 
 > **A newer workstream does not silently promote an older claim.**
 
