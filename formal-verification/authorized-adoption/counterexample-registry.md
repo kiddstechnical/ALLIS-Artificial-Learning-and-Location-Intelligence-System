@@ -27,6 +27,12 @@
 > `P12C-09` was not merely unproven or inconclusive. Within the bounded Step-12 formal domain, a machine-executed counterexample falsified unconditional terminal totality, so the controlling disposition remains `MACHINE_CHECKED_DISPROVEN`.
 >
 > The counterexample must not be deleted, softened, or silently replaced by a narrower theorem. Any refined proposition requires its own theorem identity, evidence, adjudication, and promotion path.
+>
+> **Successor qualification note — September 2026:** the validity/nonterminal properties of `CE-001` and the `P12C-09` disproof were later independently checked in Lean 4.34.0. The qualified Lean result reports no theorem-level axiom dependencies for this counterexample/disproof path.
+>
+> This later proof-assistant evidence is additive. It does **not** rewrite the historical Step-12 machine-executed counterexample evidence or rename the Step-12 disposition.
+>
+> See [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md).
 
 ---
 
@@ -77,6 +83,8 @@ It is not removed because the intended property would have been convenient.
 The governing rule is:
 
 > **Evidence constrains the claim. The claim does not control the evidence.**
+
+> **Later proof-assistant qualification strengthens the counterexample record without rewriting the historical Step-12 machine-executed evidence or changing the proposition identity.**
 
 This is the formal-verification expression of the broader ALLIS architecture:
 
@@ -334,6 +342,43 @@ within the bounded formal domain.
 | Highest validation level | `MACHINE_CHECKED_DISPROVEN` |
 | Counterexample preserved | `YES` |
 | Proposition promoted to proven | `NO` |
+| Later Lean qualification | `P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES` |
+| Later Lean logical result | `P12C_09_LOGICAL_RESULT=DISPROVEN` |
+| Lean theorem-level axiom dependencies | `NONE` |
+
+## Later Lean qualification of CE-001
+
+The original Step-12 machine adjudication above remains the historical evidence record.
+
+A later Lean 4.34.0 R1 workstream independently checked the counterexample/disproof path and preserved the same logical outcome:
+
+```text
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+THEOREM_LEVEL_AXIOMS=NONE
+```
+
+The successor proof-assistant evidence confirms the bounded negative result without replacing the original Step-12 method.
+
+Conceptually:
+
+```text
+historical Step-12 machine-executed counterexample
+    +
+later Lean kernel-checked counterexample/disproof
+    =
+same preserved negative disposition
+```
+
+The controlling proposition remains:
+
+```text
+P12C-09 = MACHINE_CHECKED_DISPROVEN
+```
+
+The Lean source/proof details remain in the separate closeout rather than being duplicated here:
+
+- [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md)
 
 ---
 
@@ -547,6 +592,10 @@ The system does not repair a failed theorem by quietly adding a missing premise 
 
 If the refined proposition is to become a formal theorem, it requires its own explicit theorem definition, evidence, adjudication, and promotion path.
 
+The later Lean qualification of `CE-001` / `P12C-09` does not change that boundary.
+
+The refined statement remains a separate unpromoted proposition and is **not** renamed or reidentified as `P12C-09`.
+
 ---
 
 # 🚫 10. No silent theorem substitution
@@ -754,6 +803,9 @@ proven invariant
 | Falsified assertion | `Q3 ⇒ Q6C ∨ Q6R` |
 | Formal result | `DISPROVEN` |
 | Validation | `MACHINE_CHECKED_DISPROVEN` |
+| Later Lean counterexample check | `P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES` |
+| Later Lean logical result | `P12C_09_LOGICAL_RESULT=DISPROVEN` |
+| Lean theorem-level axiom dependencies | `NONE` |
 | Residual | `R12F-02` |
 | Replacement theorem | None |
 | Counterexample status | Preserved |
@@ -781,6 +833,10 @@ claim that the failure happened operationally in normal production
 ```
 
 The scientific result remains valid inside its stated bounded domain.
+
+The later Lean R1 qualification is a second formal-evidence method over the bounded counterexample/disproof proposition.
+
+It does not convert the counterexample into a production-incident claim, and it does not convert the historical Step-12 `MACHINE_CHECKED_DISPROVEN` label into a different historical label.
 
 ---
 
@@ -819,6 +875,13 @@ and:
 
 ```text
 P12C-09=MACHINE_CHECKED_DISPROVEN
+```
+
+Later Lean successor evidence independently preserves:
+
+```text
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
 ```
 
 No stronger or weaker disposition replaces this result.
@@ -868,6 +931,8 @@ formal-verification/
         formal-model.md
         theorem-registry.md
         counterexample-registry.md
+        lean/
+            workstream-closeout-r1.md
 
 correspondence/
     authorized-adoption/
@@ -888,6 +953,7 @@ Use:
 - [`formal-model.md`](./formal-model.md) — state space and transition semantics
 - [`theorem-registry.md`](./theorem-registry.md) — full proposition adjudication and validation levels
 - [`counterexample-registry.md`](./counterexample-registry.md) — this preserved falsifying-case registry
+- [`lean/workstream-closeout-r1.md`](./lean/workstream-closeout-r1.md) — later Lean 4.34.0 proof-assistant qualification closeout for the principal Step-12 result set and `P12C-09` disproof
 - [`model-to-source.md`](../../correspondence/authorized-adoption/model-to-source.md) — formal object → sealed source correspondence
 - [`source-to-runtime.md`](../../correspondence/authorized-adoption/source-to-runtime.md) — sealed source → inspected runtime correspondence
 - [`step12-final-seal.md`](../../evidence/governed-evolution/step12-final-seal.md) — controlling bounded Step-12 final seal
@@ -921,6 +987,11 @@ Use:
 
 ### ❌ FORMAL DISPOSITION
 # `MACHINE_CHECKED_DISPROVEN`
+
+### ➕ LATER LEAN QUALIFICATION
+**`P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES`**
+
+**theorem-level axiom dependencies: `NONE`**
 
 ### 🧱 RESIDUAL
 **`R12F-02`**
