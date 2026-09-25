@@ -11,6 +11,8 @@
 ![Authority](https://img.shields.io/badge/THESIS-EXPLANATORY_NOT_OPERATIONAL-f97316?style=for-the-badge)
 ![History](https://img.shields.io/badge/HISTORICAL_GATES-PRESERVED-14b8a6?style=for-the-badge)
 ![Validation](https://img.shields.io/badge/CLAIMS-EVIDENCE_BOUND-22c55e?style=for-the-badge)
+![Lean R1](https://img.shields.io/badge/LEAN_R1-LATER_PROOF_EVIDENCE-7c3aed?style=for-the-badge)
+![Post A8](https://img.shields.io/badge/POST--A8-CURRENT_DGM_CORRESPONDENCE-16a34a?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -27,6 +29,8 @@
 > It is not the current implementation authority for ALLIS.
 >
 > Current technical claims must be assembled from qualified objects, accepted closeouts, evidence, formal results, and explicit correspondence. The thesis may explain those results, interpret them, and trace how the architecture developed, but it does not supersede them.
+>
+> For the DGM authorized-adoption domain, the current evidence chain now includes the historical Step-12 record, later Lean R1 proof-assistant qualification, and later post-A8 source/runtime + theorem-specific live revalidation. Those successor layers strengthen the current technical record without turning this thesis crosswalk into the source of the claims.
 
 ---
 
@@ -406,12 +410,22 @@ The current technical record uses role-scoped objects.
 | Step-12 public verification trust | `4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5` |
 | Step-12 governance view | `26523c0bad40ff06a75c62a802f20195295534764dce45cfa6acdcdaecc3fcc2` |
 | Step-12 final evidence seal | `b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b` |
+| Lean R1 qualified proof commit | `71ee78982c918145ca73850170a4c2a8a447170d` |
+| Lean R1 final metadata head | `beceb3ee44fd5c33eaf689a5abe086e5e9c67911` |
+| Post-A8 theorem-relevant source tree | `8d0840f076e84b4033ff398f602fb81a6d6e29f2` |
+| Post-A8 NBB observation identity | `851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48` |
+| Post-A8 worker observation identity | `abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d` |
+| Post-A8 current DGM correspondence | `CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11` |
 | Step-17 publication ID | `allis-publication-step6-retention-v2` |
 | Step-17 publication body SHA-256 | `d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7` |
 | Step-17 payload SHA-256 | `04ebb5bc1f97cbf56b8722fea9bcc7e7303cac2f5b467510d7a821d84d4a3c3c` |
 | Step-17 frontend build | `5By6R3CWTM7NDXc-4lmSi` |
 
 No thesis chapter should silently collapse these into one source identity.
+
+The post-A8 NBB and worker container IDs are **observation-specific runtime identities**, not permanent source identities or perpetual deployment identities.
+
+Likewise, the Lean R1 proof commit is a proof-assistant evidence object; it does not itself become production source/runtime correspondence.
 
 ---
 
@@ -720,14 +734,20 @@ The thesis should recognize three separately closed technical workstreams:
 ```mermaid
 flowchart LR
     F["✅ WORKSTREAM F<br/>qualified source + bounded formal close"]:::f
-    D["✅ STEP 12<br/>authorized-adoption model + correspondence<br/>closed with explicit residuals"]:::d
+    D["✅ STEP 12<br/>authorized-adoption model + correspondence<br/>historical close with explicit residuals"]:::d
+    L["🧮 LEAN R1<br/>later proof-assistant qualification"]:::lean
+    C["🔗 POST-A8 DGM<br/>current source/runtime + B/C live revalidation"]:::corr
     P["✅ STEP 17<br/>publication / portal fixed goal<br/>green complete"]:::p
 
     F -. "separate scope" .- D
+    D -->|"successor proof evidence"| L
+    L -->|"later implementation bridge"| C
     D -. "separate scope" .- P
 
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:3px;
     classDef d fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:3px;
+    classDef lean fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
+    classDef corr fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:3px;
     classDef p fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
 ```
 
@@ -791,11 +811,11 @@ The 47 reduced candidates are not automatically final protected effect sinks.
 
 ---
 
-# 25. Step-12 thesis mapping
+# 25. Step-12 thesis mapping — historical formal/correspondence baseline
 
-Step 12 is the strongest current bounded example of governed write authority / authorized adoption.
+Step 12 remains the historical bounded formal/correspondence baseline for governed write authority / authorized adoption.
 
-It establishes:
+At its own final-seal epoch it established:
 
 ```text
 12 propositions
@@ -806,26 +826,108 @@ It establishes:
 0 unadjudicated
 ```
 
-but retains explicit residuals.
+with explicit residuals and non-promotions.
+
+That Step-12 record remains historically authoritative for what Step 12 established at close.
+
+It is no longer the newest DGM evidence layer.
+
+## 25A. Later Lean R1 proof-assistant qualification
+
+A later Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal Step-12 result set.
+
+Current thesis guidance should link to the technical proof record rather than reproduce it as thesis authority.
+
+The successor proof-assistant evidence includes:
+
+```text
+T12D_A_LEAN_KERNEL_CHECKED=YES
+T12D_B_LEAN_KERNEL_CHECKED=YES
+T12D_C_LEAN_KERNEL_CHECKED=YES
+
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+
+THEOREM_LEVEL_AXIOMS=NONE
+LEAN_PROOF_HOLES=0
+```
+
+The Lean R1 closeout correctly preserved:
+
+```text
+LEAN_TO_PRODUCTION_SOURCE_CORRESPONDENCE=NOT_YET_ESTABLISHED
+LEAN_TO_PRODUCTION_RUNTIME_CORRESPONDENCE=NOT_YET_ESTABLISHED
+```
+
+because the proof workstream did not itself establish the production implementation bridge.
+
+Use:
+
+```text
+formal-verification/authorized-adoption/lean/workstream-closeout-r1.md
+```
+
+for the proof-assistant record.
+
+## 25B. Post-A8 current DGM correspondence revalidation
+
+A later post-A8 observation epoch then re-established current source/runtime correspondence for the same bounded theorem-relevant DGM source domain:
+
+```text
+IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
+
+NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+
+CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+```
+
+The bounded theorem-specific live observations then recorded:
+
+```text
+T12D_B_LIVE_OBSERVATION=PASS
+T12D_C_LIVE_OBSERVATION=PASS
+```
+
+The positive authorized-apply path was still not executed:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+```
+
+Use:
+
+```text
+evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md
+correspondence/authorized-adoption/source-to-runtime.md
+```
+
+for the current implementation/correspondence evidence.
 
 ---
 
-# 26. Step-12 validation boundary
+# 26. Current DGM validation boundary
 
-The thesis should distinguish:
+The thesis should now distinguish the current bounded DGM result as:
 
 ```text
 T12D-A
     =
-Machine-Checked
+MACHINE_CHECKED
 ```
 
 from:
 
 ```text
-T12D-B / T12D-C
+T12D-B
     =
-Correspondence-Verified
+CORRESPONDENCE_VERIFIED
+
+T12D-C
+    =
+CORRESPONDENCE_VERIFIED
 ```
 
 and:
@@ -833,10 +935,21 @@ and:
 ```text
 P12C-09
     =
-Machine-Checked Disproven
+MACHINE_CHECKED_DISPROVEN
 ```
 
-Do not rewrite all Step-12 propositions as equally correspondence-verified.
+with the later proof-assistant disproof specifically evidenced by:
+
+```text
+P12C_09_LOGICAL_RESULT=DISPROVEN
+P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
+```
+
+Do not rewrite all propositions as equally correspondence-verified.
+
+Do not describe the Lean R1 workstream itself as having established production correspondence.
+
+Do not derive the current B/C correspondence state from thesis prose; link to the current technical records.
 
 ---
 
@@ -856,9 +969,17 @@ This means recovery state belongs in the research model.
 
 ---
 
-# 28. Step-12 positive-production boundary
+# 28. Positive-production boundary
 
-The positive production authorization/application path was not observed as a real positive production apply in the bounded closeout.
+The positive production authorization/application path was not observed as a real positive production apply in the Step-12 closeout.
+
+The later post-A8 current revalidation also deliberately did not execute that positive authorized-apply path:
+
+```text
+T12D_A_POSITIVE_AUTHORIZED_APPLY_EXECUTED=NO
+T12D_A_CURRENT_CORRESPONDENCE_VERIFIED=NO
+T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
+```
 
 Therefore:
 
@@ -885,6 +1006,8 @@ SYSTEM_PROVEN=NO
 These are not signs that the bounded work failed.
 
 They define the current proof scope.
+
+Neither later Lean kernel checking nor the post-A8 B/C correspondence results change these boundaries.
 
 ---
 
@@ -991,6 +1114,10 @@ The thesis contains substantial person-linked/private-state research.
 Current public architecture supports a privacy/disclosure boundary.
 
 It does not justify promoting historical Gate05c runtime state into current runtime-authoritative H_people claims.
+
+No separate exact public-safe A8 production/private-context closeout is admitted by this reconciliation update.
+
+Therefore the private-state chapter guidance remains unchanged: application-private-context work must not be treated as current H_people runtime authority without separate qualified evidence.
 
 ---
 
@@ -1216,7 +1343,7 @@ Where a chapter has no current qualified implementation mapping, the correct sta
 | `06-geodb-spatial-body.md` | Spatial architecture / historical implementation | Geographic/spatial state; deployment context | Preserve spatial research; do not treat historical GeoDB state as current runtime authority |
 | `07-rag-pipeline-and-routers.md` | Retrieval/routing architecture | Governed computation + system boundary | Reframe direct pipeline language around governed admission and protected transitions |
 | `08-quantum-inspired-entanglement.md` | Conceptual/mathematical metaphor | Research layer | Preserve as quantum-inspired abstraction; do not imply physical quantum effect |
-| `09-darwin-godel-machines.md` | DGM research lineage | Step-12 governed-evolution package; A5 tract where directly relevant | Map current bounded formal/correspondence results; remove whole-system implications |
+| `09-darwin-godel-machines.md` | DGM research lineage | Step-12 historical baseline + Lean R1 proof-assistant qualification + post-A8 current DGM correspondence; A5 tract where directly relevant | Map the current bounded chain explicitly: A = `MACHINE_CHECKED`; B/C = current `CORRESPONDENCE_VERIFIED`; P12C-09 = Lean-kernel-checked disproof; remove whole-system implications |
 
 ---
 
@@ -1260,7 +1387,7 @@ Where a chapter has no current qualified implementation mapping, the correct sta
 
 | Thesis file / concept | Research role | Current mapping | Reconciliation action |
 |---|---|---|---|
-| `32-fractal-optimization-and-dgms.md` | DGM/optimization research | Step-12 and A5 only where direct mapping exists | Do not promote bounded DGM proof into whole-system theorem |
+| `32-fractal-optimization-and-dgms.md` | DGM/optimization research | Step-12 historical baseline + Lean R1 + post-A8 current DGM correspondence; A5 only where direct mapping exists | Preserve current theorem levels and successor chronology; do not promote bounded DGM proof/correspondence into a whole-system theorem |
 | `33-llm-ensemble-and-judges.md` | Deliberation/evaluation architecture | Governed computation / candidate evaluation | Explicitly state judges evaluate; they do not create operation authority |
 | `34-spiritual-root-and-mother-carrie.md` | Values / narrative / researcher framing | Research layer only | Keep separate from technical evidence and formal validation |
 | `35-swarm-functions-and-eternal-watchdogs.md` | Monitoring/coordination research | Historical runtime / monitoring concept | Current runtime status must come from current evidence, not chapter prose |
@@ -1643,12 +1770,16 @@ They do not independently establish runtime state.
 
 ---
 
-# 60. Current Step-12 crosswalk
+# 60. Current DGM evidence crosswalk — Step-12 + successor layers
 
 Use:
 
 ```text
 acceptance/closeout/dgm-step12-close.md
+
+claims/claim-registry.md
+
+claims/nonclaims-and-residuals.md
 
 formal-verification/authorized-adoption/formal-model.md
 
@@ -1656,16 +1787,40 @@ formal-verification/authorized-adoption/theorem-registry.md
 
 formal-verification/authorized-adoption/counterexample-registry.md
 
+formal-verification/authorized-adoption/lean/workstream-closeout-r1.md
+
 correspondence/authorized-adoption/model-to-source.md
 
 correspondence/authorized-adoption/source-to-runtime.md
 
-evidence/governed-evolution/
+evidence/governed-evolution/source-identity.md
+
+evidence/governed-evolution/residuals.md
+
+evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md
 ```
 
-for current Step-12 claims.
+for current DGM claims.
 
-Do not reconstruct Step-12 truth from thesis prose.
+Chronology matters:
+
+```text
+Step-12 final seal
+    =
+historical bounded formal/correspondence predecessor
+
+Lean R1
+    =
+later proof-assistant qualification
+
+post-A8 registry + source-to-runtime
+    =
+newest current DGM correspondence observation
+```
+
+Do not reconstruct current DGM truth from thesis prose.
+
+The thesis explains this chain; the technical repository substantiates it.
 
 ---
 
@@ -2493,9 +2648,20 @@ The DGM proves production mutation is safe.
 Reconciled pattern:
 
 ```text
-Step 12 established a bounded authorized-adoption formal model with 11 proven propositions, one machine-checked disproven proposition, and explicit residuals.
+Step 12 established the historical bounded authorized-adoption formal/correspondence baseline.
+
+Later Lean R1 independently kernel-checked the principal A/B/C result set and the P12C-09 counterexample/disproof with no theorem-level axioms.
+
+Later post-A8 work revalidated the current theorem-relevant DGM source/runtime at 11/11 and separately re-observed the B/C fail-closed behaviors.
+
+Current bounded state:
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
 
 A general production mutation safety theorem is not established.
+SYSTEM_PROVEN=NO.
 ```
 
 ---
@@ -2738,6 +2904,10 @@ Once filename normalization is complete, the thesis should point to:
 
 These records should remain bounded workstream evidence.
 
+The Step-12 closeout remains historical and should not be rewritten to absorb the later Lean or post-A8 evidence.
+
+No post-A8 acceptance closeout is invented by this thesis reconciliation; current successor DGM claims are linked to the accepted/current repository records that actually exist.
+
 ---
 
 # 115. Current correspondence links
@@ -2759,10 +2929,20 @@ Correspondence should not be inferred from chapter prose.
 ```text
 ../evidence/governed-evolution/
 
+../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md
+
 ../evidence/publication/
 ```
 
+For later proof-assistant qualification, also use:
+
+```text
+../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md
+```
+
 Evidence should be referenced rather than re-copied into the thesis.
+
+The thesis should not become a second theorem registry, source/runtime registry, or acceptance record.
 
 ---
 
@@ -3583,7 +3763,8 @@ This reconciliation does not:
 - create missing correspondence;
 - create H_people current runtime authority;
 - prove the A5 theorem tract;
-- create Step-12 positive production observation;
+- create Step-12 or post-A8 positive production observation;
+- create Lean proof results or post-A8 correspondence results merely by describing them;
 - make a deployment define ALLIS;
 - make MountainShares part of ALLIS;
 - turn Ms. Allis into system authority.
@@ -3611,6 +3792,24 @@ current implementation claim
     requires
 qualified object + evidence + applicable correspondence
 ```
+
+For the bounded DGM authorized-adoption domain:
+
+```text
+historical Step-12 baseline
+    +
+later Lean R1 proof qualification
+    +
+later post-A8 current source/runtime revalidation
+    +
+theorem-specific live observation where required
+    =
+current bounded technical claim
+```
+
+The thesis records that relationship.
+
+It does not confer any of those validation states itself.
 
 ---
 
@@ -3647,6 +3846,12 @@ qualified object + evidence + applicable correspondence
 ### Research hypotheses remain research hypotheses.
 
 ### Formal models remain separate from runtime correspondence.
+
+### Step-12 remains historical predecessor evidence.
+
+### Lean R1 remains later proof-assistant evidence.
+
+### Post-A8 source/runtime + B/C observation is the newest current DGM correspondence evidence.
 
 ### Deployment programs remain deployments.
 
@@ -3695,6 +3900,8 @@ qualified object + evidence + applicable correspondence
 > **Qualified state does not create publication authority automatically.**
 
 > **A bounded green workstream does not become a whole-system theorem.**
+
+> **For the current bounded DGM record: `T12D-A = MACHINE_CHECKED`; `T12D-B = CORRESPONDENCE_VERIFIED`; `T12D-C = CORRESPONDENCE_VERIFIED`; `P12C-09 = MACHINE_CHECKED_DISPROVEN`.**
 
 > **Disproven propositions, residuals, and historical snapshots are research results and should remain visible.**
 
