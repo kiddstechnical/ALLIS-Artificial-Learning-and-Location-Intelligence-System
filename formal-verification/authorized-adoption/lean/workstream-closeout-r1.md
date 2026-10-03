@@ -292,3 +292,37 @@ Its purpose is to establish, claim by claim, how the formal objects and predicat
 Only after that correspondence is established should the Lean results be promoted as direct evidence about those implementation elements.
 
 Runtime correspondence should remain a distinct subsequent qualification layer.
+
+---
+
+## Successor-reference note
+
+This R1 closeout remains unchanged in meaning.
+
+Later first-class Lean workstreams now exist as separate bounded successor records:
+
+* [`../../conversational-admission/workstream-closeout-r2.md`](../../conversational-admission/workstream-closeout-r2.md) — Lean R2 Conversational Admission
+* [`../../hilbert-jcp-separation/workstream-closeout-r3.md`](../../hilbert-jcp-separation/workstream-closeout-r3.md) — Lean R3 Hilbert/JCP Separation
+
+Their acceptance closeouts are maintained separately:
+
+* [`../../../acceptance/closeout/lean-conversational-admission-r2-close.md`](../../../acceptance/closeout/lean-conversational-admission-r2-close.md)
+* [`../../../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md`](../../../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md)
+
+The current composite acceptance layer is indexed by:
+
+* [`../../../acceptance/current-system-manifest.md`](../../../acceptance/current-system-manifest.md)
+* [`../../../acceptance/baseline-object-registry.md`](../../../acceptance/baseline-object-registry.md)
+* [`../../../CURRENT.md`](../../../CURRENT.md)
+
+These later records are additive.
+
+They do not modify:
+
+`DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1`
+
+They do not modify the R1 theorem results.
+
+They do not modify the historical R1 production-correspondence boundary recorded above.
+
+`R1_HISTORICAL_CLOSEOUT_MEANING_CHANGED=NO`
