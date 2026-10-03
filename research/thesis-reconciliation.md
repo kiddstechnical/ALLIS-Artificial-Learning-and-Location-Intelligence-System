@@ -12,6 +12,8 @@
 ![History](https://img.shields.io/badge/HISTORICAL_GATES-PRESERVED-14b8a6?style=for-the-badge)
 ![Validation](https://img.shields.io/badge/CLAIMS-EVIDENCE_BOUND-22c55e?style=for-the-badge)
 ![Lean R1](https://img.shields.io/badge/LEAN_R1-LATER_PROOF_EVIDENCE-7c3aed?style=for-the-badge)
+![Lean R2](https://img.shields.io/badge/LEAN_R2-CONVERSATIONAL_ADMISSION_QUALIFIED-22c55e?style=for-the-badge)
+![Lean R3](https://img.shields.io/badge/LEAN_R3-HILBERT_JCP_SEPARATION_QUALIFIED-22c55e?style=for-the-badge)
 ![Post A8](https://img.shields.io/badge/POST--A8-CURRENT_DGM_CORRESPONDENCE-16a34a?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
@@ -31,6 +33,8 @@
 > Current technical claims must be assembled from qualified objects, accepted closeouts, evidence, formal results, and explicit correspondence. The thesis may explain those results, interpret them, and trace how the architecture developed, but it does not supersede them.
 >
 > For the DGM authorized-adoption domain, the current evidence chain now includes the historical Step-12 record, later Lean R1 proof-assistant qualification, and later post-A8 source/runtime + theorem-specific live revalidation. Those successor layers strengthen the current technical record without turning this thesis crosswalk into the source of the claims.
+>
+> Later still, separate Lean R2 and R3 workstreams qualified **Conversational Admission** and **Hilbert/JCP Separation**. Those October 2026 formal results are successor evidence. They must be mapped into the thesis without being backdated into earlier chapters as though those chapters had already established the later machine-checked results.
 
 ---
 
@@ -393,6 +397,20 @@ correspondence-verified for a bounded claim
 whole-system proof
 ```
 
+```text
+later R2 / R3 qualification
+    ≠
+earlier thesis chapter had already proven the same result
+```
+
+```text
+named H_* architecture
+    ≠
+proved current JCP admission
+    ≠
+proved linear-subspace structure
+```
+
 ---
 
 # 10. Current qualified object model
@@ -412,6 +430,12 @@ The current technical record uses role-scoped objects.
 | Step-12 final evidence seal | `b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b` |
 | Lean R1 qualified proof commit | `71ee78982c918145ca73850170a4c2a8a447170d` |
 | Lean R1 final metadata head | `beceb3ee44fd5c33eaf689a5abe086e5e9c67911` |
+| Lean R2 closed HEAD | `c1a18b2e5fbe2e288d8b91dafe18668392bc787d` |
+| Lean R2 closed tree | `e325bfdd78cd6903dbfb3a8c15130af26de5cd9f` |
+| Lean R2 evidence manifest | `fdeca0705e19b0a844ccaba6b933dff6a56d8f1cc198f33781cc006837c5e229` |
+| Lean R3 closed HEAD | `6f4a7de303e2d80c3d94a28a8d82e696387bf4b2` |
+| Lean R3 closed tree | `f5ffcb3fd693cbed60c1bd9dc966f868472707d4` |
+| Current/candidate JCP AST SHA-256 | `7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422` |
 | Post-A8 theorem-relevant source tree | `8d0840f076e84b4033ff398f602fb81a6d6e29f2` |
 | Post-A8 NBB observation identity | `851a55dbbd78ea36c711099df39a1e975884bfbc22d26bd916827f2e64cebe48` |
 | Post-A8 worker observation identity | `abcda93ad26be00c6d987f14abddd887147caa7785b9c8c9810981fa17a8371d` |
@@ -522,18 +546,21 @@ The reconciled thesis must maintain these boundaries:
 ALLIS
     =
 KTS governed computational / knowledge / location-intelligence platform
+    +
+general conversational system at allis.pro
 ```
 
 ```text
 Ms. Allis
     =
-intelligence-facing governed analytical/advisory service operating through ALLIS
+separate MountainShares-facing governed intelligence system
+    at mountainshares.us
 ```
 
 ```text
 MountainShares / The Commons
     =
-separate community governance / economic systems that may use ALLIS
+separate community governance / economic systems
 ```
 
 ```text
@@ -552,31 +579,39 @@ They are not synonyms.
 
 Older thesis material often describes the system through Ms. Allis.
 
-Current architecture should instead distinguish:
+That historical framing should be preserved as research chronology.
+
+Current technical reconciliation, however, must distinguish the systems explicitly:
 
 ```text
-Ms. Allis can:
-    interpret
-    reason
-    explain
-    propose
-    request governed operations
+ALLIS / allis.pro
+    ≠
+Ms. Allis / mountainshares.us
 ```
 
-from:
+Current explanatory use should treat:
 
 ```text
-ALLIS governs:
-    protected admission
-    state transition
-    retention
-    disclosure
-    operation authority
-    publication
-    evidence
+ALLIS
+    =
+KTS engineering / research platform
+    +
+general conversational system
 ```
 
-The thesis may preserve the earlier Ms. Allis framing as research history, but current explanatory text should not make Ms. Allis synonymous with ALLIS.
+and:
+
+```text
+Ms. Allis
+    =
+separate MountainShares-facing governed intelligence system
+```
+
+The thesis may retain older passages that used “Ms. Allis” more broadly when needed to preserve the historical record.
+
+Those passages should be annotated as historical terminology rather than silently rewritten to imply that the current ALLIS/allis.pro conversational front door and Ms. Allis/mountainshares.us are the same surface.
+
+The current repository owns the present-tense system identity.
 
 ---
 
@@ -729,29 +764,53 @@ with what residuals
 
 # 22. Current workstream model
 
-The thesis should recognize three separately closed technical workstreams:
+The thesis should now recognize a **chronological succession of bounded technical workstreams**, not a single proof event.
 
 ```mermaid
 flowchart LR
     F["✅ WORKSTREAM F<br/>qualified source + bounded formal close"]:::f
     D["✅ STEP 12<br/>authorized-adoption model + correspondence<br/>historical close with explicit residuals"]:::d
-    L["🧮 LEAN R1<br/>later proof-assistant qualification"]:::lean
+    R1["🧮 LEAN R1<br/>Authorized Adoption<br/>later proof-assistant qualification"]:::lean
     C["🔗 POST-A8 DGM<br/>current source/runtime + B/C live revalidation"]:::corr
+    R2["💬 LEAN R2<br/>Conversational Admission<br/>later bounded formal domain"]:::r2
+    R3["🧭 LEAN R3<br/>Hilbert/JCP Separation<br/>later bounded formal domain"]:::r3
     P["✅ STEP 17<br/>publication / portal fixed goal<br/>green complete"]:::p
 
     F -. "separate scope" .- D
-    D -->|"successor proof evidence"| L
-    L -->|"later implementation bridge"| C
+    D -->|"successor proof evidence"| R1
+    R1 -->|"later implementation bridge"| C
+    R1 -->|"later formal domain"| R2
+    R2 -->|"later formal domain"| R3
     D -. "separate scope" .- P
 
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:3px;
     classDef d fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:3px;
     classDef lean fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
     classDef corr fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:3px;
+    classDef r2 fill:#2563eb,stroke:#1d4ed8,color:#ffffff,stroke-width:3px;
+    classDef r3 fill:#7c3aed,stroke:#5b21b6,color:#ffffff,stroke-width:3px;
     classDef p fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
 ```
 
-Closure of one workstream does not silently promote another.
+Chronology matters:
+
+```text
+earlier thesis architecture
+    ↓
+historical Step-12 / earlier technical evidence
+    ↓
+Lean R1
+    ↓
+later R2
+    ↓
+later R3
+```
+
+The later work may validate, narrow, or correct an architectural idea described earlier.
+
+It does **not** retroactively change the date or evidence status of the earlier thesis passage.
+
+Closure or qualification of one workstream also does not silently promote another.
 
 ---
 
@@ -1011,6 +1070,223 @@ Neither later Lean kernel checking nor the post-A8 B/C correspondence results ch
 
 ---
 
+# 29A. Lean R2 thesis mapping — Conversational Admission
+
+Lean R2 is a **later October 2026 formal workstream**.
+
+It should not be backdated into earlier identity, memory, privacy, or conversational chapters as though those chapters had already machine-checked these properties.
+
+R2 qualifies six bounded theorem claims:
+
+```text
+TCHAT_A_server_derived_authenticated_identity
+
+TCHAT_B_browser_identity_is_nonauthoritative
+
+TCHAT_C_canonical_scalar_user_id_not_invented
+
+TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated
+
+TCHAT_E_ordinary_chat_does_not_create_governance_authority
+
+TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
+```
+
+Final bounded R2 state:
+
+```text
+principal theorems = 6 / 6
+proof holes = 0
+theorem-level axiom dependencies = 0 / 6
+```
+
+The correct thesis chronology is:
+
+```text
+earlier chapters:
+identity / privacy / conversation architecture proposed and explored
+
+later R2:
+six specific admission and authority boundaries machine-checked
+```
+
+Where an earlier chapter anticipated the same principle, use language such as:
+
+```text
+This chapter proposed the architectural separation.
+A later October 2026 Lean R2 workstream independently formalized
+and machine-checked a bounded version of that separation.
+```
+
+Do **not** rewrite the earlier chapter as:
+
+```text
+This chapter proved ...
+```
+
+unless the chapter itself contained the proof evidence at that historical time.
+
+---
+
+# 29B. Lean R3 thesis mapping — Hilbert/JCP Separation
+
+Lean R3 is also a **later October 2026 formal workstream**.
+
+It was created because current source reconciliation did **not** support the stronger assumption that named H_* objects were already live ordinary-chat JCP context.
+
+R3 formalized the current state rather than the desired future state.
+
+The fourteen qualified theorem checks are:
+
+```text
+1. spatial_sandbox_to_hgeo_static_value_plane
+2. happ_x_hgeo_static_admission_correspondence
+3. current_jcp_has_exactly_four_top_level_fields
+4. current_jcp_has_no_hilbert_tensor_or_spatial_field_names
+5. current_jcp_no_hilbert_admission
+6. current_hgeo_not_admitted_to_jcp
+7. current_hp_not_admitted_to_jcp
+8. current_hpeople_not_admitted_to_jcp
+9. hp_is_not_hgeo
+10. hpeople_is_not_hgeo
+11. r10_static_hgeo_candidate_is_not_live_jcp_admission
+12. static_hgeo_qualification_does_not_self_authorize
+13. absent_current_field_blocks_live_admission
+14. source_history_or_static_candidate_cannot_override_current_nonadmission
+```
+
+Final bounded R3 state:
+
+```text
+theorem checks = 14 / 14
+proof holes = 0
+theorem-level axiom dependencies = 0 / 14
+```
+
+The current JCP builder is:
+
+```text
+build_judge_context_v2
+```
+
+and its current top-level field set is exactly:
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+Therefore the current reconciliation must state:
+
+```text
+H_geo admitted to current JCP = NO
+H_p admitted to current JCP = NO
+H_people admitted to current JCP = NO
+```
+
+A qualified static H_geo path exists.
+
+That does not mean:
+
+```text
+static H_geo qualification
+    =
+live JCP admission
+```
+
+and it does not mean:
+
+```text
+source history describing an H_* object
+    =
+current JCP field
+```
+
+The thesis can preserve earlier H_geo, H_people, H_p, tensor, direct-sum, and Hilbert-space architecture as research lineage.
+
+The later R3 result must be presented as a **later present-state qualification**, not as something those earlier chapters had already established.
+
+---
+
+# 29C. Named H_* architecture vs present formal proof
+
+The thesis uses named H_* structures as part of its architectural and mathematical research vocabulary.
+
+Examples include:
+
+```text
+H_App
+H_geo
+H_p
+H_people
+H_commons
+H_state
+H_t
+H_time
+```
+
+The current formal record requires separate questions for each named H_* object:
+
+```text
+1. Does the name/concept exist in the research architecture?
+
+2. Is there a current formal declaration or theorem whose semantics
+   actually match the intended current object?
+
+3. Is there source correspondence?
+
+4. Is there runtime correspondence?
+
+5. Is the object admitted, produced, consumed, or persisted
+   in the live path being claimed?
+```
+
+These questions are not interchangeable.
+
+Preserve:
+
+```text
+name match
+    ≠
+semantic match
+    ≠
+theorem coverage
+    ≠
+source correspondence
+    ≠
+runtime correspondence
+    ≠
+JCP admission
+```
+
+The current R3 result establishes **nonadmission** of H_geo, H_p, and H_people to the present ordinary-chat JCP.
+
+It does not erase their architectural meaning.
+
+It constrains what may currently be said about their live relationship to JCP.
+
+Likewise, the current formal record does **not** support the blanket statement:
+
+```text
+all named H_* objects are linear subspaces
+```
+
+The safe current classification is:
+
+```text
+named H_* objects
+    =
+governed typed projections / views / architectural state domains
+```
+
+until stronger mathematical properties are separately defined and proved.
+
+A common 384-dimensional carrier or embedding representation does not itself prove linear-subspace closure.
+
+---
+
 # 30. Step-17 thesis mapping
 
 Step 17 supplies the current bounded example of governed outward publication and read-only public delivery.
@@ -1117,7 +1393,19 @@ It does not justify promoting historical Gate05c runtime state into current runt
 
 No separate exact public-safe A8 production/private-context closeout is admitted by this reconciliation update.
 
-Therefore the private-state chapter guidance remains unchanged: application-private-context work must not be treated as current H_people runtime authority without separate qualified evidence.
+Later R2 adds one important bounded formal result:
+
+```text
+ordinary authenticated chat
+    ≠
+H_people SECRET disclosure authority
+```
+
+That later theorem strengthens the current privacy boundary.
+
+It does **not** turn historical Gate05c runtime evidence into current H_people runtime authority, and it does not prove every H_people implementation path.
+
+Therefore the private-state chapter guidance remains: application-private-context work must not be treated as current H_people runtime authority without separate qualified evidence.
 
 ---
 
@@ -1338,7 +1626,7 @@ Where a chapter has no current qualified implementation mapping, the correct sta
 | `01-researcher-position.md` | Researcher positionality / framing | Research layer only | Preserve as positionality; keep separate from technical validation |
 | `02-ms-allis-gbim.md` | Early system/GBIM architecture | State model, provenance, governed computation | Reconcile ALLIS vs Ms. Allis; normalize GBIM terminology; remove universal current-runtime implications not supported by current record |
 | `03-mountainshares-dao.md` | Application/governance concept | Deployment/external governance context | Explicitly separate MountainShares from ALLIS architecture |
-| `04-hilbert-space-state.md` | Mathematical/state-space research | State-model architecture; later A5/formal work only where directly corresponding | Preserve as research formalism; do not imply current theorem/correspondence without specific evidence |
+| `04-hilbert-space-state.md` | Mathematical/state-space research | State-model architecture; later R3/H384 work only where directly corresponding | Preserve original research chronology; annotate later R3 as successor evidence; do not backdate R3 or imply named H_* objects are already proved linear subspaces |
 | `05-chromadb-semantic-memory.md` | Historical memory implementation / architecture | Memory/provenance state; private-state boundary | Treat implementation details as historical unless current evidence requalifies them |
 | `06-geodb-spatial-body.md` | Spatial architecture / historical implementation | Geographic/spatial state; deployment context | Preserve spatial research; do not treat historical GeoDB state as current runtime authority |
 | `07-rag-pipeline-and-routers.md` | Retrieval/routing architecture | Governed computation + system boundary | Reframe direct pipeline language around governed admission and protected transitions |
@@ -1375,7 +1663,7 @@ Where a chapter has no current qualified implementation mapping, the correct sta
 | `24-feedback-into-broader-layers.md` | Feedback architecture | Governed state transitions | Ensure feedback does not imply automatic promotion |
 | `25-consciousness-coordinator-and-services.md` | Historical naming / coordinator architecture | Ms. Allis intelligence-facing service | Replace authority implications; preserve metaphor/history |
 | `26-temporal-toroidal-semaphore-structure.md` | Temporal research | Temporal state; authority lifecycle | Preserve as temporal mechanism/research; do not claim sole system authority or physical time structure |
-| `27-web-research-and-autonomy.md` | External retrieval / autonomy research | Governed computation + external authority | "Autonomy" must remain bounded by authority planes |
+| `27-web-research-and-autonomy.md` | External retrieval / autonomy research | Future automated-learning/read-only research architecture | Preserve as research lineage; distinguish historical proposal from later planned read-only research, provenance, and research-to-corpus qualification work |
 | `28-heartbeat-and-live-cycles.md` | Runtime liveness / temporal operations | Runtime evidence / temporal state | Historical runtime observations remain snapshots |
 | `29-psychological-safeguards-and-pia.md` | Safeguard/privacy research | Private-state boundary, fail-closed architecture | Preserve normative design; separate architecture from current runtime status |
 | `30-aapcappE-scraper-and-corpus.md` | Data/corpus acquisition | Provenance + deployment data | Treat data-source state as historical unless requalified |
@@ -1391,7 +1679,7 @@ Where a chapter has no current qualified implementation mapping, the correct sta
 | `33-llm-ensemble-and-judges.md` | Deliberation/evaluation architecture | Governed computation / candidate evaluation | Explicitly state judges evaluate; they do not create operation authority |
 | `34-spiritual-root-and-mother-carrie.md` | Values / narrative / researcher framing | Research layer only | Keep separate from technical evidence and formal validation |
 | `35-swarm-functions-and-eternal-watchdogs.md` | Monitoring/coordination research | Historical runtime / monitoring concept | Current runtime status must come from current evidence, not chapter prose |
-| `36-identity-and-registration.md` | Identity architecture | H_people/private-state boundary | **High-priority rewrite**: historical identity runtime must not become current H_people authority |
+| `36-identity-and-registration.md` | Identity architecture | H_people/private-state boundary + later Lean R2 Conversational Admission | **High-priority rewrite**: preserve historical identity runtime as historical; annotate the six R2 theorems as later October 2026 successor proof evidence, not as proof the chapter already possessed |
 | `37-constitutional-principles-service.md` | Governance architecture | Trust/authority; external authority; fail-closed semantics | Map architectural principles; separate policy existence from operation authority |
 | `38-external-communication-and-authority.md` | External authority research | System boundary + trust/authority | Strong current architectural mapping; preserve external authority as external |
 | `39-operational-evaluation.md` | Evaluation methodology | Claims/evidence/validation hierarchy | Update terminology and current evidence links |
@@ -1407,13 +1695,13 @@ Where a chapter has no current qualified implementation mapping, the correct sta
 | Thesis file / concept | Research role | Current mapping | Reconciliation action |
 |---|---|---|---|
 | `44-Phi Probe — Semantic Coherence Measurement in H_App.md` | Measurement/formal research | Evidence maturity / semantic state | Preserve as measurement research; identify protocol and qualified-object limitations |
-| `45-H_geo — The Spatial Hilbert Body of H_App.md` | Spatial formalism | Geographic/spatial state architecture | Preserve formal model; do not imply source/runtime correspondence unless separately established |
-| `46-The Tensor Product Bridge — H_App ⊗ H_geo.md` | Coupled-state formalism | State model + governed promotion | Preserve provisional-state/promotion insight; avoid universal proof claims |
-| `47-Hilbert People Space Without Surveillance.md` | Privacy/person-state research | H_people/private-state boundary | **High-priority rewrite**: current architecture maps strongly; historical runtime claims remain historical |
-| `48-Hilbert People Space.md` | Person-linked formal state | H_people/private-state boundary | **High-priority rewrite**: do not promote historical Gate05c runtime to current authority |
+| `45-H_geo — The Spatial Hilbert Body of H_App.md` | Spatial formalism | Geographic/spatial state architecture + later R3 static H_geo/nonadmission result | Preserve the original H_geo research formalism; add later R3 mapping: static H_geo path qualified, but H_geo is not a current live JCP field |
+| `46-The Tensor Product Bridge — H_App ⊗ H_geo.md` | Coupled-state formalism | State model + later R3 static `H_App × H_geo` admission correspondence | Preserve chronology; annotate the later bounded static correspondence without converting it into live JCP wiring |
+| `47-Hilbert People Space Without Surveillance.md` | Privacy/person-state research | H_people/private-state boundary + later R2/R3 | **High-priority rewrite**: preserve research architecture; add later R2 SECRET-disclosure boundary and R3 current JCP nonadmission; do not backdate either result |
+| `48-Hilbert People Space.md` | Person-linked formal state | H_people/private-state boundary + later R2/R3 | **High-priority rewrite**: do not promote historical Gate05c runtime to current authority; distinguish named H_people architecture from later theorem coverage and current nonadmission to JCP |
 | `49-The Temporal Hilbert Axis and the Three-Dimensional Memory of H_App.md` | Temporal/memory formalism | Temporal state + memory/provenance | Preserve as research/formalization; distinguish mechanism from demonstrated causal benefit |
-| `50-Per-User Direct Sum Decomposition of Conversational Memory.md` | Sovereign/per-user memory formalism | Private-state boundary / recipient-specific projection | Preserve privacy architecture; current runtime status must be separately evidenced |
-| `51-The Community Hilbert Commons — Anonymized Aggregation Over Sovereign Subspaces` | Commons formalism / governance | External community-governance context + privacy boundary | Separate Commons governance from ALLIS core; preserve bounded historical evidence and unresolved formal claims |
+| `50-Per-User Direct Sum Decomposition of Conversational Memory.md` | Sovereign/per-user memory formalism | Private-state boundary / recipient-specific projection + R2 identity isolation where semantically applicable | Preserve mathematical research; do not infer a live direct-sum implementation or linear-subspace proof from the later R2 session-isolation theorem |
+| `51-The Community Hilbert Commons — Anonymized Aggregation Over Sovereign Subspaces` | Commons formalism / governance | External community-governance context + privacy boundary; legacy Commons proof corpus remains noncontrolling pending semantic review | Preserve the formal research concept; do not infer that the named H_commons or older Commons declarations prove current 384-D subspace semantics |
 | `52-The Recurrent Epistemic Loop.md` | Epistemic-learning architecture | Validation/revalidation concepts; state lifecycle | Treat as architectural research unless individual mechanisms have current evidence; do not imply one monolithic current loop |
 | `53-The Spacetime Contract.md` | Place/time/provenance formalization | Geographic + temporal + provenance state | Preserve as synthesis/formal architecture; current implementation claims require explicit correspondence |
 
@@ -1633,6 +1921,24 @@ empirical hypothesis
 
 Do not allow the reader to infer which category applies.
 
+For named H_* objects, add a second classification question:
+
+```text
+architectural object named H_x
+    ≠
+Lean declaration named H_x
+    ≠
+proved current semantics of H_x
+    ≠
+proved linear subspace
+    ≠
+live JCP admission
+```
+
+A theorem-name or declaration-name match is not sufficient by itself.
+
+The theorem body, assumptions, intended semantics, source mapping, and runtime relationship must be reconciled separately.
+
 ---
 
 # 52. Quantum-inspired terminology
@@ -1737,6 +2043,9 @@ The thesis can preserve the result while explicitly labeling the evidence bounda
 | System boundary | `architecture/system-boundary/allis-system-boundary.md` |
 | Fail-closed semantics | `architecture/fail-closed-semantics.md` |
 | H_people/private state | `architecture/private-state/h-people-boundary.md` |
+| Conversational admission / R2 boundary | `formal-verification/conversational-admission/` once public R2 records are added |
+| Hilbert/JCP separation / R3 boundary | `formal-verification/hilbert-jcp-separation/` once public R3 records are added |
+| Current four-field JCP / Hilbert nonadmission | `architecture/state-models/state-model-overview.md` |
 | Deployment/pilot separation | `architecture/deployment-model/deployment-model-overview.md` |
 | New River Gorge deployment example | `architecture/deployment-model/examples/new-river-gorge-deployment-example.md` |
 
@@ -1767,6 +2076,10 @@ They do not independently establish runtime state.
 | What validation level applies? | Claim registry entry |
 | Is correspondence required? | Claim registry + correspondence record |
 | Is the claim point-in-time? | Claim/correspondence observation boundary |
+| Which R2 theorem supports a conversational-admission claim? | `CHAT-*` family in `claims/claim-registry.md` |
+| Which R3 theorem supports a Hilbert/JCP separation claim? | `HJCP-*` family in `claims/claim-registry.md` |
+| Is H384/projection work current proof or future work? | `H384-*` claims + matching nonclaims |
+| Is automated research/protected-location use qualified? | `ALR-*` / `KYCLOC-*` claims + matching nonclaims |
 
 ---
 
@@ -1821,6 +2134,46 @@ newest current DGM correspondence observation
 Do not reconstruct current DGM truth from thesis prose.
 
 The thesis explains this chain; the technical repository substantiates it.
+
+---
+
+# 60A. Current R2/R3 formal evidence crosswalk
+
+The thesis should use the later R2/R3 technical records for present-tense formal claims.
+
+For R2:
+
+```text
+claims/claim-registry.md          → CHAT-001 through CHAT-006
+claims/nonclaims-and-residuals.md → CHAT-NC-*
+formal-verification/conversational-admission/ → public R2 records once added
+```
+
+For R3:
+
+```text
+claims/claim-registry.md          → HJCP-001 through HJCP-014
+claims/nonclaims-and-residuals.md → HJCP-NC-*
+formal-verification/hilbert-jcp-separation/ → public R3 records once added
+```
+
+Chronology:
+
+```text
+thesis chapter written earlier
+    ↓
+architectural/research proposition preserved
+
+later R2 or R3
+    ↓
+bounded theorem family qualified
+
+later source/runtime correspondence
+    ↓
+implementation relationship established where separately evidenced
+```
+
+The reconciliation must never reverse this arrow and make later proof evidence appear contemporaneous with an earlier chapter.
 
 ---
 
@@ -1904,6 +2257,21 @@ X remains a research hypothesis.
 
 The choice depends on evidence.
 
+For a thesis idea that later received formal support, use:
+
+```text
+The chapter proposed X as an architectural/research structure.
+A later October 2026 Lean R2/R3 workstream formalized and machine-checked
+the bounded property Y.
+```
+
+Do not collapse this into:
+
+```text
+The chapter proved Y.
+```
+
+
 ---
 
 # 64. Historical snapshot pattern
@@ -1974,6 +2342,8 @@ For mathematical material:
 - source correspondence:
 - runtime correspondence:
 - residuals:
+- historical_date_of_thesis_statement:
+- later_successor_proof_evidence:
 ```
 
 ---
@@ -2753,6 +3123,36 @@ The Hilbert construction defines a formal or architectural representation.
 
 Implementation and runtime claims require separately established source and runtime correspondence.
 ```
+
+---
+
+# 107A. Example — named H_* architecture
+
+Weak reconciliation:
+
+```text
+The thesis defines H_geo, therefore H_geo is part of the current chat context.
+```
+
+Better:
+
+```text
+The thesis preserves H_geo as a geographic/spatial research and architectural state concept.
+
+A later October 2026 Lean R3 workstream qualified a bounded static H_geo path
+and simultaneously established the present nonadmission boundary:
+H_geo is not a current live JCP field.
+```
+
+Likewise:
+
+```text
+named H_* object
+    ≠
+proved linear subspace
+```
+
+until the required mathematical closure/subspace properties are separately established.
 
 ---
 
@@ -3676,7 +4076,10 @@ allis_thesis_reconciliation:
 
   entity_separation:
     allis_is_platform: true
-    ms_allis_is_intelligence_facing_service: true
+    allis_conversational_surface: allis.pro
+    ms_allis_is_separate_mountainshares_facing_system: true
+    ms_allis_surface: mountainshares.us
+    allis_equals_ms_allis: false
     mountainshares_is_separate_governance_system: true
     deployments_define_allis: false
 
@@ -3693,6 +4096,35 @@ allis_thesis_reconciliation:
     preserve_snapshots: true
     rewrite_history_as_current: false
     fabricate_missing_gate_artifacts: false
+    backdate_later_r2_r3_results_into_earlier_thesis: false
+
+  later_formal_successors:
+    lean_r2:
+      domain: conversational_admission
+      qualified: true
+      principal_theorems: 6
+      proof_holes: 0
+      theorem_level_axiom_dependencies: 0
+    lean_r3:
+      domain: hilbert_jcp_separation
+      qualified: true
+      principal_checks: 14
+      proof_holes: 0
+      theorem_level_axiom_dependencies: 0
+
+  current_hilbert_jcp_boundary:
+    jcp_top_level_field_count: 4
+    jcp_fields:
+      - schema_version
+      - request_context
+      - approved_evidence
+      - wv_deliberative_context
+    h_geo_admitted_to_current_jcp: false
+    h_p_admitted_to_current_jcp: false
+    h_people_admitted_to_current_jcp: false
+    static_h_geo_path_qualified: true
+    static_h_geo_equals_live_jcp_admission: false
+    named_h_objects_automatically_proven_linear_subspaces: false
 
   chapter_treatment:
     allowed:
