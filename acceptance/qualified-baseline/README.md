@@ -22,7 +22,7 @@
 > [!IMPORTANT]
 > This directory does not define one Git commit as the universal ALLIS baseline.
 >
-> ALLIS uses **role-scoped qualified objects**. A source object, proof anchor, production source, publication object, or runtime-reference object is authoritative only for the scope in which it was qualified, accepted, or correspondence-verified.
+> ALLIS uses **role-scoped qualified objects**. A source object, proof anchor, production source, proof-assistant qualification object, publication object, or runtime/correspondence reference object is authoritative only for the scope in which it was qualified, accepted, or correspondence-verified.
 
 ---
 
@@ -96,6 +96,14 @@ It explains:
 
 The manifest is the authoritative entry point for this directory.
 
+The current parent acceptance layer now also contains first-class Lean R2 and Lean R3 qualification objects. Those newer objects are indexed by:
+
+- [`../baseline-object-registry.md`](../baseline-object-registry.md) for scope-to-object lookup;
+- [`../current-system-manifest.md`](../current-system-manifest.md) for current composition and correspondence;
+- the bounded R2/R3 acceptance, evidence, and correspondence records linked below.
+
+They are additive successor objects and do not rewrite the historical qualified-baseline identities documented in this directory.
+
 ---
 
 # 🧩 Object-role separation
@@ -114,6 +122,8 @@ flowchart TB
     P["📦 Step-17 publication<br/>allis-publication-step6-retention-v2"]:::p
     B["#️⃣ Step-17 publication body<br/>d6ab6352…"]:::body
     G["🔎 Step-17 frontend build<br/>5By6R3…"]:::gui
+    R2["🟪 Lean R2 qualification<br/>c1a18b2e…"]:::lean
+    R3["🟪 Lean R3 qualification<br/>6f4a7de3…"]:::lean
 
     F --> Q
     A --> Q
@@ -123,6 +133,8 @@ flowchart TB
     P --> Q
     B --> Q
     G --> Q
+    R2 --> Q
+    R3 --> Q
 
     classDef root fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:4px;
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
@@ -133,6 +145,7 @@ flowchart TB
     classDef p fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
     classDef body fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
     classDef gui fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
+    classDef lean fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
 ```
 
 The diagram is a role map.
@@ -153,8 +166,58 @@ It is not a source-equivalence graph.
 | **Step-17 publication** | `allis-publication-step6-retention-v2` | Governed public publication |
 | **Step-17 publication body** | `d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7` | Direct/public publication-body correspondence |
 | **Step-17 frontend build** | `5By6R3CWTM7NDXc-4lmSi` | Final Evidence & Governance Portal observation |
+| **Lean R2 Conversational Admission qualification** | `c1a18b2e5fbe2e288d8b91dafe18668392bc787d` | Bounded conversational-admission proof workstream |
+| **Lean R3 Hilbert/JCP Separation qualification** | `6f4a7de303e2d80c3d94a28a8d82e696387bf4b2` | Bounded current Hilbert/JCP-separation proof workstream |
 
 Each object answers a different technical question.
+
+---
+
+# Lean R2 and Lean R3 as later qualified roles
+
+The current acceptance layer now recognizes two additional first-class proof-assistant qualification roles.
+
+## Lean R2 — Conversational Admission
+
+```text
+branch =
+formal-verification/lean-conversational-admission-r2
+
+HEAD =
+c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+
+tree =
+e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+
+state =
+CLOSED_PASS
+```
+
+R2 remains bounded to the Conversational Admission theorem family.
+
+It does not become a replacement identity for Workstream F, A5, Step 12, or Step 17.
+
+## Lean R3 — Hilbert/JCP Separation
+
+```text
+branch =
+formal-verification/hilbert-jcp-separation-r3
+
+HEAD =
+6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+
+tree =
+f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+
+state =
+CLOSED_PASS
+```
+
+R3 remains bounded to the current Hilbert/JCP Separation domain.
+
+It does not establish future live H_geo admission or rewrite any predecessor qualified object.
+
+The corresponding source/runtime relationships remain separate correspondence objects.
 
 ---
 
@@ -402,22 +465,30 @@ flowchart TD
     FQ["Workstream-F acceptance?"]:::f
     AQ["A5 formalization?"]:::a
     DQ["Step-12 authorized adoption?"]:::d
+    R2Q["R2 conversational admission?"]:::r2
+    R3Q["R3 Hilbert/JCP separation?"]:::r3
     PQ["Step-17 publication or GUI?"]:::p
 
     F["Use 65b9f7db…"]:::f
     A["Use 35f1aa55…"]:::a
     D["Use 20c8cbe1…<br/>plus Step-12 supporting objects"]:::d
+    R2["Use R2 HEAD c1a18b2e…<br/>plus R2 evidence/correspondence"]:::r2
+    R3["Use R3 HEAD 6f4a7de3…<br/>plus R3 evidence/correspondence"]:::r3
     P["Use publication ID/body/frontend identities"]:::p
 
     Q --> FQ --> F
     Q --> AQ --> A
     Q --> DQ --> D
+    Q --> R2Q --> R2
+    Q --> R3Q --> R3
     Q --> PQ --> P
 
     classDef q fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:3px;
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef a fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
     classDef d fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
+    classDef r2 fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef r3 fill:#e9d5ff,stroke:#6d28d9,color:#3b0764,stroke-width:2px;
     classDef p fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
 ```
 
@@ -558,6 +629,9 @@ including:
 
 - `workstream-f-close.md`
 - `dgm-step12-close.md`
+- `post-a8-dgm-correspondence-close.md`
+- `lean-conversational-admission-r2-close.md`
+- `lean-hilbert-jcp-separation-r3-close.md`
 - `publication-step17-close.md`
 
 A source can be qualified before a workstream is closed.
@@ -604,6 +678,32 @@ may be supported by:
 evidence/publication/
 ```
 
+and:
+
+```text
+qualified R2 proof object:
+OBJ-LR201
+```
+
+is supported by:
+
+```text
+evidence/conversational-admission/r2-qualification.md
+```
+
+while:
+
+```text
+qualified R3 proof object:
+OBJ-LR301
+```
+
+is supported by:
+
+```text
+evidence/hilbert-jcp-separation/r3-qualification.md
+```
+
 The accepted object and its supporting evidence remain distinct.
 
 ---
@@ -638,6 +738,18 @@ public publication body
 governed publication
     ↔
 GUI consumption
+```
+
+```text
+Lean R2 Conversational Admission
+    ↔
+/api/chat / auth / Gateway source-runtime behavior
+```
+
+```text
+Lean R3 Hilbert/JCP Separation
+    ↔
+current four-field JCP / static H_geo source-runtime state
 ```
 
 A qualified object may exist even when a later correspondence stage remains unestablished.
@@ -827,17 +939,20 @@ flowchart TD
     F["Workstream-F source"]:::f
     A["A5 proof anchor"]:::a
     D["Step-12 production source"]:::d
+    L["Lean R2 / R3 proof-assistant object"]:::lean
     P["Publication / frontend"]:::p
 
     FR["New Workstream-F qualification<br/>if that role changes"]:::f
     AR["Rebind affected A5 formal objects"]:::a
     DR["Renew Step-12 model/source/runtime<br/>correspondence as required"]:::d
+    LR["Create successor proof object<br/>and re-earn correspondence as required"]:::lean
     PR["Issue new publication/build identity<br/>and renew affected correspondence"]:::p
 
     C --> Q
     Q --> F --> FR
     Q --> A --> AR
     Q --> D --> DR
+    Q --> L --> LR
     Q --> P --> PR
 
     classDef change fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:3px;
@@ -845,6 +960,8 @@ flowchart TD
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef a fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
     classDef d fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
+    classDef r2 fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef r3 fill:#e9d5ff,stroke:#6d28d9,color:#3b0764,stroke-width:2px;
     classDef p fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
 ```
 
@@ -1482,6 +1599,16 @@ allis_qualified_baseline_directory:
     step12_production:
       identity: 20c8cbe175781c8a1c05d65c03977859ceca884a
 
+    lean_r2_conversational_admission:
+      head: c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+      tree: e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+      state: CLOSED_PASS
+
+    lean_r3_hilbert_jcp_separation:
+      head: 6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+      tree: f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+      state: CLOSED_PASS
+
     step17_publication:
       publication_id: allis-publication-step6-retention-v2
       publication_sha256: d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
@@ -1506,6 +1633,8 @@ allis_qualified_baseline_directory:
 - [`../closeout/README.md`](../closeout/README.md) — bounded closeout index
 - [`../closeout/workstream-f-close.md`](../closeout/workstream-f-close.md) — Workstream-F close
 - [`../closeout/dgm-step12-close.md`](../closeout/dgm-step12-close.md) — Step-12 close
+- [`../closeout/lean-conversational-admission-r2-close.md`](../closeout/lean-conversational-admission-r2-close.md) — Lean R2 Conversational Admission close
+- [`../closeout/lean-hilbert-jcp-separation-r3-close.md`](../closeout/lean-hilbert-jcp-separation-r3-close.md) — Lean R3 Hilbert/JCP Separation close
 - [`../closeout/publication-step17-close.md`](../closeout/publication-step17-close.md) — Step-17 publication close
 - [`../../CURRENT.md`](../../CURRENT.md) — current supported technical state
 
@@ -1517,6 +1646,18 @@ allis_qualified_baseline_directory:
 
 - [`../../evidence/governed-evolution/`](../../evidence/governed-evolution/)
 - [`../../correspondence/authorized-adoption/`](../../correspondence/authorized-adoption/)
+
+## Conversational Admission R2
+
+- [`../../evidence/conversational-admission/r2-qualification.md`](../../evidence/conversational-admission/r2-qualification.md)
+- [`../../correspondence/conversational-admission/model-to-source.md`](../../correspondence/conversational-admission/model-to-source.md)
+- [`../../correspondence/conversational-admission/source-to-runtime.md`](../../correspondence/conversational-admission/source-to-runtime.md)
+
+## Hilbert/JCP Separation R3
+
+- [`../../evidence/hilbert-jcp-separation/r3-qualification.md`](../../evidence/hilbert-jcp-separation/r3-qualification.md)
+- [`../../correspondence/hilbert-jcp-separation/model-to-source.md`](../../correspondence/hilbert-jcp-separation/model-to-source.md)
+- [`../../correspondence/hilbert-jcp-separation/source-to-runtime.md`](../../correspondence/hilbert-jcp-separation/source-to-runtime.md)
 
 ## Publication
 
@@ -1552,6 +1693,12 @@ allis_qualified_baseline_directory:
 🔐 **Step-12 production source**  
 `20c8cbe1…`
 
+🟪 **Lean R2 Conversational Admission**  
+`c1a18b2e…`
+
+🟪 **Lean R3 Hilbert/JCP Separation**  
+`6f4a7de3…`
+
 🌐 **Step-17 publication reference set**  
 `allis-publication-step6-retention-v2`
 
@@ -1578,6 +1725,8 @@ allis_qualified_baseline_directory:
 > **No single source commit silently becomes the baseline for every ALLIS claim.**
 
 > **A qualified object remains distinct from the evidence, proofs, and correspondence produced about it.**
+>
+> **Lean R2 and Lean R3 are separate first-class qualified proof objects; neither rewrites predecessor baseline identities.**
 
 > **The baseline-object registry determines which object applies to a scope.**
 
