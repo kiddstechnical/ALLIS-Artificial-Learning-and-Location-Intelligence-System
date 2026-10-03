@@ -8,6 +8,9 @@
 
 ![Evidence](https://img.shields.io/badge/EVIDENCE-MULTI_WORKSTREAM_INDEX-2563eb?style=for-the-badge)
 ![Governed Evolution](https://img.shields.io/badge/GOVERNED_EVOLUTION-STEP_12_CLOSED-f59e0b?style=for-the-badge)
+![R2](https://img.shields.io/badge/R2-CONVERSATIONAL_ADMISSION-7c3aed?style=for-the-badge)
+![R3](https://img.shields.io/badge/R3-HILBERT_JCP_SEPARATION-6d28d9?style=for-the-badge)
+![Front Door](https://img.shields.io/badge/CONVERSATIONAL_FRONTDOOR-PRODUCTION_EVIDENCE-0ea5e9?style=for-the-badge)
 ![Publication](https://img.shields.io/badge/PUBLICATION-STEP_17_GREEN_COMPLETE-14b8a6?style=for-the-badge)
 ![Correspondence](https://img.shields.io/badge/CORRESPONDENCE-BOUNDED_%26_TIME_INDEXED-7c3aed?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
@@ -37,19 +40,27 @@ SYSTEM_PROVEN=NO
 
 # 👀 Evidence at a glance
 
-The current public evidence record contains two primary evidence directories:
+The current public evidence record contains five bounded evidence families:
 
-| Evidence package                                | Scope                                                                                                                                      | Current bounded result                 |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------- |
-| 🔐 [`governed-evolution/`](governed-evolution/) | Production DGM authorized-adoption formalization, trust/governance correspondence, fail-closed behavior, residuals, and final Step-12 seal | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` |
-| 🌐 [`publication/`](publication/)               | Governed immutable publication, read-only runtime boundary, public-network continuity, and final Step-17 evidence close                    | `GREEN_COMPLETE`                       |
-
-The current record also includes two later successor records that strengthen the bounded DGM evidence without rewriting the historical Step-12 close:
-
-| Successor record | Role | Current bounded meaning |
+| Evidence package | Scope | Current bounded result |
 |---|---|---|
-| 🧮 [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) | Later Lean 4.34.0 proof-assistant qualification | Principal Step-12 theorem/disproof set independently kernel-checked; historical Step-12 `MACHINE_CHECKED` meaning unchanged |
-| 🔗 [`governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](governed-evolution/post-a8-theorem-correspondence-registry-r1.md) | Later post-A8 theorem-correspondence observation | Current theorem-relevant DGM source/runtime revalidated 11/11; `T12D-B` and `T12D-C` re-observed and current `CORRESPONDENCE_VERIFIED` |
+| 🔐 [`governed-evolution/`](governed-evolution/) | Production DGM authorized-adoption formalization, trust/governance correspondence, fail-closed behavior, residuals, and final Step-12 seal | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` |
+| 🟪 [`conversational-admission/`](conversational-admission/) | Public-safe Lean R2 qualification evidence for ordinary authenticated conversational admission | `R2_QUALIFICATION=PASS` |
+| 🟪 [`hilbert-jcp-separation/`](hilbert-jcp-separation/) | Public-safe Lean R3 qualification evidence for current JCP structure, Hilbert nonadmission, and static H_geo separation | `R3_QUALIFICATION=PASS` |
+| 💬 [`conversational-frontdoor/`](conversational-frontdoor/) | Post-September current production evidence for auth/Guardian, frontend, Unified Gateway, rollback, and demonstrated/non-demonstrated conversational boundaries | `SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES` |
+| 🌐 [`publication/`](publication/) | Governed immutable publication, read-only runtime boundary, public-network continuity, and final Step-17 evidence close | `GREEN_COMPLETE` |
+
+The current record also includes proof-assistant and correspondence records outside `evidence/` that bind these evidence families to their formal and runtime scopes:
+
+| Related record | Role | Current bounded meaning |
+|---|---|---|
+| 🧮 [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) | Lean R1 proof-assistant qualification | Principal Step-12 theorem/disproof set independently kernel-checked |
+| 🟪 [`../formal-verification/conversational-admission/workstream-closeout-r2.md`](../formal-verification/conversational-admission/workstream-closeout-r2.md) | Lean R2 proof-assistant closeout | 6/6 Conversational Admission checks closed PASS |
+| 🟪 [`../formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md`](../formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md) | Lean R3 proof-assistant closeout | 14/14 Hilbert/JCP Separation checks closed PASS |
+| 🔗 [`governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](governed-evolution/post-a8-theorem-correspondence-registry-r1.md) | Post-A8 DGM correspondence | Current theorem-relevant DGM source/runtime revalidated 11/11; `T12D-B` and `T12D-C` re-observed |
+| 🔗 [`../correspondence/conversational-admission/source-to-runtime.md`](../correspondence/conversational-admission/source-to-runtime.md) | R2 source/runtime correspondence | Current `/api/chat` / Gateway identity boundary supports the R2 model |
+| 🔗 [`../correspondence/hilbert-jcp-separation/source-to-runtime.md`](../correspondence/hilbert-jcp-separation/source-to-runtime.md) | R3 source/runtime correspondence | Current four-field JCP and static H_geo/nonadmission state support the R3 model |
+| 🔗 [`../correspondence/conversational-path/gateway-to-synthesis.md`](../correspondence/conversational-path/gateway-to-synthesis.md) | Conversational downstream correspondence | Qualified observed server path through Gateway → BBB → `llm20production` → LM Synthesizer |
 
 These records answer different technical questions.
 
@@ -246,6 +257,255 @@ See:
 * [`correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
 
 for the bounded correspondence records.
+
+---
+
+# 🟪 Conversational Admission R2 evidence
+
+Directory:
+
+[`evidence/conversational-admission/`](conversational-admission/)
+
+Current public-safe evidence file:
+
+[`conversational-admission/r2-qualification.md`](conversational-admission/r2-qualification.md)
+
+This package preserves the accepted R2 proof evidence without duplicating the formal source.
+
+It records:
+
+```text
+R2_QUALIFICATION=PASS
+
+PRINCIPAL_CHECKS=6_OF_6
+
+PROOF_HOLES=0
+
+INITIAL_PROPEXT_DEPENDENCIES=6_OF_6
+
+FINAL_PROPEXT_DEPENDENCIES=0_OF_6
+
+FINAL_THEOREM_LEVEL_AXIOM_DEPENDENCIES=0_OF_6
+```
+
+It also preserves the qualified R2 Git identity:
+
+```text
+branch =
+formal-verification/lean-conversational-admission-r2
+
+HEAD =
+c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+
+tree =
+e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+```
+
+and the public-safe final evidence/seal identities.
+
+The six principal theorem identifiers are:
+
+```text
+TCHAT_A_server_derived_authenticated_identity
+TCHAT_B_browser_identity_is_nonauthoritative
+TCHAT_C_canonical_scalar_user_id_not_invented
+TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated
+TCHAT_E_ordinary_chat_does_not_create_governance_authority
+TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
+```
+
+The evidence package preserves the important repair history:
+
+```text
+compiled 6/6 with zero holes
+    ↓
+unexpected propext dependency 6/6
+    ↓
+qualification failure
+    ↓
+direct proof repair
+    ↓
+0/6 final propext
+    ↓
+PASS
+```
+
+The theorem statements, types, and intended semantics were preserved; proof bodies changed.
+
+Related acceptance:
+
+[`../acceptance/closeout/lean-conversational-admission-r2-close.md`](../acceptance/closeout/lean-conversational-admission-r2-close.md)
+
+Related correspondence:
+
+- [`../correspondence/conversational-admission/model-to-source.md`](../correspondence/conversational-admission/model-to-source.md)
+- [`../correspondence/conversational-admission/source-to-runtime.md`](../correspondence/conversational-admission/source-to-runtime.md)
+
+---
+
+# 🟪 Hilbert/JCP Separation R3 evidence
+
+Directory:
+
+[`evidence/hilbert-jcp-separation/`](hilbert-jcp-separation/)
+
+Current public-safe evidence file:
+
+[`hilbert-jcp-separation/r3-qualification.md`](hilbert-jcp-separation/r3-qualification.md)
+
+This package preserves the accepted R3 proof evidence for the current Hilbert/JCP Separation domain.
+
+It records:
+
+```text
+R3_QUALIFICATION=PASS
+
+FINAL_CHECKS=14_OF_14
+
+PROOF_HOLES=0
+
+INITIAL_PROPEXT_DEPENDENCIES=11_OF_14
+
+FINAL_PROPEXT_DEPENDENCIES=0_OF_14
+
+FINAL_THEOREM_LEVEL_AXIOM_DEPENDENCIES=0_OF_14
+```
+
+Current JCP builder:
+
+```text
+build_judge_context_v2
+```
+
+Exact current top-level field set:
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+Current/candidate JCP AST SHA-256:
+
+```text
+7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+```
+
+Current admission state:
+
+```text
+H_GEO_CURRENT_JCP_ADMISSION=NO
+
+H_P_CURRENT_JCP_ADMISSION=NO
+
+H_PEOPLE_CURRENT_JCP_ADMISSION=NO
+
+STATIC_H_GEO_PATH_QUALIFIED=YES
+```
+
+Preserve:
+
+```text
+static H_geo qualification
+    ≠
+live H_geo JCP admission
+```
+
+Related acceptance:
+
+[`../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md`](../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md)
+
+Related correspondence:
+
+- [`../correspondence/hilbert-jcp-separation/model-to-source.md`](../correspondence/hilbert-jcp-separation/model-to-source.md)
+- [`../correspondence/hilbert-jcp-separation/source-to-runtime.md`](../correspondence/hilbert-jcp-separation/source-to-runtime.md)
+
+---
+
+# 💬 Conversational-frontdoor production evidence
+
+Directory:
+
+[`evidence/conversational-frontdoor/`](conversational-frontdoor/)
+
+Current evidence file:
+
+[`conversational-frontdoor/current-production-state.md`](conversational-frontdoor/current-production-state.md)
+
+This package consolidates the post-September production evidence for:
+
+```text
+auth / Guardian versioned qualification
+
+frontend candidate and production cutover
+
+Unified Gateway production cutover
+
+qualified observed downstream conversational path
+
+rollback retention
+
+browser-E2E non-demonstration boundary
+```
+
+Current bounded production state:
+
+```text
+AUTH_GUARDIAN_VERSIONED_INSTALL=PASS
+
+FRONTEND_PRODUCTION_CUTOVER=PASS
+
+GATEWAY_PRODUCTION_CUTOVER=PASS
+
+SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
+
+BROWSER_E2E_DEMONSTRATED=NO
+
+ROLLBACK_RETIREMENT_AUTHORIZED=NO
+```
+
+Qualified observed server-side path:
+
+```text
+Unified Gateway
+    ↓
+BBB
+    ↓
+llm20production
+    ↓
+LM Synthesizer
+    ↓
+response
+```
+
+The package intentionally preserves the distinction:
+
+```text
+server-side conversational path qualified
+    ≠
+authenticated browser E2E demonstrated
+```
+
+The current UI-boundary record remains:
+
+```text
+CURRENT_BROWSER_CONVERSATIONAL_UI_READY=NO
+
+CURRENT_BROWSER_CONVERSATIONAL_SEND_SURFACE=NO
+
+AUTHENTICATED_BROWSER_CHAT_E2E=NOT_EXECUTABLE_CURRENT_UI
+```
+
+Related correspondence:
+
+[`../correspondence/conversational-path/gateway-to-synthesis.md`](../correspondence/conversational-path/gateway-to-synthesis.md)
+
+Related current-state records:
+
+- [`../CURRENT.md`](../CURRENT.md)
+- [`../acceptance/current-system-manifest.md`](../acceptance/current-system-manifest.md)
+- [`../acceptance/baseline-object-registry.md`](../acceptance/baseline-object-registry.md)
 
 ---
 
@@ -641,6 +901,15 @@ evidence/
 │   ├── step12-final-seal.md
 │   └── trust-anchor.md
 │
+├── conversational-admission/
+│   └── r2-qualification.md
+│
+├── hilbert-jcp-separation/
+│   └── r3-qualification.md
+│
+├── conversational-frontdoor/
+│   └── current-production-state.md
+│
 └── publication/
     ├── publication-identity.md
     ├── runtime-boundary.md
@@ -650,7 +919,7 @@ evidence/
 
 Each package has a bounded role.
 
-The evidence directory should grow by **evidence domain or bounded workstream**, not as a chronological dump of every development artifact.
+The evidence directory grows by **evidence domain or bounded workstream**, not as a chronological dump of engineering artifacts.
 
 ---
 
@@ -678,43 +947,73 @@ Then use this directory to inspect the evidence supporting the bounded claims.
 
 ## Governed evolution / Step 12 + later successor evidence
 
-* [Governed-evolution overview](governed-evolution/README.md)
-* [Source identity](governed-evolution/source-identity.md)
-* [Trust anchor](governed-evolution/trust-anchor.md)
-* [Governance view](governed-evolution/governance-view.md)
-* [Residuals and non-promotions](governed-evolution/residuals.md)
-* [Step-12 final seal](governed-evolution/step12-final-seal.md)
-* [Post-A8 DGM theorem correspondence registry R1](governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
-* [Lean R1 proof-assistant qualification closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- [Governed-evolution overview](governed-evolution/README.md)
+- [Source identity](governed-evolution/source-identity.md)
+- [Trust anchor](governed-evolution/trust-anchor.md)
+- [Governance view](governed-evolution/governance-view.md)
+- [Residuals and non-promotions](governed-evolution/residuals.md)
+- [Step-12 final seal](governed-evolution/step12-final-seal.md)
+- [Post-A8 DGM theorem correspondence registry R1](governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+- [Lean R1 proof-assistant qualification closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
 The Step-12 final seal remains the historical predecessor record.
 
 The Lean R1 and post-A8 records are additive successor evidence.
 
+## Conversational Admission / R2
+
+- [R2 public qualification evidence](conversational-admission/r2-qualification.md)
+- [R2 formal workstream closeout](../formal-verification/conversational-admission/workstream-closeout-r2.md)
+- [R2 acceptance closeout](../acceptance/closeout/lean-conversational-admission-r2-close.md)
+- [R2 model → source](../correspondence/conversational-admission/model-to-source.md)
+- [R2 source → runtime](../correspondence/conversational-admission/source-to-runtime.md)
+
+## Hilbert/JCP Separation / R3
+
+- [R3 public qualification evidence](hilbert-jcp-separation/r3-qualification.md)
+- [R3 formal workstream closeout](../formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md)
+- [R3 acceptance closeout](../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md)
+- [R3 model → source](../correspondence/hilbert-jcp-separation/model-to-source.md)
+- [R3 source → runtime](../correspondence/hilbert-jcp-separation/source-to-runtime.md)
+
+## Conversational front door / current production
+
+- [Current production state](conversational-frontdoor/current-production-state.md)
+- [Gateway → synthesis correspondence](../correspondence/conversational-path/gateway-to-synthesis.md)
+
 ## Publication / Step 17
 
-* [Publication identity](publication/publication-identity.md)
-* [Publication runtime boundary](publication/runtime-boundary.md)
-* [Publication network continuity](publication/network-continuity.md)
-* [Step-17 final evidence close](publication/step17-final-close.md)
+- [Publication identity](publication/publication-identity.md)
+- [Publication runtime boundary](publication/runtime-boundary.md)
+- [Publication network continuity](publication/network-continuity.md)
+- [Step-17 final evidence close](publication/step17-final-close.md)
 
 ## Related acceptance
 
-* [Workstream-F close](../acceptance/closeout/workstream-f-close.md)
-* [DGM Step-12 close](../acceptance/closeout/dgm-step12-close.md)
-* [Publication Step-17 close](../acceptance/closeout/publication-step17-close.md)
+- [Current system manifest](../acceptance/current-system-manifest.md)
+- [Baseline object registry](../acceptance/baseline-object-registry.md)
+- [Workstream-F close](../acceptance/closeout/workstream-f-close.md)
+- [DGM Step-12 close](../acceptance/closeout/dgm-step12-close.md)
+- [Lean R2 close](../acceptance/closeout/lean-conversational-admission-r2-close.md)
+- [Lean R3 close](../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md)
+- [Publication Step-17 close](../acceptance/closeout/publication-step17-close.md)
 
 ## Related correspondence
 
-* [Correspondence index](../correspondence/README.md)
-* [Authorized adoption: model → source](../correspondence/authorized-adoption/model-to-source.md)
-* [Authorized adoption: source → runtime](../correspondence/authorized-adoption/source-to-runtime.md)
-* [Publication: source → publication → HTTP → GUI](../correspondence/publication/source-to-publication-to-http-to-gui.md)
+- [Correspondence index](../correspondence/README.md)
+- [Authorized adoption: model → source](../correspondence/authorized-adoption/model-to-source.md)
+- [Authorized adoption: source → runtime](../correspondence/authorized-adoption/source-to-runtime.md)
+- [R2: model → source](../correspondence/conversational-admission/model-to-source.md)
+- [R2: source → runtime](../correspondence/conversational-admission/source-to-runtime.md)
+- [R3: model → source](../correspondence/hilbert-jcp-separation/model-to-source.md)
+- [R3: source → runtime](../correspondence/hilbert-jcp-separation/source-to-runtime.md)
+- [Conversational path: Gateway → synthesis](../correspondence/conversational-path/gateway-to-synthesis.md)
+- [Publication: source → publication → HTTP → GUI](../correspondence/publication/source-to-publication-to-http-to-gui.md)
 
 ## Related claims
 
-* [Claim registry](../claims/claim-registry.md)
-* [Nonclaims and residuals](../claims/nonclaims-and-residuals.md)
+- [Claim registry](../claims/claim-registry.md)
+- [Nonclaims and residuals](../claims/nonclaims-and-residuals.md)
 
 ---
 
@@ -722,7 +1021,29 @@ The Lean R1 and post-A8 records are additive successor evidence.
 
 A defensible description of this directory is:
 
-> **The ALLIS evidence layer preserves bounded, public, non-sensitive technical records supporting specific claims about governed production evolution, historical Step-12 evidence, later Lean proof-assistant qualification, later post-A8 DGM correspondence revalidation, immutable publication, runtime isolation, network continuity, and completed workstream evidence seals.**
+> **The ALLIS evidence layer preserves bounded, public, non-sensitive technical records supporting specific claims about governed production evolution, historical Step-12 evidence, Lean R1/R2/R3 qualification, post-A8 DGM correspondence revalidation, current conversational-frontdoor production state, immutable publication, runtime isolation, network continuity, and completed workstream evidence seals.**
+
+The current evidence families support, within their bounded scopes:
+
+```text
+LEAN_R2_CONVERSATIONAL_ADMISSION_QUALIFIED=YES
+
+LEAN_R3_HILBERT_JCP_SEPARATION_QUALIFIED=YES
+
+SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
+```
+
+while preserving:
+
+```text
+BROWSER_E2E_DEMONSTRATED=NO
+
+H384_FORMALIZATION_COMPLETE=NO
+
+LIVE_HILBERT_JCP_INTEGRATION_COMPLETE=NO
+
+SYSTEM_PROVEN=NO
+```
 
 It does not itself establish:
 
