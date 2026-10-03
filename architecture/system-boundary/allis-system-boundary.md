@@ -11,6 +11,9 @@
 ![Write](https://img.shields.io/badge/WRITE_PLANE-GOVERNED-ef4444?style=for-the-badge)
 ![Read](https://img.shields.io/badge/READ_PLANE-GOVERNED-14b8a6?style=for-the-badge)
 ![Private State](https://img.shields.io/badge/PRIVATE_STATE-PROTECTED-ec4899?style=for-the-badge)
+![Conversation](https://img.shields.io/badge/CONVERSATION-CURRENT_OPERATIONAL-2563eb?style=for-the-badge)
+![Gateway](https://img.shields.io/badge/UNIFIED_GATEWAY-CURRENT_BOUNDARY-14b8a6?style=for-the-badge)
+![JCP](https://img.shields.io/badge/JCP-4_FIELD_CURRENT-0ea5e9?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -110,7 +113,7 @@ What may cross the boundary?
 
 Which protected transitions require separate authority?
 
-Where does Ms. Allis sit relative to the governed platform?
+How does ALLIS/allis.pro remain distinct from Ms. Allis/MountainShares?
 ```
 
 It is an architecture document.
@@ -126,6 +129,69 @@ evidence/
 ```
 
 for current implementation status, formal claims, proof state, correspondence, or workstream closure.
+
+---
+
+# 0. System identity and surface separation
+
+This document uses **ALLIS** and **Ms. Allis** as different systems and different user-facing surfaces.
+
+```text
+ALLIS
+    =
+Kidd's Technical Services engineering / research platform
+    +
+general conversational system
+    +
+allis.pro
+```
+
+```text
+Ms. Allis
+    =
+separate MountainShares-facing intelligence system
+    +
+mountainshares.us
+```
+
+Therefore:
+
+```text
+ALLIS / allis.pro
+    ≠
+Ms. Allis / mountainshares.us
+```
+
+The distinction is architectural, operational, and documentary.
+
+The ALLIS conversational front door discussed in this document belongs to:
+
+```text
+allis.pro
+```
+
+It must not be relabeled as:
+
+```text
+Ms. Allis
+```
+
+or:
+
+```text
+MountainShares
+```
+
+merely because both systems can support governed intelligence-facing interactions.
+
+Likewise, documentation about Ms. Allis or MountainShares does not become controlling evidence for the ALLIS/allis.pro production conversational path unless a separate correspondence record establishes an exact relationship.
+
+This separation prevents identity drift between:
+
+- the ALLIS engineering/research platform;
+- the ALLIS conversational surface;
+- the MountainShares-facing Ms. Allis system;
+- their distinct authority, deployment, and governance contexts.
 
 ---
 
@@ -176,6 +242,14 @@ A component is inside the boundary because of the governed role it performs, not
 The system architecture is organized around one rule:
 
 > **State does not become authority merely because it exists.**
+
+> **ALLIS/allis.pro and Ms. Allis/mountainshares.us are separate systems and must not be conflated.**
+
+> **Trusted conversational identity comes from the authenticated server-side session, not browser-controlled identity fields.**
+
+> **The current four-field JCP is the present conversational admission boundary; H_geo, H_p, and H_people remain nonadmitted.**
+
+> **The current Gateway/synthesis path is operationally distinct from future Hilbert and automated-learning paths.**
 
 That rule applies in every direction.
 
@@ -642,6 +716,204 @@ perform an external institutional act
 Reasoning is a capability.
 
 Authority is a separate state.
+
+---
+
+# 12A. Current ordinary conversational path
+
+The current ALLIS conversational path is a bounded operational path inside the broader system boundary.
+
+At the current qualified architecture level:
+
+```text
+authenticated browser / session
+    ↓
+/api/chat
+    ↓
+Unified Gateway
+    ↓
+current JCP construction
+    ↓
+BBB / llm20production
+    ↓
+LM Synthesizer
+    ↓
+conversational response
+```
+
+This path is the ordinary ALLIS conversational front door.
+
+It is not the DGM governed-write path.
+
+It is not the Step-17 public evidence publication path.
+
+It is not the future Hilbert admission architecture.
+
+The current conversational path therefore belongs primarily to:
+
+```text
+inward admission
+    +
+governed computation
+    +
+bounded response synthesis
+```
+
+and does not, merely by being exercised, grant:
+
+- governance authority;
+- protected mutation authority;
+- H_people SECRET disclosure authority;
+- publication authority;
+- Hilbert admission authority.
+
+The conversational path can produce a useful response while those other protected transitions remain separately governed.
+
+---
+
+# 12B. Authenticated server-derived identity boundary
+
+The ordinary conversational front door has a specific identity boundary.
+
+Trusted conversational identity is derived from the authenticated server-side session.
+
+It is not derived from browser-controlled request content.
+
+The current bounded rule is:
+
+```text
+server-authenticated session identity
+    =
+trusted conversational identity source
+```
+
+while:
+
+```text
+browser-supplied identity-like field
+    ≠
+trusted conversational identity source
+```
+
+and:
+
+```text
+browser message says "I am user B"
+    ≠
+authenticated session becomes user B
+```
+
+If the server-side authenticated identity is absent or not established, the protected identity-dependent path must remain untrusted or fail closed according to the applicable semantics.
+
+The browser cannot create:
+
+- trusted identity;
+- a canonical scalar identity where none was established;
+- governance authority;
+- H_people SECRET disclosure authority.
+
+This is the system-boundary meaning of the qualified R2 conversational-admission result.
+
+---
+
+# 12C. Current Judge Context Packet boundary
+
+The current ordinary conversational path uses a bounded Judge Context Packet structure.
+
+The current qualified JCP has exactly four top-level fields:
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+The current JCP boundary does **not** include live admission of:
+
+```text
+H_geo
+H_p
+H_people
+```
+
+Therefore:
+
+```text
+current JCP field set
+    =
+four fields
+```
+
+and:
+
+```text
+H_geo admitted to current JCP = NO
+H_p admitted to current JCP = NO
+H_people admitted to current JCP = NO
+```
+
+A static qualified H_geo path exists elsewhere in the architecture/evidence record.
+
+That does not alter the current conversational JCP.
+
+```text
+static H_geo qualification
+    ≠
+live JCP admission
+```
+
+Likewise:
+
+```text
+named Hilbert object exists
+    ≠
+ordinary conversational path consumes it
+```
+
+The current JCP boundary is therefore a real operational limit, not a placeholder to be silently filled from future architecture.
+
+---
+
+# 12D. Current Gateway / synthesis boundary
+
+The Unified Gateway is the current integration boundary between the ordinary conversational request and downstream synthesis.
+
+The bounded observed path includes:
+
+```text
+Gateway
+    ↓
+BBB
+    ↓
+llm20production
+    ↓
+LM Synthesizer
+```
+
+This current operational path establishes that those conversational components can participate in one bounded request/response chain.
+
+It does **not** by itself establish:
+
+- whole-system conversational totality;
+- browser-to-final-response end-to-end proof for every route;
+- live Hilbert admission;
+- automated learning qualification;
+- protected H_people SECRET use;
+- production write authority;
+- whole-system proof.
+
+The system boundary must therefore preserve both statements at once:
+
+```text
+current Gateway/synthesis path exists
+```
+
+and:
+
+```text
+future Hilbert / learning paths remain separately unqualified
+```
 
 ---
 
@@ -1209,9 +1481,32 @@ The outward boundary must still evaluate the new state.
 
 ---
 
-# 31. Ms. Allis is an intelligence-facing service
+# 31. Ms. Allis / MountainShares remains outside the ALLIS conversational surface
 
 **Ms. Allis is not the ALLIS system.**
+
+The naming and deployment boundary is:
+
+```text
+ALLIS conversational system
+    → allis.pro
+```
+
+while:
+
+```text
+Ms. Allis
+    → mountainshares.us
+```
+
+Ms. Allis is a separate MountainShares-facing intelligence system.
+
+This document must not use Ms. Allis as a synonym for the ALLIS conversational front door.
+
+Where the architecture discusses the current `/api/chat` → Unified Gateway → JCP → synthesis path, that path belongs to **ALLIS/allis.pro**.
+
+Where this document discusses Ms. Allis, it refers only to the separate MountainShares-facing system and to the architectural principle that an intelligence-facing system does not own the protected authority planes.
+
 
 Ms. Allis is an intelligence-facing service that can:
 
@@ -2104,6 +2399,12 @@ architecture/state-models/
 
 architecture/deployment-model/
     defines implementation/deployment patterns
+
+architecture/conversational-frontdoor/
+    defines the ALLIS/allis.pro ordinary conversational boundary
+
+architecture/automated-learning/
+    defines future research / learning boundaries after qualification
 ```
 
 This document is the top-level boundary map.
@@ -2242,16 +2543,175 @@ She is an intelligence-facing service operating through the governed system.
 
 ---
 
+# 72A. Current operational boundary vs future architecture
+
+The system boundary must distinguish what is operational now from what is planned for later qualification.
+
+## Current operational conversational path
+
+The current bounded conversational path includes:
+
+```text
+authenticated server-side session
+    ↓
+/api/chat
+    ↓
+Unified Gateway
+    ↓
+four-field JCP
+    ↓
+BBB / llm20production
+    ↓
+LM Synthesizer
+    ↓
+response
+```
+
+This is current operational architecture.
+
+## Current nonadmission boundaries
+
+The current conversational JCP does not admit:
+
+```text
+H_geo
+H_p
+H_people
+```
+
+That nonadmission is part of the current boundary.
+
+## Current separate static qualification
+
+A static H_geo qualification path exists.
+
+It remains separate from live JCP admission.
+
+## Future Hilbert phase
+
+The next Hilbert phase is expected to qualify each Hilbert/projection individually, including:
+
+- intended semantics;
+- exact source;
+- runtime implementation;
+- producer;
+- consumer;
+- dimensional / embedding contract;
+- persistence;
+- retrieval;
+- authority boundary;
+- Gateway / JCP relationship;
+- conversational use;
+- accuracy;
+- failure behavior;
+- correspondence.
+
+Until those edges are established:
+
+```text
+future Hilbert architecture
+    ≠
+current conversational runtime
+```
+
+## Future automated-learning / research phase
+
+The planned Automated Learning / research architecture is also outside the current qualified conversational path.
+
+Future functions include:
+
+- detecting knowledge gaps;
+- bounded read-only web research;
+- conversational research fallback;
+- provenance-preserving candidate research state;
+- governed research-to-corpus admission;
+- governed projection into the appropriate Hilbert/state domain.
+
+Until qualified:
+
+```text
+planned research path
+    ≠
+current qualified corpus update path
+```
+
+and:
+
+```text
+retrieved web material
+    ≠
+qualified ALLIS knowledge
+```
+
+and:
+
+```text
+failed admission
+    ≠
+persistent Hilbert state
+```
+
+The system boundary therefore has an explicit temporal distinction:
+
+```text
+CURRENT:
+ordinary conversation + Gateway + current JCP + current synthesis path
+
+FUTURE:
+Hilbert-by-Hilbert admission + automated learning + research-to-corpus persistence
+```
+
+This distinction prevents future architecture from being documented as though it were already production behavior.
+
+---
+
+# 72B. Conversational totality remains a separate claim
+
+The existence of the current ordinary conversational path does not automatically establish full conversational totality.
+
+The stronger condition would require evidence that an authenticated or otherwise permitted conversational request can traverse every required intended layer, obtain all relevant authorized state, invoke the appropriate governed reasoning and synthesis path, and return a defined outcome while preserving:
+
+- privacy;
+- provenance;
+- authority;
+- memory;
+- geographic state;
+- temporal state;
+- runtime state;
+- fail-closed semantics.
+
+Therefore:
+
+```text
+current conversational path operational
+    ≠
+conversational totality proven
+```
+
+and:
+
+```text
+current Gateway path observed
+    ≠
+all future Hilbert / learning paths integrated
+```
+
+---
+
 # 73. Compact boundary matrix
 
 | Boundary | Input | Governing question | Output |
 |---|---|---|---|
 | 🛡️ Inward protected-state admission | External/private state | May this state enter this context? | Admitted scoped state or safe non-success |
-| 🧠 Governed computation | Admitted state | What can be reasoned, compared, or proposed? | Result / candidate / uncertainty |
+| 💬 ALLIS conversational front door | Authenticated browser/session request | May this ordinary conversation proceed under server-derived identity? | Scoped `/api/chat` request |
+| 🧭 Current JCP boundary | Admitted conversational context | Which currently qualified fields may enter the Judge Context Packet? | Four-field JCP |
+| 🧠 Unified Gateway / synthesis path | Current JCP + governed request context | What can be reasoned/synthesized on the current path? | BBB / llm20production / LM Synthesizer result |
 | 🔐 Governed write plane | Candidate state | May this candidate change protected state? | Qualified poststate + receipt, or safe non-success |
 | 🌐 Outward publication boundary | Qualified state | May this state leave as public projection? | Publication object or safe non-success |
 | 📦 Governed read plane | Publication object | May this projection be served through this route? | Read-only public body |
-| 💬 Ms. Allis | Governed context/results | How should intelligence interact and explain? | Human-facing reasoning / candidate requests |
+| 🔮 Future Hilbert admission | Qualified future H_* projection | Has a successor live admission contract and authority been established? | Future admitted Hilbert context or nonadmission |
+| 🔬 Future research/learning | Detected knowledge gap / candidate external evidence | May retrieved material become governed corpus/Hilbert state? | Candidate, admitted state, or explicit gap |
+| 💠 Ms. Allis / MountainShares | Separate mountainshares.us context | How should the separate MountainShares-facing system interact? | Separate governed intelligence-facing behavior |
 
 ---
 
@@ -2268,7 +2728,12 @@ She is an intelligence-facing service operating through the governed system.
 | Public key can verify | **No signing authority** |
 | State is qualified | **No publication authority** |
 | Publication is public | **No write authority** |
-| Ms. Allis can explain | **No system authority** |
+| Authenticated ALLIS session exists | **No governance authority** |
+| Browser supplies an identity-like value | **No trusted identity authority** |
+| Static H_geo qualification exists | **No live JCP admission authority** |
+| Current Hilbert admission is absent | **Remains nonadmitted** |
+| Retrieved web material exists | **No automatic corpus/Hilbert qualification authority** |
+| Ms. Allis can explain | **No ALLIS system authority** |
 | External institution has authority | **Not automatically ALLIS technical authority** |
 
 ---
@@ -2288,9 +2753,9 @@ She is an intelligence-facing service operating through the governed system.
 
 ---
 
-# 76. Compact Ms. Allis boundary matrix
+# 76. Compact Ms. Allis / MountainShares separation matrix
 
-| Ms. Allis can | Ms. Allis does not automatically |
+| Separate Ms. Allis / MountainShares system can | It does not automatically gain from ALLIS |
 |---|---|
 | Interpret requests | Verify identity |
 | Request governed context | Create disclosure authority |
@@ -2338,6 +2803,36 @@ ProtectedMutation
 MsAllisRequest
     ↛
 SystemAuthority
+```
+
+```text
+BrowserSuppliedIdentity
+    ↛
+TrustedConversationalIdentity
+```
+
+```text
+AuthenticatedConversation
+    ↛
+GovernanceAuthority
+```
+
+```text
+StaticHilbertQualification
+    ↛
+LiveJcpAdmission
+```
+
+```text
+MissingHilbertAdmission
+    =
+Nonadmission
+```
+
+```text
+ALLIS_allis_pro
+    ≠
+MsAllis_mountainshares_us
 ```
 
 ```text
