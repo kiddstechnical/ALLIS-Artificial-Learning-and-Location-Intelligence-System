@@ -11,6 +11,8 @@
 ![Write](https://img.shields.io/badge/WRITE_AUTHORITY-GOVERNED-ef4444?style=for-the-badge)
 ![Publication](https://img.shields.io/badge/PUBLICATION_AUTHORITY-GOVERNED-14b8a6?style=for-the-badge)
 ![Private State](https://img.shields.io/badge/PRIVATE_STATE-DISCLOSURE_CONTROLLED-ec4899?style=for-the-badge)
+![Lean R2](https://img.shields.io/badge/LEAN_R2-CONVERSATIONAL_ADMISSION-9333ea?style=for-the-badge)
+![Lean R3](https://img.shields.io/badge/LEAN_R3-HILBERT_JCP_SEPARATION-c026d3?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -116,7 +118,10 @@ It explains:
 - fail-closed outcomes;
 - evidence/authority separation;
 - external institutional authority;
-- intelligence-facing services.
+- intelligence-facing services;
+- authenticated conversational admission boundaries established by Lean R2;
+- current Hilbert/JCP admission boundaries established by Lean R3;
+- the distinction between formal proof and production authority.
 
 This is an architecture document.
 
@@ -301,6 +306,101 @@ An authenticated caller can still be:
 - using an unsupported purpose;
 - requesting an unauthorized operation;
 - attempting to reuse spent authority.
+
+---
+
+# 5A. Lean R2 — authenticated conversation does not create governance authority
+
+The qualified Lean R2 Conversational Admission workstream makes the authentication boundary concrete for ordinary conversation.
+
+Within the bounded R2 model:
+
+```text
+authenticated session
+    ≠
+governance authority
+```
+
+and:
+
+```text
+ordinary authenticated chat
+    ≠
+authority to perform a governed transition
+```
+
+R2 formalizes the following authority-relevant properties:
+
+- trusted conversational identity is derived from the authenticated server-side session rather than browser-controlled message content;
+- changing browser-controlled identity-like content does not replace the trusted authenticated identity;
+- a canonical scalar user identifier is not invented where the authenticated session does not establish one;
+- distinct authenticated sessions remain identity-isolated;
+- ordinary authenticated chat carries `noAuthority` rather than manufacturing governance authority;
+- ordinary authenticated chat does not authorize H_people SECRET disclosure.
+
+The authority interpretation is deliberately narrow:
+
+```text
+authentication
+    establishes who is admitted to ordinary conversation
+```
+
+but:
+
+```text
+authentication
+    does not establish authority to govern, disclose SECRET state,
+    mutate protected state, publish governed state, or self-authorize
+    a later protected transition
+```
+
+R2 is therefore a formal example of the existing architectural rule:
+
+> **Identity and authentication answer who is participating; they do not answer what protected transition may occur.**
+
+R2 does not replace the general authority model.
+
+It proves a bounded conversational-admission instance of that model.
+
+---
+
+# 5B. Ordinary chat is not H_people SECRET disclosure authority
+
+The H_people boundary has a stronger disclosure rule than ordinary conversational admission.
+
+```text
+ordinary authenticated conversation
+    ≠
+H_people SECRET disclosure authority
+```
+
+Authentication can permit entry to the ordinary conversational surface while protected person-linked state remains separately governed.
+
+Conceptually:
+
+```text
+authenticated conversation
+    ↓
+ordinary conversational admission
+
+        does not imply
+
+verified SECRET disclosure authority
+    ↓
+recipient / purpose / scope / minimization / temporal checks
+```
+
+The protected state may therefore remain:
+
+```text
+WITHHELD / NOT_AUTHORIZED
+```
+
+even while the ordinary conversation itself is valid and authenticated.
+
+This is not an authentication failure.
+
+It is the correct preservation of a separate disclosure-authority boundary.
 
 ---
 
@@ -725,6 +825,103 @@ candidate applied
 ```
 
 A candidate does not become its own permission object.
+
+---
+
+# 21A. Lean R3 — static Hilbert qualification does not create live JCP admission authority
+
+The qualified Lean R3 Hilbert/JCP Separation workstream provides a second concrete authority example.
+
+R3 establishes the current bounded separation between static Hilbert-related qualification and live Judge Context Packet admission.
+
+The present JCP builder has exactly four top-level fields:
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+Within the qualified current R3 state:
+
+```text
+H_geo admitted to current JCP = NO
+H_p admitted to current JCP = NO
+H_people admitted to current JCP = NO
+```
+
+A qualified static H_geo path exists.
+
+That fact does not create admission authority:
+
+```text
+static H_geo qualification
+    ≠
+live H_geo JCP admission
+```
+
+and:
+
+```text
+qualified Hilbert-related state
+    ≠
+authority to alter the current JCP schema
+```
+
+and:
+
+```text
+historical or static candidate evidence
+    ≠
+authority to override current nonadmission
+```
+
+This is the same authority principle expressed at a different protected transition.
+
+A source object, proof object, or static qualification can establish that a bounded object exists or satisfies a property.
+
+It cannot authorize itself into a live governed context.
+
+Any future H_geo-to-JCP admission requires a successor source/runtime contract plus the authority applicable to that transition.
+
+R3 therefore preserves the present state rather than treating a desired future architecture as already admitted.
+
+---
+
+# 21B. Named H_* objects do not gain authority from mathematical classification
+
+The current formal record also keeps mathematical classification separate from application authority.
+
+The 384-dimensional real-vector carrier is suitable for later formalization.
+
+That does not establish that every named application object is already a proved linear subspace.
+
+```text
+H_* name
+    ≠
+proved linear subspace
+```
+
+Likewise:
+
+```text
+proved mathematical property
+    ≠
+runtime admission authority
+```
+
+Even if a future H_* object is proved to satisfy stronger mathematical structure, that proof would not by itself authorize:
+
+- JCP admission;
+- private-state disclosure;
+- protected mutation;
+- publication;
+- production integration.
+
+Mathematical proof constrains what may be claimed about the object.
+
+Authority still governs what transition may occur.
 
 ---
 
@@ -2628,9 +2825,9 @@ successor-work authority
 
 ---
 
-# 103. Proof does not create operation authority
+# 103. Formal proof does not create production authority
 
-A formal proof can establish a proposition.
+A formal proof can establish a proposition within its stated model.
 
 It does not itself authorize a production transition.
 
@@ -2640,7 +2837,36 @@ theorem true
 operation authorized
 ```
 
-This is important even for strong formal results.
+More specifically:
+
+```text
+Lean kernel accepts theorem
+    ≠
+source/runtime correspondence established
+```
+
+```text
+source/runtime correspondence established
+    ≠
+production authority granted
+```
+
+```text
+formal property proven
+    ≠
+protected transition may execute
+```
+
+This applies equally to R1, R2, R3, and future formal work.
+
+- R1 proof does not mint DGM production authorization.
+- R2 proof does not grant an authenticated conversation governance authority or SECRET disclosure authority.
+- R3 proof does not authorize a Hilbert to enter live JCP.
+- A future H384 or cognition theorem will not self-authorize production integration.
+
+Formal verification constrains the truth of bounded claims.
+
+Production authority remains a separate governed object or decision applicable to the exact transition.
 
 ---
 
@@ -3331,7 +3557,17 @@ Do not promote a trust claim beyond the evidence that supports it.
 
 The hierarchy itself is unchanged by the later Lean work.
 
-Within the bounded Step-12 theorem domain, preserve the evidence-method distinction:
+The current formal record now includes three distinct qualified Lean workstreams:
+
+```text
+R1 — Authorized Adoption
+R2 — Conversational Admission
+R3 — Hilbert / JCP Separation
+```
+
+These are separate bounded proof domains.
+
+Within the bounded Step-12 theorem domain, preserve the historical evidence-method distinction:
 
 ```text
 historical Step-12 machine checking
@@ -3339,14 +3575,41 @@ historical Step-12 machine checking
 later Lean R1 proof-assistant qualification
 ```
 
-and preserve the correspondence distinction:
+R2 and R3 add new proof domains rather than redefining R1 or the historical Step-12 record.
+
+Across the Lean workstreams, preserve the correspondence distinction:
 
 ```text
-proof-assistant qualification
+formal theorem
     ≠
-source/runtime correspondence
+model-to-source correspondence
     ≠
-theorem-specific live observation
+source-to-runtime correspondence
+    ≠
+relevant live observation
+    ≠
+production authority
+```
+
+The authority meaning of the three workstreams is:
+
+```text
+R1:
+formalized authorized-adoption properties
+    ≠
+production authorization
+
+R2:
+formalized ordinary-chat admission boundaries
+    ≠
+governance authority
+    ≠
+H_people SECRET disclosure authority
+
+R3:
+formalized current Hilbert/JCP separation
+    ≠
+authority for live Hilbert admission
 ```
 
 These distinctions explain the evidence supporting a validation level.
@@ -3891,6 +4154,31 @@ allis_trust_and_authority:
 
   identity:
     authentication_is_authorization: false
+    authenticated_identity_is_governance_authority: false
+
+  conversational_admission_r2:
+    qualified: true
+    ordinary_authenticated_chat_creates_governance_authority: false
+    ordinary_authenticated_chat_authorizes_hpeople_secret_disclosure: false
+    browser_identity_content_is_authoritative: false
+    canonical_scalar_user_id_may_be_invented: false
+    session_identity_isolation_required: true
+
+  hilbert_jcp_separation_r3:
+    qualified: true
+    current_jcp_top_level_fields:
+      - schema_version
+      - request_context
+      - approved_evidence
+      - wv_deliberative_context
+    current_jcp_field_count: 4
+    h_geo_currently_admitted_to_jcp: false
+    h_p_currently_admitted_to_jcp: false
+    h_people_currently_admitted_to_jcp: false
+    static_h_geo_qualification_exists: true
+    static_h_geo_qualification_self_authorizes_live_admission: false
+    historical_or_static_candidate_overrides_current_nonadmission: false
+    named_h_objects_automatically_proven_linear_subspaces: false
 
   inward_authority:
     evaluates:
@@ -4002,6 +4290,9 @@ allis_trust_and_authority:
     live_observation_creates_operation_authority: false
     historical_step12_machine_checked_meaning_preserved: true
     lean_r1_successor_is_distinct_evidence_method: true
+    lean_r2_conversational_admission_qualified: true
+    lean_r3_hilbert_jcp_separation_qualified: true
+    formal_proof_creates_production_authority: false
     current_dgm_source_runtime_correspondence: PASS_11_OF_11
     current_dgm_theorem_state:
       T12D-A: MACHINE_CHECKED
@@ -4244,6 +4535,28 @@ The later Lean R1 workstream adds a distinct proof-assistant qualification layer
 
 That successor evidence does not retroactively redefine the historical Step-12 `MACHINE_CHECKED` method, and it does not create authority to execute the modeled transition.
 
+Lean R2 adds a separate proof domain for authenticated conversational admission. Its formal result strengthens the authority architecture by establishing that authenticated ordinary chat does not manufacture governance authority and does not authorize H_people SECRET disclosure.
+
+Lean R3 adds a separate proof domain for current Hilbert/JCP separation. Its formal result establishes current nonadmission boundaries and shows that static Hilbert qualification does not self-authorize live JCP admission.
+
+These proof domains are additive:
+
+```text
+R1 proof
+    ≠
+R2 proof
+    ≠
+R3 proof
+```
+
+and all preserve:
+
+```text
+formal proof
+    ≠
+production authority
+```
+
 The later post-A8 correspondence record adds current source/runtime and theorem-specific observation evidence for B/C.
 
 That evidence likewise does not become operation authority merely by being strong.
@@ -4315,7 +4628,13 @@ Revalidation can be required when:
 - publication eligibility changes;
 - publication body changes;
 - route authority changes;
-- frontend data flow changes.
+- frontend data flow changes;
+- authenticated conversational identity derivation changes;
+- ordinary-chat authority semantics change;
+- H_people SECRET disclosure admission changes;
+- JCP field schema changes;
+- a Hilbert projection becomes eligible for live JCP admission;
+- static H_geo qualification is replaced by a live authority-bearing admission path.
 
 Authority-bearing changes should not inherit old correspondence automatically.
 
@@ -4366,10 +4685,36 @@ This does not invalidate completed bounded workstreams.
 It also does not invalidate:
 
 - the later Lean R1 proof-assistant qualification;
+- the qualified Lean R2 Conversational Admission workstream;
+- the qualified Lean R3 Hilbert/JCP Separation workstream;
 - current post-A8 B/C correspondence revalidation; or
 - the current 11/11 DGM source/runtime correspondence observation.
 
 Those remain bounded evidence results.
+
+Their authority meanings remain separate:
+
+```text
+R1 qualified
+    ≠
+production authorization granted
+```
+
+```text
+R2 qualified
+    ≠
+ordinary chat has governance authority
+    ≠
+ordinary chat has H_people SECRET disclosure authority
+```
+
+```text
+R3 qualified
+    ≠
+H_geo / H_p / H_people admitted to live JCP
+    ≠
+static Hilbert qualification creates admission authority
+```
 
 They do not establish:
 
@@ -4380,6 +4725,56 @@ SYSTEM_PROVEN=YES
 ```
 
 It prevents architectural completeness, proof-assistant qualification, or bounded correspondence from being misreported as whole-system proof or current operation authority.
+
+---
+
+# 169A. Current R2/R3 authority examples
+
+The current formal record now supplies two additional concrete examples of the architecture without changing the existing DGM Step-12 authority semantics.
+
+## R2 — Conversational Admission
+
+```text
+authenticated identity
+    ≠
+governance authority
+```
+
+```text
+ordinary authenticated chat
+    ≠
+H_people SECRET disclosure authority
+```
+
+Authentication admits an ordinary conversation under the bounded R2 semantics.
+
+It does not mint authority for a later protected transition.
+
+## R3 — Hilbert / JCP Separation
+
+```text
+static Hilbert qualification
+    ≠
+authority to admit a Hilbert into live JCP
+```
+
+The current JCP remains the qualified four-field structure, and H_geo, H_p, and H_people remain nonadmitted under the bounded R3 state.
+
+Future admission requires a successor governed transition.
+
+## Formal proof
+
+```text
+formal proof
+    ≠
+production authority
+```
+
+This rule applies to every formal workstream.
+
+Lean can establish that a bounded proposition follows from its model.
+
+Lean does not itself issue, sign, consume, or grant production authority.
 
 ---
 
@@ -4459,6 +4854,10 @@ It prevents architectural completeness, proof-assistant qualification, or bounde
 
 > **Identity does not become authorization merely because it is verified.**
 
+> **Authenticated conversational identity does not become governance authority.**
+
+> **Ordinary authenticated chat does not authorize H_people SECRET disclosure.**
+
 > **Authority must be established for the exact transition being performed.**
 
 > **Authority itself has provenance.**
@@ -4488,6 +4887,10 @@ It prevents architectural completeness, proof-assistant qualification, or bounde
 > **Evidence can support authority without becoming authority.**
 
 > **A formal proof can strengthen a claim without creating permission to execute the modeled transition.**
+
+> **Static Hilbert qualification does not create authority to admit a Hilbert into live JCP.**
+
+> **Named H_* objects do not become proven linear subspaces merely because they share a 384-dimensional vector carrier.**
 
 > **Correspondence can validate implementation without creating operation permission.**
 
