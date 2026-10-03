@@ -4,7 +4,7 @@
 
 ### Global claim boundaries, preserved residuals, negative results, and non-promotions
 
-**Current boundary index · September 2026**
+**Current boundary index · October 2026**
 
 <br>
 
@@ -12,6 +12,9 @@
 ![Step 12](https://img.shields.io/badge/STEP_12_RESIDUALS-8-f59e0b?style=for-the-badge)
 ![Nonpromotions](https://img.shields.io/badge/STEP_12_NON--PROMOTIONS-7-d946ef?style=for-the-badge)
 ![A5](https://img.shields.io/badge/A5_FINAL_WIRING_THEOREM-NOT_YET_CLAIMED-0ea5e9?style=for-the-badge)
+![R2](https://img.shields.io/badge/LEAN_R2-CONVERSATIONAL_ADMISSION_QUALIFIED-22c55e?style=for-the-badge)
+![R3](https://img.shields.io/badge/LEAN_R3-HILBERT_JCP_SEPARATION_QUALIFIED-22c55e?style=for-the-badge)
+![Future](https://img.shields.io/badge/FUTURE_WORK-NOT_YET_QUALIFIED-f59e0b?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -54,6 +57,44 @@ not yet established
 ```
 
 Those states have different meanings.
+
+The current October 2026 boundary also includes two **qualified** Lean workstreams and a set of stronger future claims that remain deliberately unmade.
+
+```text
+LEAN_R2_CONVERSATIONAL_ADMISSION_QUALIFIED=YES
+LEAN_R3_HILBERT_JCP_SEPARATION_QUALIFIED=YES
+
+HILBERT_LIVE_JCP_INTEGRATION_COMPLETE=NO
+H384_FORMALIZATION_COMPLETE=NO
+COGNITION_THEOREM_FAMILY_COMPLETE=NO
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
+RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=NO
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=NO
+FULL_DGM_COMPLETION_CLAIMED=NO
+SYSTEM_PROVEN=NO
+```
+
+These statements are not contradictory.
+
+They mean:
+
+```text
+R2 qualified
+    ≠
+whole conversational architecture complete
+```
+
+```text
+R3 qualified
+    ≠
+live Hilbert/JCP integration complete
+```
+
+```text
+formal qualification of bounded properties
+    ≠
+future implementation automatically complete
+```
 
 A useful shorthand is:
 
@@ -136,13 +177,20 @@ flowchart TB
     D["🟠 DGM Step 12<br/>closed with residuals"]:::dgm
     P["🟦 Publication Step 17<br/>GREEN COMPLETE"]:::pub
     H["👤 H_people / private state<br/>architectural boundary current"]:::priv
+    R2["🟢 Lean R2<br/>Conversational Admission<br/>QUALIFIED"]:::closed
+    R3["🟢 Lean R3<br/>Hilbert / JCP Separation<br/>QUALIFIED"]:::closed
+    FUT["🔮 Future integration<br/>Hilbert · H384 · cognition · research<br/>NOT YET QUALIFIED"]:::future
 
     F -->|"does not imply"| S
     A -->|"does not yet imply"| S
     D -->|"does not imply"| S
     P -->|"does not imply"| S
     H -->|"does not imply"| S
+    R2 -->|"does not imply"| S
+    R3 -->|"does not imply"| S
+    FUT -->|"not yet complete"| S
 
+    classDef future fill:#dbeafe,stroke:#2563eb,color:#172554,stroke-width:2px;
     classDef system fill:#e5e7eb,stroke:#64748b,color:#111827,stroke-width:3px;
     classDef closed fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef a5 fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
@@ -151,11 +199,17 @@ flowchart TB
     classDef priv fill:#f9a8d4,stroke:#db2777,color:#831843,stroke-width:2px;
 ```
 
-The three completed workstreams remain bounded.
+The completed/qualified workstreams remain bounded.
+
+Lean R2 Conversational Admission is qualified.
+
+Lean R3 Hilbert/JCP Separation is qualified.
 
 The A5 proof tract remains incomplete at the theorem stage.
 
 The private-state public record remains architectural rather than current-runtime authoritative.
+
+Live Hilbert/JCP integration, H384 formalization, cognition theorem work, automated learning/web research, research-to-corpus ingestion, protected KYC-location contextual use, and full DGM completion remain outside the currently qualified claim envelope.
 
 ---
 
@@ -205,6 +259,14 @@ They are not placeholders that disappear because multiple bounded workstreams cl
 | `DGM` | Step 12 | Eight residuals + seven explicit non-promotions |
 | `PUB` | Step 17 | Fixed publication goal complete; future capability not automatically authorized |
 | `PRIV` | H_people/private state | Historical runtime evidence is not current runtime authority |
+| `CHAT` | Lean R2 Conversational Admission | Qualified bounded theorem family; does not imply governance/disclosure authority or total conversational completion |
+| `HJCP` | Lean R3 Hilbert/JCP Separation | Qualified bounded theorem family; current nonadmission does not imply future live integration |
+| `H384` | Hilbert carrier formalization | Planned; not yet complete |
+| `COG` | Cognition theorem family | Planned; not yet complete |
+| `ALR` | Automated learning / web research | Planned; not yet qualified |
+| `INGEST` | Research-to-corpus / Hilbert ingestion | Planned; not yet qualified |
+| `KYCLOC` | Protected KYC-location conversational context | Planned; not yet qualified |
+| `DGMNEXT` | Full DGM completion | Not yet claimed complete |
 | `CORR` | Correspondence | Runtime/publication correspondence is point-in-time |
 | `BASE` | Baseline identity | No single source object silently replaces all others |
 
@@ -1178,6 +1240,224 @@ Current-runtime H_people correspondence has not been promoted.
 
 ---
 
+# 💬 Lean R2 Conversational Admission — qualified boundary and nonclaims
+
+The current formal record supports:
+
+```text
+LEAN_R2_CONVERSATIONAL_ADMISSION_QUALIFIED=YES
+```
+
+This means the bounded R2 theorem family is qualified.
+
+It does **not** mean ordinary conversation has become governance authority, SECRET disclosure authority, or whole-system proof.
+
+## `CHAT-NC-01` — Qualified R2 does not create governance authority
+
+```text
+authenticated ordinary conversation
+    ≠
+governance authority
+```
+
+R2 establishes the bounded conversational-admission property.
+
+It does not authorize protected mutation, publication, successor work, or any other governance-controlled transition.
+
+## `CHAT-NC-02` — Qualified R2 does not authorize H_people SECRET disclosure
+
+```text
+ordinary authenticated chat
+    ≠
+H_people SECRET disclosure authority
+```
+
+Protected person-linked SECRET disclosure remains separately governed.
+
+## `CHAT-NC-03` — R2 does not establish conversational totality
+
+```text
+R2 conversational admission qualified
+    ≠
+all intended conversational layers integrated and correspondence-verified
+```
+
+The repository does not claim that every intended Hilbert, cognition, learning, private-state, or future research path has been incorporated into the live conversational system.
+
+---
+
+# 🧭 Lean R3 Hilbert/JCP Separation — qualified boundary and nonclaims
+
+The current formal record supports:
+
+```text
+LEAN_R3_HILBERT_JCP_SEPARATION_QUALIFIED=YES
+```
+
+R3 establishes the bounded current Hilbert/JCP separation properties.
+
+It preserves the current JCP nonadmission boundary.
+
+## `HJCP-NC-01` — Qualified R3 does not mean live Hilbert/JCP integration is complete
+
+```text
+HILBERT_LIVE_JCP_INTEGRATION_COMPLETE=NO
+```
+
+and:
+
+```text
+R3 qualified
+    ≠
+H_geo admitted to live JCP
+```
+
+The current nonadmission state remains:
+
+```text
+H_geo = not admitted
+H_p = not admitted
+H_people = not admitted
+```
+
+## `HJCP-NC-02` — Static H_geo qualification is not live admission authority
+
+```text
+static H_geo qualification
+    ≠
+authority to alter the live JCP
+```
+
+A future live H_geo-to-JCP path requires a successor implementation, authority, correspondence, and validation record.
+
+## `HJCP-NC-03` — R3 does not make named H_* objects proved linear subspaces
+
+The repository does not claim:
+
+```text
+named H_* object
+    =
+proved linear subspace
+```
+
+Merely sharing a 384-dimensional carrier or vector representation does not establish subspace closure.
+
+---
+
+# 🔮 Future Hilbert, cognition, learning, location, and DGM nonclaims
+
+The following stronger states are **not currently claimed**.
+
+## `H384-NC-01` — H384 formalization is not complete
+
+```text
+H384_FORMALIZATION_COMPLETE=NO
+```
+
+The planned mathematical work may formalize the 384-dimensional carrier, norm, metric, completeness, normalization predicates, and typed projection interfaces.
+
+That work has not yet been promoted to a completed qualified formal workstream.
+
+## `COG-NC-01` — Cognition theorem family is not complete
+
+```text
+COGNITION_THEOREM_FAMILY_COMPLETE=NO
+```
+
+The implementation topology and historical/current source evidence do not by themselves constitute a completed Lean theorem family for cognition stage/evaluate/emit, `llm_packet`, Gateway/JCP rejoin, ensemble, or synthesizer behavior.
+
+## `ALR-NC-01` — Automated learning / web research is not qualified
+
+```text
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
+```
+
+The planned read-only research path is architectural/future work.
+
+The repository does not claim:
+
+```text
+scheduled web research
+    =
+qualified production learning path
+```
+
+or:
+
+```text
+web result
+    =
+qualified knowledge
+```
+
+## `INGEST-NC-01` — Research-to-corpus ingestion is not qualified
+
+```text
+RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=NO
+```
+
+The future governed transition:
+
+```text
+retrieved research
+    ↓
+candidate state
+    ↓
+provenance / evidence / scope evaluation
+    ↓
+corpus / Hilbert admission
+```
+
+has not yet been qualified as a production path.
+
+Therefore:
+
+```text
+retrieved
+    ≠
+admitted
+```
+
+and:
+
+```text
+candidate
+    ≠
+persistent qualified Hilbert state
+```
+
+## `KYCLOC-NC-01` — Protected KYC-location conversational use is not qualified
+
+```text
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=NO
+```
+
+The planned architecture preserves exact authoritative KYC location as SECRET while permitting only a separately authorized, minimum-necessary geographic projection to inform conversation.
+
+The repository does not claim that this future protected-location path is already qualified or live.
+
+## `DGMNEXT-NC-01` — Full DGM completion is not claimed
+
+```text
+FULL_DGM_COMPLETION_CLAIMED=NO
+```
+
+Current bounded DGM Step-12 results remain valid.
+
+But later full DGM completion remains tied to successor work, including the planned Hilbert/cognition integration sequence and later qualification work.
+
+This nonclaim does not reopen or weaken the Step-12 close.
+
+It preserves the distinction between:
+
+```text
+bounded DGM Step-12 close
+    ≠
+full future DGM completion
+```
+
+---
+
 # 🧷 Semantic-commitment nonclaims
 
 The corrected DGM model establishes a broad security rule:
@@ -1480,6 +1760,18 @@ successor work authorized
 | `PRIV-NC-03` | Disclosure establishes retention authority | authority boundary | privacy architecture |
 | `PRIV-NC-04` | Private state automatically enters common/public lanes | `NOT_AUTHORIZED` | H_people boundary |
 | `PRIV-NC-05` | Historical Gate05c runtime is current H_people authority | current non-promotion | no current runtime promotion |
+| `CHAT-NC-01` | Qualified R2 creates governance authority | authority boundary | R2 bounded theorem scope |
+| `CHAT-NC-02` | Ordinary authenticated chat authorizes H_people SECRET disclosure | authority boundary | R2 / H_people boundary |
+| `CHAT-NC-03` | R2 proves conversational totality | bounded-domain nonclaim | future Hilbert/cognition/learning layers remain separate |
+| `HJCP-NC-01` | Qualified R3 means live Hilbert/JCP integration complete | `NOT_ESTABLISHED` | current nonadmission remains |
+| `HJCP-NC-02` | Static H_geo qualification self-authorizes live JCP admission | authority boundary | successor live admission required |
+| `HJCP-NC-03` | Named H_* objects are already proved linear subspaces | `NOT_PROVEN` | H384/subspace proof not yet complete |
+| `H384-NC-01` | H384 formalization complete | `NOT_ESTABLISHED` | future formalization phase |
+| `COG-NC-01` | Cognition theorem family complete | `NOT_ESTABLISHED` | future Lean work |
+| `ALR-NC-01` | Automated learning/web research qualified | `NOT_ESTABLISHED` | future research qualification |
+| `INGEST-NC-01` | Research-to-corpus/Hilbert ingestion qualified | `NOT_ESTABLISHED` | future admission qualification |
+| `KYCLOC-NC-01` | Protected KYC-location conversational context qualified | `NOT_ESTABLISHED` | future private/location qualification |
+| `DGMNEXT-NC-01` | Full DGM completion claimed | `NOT_ESTABLISHED` | successor DGM work remains |
 | `SEM-NC-01` | Valid signature proves complete semantic commitment | security boundary | semantic commitment rule |
 | `SEM-NC-02` | All listed envelope fields have equal demonstrated authority role | evidence boundary | only decision-bearing semantics qualify |
 | `BASE-NC-01` | `35f1…` is whole current baseline | role boundary | A5 source anchor |
@@ -1616,6 +1908,14 @@ For each important claim family:
 | `DGM-*` | `R12F-*`, `NP12-*`, `DGM-NC-*` |
 | `PUB-*` | `PUB-NC-*` |
 | `PRIV-*` | `PRIV-NC-*` |
+| `CHAT-*` | `CHAT-NC-*` |
+| `HJCP-*` | `HJCP-NC-*` |
+| `H384-*` | `H384-NC-*` |
+| `COG-*` | `COG-NC-*` |
+| `ALR-*` | `ALR-NC-*` |
+| `INGEST-*` | `INGEST-NC-*` |
+| `KYCLOC-*` | `KYCLOC-NC-*` |
+| `DGMNEXT-*` | `DGMNEXT-NC-*` |
 | `SYS-*` | `SYS-NC-*` |
 
 ---
@@ -1657,6 +1957,18 @@ evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md
 ```
 
 Those records strengthen the current evidence basis without rewriting the historical Step-12 residual ledger or final seal.
+
+## Lean R2 Conversational Admission
+
+The public repository should preserve a dedicated R2 closeout / theorem registry / correspondence record for the bounded conversational-admission proof family.
+
+This global nonclaim registry does not replace that evidence.
+
+## Lean R3 Hilbert/JCP Separation
+
+The public repository should preserve a dedicated R3 closeout / theorem registry / correspondence record for the bounded Hilbert/JCP separation proof family.
+
+This global nonclaim registry does not replace that evidence.
 
 ## Workstream F
 
@@ -1766,6 +2078,26 @@ allis_nonclaims_and_residuals:
     private_state_auto_enters_public_lane: false
     historical_gate05c_equals_current_runtime_authority: false
 
+  lean_r2_conversational_admission:
+    qualified: true
+    creates_governance_authority: false
+    authorizes_hpeople_secret_disclosure: false
+    proves_conversational_totality: false
+
+  lean_r3_hilbert_jcp_separation:
+    qualified: true
+    live_hilbert_jcp_integration_complete: false
+    static_h_geo_qualification_self_authorizes_live_admission: false
+    named_h_objects_proven_linear_subspaces: false
+
+  future_work:
+    H384_FORMALIZATION_COMPLETE: false
+    COGNITION_THEOREM_FAMILY_COMPLETE: false
+    AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED: false
+    RESEARCH_TO_CORPUS_INGESTION_QUALIFIED: false
+    KYC_LOCATION_CONTEXT_USE_QUALIFIED: false
+    FULL_DGM_COMPLETION_CLAIMED: false
+
   semantic_commitment:
     signature_validity_equals_semantic_completeness: false
     all_envelope_fields_independently_proven_equally_authority_bearing: false
@@ -1873,6 +2205,37 @@ but
 
 ---
 
+### 💬 Lean R2 Conversational Admission
+**QUALIFIED**
+
+but
+
+**AUTHENTICATED CONVERSATION ≠ GOVERNANCE AUTHORITY**
+
+and
+
+**ORDINARY CHAT ≠ H_people SECRET DISCLOSURE AUTHORITY**
+
+---
+
+### 🧭 Lean R3 Hilbert/JCP Separation
+**QUALIFIED**
+
+but
+
+**LIVE HILBERT/JCP INTEGRATION COMPLETE = NO**
+
+---
+
+### 🔮 Future integration
+**H384 · COGNITION · AUTOMATED LEARNING · RESEARCH INGESTION · KYC LOCATION · FULL DGM**
+
+remain
+
+**NOT YET CLAIMED COMPLETE / QUALIFIED**
+
+---
+
 ### ⚪ Whole system
 
 # `SYSTEM_PROVEN=NO`
@@ -1892,6 +2255,14 @@ but
 > **Historical validity does not silently become current validity.**
 
 > **A bounded proof does not become a whole-system proof.**
+
+> **Qualified R2 does not create governance authority or H_people SECRET disclosure authority.**
+
+> **Qualified R3 does not mean live Hilbert/JCP integration is complete.**
+
+> **Static H_geo qualification does not self-authorize live JCP admission.**
+
+> **H384, cognition, automated learning/web research, research-to-corpus ingestion, KYC-location conversational use, and full DGM completion remain future bounded work until separately qualified.**
 
 > **Machine-Checked does not become Correspondence-Verified without the required live evidence.**
 
