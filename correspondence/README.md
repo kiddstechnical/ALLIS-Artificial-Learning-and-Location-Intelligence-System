@@ -8,6 +8,9 @@
 
 ![Correspondence](https://img.shields.io/badge/CORRESPONDENCE-MULTI_PACKAGE-7c3aed?style=for-the-badge)
 ![Authorized Adoption](https://img.shields.io/badge/AUTHORIZED_ADOPTION-STEP_12-ef4444?style=for-the-badge)
+![R2](https://img.shields.io/badge/R2-CONVERSATIONAL_ADMISSION-7c3aed?style=for-the-badge)
+![R3](https://img.shields.io/badge/R3-HILBERT_JCP_SEPARATION-6d28d9?style=for-the-badge)
+![Conversational Path](https://img.shields.io/badge/CONVERSATIONAL_PATH-GATEWAY_TO_SYNTHESIS-0ea5e9?style=for-the-badge)
 ![Publication](https://img.shields.io/badge/PUBLICATION-STEP_17-14b8a6?style=for-the-badge)
 ![Time](https://img.shields.io/badge/CORRESPONDENCE-POINT_IN_TIME-f59e0b?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
@@ -35,29 +38,54 @@
 
 # 👀 Correspondence in one view
 
-ALLIS currently preserves two distinct correspondence directions.
+ALLIS now preserves four distinct correspondence families:
 
 ```mermaid
-flowchart LR
+flowchart TB
 
-    subgraph WRITE["🔐 INWARD / GOVERNED WRITE SIDE"]
-        F["📐 FORMAL MODEL"]:::formal
-        S["💻 SEALED SOURCE"]:::source
-        R["🖥️ OBSERVED RUNTIME"]:::runtime
-        O["👁️ THEOREM-SPECIFIC<br/>LIVE OBSERVATION"]:::observation
-
-        F -->|"model → source"| S
-        S -->|"source → runtime"| R
-        R -->|"runtime behavior"| O
+    subgraph ADOPT["🔐 AUTHORIZED ADOPTION"]
+        A1["📐 Formal model"]:::formal
+        A2["💻 Sealed source"]:::source
+        A3["🖥️ Observed runtime"]:::runtime
+        A4["👁️ Theorem-specific observation"]:::observation
+        A1 -->|"model → source"| A2
+        A2 -->|"source → runtime"| A3
+        A3 -->|"runtime behavior"| A4
     end
 
-    subgraph READ["🌐 OUTWARD / GOVERNED READ SIDE"]
-        Q["✅ QUALIFIED STATE"]:::qualified
-        P["📦 GOVERNED PUBLICATION"]:::publication
-        D["🔒 DIRECT SERVICE"]:::service
-        H["🌐 PUBLIC HTTPS"]:::http
-        G["🔎 GUI"]:::gui
+    subgraph R2["💬 R2 CONVERSATIONAL ADMISSION"]
+        R21["📐 R2 formal model"]:::formal
+        R22["💻 /api/chat + auth source"]:::source
+        R23["🖥️ Current runtime behavior"]:::runtime
+        R21 -->|"model → source"| R22
+        R22 -->|"source → runtime"| R23
+    end
 
+    subgraph R3["🧭 R3 HILBERT/JCP SEPARATION"]
+        R31["📐 R3 formal model"]:::formal
+        R32["💻 build_judge_context_v2"]:::source
+        R33["🖥️ Current four-field JCP"]:::runtime
+        R34["🗺️ Static H_geo state"]:::qualified
+        R31 -->|"model → source"| R32
+        R32 -->|"source → runtime"| R33
+        R34 -->|"qualified static state"| R33
+    end
+
+    subgraph CHAT["🧠 CONVERSATIONAL DOWNSTREAM PATH"]
+        C1["🚪 Unified Gateway"]:::service
+        C2["🧩 BBB"]:::runtime
+        C3["🤖 llm20production"]:::runtime
+        C4["🧠 LM Synthesizer"]:::runtime
+        C5["💬 response"]:::qualified
+        C1 --> C2 --> C3 --> C4 --> C5
+    end
+
+    subgraph READ["🌐 GOVERNED PUBLICATION"]
+        Q["✅ Qualified state"]:::qualified
+        P["📦 Governed publication"]:::publication
+        D["🔒 Direct service"]:::service
+        H["🌐 Public HTTPS"]:::http
+        G["🔎 GUI"]:::gui
         Q -->|"governed projection"| P
         P -->|"served body"| D
         D -->|"authorized route"| H
@@ -68,7 +96,6 @@ flowchart LR
     classDef source fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
     classDef runtime fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
     classDef observation fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
-
     classDef qualified fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef publication fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
     classDef service fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
@@ -78,7 +105,21 @@ flowchart LR
 
 These are different correspondence packages.
 
-Neither replaces the other.
+None replaces another.
+
+The current correspondence layer therefore spans:
+
+```text
+governed adoption
++
+ordinary conversational identity/admission
++
+current JCP/Hilbert separation
++
+observed Gateway-to-synthesis path
++
+governed publication
+```
 
 ---
 
@@ -138,16 +179,32 @@ correspondence/
 │   ├── model-to-source.md
 │   └── source-to-runtime.md
 │
+├── conversational-admission/
+│   ├── model-to-source.md
+│   └── source-to-runtime.md
+│
+├── hilbert-jcp-separation/
+│   ├── model-to-source.md
+│   └── source-to-runtime.md
+│
+├── conversational-path/
+│   └── gateway-to-synthesis.md
+│
 └── publication/
     └── source-to-publication-to-http-to-gui.md
 ```
 
 The packages serve different technical purposes.
 
-| Package                | Workstream | Direction                    | Primary question                                                                                                 |
-| ---------------------- | ---------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `authorized-adoption/` | Step 12    | Inward / governed write side | Does the bounded formal model correspond to the sealed production source and inspected runtime?                  |
-| `publication/`         | Step 17    | Outward / governed read side | Does qualified state correspond through governed publication, direct service, public HTTPS, and GUI consumption? |
+| Package | Workstream | Direction | Primary question |
+|---|---|---|---|
+| `authorized-adoption/` | Step 12 / Lean R1 successor evidence | Formal model → source → runtime → bounded behavior | Does the bounded authorized-adoption model correspond to the sealed production source and observed runtime? |
+| `conversational-admission/` | Lean R2 | Formal model → frontend/auth/Gateway source → runtime | Does the current ordinary chat path preserve server-derived identity, browser nonauthority, noninvented scalar ID, and nonauthority semantics? |
+| `hilbert-jcp-separation/` | Lean R3 | Formal model → JCP source → current runtime state | Does the current implementation preserve the exact four-field JCP and current H_geo/H_p/H_people nonadmission while static H_geo remains separately qualified? |
+| `conversational-path/` | Current conversational production | Gateway → BBB → `llm20production` → LM Synthesizer → response | Was the current downstream server-side conversational path actually observed through synthesis? |
+| `publication/` | Step 17 | Qualified state → publication → service → HTTPS → GUI | Does qualified state correspond through governed publication and public presentation? |
+
+The R2, R3, and conversational-path records are now present in the repository and therefore belong in this index.
 
 ---
 
@@ -157,20 +214,31 @@ The packages serve different technical purposes.
 flowchart TD
     Q["What relationship are you trying to verify?"]:::question
 
-    A["Formal model → source → runtime<br/>authorized adoption"]:::a
-    P["Qualified state → publication → HTTP → GUI<br/>governed publication"]:::p
+    A["Authorized adoption<br/>formal → source → runtime"]:::a
+    R2["Conversational admission<br/>identity/auth → runtime"]:::r2
+    R3["Hilbert/JCP separation<br/>formal → JCP source/runtime"]:::r3
+    CP["Conversational downstream<br/>Gateway → synthesis"]:::cp
+    P["Governed publication<br/>qualified state → HTTP → GUI"]:::p
 
-    AA["authorized-adoption/"]:::folderA
-    PP["publication/"]:::folderP
+    AA["authorized-adoption/"]:::folder
+    RR2["conversational-admission/"]:::folder
+    RR3["hilbert-jcp-separation/"]:::folder
+    CCP["conversational-path/"]:::folder
+    PP["publication/"]:::folder
 
     Q --> A --> AA
+    Q --> R2 --> RR2
+    Q --> R3 --> RR3
+    Q --> CP --> CCP
     Q --> P --> PP
 
     classDef question fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:3px;
     classDef a fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:2px;
+    classDef r2 fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef r3 fill:#e9d5ff,stroke:#6d28d9,color:#3b0764,stroke-width:2px;
+    classDef cp fill:#bae6fd,stroke:#0284c7,color:#0c4a6e,stroke-width:2px;
     classDef p fill:#ccfbf1,stroke:#0f766e,color:#134e4a,stroke-width:2px;
-    classDef folderA fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:3px;
-    classDef folderP fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:3px;
+    classDef folder fill:#334155,stroke:#0f172a,color:#ffffff,stroke-width:3px;
 ```
 
 ---
@@ -459,7 +527,197 @@ Exact A8 production/build identity should be introduced only through its own sea
 
 ---
 
-# 🌐 Package 2 — Governed publication
+# 💬 Package 2 — Conversational Admission R2
+
+The R2 correspondence package binds the qualified Conversational Admission theorem family to the current ordinary chat implementation/runtime.
+
+Records:
+
+- [`conversational-admission/model-to-source.md`](conversational-admission/model-to-source.md)
+- [`conversational-admission/source-to-runtime.md`](conversational-admission/source-to-runtime.md)
+
+The bounded implementation path is:
+
+```text
+authenticated browser/session
+    ↓
+/api/chat
+    ↓
+server-derived authenticated_user
+    ↓
+Gateway request
+```
+
+The current correspondence preserves:
+
+```text
+AUTHENTICATED_USER_SERVER_DERIVED=YES
+
+BROWSER_IDENTITY_AUTHORITATIVE=NO
+
+USER_ID_NULL_WHERE_CANONICAL_SCALAR_ID_UNESTABLISHED=YES
+
+PROCESS_UNIFIED_READS_AUTHENTICATED_USER=NO
+
+AUTHENTICATED_USER_ENTERS_JCP=NO
+
+AUTHENTICATED_USER_BECOMES_MODEL_INPUT=NO
+
+AUTHENTICATED_USER_CREATES_GOVERNANCE_AUTHORITY=NO
+
+ORDINARY_CHAT_AUTHORIZES_HPEOPLE_SECRET_DISCLOSURE=NO
+```
+
+The important relationship is:
+
+```text
+authenticated identity metadata
+    ≠
+governance authority
+    ≠
+model input
+    ≠
+H_people SECRET disclosure authority
+```
+
+This correspondence is point-in-time.
+
+A claim-bearing change to `/api/chat`, server auth, session semantics, Gateway payload shape, `process_unified`, JCP composition, or downstream identity handling requires renewed correspondence.
+
+---
+
+# 🧭 Package 3 — Hilbert/JCP Separation R3
+
+The R3 correspondence package binds the qualified Hilbert/JCP Separation model to the current JCP implementation/runtime state.
+
+Records:
+
+- [`hilbert-jcp-separation/model-to-source.md`](hilbert-jcp-separation/model-to-source.md)
+- [`hilbert-jcp-separation/source-to-runtime.md`](hilbert-jcp-separation/source-to-runtime.md)
+
+Current JCP builder:
+
+```text
+build_judge_context_v2
+```
+
+Current/candidate JCP AST SHA-256:
+
+```text
+7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+```
+
+Exact current field set:
+
+```text
+schema_version
+
+request_context
+
+approved_evidence
+
+wv_deliberative_context
+```
+
+Current bounded admission state:
+
+```text
+H_GEO_CURRENT_JCP_ADMISSION=NO
+
+H_P_CURRENT_JCP_ADMISSION=NO
+
+H_PEOPLE_CURRENT_JCP_ADMISSION=NO
+
+STATIC_H_GEO_PATH_QUALIFIED=YES
+```
+
+The controlling distinction is:
+
+```text
+static H_geo qualification
+    ≠
+live H_geo JCP admission
+```
+
+R3 correspondence does not prove future live H_geo admission.
+
+A successor schema must earn new formal, source, runtime, and authority correspondence.
+
+---
+
+# 🧠 Package 4 — Conversational Gateway-to-Synthesis
+
+The conversational-path package records the observed downstream server-side conversational path after the qualified Unified Gateway production cutover.
+
+Record:
+
+[`conversational-path/gateway-to-synthesis.md`](conversational-path/gateway-to-synthesis.md)
+
+Observed path:
+
+```text
+Unified Gateway
+    ↓
+BBB
+    ↓
+llm20production
+    ↓
+LM Synthesizer
+    ↓
+response
+```
+
+Qualified production observations include:
+
+```text
+REAL_LOCAL_CHAT=PASS
+
+BBB_COMPLETE=PASS
+
+ENSEMBLE_COMPLETE=PASS
+
+LM_SYNTHESIZER_COMPLETE=PASS
+
+SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
+```
+
+The browser boundary remains separate:
+
+```text
+CURRENT_BROWSER_CONVERSATIONAL_UI_READY=NO
+
+CURRENT_BROWSER_CONVERSATIONAL_SEND_SURFACE=NO
+
+AUTHENTICATED_BROWSER_CHAT_E2E=NOT_EXECUTABLE_CURRENT_UI
+
+BROWSER_E2E_DEMONSTRATED=NO
+```
+
+Preserve:
+
+```text
+server-side path qualified
+    ≠
+browser E2E demonstrated
+```
+
+and:
+
+```text
+successful synthesis
+    ≠
+governance authority
+    ≠
+publication
+    ≠
+persistent learning
+    ≠
+Hilbert admission
+```
+
+---
+
+# 🌐 Package 5 — Governed publication
 
 The publication package records the bounded Step-17 outward correspondence chain.
 
@@ -740,6 +998,36 @@ Step-12 production DGM source
 ```
 
 ```text
+OBJ-LR201
+Lean R2 Conversational Admission
+c1a18b2e…
+```
+
+```text
+OBJ-R2C01
+R2 source/runtime correspondence
+/api/chat + Gateway identity boundary
+```
+
+```text
+OBJ-LR301
+Lean R3 Hilbert/JCP Separation
+6f4a7de3…
+```
+
+```text
+OBJ-R3C01
+R3 source/runtime correspondence
+JCP AST 7c9cc765…
+```
+
+```text
+OBJ-GW201
+Current Unified Gateway production runtime
+source a007f51d…
+```
+
+```text
 REG-P1701
 Step-17 publication reference set
 allis-publication-step6-retention-v2
@@ -815,6 +1103,16 @@ It does not imply:
 
 ```math
 \forall t>\tau,\ C_{SR}^{t}(S,R)=1
+```
+
+The same temporal rule applies to the newer conversational correspondence:
+
+```text
+R2 source/runtime correspondence = point-in-time
+
+R3 JCP source/runtime correspondence = point-in-time
+
+Gateway-to-synthesis observation = point-in-time
 ```
 
 Likewise, the Step-17 result:
@@ -981,16 +1279,36 @@ Correspondence asks:
 
 > **Does that mathematical object map to the implementation and runtime being discussed?**
 
-For Step 12:
+For the current qualified formal workstreams:
 
 ```text
 formal-verification/authorized-adoption/
         ↓
-defines and adjudicates the bounded formal object
+Lean R1 / Step-12 bounded formal domain
 
 correspondence/authorized-adoption/
         ↓
-binds the formal object to source and runtime
+binds the authorized-adoption formal domain to source/runtime
+```
+
+```text
+formal-verification/conversational-admission/
+        ↓
+Lean R2 Conversational Admission
+
+correspondence/conversational-admission/
+        ↓
+binds R2 to current /api/chat / auth / Gateway behavior
+```
+
+```text
+formal-verification/hilbert-jcp-separation/
+        ↓
+Lean R3 Hilbert/JCP Separation
+
+correspondence/hilbert-jcp-separation/
+        ↓
+binds R3 to the current four-field JCP and static H_geo state
 ```
 
 A proof without correspondence remains a proof about its bounded formal object.
@@ -1010,6 +1328,24 @@ Correspondence answers:
 > **What relationship among those objects was established?**
 
 For Step 12, the evidence package includes source, trust, governance, residual, and final-seal records.
+
+For R2, the evidence package includes:
+
+```text
+evidence/conversational-admission/r2-qualification.md
+```
+
+For R3, the evidence package includes:
+
+```text
+evidence/hilbert-jcp-separation/r3-qualification.md
+```
+
+For the current conversational front door, the evidence package includes:
+
+```text
+evidence/conversational-frontdoor/current-production-state.md
+```
 
 For Step 17, the publication evidence package includes:
 
@@ -1056,6 +1392,34 @@ What bounded Step-12 result was accepted?
 correspondence/authorized-adoption/
     =
 What formal/source/runtime relationships support it?
+```
+
+and:
+
+```text
+acceptance/closeout/lean-conversational-admission-r2-close.md
+    =
+What bounded R2 result was accepted?
+```
+
+```text
+correspondence/conversational-admission/
+    =
+What R2 model/source/runtime relationships support it?
+```
+
+and:
+
+```text
+acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md
+    =
+What bounded R3 result was accepted?
+```
+
+```text
+correspondence/hilbert-jcp-separation/
+    =
+What R3 model/source/runtime relationships support it?
 ```
 
 and:
@@ -1132,6 +1496,32 @@ public publication
 GUI consumption
 ```
 
+```text
+authenticated server session
+→
+server-derived conversational identity
+→
+Gateway handling
+```
+
+```text
+R3 formal model
+→
+current four-field JCP source
+→
+current runtime nonadmission state
+```
+
+```text
+Unified Gateway
+→
+BBB
+→
+llm20production
+→
+LM Synthesizer
+```
+
 A new correspondence package should identify:
 
 * the objects being related;
@@ -1192,27 +1582,32 @@ Correspondence remains focused on **relationships**.
 
 # 📋 Current package summary
 
-| Package                                               | Scope                                              | Result     | Time boundary |
-| ----------------------------------------------------- | -------------------------------------------------- | ---------- | ------------- |
-| `authorized-adoption/model-to-source.md`              | Step-12 formal model → production source           | 🟢 `PASS`  | Bounded Step-12 source identity; later Lean relationship is documented separately |
-| `authorized-adoption/source-to-runtime.md`            | Bounded DGM source → inspected runtime             | 🟢 `PASS`  | Step-12 historical predecessor + current post-A8 11/11 revalidation |
+| Package | Scope | Result | Time boundary |
+|---|---|---|---|
+| `authorized-adoption/model-to-source.md` | Step-12 formal model → production source | 🟢 `PASS` | Bounded Step-12 source identity |
+| `authorized-adoption/source-to-runtime.md` | Bounded DGM source → inspected runtime | 🟢 `PASS` | Historical Step-12 + current post-A8 11/11 revalidation |
+| `conversational-admission/model-to-source.md` | R2 model → `/api/chat` / auth / Gateway source | 🟢 `PASS` | Qualified R2 implementation mapping |
+| `conversational-admission/source-to-runtime.md` | R2 source → current conversational runtime behavior | 🟢 `PASS` | Current bounded `/api/chat` / Gateway observation |
+| `hilbert-jcp-separation/model-to-source.md` | R3 model → current JCP/static H_geo source | 🟢 `PASS` | Qualified R3 implementation mapping |
+| `hilbert-jcp-separation/source-to-runtime.md` | R3 source → current four-field JCP/nonadmission state | 🟢 `PASS` | Current bounded JCP observation |
+| `conversational-path/gateway-to-synthesis.md` | Gateway → BBB → `llm20production` → LM Synthesizer | 🟢 `QUALIFIED_OBSERVED` | Current production observation |
 | `publication/source-to-publication-to-http-to-gui.md` | Step-17 qualified state → publication → HTTP → GUI | 🟢 `GREEN` | Final Step-17 observation |
 
-Current Step-12 close:
+Current bounded states:
 
 ```text
-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
-```
+DGM_STEP12=GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
 
-Current Step-17 close:
+LEAN_R2_CONVERSATIONAL_ADMISSION_QUALIFIED=YES
 
-```text
-GREEN_COMPLETE
-```
+LEAN_R3_HILBERT_JCP_SEPARATION_QUALIFIED=YES
 
-System-level state:
+SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
 
-```text
+BROWSER_E2E_DEMONSTRATED=NO
+
+PUBLICATION_STEP17=GREEN_COMPLETE
+
 SYSTEM_PROVEN=NO
 ```
 
@@ -1222,7 +1617,6 @@ SYSTEM_PROVEN=NO
 
 ```yaml
 allis_correspondence:
-
   model:
     correspondence_is_object_specific: true
     correspondence_is_edge_specific: true
@@ -1231,77 +1625,72 @@ allis_correspondence:
     correspondence_implies_whole_system_proof: false
 
   packages:
-
     authorized_adoption:
-      workstream: step12
-      direction: inward_governed_write_side
+      workstream: step12_r1
+      records:
+        - authorized-adoption/model-to-source.md
+        - authorized-adoption/source-to-runtime.md
+      current_source_runtime: PASS_11_OF_11
+      T12D_A_validation: MACHINE_CHECKED
+      T12D_B_validation: CORRESPONDENCE_VERIFIED
+      T12D_C_validation: CORRESPONDENCE_VERIFIED
+      P12C_09_validation: MACHINE_CHECKED_DISPROVEN
 
-      formal_object:
-        name: DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
+    conversational_admission:
+      workstream: lean_r2
+      records:
+        - conversational-admission/model-to-source.md
+        - conversational-admission/source-to-runtime.md
+      route: /api/chat
+      authenticated_user_server_derived: true
+      browser_identity_authoritative: false
+      user_id_null_when_unestablished: true
+      authenticated_user_enters_jcp: false
+      authenticated_user_becomes_model_input: false
+      authenticated_user_creates_governance_authority: false
+      ordinary_chat_authorizes_hpeople_secret_disclosure: false
+      state: PASS
 
-      production_source:
-        registry_id: REG-D1201
-        commit: 20c8cbe175781c8a1c05d65c03977859ceca884a
+    hilbert_jcp_separation:
+      workstream: lean_r3
+      records:
+        - hilbert-jcp-separation/model-to-source.md
+        - hilbert-jcp-separation/source-to-runtime.md
+      jcp_builder: build_judge_context_v2
+      jcp_ast_sha256: 7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+      jcp_top_level_field_count: 4
+      H_geo_current_jcp_admission: false
+      H_p_current_jcp_admission: false
+      H_people_current_jcp_admission: false
+      static_H_geo_qualified: true
+      state: PASS
 
-      edges:
-        - model_to_source
-        - source_to_runtime
-        - theorem_specific_live_observation
-
-      evidence_epochs:
-        historical_predecessor:
-          name: step12_final_seal_correspondence
-        current:
-          name: post_a8_dgm_revalidation
-          immutable_source_identity: 11_of_11_PASS
-          nbb_source_to_runtime: 11_of_11_PASS
-          worker_source_to_runtime: 11_of_11_PASS
-          current_combined_source_runtime: 11_of_11_PASS
-          T12D_A_validation: MACHINE_CHECKED
-          T12D_A_positive_authorized_apply_executed: false
-          T12D_B_validation: CORRESPONDENCE_VERIFIED
-          T12D_C_validation: CORRESPONDENCE_VERIFIED
-          P12C_09_validation: MACHINE_CHECKED_DISPROVEN
-
-      correspondence_rule:
-        source_runtime_bytes_alone_promote_theorem: false
-        theorem_specific_live_observation_required_where_applicable: true
-
-      result:
-        state: GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
-        system_proven: false
+    conversational_path:
+      workstream: current_production
+      record: conversational-path/gateway-to-synthesis.md
+      path:
+        - Unified_Gateway
+        - BBB
+        - llm20production
+        - LM_Synthesizer
+        - response
+      server_side_path_qualified: true
+      browser_e2e_demonstrated: false
+      state: QUALIFIED_OBSERVED
 
     publication:
       workstream: step17
-      direction: outward_governed_read_side
-
-      reference_set:
-        registry_id: REG-P1701
-        publication_id: allis-publication-step6-retention-v2
-        publication_sha256: d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7
-        frontend_build: 5By6R3CWTM7NDXc-4lmSi
-
-      edges:
-        - qualified_state_to_publication
-        - publication_to_direct_service
-        - direct_service_to_public_https
-        - public_https_to_gui
-
-      result:
-        source_to_publication_to_http_to_gui: GREEN
-        final_criteria: 25_OF_25_PASS
-        final_network_continuity: GREEN
-        overall_goal: GREEN_COMPLETE
-        system_proven: false
+      record: publication/source-to-publication-to-http-to-gui.md
+      source_to_publication_to_http_to_gui: GREEN
+      final_criteria: 25_OF_25_PASS
+      final_network_continuity: GREEN
+      overall_goal: GREEN_COMPLETE
 
   scope_boundaries:
-    qualified_a8_frontend_is_automatically_dgm_theorem_runtime: false
-    a8_application_private_context_is_hpeople_runtime_authority: false
-
-  current_system:
-    composite_object_model: true
-    one_universal_source_object: false
-    one_package_represents_all_allis: false
+    browser_e2e_demonstrated: false
+    future_live_H_geo_admission_proved: false
+    live_hilbert_jcp_integration_complete: false
+    H384_formalization_complete: false
     system_proven: false
 ```
 
@@ -1324,6 +1713,8 @@ allis_correspondence:
 * [`../acceptance/current-system-manifest.md`](../acceptance/current-system-manifest.md)
 * [`../acceptance/baseline-object-registry.md`](../acceptance/baseline-object-registry.md)
 * [`../acceptance/closeout/dgm-step12-close.md`](../acceptance/closeout/dgm-step12-close.md)
+* [`../acceptance/closeout/lean-conversational-admission-r2-close.md`](../acceptance/closeout/lean-conversational-admission-r2-close.md)
+* [`../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md`](../acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md)
 * [`../acceptance/closeout/publication-step17-close.md`](../acceptance/closeout/publication-step17-close.md)
 
 ## Formal verification
@@ -1338,6 +1729,20 @@ allis_correspondence:
 * [`authorized-adoption/model-to-source.md`](authorized-adoption/model-to-source.md)
 * [`authorized-adoption/source-to-runtime.md`](authorized-adoption/source-to-runtime.md)
 
+## Conversational Admission R2 correspondence
+
+* [`conversational-admission/model-to-source.md`](conversational-admission/model-to-source.md)
+* [`conversational-admission/source-to-runtime.md`](conversational-admission/source-to-runtime.md)
+
+## Hilbert/JCP Separation R3 correspondence
+
+* [`hilbert-jcp-separation/model-to-source.md`](hilbert-jcp-separation/model-to-source.md)
+* [`hilbert-jcp-separation/source-to-runtime.md`](hilbert-jcp-separation/source-to-runtime.md)
+
+## Conversational-path correspondence
+
+* [`conversational-path/gateway-to-synthesis.md`](conversational-path/gateway-to-synthesis.md)
+
 ## Publication correspondence
 
 * [`publication/source-to-publication-to-http-to-gui.md`](publication/source-to-publication-to-http-to-gui.md)
@@ -1351,6 +1756,9 @@ allis_correspondence:
 * [`../evidence/governed-evolution/residuals.md`](../evidence/governed-evolution/residuals.md)
 * [`../evidence/governed-evolution/step12-final-seal.md`](../evidence/governed-evolution/step12-final-seal.md)
 * [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
+* [`../evidence/conversational-admission/r2-qualification.md`](../evidence/conversational-admission/r2-qualification.md)
+* [`../evidence/hilbert-jcp-separation/r3-qualification.md`](../evidence/hilbert-jcp-separation/r3-qualification.md)
+* [`../evidence/conversational-frontdoor/current-production-state.md`](../evidence/conversational-frontdoor/current-production-state.md)
 * [`../evidence/publication/README.md`](../evidence/publication/README.md)
 * [`../evidence/publication/publication-identity.md`](../evidence/publication/publication-identity.md)
 * [`../evidence/publication/runtime-boundary.md`](../evidence/publication/runtime-boundary.md)
@@ -1368,61 +1776,40 @@ allis_correspondence:
 
 <div align="center">
 
-## 🔐 INWARD / GOVERNED WRITE SIDE
-
-### FORMAL MODEL
-
-↓
-
-### SEALED SOURCE
-
-↓
-
-### OBSERVED RUNTIME
-
-↓
-
-### THEOREM-SPECIFIC OBSERVATION
-
-**Step 12 historical predecessor + post-A8 current B/C revalidation · bounded authorized adoption**
+## 🔐 Authorized Adoption
+**Formal model → sealed source → observed runtime → theorem-specific observation**
 
 <br>
 
-# ↕️
+## 💬 Lean R2 Conversational Admission
+**Formal identity/admission model → `/api/chat` / auth source → current runtime behavior**
 
 <br>
 
-## 🌐 OUTWARD / GOVERNED READ SIDE
-
-### QUALIFIED STATE
-
-↓
-
-### GOVERNED PUBLICATION
-
-↓
-
-### DIRECT SERVICE
-
-↓
-
-### PUBLIC HTTPS
-
-↓
-
-### GUI
-
-**Step 17 · governed publication**
+## 🧭 Lean R3 Hilbert/JCP Separation
+**Formal separation model → `build_judge_context_v2` → exact four-field JCP + current nonadmission**
 
 <br>
 
-### Both chains are evidence-backed.
+## 🧠 Conversational Production Path
+**Unified Gateway → BBB → `llm20production` → LM Synthesizer → response**
 
-### Both chains are point-in-time.
+<br>
 
-### Neither chain creates authority.
+## 🌐 Governed Publication
+**Qualified state → governed publication → direct service → public HTTPS → GUI**
 
-### Neither chain represents ALLIS by itself.
+<br>
+
+### All chains are evidence-backed.
+
+### All correspondence is bounded and point-in-time.
+
+### None of these chains creates authority merely by corresponding.
+
+### Browser E2E remains separately undemonstrated.
+
+### No single chain represents ALLIS by itself.
 
 <br>
 
@@ -1439,6 +1826,14 @@ allis_correspondence:
 > **Correspondence relates distinct objects; it does not erase their identities.**
 
 > **A formal proof is not automatically a runtime fact.**
+
+> **Lean R2 qualification is distinct from current `/api/chat` / Gateway source-runtime correspondence.**
+
+> **Lean R3 qualification is distinct from current JCP source-runtime correspondence.**
+
+> **Static H_geo qualification is not live H_geo JCP admission.**
+
+> **A qualified server-side conversational path is not a demonstrated browser E2E path.**
 
 > **Matching source is not automatically observed theorem behavior.**
 
