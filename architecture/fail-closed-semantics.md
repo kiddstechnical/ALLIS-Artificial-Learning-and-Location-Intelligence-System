@@ -12,6 +12,9 @@
 ![Unavailable](https://img.shields.io/badge/UNAVAILABLE-NOT_REACHABLE-64748b?style=for-the-badge)
 ![Degraded](https://img.shields.io/badge/GOVERNED_DEGRADED-BOUNDED-f59e0b?style=for-the-badge)
 ![Unresolved](https://img.shields.io/badge/UNRESOLVED-NOT_ADJUDICATED-8b5cf6?style=for-the-badge)
+![Lean R2](https://img.shields.io/badge/LEAN_R2-CONVERSATIONAL_ADMISSION-9333ea?style=for-the-badge)
+![Lean R3](https://img.shields.io/badge/LEAN_R3-HILBERT_JCP_SEPARATION-c026d3?style=for-the-badge)
+![Research](https://img.shields.io/badge/RESEARCH_FAIL_CLOSED-PLANNED-0ea5e9?style=for-the-badge)
 
 <br>
 
@@ -173,6 +176,44 @@ flowchart TD
 ```
 
 This is an architectural decision model, not a claim that every runtime component currently implements this exact branching form.
+
+The current formal record adds two bounded examples to this semantic contract:
+
+```text
+R2:
+unauthenticated or browser-controlled identity
+    ≠
+trusted conversational identity
+```
+
+and:
+
+```text
+R3:
+missing live Hilbert admission
+    =
+nonadmission
+```
+
+The future learning/research architecture extends the same rule:
+
+```text
+research unavailable
+    ≠
+knowledge fabricated
+```
+
+```text
+retrieved material
+    ≠
+qualified corpus knowledge
+```
+
+```text
+failed provenance / admission
+    ≠
+persistent Hilbert state
+```
 
 ---
 
@@ -337,6 +378,79 @@ disclosure authorized
     ≠
 retention authorized
 ```
+
+---
+
+# 👤 Lean R2 — fail-closed conversational identity
+
+The qualified Lean R2 Conversational Admission workstream makes the inward identity rule more precise for ordinary authenticated conversation.
+
+The current bounded rule is:
+
+```text
+unauthenticated request
+    ≠
+trusted conversational identity
+```
+
+and:
+
+```text
+browser-supplied identity-like content
+    ≠
+trusted conversational identity
+```
+
+Trusted identity for ordinary conversation must come from the authenticated server-side session or the separately qualified authority path applicable to that interaction.
+
+Changing browser-controlled fields must not change the trusted authenticated identity.
+
+Likewise:
+
+```text
+browser says "I am user B"
+    ≠
+session identity becomes user B
+```
+
+When authentication is absent, unresolved, or not bound to the request:
+
+```text
+trusted_identity = NOT_ESTABLISHED
+```
+
+The protected identity-dependent path must therefore remain unavailable.
+
+The system must not:
+
+- invent a canonical identity from browser content;
+- copy an untrusted scalar into the trusted identity slot;
+- use a browser field to bypass session isolation;
+- treat an identity-like message value as governance authority.
+
+The fail-closed result is not:
+
+```text
+guess identity
+```
+
+or:
+
+```text
+use best available browser value
+```
+
+It is:
+
+```text
+no trusted identity established
+```
+
+with the protected identity-dependent transition withheld, not authorized, or unresolved according to the exact boundary.
+
+R2 therefore provides a concrete theorem-backed instance of:
+
+> **Missing or untrusted identity input does not become trusted identity.**
 
 ---
 
@@ -972,6 +1086,75 @@ See:
 
 ---
 
+# 🧭 Lean R3 — fail-closed Hilbert / JCP admission
+
+The qualified Lean R3 Hilbert/JCP Separation workstream makes current nonadmission an explicit fail-closed state.
+
+The current JCP remains a four-field structure:
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+The current bounded admission state is:
+
+```text
+H_geo admitted to JCP = NO
+H_p admitted to JCP = NO
+H_people admitted to JCP = NO
+```
+
+A qualified static H_geo path exists.
+
+That static qualification does not authorize live JCP admission.
+
+Therefore:
+
+```text
+static H_geo qualification
+    ≠
+live H_geo admission
+```
+
+and:
+
+```text
+missing JCP admission
+    ≠
+implicit admission
+```
+
+If a Hilbert projection is not explicitly admitted by the current schema/authority path, the correct state remains:
+
+```text
+NONADMITTED
+```
+
+not:
+
+```text
+AVAILABLE_BY_INFERENCE
+```
+
+and not:
+
+```text
+AUTO_WIRED
+```
+
+Historical, static, or candidate Hilbert state must not override current nonadmission.
+
+A future Hilbert-to-JCP transition requires a successor source/runtime contract plus whatever authority and correspondence evidence govern that admission.
+
+R3 therefore provides a second theorem-backed instance of:
+
+> **Missing admission remains nonadmission.**
+
+---
+
 # 🌐 Fail-closed at the publication boundary
 
 For public projection:
@@ -1472,6 +1655,36 @@ Claimed(x) ∧ TerminalizationFailure(x)
 Claimed(x)
 ```
 
+```text
+BrowserSuppliedIdentity(x) ∧ not ServerAuthenticated(x)
+    ⇒
+not TrustedIdentity(x)
+```
+
+```text
+not HilbertAdmittedToJCP(h)
+    ⇒
+not TreatAsJCPField(h)
+```
+
+```text
+ResearchUnavailable(q)
+    ⇒
+not FabricateCorpusState(q)
+```
+
+```text
+RetrievedWebMaterial(x) ∧ not Admitted(x)
+    ⇒
+not QualifiedKnowledge(x)
+```
+
+```text
+ProvenanceFailure(x) ∨ AdmissionFailure(x)
+    ⇒
+not PersistQualifiedHilbertState(x)
+```
+
 These are architectural semantics.
 
 Specific runtime proof levels remain documented in the relevant evidence and formal records.
@@ -1536,6 +1749,34 @@ P12C-09 = MACHINE_CHECKED_DISPROVEN
 `T12D-A` does not have a positive authorized-apply production observation, so it remains at the lower supported level rather than being promoted.
 
 The negative `P12C-09` result remains adjudicated and is not relabeled as unresolved.
+
+The same discipline applies to the newer formal boundaries:
+
+```text
+R2 conversational identity/admission theorem
+    ≠
+permission to infer identity from browser content
+```
+
+```text
+R3 current Hilbert/JCP nonadmission theorem
+    ≠
+permission to document live Hilbert admission before it exists
+```
+
+And it will apply to future research/learning qualification:
+
+```text
+retrieved
+    ≠
+qualified
+```
+
+```text
+candidate
+    ≠
+persistent
+```
 
 ---
 
@@ -1643,6 +1884,173 @@ This is authority-level fail-closed behavior.
 
 ---
 
+# 🔬 Future learning and research fail-closed behavior
+
+The planned Automated Learning / research architecture extends the same fail-closed semantics to information acquisition, qualification, and persistence.
+
+This section is prospective architecture.
+
+It does **not** claim that the future learning/research pipeline is already qualified or production-complete.
+
+## Research failure leaves an information gap
+
+If a research dependency is unavailable, times out, returns no usable source, or otherwise fails:
+
+```text
+research_result = unavailable
+```
+
+must not become:
+
+```text
+fabricated answer
+```
+
+or:
+
+```text
+invented corpus state
+```
+
+The correct state remains an information gap.
+
+Conceptually:
+
+```text
+knowledge gap detected
+    ↓
+bounded read-only research attempted
+    ↓
+research unavailable / unusable
+    ↓
+gap remains explicit
+```
+
+The system may still produce a bounded response using already qualified knowledge where policy permits.
+
+It must not manufacture replacement evidence.
+
+## Retrieved web material is candidate evidence, not qualified knowledge
+
+A successful fetch does not establish qualification.
+
+```text
+web material retrieved
+    ≠
+trusted fact
+```
+
+```text
+web material retrieved
+    ≠
+qualified corpus state
+```
+
+```text
+web material retrieved
+    ≠
+qualified Hilbert state
+```
+
+Retrieved material should initially retain candidate/research status together with provenance such as:
+
+- source identity;
+- retrieval time;
+- query or research reason;
+- publication/source date where available;
+- subject/domain;
+- temporal scope;
+- geographic scope where relevant;
+- evidence/confidence status;
+- transformation lineage.
+
+Only a separately governed admission path may promote that material.
+
+## Provenance failure blocks admission
+
+If required provenance cannot be established:
+
+```text
+provenance incomplete
+    ⇒
+no corpus promotion
+```
+
+If source identity, scope, timing, or other required admission metadata cannot be established:
+
+```text
+research candidate
+    remains candidate / unresolved
+```
+
+The system must not silently convert provenance failure into qualified knowledge.
+
+## Failed admission does not become persistent Hilbert state
+
+Persistence is a protected state transition.
+
+Therefore:
+
+```text
+candidate research result
+    ≠
+persistent corpus state
+```
+
+and:
+
+```text
+failed admission
+    ≠
+persistent Hilbert state
+```
+
+and:
+
+```text
+retrieved once
+    ≠
+authorized for future reuse
+```
+
+If admission fails or remains unresolved, the result must remain outside the qualified persistent Hilbert state.
+
+The fail-closed sequence is:
+
+```text
+retrieval
+    ↓
+candidate research state
+    ↓
+provenance + evidence + scope evaluation
+    ↓
+admission decision
+
+PASS
+    → eligible for governed persistence / projection
+
+FAIL / UNRESOLVED
+    → no persistent Hilbert promotion
+```
+
+## Research-to-corpus semantic rule
+
+The governing distinction is:
+
+```text
+web result
+    ≠
+trusted fact
+    ≠
+admitted corpus state
+    ≠
+qualified Hilbert state
+```
+
+Each transition requires its own evidence and, where applicable, authority.
+
+---
+
 # 🧪 Examples by authority plane
 
 ## Inward / privacy plane
@@ -1655,6 +2063,8 @@ This is authority-level fail-closed behavior.
 | Lane irrelevant to request | `NOT_APPLICABLE` |
 | Private dependency times out | `TIMED_OUT` |
 | Safe response can proceed without private context under policy | `GOVERNED_DEGRADED` |
+| No authenticated server-side identity established | no trusted identity; protected identity-dependent path does not proceed |
+| Browser-supplied identity conflicts with authenticated session | browser value remains non-authoritative; session identity retained |
 
 ## Governed write plane
 
@@ -1666,6 +2076,26 @@ This is authority-level fail-closed behavior.
 | Worker claims record and finish succeeds | `COMPLETED` |
 | Controlled rejection | `REJECTED / BLOCKED` as defined by local state machine |
 | Finish/terminalization fails after claim | remain `CLAIMED`; recovery required |
+
+## Hilbert / JCP admission plane
+
+| Condition | Correct semantic result |
+|---|---|
+| H_geo lacks current live JCP admission | remain nonadmitted |
+| H_p lacks current live JCP admission | remain nonadmitted |
+| H_people lacks current live JCP admission | remain nonadmitted |
+| Static H_geo qualification exists but no successor live admission contract exists | static qualification preserved; no live admission inferred |
+| Historical/candidate Hilbert state conflicts with current JCP nonadmission | current nonadmission controls |
+
+## Learning / research plane
+
+| Condition | Correct semantic result |
+|---|---|
+| Web research dependency unavailable | information gap remains explicit; no fabricated corpus state |
+| Web result retrieved but not evaluated/admitted | candidate research state only |
+| Required provenance incomplete | no corpus promotion; `UNRESOLVED` / candidate by local schema |
+| Admission fails | no persistent Hilbert state |
+| Research succeeds and governed admission later passes | eligible for separately governed persistence/projection |
 
 ## Governed publication plane
 
@@ -1843,7 +2273,11 @@ In particular, it should include:
 - explicit timeout where supported;
 - healthy empty state;
 - claimed-but-not-terminalized recovery state;
-- terminal `completed` and `rejected` states only when actually reached.
+- terminal `completed` and `rejected` states only when actually reached;
+- trusted conversational identity distinct from browser-supplied identity;
+- explicit Hilbert/JCP nonadmission where no live admission exists;
+- research candidate state distinct from qualified knowledge;
+- provenance/admission failure distinct from persistent Hilbert state.
 
 A state machine should not assume terminality merely because the ideal path has a terminal transition.
 
@@ -2000,6 +2434,33 @@ allis_fail_closed_semantics:
       real_production_authorization_consumed: false
       real_production_dgm_patch_application: false
 
+  r2_conversational_identity:
+    qualified_formal_boundary: true
+    unauthenticated_identity_becomes_trusted_identity: false
+    browser_supplied_identity_becomes_trusted_identity: false
+    browser_identity_can_override_authenticated_session: false
+    missing_trusted_identity_requires_fail_closed_handling: true
+
+  r3_hilbert_jcp_admission:
+    qualified_formal_boundary: true
+    current_jcp_top_level_field_count: 4
+    h_geo_admitted: false
+    h_p_admitted: false
+    h_people_admitted: false
+    static_h_geo_qualification_exists: true
+    static_qualification_implies_live_admission: false
+    missing_admission_remains_nonadmission: true
+
+  future_learning_research:
+    status: PLANNED_NOT_YET_QUALIFIED
+    research_failure_fabricates_corpus_state: false
+    retrieved_web_material_is_qualified_knowledge: false
+    retrieved_web_material_is_qualified_hilbert_state: false
+    provenance_required_before_promotion: true
+    failed_provenance_may_persist_as_qualified_state: false
+    failed_admission_may_persist_as_qualified_hilbert_state: false
+    research_candidate_may_be_used_as_durable_qualified_state_without_admission: false
+
   aggregate_gateway_pattern:
     outcomes:
       - complete
@@ -2020,6 +2481,12 @@ allis_fail_closed_semantics:
     timed_out_to_denied: true
     not_applicable_to_success_evidence: true
     claimed_to_completed_without_terminalization: true
+    browser_identity_to_trusted_identity_without_authentication: true
+    missing_hilbert_admission_to_implicit_jcp_admission: true
+    research_unavailable_to_fabricated_corpus_state: true
+    retrieved_web_material_to_qualified_knowledge_without_admission: true
+    provenance_failure_to_persistent_hilbert_state: true
+    admission_failure_to_persistent_hilbert_state: true
 
   system_boundary:
     production_mutation_safety_theorem_proven: false
@@ -2063,6 +2530,15 @@ allis_fail_closed_semantics:
 ### 🟣 `CLAIMED`
 **A real nonterminal recovery state when terminalization has not completed.**
 
+### 👤 R2 IDENTITY BOUNDARY
+**Browser-controlled or unauthenticated identity never becomes trusted identity by inference.**
+
+### 🧭 R3 HILBERT ADMISSION BOUNDARY
+**A Hilbert that is not admitted to current JCP remains nonadmitted.**
+
+### 🔬 RESEARCH / LEARNING BOUNDARY
+**Research failure leaves an information gap; retrieval alone does not qualify or persist knowledge.**
+
 <br>
 
 # **MISSING AUTHORITY ≠ PERMISSION**
@@ -2072,6 +2548,14 @@ allis_fail_closed_semantics:
 # **DEGRADED ≠ BYPASSED**
 
 # **CLAIMED ≠ TERMINAL**
+
+# **BROWSER IDENTITY ≠ TRUSTED IDENTITY**
+
+# **MISSING HILBERT ADMISSION ≠ IMPLICIT ADMISSION**
+
+# **WEB RETRIEVAL ≠ QUALIFIED KNOWLEDGE**
+
+# **FAILED ADMISSION ≠ PERSISTENT HILBERT STATE**
 
 </div>
 
@@ -2104,3 +2588,13 @@ allis_fail_closed_semantics:
 > **A current source/runtime match does not become correspondence-verified behavior without the theorem-specific live observation required by the claim.**
 
 > **The strongest safe result is the most specific result the evidence and authority actually support.**
+
+> **Unauthenticated or browser-supplied identity must never be promoted into trusted conversational identity.**
+
+> **A Hilbert missing current JCP admission remains nonadmitted until a successor governed admission path is established.**
+
+> **A failed research attempt leaves an information gap; it does not authorize fabricated corpus state.**
+
+> **Retrieved web material begins as candidate research state, not qualified knowledge.**
+
+> **Incomplete provenance or failed admission must not silently become persistent qualified Hilbert state.**
