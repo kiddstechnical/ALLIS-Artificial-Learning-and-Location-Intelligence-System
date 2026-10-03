@@ -2,7 +2,7 @@
 
 # ALLIS — State Model Overview
 
-### How semantic, spatial, temporal, private, evidentiary, lifecycle, authority, recovery, and publication state remain distinct without turning state into permission
+### How semantic, spatial, temporal, private, evidentiary, lifecycle, authority, recovery, publication, and current Hilbert/JCP state remain distinct without turning state into permission
 
 <br>
 
@@ -11,6 +11,8 @@
 ![Recovery](https://img.shields.io/badge/RECOVERY-CLAIMED_STATE-f59e0b?style=for-the-badge)
 ![Publication](https://img.shields.io/badge/PUBLICATION-PROJECTION_STATE-14b8a6?style=for-the-badge)
 ![Private State](https://img.shields.io/badge/PRIVATE_STATE-PROTECTED-ec4899?style=for-the-badge)
+![Lean R2](https://img.shields.io/badge/LEAN_R2-CONVERSATIONAL_ADMISSION-9333ea?style=for-the-badge)
+![Lean R3](https://img.shields.io/badge/LEAN_R3-HILBERT_JCP_SEPARATION-7c3aed?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -699,29 +701,74 @@ It is not an authority hierarchy.
 
 The hierarchy itself remains unchanged.
 
-Within the `MACHINE_CHECKED` evidence state, the repository now preserves two different qualification methods / evidence epochs for the bounded Step-12 theorem domain:
+The current formal-verification record now contains three distinct qualified Lean workstreams over different bounded domains:
 
 ```text
-historical Step-12 machine checking
-    ≠
-later Lean R1 proof-assistant qualification
+R1 — Authorized Adoption
+     principal Step-12 proof-assistant qualification
+
+R2 — Conversational Admission
+     authenticated-session identity and authority boundaries
+
+R3 — Hilbert / JCP Separation
+     current JCP exactness, Hilbert nonadmission,
+     and static H_geo qualification boundaries
 ```
 
-The historical Step-12 `MACHINE_CHECKED` label retains its original meaning: machine-executed source-structure checks plus bounded execution evidence.
+These workstreams are additive.
 
-A later Lean 4.34.0 R1 workstream separately formalized and kernel-checked the principal Step-12 result set. That later proof-assistant qualification is represented as successor evidence and does **not** retroactively redefine the historical Step-12 label.
+They do not collapse into one whole-system theorem.
 
-The later Lean qualification also does not, by itself, create runtime correspondence.
+The historical Step-12 `MACHINE_CHECKED` label retains its original meaning: machine-executed source-structure checks plus bounded execution evidence. The later Lean R1 proof-assistant qualification does **not** retroactively redefine that historical label.
+
+R2 and R3 are later formal domains with their own theorem statements, source identity, qualification evidence, and correspondence requirements.
+
+The current principal Lean qualification state is:
+
+```text
+R1 principal checks:
+4 / 4 qualified
+
+R2 conversational-admission theorems:
+6 / 6 kernel checked
+0 proof holes
+0 final theorem-level axiom dependencies
+
+R3 Hilbert/JCP-separation theorem checks:
+14 / 14 kernel checked
+0 proof holes
+0 final theorem-level axiom dependencies
+```
+
+Across the three qualified workstreams:
+
+```text
+24 principal Lean result checks
+0 final proof holes
+0 final theorem-level axiom dependencies
+```
+
+That does **not** mean:
+
+```text
+SYSTEM_PROVEN=YES
+```
+
+Lean qualification also does not, by itself, create source correspondence, runtime correspondence, live observation, or operational authority.
 
 ```text
 Lean proof-assistant qualification
     ≠
-source/runtime correspondence
+model-to-source correspondence
+    ≠
+source-to-runtime correspondence
     ≠
 theorem-specific live observation
+    ≠
+production authority
 ```
 
-For the current bounded DGM record, those layers combine differently by proposition:
+For the bounded DGM record, the current proposition states remain:
 
 ```text
 T12D-A = MACHINE_CHECKED
@@ -730,9 +777,11 @@ T12D-C = CORRESPONDENCE_VERIFIED
 P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
 
-The distinction is therefore not a new validation rung.
+For R2 and R3, theorem qualification and implementation correspondence remain claim-specific and must be represented separately.
 
-It is a more precise representation of **how** the evidence supporting the existing rung was qualified and **which observation epoch** supports the current claim.
+The distinction is not a new validation rung.
+
+It is a more precise representation of **how** evidence was qualified and **which source/runtime/observation epoch** supports the current claim.
 
 ---
 
@@ -2400,21 +2449,58 @@ Formal proof and runtime state are distinct.
 
 Machine checking can establish a stronger validation level for a formal claim.
 
-It still requires source/runtime correspondence before being carried to implementation/runtime claims where that relationship matters.
+It still requires model-to-source and source-to-runtime correspondence before the formal result can be carried to implementation/runtime claims where that relationship matters.
 
-For the Step-12 theorem domain, `MACHINE_CHECKED` now has explicit evidence-method history:
+The current Lean qualification surface includes three bounded workstreams:
 
 ```text
-Step-12 historical machine-checking method
-    ↓
-later Lean R1 proof-assistant qualification
+R1 — Authorized Adoption
+R2 — Conversational Admission
+R3 — Hilbert / JCP Separation
 ```
 
-The later Lean work strengthens and independently checks the formal proposition layer.
+Their scopes are different.
+
+R1 independently checks the principal bounded Step-12 authorized-adoption result set.
+
+R2 checks ordinary authenticated-conversation admission semantics, including:
+
+```text
+server-derived authenticated identity
+browser identity is nonauthoritative
+canonical scalar user_id is not invented
+session identities remain isolated
+ordinary chat does not create governance authority
+ordinary chat does not authorize H_people SECRET disclosure
+```
+
+R3 checks the current Hilbert/JCP boundary, including:
+
+```text
+current JCP field set is exact
+current JCP has no Hilbert/tensor/spatial admission field
+H_geo is not currently admitted to JCP
+H_p is not currently admitted to JCP
+H_people is not currently admitted to JCP
+static H_geo qualification does not self-authorize live admission
+historical/static candidate state cannot override current nonadmission
+```
+
+The current principal proof-assistant state is:
+
+```text
+R1 = 4 principal result checks qualified
+R2 = 6 / 6 principal theorems, axiom-free at final qualification
+R3 = 14 / 14 theorem checks, axiom-free at final qualification
+```
+
+The later Lean work strengthens and independently checks bounded proposition layers.
 
 It does not erase or rename the historical Step-12 method, and it does not by itself establish production runtime behavior.
 
 See the [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
+
+The R2 and R3 successor records should be treated as separate bounded formal domains when added to the repository.
 
 ---
 
@@ -3274,25 +3360,267 @@ Network state remains temporal.
 
 ---
 
-# 160. Current H_people boundary
+# 160. Current Hilbert / JCP boundary
+
+The current state model now has a stronger bounded formal description of the relationship between named Hilbert-domain objects and the ordinary-chat Judge Context Packet (`JCP`).
+
+The current JCP builder is:
+
+```text
+build_judge_context_v2
+```
+
+Its current top-level field set is exactly:
+
+```text
+1. schema_version
+2. request_context
+3. approved_evidence
+4. wv_deliberative_context
+```
+
+The current qualified field count is:
+
+```text
+4
+```
+
+The current qualified Hilbert/tensor/spatial field count is:
+
+```text
+0
+```
+
+Therefore the current ordinary-chat JCP state is:
+
+```text
+H_geo admitted to current JCP = NO
+H_p admitted to current JCP = NO
+H_people admitted to current JCP = NO
+```
+
+This is not an inference from naming.
+
+It is the current bounded formal/nonadmission state established by the R3 Hilbert/JCP-separation workstream and tied to the exact current JCP field structure.
+
+The governing distinction is:
+
+```text
+Hilbert-domain object exists
+    ≠
+Hilbert-domain object is admitted to current JCP
+```
+
+and:
+
+```text
+static qualification exists
+    ≠
+live conversational admission exists
+```
+
+---
+
+## 160A. Current H_geo boundary
+
+`H_geo` has a qualified static spatial/tensor value and admission-candidate path.
+
+The qualified static relationship includes the spatial staging/evaluation/promotion path and the bounded `H_App × H_geo` static admission correspondence.
+
+That does **not** mean `H_geo` is currently a live ordinary-chat JCP field.
+
+```text
+qualified static H_geo path = YES
+current live H_geo JCP field = NO
+```
+
+The static path does not self-authorize a future schema change.
+
+```text
+static H_geo qualification
+    ≠
+live admission authority
+```
+
+A future live `H_geo → JCP` transition would require a successor implementation, an identified schema/authority owner, and new correspondence evidence.
+
+R3 should remain the theorem of the **current nonadmission state**.
+
+---
+
+## 160B. Current H_p boundary
+
+`H_p` is a distinct governed civic-query/Hilbert projection.
+
+It is not the same formal domain as `H_geo`.
+
+It is not currently admitted to the ordinary-chat JCP.
+
+```text
+H_p
+    ≠
+H_geo
+```
+
+```text
+H_p current JCP admission = NO
+```
+
+Its separate service/API or governed projection role must not be collapsed into ordinary-chat context merely because both participate in Hilbert-related architecture.
+
+---
+
+## 160C. Current H_people boundary
 
 The architecture includes person-linked state and private admission/disclosure states.
 
-Current public documentation should not infer current runtime-authoritative H_people status from historical implementation evidence alone.
-
-State-model completeness is not runtime correspondence.
-
-This reconciliation does **not** add a current A8 application-private-context state object because no exact sealed A8 production identity is being admitted here.
-
-If a future sealed A8 private-context object is admitted, the state model must represent it separately from H_people/person-space state:
+R2 now establishes an additional formal boundary for ordinary authenticated conversation:
 
 ```text
-application-private-context state
+ordinary authenticated chat
     ≠
-H_people runtime-authoritative state
+H_people SECRET disclosure authority
 ```
 
-and separately from the DGM theorem runtime.
+Authentication can establish a conversational identity context without creating SECRET disclosure authority.
+
+R3 separately establishes:
+
+```text
+H_people current JCP admission = NO
+```
+
+These are different propositions.
+
+```text
+ordinary chat does not authorize SECRET disclosure
+    ≠
+H_people is a current JCP field
+```
+
+Neither proposition makes the other unnecessary.
+
+Current public documentation should therefore preserve all of the following:
+
+```text
+person-linked state exists architecturally
+ordinary chat does not authorize H_people SECRET disclosure
+H_people is not currently admitted to JCP
+state-model completeness is not runtime correspondence
+```
+
+If a future private-context projection is admitted for conversation, it must remain separately identified from unrestricted H_people SECRET state and separately governed by disclosure/minimization rules.
+
+---
+
+## 160D. Named H_* objects are not automatically proven linear subspaces
+
+The current runtime and source evidence provide a mathematically useful 384-dimensional real-vector carrier for future formalization.
+
+A safe formal carrier can be represented as:
+
+```text
+Fin 384 → Real
+```
+
+But that does **not** prove that every named application object is itself a linear subspace of that carrier.
+
+The safe current classification is:
+
+```text
+H_geo
+H_p
+H_people
+H_commons
+H_App
+and related H_* objects
+
+=
+governed typed projections / views
+```
+
+unless and until source semantics justify stronger closure/subspace theorems.
+
+The following implications are prohibited:
+
+```text
+same vector dimension
+    ≠
+same semantic object
+```
+
+```text
+H_* name
+    ≠
+proved Hilbert subspace
+```
+
+```text
+lexical/declaration match
+    ≠
+semantic match
+    ≠
+source correspondence
+    ≠
+runtime correspondence
+```
+
+A named H_* object may participate in Hilbert-space-based computation without being formally proven to be a linear subspace under its current application semantics.
+
+---
+
+## 160E. Next state-model phase: Hilbert-by-Hilbert qualification
+
+The next state-model phase is not to assume live composition.
+
+It is to qualify each Hilbert-domain object individually and then establish only the relationships that the evidence supports.
+
+For each Hilbert/projection, the qualification should identify:
+
+```text
+1. intended semantics
+2. exact source identity
+3. exact runtime identity
+4. producers
+5. consumers
+6. dimensional / embedding contract
+7. normalization contract where applicable
+8. persistence behavior
+9. retrieval behavior
+10. authority and disclosure constraints
+11. Unified Gateway / JCP relationship
+12. conversational use
+13. accuracy and failure behavior
+14. model-to-source correspondence
+15. source-to-runtime correspondence
+16. residuals / nonclaims
+```
+
+The governing progression is:
+
+```text
+named architectural object
+    ↓
+source semantics identified
+    ↓
+runtime behavior observed
+    ↓
+formal object defined where appropriate
+    ↓
+correspondence established
+    ↓
+controlled composition claim
+```
+
+not:
+
+```text
+name exists
+    ↓
+assume live Hilbert composition
+```
+
+The Hilbert-by-Hilbert phase should preserve the current R3 nonadmission theorem until a real successor implementation changes that state.
 
 ---
 
@@ -4239,15 +4567,31 @@ The state model answers:
 What state is being represented?
 ```
 
-The current repository also preserves evidence-method state:
+The current repository preserves multiple proof-assistant evidence domains:
 
 ```text
 historical Step-12 machine checking
     ≠
-later Lean R1 proof-assistant qualification
+Lean R1 authorized-adoption qualification
+    ≠
+Lean R2 conversational-admission qualification
+    ≠
+Lean R3 Hilbert/JCP-separation qualification
 ```
 
-That method distinction refines provenance for the claim without adding a new rung to the validation hierarchy.
+These method/domain distinctions refine provenance for claims without adding new rungs to the validation hierarchy.
+
+They also preserve scope:
+
+```text
+R1 proof
+    ≠
+R2 proof
+    ≠
+R3 proof
+```
+
+No one workstream silently proves the others.
 
 ---
 
@@ -4265,58 +4609,107 @@ The state model answers:
 What state does each representation claim to be in?
 ```
 
-The current bounded DGM correspondence epoch is:
-
-```text
-CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
-```
-
-and current theorem-specific correspondence state is:
+For the bounded DGM domain, current theorem-specific correspondence remains:
 
 ```text
 T12D-B = CORRESPONDENCE_VERIFIED
 T12D-C = CORRESPONDENCE_VERIFIED
-```
-
-while:
-
-```text
 T12D-A = MACHINE_CHECKED
 ```
 
-because the required positive live authorized-apply observation was not executed.
+because the required positive authorized-apply live observation for T12D-A was not executed.
 
-See the [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
+For the later conversational/Hilbert work, the current correspondence record supports a narrower set of claims:
+
+```text
+R2:
+server-derived authenticated-user semantics are carried by the qualified conversational path
+browser-controlled identity does not become authority
+ordinary chat does not create governance or SECRET-disclosure authority
+
+R3:
+current and qualified-candidate JCP builders preserve the exact four-field structure
+no current Hilbert/tensor/spatial field is admitted
+H_geo / H_p / H_people remain outside current JCP admission
+```
+
+The live Gateway path has additionally been observed through:
+
+```text
+Gateway
+    ↓
+BBB
+    ↓
+llm20production
+    ↓
+LM synthesizer
+```
+
+That supporting production observation is **not** a new Lean theorem.
+
+Correspondence state remains temporal and claim-specific.
+
+It does not mean:
+
+```text
+all future states correspond automatically
+```
+
+See the [Post-A8 DGM theorem correspondence registry R1](../../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md) for the bounded DGM successor correspondence record.
 
 ---
 
 # 220. Relationship to formal verification
 
-Formal verification can model selected state spaces and transitions.
+Formal verification can model selected state spaces, admission rules, and transitions.
 
-The later Lean R1 workstream provides a distinct proof-assistant qualification state for the principal Step-12 propositions.
-
-That successor proof state is additive:
+The current qualified Lean surface has three bounded workstreams:
 
 ```text
-historical Step-12 formal/machine-checking record
-    +
-later Lean R1 kernel qualification
+R1 — Authorized Adoption
+     principal bounded Step-12 result set
+
+R2 — Conversational Admission
+     authenticated session identity and ordinary-chat authority boundaries
+
+R3 — Hilbert / JCP Separation
+     current JCP exactness, current Hilbert nonadmission,
+     and static H_geo qualification boundaries
 ```
 
-not:
+These successor proof states are additive.
+
+They are not a single whole-system theorem.
 
 ```text
-later Lean R1
-    =
-retroactive replacement of Step-12 evidence meaning
+R1 + R2 + R3
+    ≠
+SYSTEM_PROVEN=YES
 ```
 
-The historical Lean R1 closeout also remains true to its own close boundary: Lean-to-production correspondence was not yet established inside that workstream. Later post-A8 correspondence is a successor evidence state.
+The current proof graph therefore supports stronger architectural precision while preserving the repository-wide boundary:
 
-See the [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
+```text
+SYSTEM_PROVEN=NO
+```
 
-This architecture does not claim every state class is already fully formalized.
+The current formal record should also preserve the distinction between present-state theorems and prospective models.
+
+R3 is a theorem family about the **current** JCP/nonadmission state.
+
+A future authority-gated `H_geo → JCP` transition should be formalized only as a successor model if and when a real schema/authority owner and implementation exist.
+
+Likewise, the next formalization targets should not be treated as already-proven architecture. They include:
+
+```text
+H384 geometry
+H_* typed projection/view interfaces
+embedding producer contracts
+cognition / rejoin theorem family
+future authority-gated Hilbert admission where implemented
+```
+
+See the [Lean R1 workstream closeout](../../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md) for the preserved R1 closeout.
 
 ---
 
@@ -4333,7 +4726,25 @@ If a state becomes part of a theorem, the theorem should define:
 - recovery states;
 - excluded states.
 
+For Hilbert-domain formalization, it should additionally define, where applicable:
+
+- mathematical carrier;
+- dimensional contract;
+- metric / norm assumptions;
+- normalization assumptions;
+- typed projection semantics;
+- closure/subspace properties only when actually proved;
+- source binding;
+- runtime binding;
+- admission relationship to JCP/Gateway.
+
 Architectural naming alone is not a formal proof.
+
+The priority rule is:
+
+> **Extend the theorem graph only where a current source/runtime contract exists or where the work is explicitly labeled as a prospective model.**
+
+A desirable future architecture must not become a present-tense theorem by naming convention.
 
 ---
 
@@ -4516,6 +4927,26 @@ allis_state_model:
       - PROVEN
       - MACHINE_CHECKED
       - CORRESPONDENCE_VERIFIED
+
+    qualified_lean_workstreams:
+      r1_authorized_adoption:
+        principal_result_checks: 4
+        bounded_domain: DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1
+      r2_conversational_admission:
+        principal_result_checks: 6
+        proof_holes: 0
+        theorem_level_axiom_dependencies: 0
+      r3_hilbert_jcp_separation:
+        principal_result_checks: 14
+        proof_holes: 0
+        theorem_level_axiom_dependencies: 0
+
+    aggregate_principal_lean_state:
+      result_checks: 24
+      final_proof_holes: 0
+      final_theorem_level_axiom_dependencies: 0
+      whole_system_proven: false
+
     machine_checked_qualification_methods:
       historical_step12:
         method: source_structure_checks_plus_bounded_execution_evidence
@@ -4524,6 +4955,7 @@ allis_state_model:
         method: proof_assistant_kernel_qualification
         changes_validation_hierarchy: false
         replaces_historical_step12_meaning: false
+
     current_dgm_evidence_state:
       source_runtime_correspondence: PASS_11_OF_11
       T12D-A:
@@ -4539,6 +4971,51 @@ allis_state_model:
         validation_level: MACHINE_CHECKED_DISPROVEN
         negative_result_preserved: true
 
+  current_jcp:
+    builder: build_judge_context_v2
+    top_level_field_count: 4
+    top_level_fields:
+      - schema_version
+      - request_context
+      - approved_evidence
+      - wv_deliberative_context
+    hilbert_tensor_spatial_field_count: 0
+    h_geo_admitted: false
+    h_p_admitted: false
+    h_people_admitted: false
+
+  h_geo:
+    qualified_static_value_path: true
+    current_live_jcp_field: false
+    static_qualification_self_authorizes_live_admission: false
+
+  hilbert_projection_classification:
+    common_candidate_carrier: Fin_384_to_Real
+    named_h_objects_automatically_linear_subspaces: false
+    safe_current_classification: GOVERNED_TYPED_PROJECTIONS_OR_VIEWS
+    stronger_subspace_claim_requires_separate_proof: true
+
+  next_state_model_phase:
+    hilbert_by_hilbert_qualification: true
+    assume_live_composition_before_qualification: false
+    required_checks:
+      - intended_semantics
+      - source_identity
+      - runtime_identity
+      - producers
+      - consumers
+      - dimensional_embedding_contract
+      - normalization_contract_where_applicable
+      - persistence
+      - retrieval
+      - authority_and_disclosure_constraints
+      - gateway_jcp_relationship
+      - conversational_use
+      - accuracy_and_failure_behavior
+      - model_to_source_correspondence
+      - source_to_runtime_correspondence
+      - residuals_and_nonclaims
+
   temporal:
     point_in_time_state_is_permanent: false
 
@@ -4546,8 +5023,9 @@ allis_state_model:
     person_linked_equals_common_state: false
     retrieval_equals_disclosure: false
     private_equals_publication_eligible: false
-    current_a8_private_context_object_admitted_here: false
-    future_application_private_context_equals_h_people_runtime: false
+    ordinary_chat_authorizes_h_people_secret_disclosure: false
+    h_people_current_jcp_admission: false
+    future_application_private_context_equals_h_people_secret_state: false
     future_application_private_context_equals_dgm_theorem_runtime: false
 
   invariants:
@@ -4558,6 +5036,9 @@ allis_state_model:
     - PUBLICATION_ELIGIBLE_DOES_NOT_IMPLY_PUBLISHED
     - PUBLISHED_DOES_NOT_IMPLY_WRITE_AUTHORITY
     - FAIL_CLOSED_REASON_MUST_BE_PRESERVED
+    - STATIC_HGEO_QUALIFICATION_DOES_NOT_SELF_AUTHORIZE_LIVE_JCP_ADMISSION
+    - ORDINARY_CHAT_DOES_NOT_AUTHORIZE_HPEOPLE_SECRET_DISCLOSURE
+    - HILBERT_NAME_DOES_NOT_IMPLY_PROVEN_LINEAR_SUBSPACE
 
   repository_boundary:
     production_mutation_safety_theorem_proven: false
@@ -4588,13 +5069,75 @@ This does not invalidate:
 
 - Workstream-F closure;
 - Step-12 bounded formal results;
-- later Lean R1 proof-assistant qualification;
-- current post-A8 B/C correspondence revalidation;
+- Lean R1 authorized-adoption proof-assistant qualification;
+- Lean R2 conversational-admission qualification;
+- Lean R3 Hilbert/JCP-separation qualification;
+- current post-A8 DGM B/C correspondence revalidation;
+- current R2/R3 implementation correspondence evidence;
 - Step-17 publication completion;
 - private-state architecture;
 - current correspondence results.
 
 It preserves their scope.
+
+The current bounded formal state includes:
+
+```text
+R1 — Authorized Adoption
+4 principal Lean result checks qualified
+
+R2 — Conversational Admission
+6 / 6 principal theorems kernel checked
+0 proof holes
+0 final theorem-level axiom dependencies
+
+R3 — Hilbert / JCP Separation
+14 / 14 theorem checks kernel checked
+0 proof holes
+0 final theorem-level axiom dependencies
+```
+
+The current state-model boundary also includes:
+
+```text
+current JCP top-level fields = 4
+current Hilbert/tensor/spatial JCP fields = 0
+H_geo current JCP admission = NO
+H_p current JCP admission = NO
+H_people current JCP admission = NO
+qualified static H_geo path = YES
+```
+
+The following stronger claims remain outside the current state:
+
+```text
+H384 controlling theorem suite complete = NO
+named H_* objects proven linear subspaces = NO
+cognition/rejoin theorem family complete = NO
+live H_geo-to-JCP integration established = NO
+Hilbert-by-Hilbert runtime qualification complete = NO
+whole-system proof = NO
+```
+
+The next state-model phase is therefore:
+
+```text
+Hilbert-by-Hilbert qualification
+    ↓
+exact source/runtime semantics
+    ↓
+producer / consumer contracts
+    ↓
+dimensional / embedding / normalization contracts
+    ↓
+Gateway / JCP relationships
+    ↓
+conversational use
+    ↓
+accuracy / failure behavior
+    ↓
+formalization and correspondence where appropriate
+```
 
 The newer evidence does not change:
 
@@ -4781,6 +5324,16 @@ authority
 > **A governed publication is a projection, not a raw export of internal state.**
 
 > **Public state does not create backend write authority.**
+
+> **Current JCP admission is an explicit qualified state: H_geo, H_p, and H_people are not currently admitted merely because corresponding architectural domains exist.**
+
+> **A qualified static H_geo path does not self-authorize live JCP admission.**
+
+> **Ordinary authenticated conversation does not itself authorize H_people SECRET disclosure.**
+
+> **A named H_* object is not automatically a proven linear subspace of a 384-dimensional carrier.**
+
+> **Hilbert composition claims should advance Hilbert-by-Hilbert from semantics and source identity through runtime correspondence, not by naming convention.**
 
 > **Fail-closed states preserve why a protected transition did not proceed.**
 
