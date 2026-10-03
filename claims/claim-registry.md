@@ -4,12 +4,14 @@
 
 ### Current qualified claims, validation levels, evidence boundaries, and stronger claims not supported
 
-**Claim authority index · September 2026**
+**Claim authority index · October 2026**
 
 <br>
 
 ![Registry](https://img.shields.io/badge/CLAIM_REGISTRY-CURRENT-7c3aed?style=for-the-badge)
-![Claims](https://img.shields.io/badge/REGISTERED_CLAIMS-36-0ea5e9?style=for-the-badge)
+![Claims](https://img.shields.io/badge/REGISTERED_CLAIMS-64-0ea5e9?style=for-the-badge)
+![R2](https://img.shields.io/badge/LEAN_R2-6_OF_6_AXIOM_FREE-22c55e?style=for-the-badge)
+![R3](https://img.shields.io/badge/LEAN_R3-14_OF_14_AXIOM_FREE-22c55e?style=for-the-badge)
 ![Step 12](https://img.shields.io/badge/DGM_STEP_12-CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
 ![Step 17](https://img.shields.io/badge/PUBLICATION_STEP_17-GREEN_COMPLETE-14b8a6?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
@@ -31,7 +33,7 @@
 
 # 👀 Registry at a glance
 
-The current registry contains six claim families.
+The current registry contains ten claim families.
 
 | Family | Purpose | Registered claims |
 |---|---|---:|
@@ -41,7 +43,15 @@ The current registry contains six claim families.
 | 🔐 `DGM` | Step-12 authorized-adoption formal and correspondence results | 12 |
 | 🌐 `PUB` | Step-17 governed-publication and GUI results | 8 |
 | 👤 `PRIV` | Public-safe private-state claim boundary | 2 |
-| **Total** |  | **36 entries including three explicit system-boundary records** |
+| 💬 `CHAT` | Lean R2 Conversational Admission — six qualified theorem claims | 6 |
+| 🧭 `HJCP` | Lean R3 Hilbert/JCP Separation — fourteen qualified theorem claims | 14 |
+| 📏 `H384` | Current 384-D geometry evidence and planned projection formalization boundary | 4 |
+| 🔬 `ALR` | Planned automated-learning / read-only research claim boundary | 2 |
+| 📍 `KYCLOC` | Planned protected-location contextual-use claim boundary | 2 |
+| **Total** |  | **64 entries** |
+
+> [!IMPORTANT]
+> The six R2 theorems and fourteen R3 theorem checks are registered individually below. They are not collapsed into `SYS-*` or summarized as one generic “Lean proved chat/Hilbert behavior” claim.
 
 > [!NOTE]
 > The registry uses claim IDs for stable reference. Claim count is secondary to claim scope: one broad sentence is not allowed to absorb several differently validated propositions.
@@ -176,6 +186,34 @@ flowchart LR
 | `PUB-008` | No Step 18 exists for this fixed goal; new capability requires new governed workstream | `CLOSED` successor rule | ✅ |
 | `PRIV-001` | Private/person-linked state requires identity/use/disclosure authority before crossing public/common boundaries | `FORMALLY DOCUMENTED ARCHITECTURAL RULE` | ✅ |
 | `PRIV-002` | Historical Gate05c evidence is not current H_people runtime authority | explicit current claim boundary | ✅ |
+| `CHAT-001` | `TCHAT_A_server_derived_authenticated_identity` | `MACHINE_CHECKED` | ✅ |
+| `CHAT-002` | `TCHAT_B_browser_identity_is_nonauthoritative` | `MACHINE_CHECKED` | ✅ |
+| `CHAT-003` | `TCHAT_C_canonical_scalar_user_id_not_invented` | `MACHINE_CHECKED` | ✅ |
+| `CHAT-004` | `TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated` | `MACHINE_CHECKED` | ✅ |
+| `CHAT-005` | `TCHAT_E_ordinary_chat_does_not_create_governance_authority` | `MACHINE_CHECKED` | ✅ |
+| `CHAT-006` | `TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-001` | `spatial_sandbox_to_hgeo_static_value_plane` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-002` | `happ_x_hgeo_static_admission_correspondence` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-003` | `current_jcp_has_exactly_four_top_level_fields` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-004` | `current_jcp_has_no_hilbert_tensor_or_spatial_field_names` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-005` | `current_jcp_no_hilbert_admission` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-006` | `current_hgeo_not_admitted_to_jcp` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-007` | `current_hp_not_admitted_to_jcp` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-008` | `current_hpeople_not_admitted_to_jcp` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-009` | `hp_is_not_hgeo` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-010` | `hpeople_is_not_hgeo` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-011` | `r10_static_hgeo_candidate_is_not_live_jcp_admission` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-012` | `static_hgeo_qualification_does_not_self_authorize` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-013` | `absent_current_field_blocks_live_admission` | `MACHINE_CHECKED` | ✅ |
+| `HJCP-014` | `source_history_or_static_candidate_cannot_override_current_nonadmission` | `MACHINE_CHECKED` | ✅ |
+| `H384-001` | Live retrieval geometry uses 384-dimensional real-vector/L2 collections in the bounded observed inventory | `OBSERVED` | ✅ |
+| `H384-002` | H384 is formalization-ready but no controlling H384 theorem suite is complete | explicit current boundary | ✅ |
+| `H384-003` | Named H_* objects are not currently claimed to be proved linear subspaces merely because they use a 384-D carrier | explicit mathematical boundary | ✅ |
+| `H384-004` | Typed H_* projection/view formalization is planned successor work, not current proof | `PLANNED / NOT_ESTABLISHED` | ✅ |
+| `ALR-001` | Automated-learning / read-only web research is planned but not currently qualified | `PLANNED / NOT_QUALIFIED` | ✅ |
+| `ALR-002` | Retrieved web material does not automatically become qualified corpus/Hilbert state | `ARCHITECTURAL BOUNDARY / PLANNED` | ✅ |
+| `KYCLOC-001` | Planned protected-location design keeps precise authoritative KYC location in SECRET state | `PLANNED ARCHITECTURAL BOUNDARY` | ✅ |
+| `KYCLOC-002` | Planned minimum-necessary geographic context requires separate authorization and is not currently qualified | `PLANNED / NOT_QUALIFIED` | ✅ |
 
 ---
 
@@ -1187,6 +1225,591 @@ The public architecture supports a fail-closed private-state boundary in which p
 
 ---
 
+# 💬 Conversational Admission R2 claims
+
+The `CHAT` family preserves all six qualified R2 theorem claims separately.
+
+The final R2 qualification reported:
+
+```text
+LEAN_CLEAN_BUILD=PASS
+KERNEL_CHECKED_PRINCIPAL_THEOREMS=6_OF_6
+PROOF_HOLES=0
+THEOREM_LEVEL_AXIOM_DEPENDENCIES=0_OF_6
+PROPEXT_DEPENDENCY_REMOVED=PASS
+```
+
+Closed R2 identity:
+
+```text
+branch = formal-verification/lean-conversational-admission-r2
+HEAD   = c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+tree   = e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+```
+
+R2 remains a bounded conversational-admission theorem family.
+
+It does not prove whole-system identity safety, every future frontend, or every future authentication implementation.
+
+---
+
+## `CHAT-001` — Server-derived authenticated identity
+
+**Lean theorem**
+
+```text
+TCHAT_A_server_derived_authenticated_identity
+```
+
+**Claim**
+
+> For an authenticated session, ordinary-chat admission derives `authenticatedUser` from the server-side session identity.
+
+| Field | Record |
+|---|---|
+| **Scope** | Ordinary authenticated conversational admission |
+| **Qualified object** | R2 Lean theorem `TCHAT_A_server_derived_authenticated_identity` |
+| **Validation level** | `MACHINE_CHECKED` |
+| **Evidence** | R2 axiom-free qualification; 6/6 kernel checks; zero proof holes |
+| **Correspondence status** | Later `/api/chat` qualification supports server-derived `authenticated_user`; runtime/source correspondence remains claim-specific |
+| **Stronger claim not supported** | Every future authentication implementation is correct |
+
+---
+
+## `CHAT-002` — Browser identity is non-authoritative
+
+**Lean theorem**
+
+```text
+TCHAT_B_browser_identity_is_nonauthoritative
+```
+
+**Claim**
+
+> For one authenticated session, changing browser-controlled body content does not change the trusted authenticated user.
+
+| Field | Record |
+|---|---|
+| **Scope** | Browser/body identity authority |
+| **Qualified object** | R2 Lean theorem `TCHAT_B_browser_identity_is_nonauthoritative` |
+| **Validation level** | `MACHINE_CHECKED` |
+| **Evidence** | R2 axiom-free qualification |
+| **Correspondence status** | Qualified frontend/Gateway work preserves server-derived identity rather than browser-controlled identity authority |
+| **Stronger claim not supported** | Browser-controlled content can never influence any non-identity application field |
+
+---
+
+## `CHAT-003` — Canonical scalar user ID is not invented
+
+**Lean theorem**
+
+```text
+TCHAT_C_canonical_scalar_user_id_not_invented
+```
+
+**Claim**
+
+> If the authenticated session has no canonical scalar user ID, ordinary-chat admission does not manufacture one.
+
+| Field | Record |
+|---|---|
+| **Scope** | Canonical user-ID admission semantics |
+| **Qualified object** | R2 Lean theorem `TCHAT_C_canonical_scalar_user_id_not_invented` |
+| **Validation level** | `MACHINE_CHECKED` |
+| **Evidence** | R2 axiom-free qualification |
+| **Correspondence status** | Later `/api/chat` qualification carried `user_id: null` in the bounded path |
+| **Stronger claim not supported** | No future identity service may ever establish a canonical user ID through a separately qualified path |
+
+---
+
+## `CHAT-004` — Authenticated sessions remain identity-isolated
+
+**Lean theorem**
+
+```text
+TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated
+```
+
+**Claim**
+
+> Distinct authenticated session identities remain distinct through ordinary-chat admission.
+
+| Field | Record |
+|---|---|
+| **Scope** | Session-to-session conversational identity separation |
+| **Qualified object** | R2 Lean theorem `TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated` |
+| **Validation level** | `MACHINE_CHECKED` |
+| **Evidence** | R2 axiom-free qualification |
+| **Correspondence status** | Formal claim qualified; implementation/runtime isolation evidence remains separately scoped |
+| **Stronger claim not supported** | Whole-system multi-user isolation is universally proven |
+
+---
+
+## `CHAT-005` — Ordinary chat does not create governance authority
+
+**Lean theorem**
+
+```text
+TCHAT_E_ordinary_chat_does_not_create_governance_authority
+```
+
+**Claim**
+
+> Authenticated ordinary-chat admission carries `noAuthority`; authentication does not manufacture governance authority.
+
+| Field | Record |
+|---|---|
+| **Scope** | Conversational admission → governance authority |
+| **Qualified object** | R2 Lean theorem `TCHAT_E_ordinary_chat_does_not_create_governance_authority` |
+| **Validation level** | `MACHINE_CHECKED` |
+| **Evidence** | R2 axiom-free qualification |
+| **Correspondence status** | Later Gateway qualification showed authenticated-user carriage remained inert with respect to downstream authority |
+| **Stronger claim not supported** | The ordinary chat path proves all governance boundaries system-wide |
+
+---
+
+## `CHAT-006` — Ordinary chat does not authorize H_people SECRET disclosure
+
+**Lean theorem**
+
+```text
+TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
+```
+
+**Claim**
+
+> Authenticated ordinary conversation does not establish H_people SECRET disclosure authority.
+
+| Field | Record |
+|---|---|
+| **Scope** | Ordinary conversation → H_people SECRET disclosure authority |
+| **Qualified object** | R2 Lean theorem `TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure` |
+| **Validation level** | `MACHINE_CHECKED` |
+| **Evidence** | R2 axiom-free qualification |
+| **Correspondence status** | Later isolated qualification withheld private-memory/H_people content from the ordinary downstream synthesis path |
+| **Stronger claim not supported** | Every H_people disclosure path is formally verified by R2 |
+
+---
+
+# 🧭 Hilbert/JCP Separation R3 claims
+
+The `HJCP` family preserves all fourteen qualified R3 theorem checks separately.
+
+Final R3 qualification:
+
+```text
+THEOREM_CHECKS=14_OF_14
+PROOF_HOLES=0
+THEOREM_LEVEL_AXIOM_DEPENDENCIES=0_OF_14
+```
+
+Closed R3 identity:
+
+```text
+branch = formal-verification/hilbert-jcp-separation-r3
+HEAD   = 6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+tree   = f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+```
+
+Current/candidate JCP AST identity:
+
+```text
+7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+```
+
+R3 proves present separation and static qualification properties.
+
+It does not prove a future live H_geo/JCP implementation that has not been installed.
+
+---
+
+## `HJCP-001` — Static spatial path supports H_geo value plane
+
+**Lean theorem**
+
+```text
+spatial_sandbox_to_hgeo_static_value_plane
+```
+
+**Claim**
+
+> Qualified spatial staging/evaluation/promotion evidence supports the bounded static H_geo value plane.
+
+**Validation:** `MACHINE_CHECKED`
+
+**Stronger claim not supported:** static value-plane qualification means H_geo is already a live JCP field.
+
+---
+
+## `HJCP-002` — H_App × H_geo static admission correspondence
+
+**Lean theorem**
+
+```text
+happ_x_hgeo_static_admission_correspondence
+```
+
+**Claim**
+
+> The bounded H_App × H_geo static admission correspondence is represented as a qualified static relation.
+
+**Validation:** `MACHINE_CHECKED`
+
+**Stronger claim not supported:** the static relation is installed as live ordinary-chat JCP admission.
+
+---
+
+## `HJCP-003` — Current JCP has exactly four top-level fields
+
+**Lean theorem**
+
+```text
+current_jcp_has_exactly_four_top_level_fields
+```
+
+**Claim**
+
+The current JCP top-level field set is exactly:
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+**Validation:** `MACHINE_CHECKED`
+
+**Implementation correspondence:** current and qualified candidate JCP builder ASTs share the same recorded AST identity.
+
+---
+
+## `HJCP-004` — Current JCP has no Hilbert/tensor/spatial field names
+
+**Lean theorem**
+
+```text
+current_jcp_has_no_hilbert_tensor_or_spatial_field_names
+```
+
+**Claim**
+
+> The current JCP field set contains no Hilbert, tensor, or spatial admission field names.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-005` — Current JCP does not admit a Hilbert domain
+
+**Lean theorem**
+
+```text
+current_jcp_no_hilbert_admission
+```
+
+**Claim**
+
+> The current JCP evidence state does not admit a Hilbert domain.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-006` — H_geo is not currently admitted to JCP
+
+**Lean theorem**
+
+```text
+current_hgeo_not_admitted_to_jcp
+```
+
+**Claim**
+
+```text
+H_geo_CURRENT_JCP_ADMISSION=NO
+```
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-007` — H_p is not currently admitted to JCP
+
+**Lean theorem**
+
+```text
+current_hp_not_admitted_to_jcp
+```
+
+**Claim**
+
+```text
+H_p_CURRENT_JCP_ADMISSION=NO
+```
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-008` — H_people is not currently admitted to JCP
+
+**Lean theorem**
+
+```text
+current_hpeople_not_admitted_to_jcp
+```
+
+**Claim**
+
+```text
+H_people_CURRENT_JCP_ADMISSION=NO
+```
+
+**Validation:** `MACHINE_CHECKED`
+
+This is distinct from R2's SECRET-disclosure theorem: R3 addresses JCP nonadmission; R2 addresses ordinary-chat disclosure authority.
+
+---
+
+## `HJCP-009` — H_p is not H_geo
+
+**Lean theorem**
+
+```text
+hp_is_not_hgeo
+```
+
+**Claim**
+
+> H_p and H_geo are distinct formal domain labels in the R3 model.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-010` — H_people is not H_geo
+
+**Lean theorem**
+
+```text
+hpeople_is_not_hgeo
+```
+
+**Claim**
+
+> H_people and H_geo are distinct formal domain labels in the R3 model.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-011` — Static H_geo candidate is not live JCP admission
+
+**Lean theorem**
+
+```text
+r10_static_hgeo_candidate_is_not_live_jcp_admission
+```
+
+**Claim**
+
+> A static H_geo candidate/qualified path is not equivalent to installed live JCP admission.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-012` — Static H_geo qualification does not self-authorize
+
+**Lean theorem**
+
+```text
+static_hgeo_qualification_does_not_self_authorize
+```
+
+**Claim**
+
+> Static qualification cannot bootstrap or mint the authority required for live Hilbert/JCP admission.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-013` — Absent current field blocks live admission
+
+**Lean theorem**
+
+```text
+absent_current_field_blocks_live_admission
+```
+
+**Claim**
+
+> If the relevant domain field is absent from current JCP evidence, live admission is blocked in the bounded R3 model.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+## `HJCP-014` — Source history/static candidate cannot override current nonadmission
+
+**Lean theorem**
+
+```text
+source_history_or_static_candidate_cannot_override_current_nonadmission
+```
+
+**Claim**
+
+> Historical source state or static candidate evidence cannot override the current JCP nonadmission state.
+
+**Validation:** `MACHINE_CHECKED`
+
+---
+
+# 📏 H384 and typed-projection claims
+
+This family records what may currently be said about the next mathematical/projection phase without turning future architecture into present-tense proof.
+
+## `H384-001` — Current 384-D retrieval geometry is observed
+
+**Claim**
+
+> The bounded runtime inventory contains 27 live collections using 384-dimensional retrieval geometry with L2 metric behavior in the investigated environment.
+
+| Field | Record |
+|---|---|
+| **Scope** | Current bounded retrieval-geometry inventory |
+| **Validation level** | `OBSERVED` |
+| **Evidence** | Current Lean/formal-verification analytical record and live Chroma geometry inventory |
+| **Stronger claim not supported** | A controlling H384 Lean theorem suite is already complete |
+
+---
+
+## `H384-002` — H384 is formalization-ready, not complete
+
+**Claim**
+
+```text
+H384_FORMALIZATION_COMPLETE=NO
+```
+
+The intended successor formalization includes:
+
+```text
+Fin 384 → ℝ
+standard inner product
+induced norm
+L2 metric
+finite-dimensional completeness
+explicit normalization predicates
+```
+
+**Validation:** explicit current boundary / formalization-ready state.
+
+---
+
+## `H384-003` — Named H_* objects are not automatically proved linear subspaces
+
+**Claim**
+
+```text
+shared 384-D carrier
+    ≠
+proved linear-subspace structure
+```
+
+The repository does not classify `H_geo`, `H_p`, `H_people`, `H_commons`, `H_App`, or other named H_* objects as linear subspaces unless closure/subspace properties are separately proved.
+
+**Validation:** explicit mathematical claim boundary.
+
+---
+
+## `H384-004` — Typed projection/view formalization is successor work
+
+**Claim**
+
+> Typed projection/view interfaces for H_geo, H_p, H_people, H_commons, H_App, and related objects are planned successor formal work.
+
+**Validation:** `PLANNED / NOT_ESTABLISHED`
+
+**Stronger claim not supported:** those interfaces are already controlling theorem objects.
+
+---
+
+# 🔬 Automated-learning / research claims
+
+This family is intentionally prospective.
+
+It records only the bounded architecture status that is safe to claim now.
+
+## `ALR-001` — Automated-learning web research is planned, not qualified
+
+**Claim**
+
+```text
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
+```
+
+The planned architecture includes bounded read-only research and conversational knowledge-gap fallback.
+
+It is not currently registered as a qualified production learning path.
+
+---
+
+## `ALR-002` — Retrieval is not qualification
+
+**Claim**
+
+The planned research boundary preserves:
+
+```text
+web result
+    ≠
+trusted fact
+    ≠
+admitted corpus state
+    ≠
+qualified Hilbert state
+```
+
+**Validation:** architectural/future boundary.
+
+**Stronger claim not supported:** successful retrieval automatically persists as qualified ALLIS knowledge.
+
+---
+
+# 📍 Protected-location contextual-use claims
+
+This family is also prospective and must remain separate from current H_people runtime claims.
+
+## `KYCLOC-001` — Precise authoritative KYC location remains SECRET in the planned design
+
+**Claim**
+
+> In the planned protected-location design, precise authoritative KYC location remains in the SECRET person-linked boundary rather than becoming ordinary conversational or public state.
+
+**Validation:** planned architectural boundary.
+
+**Stronger claim not supported:** the protected-location contextual-use path is already production-qualified.
+
+---
+
+## `KYCLOC-002` — Minimum-necessary geographic context requires separate authorization
+
+**Claim**
+
+> A future minimum-necessary geographic projection may inform conversation only through a separately authorized contextual-use path; use of that projection does not convert the underlying precise KYC location into ordinary conversational disclosure.
+
+```text
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=NO
+```
+
+**Validation:** `PLANNED / NOT_QUALIFIED`
+
+---
+
 # 🔗 Claim-to-object map
 
 ```mermaid
@@ -1198,13 +1821,28 @@ flowchart TB
     D["🔐 DGM Step 12<br/>20c8cbe1…"]:::d
     P["🌐 Publication Step 17<br/>d6ab6352… / 5By6R3…"]:::p
     H["👤 Private-state boundary"]:::h
+    CHAT["💬 R2 Conversational Admission<br/>6 theorem claims"]:::chat
+    HJCP["🧭 R3 Hilbert/JCP Separation<br/>14 theorem claims"]:::hjcp
+    H384["📏 H384 / projection boundary"]:::h384
+    ALR["🔬 Automated learning / research<br/>planned"]:::alr
+    LOC["📍 Protected location context<br/>planned"]:::loc
 
     F --> C
     A --> C
     D --> C
     P --> C
     H --> C
+    CHAT --> C
+    HJCP --> C
+    H384 --> C
+    ALR --> C
+    LOC --> C
 
+    classDef chat fill:#bfdbfe,stroke:#2563eb,color:#172554,stroke-width:2px;
+    classDef hjcp fill:#c4b5fd,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
+    classDef h384 fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
+    classDef alr fill:#a7f3d0,stroke:#059669,color:#064e3b,stroke-width:2px;
+    classDef loc fill:#fed7aa,stroke:#ea580c,color:#7c2d12,stroke-width:2px;
     classDef registry fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:3px;
     classDef f fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
     classDef a fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
@@ -1326,6 +1964,34 @@ historical Gate05c runtime = current H_people runtime authority
 Step-17 completion = authority for arbitrary new capability
 ```
 
+```text
+R2 qualified = whole conversational system identity-safe
+```
+
+```text
+R3 qualified = live H_geo/H_p/H_people JCP integration complete
+```
+
+```text
+H384_FORMALIZATION_COMPLETE=YES
+```
+
+```text
+named H_* objects = proved linear subspaces
+```
+
+```text
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=YES
+```
+
+```text
+retrieved web material = qualified persistent Hilbert state
+```
+
+```text
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=YES
+```
+
 These boundaries are preserved in detail in:
 
 ```text
@@ -1394,6 +2060,79 @@ allis_claim_registry:
       dominance_cut_test: NOT_PERFORMED
       mathematical_proof: NOT_PERFORMED
       runtime_correspondence: NOT_ESTABLISHED
+
+  conversational_admission_r2:
+    qualified: true
+    lean_version: 4.34.0
+    proof_holes: 0
+    theorem_level_axiom_dependencies: 0
+    claims:
+      CHAT-001: TCHAT_A_server_derived_authenticated_identity
+      CHAT-002: TCHAT_B_browser_identity_is_nonauthoritative
+      CHAT-003: TCHAT_C_canonical_scalar_user_id_not_invented
+      CHAT-004: TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated
+      CHAT-005: TCHAT_E_ordinary_chat_does_not_create_governance_authority
+      CHAT-006: TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
+    closed_head: c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+    closed_tree: e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+
+  hilbert_jcp_separation_r3:
+    qualified: true
+    lean_version: 4.34.0
+    proof_holes: 0
+    theorem_level_axiom_dependencies: 0
+    claims:
+      HJCP-001: spatial_sandbox_to_hgeo_static_value_plane
+      HJCP-002: happ_x_hgeo_static_admission_correspondence
+      HJCP-003: current_jcp_has_exactly_four_top_level_fields
+      HJCP-004: current_jcp_has_no_hilbert_tensor_or_spatial_field_names
+      HJCP-005: current_jcp_no_hilbert_admission
+      HJCP-006: current_hgeo_not_admitted_to_jcp
+      HJCP-007: current_hp_not_admitted_to_jcp
+      HJCP-008: current_hpeople_not_admitted_to_jcp
+      HJCP-009: hp_is_not_hgeo
+      HJCP-010: hpeople_is_not_hgeo
+      HJCP-011: r10_static_hgeo_candidate_is_not_live_jcp_admission
+      HJCP-012: static_hgeo_qualification_does_not_self_authorize
+      HJCP-013: absent_current_field_blocks_live_admission
+      HJCP-014: source_history_or_static_candidate_cannot_override_current_nonadmission
+    closed_head: 6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+    closed_tree: f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+    current_candidate_jcp_ast_sha256: 7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+
+  h384_and_projection:
+    H384-001:
+      state: OBSERVED
+      live_collection_count: 27
+      dimension: 384
+      metric: L2
+    H384-002:
+      state: FORMALIZATION_READY_NOT_COMPLETE
+      H384_FORMALIZATION_COMPLETE: false
+    H384-003:
+      state: BOUNDARY
+      named_h_objects_proven_linear_subspaces: false
+    H384-004:
+      state: PLANNED_NOT_ESTABLISHED
+      typed_projection_view_formalization_complete: false
+
+  automated_learning_research:
+    ALR-001:
+      state: PLANNED_NOT_QUALIFIED
+      AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED: false
+    ALR-002:
+      state: ARCHITECTURAL_BOUNDARY
+      retrieval_implies_qualification: false
+      retrieval_implies_persistent_hilbert_state: false
+
+  protected_location_context:
+    KYCLOC-001:
+      state: PLANNED_ARCHITECTURAL_BOUNDARY
+      precise_authoritative_location_tier: SECRET
+    KYCLOC-002:
+      state: PLANNED_NOT_QUALIFIED
+      KYC_LOCATION_CONTEXT_USE_QUALIFIED: false
+      minimum_necessary_projection_requires_separate_authorization: true
 
   dgm_step12:
     DGM-001:
@@ -1541,6 +2280,10 @@ allis_claim_registry:
 - [`../formal-verification/authorized-adoption/theorem-registry.md`](../formal-verification/authorized-adoption/theorem-registry.md)
 - [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
 - [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
+- `../formal-verification/conversational-admission/workstream-closeout-r2.md` — planned public repository record for R2
+- `../formal-verification/conversational-admission/theorem-registry.md` — planned six-theorem R2 registry
+- `../formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md` — planned public repository record for R3
+- `../formal-verification/hilbert-jcp-separation/theorem-registry.md` — planned fourteen-theorem R3 registry
 - [`../correspondence/authorized-adoption/model-to-source.md`](../correspondence/authorized-adoption/model-to-source.md)
 - [`../correspondence/authorized-adoption/source-to-runtime.md`](../correspondence/authorized-adoption/source-to-runtime.md)
 - [`../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md`](../evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
