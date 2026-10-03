@@ -4,7 +4,7 @@
 
 ### Qualified objects, authority roles, and correspondence relationships
 
-**Current technical manifest · September 2026**
+**Current technical manifest · October 2026**
 
 <br>
 
@@ -12,6 +12,8 @@
 ![Workstream F](https://img.shields.io/badge/WORKSTREAM_F-CLOSED-16a34a?style=for-the-badge)
 ![Step 12](https://img.shields.io/badge/DGM_STEP_12-CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
 ![Lean R1](https://img.shields.io/badge/LEAN_R1-CLOSED_PASS-9333ea?style=for-the-badge)
+![Lean R2](https://img.shields.io/badge/LEAN_R2-CONVERSATIONAL_ADMISSION_CLOSED_PASS-7c3aed?style=for-the-badge)
+![Lean R3](https://img.shields.io/badge/LEAN_R3-HILBERT_JCP_SEPARATION_CLOSED_PASS-6d28d9?style=for-the-badge)
 ![Post A8 DGM](https://img.shields.io/badge/POST--A8_DGM_CORRESPONDENCE-PASS-c026d3?style=for-the-badge)
 ![Step 17](https://img.shields.io/badge/PUBLICATION_STEP_17-GREEN_COMPLETE-22c55e?style=for-the-badge)
 ![System Proof](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
@@ -102,6 +104,18 @@ flowchart TB
         WK -->|"bounded live observation"| BC
     end
 
+    subgraph R2["🟪 Lean R2 — Conversational Admission"]
+        R2P["R2 proof qualification<br/>OBJ-LR201<br/>6/6 kernel checked<br/>0 holes · 0/6 final axiom deps"]:::lean
+        R2C["R2 source/runtime correspondence<br/>OBJ-R2C01<br/>/api/chat identity boundary"]:::corr
+        R2P -->|"model/source crosswalk"| R2C
+    end
+
+    subgraph R3["🟪 Lean R3 — Hilbert/JCP Separation"]
+        R3P["R3 proof qualification<br/>OBJ-LR301<br/>14/14 kernel checked<br/>0 holes · 0/14 final axiom deps"]:::lean
+        R3C["R3 source/runtime correspondence<br/>OBJ-R3C01<br/>4-field JCP · H* nonadmission"]:::corr
+        R3P -->|"model/source crosswalk"| R3C
+    end
+
     subgraph S17["🌐 Publication Step 17"]
         P["Publication<br/>allis-publication-step6-retention-v2<br/>SHA d6ab6352…"]:::publication
         H["Direct + public HTTP<br/>body correspondence"]:::http
@@ -118,6 +132,10 @@ flowchart TB
     SEAL --> C
     L --> C
     BC --> C
+    R2P --> C
+    R2C --> C
+    R3P --> C
+    R3C --> C
     G --> C
 
     classDef source fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
@@ -154,7 +172,9 @@ Each source object belongs to a different bounded technical role.
 
 No source object silently inherits the authority of another.
 
-The later Lean R1 and post-A8 nodes are **successor evidence objects**, not replacements for the historical Step-12 source or final seal. The Lean object qualifies the translated formal proposition set; the post-A8 correspondence object revalidates the stable Step-12 source against a newer observed runtime epoch and theorem-specific live observations.
+The later Lean R1 and post-A8 nodes are **successor evidence objects**, not replacements for the historical Step-12 source or final seal. The Lean R1 object qualifies the translated Step-12 proposition set; the post-A8 correspondence object revalidates the stable Step-12 source against a newer observed runtime epoch and theorem-specific live observations.
+
+Lean R2 and Lean R3 are separate first-class proof-assistant qualification objects. R2 closes the bounded Conversational Admission theorem family; R3 closes the bounded current Hilbert/JCP Separation theorem family. Their implementation/runtime correspondence is represented by separate correspondence objects and does not rewrite R1, Step 12, or any historical seal.
 
 ---
 
@@ -189,6 +209,10 @@ A `PRODUCTION_SOURCE` is not automatically stronger than a `QUALIFIED_SOURCE`; i
 | `OBJ-A501` | A5 source anchor | `PROOF_SOURCE_ANCHOR` | `35f1aa5586e1a23e1ab88f4d757c451b44506893` | A5 / mathematical audit | **Qualified anchor** |
 | `OBJ-D1201` | Step-12 production DGM source | `PRODUCTION_SOURCE` | `20c8cbe175781c8a1c05d65c03977859ceca884a` | DGM Step 12 | **Closed bounded source** |
 | `OBJ-LR101` | Lean R1 proof-assistant qualification | `PROOF_ASSISTANT_QUALIFICATION` | proof commit `71ee78982c918145ca73850170a4c2a8a447170d` | Step-12 successor proof layer | **CLOSED / PASS** |
+| `OBJ-LR201` | Lean R2 Conversational Admission qualification | `PROOF_ASSISTANT_QUALIFICATION` | HEAD `c1a18b2e5fbe2e288d8b91dafe18668392bc787d` · tree `e325bfdd78cd6903dbfb3a8c15130af26de5cd9f` | Conversational Admission | **CLOSED / PASS · 6/6** |
+| `OBJ-R2C01` | R2 Conversational Admission source/runtime correspondence | `CORRESPONDENCE_REFERENCE_SET` | current `/api/chat` + Gateway identity boundary | Conversational Admission correspondence | **PASS · bounded current path** |
+| `OBJ-LR301` | Lean R3 Hilbert/JCP Separation qualification | `PROOF_ASSISTANT_QUALIFICATION` | HEAD `6f4a7de303e2d80c3d94a28a8d82e696387bf4b2` · tree `f5ffcb3fd693cbed60c1bd9dc966f868472707d4` | Hilbert/JCP Separation | **CLOSED / PASS · 14/14** |
+| `OBJ-R3C01` | R3 Hilbert/JCP source/runtime correspondence | `CORRESPONDENCE_REFERENCE_SET` | JCP AST `7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422` | Hilbert/JCP correspondence | **PASS · current four-field state** |
 | `OBJ-D12R01` | Post-A8 DGM theorem correspondence registry R1 | `CORRESPONDENCE_REFERENCE_SET` | `POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1` · source tree `8d0840f0…` | Step-12 successor correspondence | **PASS · current B/C correspondence verified** |
 | `OBJ-D1202` | Step-12 public trust object | `TRUST_OBJECT` | `4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5` | DGM Step 12 | **Correspondence PASS at final seal** |
 | `OBJ-D1203` | Step-12 governance view | `GOVERNANCE_OBJECT` | `26523c0bad40ff06a75c62a802f20195295534764dce45cfa6acdcdaecc3fcc2` | DGM Step 12 | **Correspondence PASS at final seal** |
@@ -430,6 +454,244 @@ Those historical statements remain true to the workstream's seal boundary.
 The later production implementation bridge is represented separately by `OBJ-D12R01`.
 
 See the [Lean R1 workstream closeout](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md).
+
+---
+
+# 🟪 `OBJ-LR201` — Lean R2 Conversational Admission qualification
+
+<div align="center">
+
+![Class](https://img.shields.io/badge/CLASS-PROOF_ASSISTANT_QUALIFICATION-9333ea?style=flat-square)
+![State](https://img.shields.io/badge/STATE-CLOSED_PASS-7c3aed?style=flat-square)
+
+</div>
+
+## Identity
+
+```text
+Branch:
+formal-verification/lean-conversational-admission-r2
+
+HEAD:
+c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+
+Tree:
+e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+
+Lean:
+4.34.0
+```
+
+## Role
+
+`OBJ-LR201` is the first-class proof-assistant qualification object for ordinary Conversational Admission.
+
+Final qualification:
+
+```text
+principal checks = 6 / 6
+proof holes = 0
+final theorem-level axiom dependencies = 0 / 6
+final propext dependencies = 0 / 6
+build jobs = 27
+```
+
+The accepted theorem family is:
+
+```text
+TCHAT_A_server_derived_authenticated_identity
+TCHAT_B_browser_identity_is_nonauthoritative
+TCHAT_C_canonical_scalar_user_id_not_invented
+TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated
+TCHAT_E_ordinary_chat_does_not_create_governance_authority
+TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
+```
+
+The qualification history preserves the initial `6/6` `propext` dependency failure and the final direct proof repair. Theorem statements, types, and intended semantics were preserved; proof bodies changed.
+
+## Evidence identities
+
+```text
+Evidence manifest SHA-256:
+fdeca0705e19b0a844ccaba6b933dff6a56d8f1cc198f33781cc006837c5e229
+
+Status SHA-256:
+38cb2f47826d2a407f66757eb01dd5f155322b67a1a2fdd9aad4b789a84ff898
+
+Source manifest SHA-256:
+21c33b72f21d1e3fb3e923fc7c761be298b9a5ea7f9dbf9cb4ab08da8d07a34b
+
+Final SHA-256:
+ab740bdcd95f501791d00966ab650412c9c8f1236f28fa614c532b8c3e1c3d30
+
+Final manifest SHA-256:
+7570c963c00ea40bd27cfd429847c003eac7aab03ee02c871b6b38b62e15e6cf
+```
+
+## Supported statement
+
+> **The bounded Conversational Admission theorem family is closed PASS under Lean 4.34.0 with six kernel-checked principal results, zero proof holes, and zero final theorem-level axiom dependencies.**
+
+## Scope boundary
+
+`OBJ-LR201` does not itself establish production source/runtime correspondence.
+
+That relationship is represented separately by `OBJ-R2C01`.
+
+---
+
+# 🟨 `OBJ-R2C01` — R2 Conversational Admission source/runtime correspondence
+
+<div align="center">
+
+![Class](https://img.shields.io/badge/CLASS-CORRESPONDENCE_REFERENCE_SET-ca8a04?style=flat-square)
+![State](https://img.shields.io/badge/STATE-PASS-16a34a?style=flat-square)
+
+</div>
+
+## Role
+
+`OBJ-R2C01` binds the accepted R2 model to the later qualified current implementation/runtime path.
+
+The bounded correspondence establishes:
+
+```text
+/api/chat authenticates before browser JSON identity can become authority
+
+authenticated_user is server-derived
+
+browser identity-like content is non-authoritative
+
+user_id remains null where no canonical scalar ID is established
+
+Gateway accepts authenticated_user
+
+process_unified does not read authenticated_user
+
+authenticated_user does not enter current JCP
+
+authenticated_user does not become downstream ensemble/synthesizer model input
+
+ordinary chat does not mint governance authority
+
+ordinary chat does not authorize H_people SECRET disclosure
+```
+
+## Supported statement
+
+> **The later qualified `/api/chat` and Gateway path preserves the bounded R2 conversational identity and nonauthority semantics at the observed source/runtime boundary.**
+
+## Scope boundary
+
+This correspondence is point-in-time and must be re-earned after claim-bearing changes to auth, `/api/chat`, Gateway payload semantics, `process_unified`, JCP composition, or downstream identity handling.
+
+---
+
+# 🟪 `OBJ-LR301` — Lean R3 Hilbert/JCP Separation qualification
+
+<div align="center">
+
+![Class](https://img.shields.io/badge/CLASS-PROOF_ASSISTANT_QUALIFICATION-9333ea?style=flat-square)
+![State](https://img.shields.io/badge/STATE-CLOSED_PASS-7c3aed?style=flat-square)
+
+</div>
+
+## Identity
+
+```text
+Branch:
+formal-verification/hilbert-jcp-separation-r3
+
+HEAD:
+6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+
+Tree:
+f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+
+Principal source:
+HilbertJcpSeparationR3.lean
+```
+
+## Role
+
+`OBJ-LR301` is the first-class proof-assistant qualification object for the current Hilbert/JCP Separation domain.
+
+Final qualification:
+
+```text
+principal checks = 14 / 14
+proof holes = 0
+final theorem-level axiom dependencies = 0 / 14
+final propext dependencies = 0 / 14
+```
+
+The qualification history preserves the initial `11/14` `propext` dependency state and the later computational/Bool-oriented repair. The architectural claims were preserved while the formal expression was reworked.
+
+## Supported statement
+
+> **The bounded current Hilbert/JCP Separation domain is closed PASS with fourteen kernel-checked checks, zero proof holes, and zero final theorem-level axiom dependencies.**
+
+## Scope boundary
+
+R3 closes the **current separation state**. It does not prove future live H_geo admission, complete H384 formalization, or that named H_* objects are automatically linear subspaces.
+
+---
+
+# 🟨 `OBJ-R3C01` — R3 Hilbert/JCP source/runtime correspondence
+
+<div align="center">
+
+![Class](https://img.shields.io/badge/CLASS-CORRESPONDENCE_REFERENCE_SET-ca8a04?style=flat-square)
+![State](https://img.shields.io/badge/STATE-PASS-16a34a?style=flat-square)
+
+</div>
+
+## Identity
+
+Current/candidate JCP AST SHA-256:
+
+```text
+7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+```
+
+Current JCP builder:
+
+```text
+build_judge_context_v2
+```
+
+## Current exact field set
+
+```text
+schema_version
+request_context
+approved_evidence
+wv_deliberative_context
+```
+
+## Current admission state
+
+```text
+H_geo current JCP admission = NO
+H_p current JCP admission = NO
+H_people current JCP admission = NO
+
+STATIC_H_GEO_PATH_QUALIFIED = YES
+```
+
+## Supported statement
+
+> **The qualified/current JCP implementation corresponds to the R3 four-field nonadmission model while preserving the separately qualified static H_geo path.**
+
+## Scope boundary
+
+```text
+static H_geo qualification
+    ≠
+live H_geo JCP admission
+```
+
+A future successor schema requires separate formal, source, runtime, and authority qualification.
 
 ---
 
@@ -815,6 +1077,10 @@ flowchart LR
     M["📐 Step-12 formal model"]:::model
     S["💻 Sealed Step-12 source set<br/>OBJ-D1201"]:::source
     L["🟪 Lean R1<br/>OBJ-LR101"]:::lean
+    R2P["🟪 Lean R2<br/>OBJ-LR201"]:::lean
+    R2C["🟨 R2 source/runtime<br/>OBJ-R2C01"]:::corr
+    R3P["🟪 Lean R3<br/>OBJ-LR301"]:::lean
+    R3C["🟨 R3 source/runtime<br/>OBJ-R3C01"]:::corr
     X["🟨 Post-A8 correspondence<br/>OBJ-D12R01"]:::corr
     N0["🖥️ Step-12 NBB runtime observation"]:::runtime
     W0["👷 Step-12 worker runtime observation"]:::runtime
@@ -829,6 +1095,8 @@ flowchart LR
 
     M -->|"model → source"| S
     M -->|"formal-statement crosswalk"| L
+    R2P -->|"model/source/runtime correspondence"| R2C
+    R3P -->|"model/source/runtime correspondence"| R3C
     S -->|"historical Step-12 11/11"| N0
     S -->|"historical Step-12 11/11"| W0
     S -->|"stable source identity"| X
@@ -871,6 +1139,10 @@ flowchart LR
 | `EDGE-10` | `OBJ-D1201` stable source set | Post-A8 worker runtime source | **11/11 PASS** | Successor post-A8 point-in-time source → runtime |
 | `EDGE-11` | Post-A8 NBB/worker runtime | `T12D-B` live observation | **PASS** | Invalid authorization fail-closed observation |
 | `EDGE-12` | Post-A8 worker runtime | `T12D-C` live observation | **PASS** | Empty-spool non-application observation |
+| `EDGE-13` | R2 formal theorem family | `OBJ-LR201` | **DOCUMENTED / KERNEL CHECKED** | Conversational Admission formal qualification |
+| `EDGE-14` | `OBJ-LR201` | `OBJ-R2C01` | **PASS** | R2 formal model → current `/api/chat` / Gateway source-runtime correspondence |
+| `EDGE-15` | R3 formal check family | `OBJ-LR301` | **DOCUMENTED / KERNEL CHECKED** | Hilbert/JCP Separation formal qualification |
+| `EDGE-16` | `OBJ-LR301` | `OBJ-R3C01` | **PASS** | R3 formal model → current JCP/static-H_geo source-runtime correspondence |
 
 > [!IMPORTANT]
 > `EDGE-02` and `EDGE-03` remain the historical Step-12 runtime-correspondence edges. `EDGE-09` and `EDGE-10` are later successor observations of the same stable theorem-relevant source identity against a newer runtime epoch. The historical edges are not rewritten or deleted.
@@ -907,6 +1179,30 @@ It does not assert:
 Lean R1 proof-assistant qualification
     ⇒
 automatic production-source or runtime correspondence
+```
+
+It does not assert:
+
+```text
+Lean R2 conversational-admission qualification
+    ⇒
+automatic permanent frontend/auth/runtime correspondence
+```
+
+It does not assert:
+
+```text
+Lean R3 Hilbert/JCP separation qualification
+    ⇒
+future live H_geo admission
+```
+
+It does not assert:
+
+```text
+named H_* object
+    ⇒
+proved linear subspace
 ```
 
 It does not assert:
@@ -983,6 +1279,8 @@ The validation level belongs to the **claim and evidence relationship**, not to 
 | ✅ **Workstream F** | `CLOSED` | `OBJ-F01` | Bounded acceptance close |
 | 🔐 **DGM Step 12** | `GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS` | `OBJ-D1201`–`OBJ-D1204` | Historical bounded authorized-adoption formal/correspondence package |
 | 🟪 **Lean R1** | `CLOSED / PASS` | `OBJ-LR101` | Later proof-assistant qualification of the principal Step-12 result set |
+| 🟪 **Lean R2 — Conversational Admission** | `CLOSED / PASS` | `OBJ-LR201`, `OBJ-R2C01` | 6/6 kernel-checked conversational-admission results + bounded current implementation/runtime correspondence |
+| 🟪 **Lean R3 — Hilbert/JCP Separation** | `CLOSED / PASS` | `OBJ-LR301`, `OBJ-R3C01` | 14/14 kernel-checked current JCP/Hilbert-separation results + bounded current implementation/runtime correspondence |
 | 🟨 **Post-A8 DGM correspondence** | `PASS` | `OBJ-D12R01` | Successor current source/runtime + theorem-specific B/C revalidation |
 | 🌐 **Publication Step 17** | `GREEN_COMPLETE` | `OBJ-P1701`–`OBJ-P1703` | Bounded governed-publication fixed goal |
 
@@ -1011,6 +1309,10 @@ The manifest supports the following current top-level statements.
 | Workstream F is closed | `OBJ-F01` + Workstream-F close |
 | The bounded Step-12 authorized-adoption workstream is closed with explicit residuals | `OBJ-D1201`–`OBJ-D1204` |
 | The principal Step-12 result set later received Lean-kernel qualification | `OBJ-LR101` + Lean R1 closeout |
+| The bounded Conversational Admission theorem family is qualified | `OBJ-LR201` + R2 qualification/closeout |
+| Current `/api/chat` / Gateway identity handling corresponds to the bounded R2 model | `OBJ-R2C01` + R2 source-to-runtime correspondence |
+| The bounded current Hilbert/JCP Separation theorem family is qualified | `OBJ-LR301` + R3 qualification/closeout |
+| Current JCP source/runtime corresponds to the R3 four-field nonadmission model | `OBJ-R3C01` + R3 source-to-runtime correspondence |
 | T12D-B and T12D-C are currently correspondence-verified | `OBJ-D12R01` + current post-A8 11/11 source/runtime correspondence + theorem-specific live observations |
 | T12D-A remains machine-checked, not correspondence-verified | `OBJ-LR101` + `OBJ-D12R01`; positive authorized apply not executed |
 | P12C-09 is disproven and the negative result is preserved | Step-12 counterexample record + `OBJ-LR101` Lean-kernel-checked disproof |
@@ -1021,6 +1323,38 @@ The manifest supports the following current top-level statements.
 | `SYSTEM_PROVEN=NO` | Step-12 residual/non-promotion boundary |
 
 The manifest does not support stronger whole-system claims.
+
+---
+
+# 🟪 First-class proof-assistant qualification state
+
+The current composite manifest now contains three distinct first-class Lean workstreams:
+
+```text
+Lean R1 — Authorized Production Adoption
+Lean R2 — Conversational Admission
+Lean R3 — Hilbert/JCP Separation
+```
+
+Their bounded principal-check totals are:
+
+```text
+R1 principal checks = 4
+R2 principal checks = 6
+R3 principal checks = 14
+
+TOTAL_NAMED_PRINCIPAL_CHECKS = 24
+```
+
+All three workstreams preserve zero proof holes in their final accepted states. R2 and R3 additionally preserve zero final theorem-level axiom dependencies across all 20 of their principal checks, while R1 preserves its independently qualified principal theorem/disproof set.
+
+This does **not** collapse the three workstreams into one theorem:
+
+```text
+R1 + R2 + R3
+    ≠
+whole-system proof
+```
 
 ---
 
@@ -1048,7 +1382,7 @@ The public manifest contains **no current H_people runtime object**.
 
 That omission is deliberate.
 
-The current public record supports the architectural private-state boundary:
+The current public record supports the architectural private-state boundary. Lean R2 now provides a first-class formal result that ordinary authenticated conversation does not authorize H_people SECRET disclosure, while Lean R3 separately records that H_people is not currently admitted to the four-field JCP:
 
 ```text
 person-linked state exists
@@ -1239,6 +1573,48 @@ allis_current_system_manifest:
       role: step12_principal_result_set_lean_r1
       state: CLOSED_PASS
 
+    - id: OBJ-LR201
+      class: PROOF_ASSISTANT_QUALIFICATION
+      head: c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+      tree: e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+      lean_toolchain: leanprover/lean4:v4.34.0
+      role: conversational_admission_r2
+      state: CLOSED_PASS
+      principal_checks: 6
+      proof_holes: 0
+      final_theorem_level_axiom_dependencies: 0
+
+    - id: OBJ-R2C01
+      class: CORRESPONDENCE_REFERENCE_SET
+      role: conversational_admission_r2_source_runtime
+      state: PASS
+      authenticated_user_source: SERVER_DERIVED
+      user_id_when_unestablished: null
+      downstream_model_input: false
+      governance_authority: false
+
+    - id: OBJ-LR301
+      class: PROOF_ASSISTANT_QUALIFICATION
+      head: 6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+      tree: f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+      role: hilbert_jcp_separation_r3
+      state: CLOSED_PASS
+      principal_checks: 14
+      proof_holes: 0
+      final_theorem_level_axiom_dependencies: 0
+
+    - id: OBJ-R3C01
+      class: CORRESPONDENCE_REFERENCE_SET
+      role: hilbert_jcp_separation_r3_source_runtime
+      state: PASS
+      jcp_builder: build_judge_context_v2
+      jcp_ast_sha256: 7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+      jcp_top_level_field_count: 4
+      H_geo_current_jcp_admission: false
+      H_p_current_jcp_admission: false
+      H_people_current_jcp_admission: false
+      static_H_geo_qualified: true
+
     - id: OBJ-D12R01
       class: CORRESPONDENCE_REFERENCE_SET
       identity: POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1
@@ -1294,6 +1670,10 @@ allis_current_system_manifest:
     - step12_source_to_nbb_runtime_historical
     - step12_source_to_worker_runtime_historical
     - step12_formal_statements_to_lean_r1
+    - conversational_admission_formal_to_lean_r2
+    - lean_r2_to_current_conversational_source_runtime
+    - hilbert_jcp_formal_to_lean_r3
+    - lean_r3_to_current_jcp_source_runtime
     - step12_source_to_post_a8_nbb_runtime
     - step12_source_to_post_a8_worker_runtime
     - post_a8_runtime_to_t12d_b_live_observation
@@ -1333,6 +1713,24 @@ allis_current_system_manifest:
 - [`../formal-verification/authorized-adoption/counterexample-registry.md`](../formal-verification/authorized-adoption/counterexample-registry.md)
 - [`../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md`](../formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
 
+## Conversational Admission R2
+
+- [`../formal-verification/conversational-admission/workstream-closeout-r2.md`](../formal-verification/conversational-admission/workstream-closeout-r2.md)
+- [`../formal-verification/conversational-admission/theorem-registry.md`](../formal-verification/conversational-admission/theorem-registry.md)
+- [`../evidence/conversational-admission/r2-qualification.md`](../evidence/conversational-admission/r2-qualification.md)
+- [`../correspondence/conversational-admission/model-to-source.md`](../correspondence/conversational-admission/model-to-source.md)
+- [`../correspondence/conversational-admission/source-to-runtime.md`](../correspondence/conversational-admission/source-to-runtime.md)
+- [`closeout/lean-conversational-admission-r2-close.md`](closeout/lean-conversational-admission-r2-close.md)
+
+## Hilbert/JCP Separation R3
+
+- [`../formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md`](../formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md)
+- [`../formal-verification/hilbert-jcp-separation/theorem-registry.md`](../formal-verification/hilbert-jcp-separation/theorem-registry.md)
+- [`../evidence/hilbert-jcp-separation/r3-qualification.md`](../evidence/hilbert-jcp-separation/r3-qualification.md)
+- [`../correspondence/hilbert-jcp-separation/model-to-source.md`](../correspondence/hilbert-jcp-separation/model-to-source.md)
+- [`../correspondence/hilbert-jcp-separation/source-to-runtime.md`](../correspondence/hilbert-jcp-separation/source-to-runtime.md)
+- [`closeout/lean-hilbert-jcp-separation-r3-close.md`](closeout/lean-hilbert-jcp-separation-r3-close.md)
+
 ## Step-12 correspondence
 
 - [`../correspondence/README.md`](../correspondence/README.md)
@@ -1367,7 +1765,7 @@ allis_current_system_manifest:
    A later workstream may build on an earlier close without rewriting its bounded result.
 
 5. **Represent successor evidence as successor objects and edges.**  
-   Later proof-assistant qualification or renewed runtime correspondence must not silently replace the historical source, seal, or observation it builds upon.
+   Later proof-assistant qualification or renewed runtime correspondence must not silently replace the historical source, seal, or observation it builds upon. Lean R2 and R3 therefore appear as their own first-class objects rather than being folded into Lean R1.
 
 6. **Issue new identities after claim-bearing changes.**  
    Changed source, trust, governance, publication, frontend, or authorization semantics may require requalification.
@@ -1396,6 +1794,12 @@ allis_current_system_manifest:
 ### 🟪 `OBJ-LR101`
 **Lean R1 · CLOSED / PASS**
 
+### 🟪 `OBJ-LR201` + 🟨 `OBJ-R2C01`
+**Lean R2 Conversational Admission · CLOSED / PASS · 6/6 · current bounded correspondence PASS**
+
+### 🟪 `OBJ-LR301` + 🟨 `OBJ-R3C01`
+**Lean R3 Hilbert/JCP Separation · CLOSED / PASS · 14/14 · current bounded correspondence PASS**
+
 ### 🟨 `OBJ-D12R01`
 **Post-A8 DGM correspondence · PASS · current B/C correspondence verified**
 
@@ -1405,7 +1809,7 @@ allis_current_system_manifest:
 <br>
 
 ### 🔗 Explicit correspondence
-**model → source · historical Step-12 source → runtime · formal statements → Lean R1 · post-A8 source → current runtime · current runtime → B/C live observations · trust → runtime · governance → runtime · publication → public HTTP → GUI**
+**model → source · historical Step-12 source → runtime · formal statements → Lean R1 · R2 formal → current conversational source/runtime · R3 formal → current JCP/static-H_geo source/runtime · post-A8 source → current runtime · current runtime → B/C live observations · trust → runtime · governance → runtime · publication → public HTTP → GUI**
 
 <br>
 
@@ -1431,3 +1835,5 @@ allis_current_system_manifest:
 > **A closed workstream does not imply whole-system proof.**
 
 > **The current ALLIS technical record is a composite of qualified objects and established correspondence.**
+>
+> **Lean R1, Lean R2, and Lean R3 are separate first-class proof-assistant qualification objects with separate bounded scopes and correspondence records.**
