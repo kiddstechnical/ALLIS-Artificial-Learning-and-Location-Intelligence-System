@@ -8,7 +8,9 @@
 
 ![Architecture](https://img.shields.io/badge/ARCHITECTURE-PRIVATE_STATE-7c3aed?style=for-the-badge)
 ![H People](https://img.shields.io/badge/H__people-PROTECTED-ec4899?style=for-the-badge)
+![R2 Boundary](https://img.shields.io/badge/LEAN_R2-SECRET_DISCLOSURE_BOUNDARY-9333ea?style=for-the-badge)
 ![Disclosure](https://img.shields.io/badge/DISCLOSURE-SEPARATELY_AUTHORIZED-f59e0b?style=for-the-badge)
+![Location](https://img.shields.io/badge/KYC_LOCATION-SECRET_BY_DEFAULT-0284c7?style=for-the-badge)
 ![Durable Packet](https://img.shields.io/badge/DURABLE_PACKET-PRIVATE_CONTENT_EXCLUDED-14b8a6?style=for-the-badge)
 ![Runtime](https://img.shields.io/badge/CURRENT_RUNTIME_AUTHORITY-NOT_PROMOTED-64748b?style=for-the-badge)
 
@@ -26,6 +28,8 @@
 > Private state does not become ordinary computational context, durable common state, public evidence, or publishable state merely because it exists or because a caller claims an identity.
 >
 > The boundary requires independently established identity and use authority, separately enforced disclosure authority, temporal and retention validity, recipient scope, purpose scope, provenance, and minimization before any private derivative can cross.
+>
+> **Lean R2 now formally establishes a narrower conversational boundary: ordinary authenticated conversation does not itself create governance authority and does not itself authorize H_people SECRET disclosure.** Authentication may establish who is speaking; it does not convert protected identity/KYC state into ordinary conversational disclosure authority.
 
 ---
 
@@ -83,7 +87,9 @@ This document intentionally describes:
 - recipient-specific private projection;
 - retention and staging boundaries;
 - fail-closed behavior;
-- historical/current separation.
+- historical/current separation;
+- the Lean R2 ordinary-conversation disclosure boundary;
+- the planned protected-location contextual-use boundary, under which precise KYC location remains SECRET while only a minimum-necessary authorized geographic derivative may inform conversation.
 
 It intentionally does **not** publish:
 
@@ -103,7 +109,7 @@ It intentionally does **not** publish:
 
 ---
 
-# 🧱 Six separations that define H_people
+# 🧱 Seven separations that define H_people
 
 The architecture begins with six non-equivalences.
 
@@ -143,7 +149,15 @@ private continuity available to one authorized recipient
 private continuity available to every downstream system
 ```
 
+```text
+authenticated ordinary conversation
+    ≠
+H_people SECRET disclosure authority
+```
+
 These are the H_people boundary.
+
+The seventh separation is now supported by the qualified Lean R2 conversational-admission theorem family. It does not mean that authentication is unimportant. It means authentication and SECRET disclosure authority are different predicates with different evidence and authority requirements.
 
 ---
 
@@ -168,6 +182,66 @@ The architectural purpose is narrower:
 preserve useful private continuity
 without converting private state into shared state
 ```
+
+---
+
+# 🧭 H_people conversational tiers
+
+The current architecture distinguishes three conversational tiers for person-linked context.
+
+```text
+SECRET
+PRIVATE
+PUBLIC
+```
+
+These tiers are disclosure and use boundaries. They are not interchangeable storage labels and they do not imply that every tier is currently admitted to every runtime path.
+
+## SECRET
+
+`SECRET` contains protected identity-correspondence, KYC, custody/legal-process, precise-location, and comparable material whose existence or contents must not be exposed through ordinary conversation merely because a session is authenticated.
+
+Examples can include:
+
+- precise KYC location;
+- protected identity correspondence;
+- direct identity-binding material;
+- protected legal/custody correspondence;
+- other records whose disclosure requires a separately established authority class.
+
+```text
+authenticated
+    ≠
+SECRET disclosure authorized
+```
+
+## PRIVATE
+
+`PRIVATE` is the bounded conversational tier that may contain or receive a minimized derivative of protected state when the applicable identity, use, recipient, purpose, temporal, and disclosure rules permit that use.
+
+A private conversational projection can therefore be useful without carrying the underlying SECRET record itself.
+
+```text
+SECRET source state
+    ↓
+minimum-necessary authorized derivative
+    ↓
+PRIVATE conversational context
+```
+
+## PUBLIC
+
+`PUBLIC` contains information separately intended or authorized for public use.
+
+Private or SECRET state does not become PUBLIC because it was useful to a conversation.
+
+```text
+used internally
+    ≠
+publicly disclosable
+```
+
+The tier boundary is therefore compatible with contextual recognition while preserving the underlying disclosure restriction.
 
 ---
 
@@ -245,6 +319,56 @@ flowchart TD
 ```
 
 No verified identity means no private continuity query.
+
+---
+
+# ✅ Lean R2 formalizes the ordinary-conversation boundary
+
+The qualified Lean R2 conversational-admission workstream adds a formal boundary that this architecture previously expressed only as design intent.
+
+The two directly relevant R2 results are:
+
+```text
+TCHAT-E
+ordinary authenticated chat does not create governance authority
+```
+
+and:
+
+```text
+TCHAT-F
+ordinary authenticated chat does not authorize H_people SECRET disclosure
+```
+
+The formal meaning is intentionally bounded.
+
+```text
+authenticated ordinary chat admitted
+    ≠
+governance authority created
+```
+
+```text
+authenticated ordinary chat admitted
+    ≠
+SECRET disclosure authorized
+```
+
+This is stronger than an architectural slogan because the proposition family has been Lean-kernel checked under the qualified R2 proof workstream. It still does not mean that every future frontend, every future identity implementation, or every future H_people runtime path is automatically correspondence-verified.
+
+The evidence layers remain separate:
+
+```text
+Lean theorem
+    ↓
+model-to-source correspondence
+    ↓
+source-to-runtime identity
+    ↓
+relevant bounded live observation
+```
+
+The theorem constrains what may be claimed about the formal admission boundary. It does not itself mint disclosure authority or production authority.
 
 ---
 
@@ -550,9 +674,9 @@ The private projection is **not** a common packet field.
 
 ---
 
-# 🧠 Private projection and Ms. Allis / model context
+# 🧠 Private projection and authorized conversational context
 
-A private projection can support bounded conversational continuity for an authorized intelligence recipient.
+A private projection can support bounded conversational continuity for an authorized intelligence recipient within ALLIS.
 
 That does not make private continuity:
 
@@ -1059,6 +1183,72 @@ The current public boundary does not treat H_geo as a general H_people recipient
 
 ---
 
+# 📍 Protected KYC location can inform conversation without becoming disclosure
+
+The planned protected-location behavior is a specific application of minimization.
+
+Precise KYC location remains in the `SECRET` tier. It is not ordinary conversational content and it is not copied into common state merely because location is relevant to a request.
+
+```text
+precise KYC location
+    =
+SECRET
+```
+
+Where location is legitimately useful to the conversation, the private-state boundary may produce only the smallest authorized derivative needed for that conversational purpose.
+
+Examples of a minimized derivative can include, where policy permits:
+
+- relevant locality;
+- jurisdiction;
+- general region;
+- nearby-place context;
+- a request-specific geographic relationship.
+
+The intended behavior is:
+
+```text
+SECRET precise location
+    ↓
+verified subject relationship
+    ↓
+authorized contextual use
+    ↓
+minimum-necessary geographic derivative
+    ↓
+PRIVATE conversational context
+```
+
+not:
+
+```text
+SECRET precise location
+    ↓
+ordinary chat transcript / common packet / public answer
+```
+
+The governing distinction is:
+
+```text
+location used for authorized contextual recognition
+    ≠
+location disclosed
+```
+
+and:
+
+```text
+location recognized
+    ≠
+location copied into H_geo
+```
+
+The purpose is human-like contextual recognition: the system may understand which locality, jurisdiction, or nearby context is relevant without announcing or broadly propagating the precise protected location that supported that recognition.
+
+This section is a **planned architectural behavior**, not a claim that the full protected-location runtime path has already been qualified. Its future qualification must separately establish source semantics, runtime correspondence, minimization, non-disclosure, and negative tests.
+
+---
+
 # 🌐 Public RAG is outside the private boundary
 
 Public retrieval and public knowledge paths should use public/approved sources.
@@ -1332,26 +1522,53 @@ Private continuity must not enter common/public lanes automatically.
 ```
 
 ```text
-Current H_people runtime authority is not promoted from historical runtime evidence.
+Lean R2 formally establishes that ordinary authenticated conversation
+does not create governance authority.
 ```
 
-It does **not** support:
+```text
+Lean R2 formally establishes that ordinary authenticated conversation
+does not itself authorize H_people SECRET disclosure.
+```
 
 ```text
-current H_people runtime correspondence = established
+Precise KYC location is planned to remain SECRET while an authorized
+minimum-necessary geographic derivative may inform PRIVATE conversational context.
+```
+
+The protected-location statement above is an architectural plan, not a completed runtime-correspondence claim.
+
+The current public architecture does **not** support:
+
+```text
+ordinary chat authentication = H_people SECRET disclosure authority
 ```
 
 or:
 
 ```text
-historical auth service = current active private-state authority
+precise KYC location = ordinary conversational content
 ```
 
 or:
 
 ```text
-private continuity is currently available to every ALLIS interaction
+protected location contextual use = permission to disclose the underlying precise location
 ```
+
+or:
+
+```text
+future protected-location runtime correspondence = established
+```
+
+or, solely from the historical evidence preserved in this document:
+
+```text
+historical auth service = current universal private-state authority
+```
+
+The formal R2 boundary and the future protected-location implementation therefore remain different evidence classes.
 
 ---
 
@@ -1484,6 +1701,28 @@ BBB / W&V / Bridge / Synthesizer / public RAG / H_geo / research / public eviden
     → no private derivative
 ```
 
+## Protected-location tests
+
+```text
+precise KYC location
+    → remains SECRET
+
+authorized contextual use
+    → only minimum-necessary geographic derivative
+
+ordinary conversational response
+    → does not disclose precise location unless separately authorized
+
+common packet / public evidence / public RAG
+    → no precise KYC location
+
+H_geo
+    → does not receive precise KYC location merely because geographic context is useful
+
+missing location-use authority
+    → no protected-location projection
+```
+
 ---
 
 # 🧪 Negative tests are first-class evidence
@@ -1502,7 +1741,11 @@ Examples:
 - restricted records are not projected;
 - expired/revoked records are excluded;
 - staging does not auto-promote;
-- public lanes receive no private derivative.
+- public lanes receive no private derivative;
+- ordinary authenticated conversation alone cannot authorize H_people SECRET disclosure;
+- precise KYC location does not appear in ordinary conversational output without separate disclosure authority;
+- a minimized geographic derivative does not carry the underlying precise location;
+- H_geo does not become a sink for precise KYC location merely because geographic context is relevant.
 
 These are containment claims.
 
@@ -1591,19 +1834,52 @@ This allows observability without disclosure.
 
 # 🧠 H_people and ordinary conversation
 
-The architecture allows a future authorized system to use private continuity to improve conversational continuity.
+Ordinary authenticated conversation now has a qualified formal boundary under Lean R2.
 
-But the private data remains:
+The relevant formal result is not that H_people is generally available to ordinary chat. The result is narrower and more important:
+
+```text
+ordinary authenticated conversation
+    ≠
+H_people SECRET disclosure authority
+```
+
+R2 also preserves:
+
+```text
+ordinary authenticated conversation
+    ≠
+governance authority
+```
+
+That means authentication can support identity-aware admission while the H_people SECRET tier remains separately protected.
+
+Where a future qualified path permits private continuity, the private data remains:
 
 ```text
 non-public
 recipient-specific
 purpose-specific
 request-bounded
+minimized
 non-evidentiary for public claims
 ```
 
-That means an intelligence layer can use private continuity to understand context without treating the continuity itself as publicly provable fact.
+For protected location, the intended conversational model is:
+
+```text
+precise KYC location remains SECRET
+
+minimum-necessary authorized geographic derivative
+    may inform PRIVATE conversational context
+
+ordinary response
+    does not automatically disclose the precise location
+```
+
+Thus an intelligence layer may recognize relevant personal context without treating the protected source state as ordinary shared conversation content.
+
+The future runtime work must demonstrate this behavior rather than infer it from the architecture alone.
 
 ---
 
@@ -1774,7 +2050,28 @@ and:
 
 ```text
 PRIV-002:
-historical Gate05c evidence is not current H_people runtime authority
+historical bounded H_people evidence does not silently become
+universal current private-state authority
+```
+
+and the R2 conversational-admission boundary:
+
+```text
+CHAT / R2:
+ordinary authenticated conversation does not create governance authority
+```
+
+```text
+CHAT / R2:
+ordinary authenticated conversation does not authorize H_people SECRET disclosure
+```
+
+The protected-location architecture should remain explicitly prospective until qualified:
+
+```text
+PLANNED:
+precise KYC location remains SECRET; only an authorized minimum-necessary
+geographic derivative may inform PRIVATE conversational context
 ```
 
 The corresponding nonclaims include:
@@ -1789,6 +2086,18 @@ identity authority
 identity authority
     ≠
 disclosure authority
+```
+
+```text
+authenticated chat
+    ≠
+SECRET disclosure authority
+```
+
+```text
+location used for context
+    ≠
+location disclosed
 ```
 
 ```text
@@ -1837,6 +2146,8 @@ SYSTEM_PROVEN=NO
 
 A strong privacy architecture is not a substitute for whole-system formal proof.
 
+Likewise, the qualified R2 conversational-admission theorem family does not by itself prove every H_people runtime path, and the protected-location design remains prospective until its source/runtime and non-disclosure behavior are separately qualified.
+
 ---
 
 # 📦 Normalized architecture model
@@ -1853,9 +2164,27 @@ h_people_private_state_boundary:
     information_exists_equals_identity_established: false
     identity_equals_use_authority: false
     use_authority_equals_disclosure_authority: false
+    authenticated_chat_equals_secret_disclosure_authority: false
     disclosure_authority_equals_retention_authority: false
     retention_authority_equals_publication_authority: false
     one_recipient_authority_equals_all_recipient_authority: false
+
+  conversational_tiers:
+    secret:
+      ordinary_chat_disclosure_authority: false
+      precise_kyc_location: protected
+      identity_correspondence: protected
+    private:
+      minimized_authorized_derivative_allowed: true
+      request_bounded: true
+      recipient_specific: true
+    public:
+      separately_authorized_public_use_only: true
+
+  lean_r2_boundary:
+    ordinary_chat_creates_governance_authority: false
+    ordinary_chat_authorizes_hpeople_secret_disclosure: false
+    theorem_layer_is_runtime_authority: false
 
   inward_authority:
     require_independently_verified_identity: true
@@ -1878,6 +2207,16 @@ h_people_private_state_boundary:
     minimized: true
     public_evidence: false
     common_packet_content: false
+
+  protected_location_context:
+    status: PLANNED_NOT_YET_RUNTIME_QUALIFIED
+    precise_location_tier: SECRET
+    ordinary_chat_may_disclose_precise_location_by_default: false
+    authorized_minimum_necessary_derivative_may_inform_private_conversation: true
+    contextual_use_equals_disclosure: false
+    copy_precise_location_to_h_geo_by_default: false
+    copy_precise_location_to_common_packet: false
+    copy_precise_location_to_public_rag: false
 
   prohibited_default_recipients:
     common_packet: true
@@ -1944,8 +2283,10 @@ h_people_private_state_boundary:
   current_claim_boundary:
     private_state_architecture_defined: true
     historical_hpeople_evidence_exists: true
-    current_hpeople_runtime_authority_promoted: false
-    current_hpeople_runtime_correspondence_established: false
+    lean_r2_ordinary_chat_no_governance_authority: true
+    lean_r2_ordinary_chat_no_secret_disclosure_authority: true
+    protected_location_runtime_qualified: false
+    current_hpeople_runtime_authority_promoted_from_historical_evidence: false
 
   system_boundary:
     production_mutation_safety_theorem_proven: false
@@ -2024,6 +2365,10 @@ h_people_private_state_boundary:
 
 # **IDENTITY ≠ DISCLOSURE AUTHORITY**
 
+# **AUTHENTICATED CHAT ≠ SECRET DISCLOSURE AUTHORITY**
+
+# **LOCATION USED FOR CONTEXT ≠ LOCATION DISCLOSED**
+
 # **DISCLOSURE ≠ RETENTION AUTHORITY**
 
 # **HISTORICAL RUNTIME ≠ CURRENT RUNTIME AUTHORITY**
@@ -2041,6 +2386,12 @@ h_people_private_state_boundary:
 > **Caller-provided identity claims are not identity authority.**
 
 > **Identity authority does not create disclosure authority.**
+
+> **Lean R2 establishes that ordinary authenticated conversation does not itself authorize H_people SECRET disclosure.**
+
+> **Precise KYC location remains SECRET by default; an authorized minimum-necessary geographic derivative may inform private conversation without converting the underlying location into ordinary conversational disclosure.**
+
+> **Using protected location for contextual recognition does not authorize copying the precise location into common state, H_geo, public evidence, or public output.**
 
 > **Disclosure authority does not create retention authority.**
 
