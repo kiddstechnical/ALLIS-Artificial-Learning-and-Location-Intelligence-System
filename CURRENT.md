@@ -4,239 +4,158 @@
 
 ### Current qualified technical state
 
-**Status as of September 25, 2026**
+**Status as of October 3, 2026**
 
 <br>
 
-![Current Record](https://img.shields.io/badge/CURRENT_STATE-QUALIFIED-7c3aed?style=for-the-badge)
-![Workstream F](https://img.shields.io/badge/WORKSTREAM_F-CLOSED-16a34a?style=for-the-badge)
-![DGM Step 12](https://img.shields.io/badge/DGM_STEP_12-CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
-![Publication Step 17](https://img.shields.io/badge/PUBLICATION_STEP_17-GREEN_COMPLETE-22c55e?style=for-the-badge)
+![Current Record](https://img.shields.io/badge/CURRENT_STATE-OCTOBER_2026-7c3aed?style=for-the-badge)
+![Lean R1](https://img.shields.io/badge/LEAN_R1-CLOSED_PASS-9333ea?style=for-the-badge)
+![Lean R2](https://img.shields.io/badge/LEAN_R2-CLOSED_PASS-7c3aed?style=for-the-badge)
+![Lean R3](https://img.shields.io/badge/LEAN_R3-CLOSED_PASS-6d28d9?style=for-the-badge)
+![Frontend](https://img.shields.io/badge/FRONTEND-PRODUCTION_CUTOVER-0ea5e9?style=for-the-badge)
+![Gateway](https://img.shields.io/badge/GATEWAY-PRODUCTION_CUTOVER-22c55e?style=for-the-badge)
+![Browser](https://img.shields.io/badge/BROWSER_E2E-NOT_YET_DEMONSTRATED-f59e0b?style=for-the-badge)
 ![Whole System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
 
-**Kidd’s Technical Services · ALLIS**
+**Kidd's Technical Services · ALLIS**
 
 </div>
 
 ---
 
 > [!IMPORTANT]
-> `CURRENT.md` summarizes the qualified state of ALLIS.
+> `CURRENT.md` is the concise present-tense technical state of ALLIS.
 >
-> It shows which workstreams are closed, which results are verified, which runtime observations are time-specific, and which claims remain outside the current scope.
+> It is intentionally downstream of the detailed acceptance, evidence, correspondence, and closeout records.
+>
+> The current technical record now includes three first-class Lean workstreams:
+>
+> ```text
+> R1 — Authorized Production Adoption
+> R2 — Conversational Admission
+> R3 — Hilbert/JCP Separation
+> ```
+>
+> The current conversational server path is production-qualified and observed through the Unified Gateway to synthesis.
+>
+> The current browser user-facing E2E path has **not** yet been separately demonstrated.
+>
+> ```text
+> SYSTEM_PROVEN=NO
+> ```
 
 ---
 
-# 👀 Status at a glance
+# 1. October state at a glance
 
-| Scope | Status | What the status means |
+| Scope | Current state | Meaning |
 |---|---|---|
-| 🟢 **Workstream F** | **CLOSED** | F1–F5 closed · 5/5 proofs · formal close |
-| 🟢 **DGM Step 12** | **GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS** | The bounded authorized-adoption formal and correspondence workstream is closed |
-| 🤖 **T12D-A** | **MACHINE_CHECKED** | Lean-kernel checked; current source/runtime correspondence is 11/11, but no positive authorized-apply production observation was executed |
-| 🔗 **T12D-B** | **CORRESPONDENCE_VERIFIED** | Lean-kernel checked; current 11/11 source/runtime correspondence plus post-A8 invalid-authorization live revalidation |
-| 🔗 **T12D-C** | **CORRESPONDENCE_VERIFIED** | Lean-kernel checked; current 11/11 source/runtime correspondence plus post-A8 empty-spool live revalidation |
-| 🔴 **P12C-09** | **MACHINE_CHECKED_DISPROVEN** | Unconditional terminal totality is false in the bounded model |
-| 🟢 **Publication Step 17** | **GREEN COMPLETE** | Steps 0–17 are green · 25/25 fixed-goal criteria pass |
-| 🌐 **Governed publication endpoint** | **COMPLETE at final seal** | The fixed-goal read-only publication path is complete |
-| 🔎 **Evidence & Governance Portal** | **LIVE at final Step-17 observation** | The GUI consumed the governed publication at the final observation |
-| ⚪ **Whole-system proof** | **NOT CLAIMED** | `SYSTEM_PROVEN=NO` remains the current boundary |
+| Workstream F | **CLOSED** | F1–F5 closed; historical qualified baseline preserved |
+| DGM Step 12 | **GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS** | Bounded authorized-adoption domain remains closed |
+| Lean R1 | **CLOSED / PASS** | Authorized-adoption principal theorem/disproof set independently kernel-checked |
+| Lean R2 | **CLOSED / PASS** | 6/6 Conversational Admission checks; 0 proof holes; 0/6 final theorem-level axiom dependencies |
+| Lean R3 | **CLOSED / PASS** | 14/14 Hilbert/JCP Separation checks; 0 proof holes; 0/14 final theorem-level axiom dependencies |
+| R2 implementation/runtime correspondence | **PASS — bounded current path** | `/api/chat` identity comes from authenticated server state; browser identity is non-authoritative |
+| R3 implementation/runtime correspondence | **PASS — bounded current state** | Current JCP remains exact four-field structure; H_geo/H_p/H_people remain nonadmitted |
+| Auth/Guardian versioned install | **QUALIFIED INSTALL** | Versioned installation and rollback sealing completed; install closeout itself made no active runtime mutation |
+| Frontend production cutover | **PASS** | Current conversational frontend deployment is installed and identified |
+| Unified Gateway production cutover | **PASS** | Qualified Gateway source became production source |
+| Gateway → BBB → `llm20production` → LM Synthesizer | **QUALIFIED OBSERVED PATH** | Real local `/chat` request completed downstream path |
+| Server-side authenticated `/api/chat` | **QUALIFIED / DEPLOYED** | Current server route exists and fails closed when unauthenticated |
+| Browser conversational send surface | **NOT READY** | Current user-facing send surface not separately executable |
+| Authenticated browser chat E2E | **NOT DEMONSTRATED** | Must be qualified separately |
+| Rollback | **RETAINED** | Gateway rollback remains stopped/retained; retirement not authorized |
+| Whole-system proof | **NOT CLAIMED** | `SYSTEM_PROVEN=NO` |
 
 ---
 
-# 🧭 Three status layers
+# 2. Current proof-assistant state
 
-ALLIS separates the status of documentation, qualified objects, and runtime observations.
-
-```mermaid
-flowchart LR
-    A["📚 DOCUMENTATION STATE<br/>Claims supported by the current evidence"]:::doc
-    B["🧩 QUALIFIED OBJECT STATE<br/>Identified source, proof, trust, governance, and publication objects"]:::obj
-    C["🖥️ RUNTIME OBSERVATION<br/>State observed at a named seal or verification point"]:::run
-
-    A --- B
-    B --- C
-
-    classDef doc fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
-    classDef obj fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
-    classDef run fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
-```
-
-| Layer | What it tells you |
-|---|---|
-| 📚 **Documentation state** | Which claims the public technical record supports |
-| 🧩 **Qualified-object state** | Which exact technical objects support those claims |
-| 🖥️ **Runtime observation** | What the system showed at a specific observation or seal |
-
-> [!NOTE]
-> Runtime observations are time-specific. If a claim-bearing runtime object changes, the affected correspondence must be verified again.
-
----
-
-# 🧩 Qualified object map
-
-The current ALLIS record uses several qualified objects because different workstreams answer different technical questions.
-
-```mermaid
-flowchart TB
-    F["✅ WORKSTREAM-F BASELINE<br/>65b9f7db…<br/>acceptance source"]:::source
-
-    A["📐 A5 SOURCE ANCHOR<br/>35f1aa55… / tree 36dd9f24…<br/>formalization anchor"]:::proof
-
-    D["🔐 STEP-12 DGM SOURCE<br/>20c8cbe1…<br/>authorized-adoption source"]:::dgm
-
-    L["📐 LEAN R1 QUALIFICATION<br/>Lean 4.34.0<br/>principal result set kernel-checked"]:::proof2
-
-    R["🔗 POST-A8 DGM CORRESPONDENCE<br/>current NBB + worker<br/>PASS 11/11"]:::corr
-
-    T["🛡️ STEP-12 TRUST + GOVERNANCE<br/>public trust + governance view"]:::trust
-
-    P["🌐 STEP-17 PUBLICATION<br/>allis-publication-step6-retention-v2<br/>SHA d6ab6352…"]:::pub
-
-    G["🖥️ STEP-17 FRONTEND<br/>5By6R3CWTM7NDXc-4lmSi"]:::gui
-
-    C["🧾 CURRENT TECHNICAL STATE<br/>qualified objects + correspondence"]:::current
-
-    F --> C
-    A --> C
-    D --> C
-    L --> C
-    R --> C
-    T --> C
-    P --> C
-    G --> C
-
-    classDef source fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
-    classDef proof fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
-    classDef dgm fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
-    classDef proof2 fill:#c4b5fd,stroke:#6d28d9,color:#3b0764,stroke-width:2px;
-    classDef corr fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
-    classDef trust fill:#f97316,stroke:#9a3412,color:#ffffff,stroke-width:2px;
-    classDef pub fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
-    classDef gui fill:#2563eb,stroke:#1e3a8a,color:#ffffff,stroke-width:2px;
-    classDef current fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:3px;
-```
-
-## Qualified-object registry
-
-| Object | Identity | Role | Scope |
-|---|---|---|---|
-| ✅ **Workstream-F qualified source baseline** | branch `remediation/active-source-baseline-20260902` · HEAD `65b9f7dbd594ec9d225152aabd705eefc9216dbb` · tag `stage10-auth-identity-65b9f7dbd594` | Source authority for Workstream-F close | Workstream-F acceptance lineage |
-| 📐 **A5 source anchor** | HEAD `35f1aa5586e1a23e1ab88f4d757c451b44506893` · tree `36dd9f2425db4b23bacfce1cb258603cace25f1b` | Source anchor for bounded formalization and wiring analysis | A5 formalization domain |
-| 🔐 **Step-12 production DGM source** | `20c8cbe175781c8a1c05d65c03977859ceca884a` | Production source for `DGM_PRODUCTION_AUTHORIZED_ADOPTION_MODEL_V1` | Bounded authorized-adoption model |
-| 📐 **Lean R1 qualification** | Lean `4.34.0` · local qualified proof workstream | Later proof-assistant qualification of `T12D-A`, `T12D-B`, `T12D-C`, and the `P12C-09` disproof | Successor proof evidence; does not redefine historical Step-12 `MACHINE_CHECKED` |
-| 🔗 **Post-A8 DGM theorem correspondence registry R1** | `POST_A8_DGM_THEOREM_CORRESPONDENCE_REGISTRY_R1=PASS` | Current source/runtime and theorem-specific live revalidation | Successor correspondence evidence for the bounded DGM theorem domain |
-| 🔑 **Step-12 public trust object** | SHA-256 `4809a1af3dd8fad1767dc5a8a9d67aa763388a055e00ec818c15f9fe0321fbb5` | Public verification trust object | Step-12 trust correspondence |
-| 🧭 **Step-12 governance view** | SHA-256 `26523c0bad40ff06a75c62a802f20195295534764dce45cfa6acdcdaecc3fcc2` | Sealed governance object | Step-12 governance correspondence |
-| 🌐 **Step-17 publication** | ID `allis-publication-step6-retention-v2` | Governed public projection | Step-17 publication workstream |
-| 🧾 **Step-17 publication body** | SHA-256 `d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7` | Immutable publication identity | Final Step-17 publication |
-| 🖥️ **Step-17 frontend build** | `5By6R3CWTM7NDXc-4lmSi` | Frontend build identity | Final Step-17 GUI observation |
-
-These objects are complementary. Together, they describe the qualified technical state across several bounded workstreams.
-
-> [!NOTE]
-> The Lean R1 qualification and post-A8 DGM correspondence registry are **successor evidence objects**. They do not replace the historical Step-12 source, trust, governance, or final-seal objects.
-
----
-
-# 🌈 Authority planes
-
-ALLIS separates authority by function.
-
-```mermaid
-flowchart TB
-    I["👤 IDENTITY<br/>Who or what is represented?"]:::identity
-    D["🔒 DATA + DISCLOSURE<br/>May protected state be used or disclosed?"]:::data
-    O["🔐 OPERATION<br/>May this protected transition occur?"]:::operation
-    S["💻 SOURCE<br/>Which source object supports the claim?"]:::source
-    R["🖥️ RUNTIME<br/>What executable state was observed?"]:::runtime
-    P["📐 PROOF + CLAIM<br/>How strongly is the claim supported?"]:::proof
-    U["🌐 PUBLICATION<br/>May qualified state be published?"]:::publication
-    C["📚 DOCUMENTATION<br/>What may be stated as current?"]:::docs
-
-    I --> D --> O
-    S --> P
-    R --> P
-    O --> P
-    U --> C
-    P --> C
-
-    classDef identity fill:#f9a8d4,stroke:#db2777,color:#831843,stroke-width:2px;
-    classDef data fill:#fb7185,stroke:#be123c,color:#ffffff,stroke-width:2px;
-    classDef operation fill:#ef4444,stroke:#991b1b,color:#ffffff,stroke-width:2px;
-    classDef source fill:#22c55e,stroke:#166534,color:#ffffff,stroke-width:2px;
-    classDef runtime fill:#0ea5e9,stroke:#075985,color:#ffffff,stroke-width:2px;
-    classDef proof fill:#8b5cf6,stroke:#5b21b6,color:#ffffff,stroke-width:2px;
-    classDef publication fill:#14b8a6,stroke:#115e59,color:#ffffff,stroke-width:2px;
-    classDef docs fill:#facc15,stroke:#854d0e,color:#111827,stroke-width:2px;
-```
-
-| Plane | Governing question |
-|---|---|
-| 👤 Identity | Who or what is represented? |
-| 🔒 Data and disclosure | May this protected state be used or disclosed for this purpose and recipient? |
-| 🔐 Operation | May this exact protected transition occur? |
-| 💻 Source | Which source object supports this claim? |
-| 🖥️ Runtime | What executable state was observed? |
-| 📐 Proof and claim | What level of evidence supports the claim? |
-| 🌐 Publication | May this qualified state leave the system as public evidence? |
-| 📚 Documentation | What may the public technical record state as current? |
-
-> **State does not become authority merely because it exists.**
-
----
-
-# ✅ Workstream F
-
-<div align="center">
-
-![Workstream F](https://img.shields.io/badge/WORKSTREAM_F-CLOSED-16a34a?style=for-the-badge)
-![Proofs](https://img.shields.io/badge/PROOFS-5%2F5_PASS-22c55e?style=for-the-badge)
-
-</div>
-
-Workstream F is formally closed.
+The current repository-level proof record contains three distinct qualified Lean workstreams.
 
 ```text
-F1 = CLOSED
-F2 = CLOSED
-F3 = CLOSED
-F4 = CLOSED
-F5 = CLOSED
+Lean R1
+    Authorized Production Adoption
 
-proofs = 5 / 5
+Lean R2
+    Conversational Admission
 
-WORKSTREAM_F_STATUS = CLOSED
+Lean R3
+    Hilbert/JCP Separation
 ```
 
-Qualified source:
+They are separate bounded objects.
 
 ```text
-branch:
-remediation/active-source-baseline-20260902
+R1 ≠ R2 ≠ R3
+```
+
+and:
+
+```text
+R1 + R2 + R3
+    ≠
+whole-system proof
+```
+
+---
+
+# 3. Lean R1 — Authorized Production Adoption
+
+R1 remains the qualified successor proof layer for the principal Step-12 authorized-adoption result set.
+
+Qualified worktree:
+
+```text
+/home/cakidd/allis-lean-proof-workstream-r1
+```
+
+Branch:
+
+```text
+formal-verification/lean-authorized-adoption-r1
+```
 
 HEAD:
-65b9f7dbd594ec9d225152aabd705eefc9216dbb
 
-tag:
-stage10-auth-identity-65b9f7dbd594
+```text
+beceb3ee44fd5c33eaf689a5abe086e5e9c67911
 ```
 
-**Scope:** Workstream F closes its acceptance obligations and preserves the qualified source used for that close. Later proof objects, production sources, and system-wide claims use their own qualification records.
+Tree:
+
+```text
+a62d4b78db5aae522fd06f61b9563e676eacc0a8
+```
+
+Pinned Lean:
+
+```text
+leanprover/lean4:v4.34.0
+```
+
+Pinned Lean commit:
+
+```text
+293d5d0c0c3f3dded4688b3ccd6a33939ac5102b
+```
+
+Principal qualified results:
+
+```text
+T12D-A = kernel checked
+T12D-B = kernel checked
+T12D-C = kernel checked
+P12C-09 = disproven and counterexample kernel checked
+```
+
+R1 does not replace the historical Step-12 source or final seal.
 
 ---
 
-# 🔐 DGM Step 12
-
-<div align="center">
-
-![Step 12](https://img.shields.io/badge/DGM_STEP_12-GREEN_CLOSED_WITH_RESIDUALS-f59e0b?style=for-the-badge)
-![Propositions](https://img.shields.io/badge/PROPOSITIONS-11_PROVEN_%7C_1_DISPROVEN-7c3aed?style=for-the-badge)
-![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
-
-</div>
+# 4. DGM Step 12 current boundary
 
 Formal object:
 
@@ -250,644 +169,1091 @@ Production source:
 20c8cbe175781c8a1c05d65c03977859ceca884a
 ```
 
-Final status:
-
-```text
-GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
-```
-
-Final seal SHA-256:
+Final seal:
 
 ```text
 b00a954a924d3aa3490a5bcb8d4473da2b6885b8c41e116cf03545fee975c23b
 ```
 
-## Proposition dashboard
-
-| Proposition | Validation state | Meaning |
-|---|---|---|
-| `T12D-A` | 🤖 **MACHINE_CHECKED** | A successful bounded application implies the required authorization, target, prestate, one-use, and receipt predicates |
-| `T12D-B` | 🔗 **CORRESPONDENCE_VERIFIED** | Invalid authorization does not enter the authorized spool |
-| `T12D-C` | 🔗 **CORRESPONDENCE_VERIFIED** | An empty incoming spool produces no worker claim or authorized application |
-| `P12C-09` | 🔴 **MACHINE_CHECKED_DISPROVEN** | A claimed record is not guaranteed to reach Completed or Rejected |
-
-## Later Lean and post-A8 successor evidence
-
-The historical Step-12 validation labels above remain unchanged.
-
-A later Lean 4.34.0 R1 workstream independently formalized and kernel-checked the principal result set:
+Bounded final result:
 
 ```text
-T12D_A_LEAN_KERNEL_CHECKED=YES
-T12D_B_LEAN_KERNEL_CHECKED=YES
-T12D_C_LEAN_KERNEL_CHECKED=YES
-P12C_09_LOGICAL_RESULT=DISPROVEN
-P12C_09_COUNTEREXAMPLE_LEAN_KERNEL_CHECKED=YES
-
-T12D_A_AXIOMS=NONE
-T12D_B_AXIOMS=NONE
-T12D_C_AXIOMS=NONE
-P12C_09_AXIOMS=NONE
+12 propositions
+11 proven
+1 disproven
+0 unadjudicated
 ```
 
-That later Lean work does **not** retroactively redefine the historical Step-12 `MACHINE_CHECKED` label.
-
-A subsequent post-A8 correspondence revalidation established:
+Current proposition states:
 
 ```text
-IMMUTABLE_SOURCE_IDENTITY=PASS_11_OF_11
-NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
-WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
-CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
+T12D-A = MACHINE_CHECKED
+T12D-B = CORRESPONDENCE_VERIFIED
+T12D-C = CORRESPONDENCE_VERIFIED
+P12C-09 = MACHINE_CHECKED_DISPROVEN
 ```
 
-The post-A8 theorem-specific live observations then supported:
+Post-A8 current source/runtime correspondence remains:
 
 ```text
-T12D_B_CURRENT_LIVE_OBSERVATION=PASS
-T12D_B_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
-
-T12D_C_CURRENT_LIVE_OBSERVATION=PASS
-T12D_C_CURRENT_VALIDATION_LEVEL=CORRESPONDENCE_VERIFIED
+NBB = PASS_11_OF_11
+WORKER = PASS_11_OF_11
 ```
 
-`T12D-A` remains:
+T12D-A remains without a positive authorized-apply production observation.
 
-```text
-T12D_A_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED
-```
-
-because no positive authorized-apply production observation was executed.
-
-The `P12C-09` negative result remains:
-
-```text
-P12C_09_CURRENT_VALIDATION_LEVEL=MACHINE_CHECKED_DISPROVEN
-```
-
-See:
-
-- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
-- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
-
-```mermaid
-flowchart LR
-    A["📦 External package"] --> B["🛡️ NBB validation"]
-    B --> C["📥 Authorized spool"]
-    C --> D["👷 Worker claim"]
-    D --> E["🔐 Authorized apply gate"]
-    E --> F["🔧 Governed apply"]
-    F --> G["🧾 Durable receipt"]
-    G --> H["✅ Completed or rejected"]
-
-    classDef default stroke-width:2px;
-    style A fill:#dbeafe,stroke:#2563eb,color:#172554
-    style B fill:#fde68a,stroke:#ca8a04,color:#713f12
-    style C fill:#bae6fd,stroke:#0284c7,color:#0c4a6e
-    style D fill:#ddd6fe,stroke:#7c3aed,color:#3b0764
-    style E fill:#fecaca,stroke:#dc2626,color:#7f1d1d
-    style F fill:#bbf7d0,stroke:#16a34a,color:#14532d
-    style G fill:#99f6e4,stroke:#0f766e,color:#134e4a
-    style H fill:#f9a8d4,stroke:#db2777,color:#831843
-```
-
-## Step-12 residuals
-
-| Residual | Status |
-|---|---|
-| Positive live authorized apply | `NOT_OBSERVED` in Step 12 and still `NOT_EXECUTED` in the later post-A8 current correspondence revalidation |
-| Unconditional terminal totality | `DISPROVEN` |
-| General production mutation safety | `NOT_PROVEN` |
-| Whole-system safety | `NOT_PROVEN` |
-| Historical D1R5 domain | `HISTORICAL_ONLY` |
-| Formal domain | `BOUNDED_DOMAIN` |
-| Runtime correspondence | `POINT_IN_TIME_BINDING` |
-| Authorization issuance | `EXTERNAL_TO_RUNTIME_MODEL` |
-
-Step 12 proves bounded properties of the authorized-adoption path. Whole-system proof remains outside this workstream.
+Current system-level boundaries remain:
 
 ```text
 PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=NO
-
 WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=NO
+FULL_DGM_COMPLETION_CLAIMED=NO
+SYSTEM_PROVEN=NO
+```
+
+---
+
+# 5. Lean R2 — Conversational Admission
+
+R2 is now a first-class qualified object.
+
+Branch:
+
+```text
+formal-verification/lean-conversational-admission-r2
+```
+
+HEAD:
+
+```text
+c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+```
+
+Tree:
+
+```text
+e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+```
+
+Final metrics:
+
+```text
+principal checks = 6/6
+proof holes = 0
+final theorem-level axiom dependencies = 0/6
+final propext dependencies = 0/6
+Lean build jobs = 27
+```
+
+The six principal checks are:
+
+```text
+TCHAT_A_server_derived_authenticated_identity
+
+TCHAT_B_browser_identity_is_nonauthoritative
+
+TCHAT_C_canonical_scalar_user_id_not_invented
+
+TCHAT_D_distinct_authenticated_sessions_remain_identity_isolated
+
+TCHAT_E_ordinary_chat_does_not_create_governance_authority
+
+TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
+```
+
+The initial proof family compiled with zero holes but reported:
+
+```text
+propext = 6/6
+```
+
+That state failed qualification.
+
+The direct repair preserved theorem statements, types, and intended semantics while changing proof bodies.
+
+Final:
+
+```text
+propext = 0/6
+```
+
+---
+
+# 6. R2 source/runtime correspondence
+
+The later current implementation/runtime record supports the bounded R2 model.
+
+Current ordinary browser-facing server route:
+
+```text
+POST /api/chat
+```
+
+The qualified ordering is:
+
+```text
+authenticate request/session
+    ↓
+derive authenticated_user server-side
+    ↓
+accept ordinary browser JSON content
+    ↓
+construct Gateway payload
+```
+
+Current bounded identity behavior:
+
+```text
+authenticated_user = server-derived
+
+browser identity-like content = non-authoritative
+
+user_id = null
+where no canonical scalar user ID is separately established
+```
+
+Gateway behavior:
+
+```text
+Gateway accepts authenticated_user
+
+process_unified does not read authenticated_user
+
+authenticated_user does not enter current JCP
+
+authenticated_user does not become downstream ensemble/synthesizer model input
+
+authenticated_user does not create governance authority
+```
+
+Ordinary authenticated conversation still does not authorize H_people SECRET disclosure.
+
+---
+
+# 7. Lean R3 — Hilbert/JCP Separation
+
+R3 is now a first-class qualified object.
+
+Branch:
+
+```text
+formal-verification/hilbert-jcp-separation-r3
+```
+
+HEAD:
+
+```text
+6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+```
+
+Tree:
+
+```text
+f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+```
+
+Principal source:
+
+```text
+HilbertJcpSeparationR3.lean
+```
+
+Final metrics:
+
+```text
+principal checks = 14/14
+proof holes = 0
+final theorem-level axiom dependencies = 0/14
+final propext dependencies = 0/14
+```
+
+The initial formulation had:
+
+```text
+propext = 11/14
+```
+
+and therefore failed qualification.
+
+The final computational/Bool-oriented repair preserved the architectural claims while reworking the formal expression.
+
+---
+
+# 8. Current JCP state
+
+Current JCP builder:
+
+```text
+build_judge_context_v2
+```
+
+Exact current top-level field set:
+
+```text
+schema_version
+
+request_context
+
+approved_evidence
+
+wv_deliberative_context
+```
+
+Current/candidate JCP AST SHA-256:
+
+```text
+7c9cc765677848685066884c47d7ef8c2adf49a5ee4c6ec32da0492f7ef0b422
+```
+
+Current field count:
+
+```text
+4
+```
+
+Current Hilbert/tensor/spatial top-level field count:
+
+```text
+0
+```
+
+---
+
+# 9. Current Hilbert/JCP admission state
+
+Current R3 correspondence preserves:
+
+```text
+H_GEO_CURRENT_JCP_ADMISSION=NO
+
+H_P_CURRENT_JCP_ADMISSION=NO
+
+H_PEOPLE_CURRENT_JCP_ADMISSION=NO
+```
+
+At the same time:
+
+```text
+STATIC_H_GEO_PATH_QUALIFIED=YES
+```
+
+The static H_geo lifecycle remains:
+
+```text
+STAGE_EVALUATE_PROMOTE
+```
+
+Preserve the distinction:
+
+```text
+static H_geo qualification
+    ≠
+live H_geo JCP admission
+```
+
+---
+
+# 10. H384 and typed projection state
+
+The current H_* inventory is not yet a completed formal Hilbert integration layer.
+
+The safe current classification is:
+
+```text
+named H_* object
+    =
+governed typed projection / view / architectural state domain
+```
+
+until stronger subspace properties are separately proved.
+
+The planned common carrier is:
+
+```text
+H384 := Fin 384 -> Real
+```
+
+Current status:
+
+```text
+H384_FORMALIZATION_COMPLETE=NO
+```
+
+Therefore:
+
+```text
+shared 384-D carrier
+    ≠
+named H_* subspace proof
+```
+
+---
+
+# 11. Auth/Guardian production state
+
+Qualified auth install:
+
+```text
+/opt/msjarvis-rebuild/ms-allis-auth-runtime/deploy-r16c4r15r1-3db1a68d6bcc
+```
+
+Rollback predecessor:
+
+```text
+/opt/msjarvis-rebuild/ms-allis-auth-runtime/deploy-r16c4r6r4r1-a288b4613774
+```
+
+Service:
+
+```text
+ms-allis-auth8095.service
+```
+
+Install closeout established:
+
+```text
+AUTH_VERSIONED_INSTALL_CREATED=PASS
+FINAL_INSTALLED_MATCHES_SEALED_R15R1=PASS
+DUAL_ROLLBACK_CONTRACT=PASS
+
+PRODUCTION_FILESYSTEM_MUTATION=INSTALL_ONLY
+ACTIVE_RUNTIME_MUTATION=NO
+PRODUCTION_NONACTIVATION=PASS
+```
+
+Guardian candidate:
+
+```text
+tag =
+allis-guardian-registration-review-r16c4r15:5860bf8ab543
+
+image =
+sha256:5e270aa93911602c15f5f052eab2e5283b39f023e5b495475d2c52daf0d55105
+
+source SHA-256 =
+5860bf8ab543253f32f52de74da6fb9be8263e3ff35ca4fb078e8c6a1af3fe25
+```
+
+This record is an install/qualification state; it does not rewrite the install closeout as an activation event.
+
+---
+
+# 12. Current frontend production state
+
+Controlling frontend production cutover:
+
+```text
+r16c4r18a4-frontend-production-cutover-20261002T191856Z-2417338
+```
+
+Final SHA-256:
+
+```text
+48156cf5595ea93093439c9d199d91e60d1236603b971d4b4938fc0cbb3a2cb6
+```
+
+Manifest SHA-256:
+
+```text
+40f79d6ce944ce7be096fe4d3ccc286457ed3d0de72f65203bfb9b1fb747c95d
+```
+
+Live frontend:
+
+```text
+/opt/msjarvis-rebuild/allis-frontend-runtime/deploy-9KyheKDYXyNCclA1YrUAX-fullnm-3ace386dedd9
+```
+
+BUILD_ID:
+
+```text
+9KyheKDYXyNCclA1YrUAX
+```
+
+Service:
+
+```text
+allis-frontend.service
+```
+
+Canonical ordinary browser-facing route:
+
+```text
+/api/chat
+```
+
+Preserve:
+
+```text
+/chatlight
+    ≠
+canonical ordinary route
+```
+
+and:
+
+```text
+/api/chat/async
+    ≠
+ordinary /api/chat route
+```
+
+---
+
+# 13. Current Unified Gateway production state
+
+Qualified Gateway production source SHA-256:
+
+```text
+a007f51d53b0c253260d3ca28413de00c2abd4c29ca62bde2adccda5423f5e1f
+```
+
+Corrected production cutover:
+
+```text
+R16C4R20R4
+```
+
+Final SHA-256:
+
+```text
+1aaccf30781dc38f2ad10446bce30f3d9f8eb047a560e9b34de2cb94aa0b6f44
+```
+
+Manifest SHA-256:
+
+```text
+213eeb4ab6511ff78d5c1df9791d46917e0c055342bc65e2ab054e4a75e5bcbc
+```
+
+Production container:
+
+```text
+6056e7c7848af2e676bbc53c6c909e3844bdec2f1c5a5832b7599e237bce3481
+```
+
+Production image:
+
+```text
+sha256:f2ee4e106373a321f65ab2eef00cf7d3b09cf1bdcf61bfb44ed79ec977f6444b
+```
+
+Cutover result:
+
+```text
+PRODUCTION_CUTOVER=PASS
+FROZEN_RUNTIME_CONTRACT=PASS
+HTTP_READINESS=PASS
+REAL_CHAT_REQUEST=PASS
+BBB_COMPLETE=PASS
+ENSEMBLE_COMPLETE=PASS
+LM_SYNTHESIZER_COMPLETE=PASS
+```
+
+---
+
+# 14. Qualified observed conversational path
+
+The current observed server-side path is:
+
+```text
+Unified Gateway
+    ↓
+BBB
+    ↓
+llm20production
+    ↓
+LM Synthesizer
+    ↓
+response
+```
+
+A real local:
+
+```text
+/chat
+```
+
+request completed this downstream path.
+
+This is the current qualified observed server-side conversational path.
+
+---
+
+# 15. Server-side route vs browser E2E
+
+The durable server/UI-boundary closeout is:
+
+```text
+R16C4R20R5R1
+```
+
+Final SHA-256:
+
+```text
+79c7ceaf7549543e194176881b9b4b77c8766057c8f2d8f281d3f596502ffbb6
+```
+
+Manifest SHA-256:
+
+```text
+37b1811a20107c08a0d1eb11c9d0e10a69fcec3e8bc7589f203d9c006d3461f6
+```
+
+It established:
+
+```text
+Gateway identity = PASS
+frontend identity = PASS
+auth identity = PASS
+
+unauthenticated /api/auth/me = fail closed
+
+unauthenticated /api/chat = fail closed
+
+server-side authenticated route = qualified/deployed
+```
+
+But it also recorded:
+
+```text
+CURRENT_BROWSER_CONVERSATIONAL_UI_READY=NO
+
+CURRENT_BROWSER_CONVERSATIONAL_SEND_SURFACE=NO
+
+AUTHENTICATED_BROWSER_CHAT_E2E=NOT_EXECUTABLE_CURRENT_UI
+```
+
+Therefore:
+
+```text
+SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
+
+BROWSER_E2E_DEMONSTRATED=NO
+```
+
+---
+
+# 16. Rollback state
+
+Gateway rollback:
+
+```text
+jarvis-unified-gateway.rollback-r20r4-20261003T011108Z-2966359
+```
+
+Rollback image:
+
+```text
+sha256:d52c4a716d491158c66240251c7e158752c2c9afa0a03afaffd9ed747bf2107b
+```
+
+State:
+
+```text
+STOPPED_RETAINED
+```
+
+Current retirement state:
+
+```text
+ROLLBACK_RETIREMENT_AUTHORIZED=NO
+```
+
+Rollback retention is a deployment-safety state, not evidence of failed cutover.
+
+---
+
+# 17. Current private-state boundary
+
+H_people remains tiered:
+
+```text
+SECRET
+PRIVATE
+PUBLIC
+```
+
+Ordinary authenticated conversation does not itself authorize H_people SECRET disclosure.
+
+Precise authoritative identity-linked location remains:
+
+```text
+KYC / H_people SECRET
+```
+
+A future minimum-necessary conversational location projection is separately planned.
+
+Current qualification state:
+
+```text
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=NO
+```
+
+Preserve:
+
+```text
+location known
+    ≠
+location disclosed
+```
+
+and:
+
+```text
+location used for permitted context
+    ≠
+location made PUBLIC
+```
+
+---
+
+# 18. Current cognition state
+
+The intended cognition composition/rejoin path is:
+
+```text
+prefrontal_result
++
+icontainers_result
++
+psychology_result
+    ↓
+cognition stage
+    ↓
+cognition evaluate
+    ↓
+cognition emit
+    ↓
+llm_packet
+    ↓
+Gateway / JCP
+    ↓
+ensemble
+    ↓
+LM Synthesizer
+```
+
+The source lineage exists.
+
+The full cognition theorem/correspondence family does not yet.
+
+Current status:
+
+```text
+COGNITION_THEOREM_FAMILY_COMPLETE=NO
+```
+
+---
+
+# 19. Current Automated Learning state
+
+The intended Automated Learning Graph is:
+
+```text
+detect informational insufficiency
+    ↓
+identify missing information
+    ↓
+bound research need
+    ↓
+select permitted source/method
+    ↓
+retrieve candidate information
+    ↓
+capture provenance
+    ↓
+evaluate candidate
+    ↓
+reject / unresolved / bounded use / admission eligibility
+    ↓
+separate corpus / H_* admission
+```
+
+Permanent trust distinction:
+
+```text
+web result
+    ≠
+trusted fact
+    ≠
+admitted corpus state
+    ≠
+qualified Hilbert state
+```
+
+Current status:
+
+```text
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
+
+RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=NO
+```
+
+---
+
+# 20. Current read-only research design
+
+The planned research mechanism is:
+
+```text
+approximately every five minutes
+    ↓
+evaluate pending bounded research needs
+```
+
+not:
+
+```text
+crawl the web every five minutes
+```
+
+External-side write target:
+
+```text
+NO
+```
+
+A research result may be eligible for current-response use without being persisted.
+
+Current qualification:
+
+```text
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
+```
+
+---
+
+# 21. Current post-conversational engineering roadmap
+
+The intended engineering sequence is:
+
+```text
+conversational front door
+    ↓
+Hilbert-by-Hilbert qualification
+    ↓
+Hilbert <-> Unified Gateway/JCP correspondence
+    ↓
+H384 / typed projection formalization
+    ↓
+cognition/rejoin qualification
+    ↓
+Automated Learning Graph qualification
+    ↓
+read-only web research
+    ↓
+research -> corpus/Hilbert admission
+    ↓
+protected KYC-location conversational context
+    ↓
+integrated conversational accuracy
+    ↓
+final DGM completion
+```
+
+The sequence is a roadmap.
+
+Later items are not current qualification claims.
+
+---
+
+# 22. Current qualified-object registry
+
+The composite current registry now includes, among others:
+
+```text
+OBJ-LR101 = Lean R1 Authorized Production Adoption
+
+OBJ-LR201 = Lean R2 Conversational Admission
+
+OBJ-R2C01 = R2 source/runtime correspondence
+
+OBJ-LR301 = Lean R3 Hilbert/JCP Separation
+
+OBJ-R3C01 = R3 source/runtime correspondence
+```
+
+Predecessor identities remain unchanged.
+
+Successor objects are additive.
+
+---
+
+# 23. Current validation hierarchy
+
+ALLIS continues to distinguish:
+
+```text
+IMPLEMENTED
+    ↓
+OBSERVED
+    ↓
+DEMONSTRATED
+    ↓
+FORMALLY SPECIFIED
+    ↓
+PROVEN
+    ↓
+MACHINE-CHECKED
+    ↓
+CORRESPONDENCE-VERIFIED
+```
+
+A claim may occupy one level in one scope and another level in another scope.
+
+Do not collapse the hierarchy.
+
+---
+
+# 24. Current nonclaims
+
+The current record does **not** claim:
+
+```text
+PRODUCTION_MUTATION_SAFETY_THEOREM_PROVEN=YES
+
+WHOLE_SYSTEM_SAFETY_THEOREM_PROVEN=YES
+
+SYSTEM_PROVEN=YES
+
+FULL_DGM_COMPLETION_CLAIMED=YES
+
+H384_FORMALIZATION_COMPLETE=YES
+
+LIVE_HILBERT_JCP_INTEGRATION_COMPLETE=YES
+
+COGNITION_THEOREM_FAMILY_COMPLETE=YES
+
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=YES
+
+RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=YES
+
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=YES
+
+BROWSER_E2E_DEMONSTRATED=YES
+```
+
+---
+
+# 25. Current technical-state flags
+
+```text
+WORKSTREAM_F_STATUS=CLOSED
+
+DGM_STEP12_STATUS=GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS
+
+LEAN_R1_AUTHORIZED_ADOPTION_QUALIFIED=YES
+
+LEAN_R2_CONVERSATIONAL_ADMISSION_QUALIFIED=YES
+
+LEAN_R3_HILBERT_JCP_SEPARATION_QUALIFIED=YES
+
+R2_SOURCE_RUNTIME_CORRESPONDENCE=PRESENT
+
+R3_SOURCE_RUNTIME_CORRESPONDENCE=PRESENT
+
+AUTH_GUARDIAN_VERSIONED_INSTALL=PASS
+
+FRONTEND_PRODUCTION_CUTOVER=PASS
+
+GATEWAY_PRODUCTION_CUTOVER=PASS
+
+SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
+
+CURRENT_BROWSER_CONVERSATIONAL_UI_READY=NO
+
+CURRENT_BROWSER_CONVERSATIONAL_SEND_SURFACE=NO
+
+AUTHENTICATED_BROWSER_CHAT_E2E=NOT_EXECUTABLE_CURRENT_UI
+
+BROWSER_E2E_DEMONSTRATED=NO
+
+STATIC_H_GEO_PATH_QUALIFIED=YES
+
+H_GEO_CURRENT_JCP_ADMISSION=NO
+
+H_P_CURRENT_JCP_ADMISSION=NO
+
+H_PEOPLE_CURRENT_JCP_ADMISSION=NO
+
+H384_FORMALIZATION_COMPLETE=NO
+
+COGNITION_THEOREM_FAMILY_COMPLETE=NO
+
+AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
+
+RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=NO
+
+KYC_LOCATION_CONTEXT_USE_QUALIFIED=NO
+
+ROLLBACK_RETIREMENT_AUTHORIZED=NO
+
+FULL_DGM_COMPLETION_CLAIMED=NO
 
 SYSTEM_PROVEN=NO
 ```
 
-Read the detailed records:
-
-- [Formal model](formal-verification/authorized-adoption/formal-model.md)
-- [Theorem registry](formal-verification/authorized-adoption/theorem-registry.md)
-- [Counterexample registry](formal-verification/authorized-adoption/counterexample-registry.md)
-- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
-- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
-- [Step-12 final seal](evidence/governed-evolution/step12-final-seal.md)
-- [Residuals and non-promotions](evidence/governed-evolution/residuals.md)
-
 ---
 
-# 🌐 Publication Step 17
+# 26. System identity boundary
 
-<div align="center">
-
-![Step 17](https://img.shields.io/badge/PUBLICATION_STEP_17-GREEN_COMPLETE-22c55e?style=for-the-badge)
-![Criteria](https://img.shields.io/badge/CRITERIA-25%2F25_PASS-16a34a?style=for-the-badge)
-![Network](https://img.shields.io/badge/FINAL_NETWORK_CONTINUITY-GREEN-14b8a6?style=for-the-badge)
-
-</div>
-
-The publication and Evidence & Governance Portal workstream is complete for its fixed goal.
+Keep these systems separate:
 
 ```text
-Steps 0–17:
-GREEN
-
-Completion criteria:
-25 / 25 PASS
-
-Final network continuity:
-GREEN
-
-ALLIS_LIVE_PUBLICATION_ENDPOINT:
-COMPLETE
-
-ALLIS_EVIDENCE_GOVERNANCE_PORTAL:
-LIVE at final sealed observation
+ALLIS
+    =
+KTS engineering/research platform
+    +
+general ALLIS conversational system at allis.pro
 ```
-
-## Final identities
-
-| Object | Identity |
-|---|---|
-| 🌐 Publication ID | `allis-publication-step6-retention-v2` |
-| 🧾 Publication SHA-256 | `d6ab63522f9080fae440578ebbb6ed42140595155c9a30253f5b8eeeef8009b7` |
-| 🖥️ Frontend build | `5By6R3CWTM7NDXc-4lmSi` |
-
-## Publication path
-
-```mermaid
-flowchart LR
-    A["✅ Qualified state"]:::q
-    B["🛡️ Publication eligibility"]:::e
-    C["📦 Immutable publication"]:::p
-    D["🔒 Loopback-only GET service"]:::l
-    E["🚦 Authorized public route"]:::c
-    F["🌐 Public HTTPS publication"]:::h
-    G["🔎 Evidence & Governance Portal"]:::g
-
-    A --> B --> C --> D --> E --> F --> G
-
-    classDef q fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
-    classDef e fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
-    classDef p fill:#99f6e4,stroke:#0f766e,color:#134e4a,stroke-width:2px;
-    classDef l fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
-    classDef c fill:#fed7aa,stroke:#ea580c,color:#7c2d12,stroke-width:2px;
-    classDef h fill:#bae6fd,stroke:#0284c7,color:#0c4a6e,stroke-width:2px;
-    classDef g fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
-```
-
-The final closeout establishes:
-
-- a governed read-only public GET endpoint;
-- schema and contract validation;
-- reference resolution;
-- explicit source and publication authority;
-- immutable publication identity;
-- retained prior publication state;
-- privacy and publication-eligibility governance;
-- fail-closed behavior for prohibited methods and missing resources;
-- no public mutation endpoint;
-- publication-service isolation from qualified ALLIS;
-- loopback-only publication service;
-- authorized public routing;
-- GUI consumption without unrestricted direct ALLIS access;
-- epistemic-state preservation;
-- restart persistence;
-- rollback demonstration;
-- source → publication → HTTP → GUI correspondence;
-- final network continuity; and
-- no production mutation during final closeout.
-
----
-
-# 👤 Private-state boundary
-
-ALLIS treats person-linked information as protected state.
-
-```mermaid
-flowchart TD
-    A["👤 Person-linked state"]:::p
-    B{"Identity and subject<br/>relationship established?"}:::q
-    C{"Use and disclosure<br/>authorized for this scope?"}:::q
-    D["🔒 Withhold protected state"]:::stop
-    E["✅ Permit the authorized<br/>minimized use or disclosure"]:::go
-
-    A --> B
-    B -- "No" --> D
-    B -- "Yes" --> C
-    C -- "No" --> D
-    C -- "Yes" --> E
-
-    classDef p fill:#f9a8d4,stroke:#db2777,color:#831843,stroke-width:2px;
-    classDef q fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
-    classDef stop fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:2px;
-    classDef go fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
-```
-
-The boundary separates five questions:
-
-```text
-Does the state exist?
-Who does it concern?
-Is this use authorized?
-Is this disclosure authorized?
-What scope and recipient are permitted?
-```
-
-Private state enters shared or public lanes only through the applicable identity, scope, and disclosure controls.
-
----
-
-# 🧷 Semantic commitment
-
-DGM authorization binds the semantics that can affect a governed decision.
-
-The bounded candidate envelope includes:
-
-```text
-proposal
-target
-expected prestate
-candidate content
-evaluation
-scores
-expected tests
-```
-
-> **Every authority-bearing semantic input must be committed when the authorization decision depends on it.**
-
-A valid signature proves the integrity of the signed object. Complete authorization also requires the relevant semantic inputs and policy predicates.
-
----
-
-# 🧯 Recovery state
-
-Step 12 disproves unconditional terminal totality.
-
-A claimed record can remain in the `Claimed` state if terminalization fails.
-
-```mermaid
-flowchart TD
-    A["📥 Incoming"] -->|"worker claims"| B["🟣 Claimed"]
-    B -->|"finish succeeds"| C["✅ Completed"]
-    B -->|"claim is rejected"| D["⛔ Rejected"]
-    B -->|"terminalization fails"| E["⚠️ Claim remains Claimed"]
-    E --> F["🔧 Recovery or reconciliation required"]
-
-    classDef default stroke-width:2px;
-    style A fill:#dbeafe,stroke:#2563eb,color:#172554
-    style B fill:#ddd6fe,stroke:#7c3aed,color:#3b0764
-    style C fill:#bbf7d0,stroke:#16a34a,color:#14532d
-    style D fill:#fecaca,stroke:#dc2626,color:#7f1d1d
-    style E fill:#fde68a,stroke:#ca8a04,color:#713f12
-    style F fill:#fed7aa,stroke:#ea580c,color:#7c2d12
-```
-
-This result establishes an explicit recovery case:
-
-```text
-claimed
-    ≠
-guaranteed terminal
-```
-
-Recovery logic must handle a record that remains claimed after a terminalization failure.
-
----
-
-# 🔗 Correspondence
-
-Correspondence connects a formal claim to the implementation and runtime state that support it.
-
-```mermaid
-flowchart LR
-    A["📐 Formal model"]:::m
-    B["💻 Qualified source"]:::s
-    C["🖥️ Observed runtime"]:::r
-    D["🧪 Bounded observation"]:::o
-    E["🔗 Correspondence result"]:::c
-
-    A --> B --> C --> D --> E
-
-    classDef m fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
-    classDef s fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
-    classDef r fill:#bae6fd,stroke:#0284c7,color:#0c4a6e,stroke-width:2px;
-    classDef o fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
-    classDef c fill:#f0abfc,stroke:#c026d3,color:#701a75,stroke-width:2px;
-```
-
-Runtime correspondence is time-specific.
-
-```text
-correspondence at seal time
-    ≠
-permanent correspondence
-```
-
-Revalidate correspondence after a claim-bearing runtime object changes.
-
-## Current post-A8 DGM correspondence epoch
-
-The newest bounded DGM theorem-correspondence evidence does not rely only on the historical Step-12 final-seal observation.
-
-The later post-A8 revalidation established:
-
-```text
-CURRENT_POST_A8_DGM_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
-```
-
-for both current observed theorem-relevant runtime surfaces:
-
-```text
-NBB_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
-WORKER_SOURCE_TO_RUNTIME_CORRESPONDENCE=PASS_11_OF_11
-```
-
-For `T12D-B`, a deliberately invalid authorization signature was rejected and produced no authorized-spool publication, authorization consumption, or receipt.
-
-For `T12D-C`, an empty authorized spool remained empty and produced no worker claim, authorization consumption, receipt, or authorized apply.
-
-These current live observations support the existing `CORRESPONDENCE_VERIFIED` status of `T12D-B` and `T12D-C`.
-
-`T12D-A` remains `MACHINE_CHECKED` because the positive authorized-apply production path was not executed.
-
-> [!IMPORTANT]
-> Source/runtime byte identity alone does not establish theorem-specific behavior. The later B/C promotion depends on both current 11/11 source/runtime correspondence and the separate theorem-specific live observations.
-
-See the [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md).
-
-This rule applies to:
-
-- source/runtime correspondence;
-- trust correspondence;
-- governance-view correspondence;
-- publication-body correspondence; and
-- GUI/publication continuity.
-
----
-
-# 📌 Validated results
-
-| Result | Domain | Validation level |
-|---|---|---|
-| Workstream F is formally closed | Acceptance | ✅ Closed |
-| Step 12 is closed with explicit residuals | DGM | 🤖 / 🔗 Machine-checked + selected correspondence |
-| Invalid authorization fails closed | DGM | 🔗 Correspondence-Verified · post-A8 current live revalidation |
-| Empty incoming spool produces no authorized application | DGM | 🔗 Correspondence-Verified · post-A8 current live revalidation |
-| Unconditional terminal totality is false | DGM | 🔴 Machine-Checked Disproven · later Lean-kernel-checked disproof preserved |
-| Candidate scores are authority-bearing semantics | Authorization | 🧷 Source/governance relevance established |
-| Step-17 publication fixed goal is complete | Publication | 🔗 Correspondence-verified fixed goal |
-| The publication endpoint is governed and read-only within the fixed goal | Publication | 🔗 Correspondence-verified fixed goal |
-| The Evidence & Governance Portal consumed the governed publication at final seal | Publication / GUI | 🔗 Correspondence-verified fixed goal |
-| Runtime correspondence is time-specific | Correspondence | ✅ Current architecture rule |
-
----
-
-# 🎯 Scope limits
-
-The following boundaries remain part of the current record.
-
-| Area | Current boundary |
-|---|---|
-| Whole-system proof | `SYSTEM_PROVEN=NO` |
-| Universal production mutation safety | Outside the bounded Step-12 theorem |
-| T12D-A live positive-path correspondence | Positive authorized apply remains unobserved after post-A8 revalidation; current level remains `MACHINE_CHECKED` |
-| Runtime correspondence | Applies to the verified observation point, not all future runtime states |
-| Historical D1R5 theorem | Applies to its historical theorem domain |
-| Private-state runtime correspondence | Requires separate evidence for each applicable path |
-| Authorization | Requires signature verification **and** complete semantic and policy checks |
-| Publication | Requires a separate outward publication boundary |
-| Deployment programs | Instantiations of ALLIS, not definitions of the platform |
-| Thesis | Research lineage and explanation, not current implementation authority |
-
----
-
-# 🚦 Fail-closed outcomes
-
-ALLIS uses distinct outcomes for different safe states.
-
-| Outcome | Meaning |
-|---|---|
-| ⛔ **BLOCKED / DENIED** | The requested transition is prohibited |
-| 🔒 **WITHHELD / NOT_AUTHORIZED** | Protected state exists, but this use or disclosure lacks authority |
-| 📴 **UNAVAILABLE** | A required dependency or qualified state cannot be reached |
-| 🟡 **GOVERNED_DEGRADED** | A reduced mode is permitted within a defined scope |
-| ❓ **UNRESOLVED** | Required evidence or authority still needs adjudication |
-| ➖ **NOT_APPLICABLE** | The transition does not apply to this request |
-
-> **Missing authority never becomes permission by default.**
-
----
-
-# 🔄 Revalidation after change
-
-A change to a claim-bearing object can require new qualification or correspondence evidence.
-
-```mermaid
-flowchart TD
-    A["✅ Qualified claim"]:::green
-    B{"Did a claim-bearing<br/>object change?"}:::question
-
-    C["No<br/>retain the existing sealed basis"]:::same
-    D["Source changed"]:::change
-    E["Runtime or configuration changed"]:::change
-    F["Trust or governance object changed"]:::change
-    G["Publication or frontend changed"]:::change
-    H["Authorization semantics changed"]:::change
-
-    I["🔁 Requalify the affected object"]:::redo
-    J["🔗 Re-run required correspondence"]:::redo
-    K["🧾 Record the new evidence or seal"]:::redo
-
-    A --> B
-    B -- "No" --> C
-    B -- "Yes" --> D
-    B -- "Yes" --> E
-    B -- "Yes" --> F
-    B -- "Yes" --> G
-    B -- "Yes" --> H
-
-    D --> I
-    E --> I
-    F --> I
-    G --> I
-    H --> I
-
-    I --> J --> K
-
-    classDef green fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
-    classDef question fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
-    classDef same fill:#bae6fd,stroke:#0284c7,color:#0c4a6e,stroke-width:2px;
-    classDef change fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:2px;
-    classDef redo fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
-```
-
-Changes that can require revalidation include:
-
-- source commit or tree changes;
-- runtime image or mounted source changes;
-- trust-anchor changes;
-- governance-view changes;
-- authorization schema or semantic-binding changes;
-- publication identity changes;
-- frontend build changes;
-- public routing changes; and
-- new protected state transitions.
-
----
-
-# 🔒 Workstream closure
-
-A closed workstream keeps its scope, evidence, and final result.
-
-Each closed workstream preserves:
-
-- its qualified object;
-- acceptance criteria;
-- proof state;
-- evidence;
-- residuals;
-- final seal; and
-- scope.
-
-A new capability uses a new governed workstream and its own acceptance criteria.
-
----
-
-# 🧠 System roles
-
-| Name | Role |
-|---|---|
-| 🧩 **ALLIS** | KTS engineering and research platform |
-| 💬 **Ms. Allis** | Governed intelligence-facing analytical and advisory service that operates through ALLIS |
-| 🏛️ **External institutions and communities** | Hold legal, institutional, academic, organizational, or community authority outside ALLIS |
-| 🗺️ **Pilots and deployments** | Bounded use cases and deployment environments |
-| 🔗 **MountainShares / The Commons** | Separate governance or economic systems that can use ALLIS |
-
-These roles remain separate.
 
 ```text
 Ms. Allis
-    ≠
-ALLIS
+    =
+separate MountainShares-facing governed intelligence system
+at mountainshares.us
+```
 
-deployment
-    ≠
-ALLIS definition
+```text
+MountainShares / The Commons
+    =
+separate governance/economic systems
+```
 
-external institutional authority
-    ≠
-ALLIS technical authority
+Do not collapse these identities.
+
+---
+
+# 27. Evidence layering
+
+The current technical record follows:
+
+```text
+formal statement
+    ↓
+kernel proof
+    ↓
+model-to-source correspondence
+    ↓
+source-to-runtime correspondence
+    ↓
+bounded live observation
+    ↓
+operational authority where separately granted
+```
+
+No layer silently substitutes for another.
+
+---
+
+# 28. Current key records
+
+## Acceptance
+
+```text
+acceptance/current-system-manifest.md
+
+acceptance/baseline-object-registry.md
+
+acceptance/closeout/lean-conversational-admission-r2-close.md
+
+acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md
+```
+
+## R2
+
+```text
+formal-verification/conversational-admission/workstream-closeout-r2.md
+
+formal-verification/conversational-admission/theorem-registry.md
+
+evidence/conversational-admission/r2-qualification.md
+
+correspondence/conversational-admission/model-to-source.md
+
+correspondence/conversational-admission/source-to-runtime.md
+```
+
+## R3
+
+```text
+formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md
+
+formal-verification/hilbert-jcp-separation/theorem-registry.md
+
+evidence/hilbert-jcp-separation/r3-qualification.md
+
+correspondence/hilbert-jcp-separation/model-to-source.md
+
+correspondence/hilbert-jcp-separation/source-to-runtime.md
+```
+
+## Current conversational production
+
+```text
+architecture/conversational-frontdoor-boundary.md
+
+correspondence/conversational-path/gateway-to-synthesis.md
+
+evidence/conversational-frontdoor/current-production-state.md
+```
+
+## Successor architecture
+
+```text
+architecture/state-models/hilbert-qualification-plan.md
+
+architecture/state-models/h384-formalization-plan.md
+
+architecture/state-models/hilbert-projection-interfaces.md
+
+architecture/cognition/cognition-rejoin-boundary.md
+
+architecture/automated-learning/automated-learning-graph.md
+
+architecture/automated-learning/read-only-web-research.md
+
+architecture/automated-learning/research-to-corpus-ingestion.md
+
+architecture/private-state/kyc-location-conversational-context.md
+
+architecture/roadmap/post-conversational-qualification-roadmap.md
+
+research/allis-historical-lineage.md
 ```
 
 ---
 
-# 🏠 Public documentation and local source
-
-ALLIS keeps implementation source local while publishing the evidence needed to review public technical claims.
-
-Public technical records can include:
-
-- architecture;
-- qualified object identities;
-- source commit identities;
-- non-sensitive hashes;
-- formal models;
-- theorem status;
-- counterexamples;
-- correspondence results;
-- residuals and scope limits;
-- publication identities; and
-- closeout evidence.
-
-Private material remains outside the public repository where appropriate, including:
-
-- signing keys;
-- credentials;
-- authentication tokens;
-- private personal information;
-- sensitive authorization artifacts;
-- exploit-relevant operational details; and
-- local implementation source that is not required to support a public claim.
-
-> **Public documentation does not require a public source-code release.**
-
----
-
-# 📚 Related records
-
-## Architecture
-
-- [System boundary](architecture/system-boundary/allis-system-boundary.md)
-- [State model](architecture/state-models/state-model-overview.md)
-- [Trust and authority](architecture/trust-and-authority/trust-and-authority-overview.md)
-- [Deployment model](architecture/deployment-model/deployment-model-overview.md)
-
-## Step-12 formal verification
-
-- [Formal model](formal-verification/authorized-adoption/formal-model.md)
-- [Theorem registry](formal-verification/authorized-adoption/theorem-registry.md)
-- [Counterexample registry](formal-verification/authorized-adoption/counterexample-registry.md)
-- [Lean R1 workstream closeout](formal-verification/authorized-adoption/lean/workstream-closeout-r1.md)
-
-## Correspondence
-
-- [Correspondence overview](correspondence/README.md)
-- [Authorized adoption: model → source](correspondence/authorized-adoption/model-to-source.md)
-- [Authorized adoption: source → runtime](correspondence/authorized-adoption/source-to-runtime.md)
-- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
-
-## Evidence
-
-- [Evidence overview](evidence/README.md)
-- [Governed-evolution evidence](evidence/governed-evolution/README.md)
-- [Source identity](evidence/governed-evolution/source-identity.md)
-- [Trust anchor](evidence/governed-evolution/trust-anchor.md)
-- [Governance view](evidence/governed-evolution/governance-view.md)
-- [Post-A8 DGM theorem correspondence registry R1](evidence/governed-evolution/post-a8-theorem-correspondence-registry-r1.md)
-- [Residuals and non-promotions](evidence/governed-evolution/residuals.md)
-- [Step-12 final seal](evidence/governed-evolution/step12-final-seal.md)
-
----
-
-# 🧾 Summary
+# 29. Concise current-state summary
 
 <div align="center">
 
-### 🟢 Workstream F
-**CLOSED**
+### 🟪 Lean R1
+**AUTHORIZED ADOPTION · CLOSED / PASS**
 
-### 🟢 DGM Step 12
-**CLOSED WITH EXPLICIT RESIDUALS**
+### 🟪 Lean R2
+**CONVERSATIONAL ADMISSION · 6/6 · CLOSED / PASS**
 
-### 🟢 Publication Step 17
-**GREEN COMPLETE**
+### 🟪 Lean R3
+**HILBERT/JCP SEPARATION · 14/14 · CLOSED / PASS**
 
-### 🔗 Selected bounded results
-**CORRESPONDENCE-VERIFIED**
+### 🟢 Current frontend
+**PRODUCTION CUTOVER · PASS**
 
-`T12D-B` and `T12D-C` have current post-A8 11/11 source/runtime correspondence plus theorem-specific live revalidation.
+### 🟢 Unified Gateway
+**PRODUCTION CUTOVER · PASS**
 
-`T12D-A` remains **MACHINE_CHECKED** because no positive authorized-apply production observation was executed.
+### 🔗 Current observed server path
+**Gateway → BBB → `llm20production` → LM Synthesizer → response**
 
-### 🔴 P12C-09
-**DISPROVEN AND PRESERVED**
+### 🟡 Browser E2E
+**NOT YET DEMONSTRATED**
+
+### 🟡 Future qualification
+**H384 · cognition · automated learning · research admission · protected KYC-location context · integrated accuracy · final DGM completion**
 
 ### ⚪ Whole-system proof
-**NOT CLAIMED**
-
-<br>
-
 # `SYSTEM_PROVEN=NO`
 
 </div>
@@ -900,14 +1266,22 @@ Private material remains outside the public repository where appropriate, includ
 
 > **Capability does not create permission.**
 
-> **A protected transition requires authority for that transition.**
+> **Authentication does not create governance or SECRET-disclosure authority.**
 
-> **Authority itself has provenance.**
+> **A qualified projection does not become JCP-admitted merely because it exists.**
 
-> **Cryptographic validity does not replace semantic completeness.**
+> **Static H_geo qualification does not equal live H_geo admission.**
 
-> **A claim advances only as far as its evidence supports.**
+> **A web result is not automatically trusted knowledge, admitted corpus state, or qualified Hilbert state.**
 
-> **Correspondence is time-specific.**
+> **Server-side conversational qualification does not imply browser E2E qualification.**
 
-> **A closed workstream does not imply whole-system proof.**
+> **Production cutover does not imply rollback retirement.**
+
+> **Formal proof does not automatically establish implementation or runtime correspondence.**
+
+> **Correspondence is point-in-time.**
+
+> **A closed bounded workstream does not imply whole-system proof.**
+
+> **SYSTEM_PROVEN remains NO.**
