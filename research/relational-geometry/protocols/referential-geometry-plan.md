@@ -58,18 +58,16 @@ This plan implements one bounded experimental family proposed in:
 
 The parent research program asks:
 
-$$
+```math
 \boxed{\text{Does reliable intelligence require preservation of task-relevant relational distinctions?}}
-$$
-
+```
 This plan narrows that question to **referential geometry**.
 
 The specific experimental question is:
 
-$$
+```math
 \boxed{\text{Does warranted referential inference depend on preservation of task-relevant relational bindings?}}
-$$
-
+```
 More operationally:
 
 > If the informational objects available to ALLIS remain substantially the same, but the relations connecting those objects are changed, does the corresponding warranted inference change in a predictable and relation-specific way?
@@ -132,20 +130,18 @@ relational organization
 
 The preferred design therefore does **not** compare:
 
-$$
+```math
 \text{more information}
 \quad\text{versus}\quad
 \text{less information}
-$$
-
+```
 Instead, it attempts to preserve the informational objects while selectively altering the relationships among them.
 
 Let the valid referential representation be:
 
-$$
+```math
 G=(V,E,\tau)
-$$
-
+```
 where:
 
 - $V$ = informational objects;
@@ -154,22 +150,19 @@ where:
 
 Construct an experimental representation:
 
-$$
+```math
 G'=(V,E',\tau)
-$$
-
+```
 such that:
 
-$$
+```math
 V_G=V_{G'}
-$$
-
+```
 while:
 
-$$
+```math
 E_G\neq E_{G'}
-$$
-
+```
 Where feasible, node identity, lexical content, quantity, relation count, relation type, and approximate prompt budget should remain unchanged.
 
 The experimental variable is the **referential binding structure**.
@@ -212,22 +205,20 @@ Not every candidate relation must appear in the first experiment.
 
 The primary hypothesis is:
 
-$$
+```math
 H_1:
 \quad
 \text{task-relevant relational perturbation produces selective degradation in warranted referential performance}
-$$
-
+```
 In plain language:
 
 > **When a task depends on a specific referential relation, altering that relation while preserving the underlying informational objects will selectively reduce or change warranted task performance.**
 
 A stronger comparative prediction is:
 
-$$
+```math
 \Delta_{\mathrm{relevant}} > \Delta_{\mathrm{irrelevant}}
-$$
-
+```
 where $\Delta$ represents degradation relative to the correctly related control condition.
 
 The experiment therefore predicts not merely performance loss, but **relation-specific performance loss**.
@@ -240,14 +231,13 @@ The experiment therefore predicts not merely performance loss, but **relation-sp
 
 The null hypothesis is:
 
-$$
+```math
 H_0:
 \quad
 \Delta_{\mathrm{relevant}}
 \approx
 \Delta_{\mathrm{irrelevant}}
-$$
-
+```
 Operationally:
 
 > Altering a task-relevant referential relation produces no reliable degradation beyond task-irrelevant perturbation or ordinary response variability.
@@ -298,10 +288,9 @@ An experimental unit should contain enough independently verifiable structure to
 
 A candidate normalized record may take the form:
 
-$$
+```math
 r_i=(e_i,t_i,p_i,c_i,q_i,s_i,v_i,a_i)
-$$
-
+```
 where, depending on the domain:
 
 - $e_i$ = entity;
@@ -549,10 +538,9 @@ The minimum design should contain three condition classes.
 
 The control representation preserves the verified referential structure:
 
-$$
+```math
 G_C=(V,E_C)
-$$
-
+```
 All task-relevant bindings are correct.
 
 Example:
@@ -571,10 +559,9 @@ Gauge_A ──source──────► USGS
 
 A relation that is not required for the target task is altered.
 
-$$
+```math
 G_I=(V,E_I)
-$$
-
+```
 For a waterbody-identification task, the critical relation might remain:
 
 ```text
@@ -591,10 +578,9 @@ This condition tests whether arbitrary relational manipulation itself causes deg
 
 The relation required for the task is altered:
 
-$$
+```math
 G_R=(V,E_R)
-$$
-
+```
 Example:
 
 ```text
@@ -619,10 +605,9 @@ Only the relevant binding changes.
 
 Where possible, every experimental unit should appear across matched conditions:
 
-$$
+```math
 r_i^C,\qquad r_i^I,\qquad r_i^R
-$$
-
+```
 where:
 
 - $C$ = correct relation;
@@ -631,22 +616,19 @@ where:
 
 Define:
 
-$$
+```math
 \Delta_i^R = Y_i^C - Y_i^R
-$$
-
+```
 and:
 
-$$
+```math
 \Delta_i^I = Y_i^C - Y_i^I
-$$
-
+```
 The key prediction is:
 
-$$
+```math
 \mathbb{E}[\Delta^R] > \mathbb{E}[\Delta^I]
-$$
-
+```
 ---
 
 # 14. Relation transformations
@@ -903,48 +885,44 @@ The exact scoring rubric must be frozen before execution.
 
 ## 19.1 Referential Accuracy
 
-$$
+```math
 \mathrm{RA}
 =
 \frac{\text{correct supported referential answers}}
 {\text{eligible tasks}}
-$$
-
+```
 ---
 
 ## 19.2 Unsupported Specificity Rate
 
-$$
+```math
 \mathrm{USR}
 =
 \frac{\text{unsupported specific referential claims}}
 {\text{eligible responses}}
-$$
-
+```
 ---
 
 ## 19.3 Appropriate Uncertainty Rate
 
-$$
+```math
 \mathrm{AUR}
 =
 \frac{\text{correct uncertainty or ambiguity responses}}
 {\text{underdetermined trials}}
-$$
-
+```
 ---
 
 ## 19.4 Relation-Following Rate
 
 For deliberately rebound conditions:
 
-$$
+```math
 \mathrm{RFR}
 =
 \frac{\text{responses consistent with the supplied relation}}
 {\text{perturbed-relation trials}}
-$$
-
+```
 Interpretation requires care.
 
 A model that follows a deliberately false experimental binding may be behaving correctly relative to the supplied experimental representation while being wrong relative to external reality.
@@ -971,30 +949,26 @@ The experiment requires explicit separation of two truth layers.
 
 Let the verified external relation be:
 
-$$
+```math
 E_{\mathrm{world}}
-$$
-
+```
 ## 20.2 Supplied experimental relation
 
 Let the relation presented to the system be:
 
-$$
+```math
 E_{\mathrm{supplied}}
-$$
-
+```
 In the correct condition:
 
-$$
+```math
 E_{\mathrm{supplied}} = E_{\mathrm{world}}
-$$
-
+```
 In a deliberate perturbation:
 
-$$
+```math
 E_{\mathrm{supplied}} \neq E_{\mathrm{world}}
-$$
-
+```
 This creates two distinct questions:
 
 > Did ALLIS follow the relational structure actually supplied?
@@ -1110,20 +1084,18 @@ If source epoch is not required for the bounded task, altering it should have su
 
 The predicted pattern is:
 
-$$
+```math
 \Delta_{\mathrm{critical}} > \Delta_{\mathrm{noncritical}}
-$$
-
+```
 ---
 
 # 24. Restoration test
 
 A strong experimental subset should use a three-stage manipulation:
 
-$$
+```math
 G \rightarrow G' \rightarrow G
-$$
-
+```
 Conceptually:
 
 ```text
@@ -1158,10 +1130,9 @@ A later extension may attempt to identify the smallest relation set required for
 
 For task $T$, define:
 
-$$
+```math
 E_T^{*}\subseteq E
-$$
-
+```
 where $E_T^{*}$ is sufficient for warranted performance on $T$ and removal of a required member materially reduces performance.
 
 This would move the research from:
@@ -1463,26 +1434,23 @@ Effect sizes and uncertainty should be reported alongside significance testing.
 
 The principal comparison is:
 
-$$
+```math
 G_C
 \quad\text{versus}\quad
 G_R
-$$
-
+```
 That is:
 
-$$
+```math
 \text{correct relation}
 \quad\text{versus}\quad
 \text{task-relevant perturbation}
-$$
-
+```
 The stronger confirmatory comparison is:
 
-$$
+```math
 \Delta_{\mathrm{relevant}} > \Delta_{\mathrm{irrelevant}}
-$$
-
+```
 Evidence supporting the hypothesis should therefore require more than:
 
 ```text
@@ -1525,23 +1493,21 @@ spatial task remains comparatively stable
 
 Define an effect matrix:
 
-$$
+```math
 M_{ij}
 =
 \text{effect of perturbing relation } i
 \text{ on task } j
-$$
-
+```
 A diagonal or near-diagonal effect pattern would provide stronger evidence for typed relational dependence than generalized disruption.
 
 Conceptually:
 
-$$
+```math
 |M_{ii}| > |M_{ij}|
 \qquad
 \text{for relevant } i\neq j
-$$
-
+```
 This is a prospective prediction, not an established result.
 
 ---
@@ -1810,24 +1776,21 @@ The core planned prediction is:
 
 In compact form:
 
-$$
+```math
 \boxed{
 \Delta_{\mathrm{relevant}} > \Delta_{\mathrm{irrelevant}}
 }
-$$
-
+```
 with the additional expectation that restoration of the original relation should restore the corresponding task behavior:
 
-$$
+```math
 G \rightarrow G' \rightarrow G
-$$
-
+```
 and, where the hypothesis holds:
 
-$$
+```math
 Y \rightarrow Y' \rightarrow Y
-$$
-
+```
 ---
 
 # 48. Research boundary
