@@ -1,15 +1,16 @@
 <div align="center">
 
-# ALLIS — Relational Geometry and Warranted Understanding
+# ALLIS — Referential Geometry Experimental Plan
 
-### A prospective research program for testing whether reliable inference depends on preserving task-relevant relational distinctions
+### Prospective design for testing whether warranted referential inference depends on preservation of task-relevant relational bindings
 
 <br>
 
 ![Research](https://img.shields.io/badge/RESEARCH-PROSPECTIVE-7c3aed?style=for-the-badge)
-![Hypothesis](https://img.shields.io/badge/HYPOTHESIS-RELATIONAL_GEOMETRY-2563eb?style=for-the-badge)
-![Testbed](https://img.shields.io/badge/TESTBED-ALLIS-0ea5e9?style=for-the-badge)
-![Evidence](https://img.shields.io/badge/RESULTS-NOT_YET_ESTABLISHED-f59e0b?style=for-the-badge)
+![Protocol](https://img.shields.io/badge/PROTOCOL-PLAN_ONLY-2563eb?style=for-the-badge)
+![Geometry](https://img.shields.io/badge/GEOMETRY-REFERENTIAL-0ea5e9?style=for-the-badge)
+![Dataset](https://img.shields.io/badge/DATASET-NOT_YET_FROZEN-f59e0b?style=for-the-badge)
+![Execution](https://img.shields.io/badge/EXECUTION-NOT_AUTHORIZED-ef4444?style=for-the-badge)
 ![System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -21,1331 +22,1931 @@
 ---
 
 > [!IMPORTANT]
-> This directory defines a **prospective research program**.
+> This document is an **experimental plan**.
 >
-> It does not define the current qualified technical state of ALLIS.
+> It defines how a referential-geometry experiment should be designed before a final dataset, executable protocol, or result exists.
 >
-> It does not establish that meaning, understanding, intelligence, consciousness, or physical reality has been reduced to a particular geometry.
+> It does not authorize execution.
 >
-> The purpose of this work is to formulate and test a narrower question:
+> It does not establish an experimental effect.
 >
-> # **Does reliable inference require preservation of the relational distinctions required by the task being solved?**
+> It does not convert the broader relational-geometry research hypothesis into a current ALLIS system claim.
 
 Preserve:
 
 ```text
-research hypothesis
+research question
     ≠
-architectural fact
+experimental plan
     ≠
-qualified result
+frozen protocol
     ≠
-formal theorem
+execution
     ≠
-whole-system claim
+result
+    ≠
+validated claim
 ```
 
 ---
 
-# 👀 The research question in one view
+# 1. Relationship to the parent research program
 
-```mermaid
-flowchart TD
-    A["🧠 Semantic inference<br/>What could follow?"]:::semantic
-    B["🔗 Relational evidence<br/>What is actually connected?"]:::relation
+This plan implements one bounded experimental family proposed in:
 
-    A --> C["🔎 Evidence-bounded inference<br/>What is supported here?"]:::bounded
-    B --> C
+- [`../README.md`](../README.md)
 
-    C --> D["🧾 Validation / provenance<br/>Does the inference correspond to evidence?"]:::evidence
+The parent research program asks:
 
-    D --> E["✅ Validated knowledge<br/>What may be treated as established?"]:::knowledge
+$$
+\boxed{\text{Does reliable intelligence require preservation of task-relevant relational distinctions?}}
+$$
 
-    E --> F["🛡️ Authority<br/>What may be done with it?"]:::authority
+This plan narrows that question to **referential geometry**.
 
-    F --> G["⚙️ Authorized action<br/>Which transition is permitted?"]:::action
+The specific experimental question is:
 
-    classDef semantic fill:#ddd6fe,stroke:#7c3aed,color:#3b0764,stroke-width:2px;
-    classDef relation fill:#bae6fd,stroke:#0284c7,color:#0c4a6e,stroke-width:2px;
-    classDef bounded fill:#a5f3fc,stroke:#0891b2,color:#164e63,stroke-width:2px;
-    classDef evidence fill:#fde68a,stroke:#ca8a04,color:#713f12,stroke-width:2px;
-    classDef knowledge fill:#bbf7d0,stroke:#16a34a,color:#14532d,stroke-width:2px;
-    classDef authority fill:#fed7aa,stroke:#ea580c,color:#7c2d12,stroke-width:2px;
-    classDef action fill:#fecaca,stroke:#dc2626,color:#7f1d1d,stroke-width:2px;
-```
+$$
+\boxed{\text{Does warranted referential inference depend on preservation of task-relevant relational bindings?}}
+$$
 
-The proposed distinction is:
+More operationally:
+
+> If the informational objects available to ALLIS remain substantially the same, but the relations connecting those objects are changed, does the corresponding warranted inference change in a predictable and relation-specific way?
+
+This plan tests one component of the broader theory.
+
+It does not attempt to test consciousness, subjective experience, non-computability, or physical spacetime geometry.
+
+---
+
+# 2. Plan status
 
 ```text
-semantically plausible
-    ≠
-relationally supported
-    ≠
-validated
-    ≠
-authorized
-```
+DOCUMENT_CLASS=PROSPECTIVE_EXPERIMENTAL_PLAN
 
----
+REFERENTIAL_GEOMETRY_HYPOTHESIS=NOT_ESTABLISHED
 
-# 1. Purpose
+DATA_DOMAIN_CANDIDATES=IDENTIFIED
 
-This research program asks whether reliable artificial inference depends not only on the information available to a system, but also on preservation of the **relationships that make task-relevant distinctions identifiable**.
+DATASET_SELECTED=NO
 
-The central working hypothesis is:
+DATASET_SOURCE_VERIFIED=NO
 
-\[
-\boxed{
-\textbf{Reliable intelligence requires preservation of task-relevant relational distinctions.}
-}
-\]
+DATASET_ADMITTED=NO
 
-A broader motivating question is:
+DATASET_FROZEN=NO
 
-\[
-\boxed{
-\text{Does understanding require a physically instantiated relational geometry that preserves meaningful distinctions?}
-}
-\]
+TRANSFORMATION_SET_FROZEN=NO
 
-The broader question is intentionally separated from the immediate ALLIS research program.
+SCORING_PLAN_FROZEN=NO
 
-ALLIS does not currently establish an answer to it.
+EXECUTABLE_PROTOCOL_FROZEN=NO
 
-Instead, ALLIS provides a governed artificial-system testbed in which the narrower structural hypothesis can be progressively formalized and challenged.
+EXECUTION_AUTHORIZED=NO
 
----
+RESULTS_AVAILABLE=NO
 
-# 2. Research status
-
-```text
-Document class:
-PROSPECTIVE RESEARCH
-
-Central hypothesis:
-NOT YET ESTABLISHED
-
-Relational-geometry formal model:
-PARTIAL / PROSPECTIVE
-
-Controlled experimental program:
-PLANNED
-
-Cross-domain equivalence:
-NOT ESTABLISHED
-
-Human-consciousness implication:
-NOT ESTABLISHED
-
-Penrose validation:
-NO
-
-Whole-system proof:
 SYSTEM_PROVEN=NO
 ```
 
 The governing rule is:
 
-> **The purpose of the research is to test the hypothesis, not to assume it.**
+> **This document specifies what must be established before the experiment can legitimately run.**
 
 ---
 
-# 3. What “geometry” means in this research
+# 3. Research objective
 
-The word **geometry** is used first in a relational and structural sense.
+The purpose of the experiment is to distinguish:
 
-A useful abstract representation is:
+```text
+information availability
+```
 
-\[
-G=(V,E,\tau,C),
-\]
+from:
+
+```text
+relational organization
+```
+
+The preferred design therefore does **not** compare:
+
+$$
+\text{more information}
+\quad\text{versus}\quad
+\text{less information}.
+$$
+
+Instead, it attempts to preserve the informational objects while selectively altering the relationships among them.
+
+Let the valid referential representation be:
+
+$$
+G=(V,E,\tau),
+$$
 
 where:
 
-- \(V\) = states, objects, observations, or entities;
-- \(E\) = relationships among them;
-- \(\tau\) = types assigned to states and relationships;
-- \(C\) = constraints governing valid states, interpretations, or transitions.
+- $V$ = informational objects;
+- $E$ = relations among those objects;
+- $\tau$ = types assigned to nodes and edges.
 
-A relational geometry may therefore include:
+Construct an experimental representation:
 
-```text
-semantic relations
+$$
+G'=(V,E',\tau),
+$$
 
-spatial relations
+such that:
 
-temporal relations
-
-identity relations
-
-provenance relations
-
-evidentiary relations
-
-correspondence relations
-
-authority relations
-
-network topology
-
-ordering
-
-neighborhood
-
-admissible transitions
-```
-
-This definition does **not** establish:
-
-```text
-relational geometry
-    =
-physical spacetime geometry
-```
-
-or:
-
-```text
-semantic vector
-    =
-quantum state
-```
-
-or:
-
-```text
-named ALLIS H_* domain
-    =
-mathematical linear subspace
-```
-
-Those are separate questions requiring separate definitions and evidence.
-
----
-
-# 4. The distinction-preservation hypothesis
-
-Consider two states:
-
-\[
-s_1\neq s_2.
-\]
-
-For a bounded task \(T\), suppose the difference between those states matters:
-
-\[
-s_1\not\sim_Ts_2.
-\]
-
-Now consider a representation or transformation:
-
-\[
-\pi:S\rightarrow S'.
-\]
-
-If that representation is sufficient for task \(T\), then it should preserve the distinction:
-
-\[
-s_1\not\sim_Ts_2
-\Rightarrow
-\pi(s_1)\neq\pi(s_2).
-\]
-
-If instead:
-
-\[
-\pi(s_1)=\pi(s_2),
-\]
-
-then the representation has collapsed two task-relevant states into one observable state.
-
-A downstream reasoner restricted to that representation cannot uniquely recover the destroyed distinction merely by reasoning harder.
-
-The research question therefore becomes:
-
-> **Which relational distinctions must remain recoverable for a particular inference to remain warranted?**
-
----
-
-# 5. Meaning is not only the represented object
-
-A central working proposition is:
-
-\[
-\boxed{
-\textbf{Meaning is not exhausted by the things represented; it also depends on the relations that distinguish what those things are, where they belong, and what may validly follow from them.}
-}
-\]
-
-For example, an isolated statement:
-
-```text
-Bridge closed
-```
-
-contains semantic information.
-
-But record-specific interpretation may additionally depend on:
-
-```text
-which bridge
-
-where
-
-when
-
-source
-
-observation
-
-current state
-
-provenance
-
-applicable authority
-```
-
-The proposition being investigated is not that the words have no meaning without those relations.
-
-It is that **specific warranted interpretation cannot legitimately exceed the relations that support it**.
-
----
-
-# 6. Semantic inference and relational evidence
-
-This research distinguishes:
-
-```text
-SEMANTIC INFERENCE
-```
-
-from:
-
-```text
-AVAILABLE RELATIONAL EVIDENCE
-```
-
-Semantic inference concerns what could follow from:
-
-- concepts;
-- language;
-- rules;
-- learned associations;
-- similarity;
-- model reasoning.
-
-Relational evidence concerns which specific connections have actually been established for the object or claim under consideration.
-
-A working formulation is:
-
-\[
-\boxed{
-\text{Semantic Inference}
-\cap
-\text{Available Relational Evidence}
-=
-\text{Evidence-Bounded Inference}.
-}
-\]
-
-That result is not automatically validated knowledge.
-
-The intended progression is:
-
-```text
-semantic possibility
-    ↓
-evidence-bounded inference
-    ↓
-validation / correspondence
-    ↓
-validated knowledge
-    ↓
-applicable authority
-    ↓
-permitted use
-    ↓
-authorized transition
-```
-
-ALLIS intentionally treats these as different states.
-
----
-
-# 7. Why ALLIS is a useful testbed
-
-The current ALLIS architecture already separates many of the dimensions needed to study relational distinction preservation.
-
-The current state architecture distinguishes, among other things:
-
-```text
-semantic state
-
-geographic / spatial state
-
-temporal state
-
-person-linked state
-
-memory / provenance state
-
-evidence state
-
-lifecycle state
-
-authority state
-
-publication state
-```
-
-See:
-
-- [`../../architecture/state-models/state-model-overview.md`](../../architecture/state-models/state-model-overview.md)
-
-ALLIS also maintains:
-
-```text
-state
-    ≠
-authority
-```
-
-```text
-capability
-    ≠
-permission
-```
-
-```text
-evidence
-    ≠
-execution authority
-```
-
-See:
-
-- [`../../architecture/authority-planes.md`](../../architecture/authority-planes.md)
-
-The Automated Learning architecture further preserves:
-
-```text
-information missing
-    ≠
-permission to invent
-```
-
-See:
-
-- [`../../architecture/automated-learning/automated-learning-graph.md`](../../architecture/automated-learning/automated-learning-graph.md)
-
-These distinctions give ALLIS a useful experimental property:
-
-> Relations can potentially be manipulated by type while unrelated state dimensions remain separately represented.
-
----
-
-# 8. Typed relational state
-
-The research program treats relational distinctions as typed.
-
-A spatial relation is not a provenance relation.
-
-A provenance relation is not an authority relation.
-
-An authority relation is not semantic similarity.
-
-An identity relation is not publication permission.
-
-Conceptually:
-
-\[
-\text{PLACE}
-\neq
-\text{TIME}
-\neq
-\text{SOURCE}
-\neq
-\text{IDENTITY}
-\neq
-\text{AUTHORITY}.
-\]
-
-This matters because collapsing types can produce category errors.
-
-For example:
-
-```text
-information exists
-    ≠
-information is verified
-```
-
-```text
-information is verified
-    ≠
-information may be disclosed
-```
-
-```text
-information may be disclosed
-    ≠
-information may authorize action
-```
-
-The hypothesis therefore concerns not merely the existence of relationships, but preservation of **task-relevant typed relationships**.
-
----
-
-# 9. H384 and representational geometry
-
-The current ALLIS architecture contains a prospective common carrier:
-
-```text
-H384 := Fin 384 → ℝ
-```
-
-The current safe classification of named H_* objects remains:
-
-```text
-governed typed projection / view / architectural state domain
-```
-
-until stronger mathematical properties are separately established.
-
-See:
-
-- [`../../architecture/state-models/h384-formalization-plan.md`](../../architecture/state-models/h384-formalization-plan.md)
-- [`../../architecture/state-models/hilbert-projection-interfaces.md`](../../architecture/state-models/hilbert-projection-interfaces.md)
-
-Preserve:
-
-```text
-vector proximity
-    ≠
-referential identity
-    ≠
-provenance
-    ≠
-authority
-    ≠
-correspondence
-```
-
-Representational geometry is therefore one candidate geometry within the research program.
-
-It is not assumed to be the complete geometry of warranted meaning.
-
----
-
-# 10. Experimental principle
-
-The strongest experiments should distinguish:
-
-```text
-information loss
-```
-
-from:
-
-```text
-relational-structure loss.
-```
-
-A preferred experiment therefore begins with:
-
-\[
-G=(V,E)
-\]
-
-and constructs:
-
-\[
-G'=(V,E')
-\]
-
-while preserving:
-
-\[
-V_G=V_{G'}.
-\]
-
-The objects, values, or propositions remain substantially the same.
-
-The relationship structure changes:
-
-\[
-E_G\neq E_{G'}.
-\]
-
-Possible controlled transformations include:
-
-```text
-edge removal
-
-edge reassignment
-
-edge permutation
-
-type substitution
-
-temporal rebinding
-
-spatial rebinding
-
-provenance rebinding
-
-identity rebinding
-
-authority-edge removal
-
-correspondence-edge removal
-```
-
-The research question becomes:
-
-> **Does the system lose the specific inference supported by the altered relation while preserving unrelated capabilities?**
-
-This is stronger than simply testing whether providing more information improves performance.
-
----
-
-# 11. Experimental families
-
-## 11.1 Referential geometry
-
-Test relationships among:
-
-```text
-object
-place
-time
-event
-source
-provenance
-```
-
-The information remains available while selected bindings are changed.
-
-The question is whether record-specific interpretation follows the actual surviving relations.
-
----
-
-## 11.2 Typed-state geometry
-
-Test whether distinctions such as:
-
-```text
-semantic state
-    ≠
-authority state
-```
-
-```text
-candidate
-    ≠
-qualified
-```
-
-```text
-source
-    ≠
-evidence
-```
-
-```text
-private
-    ≠
-public
-```
-
-are necessary to prevent predictable category errors.
-
----
-
-## 11.3 Provenance and correspondence geometry
-
-Hold semantic content constant while manipulating:
-
-```text
-source relation
-
-source → runtime correspondence
-
-runtime → observation correspondence
-
-observation → claim correspondence
-```
-
-The question is whether plausible content is correctly distinguished from corresponded evidence.
-
----
-
-## 11.4 Authority geometry
-
-Hold information and system capability constant while changing authority relationships.
-
-Test whether:
-
-```text
-ability to perform transition X
-```
-
-remains distinguishable from:
-
-```text
-authority to perform transition X.
-```
-
-A missing authority edge must not be reconstructed from model confidence, usefulness, or capability.
-
----
-
-## 11.5 Representational geometry
-
-Test the relationship between vector-space structure and typed system state.
-
-Questions may include:
-
-- Which semantic distinctions are reflected in H384?
-- Which are not?
-- When does proximity support retrieval?
-- When does proximity fail to establish identity or factual correspondence?
-- Can vector similarity ever substitute for provenance?
-- Can it substitute for authorization?
-
-The expected architectural answer to the final two questions is currently **no**, but experimental work may help characterize why.
-
----
-
-## 11.6 Physical grounding
-
-A later experimental family may connect ALLIS state to:
-
-```text
-physical place
-
-sensor observation
-
-infrastructure state
-
-time
-
-measured event
-
-physical topology
-```
-
-This would permit comparison between relationally grounded semantic inference and physics-aware cyber-physical inference.
-
----
-
-# 12. What would count as evidence?
-
-General performance degradation is not sufficient.
-
-A stronger result would show **relation-specific degradation**.
-
-For example:
-
-```text
-remove / corrupt temporal relation
-    ↓
-temporal attribution degrades
-```
+$$
+V_G=V_{G'}
+$$
 
 while:
 
-```text
-spatial classification remains substantially intact
-```
+$$
+E_G\neq E_{G'}.
+$$
 
-Likewise:
+Where feasible, node identity, lexical content, quantity, relation count, relation type, and approximate prompt budget should remain unchanged.
 
-```text
-remove provenance relation
-    ↓
-source attribution / evidentiary confidence degrades
-```
-
-without requiring unrelated semantic competence to collapse.
-
-And:
-
-```text
-remove authority relation
-    ↓
-protected transition becomes unavailable
-```
-
-without changing the underlying factual content.
-
-Selective degradation would support a stronger relational interpretation than indiscriminate degradation.
+The experimental variable is the **referential binding structure**.
 
 ---
 
-# 13. Falsifiability
+# 4. Referential geometry
 
-The research hypothesis must be capable of failing.
+For this experiment, referential geometry concerns the relations that determine **what a claim is about**.
 
-It would be weakened if:
-
-- relations formally required by a task can be destroyed without measurable effect;
-- semantic inference reliably reconstructs destroyed distinctions without another information source;
-- relation-specific manipulations produce only random or unrelated effects;
-- apparently distinct relation types prove unnecessary for the tasks assigned to them;
-- simpler information-theoretic explanations account for the observations completely.
-
-The research program should therefore specify before execution:
+Candidate relation types include:
 
 ```text
-which distinction matters
+ENTITY ──located_at──────► PLACE
 
-why it matters
+ENTITY ──within──────────► REGION
 
-which relation represents it
+ENTITY ──associated_with─► FEATURE
 
-what transformation will alter it
+OBSERVATION ──about──────► ENTITY
 
-what failure should occur
+OBSERVATION ──observed_at► TIME
 
-what behavior should remain unchanged
+RECORD ──sourced_from────► SOURCE
+
+RECORD ──source_epoch────► SOURCE_TIME
+
+CLAIM ──supported_by─────► EVIDENCE
+
+FEATURE ──connected_to───► FEATURE
 ```
 
-A hypothesis that predicts every possible outcome is not useful.
+The exact relation set will depend on the admitted dataset.
+
+Not every candidate relation must appear in the first experiment.
 
 ---
 
-# 14. Measurement
+# 5. Central hypothesis
 
-Potential measurements include:
+The primary hypothesis is:
 
-```text
-task accuracy
+$$
+H_1:
+\quad
+\text{task-relevant relational perturbation produces selective degradation in warranted referential performance.}
+$$
 
-unsupported specificity
+In plain language:
 
-appropriate uncertainty
+> **When a task depends on a specific referential relation, altering that relation while preserving the underlying informational objects will selectively reduce or change warranted task performance.**
 
-relation reconstruction accuracy
+A stronger comparative prediction is:
 
-provenance adherence
+$$
+\Delta_{\mathrm{relevant}}
+>
+\Delta_{\mathrm{irrelevant}},
+$$
 
-correspondence adherence
+where $\Delta$ represents degradation relative to the correctly related control condition.
 
-identity preservation
-
-authority violations
-
-false authorization
-
-type-confusion rate
-
-calibration
-
-recovery after relation restoration
-```
-
-No aggregate “relational geometry score” is currently established.
-
-Any such metric should be formally defined before being treated as evidence.
+The experiment therefore predicts not merely performance loss, but **relation-specific performance loss**.
 
 ---
 
-# 15. Relationship to physics-aware intelligence
+# 6. Null and competing explanations
 
-A useful cross-domain comparison is:
+## 6.1 Null hypothesis
 
-\[
-\text{data-driven inference}
-+
-\text{physical topology}
-+
-\text{system dynamics}
-+
-\text{physical constraints}
-\rightarrow
-\text{bounded physical inference}
-\]
+The null hypothesis is:
 
-versus:
+$$
+H_0:
+\quad
+\Delta_{\mathrm{relevant}}
+\approx
+\Delta_{\mathrm{irrelevant}}.
+$$
 
-\[
-\text{semantic inference}
-+
-\text{relational evidence}
-+
-\text{provenance}
-+
-\text{typed state}
-\rightarrow
-\text{bounded warranted inference}.
-\]
+Operationally:
 
-These are not asserted to be mathematically equivalent.
-
-The research question is whether they instantiate a common structural principle:
-
-\[
-\boxed{
-\textbf{Reliable inference requires preservation of the distinctions required by the system's task.}
-}
-\]
-
-If so, physical-system intelligence and semantic intelligence may provide two independently testable domains for the same broader structural hypothesis.
+> Altering a task-relevant referential relation produces no reliable degradation beyond task-irrelevant perturbation or ordinary response variability.
 
 ---
 
-# 16. Relationship to understanding and consciousness
+## 6.2 Information-content explanation
 
-The research program does not begin by assuming consciousness.
+A possible competing explanation is:
 
-It asks a prior structural question:
+> Performance changes because the experimental representation contains less usable information, not because referential geometry changed.
 
-\[
-\boxed{
-\text{What must remain distinguishable for understanding to remain possible?}
-}
-\]
-
-ALLIS can investigate that question for artificial inference.
-
-Cyber-physical systems can investigate analogous questions for physical-state inference.
-
-Human cognition would require independent biological, neurological, psychological, or physical experiments.
-
-Preserve:
-
-```text
-artificial warranted inference
-    ≠
-human subjective consciousness
-```
-
-and:
-
-```text
-shared structural principle
-    ≠
-shared mechanism
-```
+The experiment should therefore preserve the same underlying nodes and values wherever technically possible.
 
 ---
 
-# 17. Relationship to Penrose
+## 6.3 Lexical-cue explanation
 
-Roger Penrose has argued that ordinary algorithmic computation may be insufficient to explain human understanding or consciousness and that deeper physical law may be relevant.
+A model may infer the intended relation from names, co-occurrence patterns, or world knowledge despite altered bindings.
 
-This research program does not establish or assume Penrose's conclusion.
-
-Instead, it identifies an intermediate question:
-
-\[
-\boxed{
-\text{Could the structure that makes understanding possible depend on preservation of physically instantiated relational distinctions?}
-}
-\]
-
-This creates a possible three-domain research program:
+The experiment must distinguish:
 
 ```text
-CYBER-PHYSICAL INTELLIGENCE
-    ↓
-Which physical / topological distinctions
-must survive for reliable inference?
-
-ARTIFICIAL SEMANTIC INTELLIGENCE
-    ↓
-Which semantic / referential / evidentiary
-distinctions must survive for warranted inference?
-
-HUMAN UNDERSTANDING
-    ↓
-Which physically instantiated distinctions,
-if any, must survive for understanding?
+relation supported by supplied evidence
 ```
 
-The first two may eventually provide independently testable evidence about a broader structural principle.
-
-The third remains an open question.
-
-This research does not claim:
+from:
 
 ```text
-PENROSE_VALIDATED=YES
+relation reconstructed from parametric or external knowledge
 ```
 
-```text
-ORCH_OR_VALIDATED=YES
-```
+These are not equivalent.
+
+---
+
+## 6.4 Generic disruption explanation
+
+If every perturbation degrades every task equally, the result may indicate generic representation disruption rather than relation-specific dependence.
+
+The design therefore requires **task-irrelevant perturbation controls**.
+
+---
+
+# 7. Experimental units
+
+An experimental unit should contain enough independently verifiable structure to support at least one controlled referential manipulation.
+
+A candidate normalized record may take the form:
+
+$$
+r_i=
+(e_i,t_i,p_i,c_i,q_i,s_i,v_i,a_i),
+$$
+
+where, depending on the domain:
+
+- $e_i$ = entity;
+- $t_i$ = entity or record type;
+- $p_i$ = place;
+- $c_i$ = coordinate or geometry;
+- $q_i$ = temporal state;
+- $s_i$ = source;
+- $v_i$ = source version or epoch;
+- $a_i$ = associated physical or semantic feature.
+
+Not every dataset must contain every field.
+
+The executable protocol must state exactly which fields are required.
+
+---
+
+# 8. Dataset-selection requirements
+
+The first experimental dataset should satisfy the following requirements.
+
+## 8.1 Referential multiplicity
+
+Records should contain multiple independently meaningful relations.
+
+Preferred:
 
 ```text
-CONSCIOUSNESS_IS_QUANTUM_GEOMETRY=YES
+entity
+    ├── located_at → place
+    ├── coordinate → geometry
+    ├── associated_with → feature
+    ├── source → source authority
+    └── source_epoch → time
+```
+
+Less preferred:
+
+```text
+entity
+    └── located_at → coordinate
+```
+
+Multiple relations permit stronger tests of selective degradation.
+
+---
+
+## 8.2 Independent verifiability
+
+The ground-truth relation must be verifiable independently of ALLIS output.
+
+The final dataset should preferably derive from:
+
+- authoritative public records;
+- qualified local data;
+- stable governmental datasets;
+- validated institutional records;
+- deterministic spatial relationships;
+- other sources with explicit provenance.
+
+---
+
+## 8.3 Adequate cardinality
+
+The dataset must contain enough records to permit:
+
+- matched control and experimental conditions;
+- relation permutations without trivial duplication;
+- task-relevant and task-irrelevant controls;
+- meaningful uncertainty estimates;
+- held-out or replication subsets where feasible.
+
+The final minimum sample size must be chosen before execution.
+
+---
+
+## 8.4 Relation separability
+
+The dataset must allow one relationship to be altered without necessarily changing all others.
+
+For example:
+
+```text
+entity → place
+```
+
+should ideally be manipulable without simultaneously deleting:
+
+```text
+entity → source
 ```
 
 or:
 
 ```text
-ALLIS_IS_CONSCIOUS=YES
+entity → type
 ```
 
 ---
 
-# 18. Cross-domain hypothesis
+## 8.5 Avoidance of trivial leakage
 
-The broad candidate hypothesis is:
-
-\[
-\boxed{
-\textbf{Reliable intelligence requires preservation of task-relevant relational distinctions.}
-}
-\]
-
-Possible realizations differ by domain.
-
-### Cyber-physical system
-
-```text
-topology
-physical law
-time
-sensor placement
-system dynamics
-```
-
-### ALLIS
-
-```text
-semantic relation
-place
-time
-identity
-provenance
-evidence
-correspondence
-privacy
-authority
-lifecycle
-```
-
-### Human cognition
-
-```text
-unknown / empirical question
-```
-
-The scientific objective is not to use similar vocabulary across the three domains.
-
-It is to determine whether a **common formal invariant** can eventually be identified.
-
----
-
-# 19. What ALLIS can test
-
-ALLIS may be able to test whether:
-
-- bounded inference depends on specified relational distinctions;
-- destroying particular relations produces predictable failure modes;
-- restoring those relations restores the corresponding capability;
-- relation types can be manipulated independently;
-- semantic proximity can or cannot substitute for referential evidence;
-- provenance changes epistemic status without changing semantic content;
-- authority changes permitted transitions without changing knowledge;
-- typed boundaries prevent category errors;
-- different system tasks require different minimal relational structures.
-
-These are empirical and formalizable questions.
-
----
-
-# 20. What ALLIS cannot establish by itself
-
-ALLIS cannot by itself establish:
-
-```text
-subjective consciousness
-
-human phenomenal experience
-
-Penrose non-computability
-
-Orch OR
-
-quantum consciousness
-
-physical spacetime equivalence
-
-a theory of everything
-
-a universal theory of meaning
-```
-
-Nor does successful ALLIS performance prove:
-
-```text
-ALLIS understands exactly as a human understands
-```
-
-The research program must preserve the difference between:
-
-```text
-artificial testbed result
-```
-
-and:
-
-```text
-cross-domain physical theory.
-```
-
----
-
-# 21. Research sequence
-
-The intended sequence is:
-
-```text
-qualified ALLIS baseline
-    ↓
-bounded task definition
-    ↓
-identify task-relevant distinctions
-    ↓
-identify the relations encoding them
-    ↓
-define control condition
-    ↓
-define relation-only transformation where possible
-    ↓
-freeze protocol
-    ↓
-execute
-    ↓
-measure relation-specific effects
-    ↓
-replicate
-    ↓
-formalize supported results
-    ↓
-compare across domains
-```
-
-The order matters.
-
-Do not infer:
-
-```text
-interesting observation
-    =
-validated cross-domain theory
-```
-
----
-
-# 22. Evidence levels
-
-Research findings should advance only as far as the evidence supports.
-
-A useful progression is:
-
-```text
-HYPOTHESIZED
-
-FORMALLY_SPECIFIED
-
-IMPLEMENTED
-
-OBSERVED
-
-REPLICATED
-
-MACHINE_CHECKED
-
-CORRESPONDENCE_VERIFIED
-
-CROSS_DOMAIN_REPLICATED
-```
-
-These states are not interchangeable.
+The dataset should minimize cases where the answer is directly encoded in an unmanipulated label.
 
 For example:
 
 ```text
-FORMALLY_SPECIFIED
-    ≠
-OBSERVED
+Charleston Area Medical Center
+```
+
+contains a geographic cue in the entity name itself.
+
+A location task using that record may therefore remain partially solvable after the explicit location relation has been altered.
+
+Such cases may still be retained, but they must be identified as leakage-prone.
+
+---
+
+# 9. Candidate data domains
+
+Candidate domains have been identified but are **not yet selected**.
+
+Potential first domains include:
+
+```text
+geographic names
+
+hospitals and public facilities
+
+bridges and transportation infrastructure
+
+stream gauges
+
+rivers and waterways
+
+hazard records
+
+public-safety infrastructure
+
+historic or civic places
+
+other spatially verified public records
+```
+
+A hydrologic or infrastructure dataset may be especially useful if it contains several simultaneously testable relationships.
+
+Example:
+
+```text
+Gauge_A
+    ├── located_at → Point_A
+    ├── within → County_A
+    ├── measures → River_A
+    ├── source → USGS
+    └── observed_at → Time_A
+```
+
+The plan does not yet select a final source.
+
+---
+
+# 10. Dataset admission process
+
+Candidate data must not become experimental evidence merely because it is available.
+
+The intended admission sequence is:
+
+```text
+candidate source
+    ↓
+source identity verification
+    ↓
+licensing / permitted-use check
+    ↓
+record extraction
+    ↓
+schema normalization
+    ↓
+referential validation
+    ↓
+duplicate / conflict review
+    ↓
+ground-truth relation construction
+    ↓
+dataset manifest
+    ↓
+checksum freeze
+    ↓
+experimental admission
+```
+
+The dataset must have a preserved manifest before protocol freeze.
+
+---
+
+# 11. Required dataset manifest
+
+The eventual dataset manifest should record at least:
+
+```text
+dataset_name
+
+dataset_version
+
+source_organization
+
+source_url_or_origin
+
+retrieval_date
+
+license_or_use_status
+
+source_files
+
+source_checksums
+
+normalization_code_identity
+
+record_count
+
+included_relation_types
+
+excluded_relation_types
+
+known_limitations
+
+known_ambiguities
+
+ground_truth_method
+
+admission_status
+
+frozen_dataset_sha256
+```
+
+The manifest belongs with the eventual experimental package.
+
+---
+
+# 12. Condition design
+
+The minimum design should contain three condition classes.
+
+## 12.1 Correct-relation control
+
+The control representation preserves the verified referential structure:
+
+$$
+G_C=(V,E_C).
+$$
+
+All task-relevant bindings are correct.
+
+Example:
+
+```text
+Gauge_A ──measures────► New_River
+
+Gauge_A ──located_at──► Point_A
+
+Gauge_A ──source──────► USGS
+```
+
+---
+
+## 12.2 Task-irrelevant perturbation control
+
+A relation that is not required for the target task is altered.
+
+$$
+G_I=(V,E_I).
+$$
+
+For a waterbody-identification task, the critical relation might remain:
+
+```text
+Gauge_A ──measures──► New_River
+```
+
+while an independently represented noncritical relation is changed.
+
+This condition tests whether arbitrary relational manipulation itself causes degradation.
+
+---
+
+## 12.3 Task-relevant perturbation
+
+The relation required for the task is altered:
+
+$$
+G_R=(V,E_R).
+$$
+
+Example:
+
+```text
+correct:
+
+Gauge_A ──measures──► New_River
+```
+
+```text
+perturbed:
+
+Gauge_A ──measures──► Gauley_River
+```
+
+The same nodes remain present.
+
+Only the relevant binding changes.
+
+---
+
+# 13. Preferred matched design
+
+Where possible, every experimental unit should appear across matched conditions:
+
+$$
+r_i^C,\qquad r_i^I,\qquad r_i^R,
+$$
+
+where:
+
+- $C$ = correct relation;
+- $I$ = task-irrelevant perturbation;
+- $R$ = task-relevant perturbation.
+
+Define:
+
+$$
+\Delta_i^R
+=
+Y_i^C-Y_i^R
+$$
+
+and:
+
+$$
+\Delta_i^I
+=
+Y_i^C-Y_i^I.
+$$
+
+The key prediction is:
+
+$$
+\mathbb{E}[\Delta^R]
+>
+\mathbb{E}[\Delta^I].
+$$
+
+---
+
+# 14. Relation transformations
+
+## 14.1 Edge permutation
+
+Relations of one type are permuted among records.
+
+```text
+A → X
+B → Y
+C → Z
+```
+
+becomes:
+
+```text
+A → Y
+B → Z
+C → X
+```
+
+All original nodes remain available.
+
+---
+
+## 14.2 Pairwise swap
+
+Two bindings exchange targets.
+
+```text
+A → X
+B → Y
+```
+
+becomes:
+
+```text
+A → Y
+B → X
+```
+
+Node count, relation count, and target distribution remain unchanged.
+
+---
+
+## 14.3 Edge deletion
+
+A required relationship is removed while both endpoint nodes remain present.
+
+Correct:
+
+```text
+A → X
+```
+
+Perturbed:
+
+```text
+A     X
+```
+
+This tests missing relational structure rather than missing informational objects.
+
+---
+
+## 14.4 Ambiguous rebinding
+
+An entity is given multiple possible referential targets without sufficient evidence to distinguish among them.
+
+The appropriate response may become:
+
+```text
+INSUFFICIENT_INFORMATION
+```
+
+or an explicitly bounded ambiguity statement.
+
+---
+
+## 14.5 Type-preserving replacement
+
+A target is replaced only with another valid target of the same type.
+
+```text
+PLACE → PLACE
+```
+
+rather than:
+
+```text
+PLACE → SOURCE
+```
+
+This helps isolate referential identity from obvious type corruption.
+
+---
+
+# 15. Transformations excluded from the primary test
+
+The first referential-geometry experiment should avoid transformations that introduce unnecessary confounds.
+
+Examples include:
+
+```text
+removing entire records
+
+changing semantic labels and relations simultaneously
+
+changing model settings between conditions
+
+changing prompt instructions between paired units
+
+using different model versions across conditions
+
+changing relation type and node type simultaneously
+
+adding explanatory context to only one condition
+```
+
+Such manipulations may be useful in later experiments.
+
+They should not define the primary causal contrast.
+
+---
+
+# 16. Task families
+
+## 16.1 Entity-to-place attribution
+
+Question:
+
+> Where is entity $E$ located?
+
+Required relation:
+
+```text
+ENTITY ──located_at──► PLACE
+```
+
+---
+
+## 16.2 Entity-to-feature attribution
+
+Question:
+
+> Which river, road, facility, district, or other feature is entity $E$ associated with?
+
+Required relation:
+
+```text
+ENTITY ──associated_with──► FEATURE
+```
+
+---
+
+## 16.3 Observation attribution
+
+Question:
+
+> What entity or event does observation $O$ concern?
+
+Required relation:
+
+```text
+OBSERVATION ──about──► ENTITY
+```
+
+---
+
+## 16.4 Temporal attribution
+
+Question:
+
+> When does record or observation $R$ apply?
+
+Required relation:
+
+```text
+RECORD ──observed_at──► TIME
+```
+
+---
+
+## 16.5 Source attribution
+
+Question:
+
+> Which source supports record $R$?
+
+Required relation:
+
+```text
+RECORD ──sourced_from──► SOURCE
+```
+
+Source attribution approaches provenance geometry and may later become its own experimental protocol.
+
+---
+
+# 17. Target behavior
+
+The experiment should not simply reward answering.
+
+Correct behavior may include:
+
+```text
+specific supported answer
+
+explicit ambiguity
+
+explicit uncertainty
+
+INSUFFICIENT_INFORMATION
+
+rejection of unsupported specificity
+```
+
+The system should not be penalized for abstaining when the supplied relational state is genuinely underdetermined.
+
+---
+
+# 18. Primary outcomes
+
+The primary outcome should be **warranted referential accuracy**.
+
+A response is correct only when its specificity does not exceed the relations supplied by the condition.
+
+Possible scoring states:
+
+```text
+SUPPORTED_CORRECT
+
+SUPPORTED_BUT_INCOMPLETE
+
+APPROPRIATE_UNCERTAINTY
+
+AMBIGUITY_PRESERVED
+
+UNSUPPORTED_SPECIFICITY
+
+RELATION_SUBSTITUTION
+
+CONTRADICTED_RELATION
+
+NONRESPONSIVE
+```
+
+The exact scoring rubric must be frozen before execution.
+
+---
+
+# 19. Relation-specific error measures
+
+## 19.1 Referential Accuracy
+
+$$
+\mathrm{RA}
+=
+\frac{
+\text{correct supported referential answers}
+}{
+\text{eligible tasks}
+}.
+$$
+
+---
+
+## 19.2 Unsupported Specificity Rate
+
+$$
+\mathrm{USR}
+=
+\frac{
+\text{unsupported specific referential claims}
+}{
+\text{eligible responses}
+}.
+$$
+
+---
+
+## 19.3 Appropriate Uncertainty Rate
+
+$$
+\mathrm{AUR}
+=
+\frac{
+\text{correct uncertainty or ambiguity responses}
+}{
+\text{underdetermined trials}
+}.
+$$
+
+---
+
+## 19.4 Relation-Following Rate
+
+For deliberately rebound conditions:
+
+$$
+\mathrm{RFR}
+=
+\frac{
+\text{responses consistent with the supplied relation}
+}{
+\text{perturbed-relation trials}
+}.
+$$
+
+Interpretation requires care.
+
+A model that follows a deliberately false experimental binding may be behaving correctly relative to the supplied experimental representation while being wrong relative to external reality.
+
+The protocol must therefore distinguish:
+
+```text
+condition-relative correctness
+```
+
+from:
+
+```text
+world-relative truth
+```
+
+---
+
+# 20. Two truth layers
+
+The experiment requires explicit separation of two truth layers.
+
+## 20.1 World truth
+
+Let the verified external relation be:
+
+$$
+E_{\mathrm{world}}.
+$$
+
+## 20.2 Supplied experimental relation
+
+Let the relation presented to the system be:
+
+$$
+E_{\mathrm{supplied}}.
+$$
+
+In the correct condition:
+
+$$
+E_{\mathrm{supplied}}
+=
+E_{\mathrm{world}}.
+$$
+
+In a deliberate perturbation:
+
+$$
+E_{\mathrm{supplied}}
+\neq
+E_{\mathrm{world}}.
+$$
+
+This creates two distinct questions:
+
+> Did ALLIS follow the relational structure actually supplied?
+
+and:
+
+> Did ALLIS recover, resist, or contradict external ground truth?
+
+Both may be scientifically useful.
+
+They must not be collapsed.
+
+---
+
+# 21. Parametric reconstruction
+
+A model may know or infer the world relation independently of the supplied experimental representation.
+
+Example:
+
+```text
+supplied relation:
+Facility_A → Place_B
+
+model prior:
+Facility_A is actually associated with Place_A
+```
+
+Possible behaviors include:
+
+```text
+follow supplied relation
+
+follow prior knowledge
+
+identify conflict
+
+express uncertainty
+
+attempt reconciliation
+```
+
+These responses should be separately classified.
+
+They may reveal an important boundary between:
+
+```text
+supplied relational evidence
 ```
 
 and:
 
 ```text
-OBSERVED
-    ≠
-CROSS_DOMAIN_REPLICATED.
+parametric semantic knowledge
+```
+
+Prior-knowledge resistance should not automatically be classified as failure.
+
+---
+
+# 22. Information-budget control
+
+Where practical, paired conditions should preserve:
+
+```text
+same nodes
+
+same labels
+
+same relation count
+
+same relation types
+
+same approximate token count
+
+same prompt template
+
+same response schema
+
+same model
+
+same inference settings
+```
+
+The principal difference should be:
+
+```text
+which node is connected to which node
+```
+
+This is the strongest available test of relational organization rather than information quantity.
+
+---
+
+# 23. Task-irrelevant controls
+
+Every selected task should identify at least one relation that should not materially affect the answer.
+
+Example:
+
+```text
+task:
+identify waterbody measured by Gauge_A
+
+critical relation:
+Gauge_A ──measures──► River_A
+
+possible noncritical relation:
+Gauge_A ──source_epoch──► Epoch_1
+```
+
+If source epoch is not required for the bounded task, altering it should have substantially less effect than altering the waterbody binding.
+
+The predicted pattern is:
+
+$$
+\Delta_{\mathrm{critical}}
+>
+\Delta_{\mathrm{noncritical}}.
+$$
+
+---
+
+# 24. Restoration test
+
+A strong experimental subset should use a three-stage manipulation:
+
+$$
+G
+\rightarrow
+G'
+\rightarrow
+G.
+$$
+
+Conceptually:
+
+```text
+correct relation
+    ↓
+perturbed relation
+    ↓
+restored relation
+```
+
+The predicted task behavior is:
+
+```text
+correct
+    ↓
+selectively degraded or changed
+    ↓
+restored
+```
+
+while unrelated capabilities remain comparatively stable.
+
+This tests reversibility.
+
+A reversible, relation-specific effect would provide stronger evidence than one-time degradation alone.
+
+---
+
+# 25. Minimal sufficient relation set
+
+A later extension may attempt to identify the smallest relation set required for a task.
+
+For task $T$, define:
+
+$$
+E_T^{*}\subseteq E,
+$$
+
+where $E_T^{*}$ is sufficient for warranted performance on $T$ and removal of a required member materially reduces performance.
+
+This would move the research from:
+
+> Do relations matter?
+
+toward:
+
+> **Which relations are minimally sufficient for this task?**
+
+This is not required for the first experiment.
+
+---
+
+# 26. Prompt construction
+
+The executable protocol should use a frozen prompt schema.
+
+The prompt should:
+
+- define the bounded task;
+- present the same informational object inventory across matched conditions;
+- avoid telling the model which relation has been manipulated;
+- specify the permitted evidence boundary;
+- preserve the same output format across conditions;
+- avoid evaluative language that reveals the expected answer.
+
+Prompt wording must be frozen before execution.
+
+---
+
+# 27. Output schema
+
+A structured response format is preferred.
+
+A candidate schema may include:
+
+```text
+task_id
+
+record_id
+
+answer
+
+answer_status
+
+referent_used
+
+relation_type_used
+
+evidence_basis
+
+uncertainty_status
+
+conflict_status
+
+unsupported_completion_detected
+```
+
+The exact schema should be finalized only after the task family is selected.
+
+---
+
+# 28. Blinding
+
+Where human scoring is required, raters should be blinded to:
+
+```text
+condition identity
+
+paired-record identity
+
+transformation class
+
+expected hypothesis direction
+```
+
+Where support scoring requires access to condition-specific evidence, a semi-blind procedure may be used.
+
+The final scoring method must state exactly what a rater is permitted to see.
+
+---
+
+# 29. Automated scoring
+
+Automated scoring may be appropriate when:
+
+- the expected referent is deterministic;
+- output fields are structured;
+- relation identity is machine-readable;
+- uncertainty states are explicit.
+
+Human review may still be required for:
+
+- free-text explanations;
+- ambiguous responses;
+- conflict detection;
+- unsupported but linguistically hedged claims.
+
+Automated and human scoring must remain distinguishable.
+
+---
+
+# 30. Model and runtime controls
+
+The final execution must pin the exact inference environment.
+
+The frozen protocol should record at least:
+
+```text
+ALLIS source identity
+
+runtime identity
+
+model identity
+
+model version
+
+model checksum where available
+
+prompt identity
+
+temperature
+
+seed where supported
+
+sampling settings
+
+context limits
+
+retrieval configuration
+
+enabled H_* inputs
+
+Gateway path
+
+JCP state
+
+synthesis path
+
+execution timestamp
+
+correspondence evidence
+```
+
+A changed model or runtime is a different experimental object unless separately adjudicated.
+
+---
+
+# 31. Qualified baseline gate
+
+Execution must not proceed merely because the experimental dataset is ready.
+
+The relevant ALLIS path must also be sufficiently qualified for the claims the experiment intends to make.
+
+The pre-execution question is:
+
+> **Can we establish what source, runtime, model path, relational inputs, and response path actually produced these outputs?**
+
+If not:
+
+```text
+EXECUTION_AUTHORIZED=NO
+```
+
+The executable protocol must identify the exact qualification gate.
+
+---
+
+# 32. Protocol-freeze gate
+
+Before execution, freeze:
+
+```text
+research question
+
+hypotheses
+
+dataset
+
+dataset manifest
+
+record inclusion criteria
+
+record exclusion criteria
+
+relation types
+
+transformation code
+
+randomization method
+
+prompt template
+
+model/runtime identity
+
+response schema
+
+primary outcomes
+
+secondary outcomes
+
+scoring rubric
+
+statistical analysis
+
+stopping criteria
+```
+
+After this point, changes require an explicit protocol amendment.
+
+---
+
+# 33. Randomization
+
+Where relation targets are permuted, the transformation must be deterministic and reproducible.
+
+Preferred:
+
+```text
+frozen pseudorandom seed
++
+versioned transformation code
++
+manifested input dataset
+```
+
+The same input and seed should reproduce the same transformed graph.
+
+The transformation process should emit its own manifest.
+
+---
+
+# 34. Transformation validity checks
+
+Every generated perturbation must pass mechanical validation.
+
+Checks may include:
+
+```text
+node set unchanged
+
+expected relation count preserved
+
+target relation type preserved
+
+no accidental self-link where prohibited
+
+no duplicate edge where prohibited
+
+critical edge actually changed
+
+noncritical edges preserved where required
+
+control record unchanged
+
+paired record identity preserved
+
+output manifest complete
+```
+
+A transformation failing these checks should not enter the experimental corpus.
+
+---
+
+# 35. Statistical analysis plan
+
+The final statistical model should be selected after the task and dataset are finalized but before execution.
+
+The design should favor paired analysis because experimental units are matched across conditions.
+
+Potential methods include:
+
+```text
+paired proportion comparison
+
+McNemar-type analysis
+
+conditional logistic models
+
+mixed-effects logistic models
+
+paired ordinal models
+
+bootstrap confidence intervals
+
+permutation tests
+```
+
+Choice depends on the final scoring scale and dependency structure.
+
+The first protocol should avoid unnecessary statistical complexity.
+
+Effect sizes and uncertainty should be reported alongside significance testing.
+
+---
+
+# 36. Primary comparison
+
+The principal comparison is:
+
+$$
+G_C
+\quad\text{versus}\quad
+G_R.
+$$
+
+That is:
+
+$$
+\text{correct relation}
+\quad\text{versus}\quad
+\text{task-relevant perturbation}.
+$$
+
+The stronger confirmatory comparison is:
+
+$$
+\Delta_{\mathrm{relevant}}
+>
+\Delta_{\mathrm{irrelevant}}.
+$$
+
+Evidence supporting the hypothesis should therefore require more than:
+
+```text
+the perturbed condition performed worse
+```
+
+It should preferably show:
+
+```text
+task-relevant relational disruption
+    ↓
+greater task-specific degradation
+than
+task-irrelevant relational disruption
 ```
 
 ---
 
-# 23. Relationship to current ALLIS authority
+# 37. Relation-specificity analysis
 
-This research directory does not supersede:
+Suppose the experiment contains spatial and temporal tasks.
 
-- [`../../CURRENT.md`](../../CURRENT.md)
-- [`../../acceptance/current-system-manifest.md`](../../acceptance/current-system-manifest.md)
-- [`../../claims/claim-registry.md`](../../claims/claim-registry.md)
-- [`../../claims/nonclaims-and-residuals.md`](../../claims/nonclaims-and-residuals.md)
-
-Research may propose future models or experiments.
-
-It does not silently update the qualified state of the system.
-
-Preserve:
+A strong result would look like:
 
 ```text
-research finding
-    ≠
-production authority
+spatial-edge perturbation
+    ↓
+spatial task degrades strongly
+temporal task remains comparatively stable
 ```
 
 and:
 
 ```text
-research hypothesis
-    ≠
-current system claim.
+temporal-edge perturbation
+    ↓
+temporal task degrades strongly
+spatial task remains comparatively stable
+```
+
+Define an effect matrix:
+
+$$
+M_{ij}
+=
+\text{effect of perturbing relation } i
+\text{ on task } j.
+$$
+
+A diagonal or near-diagonal effect pattern would provide stronger evidence for typed relational dependence than generalized disruption.
+
+Conceptually:
+
+$$
+|M_{ii}|
+>
+|M_{ij}|
+\qquad
+\text{for relevant } i\neq j.
+$$
+
+This is a prospective prediction, not an established result.
+
+---
+
+# 38. Falsification conditions
+
+The hypothesis would be weakened if one or more of the following occurs:
+
+- task-relevant relation perturbation has no reproducible effect;
+- task-irrelevant perturbations have equal or greater effects;
+- all relation perturbations cause undifferentiated global degradation;
+- results are explained entirely by token count or lexical changes;
+- the model reliably reconstructs required referents without the tested relations;
+- relation restoration does not restore the affected capability;
+- the apparent effect disappears under replication;
+- results depend only on one fragile prompt formulation.
+
+Negative and mixed results must be preserved.
+
+---
+
+# 39. Positive-result boundary
+
+A positive experiment would support a bounded statement such as:
+
+> **Under the tested ALLIS configuration, dataset, task, and transformation, preservation of the specified referential relation contributed measurably to warranted referential performance.**
+
+It would **not** establish:
+
+```text
+MEANING_REQUIRES_GEOMETRY=PROVEN
+
+UNDERSTANDING_REQUIRES_GEOMETRY=PROVEN
+
+ALL_INTELLIGENCE_REQUIRES_THIS_GEOMETRY=PROVEN
+
+CONSCIOUSNESS_REQUIRES_GEOMETRY=PROVEN
+
+PHYSICAL_SPACETIME_GEOMETRY_EQUIVALENCE=PROVEN
+
+PENROSE_VALIDATED=YES
 ```
 
 ---
 
-# 24. Relationship to formal verification
+# 40. Negative-result boundary
 
-Some parts of this research may eventually admit formal treatment.
+A null result may mean:
 
-Possible future formal objects include:
+- the tested relation was not actually required;
+- other retained information reconstructed it;
+- the task did not isolate the intended dependency;
+- the transformation was too weak;
+- the model was insensitive to the representation;
+- the hypothesis is wrong for the tested relation/task;
+- the selected geometry is not the relevant geometry.
+
+A null result must not be rewritten as success.
+
+---
+
+# 41. Replication
+
+At least one independent replication should precede broader claims.
+
+Replication may vary:
 
 ```text
-task-relevant equivalence relation
+dataset
 
-distinction-preserving projection
+relation family
 
-distinction-destroying projection
+task family
 
-typed relational graph
+model
 
-minimal sufficient relation set
-
-relation-specific invariants
-
-authorized transition graph
+runtime configuration
 ```
 
-Formalization should occur only when the definitions are sufficiently stable.
+but should preserve the same formal hypothesis where comparison is intended.
 
-A mathematical proof about an abstract relational model would still require implementation and runtime correspondence before becoming a claim about a live ALLIS path.
+A result confined to one dataset and one prompt family should remain correspondingly bounded.
+
+---
+
+# 42. Cross-domain comparison
+
+This experiment is designed first as an ALLIS study.
+
+Any later comparison with physics-aware cyber-physical systems must establish an actual formal correspondence.
+
+Similarity of terms such as:
+
+```text
+topology
+
+constraint
+
+geometry
+
+state
+
+relation
+```
+
+is insufficient.
+
+A valid cross-domain comparison would require identifying a common structure such as:
+
+```text
+task-relevant state distinction
+
+relation required to preserve that distinction
+
+controlled perturbation of that relation
+
+selective performance consequence
+```
+
+Only then should a broader invariant be proposed.
+
+---
+
+# 43. Evidence progression
+
+The referential-geometry work should advance through explicit states:
+
+```text
+HYPOTHESIZED
+    ↓
+PLAN_DEFINED
+    ↓
+DATASET_SELECTED
+    ↓
+DATASET_VERIFIED
+    ↓
+DATASET_FROZEN
+    ↓
+PROTOCOL_FROZEN
+    ↓
+EXECUTION_QUALIFIED
+    ↓
+OBSERVED
+    ↓
+ANALYZED
+    ↓
+REPLICATED
+    ↓
+FORMALIZED_WHERE_SUPPORTED
+    ↓
+CORRESPONDENCE_VERIFIED_WHERE_APPLICABLE
+```
+
+No stage implies the next.
+
+---
+
+# 44. Planned artifacts
+
+This plan anticipates later artifacts such as:
+
+```text
+research/relational-geometry/
+│
+├── README.md
+│
+├── protocols/
+│   ├── referential-geometry-plan.md
+│   └── referential-geometry-protocol.md
+│
+├── datasets/
+│   ├── referential-geometry-dataset-manifest.md
+│   └── ...
+│
+└── results/
+    └── ...
+```
+
+These are future artifacts.
+
+Their appearance in this plan does not mean they already exist.
+
+---
+
+# 45. Immediate next gate
+
+The next task after adoption of this plan is **not experimental execution**.
+
+It is:
+
+> **Select and qualify the candidate dataset.**
+
+That work should answer:
+
+```text
+Which source?
+
+Which records?
+
+Which relations?
+
+Which source versions?
+
+Which ground truth?
+
+Which ambiguities?
+
+Which exclusions?
+
+Which task families?
+
+Can the same node inventory support clean relation-only perturbation?
+```
+
+Only after those questions are answered should the executable protocol be frozen.
+
+---
+
+# 46. Decision criteria for dataset selection
+
+A candidate dataset should be favored if it provides:
+
+```text
+high provenance quality
+
+multiple typed relations
+
+independent ground truth
+
+adequate record count
+
+low lexical leakage
+
+low ambiguity
+
+clean pairwise or permutation transformations
+
+stable source identity
+
+reproducible extraction
+
+clear licensing / permitted use
+
+relation-specific task construction
+```
+
+A dataset should be rejected if its limitations make it impossible to distinguish:
+
+```text
+relational effect
+```
+
+from:
+
+```text
+ordinary information loss
+```
+
+---
+
+# 47. Working experimental prediction
+
+The core planned prediction is:
+
+> **If a task-relevant relation is changed while the underlying informational objects remain available, the inference depending on that relation should change or become appropriately uncertain, while unrelated inferences should remain comparatively stable.**
+
+In compact form:
+
+$$
+\boxed{
+\Delta_{\mathrm{relevant}}
+>
+\Delta_{\mathrm{irrelevant}}
+}
+$$
+
+with the additional expectation that restoration of the original relation should restore the corresponding task behavior:
+
+$$
+G
+\rightarrow
+G'
+\rightarrow
+G
+$$
+
+and, where the hypothesis holds:
+
+$$
+Y
+\rightarrow
+Y'
+\rightarrow
+Y.
+$$
+
+---
+
+# 48. Research boundary
+
+This plan belongs to the research layer.
+
+It does not supersede:
+
+- [`../../../CURRENT.md`](../../../CURRENT.md)
+- [`../../../acceptance/current-system-manifest.md`](../../../acceptance/current-system-manifest.md)
+- [`../../../claims/claim-registry.md`](../../../claims/claim-registry.md)
+- [`../../../claims/nonclaims-and-residuals.md`](../../../claims/nonclaims-and-residuals.md)
+
+It also does not convert prospective architecture into current runtime fact.
 
 Preserve:
 
 ```text
-formal theorem
+experiment planned
     ≠
-runtime correspondence
+experiment executable
 ```
-
----
-
-# 25. Proposed directory growth
-
-The research may eventually expand as:
 
 ```text
-research/
-└── relational-geometry/
-    ├── README.md
-    │
-    ├── theory/
-    │   ├── relational-geometry-model.md
-    │   └── distinction-preservation.md
-    │
-    ├── protocols/
-    │   ├── referential-geometry.md
-    │   ├── typed-state-geometry.md
-    │   ├── provenance-correspondence-geometry.md
-    │   ├── authority-geometry.md
-    │   └── representational-geometry.md
-    │
-    ├── cross-domain/
-    │   ├── physics-aware-intelligence.md
-    │   └── consciousness-boundary.md
-    │
-    └── results/
+experiment executable
+    ≠
+experiment run
 ```
 
-These files should be created only when their corresponding research exists.
+```text
+experiment run
+    ≠
+result replicated
+```
 
-The directory tree is a roadmap, not a statement that those artifacts are already present.
-
----
-
-# 26. Current working principle
-
-The present research principle is:
-
-\[
-\boxed{
-\textbf{Meaning is not exhausted by the things represented; it also depends on the relations that distinguish what those things are, where they belong, and what may validly follow from them.}
-}
-\]
-
-The corresponding systems hypothesis is:
-
-\[
-\boxed{
-\textbf{Reliable intelligence requires preservation of the relational distinctions required by the task being solved.}
-}
-\]
-
-And the broader open question is:
-
-\[
-\boxed{
-\textbf{Does understanding require a physically instantiated relational geometry that preserves meaningful distinctions?}
-}
-\]
-
-These statements occupy different evidence levels.
-
-The first is the working research principle.
-
-The second is a falsifiable systems hypothesis.
-
-The third is a broader scientific question.
-
-They must not be collapsed into one claim.
+```text
+result replicated
+    ≠
+universal theory established
+```
 
 ---
 
-# 27. Research objective
+# 49. Plan completion condition
 
-The purpose of this work is not to declare:
+This planning document may be considered complete when it sufficiently defines:
 
-# **Meaning requires geometry.**
+```text
+the research question
 
-The purpose is to determine:
+the causal contrast
 
-# **which geometry**
+the required relation structure
 
-# **which relations**
+dataset admission requirements
 
-# **which distinctions**
+control conditions
 
-# **for which tasks**
+relation transformations
 
-# **under which physical or computational conditions**
+target tasks
 
-# **with what measurable consequences**
+planned measurements
 
-# **and with what evidence.**
+falsification conditions
 
-Only then can the broader question be answered responsibly.
+qualification gates
+
+protocol-freeze requirements
+```
+
+It should then remain a planning record.
+
+The later executable protocol should reference this plan rather than silently rewriting its original research logic.
 
 ---
 
@@ -1353,16 +1954,26 @@ Only then can the broader question be answered responsibly.
 
 ## Kidd's Technical Services
 
-**ALLIS is an active research and engineering program.**
-
-This research directory exists to make a difficult question testable without allowing the question itself to become a conclusion.
+**ALLIS — Referential Geometry Research**
 
 <br>
 
-### **HYPOTHESIS ≠ EVIDENCE ≠ PROOF**
+### **Same informational objects. Different relational bindings. Measurable consequences.**
 
 <br>
 
-`SYSTEM_PROVEN=NO`
+The purpose of the experiment is not to prove that geometry matters.
+
+The purpose is to determine whether a task fails **specifically when the relation required to solve that task is no longer preserved**.
+
+<br>
+
+`DATASET_FROZEN=NO`
+
+`PROTOCOL_FROZEN=NO`
+
+`EXECUTION_AUTHORIZED=NO`
+
+`RESULTS_AVAILABLE=NO`
 
 </div>
