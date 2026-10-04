@@ -58,23 +58,23 @@ This plan implements one bounded experimental family proposed in:
 
 The parent research program asks:
 
-\[
-\boxed{
-\textbf{Does reliable intelligence require preservation of task-relevant relational distinctions?}
-}
-\]
+$$
+\boxed{\text{Does reliable intelligence require preservation of task-relevant relational distinctions?}}
+$$
 
 This plan narrows that question to **referential geometry**.
 
 The specific experimental question is:
 
-\[
-\boxed{
-\textbf{Does warranted referential inference degrade when task-relevant relational bindings are altered while the underlying informational objects remain available?}
-}
-\]
+$$
+\boxed{\text{Does warranted referential inference depend on preservation of task-relevant relational bindings?}}
+$$
 
-The plan therefore tests one component of the broader theory.
+More operationally:
+
+> If the informational objects available to ALLIS remain substantially the same, but the relations connecting those objects are changed, does the corresponding warranted inference change in a predictable and relation-specific way?
+
+This plan tests one component of the broader theory.
 
 It does not attempt to test consciousness, subjective experience, non-computability, or physical spacetime geometry.
 
@@ -127,54 +127,50 @@ information availability
 from:
 
 ```text
-relational organization.
+relational organization
 ```
 
 The preferred design therefore does **not** compare:
 
-\[
+$$
 \text{more information}
-\]
-
-with:
-
-\[
-\text{less information}.
-\]
+\quad\text{versus}\quad
+\text{less information}
+$$
 
 Instead, it attempts to preserve the informational objects while selectively altering the relationships among them.
 
 Let the valid referential representation be:
 
-\[
-G=(V,E,\tau),
-\]
+$$
+G=(V,E,\tau)
+$$
 
 where:
 
-- \(V\) = informational objects;
-- \(E\) = relations among those objects;
-- \(\tau\) = types assigned to nodes and edges.
+- $V$ = informational objects;
+- $E$ = relations among those objects;
+- $\tau$ = types assigned to nodes and edges.
 
 Construct an experimental representation:
 
-\[
-G'=(V,E',\tau),
-\]
+$$
+G'=(V,E',\tau)
+$$
 
 such that:
 
-\[
-V_G=V_{G'},
-\]
+$$
+V_G=V_{G'}
+$$
 
 while:
 
-\[
-E_G\neq E_{G'}.
-\]
+$$
+E_G\neq E_{G'}
+$$
 
-Where feasible, node identity, lexical content, quantity, and approximate prompt budget should remain unchanged.
+Where feasible, node identity, lexical content, quantity, relation count, relation type, and approximate prompt budget should remain unchanged.
 
 The experimental variable is the **referential binding structure**.
 
@@ -216,23 +212,23 @@ Not every candidate relation must appear in the first experiment.
 
 The primary hypothesis is:
 
-\[
+$$
 H_1:
-\]
+\quad
+\text{task-relevant relational perturbation produces selective degradation in warranted referential performance}
+$$
 
-> **When a task depends on a specific referential relation, altering that relation while preserving the underlying informational objects will selectively reduce warranted task performance.**
+In plain language:
 
-A stronger formulation is:
+> **When a task depends on a specific referential relation, altering that relation while preserving the underlying informational objects will selectively reduce or change warranted task performance.**
 
-\[
-\boxed{
-\Delta_{\text{task-relevant relation}}
->
-\Delta_{\text{task-irrelevant relation}}
-}
-\]
+A stronger comparative prediction is:
 
-where \(\Delta\) represents degradation relative to the correctly related control condition.
+$$
+\Delta_{\mathrm{relevant}} > \Delta_{\mathrm{irrelevant}}
+$$
+
+where $\Delta$ represents degradation relative to the correctly related control condition.
 
 The experiment therefore predicts not merely performance loss, but **relation-specific performance loss**.
 
@@ -240,15 +236,21 @@ The experiment therefore predicts not merely performance loss, but **relation-sp
 
 # 6. Null and competing explanations
 
-The experiment must permit outcomes that weaken the hypothesis.
-
 ## 6.1 Null hypothesis
 
-\[
-H_0:
-\]
+The null hypothesis is:
 
-> Altering task-relevant referential relations produces no reliable degradation beyond task-irrelevant perturbation or ordinary response variability.
+$$
+H_0:
+\quad
+\Delta_{\mathrm{relevant}}
+\approx
+\Delta_{\mathrm{irrelevant}}
+$$
+
+Operationally:
+
+> Altering a task-relevant referential relation produces no reliable degradation beyond task-irrelevant perturbation or ordinary response variability.
 
 ---
 
@@ -266,27 +268,27 @@ The experiment should therefore preserve the same underlying nodes and values wh
 
 A model may infer the intended relation from names, co-occurrence patterns, or world knowledge despite altered bindings.
 
-This possibility must be measured rather than treated automatically as failure.
-
-The experiment should distinguish:
+The experiment must distinguish:
 
 ```text
-relation recovered from supplied evidence
+relation supported by supplied evidence
 ```
 
 from:
 
 ```text
-relation reconstructed from external or parametric knowledge.
+relation reconstructed from parametric or external knowledge
 ```
+
+These are not equivalent.
 
 ---
 
 ## 6.4 Generic disruption explanation
 
-If every perturbation degrades every task equally, the result may indicate generic prompt or representation disruption rather than relation-specific dependence.
+If every perturbation degrades every task equally, the result may indicate generic representation disruption rather than relation-specific dependence.
 
-The design therefore requires task-irrelevant perturbation controls.
+The design therefore requires **task-irrelevant perturbation controls**.
 
 ---
 
@@ -296,34 +298,24 @@ An experimental unit should contain enough independently verifiable structure to
 
 A candidate normalized record may take the form:
 
-\[
-r_i=
-(
-e_i,
-t_i,
-p_i,
-c_i,
-q_i,
-s_i,
-v_i,
-a_i
-),
-\]
+$$
+r_i=(e_i,t_i,p_i,c_i,q_i,s_i,v_i,a_i)
+$$
 
 where, depending on the domain:
 
-- \(e_i\) = entity;
-- \(t_i\) = entity or record type;
-- \(p_i\) = place;
-- \(c_i\) = coordinate or geometry;
-- \(q_i\) = temporal state;
-- \(s_i\) = source;
-- \(v_i\) = source version or epoch;
-- \(a_i\) = associated physical or semantic feature.
+- $e_i$ = entity;
+- $t_i$ = entity or record type;
+- $p_i$ = place;
+- $c_i$ = coordinate or geometry;
+- $q_i$ = temporal state;
+- $s_i$ = source;
+- $v_i$ = source version or epoch;
+- $a_i$ = associated physical or semantic feature.
 
 Not every dataset must contain every field.
 
-The final protocol must state exactly which fields are required.
+The executable protocol must state exactly which fields are required.
 
 ---
 
@@ -405,7 +397,7 @@ entity → source
 or:
 
 ```text
-entity → type.
+entity → type
 ```
 
 ---
@@ -414,15 +406,17 @@ entity → type.
 
 The dataset should minimize cases where the answer is directly encoded in an unmanipulated label.
 
-For example, if the entity itself is named:
+For example:
 
 ```text
 Charleston Area Medical Center
 ```
 
-then a location task may be partially answerable from the name independently of supplied relational geometry.
+contains a geographic cue in the entity name itself.
 
-Such cases may still be used, but must be identified as leakage-prone.
+A location task using that record may therefore remain partially solvable after the explicit location relation has been altered.
+
+Such cases may still be retained, but they must be identified as leakage-prone.
 
 ---
 
@@ -458,11 +452,11 @@ Example:
 
 ```text
 Gauge_A
-    ├── located_at → P1
+    ├── located_at → Point_A
     ├── within → County_A
     ├── measures → River_A
     ├── source → USGS
-    └── observed_at → T1
+    └── observed_at → Time_A
 ```
 
 The plan does not yet select a final source.
@@ -532,9 +526,9 @@ included_relation_types
 
 excluded_relation_types
 
-known limitations
+known_limitations
 
-known ambiguities
+known_ambiguities
 
 ground_truth_method
 
@@ -555,16 +549,16 @@ The minimum design should contain three condition classes.
 
 The control representation preserves the verified referential structure:
 
-\[
-G_C=(V,E_C).
-\]
+$$
+G_C=(V,E_C)
+$$
 
 All task-relevant bindings are correct.
 
 Example:
 
 ```text
-Gauge_A ──measures────► New River
+Gauge_A ──measures────► New_River
 
 Gauge_A ──located_at──► Point_A
 
@@ -577,19 +571,19 @@ Gauge_A ──source──────► USGS
 
 A relation that is not required for the target task is altered.
 
-\[
-G_I=(V,E_I).
-\]
+$$
+G_I=(V,E_I)
+$$
 
-For a waterbody-identification task, for example, a non-task-bearing relation might be altered while:
+For a waterbody-identification task, the critical relation might remain:
 
 ```text
-Gauge_A ──measures──► New River
+Gauge_A ──measures──► New_River
 ```
 
-remains intact.
+while an independently represented noncritical relation is changed.
 
-This condition tests whether arbitrary graph manipulation itself causes degradation.
+This condition tests whether arbitrary relational manipulation itself causes degradation.
 
 ---
 
@@ -597,83 +591,69 @@ This condition tests whether arbitrary graph manipulation itself causes degradat
 
 The relation required for the task is altered:
 
-\[
-G_R=(V,E_R).
-\]
+$$
+G_R=(V,E_R)
+$$
 
 Example:
 
 ```text
 correct:
 
-Gauge_A ──measures──► New River
+Gauge_A ──measures──► New_River
+```
 
+```text
 perturbed:
 
-Gauge_A ──measures──► Gauley River
+Gauge_A ──measures──► Gauley_River
 ```
 
 The same nodes remain present.
 
-Only the binding changes.
+Only the relevant binding changes.
 
 ---
 
 # 13. Preferred matched design
 
-Where possible, every experimental unit should appear across matched conditions.
+Where possible, every experimental unit should appear across matched conditions:
 
-Conceptually:
+$$
+r_i^C,\qquad r_i^I,\qquad r_i^R
+$$
 
-\[
-r_i^C,
-\quad
-r_i^I,
-\quad
-r_i^R.
-\]
+where:
 
-Where:
+- $C$ = correct relation;
+- $I$ = task-irrelevant perturbation;
+- $R$ = task-relevant perturbation.
 
-- \(C\) = correct relation;
-- \(I\) = task-irrelevant perturbation;
-- \(R\) = task-relevant perturbation.
+Define:
 
-The primary comparison becomes:
+$$
+\Delta_i^R = Y_i^C - Y_i^R
+$$
 
-\[
-\Delta_i^{R}
-=
-Y_i^C-Y_i^R
-\]
+and:
 
-versus:
-
-\[
-\Delta_i^{I}
-=
-Y_i^C-Y_i^I.
-\]
+$$
+\Delta_i^I = Y_i^C - Y_i^I
+$$
 
 The key prediction is:
 
-\[
-E[\Delta^R]
->
-E[\Delta^I].
-\]
+$$
+\mathbb{E}[\Delta^R] > \mathbb{E}[\Delta^I]
+$$
 
 ---
 
 # 14. Relation transformations
 
-Permitted transformation families may include:
-
 ## 14.1 Edge permutation
 
 Relations of one type are permuted among records.
-
-Example:
 
 ```text
 A → X
@@ -686,7 +666,7 @@ becomes:
 ```text
 A → Y
 B → Z
-C → X.
+C → X
 ```
 
 All original nodes remain available.
@@ -695,7 +675,7 @@ All original nodes remain available.
 
 ## 14.2 Pairwise swap
 
-Two bindings exchange targets:
+Two bindings exchange targets.
 
 ```text
 A → X
@@ -706,10 +686,10 @@ becomes:
 
 ```text
 A → Y
-B → X.
+B → X
 ```
 
-This is useful because node count and target distribution remain unchanged.
+Node count, relation count, and target distribution remain unchanged.
 
 ---
 
@@ -717,16 +697,16 @@ This is useful because node count and target distribution remain unchanged.
 
 A required relationship is removed while both endpoint nodes remain present.
 
-Example:
+Correct:
+
+```text
+A → X
+```
+
+Perturbed:
 
 ```text
 A     X
-```
-
-rather than:
-
-```text
-A → X.
 ```
 
 This tests missing relational structure rather than missing informational objects.
@@ -737,7 +717,7 @@ This tests missing relational structure rather than missing informational object
 
 An entity is given multiple possible referential targets without sufficient evidence to distinguish among them.
 
-The correct response may become:
+The appropriate response may become:
 
 ```text
 INSUFFICIENT_INFORMATION
@@ -751,8 +731,6 @@ or an explicitly bounded ambiguity statement.
 
 A target is replaced only with another valid target of the same type.
 
-Example:
-
 ```text
 PLACE → PLACE
 ```
@@ -760,16 +738,16 @@ PLACE → PLACE
 rather than:
 
 ```text
-PLACE → SOURCE.
+PLACE → SOURCE
 ```
 
-This helps isolate relation identity from obvious type corruption.
+This helps isolate referential identity from obvious type corruption.
 
 ---
 
-# 15. Transformations to exclude from the primary test
+# 15. Transformations excluded from the primary test
 
-The primary referential-geometry experiment should avoid transformations that unnecessarily introduce additional confounds.
+The first referential-geometry experiment should avoid transformations that introduce unnecessary confounds.
 
 Examples include:
 
@@ -784,26 +762,24 @@ changing prompt instructions between paired units
 
 using different model versions across conditions
 
-changing relation type and node type at the same time
+changing relation type and node type simultaneously
 
-adding extra explanatory context to only one condition
+adding explanatory context to only one condition
 ```
 
-Such manipulations may be useful in later experiments, but they weaken causal interpretation in the first referential study.
+Such manipulations may be useful in later experiments.
+
+They should not define the primary causal contrast.
 
 ---
 
 # 16. Task families
 
-The first protocol should select one or more bounded tasks.
-
-Candidate tasks include:
-
 ## 16.1 Entity-to-place attribution
 
 Question:
 
-> Where is entity \(E\) located?
+> Where is entity $E$ located?
 
 Required relation:
 
@@ -817,7 +793,7 @@ ENTITY ──located_at──► PLACE
 
 Question:
 
-> Which river, road, facility, district, or other feature is entity \(E\) associated with?
+> Which river, road, facility, district, or other feature is entity $E$ associated with?
 
 Required relation:
 
@@ -831,7 +807,7 @@ ENTITY ──associated_with──► FEATURE
 
 Question:
 
-> What entity or event does observation \(O\) concern?
+> What entity or event does observation $O$ concern?
 
 Required relation:
 
@@ -845,7 +821,7 @@ OBSERVATION ──about──► ENTITY
 
 Question:
 
-> When does record or observation \(R\) apply?
+> When does record or observation $R$ apply?
 
 Required relation:
 
@@ -859,7 +835,7 @@ RECORD ──observed_at──► TIME
 
 Question:
 
-> Which source supports record \(R\)?
+> Which source supports record $R$?
 
 Required relation:
 
@@ -867,7 +843,7 @@ Required relation:
 RECORD ──sourced_from──► SOURCE
 ```
 
-This task approaches provenance geometry and may later become its own protocol.
+Source attribution approaches provenance geometry and may later become its own experimental protocol.
 
 ---
 
@@ -897,7 +873,7 @@ The system should not be penalized for abstaining when the supplied relational s
 
 The primary outcome should be **warranted referential accuracy**.
 
-A response is correct only when its specificity does not exceed the relation supplied by the condition.
+A response is correct only when its specificity does not exceed the relations supplied by the condition.
 
 Possible scoring states:
 
@@ -925,44 +901,36 @@ The exact scoring rubric must be frozen before execution.
 
 # 19. Relation-specific error measures
 
-Potential measures include:
-
 ## 19.1 Referential Accuracy
 
-\[
-RA=
-\frac{
-\text{correct supported referential answers}
-}{
-\text{eligible tasks}
-}.
-\]
+$$
+\mathrm{RA}
+=
+\frac{\text{correct supported referential answers}}
+{\text{eligible tasks}}
+$$
 
 ---
 
 ## 19.2 Unsupported Specificity Rate
 
-\[
-USR=
-\frac{
-\text{unsupported specific referential claims}
-}{
-\text{eligible responses}
-}.
-\]
+$$
+\mathrm{USR}
+=
+\frac{\text{unsupported specific referential claims}}
+{\text{eligible responses}}
+$$
 
 ---
 
 ## 19.3 Appropriate Uncertainty Rate
 
-\[
-AUR=
-\frac{
-\text{correct uncertainty / ambiguity responses}
-}{
-\text{underdetermined trials}
-}.
-\]
+$$
+\mathrm{AUR}
+=
+\frac{\text{correct uncertainty or ambiguity responses}}
+{\text{underdetermined trials}}
+$$
 
 ---
 
@@ -970,18 +938,16 @@ AUR=
 
 For deliberately rebound conditions:
 
-\[
-RFR=
-\frac{
-\text{responses consistent with supplied relation}
-}{
-\text{perturbed-relation trials}
-}.
-\]
+$$
+\mathrm{RFR}
+=
+\frac{\text{responses consistent with the supplied relation}}
+{\text{perturbed-relation trials}}
+$$
 
 Interpretation requires care.
 
-A model that follows a deliberately false experimental binding may be behaving correctly relative to the supplied test representation while being wrong relative to external reality.
+A model that follows a deliberately false experimental binding may be behaving correctly relative to the supplied experimental representation while being wrong relative to external reality.
 
 The protocol must therefore distinguish:
 
@@ -992,56 +958,52 @@ condition-relative correctness
 from:
 
 ```text
-world-relative truth.
+world-relative truth
 ```
 
 ---
 
 # 20. Two truth layers
 
-This experiment requires explicit separation of:
+The experiment requires explicit separation of two truth layers.
 
 ## 20.1 World truth
 
-The verified external relationship:
+Let the verified external relation be:
 
-\[
-E_{\text{world}}.
-\]
+$$
+E_{\mathrm{world}}
+$$
 
 ## 20.2 Supplied experimental relation
 
-The relationship presented to the system:
+Let the relation presented to the system be:
 
-\[
-E_{\text{supplied}}.
-\]
+$$
+E_{\mathrm{supplied}}
+$$
 
 In the correct condition:
 
-\[
-E_{\text{supplied}}
-=
-E_{\text{world}}.
-\]
+$$
+E_{\mathrm{supplied}} = E_{\mathrm{world}}
+$$
 
 In a deliberate perturbation:
 
-\[
-E_{\text{supplied}}
-\neq
-E_{\text{world}}.
-\]
+$$
+E_{\mathrm{supplied}} \neq E_{\mathrm{world}}
+$$
 
-This allows two different questions:
+This creates two distinct questions:
 
-> Did ALLIS follow the structure actually supplied?
+> Did ALLIS follow the relational structure actually supplied?
 
 and:
 
-> Did ALLIS recover or contradict the external ground truth?
+> Did ALLIS recover, resist, or contradict external ground truth?
 
-Both may be scientifically interesting.
+Both may be scientifically useful.
 
 They must not be collapsed.
 
@@ -1049,26 +1011,26 @@ They must not be collapsed.
 
 # 21. Parametric reconstruction
 
-A model may know or infer the true relation independently of the supplied experimental representation.
+A model may know or infer the world relation independently of the supplied experimental representation.
 
-For example:
+Example:
 
 ```text
 supplied relation:
 Facility_A → Place_B
 
-model prior knowledge:
-Facility_A is actually in Place_A
+model prior:
+Facility_A is actually associated with Place_A
 ```
 
-Possible behavior includes:
+Possible behaviors include:
 
 ```text
 follow supplied relation
 
 follow prior knowledge
 
-express conflict
+identify conflict
 
 express uncertainty
 
@@ -1086,10 +1048,10 @@ supplied relational evidence
 and:
 
 ```text
-parametric semantic knowledge.
+parametric semantic knowledge
 ```
 
-The protocol must not automatically label all prior-knowledge resistance as failure.
+Prior-knowledge resistance should not automatically be classified as failure.
 
 ---
 
@@ -1120,7 +1082,7 @@ same inference settings
 The principal difference should be:
 
 ```text
-which node is connected to which node.
+which node is connected to which node
 ```
 
 This is the strongest available test of relational organization rather than information quantity.
@@ -1131,7 +1093,7 @@ This is the strongest available test of relational organization rather than info
 
 Every selected task should identify at least one relation that should not materially affect the answer.
 
-For example:
+Example:
 
 ```text
 task:
@@ -1144,29 +1106,23 @@ possible noncritical relation:
 Gauge_A ──source_epoch──► Epoch_1
 ```
 
-If the source epoch is not needed for the bounded task, altering it should have substantially less effect than altering the waterbody binding.
+If source epoch is not required for the bounded task, altering it should have substantially less effect than altering the waterbody binding.
 
-The expected pattern is:
+The predicted pattern is:
 
-\[
-\Delta_{\text{critical}}
->
-\Delta_{\text{noncritical}}.
-\]
+$$
+\Delta_{\mathrm{critical}} > \Delta_{\mathrm{noncritical}}
+$$
 
 ---
 
 # 24. Restoration test
 
-A strong subset should use a three-stage manipulation:
+A strong experimental subset should use a three-stage manipulation:
 
-\[
-G
-\rightarrow
-G'
-\rightarrow
-G.
-\]
+$$
+G \rightarrow G' \rightarrow G
+$$
 
 Conceptually:
 
@@ -1183,32 +1139,30 @@ The predicted task behavior is:
 ```text
 correct
     ↓
-selectively degraded / changed
+selectively degraded or changed
     ↓
 restored
 ```
 
-where unrelated capabilities remain comparatively stable.
+while unrelated capabilities remain comparatively stable.
 
 This tests reversibility.
 
-A reversible, relation-specific effect provides stronger evidence than one-time degradation alone.
+A reversible, relation-specific effect would provide stronger evidence than one-time degradation alone.
 
 ---
 
 # 25. Minimal sufficient relation set
 
-A later extension may attempt to identify the smallest relation set needed for a task.
+A later extension may attempt to identify the smallest relation set required for a task.
 
-For task \(T\), define:
+For task $T$, define:
 
-\[
-E_T^{*}
-\subseteq
-E
-\]
+$$
+E_T^{*}\subseteq E
+$$
 
-such that \(E_T^{*}\) is sufficient for warranted performance on \(T\), while removing any required member materially reduces performance.
+where $E_T^{*}$ is sufficient for warranted performance on $T$ and removal of a required member materially reduces performance.
 
 This would move the research from:
 
@@ -1224,14 +1178,14 @@ This is not required for the first experiment.
 
 # 26. Prompt construction
 
-The final protocol should use a frozen prompt schema.
+The executable protocol should use a frozen prompt schema.
 
 The prompt should:
 
 - define the bounded task;
 - present the same informational object inventory across matched conditions;
 - avoid telling the model which relation has been manipulated;
-- prohibit unsupported external completion where required by the task;
+- specify the permitted evidence boundary;
 - preserve the same output format across conditions;
 - avoid evaluative language that reveals the expected answer.
 
@@ -1262,10 +1216,12 @@ evidence_basis
 
 uncertainty_status
 
+conflict_status
+
 unsupported_completion_detected
 ```
 
-The exact schema must be finalized only after the task family is selected.
+The exact schema should be finalized only after the task family is selected.
 
 ---
 
@@ -1285,7 +1241,7 @@ expected hypothesis direction
 
 Where support scoring requires access to condition-specific evidence, a semi-blind procedure may be used.
 
-The final scoring method must state exactly what the rater is allowed to see.
+The final scoring method must state exactly what a rater is permitted to see.
 
 ---
 
@@ -1305,7 +1261,7 @@ Human review may still be required for:
 - conflict detection;
 - unsupported but linguistically hedged claims.
 
-Automated and human scoring should remain distinguishable.
+Automated and human scoring must remain distinguishable.
 
 ---
 
@@ -1361,7 +1317,7 @@ Execution must not proceed merely because the experimental dataset is ready.
 
 The relevant ALLIS path must also be sufficiently qualified for the claims the experiment intends to make.
 
-Required pre-execution question:
+The pre-execution question is:
 
 > **Can we establish what source, runtime, model path, relational inputs, and response path actually produced these outputs?**
 
@@ -1371,7 +1327,7 @@ If not:
 EXECUTION_AUTHORIZED=NO
 ```
 
-The final protocol must identify the exact qualification gate.
+The executable protocol must identify the exact qualification gate.
 
 ---
 
@@ -1421,7 +1377,7 @@ After this point, changes require an explicit protocol amendment.
 
 # 33. Randomization
 
-Where relation targets are permuted, the transformation should be deterministic and reproducible.
+Where relation targets are permuted, the transformation must be deterministic and reproducible.
 
 Preferred:
 
@@ -1435,7 +1391,7 @@ manifested input dataset
 
 The same input and seed should reproduce the same transformed graph.
 
-The transformation code should emit its own manifest.
+The transformation process should emit its own manifest.
 
 ---
 
@@ -1477,7 +1433,7 @@ The final statistical model should be selected after the task and dataset are fi
 
 The design should favor paired analysis because experimental units are matched across conditions.
 
-Potential methods may include:
+Potential methods include:
 
 ```text
 paired proportion comparison
@@ -1499,49 +1455,48 @@ Choice depends on the final scoring scale and dependency structure.
 
 The first protocol should avoid unnecessary statistical complexity.
 
-Effect size and uncertainty should be reported alongside significance testing.
+Effect sizes and uncertainty should be reported alongside significance testing.
 
 ---
 
 # 36. Primary comparison
 
-The principal comparison should be:
+The principal comparison is:
 
-\[
-\text{Correct Relation}
-\]
+$$
+G_C
+\quad\text{versus}\quad
+G_R
+$$
 
-versus:
+That is:
 
-\[
-\text{Task-Relevant Perturbation}.
-\]
+$$
+\text{correct relation}
+\quad\text{versus}\quad
+\text{task-relevant perturbation}
+$$
 
-A stronger confirmatory test compares:
+The stronger confirmatory comparison is:
 
-\[
-\Delta_{\text{relevant}}
-\]
+$$
+\Delta_{\mathrm{relevant}} > \Delta_{\mathrm{irrelevant}}
+$$
 
-against:
-
-\[
-\Delta_{\text{irrelevant}}.
-\]
-
-Evidence supporting the hypothesis would therefore require more than:
+Evidence supporting the hypothesis should therefore require more than:
 
 ```text
-perturbed condition performed worse.
+the perturbed condition performed worse
 ```
 
 It should preferably show:
 
 ```text
 task-relevant relational disruption
-    produced greater task-specific degradation
+    ↓
+greater task-specific degradation
 than
-task-irrelevant relational disruption.
+task-irrelevant relational disruption
 ```
 
 ---
@@ -1550,7 +1505,7 @@ task-irrelevant relational disruption.
 
 Suppose the experiment contains spatial and temporal tasks.
 
-A strong pattern would be:
+A strong result would look like:
 
 ```text
 spatial-edge perturbation
@@ -1565,19 +1520,29 @@ and:
 temporal-edge perturbation
     ↓
 temporal task degrades strongly
-spatial task remains comparatively stable.
+spatial task remains comparatively stable
 ```
 
-This can be represented as an effect matrix:
+Define an effect matrix:
 
-\[
+$$
 M_{ij}
 =
-\text{effect of perturbing relation }i
-\text{ on task }j.
-\]
+\text{effect of perturbing relation } i
+\text{ on task } j
+$$
 
-A diagonal or near-diagonal structure would provide stronger evidence for typed relational dependence than generalized disruption.
+A diagonal or near-diagonal effect pattern would provide stronger evidence for typed relational dependence than generalized disruption.
+
+Conceptually:
+
+$$
+|M_{ii}| > |M_{ij}|
+\qquad
+\text{for relevant } i\neq j
+$$
+
+This is a prospective prediction, not an established result.
 
 ---
 
@@ -1589,7 +1554,7 @@ The hypothesis would be weakened if one or more of the following occurs:
 - task-irrelevant perturbations have equal or greater effects;
 - all relation perturbations cause undifferentiated global degradation;
 - results are explained entirely by token count or lexical changes;
-- the model reconstructs required referents reliably without the tested relations;
+- the model reliably reconstructs required referents without the tested relations;
 - relation restoration does not restore the affected capability;
 - the apparent effect disappears under replication;
 - results depend only on one fragile prompt formulation.
@@ -1602,7 +1567,7 @@ Negative and mixed results must be preserved.
 
 A positive experiment would support a bounded statement such as:
 
-> Under the tested ALLIS configuration, dataset, task, and transformation, preservation of the specified referential relation contributed measurably to warranted referential performance.
+> **Under the tested ALLIS configuration, dataset, task, and transformation, preservation of the specified referential relation contributed measurably to warranted referential performance.**
 
 It would **not** establish:
 
@@ -1640,7 +1605,7 @@ A null result must not be rewritten as success.
 
 # 41. Replication
 
-At least one independent replication should be planned before making broader claims.
+At least one independent replication should precede broader claims.
 
 Replication may vary:
 
@@ -1668,7 +1633,7 @@ This experiment is designed first as an ALLIS study.
 
 Any later comparison with physics-aware cyber-physical systems must establish an actual formal correspondence.
 
-Similarity of phrases such as:
+Similarity of terms such as:
 
 ```text
 topology
@@ -1684,14 +1649,14 @@ relation
 
 is insufficient.
 
-A valid cross-domain comparison would require identifying a common object such as:
+A valid cross-domain comparison would require identifying a common structure such as:
 
 ```text
 task-relevant state distinction
 
 relation required to preserve that distinction
 
-controlled destruction of that relation
+controlled perturbation of that relation
 
 selective performance consequence
 ```
@@ -1767,11 +1732,7 @@ The next task after adoption of this plan is **not experimental execution**.
 
 It is:
 
-\[
-\boxed{
-\textbf{Select and qualify the candidate dataset.}
-}
-\]
+> **Select and qualify the candidate dataset.**
 
 That work should answer:
 
@@ -1836,7 +1797,7 @@ relational effect
 from:
 
 ```text
-ordinary information loss.
+ordinary information loss
 ```
 
 ---
@@ -1845,13 +1806,27 @@ ordinary information loss.
 
 The core planned prediction is:
 
-\[
-\boxed{
-\textbf{If a task-relevant relation is changed while the underlying informational objects remain available, the inference depending on that relation should change or become appropriately uncertain, while unrelated inferences should remain comparatively stable.}
-}
-\]
+> **If a task-relevant relation is changed while the underlying informational objects remain available, the inference depending on that relation should change or become appropriately uncertain, while unrelated inferences should remain comparatively stable.**
 
-This is the specific proposition the first referential-geometry experiment is intended to test.
+In compact form:
+
+$$
+\boxed{
+\Delta_{\mathrm{relevant}} > \Delta_{\mathrm{irrelevant}}
+}
+$$
+
+with the additional expectation that restoration of the original relation should restore the corresponding task behavior:
+
+$$
+G \rightarrow G' \rightarrow G
+$$
+
+and, where the hypothesis holds:
+
+$$
+Y \rightarrow Y' \rightarrow Y
+$$
 
 ---
 
