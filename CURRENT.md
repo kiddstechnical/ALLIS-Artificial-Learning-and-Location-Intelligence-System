@@ -4,17 +4,18 @@
 
 ### Current qualified technical state
 
-**Status as of October 3, 2026**
+**Status as of October 8, 2026**
 
 <br>
 
-![Current Record](https://img.shields.io/badge/CURRENT_STATE-OCTOBER_2026-7c3aed?style=for-the-badge)
+![Current Record](https://img.shields.io/badge/CURRENT_STATE-OCTOBER_8_2026-7c3aed?style=for-the-badge)
 ![Lean R1](https://img.shields.io/badge/LEAN_R1-CLOSED_PASS-9333ea?style=for-the-badge)
 ![Lean R2](https://img.shields.io/badge/LEAN_R2-CLOSED_PASS-7c3aed?style=for-the-badge)
 ![Lean R3](https://img.shields.io/badge/LEAN_R3-CLOSED_PASS-6d28d9?style=for-the-badge)
+![H384](https://img.shields.io/badge/H384-ADOPTED_CLOSED-8b5cf6?style=for-the-badge)
 ![Frontend](https://img.shields.io/badge/FRONTEND-PRODUCTION_CUTOVER-0ea5e9?style=for-the-badge)
 ![Gateway](https://img.shields.io/badge/GATEWAY-PRODUCTION_CUTOVER-22c55e?style=for-the-badge)
-![Browser](https://img.shields.io/badge/BROWSER_E2E-NOT_YET_DEMONSTRATED-f59e0b?style=for-the-badge)
+![Browser](https://img.shields.io/badge/BROWSER_E2E-CLOSED_PASS-22c55e?style=for-the-badge)
 ![Whole System](https://img.shields.io/badge/SYSTEM_PROVEN-NO-64748b?style=for-the-badge)
 
 <br>
@@ -28,19 +29,28 @@
 > [!IMPORTANT]
 > `CURRENT.md` is the concise present-tense technical state of ALLIS.
 >
-> It is intentionally downstream of the detailed acceptance, evidence, correspondence, and closeout records.
+> It is intentionally downstream of detailed acceptance, evidence, correspondence,
+> proof, and closeout records.
 >
-> The current technical record now includes three first-class Lean workstreams:
+> Current truth is assembled from qualified objects and explicit correspondence.
+> A newer file, newer commit, or stronger architectural idea does not silently
+> supersede an established evidence boundary.
+>
+> The current formal record includes:
 >
 > ```text
 > R1 — Authorized Production Adoption
 > R2 — Conversational Admission
 > R3 — Hilbert/JCP Separation
+> H384 — adopted 384-dimensional formal carrier
 > ```
 >
-> The current conversational server path is production-qualified and observed through the Unified Gateway to synthesis.
+> The current signed-in human-facing conversational path has been demonstrated
+> through the production browser surface.
 >
-> The current browser user-facing E2E path has **not** yet been separately demonstrated.
+> The H384 carrier workstream is formally adopted and closed.
+>
+> Neither result establishes a whole-system theorem.
 >
 > ```text
 > SYSTEM_PROVEN=NO
@@ -48,32 +58,39 @@
 
 ---
 
-# 1. October state at a glance
+# 1. October 8 state at a glance
 
 | Scope | Current state | Meaning |
 |---|---|---|
 | Workstream F | **CLOSED** | F1–F5 closed; historical qualified baseline preserved |
 | DGM Step 12 | **GREEN_CLOSED_WITH_EXPLICIT_RESIDUALS** | Bounded authorized-adoption domain remains closed |
-| Lean R1 | **CLOSED / PASS** | Authorized-adoption principal theorem/disproof set independently kernel-checked |
+| Lean R1 | **CLOSED / PASS** | Authorized-adoption principal theorem/disproof set kernel-checked |
 | Lean R2 | **CLOSED / PASS** | 6/6 Conversational Admission checks; 0 proof holes; 0/6 final theorem-level axiom dependencies |
 | Lean R3 | **CLOSED / PASS** | 14/14 Hilbert/JCP Separation checks; 0 proof holes; 0/14 final theorem-level axiom dependencies |
+| H384 formal carrier | **ADOPTED / CLOSED** | Formal 384-dimensional real carrier and geometry/normalization family adopted into the controlling formal repository |
+| H384 adopted build | **PASS** | Adopted source builds under pinned Lean 4.34.0 / mathlib v4.34.0 |
+| H384 proof discipline | **PASS** | 0 `sorry`; 0 `admit`; 0 explicit `axiom` declarations; 0 `opaque` declarations; 0 principal proof holes |
+| H384 runtime normalization correspondence | **PASS — bounded** | Current bounded runtime normalization correspondence is preserved |
+| Exact runtime float normalization theorem | **NOT PROVEN** | Finite floating-point observations are not promoted into an exact theorem for all runtime embeddings |
 | R2 implementation/runtime correspondence | **PASS — bounded current path** | `/api/chat` identity comes from authenticated server state; browser identity is non-authoritative |
 | R3 implementation/runtime correspondence | **PASS — bounded current state** | Current JCP remains exact four-field structure; H_geo/H_p/H_people remain nonadmitted |
-| Auth/Guardian versioned install | **QUALIFIED INSTALL** | Versioned installation and rollback sealing completed; install closeout itself made no active runtime mutation |
 | Frontend production cutover | **PASS** | Current conversational frontend deployment is installed and identified |
 | Unified Gateway production cutover | **PASS** | Qualified Gateway source became production source |
-| Gateway → BBB → `llm20production` → LM Synthesizer | **QUALIFIED OBSERVED PATH** | Real local `/chat` request completed downstream path |
-| Server-side authenticated `/api/chat` | **QUALIFIED / DEPLOYED** | Current server route exists and fails closed when unauthenticated |
-| Browser conversational send surface | **NOT READY** | Current user-facing send surface not separately executable |
-| Authenticated browser chat E2E | **NOT DEMONSTRATED** | Must be qualified separately |
-| Rollback | **RETAINED** | Gateway rollback remains stopped/retained; retirement not authorized |
+| Gateway → BBB → `llm20production` → LM Synthesizer | **QUALIFIED OBSERVED PATH** | Real `/chat` request completed the downstream production path |
+| Signed-in browser → `/api/chat` → Gateway → 20LLM → LM Synth → browser | **CLOSED / PASS** | Real signed-in ALLIS browser UI validation completed |
+| Durable 20LLM production | **CLOSED** | Image adoption and container-recreation persistence qualified |
+| H_people PRIVATE read in the current closeout | **NO** | Current closeout does not claim a fresh PRIVATE read |
+| Named H_* linear-subspace status | **NOT PROVEN** | H384 adoption does not automatically make named H_* objects proved subspaces |
+| Live Hilbert/JCP admission | **NOT COMPLETE** | H_geo/H_p/H_people remain outside the current JCP unless separately authorized and qualified |
+| Cognition/rejoin theorem family | **OPEN** | Source lineage exists; full formal/correspondence family remains successor work |
+| Dual cortex / chirality | **NOT YET INTEGRATED AND QUALIFIED** | Successor architecture; not a Base-ALLIS production blocker |
 | Whole-system proof | **NOT CLAIMED** | `SYSTEM_PROVEN=NO` |
 
 ---
 
-# 2. Current proof-assistant state
+# 2. Present formal baseline
 
-The current repository-level proof record contains three distinct qualified Lean workstreams.
+ALLIS currently has three retained qualified Lean workstreams plus the adopted H384 carrier workstream.
 
 ```text
 Lean R1
@@ -84,47 +101,52 @@ Lean R2
 
 Lean R3
     Hilbert/JCP Separation
+
+H384
+    adopted 384-dimensional formal carrier
+    +
+    geometry / normalization theorem family
 ```
 
-They are separate bounded objects.
+These are bounded objects.
 
 ```text
-R1 ≠ R2 ≠ R3
-```
-
-and:
-
-```text
-R1 + R2 + R3
+R1 + R2 + R3 + H384 adoption
     ≠
 whole-system proof
+```
+
+The R1 closeout identity remains historically qualified in its own scope.
+
+The later H384 adoption is additive and creates a new controlling formal parent.
+It does not rewrite the R1/R2/R3 closeout histories.
+
+Current post-H384 controlling formal parent:
+
+```text
+0186bb69a66937ed154ebf81954d43eef3c9777c
+```
+
+Current post-H384 formal tree:
+
+```text
+59c6537361da13cdd5e886989d2866addd9f6807
 ```
 
 ---
 
 # 3. Lean R1 — Authorized Production Adoption
 
-R1 remains the qualified successor proof layer for the principal Step-12 authorized-adoption result set.
+R1 remains the qualified successor proof layer for the principal Step-12
+authorized-adoption result set.
 
-Qualified worktree:
-
-```text
-/home/cakidd/allis-lean-proof-workstream-r1
-```
-
-Branch:
-
-```text
-formal-verification/lean-authorized-adoption-r1
-```
-
-HEAD:
+Qualified R1 closeout HEAD:
 
 ```text
 beceb3ee44fd5c33eaf689a5abe086e5e9c67911
 ```
 
-Tree:
+Qualified R1 closeout tree:
 
 ```text
 a62d4b78db5aae522fd06f61b9563e676eacc0a8
@@ -215,7 +237,7 @@ SYSTEM_PROVEN=NO
 
 # 5. Lean R2 — Conversational Admission
 
-R2 is now a first-class qualified object.
+R2 remains a first-class qualified object.
 
 Branch:
 
@@ -261,27 +283,25 @@ TCHAT_E_ordinary_chat_does_not_create_governance_authority
 TCHAT_F_ordinary_chat_does_not_authorize_hpeople_secret_disclosure
 ```
 
-The initial proof family compiled with zero holes but reported:
+Preserve:
 
 ```text
-propext = 6/6
+authenticated
+    ≠
+governance authority
 ```
 
-That state failed qualification.
-
-The direct repair preserved theorem statements, types, and intended semantics while changing proof bodies.
-
-Final:
+and:
 
 ```text
-propext = 0/6
+ordinary authenticated chat
+    ≠
+H_people SECRET disclosure authority
 ```
 
 ---
 
 # 6. R2 source/runtime correspondence
-
-The later current implementation/runtime record supports the bounded R2 model.
 
 Current ordinary browser-facing server route:
 
@@ -289,7 +309,7 @@ Current ordinary browser-facing server route:
 POST /api/chat
 ```
 
-The qualified ordering is:
+Qualified ordering:
 
 ```text
 authenticate request/session
@@ -312,7 +332,7 @@ user_id = null
 where no canonical scalar user ID is separately established
 ```
 
-Gateway behavior:
+Current Gateway behavior preserves:
 
 ```text
 Gateway accepts authenticated_user
@@ -326,13 +346,11 @@ authenticated_user does not become downstream ensemble/synthesizer model input
 authenticated_user does not create governance authority
 ```
 
-Ordinary authenticated conversation still does not authorize H_people SECRET disclosure.
-
 ---
 
 # 7. Lean R3 — Hilbert/JCP Separation
 
-R3 is now a first-class qualified object.
+R3 remains a first-class qualified object.
 
 Branch:
 
@@ -367,15 +385,9 @@ final theorem-level axiom dependencies = 0/14
 final propext dependencies = 0/14
 ```
 
-The initial formulation had:
+R3 proves the bounded current separation state.
 
-```text
-propext = 11/14
-```
-
-and therefore failed qualification.
-
-The final computational/Bool-oriented repair preserved the architectural claims while reworking the formal expression.
+It does not prove future live Hilbert/JCP admission.
 
 ---
 
@@ -417,11 +429,7 @@ Current Hilbert/tensor/spatial top-level field count:
 0
 ```
 
----
-
-# 9. Current Hilbert/JCP admission state
-
-Current R3 correspondence preserves:
+Current admission state:
 
 ```text
 H_GEO_CURRENT_JCP_ADMISSION=NO
@@ -437,13 +445,7 @@ At the same time:
 STATIC_H_GEO_PATH_QUALIFIED=YES
 ```
 
-The static H_geo lifecycle remains:
-
-```text
-STAGE_EVALUATE_PROMOTE
-```
-
-Preserve the distinction:
+Preserve:
 
 ```text
 static H_geo qualification
@@ -453,130 +455,251 @@ live H_geo JCP admission
 
 ---
 
-# 10. H384 and typed projection state
+# 9. H384 formal carrier — ADOPTED
 
-The current H_* inventory is not yet a completed formal Hilbert integration layer.
+H384 is no longer merely a future formalization plan.
 
-The safe current classification is:
+Current formal state:
 
 ```text
-named H_* object
-    =
-governed typed projection / view / architectural state domain
+H384_FORMAL_REPOSITORY_ADOPTION=YES
+H384_ALLIS_FORMALIZATION_ADOPTED=YES
+H384_WORKSTREAM_STATUS=ADOPTED
+H384_CARRIER_WORKSTREAM_CLOSED=YES
 ```
 
-until stronger subspace properties are separately proved.
-
-The planned common carrier is:
+Formal carrier:
 
 ```text
 H384 := Fin 384 -> Real
 ```
 
-Current status:
+Controlling H384 adoption commit:
 
 ```text
-H384_FORMALIZATION_COMPLETE=NO
+0186bb69a66937ed154ebf81954d43eef3c9777c
+```
+
+Controlling formal tree:
+
+```text
+59c6537361da13cdd5e886989d2866addd9f6807
+```
+
+Adopted H384 subtree:
+
+```text
+e6206f4b01fd7bc6e95f72784a9559c6485089d5
+```
+
+Adopted H384 Git blob:
+
+```text
+c109e00b80f0d8a3e4bb8de92bd146d2c08b1bb7
+```
+
+Adopted H384 source SHA-256:
+
+```text
+0a18db8bd8cac6aefb4064acd5d0e27f76cdb3eadaf0feb58396cf343990c9e4
+```
+
+Adopted package manifest SHA-256:
+
+```text
+443adaefb897e1441e91ad7bf3bd0625c149342627db1c03670d44e39254396b
+```
+
+Pinned mathlib identity:
+
+```text
+tag = v4.34.0
+HEAD = 5ed2965256430c3649e86755f9576b54eca72435
+tree = 346a3a2f70557751b9ce76515b7cfdb7440163a3
+toolchain = leanprover/lean4:v4.34.0
+```
+
+Adopted build state:
+
+```text
+ADOPTED_H384_BUILD=PASS
+ADOPTED_H384_PROOF_DISCIPLINE=PASS
+ADOPTED_H384_PRINCIPAL_PROOF_HOLES=0
+```
+
+Source-level proof-discipline scan:
+
+```text
+SORRY_COUNT=0
+ADMIT_COUNT=0
+AXIOM_DECL_COUNT=0
+OPAQUE_DECL_COUNT=0
+```
+
+The adopted workstream contains the qualified 384-dimensional real Euclidean
+carrier and its qualified geometry/normalization theorem family.
+
+The H384 adoption creates a new formal foundation for successor composition work.
+
+It does **not** establish:
+
+```text
+named H_* object = proved linear subspace
+```
+
+It does **not** authorize:
+
+```text
+persistence
+disclosure
+execution
+publication
+JCP admission
+conversational use
+```
+
+merely because the carrier exists.
+
+---
+
+# 10. H384 runtime correspondence boundary
+
+Current bounded status:
+
+```text
+H384_RUNTIME_BOUNDED_NORMALIZATION_CORRESPONDENCE=PASS
+```
+
+Current exact-float nonclaim:
+
+```text
+H384_RUNTIME_FLOAT_EXACT_NORMALIZATION_PROVEN=NO
+```
+
+Finite floating-point observations are not promoted into an exact theorem
+about all runtime embeddings.
+
+Named H_* residual:
+
+```text
+NAMED_H_STAR_SUBSPACE_STATUS_PROVEN=NO
 ```
 
 Therefore:
 
 ```text
-shared 384-D carrier
+formally adopted common 384-D carrier
     ≠
-named H_* subspace proof
+every named H_* object is a proved Hilbert subspace
 ```
+
+The current safe classification for named H_* objects remains:
+
+```text
+governed typed projection / view / architectural state domain
+```
+
+until stronger properties are separately proved.
 
 ---
 
-# 11. Auth/Guardian production state
+# 11. Current production conversational front door — CLOSED
 
-Qualified auth install:
+The signed-in browser front door is no longer an open engineering gap.
+
+Controlling closeout:
 
 ```text
-/opt/msjarvis-rebuild/ms-allis-auth-runtime/deploy-r16c4r15r1-3db1a68d6bcc
+R36R50R2
+REAL SIGNED-IN BROWSER UI VALIDATION CLOSED
 ```
 
-Rollback predecessor:
+Result SHA-256:
 
 ```text
-/opt/msjarvis-rebuild/ms-allis-auth-runtime/deploy-r16c4r6r4r1-a288b4613774
+830263d06feea7bce67f809e42da8757690aef0fb19dc889c80a629156eefa4c
 ```
 
-Service:
+Correction SHA-256:
 
 ```text
-ms-allis-auth8095.service
-```
-
-Install closeout established:
-
-```text
-AUTH_VERSIONED_INSTALL_CREATED=PASS
-FINAL_INSTALLED_MATCHES_SEALED_R15R1=PASS
-DUAL_ROLLBACK_CONTRACT=PASS
-
-PRODUCTION_FILESYSTEM_MUTATION=INSTALL_ONLY
-ACTIVE_RUNTIME_MUTATION=NO
-PRODUCTION_NONACTIVATION=PASS
-```
-
-Guardian candidate:
-
-```text
-tag =
-allis-guardian-registration-review-r16c4r15:5860bf8ab543
-
-image =
-sha256:5e270aa93911602c15f5f052eab2e5283b39f023e5b495475d2c52daf0d55105
-
-source SHA-256 =
-5860bf8ab543253f32f52de74da6fb9be8263e3ff35ca4fb078e8c6a1af3fe25
-```
-
-This record is an install/qualification state; it does not rewrite the install closeout as an activation event.
-
----
-
-# 12. Current frontend production state
-
-Controlling frontend production cutover:
-
-```text
-r16c4r18a4-frontend-production-cutover-20261002T191856Z-2417338
-```
-
-Final SHA-256:
-
-```text
-48156cf5595ea93093439c9d199d91e60d1236603b971d4b4938fc0cbb3a2cb6
+6eef7f0b49ea6b93cd0ac66340c1dc5e6ad710074e32a8698a52e65994c8a0f8
 ```
 
 Manifest SHA-256:
 
 ```text
-40f79d6ce944ce7be096fe4d3ccc286457ed3d0de72f65203bfb9b1fb747c95d
+02144d4529ac860f78492affd7302f28f6b1cbb305d3e441446ac51c4917816f
 ```
 
-Live frontend:
+Real browser surface:
 
 ```text
-/opt/msjarvis-rebuild/allis-frontend-runtime/deploy-9KyheKDYXyNCclA1YrUAX-fullnm-3ace386dedd9
+https://allis.pro/ask
 ```
 
-BUILD_ID:
+Observed signed-in product identity:
 
 ```text
-9KyheKDYXyNCclA1YrUAX
+speaker label = ALLIS
 ```
 
-Service:
+Human-observed signed-in UI response:
 
 ```text
-allis-frontend.service
+PASS
 ```
 
-Canonical ordinary browser-facing route:
+Canonical human-facing production path:
+
+```text
+signed-in browser
+    ↓
+/api/chat
+    ↓
+Unified Gateway
+    ↓
+20LLM / llm20production
+    ↓
+LM Synthesizer
+    ↓
+browser
+```
+
+Closeout state:
+
+```text
+POST_RECREATION_REAL_SIGNED_IN_BROWSER_UI_VALIDATION=PASS
+PERSONA_PRODUCTION_END_TO_END_UI=CLOSED
+
+20LLM_DURABLE_IMAGE_ADOPTION=PASS
+20LLM_CONTAINER_RECREATION_PERSISTENCE_QUALIFIED=YES
+20LLM_PERSONA_PRODUCTION_DURABILITY=CLOSED
+DURABLE_20LLM_PRODUCTION_QUALIFICATION=CLOSED
+```
+
+The closeout did not require production mutation:
+
+```text
+PRODUCTION_MUTATION=NO
+SERVICE_RESTART=NO
+CONTAINER_RECREATE=NO
+SOURCE_MUTATION=NO
+```
+
+The prior October 3 state:
+
+```text
+BROWSER_E2E_DEMONSTRATED=NO
+```
+
+is superseded by this later closeout.
+
+---
+
+# 12. Current frontend and Unified Gateway production state
+
+Current ordinary browser-facing route:
 
 ```text
 /api/chat
@@ -598,38 +721,16 @@ and:
 ordinary /api/chat route
 ```
 
----
-
-# 13. Current Unified Gateway production state
-
 Qualified Gateway production source SHA-256:
 
 ```text
 a007f51d53b0c253260d3ca28413de00c2abd4c29ca62bde2adccda5423f5e1f
 ```
 
-Corrected production cutover:
+Corrected Gateway production cutover:
 
 ```text
 R16C4R20R4
-```
-
-Final SHA-256:
-
-```text
-1aaccf30781dc38f2ad10446bce30f3d9f8eb047a560e9b34de2cb94aa0b6f44
-```
-
-Manifest SHA-256:
-
-```text
-213eeb4ab6511ff78d5c1df9791d46917e0c055342bc65e2ab054e4a75e5bcbc
-```
-
-Production container:
-
-```text
-6056e7c7848af2e676bbc53c6c909e3844bdec2f1c5a5832b7599e237bce3481
 ```
 
 Production image:
@@ -638,7 +739,7 @@ Production image:
 sha256:f2ee4e106373a321f65ab2eef00cf7d3b09cf1bdcf61bfb44ed79ec977f6444b
 ```
 
-Cutover result:
+Gateway production result:
 
 ```text
 PRODUCTION_CUTOVER=PASS
@@ -650,11 +751,7 @@ ENSEMBLE_COMPLETE=PASS
 LM_SYNTHESIZER_COMPLETE=PASS
 ```
 
----
-
-# 14. Qualified observed conversational path
-
-The current observed server-side path is:
+The observed production synthesis path remains:
 
 ```text
 Unified Gateway
@@ -668,85 +765,13 @@ LM Synthesizer
 response
 ```
 
-A real local:
-
-```text
-/chat
-```
-
-request completed this downstream path.
-
-This is the current qualified observed server-side conversational path.
+R36R50R2 extends that record through the real signed-in browser surface.
 
 ---
 
-# 15. Server-side route vs browser E2E
+# 13. Rollback state
 
-The durable server/UI-boundary closeout is:
-
-```text
-R16C4R20R5R1
-```
-
-Final SHA-256:
-
-```text
-79c7ceaf7549543e194176881b9b4b77c8766057c8f2d8f281d3f596502ffbb6
-```
-
-Manifest SHA-256:
-
-```text
-37b1811a20107c08a0d1eb11c9d0e10a69fcec3e8bc7589f203d9c006d3461f6
-```
-
-It established:
-
-```text
-Gateway identity = PASS
-frontend identity = PASS
-auth identity = PASS
-
-unauthenticated /api/auth/me = fail closed
-
-unauthenticated /api/chat = fail closed
-
-server-side authenticated route = qualified/deployed
-```
-
-But it also recorded:
-
-```text
-CURRENT_BROWSER_CONVERSATIONAL_UI_READY=NO
-
-CURRENT_BROWSER_CONVERSATIONAL_SEND_SURFACE=NO
-
-AUTHENTICATED_BROWSER_CHAT_E2E=NOT_EXECUTABLE_CURRENT_UI
-```
-
-Therefore:
-
-```text
-SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
-
-BROWSER_E2E_DEMONSTRATED=NO
-```
-
----
-
-# 16. Rollback state
-
-Gateway rollback:
-
-```text
-jarvis-unified-gateway.rollback-r20r4-20261003T011108Z-2966359
-```
-
-Rollback image:
-
-```text
-sha256:d52c4a716d491158c66240251c7e158752c2c9afa0a03afaffd9ed747bf2107b
-```
+Gateway rollback remains a separate deployment-safety object.
 
 State:
 
@@ -760,11 +785,27 @@ Current retirement state:
 ROLLBACK_RETIREMENT_AUTHORIZED=NO
 ```
 
-Rollback retention is a deployment-safety state, not evidence of failed cutover.
+Preserve:
+
+```text
+rollback retained
+    ≠
+production cutover failed
+```
+
+and:
+
+```text
+browser E2E closed
+    ≠
+automatic rollback retirement
+```
+
+Rollback retirement requires its own authority and closeout.
 
 ---
 
-# 17. Current private-state boundary
+# 14. Current private-state boundary
 
 H_people remains tiered:
 
@@ -776,67 +817,46 @@ PUBLIC
 
 Ordinary authenticated conversation does not itself authorize H_people SECRET disclosure.
 
-Precise authoritative identity-linked location remains:
+The current R36R50R2 production closeout records:
 
 ```text
-KYC / H_people SECRET
+CURRENT_HPEOPLE_MAR_ABSENT=PASS
+PRIVATE_HPEOPLE_READ=NO
 ```
 
-A future minimum-necessary conversational location projection is separately planned.
-
-Current qualification state:
+It also records:
 
 ```text
-KYC_LOCATION_CONTEXT_USE_QUALIFIED=NO
+R36R37_HPEOPLE_PRIVATE_REJOIN_REOPEN_REQUIRED=NO
+HPEOPLE_RETEST_REQUIRED=NO
 ```
+
+Therefore the current production closeout does not perform a new PRIVATE read,
+and it does not reopen the already-qualified prior H_people rejoin work.
 
 Preserve:
 
 ```text
-location known
+private state exists
     ≠
-location disclosed
+ordinary conversation may disclose it
 ```
 
 and:
 
 ```text
-location used for permitted context
+authenticated identity
     ≠
-location made PUBLIC
+SECRET-disclosure authority
 ```
 
 ---
 
-# 18. Current cognition state
+# 15. Current cognition and composition state
 
-The intended cognition composition/rejoin path is:
+The source lineage for cognition/rejoin exists.
 
-```text
-prefrontal_result
-+
-icontainers_result
-+
-psychology_result
-    ↓
-cognition stage
-    ↓
-cognition evaluate
-    ↓
-cognition emit
-    ↓
-llm_packet
-    ↓
-Gateway / JCP
-    ↓
-ensemble
-    ↓
-LM Synthesizer
-```
-
-The source lineage exists.
-
-The full cognition theorem/correspondence family does not yet.
+The full cognition theorem/correspondence family remains open.
 
 Current status:
 
@@ -844,31 +864,77 @@ Current status:
 COGNITION_THEOREM_FAMILY_COMPLETE=NO
 ```
 
----
-
-# 19. Current Automated Learning state
-
-The intended Automated Learning Graph is:
+The current architecture must continue to preserve:
 
 ```text
-detect informational insufficiency
-    ↓
-identify missing information
-    ↓
-bound research need
-    ↓
-select permitted source/method
-    ↓
-retrieve candidate information
-    ↓
-capture provenance
-    ↓
-evaluate candidate
-    ↓
-reject / unresolved / bounded use / admission eligibility
-    ↓
-separate corpus / H_* admission
+reasoning
+    ≠
+authority
+
+candidate result
+    ≠
+adopted result
+
+retrieval
+    ≠
+admission
+
+capability
+    ≠
+permission
 ```
+
+The adopted H384 carrier is now infrastructure for successor composition work.
+
+The open problem is no longer whether a common 384-dimensional carrier can be
+formally established.
+
+The open problems are the governed relationships built over that carrier.
+
+---
+
+# 16. Dual cortex / I-Container successor boundary
+
+Dual-cortex / chirality work remains successor architecture.
+
+Current status:
+
+```text
+DUAL_CORTEX_INTEGRATED_AND_QUALIFIED=NO
+SYSTEM_PROVEN=NO
+```
+
+Current controlling blocker language remains:
+
+```text
+SYSTEM_PROVEN_BLOCKER=DUAL_CORTEX_NOT_YET_INTEGRATED_AND_QUALIFIED
+```
+
+This is a whole-system/formal-integration boundary.
+
+It is **not** a Base-ALLIS conversational production blocker.
+
+Preserve:
+
+```text
+Base conversational production closed
+    ≠
+dual cortex already integrated
+```
+
+and:
+
+```text
+dual cortex not yet qualified
+    ≠
+Base conversational production incomplete
+```
+
+---
+
+# 17. Current Automated Learning state
+
+The intended Automated Learning Graph remains separately bounded.
 
 Permanent trust distinction:
 
@@ -890,97 +956,62 @@ AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
 RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=NO
 ```
 
----
-
-# 20. Current read-only research design
-
-The planned research mechanism is:
-
-```text
-approximately every five minutes
-    ↓
-evaluate pending bounded research needs
-```
-
-not:
-
-```text
-crawl the web every five minutes
-```
-
-External-side write target:
-
-```text
-NO
-```
-
-A research result may be eligible for current-response use without being persisted.
-
-Current qualification:
-
-```text
-AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
-```
+A future research result may be eligible for bounded current-response use without
+becoming persistent governed state.
 
 ---
 
-# 21. Current post-conversational engineering roadmap
+# 18. Current post-Base-ALLIS engineering sequence
 
-The intended engineering sequence is:
+The old roadmap treated the conversational front door and H384 carrier as future work.
+
+Those boundaries have now advanced.
+
+Current state:
 
 ```text
-conversational front door
+Base conversational front door
+    CLOSED
+        ↓
+H384 formal carrier
+    ADOPTED / CLOSED
+```
+
+Successor work now centers on:
+
+```text
+named H_* typed-projection qualification
     ↓
-Hilbert-by-Hilbert qualification
+exact producer / normalization correspondence
     ↓
-Hilbert <-> Unified Gateway/JCP correspondence
+authorized Hilbert ↔ JCP transition models where real authority exists
     ↓
-H384 / typed projection formalization
+cognition / rejoin qualification
     ↓
-cognition/rejoin qualification
+dual I-Container / dual-cortex composition
     ↓
-Automated Learning Graph qualification
+chirality / convergence qualification
     ↓
-read-only web research
+implementation and runtime correspondence
     ↓
-research -> corpus/Hilbert admission
+Automated Learning / bounded research
+    ↓
+research → corpus/Hilbert admission
     ↓
 protected KYC-location conversational context
     ↓
-integrated conversational accuracy
+integrated accuracy / external benchmark record
     ↓
-final DGM completion
+final DGM successor work
 ```
 
-The sequence is a roadmap.
+This is a successor sequence.
 
 Later items are not current qualification claims.
 
 ---
 
-# 22. Current qualified-object registry
-
-The composite current registry now includes, among others:
-
-```text
-OBJ-LR101 = Lean R1 Authorized Production Adoption
-
-OBJ-LR201 = Lean R2 Conversational Admission
-
-OBJ-R2C01 = R2 source/runtime correspondence
-
-OBJ-LR301 = Lean R3 Hilbert/JCP Separation
-
-OBJ-R3C01 = R3 source/runtime correspondence
-```
-
-Predecessor identities remain unchanged.
-
-Successor objects are additive.
-
----
-
-# 23. Current validation hierarchy
+# 19. Current validation hierarchy
 
 ALLIS continues to distinguish:
 
@@ -1006,7 +1037,7 @@ Do not collapse the hierarchy.
 
 ---
 
-# 24. Current nonclaims
+# 20. Current nonclaims
 
 The current record does **not** claim:
 
@@ -1019,24 +1050,44 @@ SYSTEM_PROVEN=YES
 
 FULL_DGM_COMPLETION_CLAIMED=YES
 
-H384_FORMALIZATION_COMPLETE=YES
+H384_RUNTIME_FLOAT_EXACT_NORMALIZATION_PROVEN=YES
+
+NAMED_H_STAR_SUBSPACE_STATUS_PROVEN=YES
 
 LIVE_HILBERT_JCP_INTEGRATION_COMPLETE=YES
 
 COGNITION_THEOREM_FAMILY_COMPLETE=YES
+
+DUAL_CORTEX_INTEGRATED_AND_QUALIFIED=YES
 
 AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=YES
 
 RESEARCH_TO_CORPUS_INGESTION_QUALIFIED=YES
 
 KYC_LOCATION_CONTEXT_USE_QUALIFIED=YES
+```
 
-BROWSER_E2E_DEMONSTRATED=YES
+The following former nonclaims are superseded and should no longer be stated as current:
+
+```text
+BROWSER_E2E_DEMONSTRATED=NO
+
+H384_FORMALIZATION_COMPLETE=NO
+```
+
+The replacement present-tense claims are:
+
+```text
+SIGNED_IN_BROWSER_UI_VALIDATION=CLOSED_PASS
+
+H384_ALLIS_FORMALIZATION_ADOPTED=YES
+
+H384_CARRIER_WORKSTREAM_CLOSED=YES
 ```
 
 ---
 
-# 25. Current technical-state flags
+# 21. Current technical-state flags
 
 ```text
 WORKSTREAM_F_STATUS=CLOSED
@@ -1053,7 +1104,25 @@ R2_SOURCE_RUNTIME_CORRESPONDENCE=PRESENT
 
 R3_SOURCE_RUNTIME_CORRESPONDENCE=PRESENT
 
-AUTH_GUARDIAN_VERSIONED_INSTALL=PASS
+H384_FORMAL_REPOSITORY_ADOPTION=YES
+
+H384_ALLIS_FORMALIZATION_ADOPTED=YES
+
+H384_WORKSTREAM_STATUS=ADOPTED
+
+H384_CARRIER_WORKSTREAM_CLOSED=YES
+
+ADOPTED_H384_BUILD=PASS
+
+ADOPTED_H384_PROOF_DISCIPLINE=PASS
+
+ADOPTED_H384_PRINCIPAL_PROOF_HOLES=0
+
+H384_RUNTIME_BOUNDED_NORMALIZATION_CORRESPONDENCE=PASS
+
+H384_RUNTIME_FLOAT_EXACT_NORMALIZATION_PROVEN=NO
+
+NAMED_H_STAR_SUBSPACE_STATUS_PROVEN=NO
 
 FRONTEND_PRODUCTION_CUTOVER=PASS
 
@@ -1061,13 +1130,11 @@ GATEWAY_PRODUCTION_CUTOVER=PASS
 
 SERVER_SIDE_CONVERSATIONAL_PATH_QUALIFIED=YES
 
-CURRENT_BROWSER_CONVERSATIONAL_UI_READY=NO
+POST_RECREATION_REAL_SIGNED_IN_BROWSER_UI_VALIDATION=PASS
 
-CURRENT_BROWSER_CONVERSATIONAL_SEND_SURFACE=NO
+PERSONA_PRODUCTION_END_TO_END_UI=CLOSED
 
-AUTHENTICATED_BROWSER_CHAT_E2E=NOT_EXECUTABLE_CURRENT_UI
-
-BROWSER_E2E_DEMONSTRATED=NO
+DURABLE_20LLM_PRODUCTION_QUALIFICATION=CLOSED
 
 STATIC_H_GEO_PATH_QUALIFIED=YES
 
@@ -1077,9 +1144,13 @@ H_P_CURRENT_JCP_ADMISSION=NO
 
 H_PEOPLE_CURRENT_JCP_ADMISSION=NO
 
-H384_FORMALIZATION_COMPLETE=NO
+CURRENT_HPEOPLE_MAR_ABSENT=PASS
+
+PRIVATE_HPEOPLE_READ=NO
 
 COGNITION_THEOREM_FAMILY_COMPLETE=NO
+
+DUAL_CORTEX_INTEGRATED_AND_QUALIFIED=NO
 
 AUTOMATED_LEARNING_WEB_RESEARCH_QUALIFIED=NO
 
@@ -1096,7 +1167,71 @@ SYSTEM_PROVEN=NO
 
 ---
 
-# 26. System identity boundary
+# 22. Current formal identities
+
+## R1 closeout
+
+```text
+HEAD = beceb3ee44fd5c33eaf689a5abe086e5e9c67911
+TREE = a62d4b78db5aae522fd06f61b9563e676eacc0a8
+```
+
+## R2 closeout
+
+```text
+HEAD = c1a18b2e5fbe2e288d8b91dafe18668392bc787d
+TREE = e325bfdd78cd6903dbfb3a8c15130af26de5cd9f
+```
+
+## R3 closeout
+
+```text
+HEAD = 6f4a7de303e2d80c3d94a28a8d82e696387bf4b2
+TREE = f5ffcb3fd693cbed60c1bd9dc966f868472707d4
+```
+
+## Post-H384 controlling formal parent
+
+```text
+HEAD = 0186bb69a66937ed154ebf81954d43eef3c9777c
+TREE = 59c6537361da13cdd5e886989d2866addd9f6807
+```
+
+Preserve:
+
+```text
+later controlling formal parent
+    ≠
+historical R1/R2/R3 closeout identities were rewritten
+```
+
+---
+
+# 23. Public-repository synchronization boundary
+
+The H384 workstream is formally adopted in the controlling local formal repository.
+
+At the October 8 documentation boundary, the public repository has not yet been
+fully synchronized with that newer formal state.
+
+Therefore preserve:
+
+```text
+H384_FORMAL_REPOSITORY_ADOPTION=YES
+```
+
+while separately tracking publication of the H384 formal object into the public
+technical repository.
+
+Do not represent a public path as present until the corresponding files have
+actually been added.
+
+Likewise, do not preserve obsolete public nonclaims merely because older
+repository documents have not yet been reconciled.
+
+---
+
+# 24. System identity boundary
 
 Keep these systems separate:
 
@@ -1121,11 +1256,17 @@ MountainShares / The Commons
 separate governance/economic systems
 ```
 
+For the `allis.pro` conversational front door, the product identity is:
+
+```text
+ALLIS
+```
+
 Do not collapse these identities.
 
 ---
 
-# 27. Evidence layering
+# 25. Evidence layering
 
 The current technical record follows:
 
@@ -1145,11 +1286,18 @@ operational authority where separately granted
 
 No layer silently substitutes for another.
 
+The current H384 adoption adds a formal carrier to this evidence graph.
+
+The current signed-in browser closeout adds the human-facing production
+observation that was previously missing.
+
+Neither creates whole-system proof.
+
 ---
 
-# 28. Current key records
+# 26. Current key records
 
-## Acceptance
+## Existing public records
 
 ```text
 acceptance/current-system-manifest.md
@@ -1159,73 +1307,37 @@ acceptance/baseline-object-registry.md
 acceptance/closeout/lean-conversational-admission-r2-close.md
 
 acceptance/closeout/lean-hilbert-jcp-separation-r3-close.md
-```
 
-## R2
-
-```text
 formal-verification/conversational-admission/workstream-closeout-r2.md
 
 formal-verification/conversational-admission/theorem-registry.md
 
-evidence/conversational-admission/r2-qualification.md
-
-correspondence/conversational-admission/model-to-source.md
-
-correspondence/conversational-admission/source-to-runtime.md
-```
-
-## R3
-
-```text
 formal-verification/hilbert-jcp-separation/workstream-closeout-r3.md
 
 formal-verification/hilbert-jcp-separation/theorem-registry.md
-
-evidence/hilbert-jcp-separation/r3-qualification.md
-
-correspondence/hilbert-jcp-separation/model-to-source.md
-
-correspondence/hilbert-jcp-separation/source-to-runtime.md
-```
-
-## Current conversational production
-
-```text
-architecture/conversational-frontdoor-boundary.md
 
 correspondence/conversational-path/gateway-to-synthesis.md
 
 evidence/conversational-frontdoor/current-production-state.md
 ```
 
-## Successor architecture
+## Newer controlling evidence requiring repository reconciliation
 
 ```text
-architecture/state-models/hilbert-qualification-plan.md
+R36R50R2
+    real signed-in browser UI validation closeout
 
-architecture/state-models/h384-formalization-plan.md
-
-architecture/state-models/hilbert-projection-interfaces.md
-
-architecture/cognition/cognition-rejoin-boundary.md
-
-architecture/automated-learning/automated-learning-graph.md
-
-architecture/automated-learning/read-only-web-research.md
-
-architecture/automated-learning/research-to-corpus-ingestion.md
-
-architecture/private-state/kyc-location-conversational-context.md
-
-architecture/roadmap/post-conversational-qualification-roadmap.md
-
-research/allis-historical-lineage.md
+H384 adoption
+    controlling formal commit:
+    0186bb69a66937ed154ebf81954d43eef3c9777c
 ```
+
+Public H384 formal-verification records should be added as a separate documentation
+step rather than implied before publication.
 
 ---
 
-# 29. Concise current-state summary
+# 27. Concise current-state summary
 
 <div align="center">
 
@@ -1238,20 +1350,23 @@ research/allis-historical-lineage.md
 ### 🟪 Lean R3
 **HILBERT/JCP SEPARATION · 14/14 · CLOSED / PASS**
 
+### 🟪 H384
+**FORMAL CARRIER · ADOPTED / CLOSED**
+
 ### 🟢 Current frontend
 **PRODUCTION CUTOVER · PASS**
 
 ### 🟢 Unified Gateway
 **PRODUCTION CUTOVER · PASS**
 
-### 🔗 Current observed server path
-**Gateway → BBB → `llm20production` → LM Synthesizer → response**
+### 🟢 Signed-in ALLIS browser E2E
+**CLOSED / PASS**
 
-### 🟡 Browser E2E
-**NOT YET DEMONSTRATED**
+### 🔗 Canonical human-facing path
+**browser → `/api/chat` → Unified Gateway → 20LLM → LM Synthesizer → browser**
 
-### 🟡 Future qualification
-**H384 · cognition · automated learning · research admission · protected KYC-location context · integrated accuracy · final DGM completion**
+### 🟡 Successor qualification
+**named H_* projections · JCP transitions · cognition/rejoin · dual cortex/chirality · automated learning · research admission**
 
 ### ⚪ Whole-system proof
 # `SYSTEM_PROVEN=NO`
@@ -1268,13 +1383,19 @@ research/allis-historical-lineage.md
 
 > **Authentication does not create governance or SECRET-disclosure authority.**
 
+> **A formally adopted carrier does not automatically make every named projection a proved subspace.**
+
 > **A qualified projection does not become JCP-admitted merely because it exists.**
 
 > **Static H_geo qualification does not equal live H_geo admission.**
 
+> **Candidate change does not become adopted change merely because it is preferred.**
+
+> **Retrieval does not become persistence merely because information was encountered.**
+
 > **A web result is not automatically trusted knowledge, admitted corpus state, or qualified Hilbert state.**
 
-> **Server-side conversational qualification does not imply browser E2E qualification.**
+> **Production conversation closed does not imply dual cortex is integrated.**
 
 > **Production cutover does not imply rollback retirement.**
 
